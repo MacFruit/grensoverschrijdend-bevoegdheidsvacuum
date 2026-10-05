@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<title>Systeem-Audit — Document D — De synthese</title>
+<style>
+@media screen { p.marker { display: none; } }
+body { font-family: Aptos, Calibri, sans-serif; font-size: 12pt; line-height: 1.5; margin: 40pt; }
+h1 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 28pt; color: #2e7d32; margin-top: 0; margin-bottom: 6pt; border-bottom: 3px solid #2e7d32; padding-bottom: 6pt; }
+h2 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 20pt; color: #2e7d32; margin-top: 0; margin-bottom: 5pt; border-bottom: 2px solid #2e7d32; padding-bottom: 4pt; }
+h3 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 16pt; color: #2e7d32; margin-top: 0; margin-bottom: 4pt;  }
+h4 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 14pt; color: #2e7d32; margin-top: 10pt; margin-bottom: 3pt; }
+h5 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 13pt; color: #333333; margin-top: 8pt; margin-bottom: 3pt; }
+p { margin: 0 0 8pt 0; text-align: justify; }
+p.subtitel { font-style: italic; font-size: 11pt; color: #555555; margin: -2pt 0 10pt 0; }
+hr { border: 0; border-top: 1px solid #ccc; margin: 15pt 0 10pt 0; }
+i { font-size: 10.5pt; color: #555555; }
+.netwerkregel { font-style: italic; color: #333333; margin-bottom: 6pt; }
+.metadata { margin-bottom: 4pt; display: none; }
+.timeline-entry { margin-bottom: 6pt; text-align: left; }
+.date-title { font-weight: bold; color: #000000; }
+.netwerk { font-style: italic; color: #333333; margin-bottom: 4pt; }
+.meta { margin-bottom: 4pt; }
+.meta strong { color: #2e7d32; }
+.entry { margin-bottom: 4pt; text-align: left; }
+.datum { font-weight: bold; color: #000000; }
+.titel { font-weight: bold; text-transform: uppercase; }
+.opvolging { font-style: italic; color: #555555; }
+p.lead { font-style: italic; color: #444; margin-bottom: 12pt; }
+p.tijd { font-size: 10pt; color: #888888; font-style: italic; letter-spacing: 1pt; text-transform: uppercase; margin-bottom: 4pt; }
+svg { display: block; width: 100%; height: auto; margin: 8pt 0; }
+svg text { font-family: Aptos, Calibri, sans-serif; }
+.figure { background: #ffffff; border: 1px solid #d8d4cb; padding: 12pt; margin: 14pt 0; }
+.caption { font-size: 10pt; color: #4a5559; margin-top: 8pt; border-top: 1px solid #ece8df; padding-top: 6pt; }
+table { width: 100%; border-collapse: collapse; margin: 10pt 0 18pt; font-size: 10.5pt; }
+th { background: #2e7d32; color: #ffffff; text-align: left; padding: 7pt 9pt; border: 1px solid #2e7d32; }
+td { padding: 6pt 9pt; border: 1px solid #d5d0c5; vertical-align: top; background: #ffffff; }
+tr:nth-child(even) td { background: #f4f1f8; }
+.status-g { color: #2e7d32; font-weight: 700; }
+.status-o { color: #e65100; font-weight: 700; }
+.status-r { color: #c62828; font-weight: 700; }
+.actie { background: #ede9f5; border-left: 4px solid #2e7d32; padding: 10pt 14pt; margin: 14pt 0; font-size: 11pt; }
+.actie strong { color: #2e7d32; }
+.werkversie { background: #fff8e1; border-left: 4px solid #e6a817; padding: 8pt 12pt; margin-bottom: 16pt; font-size: 10.5pt; color: #665500; }
+.afsluiting { background: #f4f1f8; border-left: 4px solid #2e7d32; padding: 10pt 14pt; margin: 14pt 0; font-size: 11pt; }
+.actor { margin-bottom: 12pt; padding-bottom: 10pt; border-bottom: 1px solid #e8e4dc; }
+.actor-naam { font-weight: 700; color: #1f2421; }
+.actor-rol { font-weight: 600; color: #2e7d32; }
+.badge-be { color: #8b1e1e; font-weight: 700; }
+.badge-nl { color: #1a3c6e; font-weight: 700; }
+.badge-mem { color: #c1440e; font-weight: 700; }
+.badge-eu { color: #0d7377; font-weight: 700; }
+.banner-be { background: #f7eded; border-left: 5px solid #8b1e1e; padding: 8pt 12pt; margin: 20pt 0 10pt; }
+.banner-be strong { color: #8b1e1e; font-size: 13pt; }
+.banner-nl { background: #edf2f8; border-left: 5px solid #1a3c6e; padding: 8pt 12pt; margin: 20pt 0 10pt; }
+.banner-nl strong { color: #1a3c6e; font-size: 13pt; }
+.banner-eu { background: #eaf4f4; border-left: 5px solid #0d7377; padding: 8pt 12pt; margin: 20pt 0 10pt; }
+.banner-eu strong { color: #0d7377; font-size: 13pt; }
+.legend-row { display: flex; gap: 12pt; margin-top: 4pt; align-items: baseline; font-size: 10.5pt; }
+.legend-num { display: inline-block; width: 22px; height: 22px; border-radius: 50%; color: #fff; text-align: center; line-height: 22px; font-weight: 700; font-size: 10pt; flex-shrink: 0; }
+.noot { font-size: 9.5pt; color: #666; font-style: italic; margin-top: 20pt; padding-top: 10pt; border-top: 1px solid #ddd; line-height: 1.5; }
+.footnotes p { font-size: 10pt; color: #555; margin-bottom: 6pt; text-align: left; }
+.titelblad { text-align: center; margin-top: 200pt; }
+.titelblad h1 { font-size: 36pt; border: none; padding: 0; margin-bottom: 24pt; color: #2e7d32; }
+.titelblad .ondertitel { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 18pt; color: #333333; margin-bottom: 60pt; }
+.titelblad .documentaanduiding { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 22pt; color: #2e7d32; font-weight: bold; margin-bottom: 80pt; }
+.titelblad .auteur { font-size: 14pt; color: #333333; margin-bottom: 4pt; }
+.titelblad .meta-lijn { font-size: 12pt; color: #555555; margin-bottom: 4pt; }
+.inhoudsopgave ul { list-style-type: none; padding-left: 0; }
+.inhoudsopgave li { margin-bottom: 3pt; }
+.gebruikersaanwijzing { margin-top: 0; }
+.gebruikersaanwijzing p { font-style: italic; color: #333333; margin-bottom: 6pt; }
+.contactblok { background: #ffffff; border-left: 4px solid #2e7d32; padding: 15px 20px; margin-top: 30pt; }
+.contactblok p { margin: 0; font-size: 11pt; }
+.contactblok a { color: #2e7d32; text-decoration: none; font-weight: bold; }
+
+/* === Document-specifieke extra stijlen (via ) === */
+
+/* === PUBLICATIE-CSS START === */
+
+body {
+    font-family: Aptos, Calibri, sans-serif;
+    font-size: 12pt;
+    line-height: 1.6;
+    margin: 0;
+    padding: 40pt;
+    background: #f6f3ec;
+    color: #2a2a2a;
+}
+
+h1 {
+    font-size: 38pt;
+    color: #1a3c6e;
+    margin: 0 0 6pt;
+    letter-spacing: -0.5pt;
+}
+.ondertitel {
+    font-size: 16pt;
+    color: #4a5560;
+    margin: 0 0 14pt;
+    font-weight: 400;
+}
+.auteur {
+    font-size: 11pt;
+    color: #6b7280;
+    margin: 0 0 30pt;
+    font-style: italic;
+}
+.intro {
+    font-size: 12pt;
+    line-height: 1.7;
+    margin: 0 0 40pt;
+    text-align: justify;
+    color: #3a3f45;
+}
+
+/* === Spectrumbalk === */
+.spectrum {
+    height: 4px;
+    display: flex;
+    margin: 0 0 30pt;
+    border-radius: 2px;
+    overflow: hidden;
+}
+.spectrum span { flex: 1; }
+
+/* === Root index: intro-rijen per taal === */
+.intro-rijen { margin: 0 0 40pt; }
+.intro-rij {
+    display: grid;
+    grid-template-columns: 64pt 1fr;
+    gap: 18pt;
+    align-items: start;
+    padding: 22pt 26pt;
+    background: #ffffff;
+    border-left: 6px solid var(--accent);
+    border-radius: 8px;
+    margin-bottom: 14pt;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    transition: transform .15s, box-shadow .2s;
+}
+.intro-rij:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0,0,0,.08);
+}
+.intro-rij .vlag {
+    font-size: 44pt;
+    line-height: 1;
+    text-align: center;
+    padding-top: 2pt;
+}
+.intro-rij h3 {
+    margin: 0 0 6pt;
+    color: var(--accent);
+    font-size: 19pt;
+    letter-spacing: -0.3pt;
+}
+.intro-rij p {
+    margin: 0 0 10pt;
+    font-size: 11pt;
+    color: #4a5560;
+    line-height: 1.55;
+}
+.intro-rij a.goto {
+    display: inline-block;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 11pt;
+    padding: 4pt 0;
+}
+.intro-rij a.goto:hover { text-decoration: underline; }
+
+/* === A/B-melding (meertalig) === */
+.ab-melding {
+    background: #fdf6e3;
+    border-left: 4pt solid #d4a017;
+    padding: 18pt 22pt;
+    margin: 0 0 30pt;
+    border-radius: 6px;
+}
+.ab-melding h3 {
+    margin: 0 0 12pt;
+    color: #8b6200;
+    font-size: 15pt;
+    border: none;
+    padding: 0;
+}
+.ab-melding p {
+    margin: 0 0 10pt;
+    color: #6b4c00;
+    font-size: 11pt;
+    line-height: 1.6;
+}
+.ab-melding p:last-child { margin-bottom: 0; }
+.ab-melding .vlag-klein {
+    font-size: 14pt;
+    margin-right: 8pt;
+}
+
+/* === EU-joke === */
+.eu-joke {
+    text-align: center;
+    font-size: 11pt;
+    color: #6b7280;
+    font-style: italic;
+    margin: 30pt 0 0;
+    padding: 20pt;
+    border-top: 1px dashed #ddd7c9;
+    border-bottom: 1px dashed #ddd7c9;
+    line-height: 1.6;
+}
+.eu-joke .eu-vlag {
+    font-size: 22pt;
+    display: block;
+    margin-bottom: 6pt;
+}
+
+/* === Documentkaarten (per-taal home) === */
+.doc-lijst { list-style: none; padding: 0; margin: 0; }
+.doc-lijst li {
+    position: relative;
+    margin: 0 0 14pt;
+    padding: 22pt 26pt 22pt 28pt;
+    background: #ffffff;
+    border-left: 6px solid #1a3c6e;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    transition: transform .15s, box-shadow .2s;
+    overflow: hidden;
+}
+.doc-lijst li:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+.doc-lijst .docletter {
+    position: absolute;
+    top: -10pt;
+    right: 14pt;
+    font-size: 96pt;
+    font-weight: 900;
+    line-height: 1;
+    opacity: 0.06;
+    pointer-events: none;
+    user-select: none;
+}
+.doc-lijst a.titel {
+    display: block;
+    font-size: 17pt;
+    font-weight: 700;
+    text-decoration: none;
+    margin: 0 0 6pt;
+    position: relative;
+    z-index: 1;
+}
+.doc-lijst a.titel:hover { text-decoration: underline; }
+.doc-lijst .beschrijving {
+    font-size: 10.5pt;
+    color: #4a5560;
+    margin: 0;
+    line-height: 1.55;
+    position: relative;
+    z-index: 1;
+}
+.doc-lijst .downloads {
+    margin-top: 12pt;
+    font-size: 10pt;
+    position: relative;
+    z-index: 1;
+}
+.doc-lijst .downloads a {
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 16px;
+    padding: 4pt 10pt;
+    border-radius: 4px;
+    transition: background .15s;
+    display: inline-block;
+}
+.doc-lijst .downloads a:hover { text-decoration: none; }
+
+.doc-0 { border-left-color: #8b1e1e; background: #fbf5f5; }
+.doc-0 .docletter { color: #8b1e1e; }
+.doc-0 a.titel { color: #8b1e1e; }
+.doc-0 .downloads a { background: #f6eded; color: #8b1e1e; }
+.doc-0 .downloads a:hover { background: #f0dcdc; }
+
+.doc-a { border-left-color: #7a3e9d; background: #faf6fc; }
+.doc-a .docletter { color: #7a3e9d; }
+.doc-a a.titel { color: #7a3e9d; }
+.doc-a .downloads a { background: #f4f0f7; color: #7a3e9d; }
+.doc-a .downloads a:hover { background: #ebe2f0; }
+
+.doc-b { border-left-color: #1a3c6e; background: #f6f8fb; }
+.doc-b .docletter { color: #1a3c6e; }
+.doc-b a.titel { color: #1a3c6e; }
+.doc-b .downloads a { background: #edf0f4; color: #1a3c6e; }
+.doc-b .downloads a:hover { background: #dde4ed; }
+
+.doc-c { border-left-color: #4a3b6b; background: #f8f6fa; }
+.doc-c .docletter { color: #4a3b6b; }
+.doc-c a.titel { color: #4a3b6b; }
+.doc-c .downloads a { background: #f0eff3; color: #4a3b6b; }
+.doc-c .downloads a:hover { background: #e2dfe9; }
+
+.doc-d { border-left-color: #2e7d32; background: #f5faf5; }
+.doc-d .docletter { color: #2e7d32; }
+.doc-d a.titel { color: #2e7d32; }
+.doc-d .downloads a { background: #eef4ef; color: #2e7d32; }
+.doc-d .downloads a:hover { background: #ddeade; }
+
+/* === A/B-banner (per-taal home) === */
+.pub-ab-banner {
+    background: #fdf6e3;
+    border-left: 4pt solid #d4a017;
+    padding: 12pt 18pt;
+    margin: 0 0 30pt;
+    color: #6b4c00;
+    font-size: 11pt;
+    line-height: 1.6;
+    border-radius: 5px;
+}
+.pub-ab-banner strong { color: #8b6200; }
+
+/* === Footer === */
+.footer {
+    margin-top: 70pt;
+    padding-top: 22pt;
+    border-top: 1px solid #ddd7c9;
+    font-size: 9.5pt;
+    color: #6b7280;
+    text-align: center;
+    line-height: 1.7;
+}
+.footer a { color: #1a3c6e; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+
+/* === Navigatie === */
+.pub-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #ffffff;
+    border-bottom: 2px solid #e2ddd2;
+    padding: 10pt 40pt;
+    margin: -40pt -40pt 20pt -40pt;
+    font-family: Aptos, Calibri, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.pub-nav .links {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.pub-nav a {
+    color: #1a3c6e;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 11pt;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+.pub-nav a:hover { background: #eef2f7; border-color: #e2ddd2; }
+.pub-nav a.actief { background: #1a3c6e; color: #ffffff; }
+.pub-nav a.home { border: 1px solid #e2ddd2; }
+
+.pub-nav .langs {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    font-size: 10pt;
+}
+.pub-nav .langs a {
+    padding: 5pt 10pt;
+    font-weight: 700;
+    border: 1px solid #e2ddd2;
+    background: #ffffff;
+}
+.pub-nav .langs a:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+}
+.pub-nav .langs a.actief {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+}
+.pub-nav .langs a.lang-nl { --accent: #FF6B00; --accent-soft: #fff0e0; color: #FF6B00; }
+.pub-nav .langs a.lang-en { --accent: #012169; --accent-soft: #e6ebf3; color: #012169; }
+.pub-nav .langs a.lang-de { --accent: #DD0000; --accent-soft: #fbe6e6; color: #DD0000; }
+.pub-nav .langs a.lang-fr { --accent: #0055A4; --accent-soft: #e6eef6; color: #0055A4; }
+.pub-nav .langs a.actief.lang-nl,
+.pub-nav .langs a.actief.lang-en,
+.pub-nav .langs a.actief.lang-de,
+.pub-nav .langs a.actief.lang-fr { color: #ffffff; }
+
+.pub-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 200;
+    background: #1a3c6e;
+    color: #fff;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18pt;
+    line-height: 1;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .15s;
+}
+.pub-top:hover { transform: scale(1.1); background: #12294d; }
+.pub-footer {
+    margin-top: 60pt;
+    padding-top: 20pt;
+    border-top: 1px solid #ddd7c9;
+    font-size: 10pt;
+    color: #6b7280;
+    text-align: center;
+}
+.pub-footer a { color: #1a3c6e; text-decoration: none; }
+.pub-footer a:hover { text-decoration: underline; }
+
+/* === PUBLICATIE-CSS END === */
+</style>
+</head>
+<body><a id="top"></a>
+<nav class="pub-nav">
+<div class="links"><a class="home" href="home.html">← Aperçu</a><a class="" href="document-0.html">Doc 0 · Introduction</a><a class="" href="document-c.html">Doc C · Visuel</a><a class="actief" href="document-d.html">Doc D · Synthèse</a></div>
+<div class="langs"><a class="lang-nl" href="../nl/document-d.html">🇳🇱 NL</a><a class="lang-en" href="../en/document-d.html">🇬🇧 EN</a><a class="lang-de" href="../de/document-d.html">🇩🇪 DE</a><a class="lang-fr actief" href="../fr/document-d.html">🇫🇷 FR</a></div>
+</nav>
+
+<div class="titelblad">
+<h1>Audit du système</h1>
+<p class="ondertitel">Vide de compétence transfrontalier en matière de sécurité sociale</p>
+<p class="documentaanduiding">Document D — La synthèse</p>
+<p class="auteur">Auteur : Eric Messa</p>
+<p class="meta-lijn">Version mise à jour le 1er octobre 2026 à 13 h 02</p>
+</div>
+<p class="marker">[[PAGEBREAK]]</p>
+<div class="inhoudsopgave">
+<h2>Table des matières</h2>
+<p class="marker">[[TOC]]</p>
+</div>
+<p class="marker">[[PAGEBREAK]]</p>
+<div class="gebruikersaanwijzing">
+<p>Voici le document D — La synthèse du projet « Audit des systèmes ». Il rassemble les tendances qui se dégagent des documents : les paradoxes, les lignes de fracture, le rôle de l'Union européenne.</p>
+<p>Considérez cela comme une conclusion, et non comme un résumé.</p>
+</div>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Partie I — L'essentiel en un coup d'œil</h2>
+<p>Le système n'est pas défaillant. Il fonctionne exactement comme il a été conçu. Il a été conçu pour les personnes qui rentrent dans une seule catégorie : celles qui vivent, travaillent et sont assurées dans le même pays. Ceux qui vivent dans deux pays à la fois ne rentrent dans aucune de ces deux catégories. Et le système ne prévoit pas de troisième catégorie. Le système n'a même pas envisagé l'existence d'une troisième catégorie.</p>
+<p>Le cœur du problème dans ce dossier n'est pas le nombre élevé d'instances. Le cœur du problème, c'est qu'il existe un seul mécanisme qui se répète. Ce mécanisme comporte six questions, et à chacune d'entre elles, le système donne la même réponse.</p>
+<p><strong>Waar speelt dit?</strong>Dans quel contexte cela se produit-il ? Partout où une règle nationale s'applique à une situation transfrontalière. Cette règle part du principe qu'une personne réside dans un seul pays, travaille dans un seul pays et est assurée dans un seul pays. Une personne qui vit dans deux pays à la fois ne correspond pas à cette hypothèse. Le système ne le considère pas comme une exception nécessitant une solution. Il le considère comme une erreur qui doit être rejetée.</p>
+<p><strong>Wat is het probleem?</strong>Quel est le problème ? Le problème n'est pas que le citoyen ne remplisse pas les conditions. Le problème est que ces conditions n'ont pas été conçues pour une personne qui remplit les critères dans deux pays à la fois. Chaque pays exige que l'on remplisse ses conditions sur son territoire. Le citoyen remplit les conditions des deux côtés, mais pas dans le même pays. Et donc, il ne remplit aucune des deux.</p>
+<p><strong>Wie is verantwoordelijk?</strong>Qui est responsable ? Personne, et donc tout le monde. Chaque instance n'est compétente que pour son propre domaine. Chaque instance renvoie la responsabilité à l'autre. Et aucune instance n'a le pouvoir de contraindre l'autre.</p>
+<p><strong>Wanneer lost het zich op?</strong>Quand ce problème sera-t-il résolu ? Une fois la procédure en cours terminée. Mais c'est justement parce que chaque instance attend une autre instance que la procédure en cours est bloquée. La boucle est bouclée, et c'est le citoyen qui en fait les frais.</p>
+<p><strong>Waarom duurt het zo lang?</strong>Pourquoi cela prend-il autant de temps ? Parce que chaque niveau du système a une bonne raison de ne pas intervenir : manque de compétences, manque de temps, manque de moyens, absence de priorité politique. Chaque niveau a sa propre logique, et ces logiques se renforcent mutuellement au lieu de se corriger les unes les autres.</p>
+<p><strong>Hoe komt het goed?</strong>Comment remédier à cela ? En passant par la justice. Mais le juge ne résout qu'un seul dossier, pas l'ensemble du système. Et la justice n'est accessible qu'à ceux qui en ont les moyens.</p>
+<p>Les faits qui étayent ces six réponses figurent dans le document A et le document B. L'architecture qui les sous-tend est décrite dans le document C. En lisant ces faits, on constate les refus. En comprenant le mécanisme, on comprend pourquoi ces refus sont inévitables.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Partie II — Les deux mondes et leurs nœuds</h2>
+<p>Il existe deux mondes qui ne se rencontrent jamais : le monde du corps et celui du papier.</p>
+<p>Le monde du corps ne peut pas attendre. Une infection n'attend pas. Une amputation n'attend pas. Une perte de la vue n'attend pas. Le corps n'a pas de liste d'attente que le système pourrait prolonger. Le monde du corps ne connaît qu'une seule mesure : aujourd'hui, hier, demain. Et l'horloge ne s'arrête jamais.</p>
+<p>Le monde du papier fonctionne différemment. Là, c'est un délai de trente jours qui compte. Là, c'est une période de douze mois sur laquelle une personne doit pouvoir revenir qui compte. Là, c'est un délai de recours de trois mois qui compte. Là, c'est un délai d'attente de cent quatre-vingts jours qui compte. Là, c'est un délai d'attente de cent quatre semaines qui compte. Le monde de la paperasse n’a qu’une seule mesure : le système lui-même. Et le système ne s’arrête jamais.</p>
+<p>Il n'y a pas de pont entre ces deux mondes. Il y a un guichet. Un guichet peut être fermé. Un guichet peut être déplacé. Un guichet peut être occupé par une personne non habilitée. Un guichet n'est pas pressé. Un guichet n'a pas de corps.</p>
+<p>De cette collision naissent cinq nœuds impossibles à démêler. Les faits relatifs à ces nœuds figurent dans le document A et le document B. Voici les mécanismes.</p>
+<p><strong>De eerste knoop: de foutieve registratie.</strong>Le premier maillon : l'enregistrement erroné. L'organisme qui établit en premier lieu une définition — qui est le citoyen, quel droit il sollicite, quel est son statut — enregistre cette définition dans une base de données partagée. Toutes les autres instances consultent cette base de données. Une définition erronée se propage automatiquement dans l'ensemble du système. Et aucune instance intervenant plus loin dans la chaîne n'a le pouvoir de contraindre la source à corriger son erreur. L'erreur commence à un guichet, et elle ne s'arrête jamais.</p>
+<p><strong>De tweede knoop: het bewijs dat niet kan worden geleverd.</strong>Le deuxième nœud : la preuve qui ne peut être fournie. Le système exige une pièce justificative. Celle-ci doit être fournie par une instance qui n’est pas habilitée à la fournir, ou par une instance qui refuse de la fournir, ou par une instance qui ignore qu’elle doit la fournir. Le citoyen ne peut pas produire lui-même cette preuve. L'organisme qui est en mesure de la produire est justement celui qui ne le fait pas. Et l'organisme qui en a besoin continue d'attendre.</p>
+<p><strong>De derde knoop: de drempel die verschuift.</strong>Le troisième nœud : le seuil qui se déplace. Le citoyen fournit la preuve demandée. Dès que la preuve est fournie, le seuil se déplace. Une nouvelle condition est ajoutée. L'ancienne condition n'était pas la véritable condition ; la nouvelle condition est la véritable condition. Le citoyen fournit la nouvelle preuve. Le seuil change à nouveau. Le citoyen n’en a jamais fini, car « en finir » n’est pas une catégorie dans le système.</p>
+<p><strong>De vierde knoop: het systeem dat zichzelf blokkeert.</strong>Le quatrième nœud : le système qui se bloque lui-même. L'instance chargée de corriger l'erreur est la même que celle qui l'a commise. Et cette instance ne dispose d'aucune procédure interne pour corriger ses propres erreurs. Si vous demandez une rectification, l’instance vous demande le formulaire qu’elle est elle-même censée vous fournir. Et l’instance refuse de vous fournir ce formulaire, car aucune décision n’a encore été prise quant à ce droit. La boucle est bouclée. L’instance est à la fois la porte et le portier.</p>
+<p><strong>De vijfde knoop: het systeem dat de schade meet maar niet de oorzaak.</strong>Le cinquième nœud : le système qui mesure les conséquences, mais pas la cause. Le système mesure ce qu’une personne gagnait auparavant. Il mesure ce qu’une personne devrait pouvoir gagner d’après son historique fiscal. Mais il ne mesure pas ce qu’une personne perçoit réellement aujourd’hui. Lorsqu’une allocation est suspendue, le revenu réel tombe à zéro. Le système n'enregistre pas cette baisse. Il continue à se baser sur l'ancien revenu. La famille vit en dessous du seuil de pauvreté, mais est enregistrée par le système comme n'étant pas en situation de pauvreté. La pauvreté est créée par l'administration et niée par cette même administration.</p>
+<p><strong>De blinde vlek.</strong>Le point aveugle. La plupart des gens ne s’en rendent pas compte. Ceux qui ne franchissent jamais la frontière ne remarquent pas que les portes sont fermées. Celui qui vit au centre du pays n’a jamais frappé à l’une ou l’autre de ces portes. Le système fonctionne pour lui. Le système est invisible et confortable. Ce n’est pas une preuve que le système fonctionne. C’est la preuve que le système fonctionne pour un certain profil.</p>
+<p>Le « point aveugle » n'est pas seulement un problème national. Il existe également entre les régions d'un même pays. Les mêmes mécanismes qui s'appliquent entre deux pays s'appliquent aussi entre deux régions, entre deux cantons, entre deux États fédérés. Cette lacune apparaît dès que l'on franchit une frontière — qu'il s'agisse d'une frontière nationale ou régionale. Et ceux qui ne franchissent pas cette frontière ne s'en rendent pas compte. Ce n'est pas une excuse, mais une réalité structurelle.</p>
+<p><strong>De verwarring tussen reisvrijheid en lidmaatschap.</strong>La confusion entre la liberté de circulation et l'adhésion à l'Union européenne. Il existe une autre dimension à cette zone d'ombre : la confusion entre deux notions distinctes que les gens confondent. Le droit de circuler librement entre les pays est différent du droit de travailler dans un pays et d’y acquérir des droits sociaux. Un pays peut être membre de l’Union européenne sans que l’on puisse y circuler librement. Un pays peut utiliser l’euro sans être membre de l’Union européenne. Les catégories utilisées par les responsables politiques — membre de l’Union européenne, bénéficiaire de la liberté de circulation, membre de la zone euro — ne correspondent pas à la réalité vécue par une personne qui franchit la frontière.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Partie III — Le mécanisme de l'échec</h2>
+<p>Le système comporte quatre niveaux. Chaque niveau possède sa propre logique. Et ces logiques se renforcent mutuellement au lieu de se corriger les unes les autres.</p>
+<p><strong>De uitvoerende laag: de logica van de regel.</strong>Le niveau opérationnel : la logique de la règle. Il s'agit des guichets, des caisses d'assurance maladie et des organismes de prestations sociales. Ce sont eux qui appliquent les règles. Ces règles sont nationales. Elles partent du principe qu'une personne réside dans un seul pays, travaille dans un seul pays et est assurée dans un seul pays. Quiconque ne correspond pas à cette hypothèse génère une erreur. Cette erreur n’est pas perçue comme un signal indiquant que la règle doit être adaptée. Elle est considérée comme la preuve que le citoyen ne répond pas aux critères. Le niveau exécutif n’a pas le pouvoir de modifier la règle. Il a uniquement le pouvoir de l’appliquer. Et la règle est ce qu’elle est.</p>
+<p><strong>De toezichthoudende laag: de logica van de zelfbeperking.</strong>Le niveau de contrôle : la logique de l'autolimitation. Il s'agit des contrôleurs, des services d'inspection, des services de médiation. Ils constatent l'erreur. Mais ils ont une bonne raison de ne pas intervenir. Un contrôleur qui outrepasse ses compétences risque de voir sa décision contestée. La position la plus sûre consiste toujours à adopter l’interprétation la plus restrictive de ses propres compétences. L’autorité de contrôle n’intervient donc pas. Non pas parce qu’elle ne le veut pas, mais parce qu’elle n’ose pas. Et sa crainte est rationnelle : le système récompense l’autolimitation et sanctionne l’audace.</p>
+<p><strong>De democratische laag: de logica van de tijdschaal.</strong>Le niveau démocratique : la logique du temps. Il s'agit du Parlement, du médiateur, des commissions. Ce sont eux qui reçoivent la plainte. Mais ils fonctionnent selon un rythme incompatible avec l'urgence de la crise. Un débat en commission dure des mois. Une modification législative prend des années. Une crise sanitaire ne dure que quelques jours. Le niveau démocratique peut modifier la loi, mais il ne le fait pas tant qu’il n’y a pas de pression politique. Et il n’y a pas de pression politique pour un problème qui ne touche que les travailleurs frontaliers. L’échelle de temps de la démocratie et celle du corps sont fondamentalement incompatibles.</p>
+<p><strong>De symbolische laag: de logica van de onmacht.</strong>Le niveau symbolique : la logique de l'impuissance. Il s'agit du chef de l'État. Il reçoit la pétition. Il en accuse réception. Il la transmet au ministre compétent. L'intervention s'arrête là. Le niveau symbolique n'a aucun pouvoir exécutif. C'est un terminus.</p>
+<p><strong>De cirkel.</strong>Le cercle. Chaque niveau a une raison de ne pas intervenir. Le niveau exécutif applique les règles, mais celles-ci ne sont pas adaptées à cette situation. Le niveau de contrôle constate l'erreur, mais n'est pas autorisé à intervenir. Le niveau démocratique peut modifier la loi, mais ne le fait pas tant qu’il n’y a pas de pression politique. Le niveau symbolique n’a aucun pouvoir. Et le seul qui reste, c’est le juge. Mais le juge ne résout qu’un seul dossier, pas l’ensemble du système. Et le juge n’est accessible qu’à ceux qui en ont les moyens.</p>
+<p>Le système n'est pas défaillant. Il fonctionne comme prévu. Il a été conçu pour les personnes qui s'inscrivent dans le cadre établi. Ceux qui sortent de ce cadre se retrouvent entre les mailles du filet. Et entre les mailles, il n'y a pas de filet de sécurité. Ce n'est pas une erreur. C'est ainsi qu'il a été conçu.</p>
+<p><strong>De rode draad door alle lagen.</strong>Le fil conducteur à travers tous les niveaux. À chaque niveau, le même scénario se répète. Une administration constate un problème. Elle constate que ce problème ne relève pas de sa compétence. Elle renvoie vers une autre instance. L'autre instance fait de même. Et le citoyen est censé faire le lien entre toutes ces instances. Le citoyen est le seul acteur du système qui n'ait pas le pouvoir de prendre une décision, mais qui soit le seul à devoir faire fonctionner l'ensemble du système.</p>
+<p>Les faits relatifs à ce mécanisme figurent dans le document A et le document B. On y trouve quelle instance a commis quelle erreur, quelle lettre a été envoyée et à quelle date, ainsi que quelle décision a été prise et à quelle date. Ce document ne présente que le schéma général.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Partie IV — L'asymétrie entre les frontières physiques et administratives</h2>
+<p>L'intégration européenne repose sur la suppression des frontières physiques. En 1944, la Belgique, les Pays-Bas et le Luxembourg ont signé une union douanière. En 1951, la Communauté européenne du charbon et de l'acier a été créée. Elle a été suivie, en 1957, par la Communauté économique européenne. En 1985, l'accord de Schengen a été signé, régissant la suppression des frontières intérieures. L'objectif était d'assurer la libre circulation des personnes, des biens, des services et des capitaux.</p>
+<p>Dans la réalité physique, cet objectif a été atteint. Les postes-frontières ont été démantelés. Les déplacements transfrontaliers s'effectuent sans contrôle. Un citoyen peut se rendre en voiture des Pays-Bas en Belgique, de la Belgique en France, puis de la France en Allemagne, sans s'arrêter. Cette ouverture a pris quarante ans, de 1944 à 1985. Elle est ensuite devenue une réalité.</p>
+<p>La réalité administrative est restée asymétrique. Alors que la frontière a disparu pour le corps humain, les systèmes nationaux de mise en œuvre n’ont jamais été fusionnés ni harmonisés. Chaque pays conserve sa propre caisse d’assurance maladie, son propre service des impôts, son propre organisme de prestations sociales et son propre registre des personnes en situation de handicap.</p>
+<p>C'est là que réside la faille fondamentale. Le législateur européen a ouvert l'espace physique, mais les pouvoirs exécutifs nationaux ont programmé les systèmes informatiques sous-jacents de manière exclusivement nationale. L'infrastructure — l'autoroute — est transnationale. Le point de décision administratif — le guichet — est resté strictement national.</p>
+<p>La mise en œuvre législative de cette dissociation accuse un retard structurel. En avril 2026, un accord politique provisoire a été conclu dans le cadre d’un trilogue concernant la révision du règlement n° 883/2004, la législation qui coordonne la sécurité sociale entre les États membres. En juillet 2026, le texte révisé a été officiellement adopté. La mise en œuvre opérationnelle effective — notamment le transfert de la compétence en matière de chômage vers le pays d'emploi après une période ininterrompue de 22 semaines — n'est toutefois prévue qu'en 2030 ou 2031 en raison des adaptations informatiques nécessaires.</p>
+<p>Le cycle législatif complet, de la proposition initiale à l'entrée en vigueur, s'étend ainsi sur plus de dix ans de négociations et quatre ans d'attente avant la mise en œuvre. Quatorze ans pour une mise à jour logicielle.</p>
+<p>Les solutions numériques prévues dans ce train de réformes stagnent elles aussi aux portes du « silo de données ». La mise en place du Passeport européen de sécurité sociale, associé au portefeuille numérique européen, permet de numériser le support des documents. Elle permet aux administrations de vérifier rapidement les documents, mais n’impose pas de flux automatique de données entre les systèmes nationaux. Elle ne récupère pas activement les données à la source. La porte d’entrée est numérisée, mais la porte de service reste fermée.</p>
+<p>Les projections macroéconomiques de la Commission européenne prévoient, d'ici 2040, six milliards d'euros d'économies et de prévention de la fraude. Ce calcul ne tient pas compte de la réalité microéconomique des quatorze années intermédiaires. Pendant cette période de latence, les coûts liés à la défaillance du système sont entièrement répercutés sur le citoyen : la banque privée qui met les dettes en attente sous peine de lourdes sanctions, le fournisseur d’énergie qui fait appel à des agences de recouvrement et exige des examens médicaux irréalisables, et le marché privé des examens médicaux qui applique des tarifs inabordables pour les consultations à distance. Tous ces coûts sont répercutés sur l’individu, alors que la cause de la paralysie du système réside dans l’administration publique.</p>
+<p>Le Benelux a autrefois été le laboratoire de l'intégration européenne. C'est ici qu'a été lancée en 1944 l'expérience qui allait ensuite être reproduite à l'échelle européenne. Les trois pays ont démontré que des voies ouvertes étaient possibles. Ils n'ont pas démontré que des systèmes ouverts étaient possibles.</p>
+<p>Le « travailleur frontalier » est le message d'erreur d'un projet à moitié achevé. L'architecture physique est achevée. L'architecture administrative ne l'est pas.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Partie V — Les chiffres et l'échelle</h2>
+<p>Ce problème n'est pas propre à ce cas particulier. Voici un aperçu de son ampleur à l'échelle européenne.</p>
+<p>Dans l'Union européenne, des millions de personnes vivent dans un pays différent de celui où elles travaillent ou d'où elles sont originaires. Ce nombre augmente de manière structurelle en raison de la politique de l'Union européenne en matière de mobilité professionnelle, du développement du télétravail et de l'évolution démographique dans les régions frontalières.</p>
+<p>Le nombre de plaintes reçues par le réseau européen informel de médiation augmente de plusieurs dizaines de pour cent par an. Le problème s'aggrave, il ne s'atténue pas.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Partie VI — La dimension européenne</h2>
+<p>Le problème n'est pas d'ordre belgo-néerlandais. Il est européen. Quatre cas concrets le démontrent. Ces cas sont tirés de la littérature publique européenne sur les politiques publiques et de la recherche universitaire. Ils ne figurent pas dans le document A ni dans le document B, car ces documents ne décrivent qu'un seul cas particulier. Ils figurent ici parce qu’ils démontrent que le mécanisme qui apparaît dans ce cas particulier se répète dans chaque région frontalière européenne.</p>
+<p><strong>Luxemburg.</strong>Luxembourg. Le Luxembourg affiche le taux le plus élevé de travailleurs transfrontaliers de l'UE. La coordination de leur sécurité sociale s'effectue conformément au règlement européen, mais les seuils fiscaux et de sécurité sociale applicables au télétravail ne sont fondamentalement pas harmonisés. Un salarié qui travaille à domicile en se situant entre deux seuils se retrouve dans un vide juridique. Deux pays prélèvent des impôts sur la même base, mais en se fondant sur des calculs de seuils incompatibles. Cela a nécessité des années d’accords bilatéraux d’urgence avant qu’une certaine stabilisation ne s’installe — et ce, exclusivement pour la dimension fiscale, et non pour celle de la sécurité sociale.</p>
+<p><strong>De Øresundregio.</strong>La région de l'Øresund. Dans la région autour de l'Øresund, des milliers de travailleurs frontaliers traversent quotidiennement la frontière. Ils sont assurés socialement dans leur pays de travail, mais perçoivent, en cas de chômage, des allocations versées par leur pays de résidence. La coordination exige que l’employeur fournisse un document de licenciement reconnu comme valable par la caisse de chômage étrangère. Dans la pratique, cet échange est lent, les documents ne sont pas toujours dans un format permettant un traitement automatisé, et le citoyen se retrouve entre-temps sans allocation. La région dispose d’un comité conjoint chargé de surveiller la circulation des informations, mais ce comité n’a aucune autorité sur les organismes d’exécution des deux pays.</p>
+<p><strong>Zwitserland/Frankrijk.</strong>Suisse/France. La Suisse compte, selon les estimations, des centaines de milliers de travailleurs frontaliers originaires de France. Le télétravail a fait naître une tension fondamentale : le seuil fiscal applicable au télétravail et le seuil de sécurité sociale applicable au télétravail divergent. Les personnes qui travaillent à domicile et se situent entre ces deux seuils paient leurs impôts dans un pays mais relèvent potentiellement de la sécurité sociale de l’autre. Cela nécessite une affiliation simultanée à deux régimes, ce que le règlement européen interdit explicitement. La solution a nécessité un accord de transition, une prolongation et une modification formelle du traité, assortie d’obligations quotidiennes de déclaration pour les employeurs. La charge administrative a été transférée de l’État à l’employeur ; l’incompatibilité structurelle n’a pas été résolue.</p>
+<p><strong>De Oostenrijks-Oost-Europese corridor.</strong>Le corridor Autriche-Europe de l'Est. Dans le corridor reliant l'Autriche aux États membres d'Europe de l'Est, le détachement massif de travailleurs est une réalité économique bien établie. Les certificats attestant du pays dans lequel un travailleur détaché est affilié à la sécurité sociale font l’objet d’une utilisation frauduleuse à grande échelle afin de maintenir des cotisations sociales faibles dans le pays d’origine, alors que le travailleur exerce en réalité son activité de manière permanente dans le pays d’accueil. La Cour de justice a statué que même lorsqu’un certificat a manifestement été obtenu de manière frauduleuse, l’État membre d’accueil ne peut appliquer unilatéralement sa propre législation avant d’avoir engagé un dialogue avec l’État membre émetteur. Cette obligation de dialogue, destinée à protéger le salarié, est en pratique exploitée par des employeurs frauduleux pour retarder pendant des mois l’application de la législation du pays d’accueil, alors que le salarié se trouve formellement sans protection.</p>
+<p>La conclusion qui se dégage de ces quatre cas est la même : même dans les régions d'Europe où la concentration de travailleurs frontaliers est la plus forte, il n'existe pas de solution intégrée. Les accords nationaux d'urgence constituent la seule issue, en l'absence de correction structurelle.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Partie VII — La faille structurelle de la réglementation européenne</h2>
+<p>Le règlement européen qui coordonne la sécurité sociale entre les États membres détermine quel pays est l'État membre compétent. Le règlement désigne un seul pays comme responsable — généralement le pays d'emploi — mais ne prévoit pas de filet de sécurité automatique pour les périodes durant lesquelles l'attribution est contestée, change temporairement ou lorsque les deux pays refusent d'assumer la responsabilité principale.</p>
+<p>Le paradoxe « En/En » — selon lequel un citoyen relève formellement du système de deux pays, mais est considéré par chacun d'eux comme relevant de la responsabilité de l'autre — n'est pas résolu par le règlement, mais simplement décrit.</p>
+<p>Le réseau de médiation fait office de mécanisme de contrôle non contraignant. Il enregistre une partie des plaintes et rend une décision, mais celle-ci n'a aucune conséquence juridique pour l'organisme qui a opposé son refus. Une recommandation n'est qu'une recommandation. L'organisme d'exécution qui ne la prend pas en compte n'encourt aucune conséquence. Le système européen d'échange d'informations en matière de sécurité sociale permet l'échange électronique d'informations, mais les délais de réponse aux demandes étrangères ne sont pas contraignants. Ces deux instruments constituent des dispositifs procéduraux destinés à pallier un problème qui aurait dû être résolu de manière structurelle.</p>
+<p>Les éléments factuels relatifs à cette erreur architecturale figurent dans le document B. On y trouve quel règlement contient quelle disposition, quels arrêts donnent quelle interprétation, quelles instances disposent de quelle compétence. Ici, seul le schéma est présenté.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Partie VIII — Les deux voies de résolution</h2>
+<p>Le citoyen transfrontalier souffrant d'une affection chronique ou d'un handicap reconnu dispose en principe de deux solutions pour subvenir à ses besoins financiers.</p>
+<p><strong>De uitkeringsroute.</strong>La voie de versement. Prestation d'invalidité versée par le pays compétent. Cette voie crée une dépendance vis-à-vis de l'État et dépend de la bonne volonté politique nationale. Le montant moyen des prestations d’invalidité dans l’UE varie entre 800 et 1 800 euros par mois, versées à vie en cas d’invalidité permanente. Les obstacles à l'accès : les délais d'attente ne sont pas reconnus au-delà des frontières ; les procédures exigent un historique d'évaluation au niveau national ; le système européen d'échange fonctionne lentement.</p>
+<p><strong>De fiscale autonomieroute.</strong>La voie de l'autonomie fiscale. Allocations, aides majorées et réductions d'impôts dans le pays de résidence sur la base d'un handicap reconnu. Cette voie coûte moins cher à l'État, favorise la participation économique et préserve l'autonomie du citoyen. L'obstacle à l'accès est identique : le statut médical n'est pas reconnu au-delà des frontières, la catégorie administrative d'un pays ne correspond pas à celle d'un autre, et les systèmes censés activer ces droits ne communiquent pas entre eux.</p>
+<p>La voie de l'autonomie fiscale est, sur la plupart des axes politiques, plus avantageuse que celle des prestations sociales : elle coûte moins cher à l'État, favorise la participation économique, préserve l'autonomie des citoyens et s'inscrit dans les objectifs de mobilité professionnelle de l'UE. Elle reste néanmoins aussi inaccessible que la voie des prestations sociales tant que la conversion du statut médical et la reconnaissance administrative de ce statut au-delà des frontières font défaut. L'obstacle n'est pas financier, mais structurel.</p>
+<p>Il existe toutefois un aspect qui relativise l'analyse précédente : dans ce dossier, la voie de l'autonomie fiscale en Belgique s'est en effet avérée réalisable grâce à un contournement manuel. Un certificat médical délivré directement par le médecin généraliste et joint à la déclaration BNI, sans passer par la KSZ ni la DG HAN, active l’abattement fiscal majoré et se traduit, lors du dépôt de la déclaration, par un solde calculé de 2 669,97 € en faveur de la famille (en attendant l'avis d'imposition définitif). La même procédure est restée totalement bloquée via les chaînes administratives automatisées (8 points contre 9 à la DG HAN, blocage RIV aux Pays-Bas). La distinction est instructive : la voie fiscale n’est pas impossible, mais le citoyen et son médecin traitant doivent contourner manuellement la chaîne administrative numérique pour la faire fonctionner. Et cela a un effet secondaire paradoxal : un revenu familial net plus élevé peut justement menacer les allocations liées au revenu versées par Parentia et la SVB, car le recalcul automatique se répercute sur la capacité de gain fictive.</p>
+<p>Il existe par ailleurs un facteur souvent négligé dans la comparaison entre ces deux voies : l’économie politique du financement. L’Union européenne ne dispose pas de son propre système de sécurité sociale. La sécurité sociale relève de la compétence nationale. Ce que fait l'UE, en revanche, c'est cofinancer, par le biais du Fonds social européen Plus, des programmes axés sur l'intégration sur le marché du travail et l'inclusion sociale. Ces ressources ne sont pas destinées aux prestations sociales elles-mêmes, mais aux mesures d'accompagnement qui les entourent : formations, accompagnement vers l'emploi et projets visant à renforcer la participation sociale.</p>
+<p>Dans l'Union européenne, les prestations sociales sont en grande partie financées par les cotisations : en moyenne, 64 % des allocations de chômage proviennent des cotisations sociales, et non des impôts. En revanche, les avantages fiscaux, tels que les abattements fiscaux accordés aux personnes handicapées, sont presque entièrement financés par les ressources générales nationales. L'UE ne dispose d'aucun instrument permettant de cofinancer les dépenses fiscales des États membres.</p>
+<p>Cela crée une asymétrie de financement. Pour les programmes liés aux prestations sociales, un État membre peut solliciter un cofinancement de l'UE. Ce n'est pas le cas pour les avantages fiscaux. Les États membres sont donc davantage incités financièrement à renforcer la voie des prestations sociales plutôt que celle des avantages fiscaux, quelle que soit la voie la plus avantageuse pour le citoyen.</p>
+<p>La voie fiscale coûte moins cher à l'État, mais celui-ci ne bénéficie d'aucun cofinancement européen à ce titre. La voie des prestations sociales coûte plus cher à l'État, mais une partie des coûts liés à leur mise en œuvre peut être couverte par des fonds européens. L'économie politique du financement influence donc le choix politique, indépendamment de la question de savoir quelle voie est la plus efficace pour le citoyen.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Partie IX — Les trois solutions en matière d'infrastructures</h2>
+<p>Trois éléments concrets permettent de corriger directement les erreurs d'architecture. Ils peuvent être mis en œuvre séparément, mais c'est en les combinant qu'ils déploient pleinement leur effet.</p>
+<p><strong>Bouwsteen 1 — Het inschrijvingsmoment als synchronisatiepunt.</strong>Élément constitutif n° 1 — Le moment de l'inscription comme point de synchronisation. Lorsqu’un citoyen de l’UE se désinscrit officiellement dans le pays A et s’inscrit dans le pays B, cela déclenche un transfert numérique unique et autorisé des données administratives pertinentes : parcours professionnel, statuts médicaux reconnus, droits en cours et situation familiale. L’infrastructure technique existe : le système européen d’identification numérique en constitue la base, les registres nationaux de la population en sont les points de déclenchement, et le système européen d’échange de données en matière de sécurité sociale en assure la capacité. Ce qui manque, c’est la décision politique établissant que l’acte d’inscription constitue le déclencheur juridique de cette synchronisation, ainsi que l’obligation pour le pays d’origine de fournir les données dans un délai fixé.</p>
+<p><strong>Bouwsteen 2 — Het Europees Medisch Statusdocument.</strong>Élément constitutif n° 2 — Le document européen sur l'état de santé. Un document numérique normalisé qui rend lisible, au-delà des frontières, l'état fonctionnel d'un citoyen. Il n’enregistre pas le diagnostic — la maladie — mais la limitation fonctionnelle : ce que la personne est capable de faire et ce qu’elle ne peut pas faire, quel pourcentage d’incapacité de travail est reconnu, quel pays a officiellement établi cette reconnaissance et à quelle date. Il s'appuie sur la Classification internationale du fonctionnement, du handicap et de la santé de l'Organisation mondiale de la santé, qui offre un cadre linguistique universel déjà utilisé par 29 pays européens dans le domaine de la médecine de réadaptation et des statistiques de santé. Chaque autorité nationale publie une grille de conversion : une correspondance publiée entre les scores internationaux et ses propres catégories administratives. Lorsqu’un citoyen muni d’un document attestant de son statut dépose une demande auprès d’une autorité étrangère, le système convertit automatiquement son score en catégorie nationale. Le citoyen n’est évalué qu’une seule fois. La conversion est automatique. Aucun nouvel examen n’est nécessaire, sauf en cas de changement de son état de santé.</p>
+<p><strong>Bouwsteen 3 — De automatische fiscale route-activering.</strong>Élément constitutif n° 3 — L'activation automatique de la procédure fiscale. Lorsque le document de statut enregistre une restriction reconnue et que le document d'inscription confirme la situation transfrontalière du citoyen, le système active automatiquement les instruments fiscaux disponibles dans le pays de résidence. Non pas via une demande manuelle, mais via une règle de décision automatique fondée sur des données de statut lisibles. La logique de décision fonctionne comme suit : le score et le statut d’inscription sont comparés à un tableau d’activation publié au niveau national. Aux Pays-Bas, cela déclenche automatiquement : l’ajustement du revenu de référence pour le calcul des allocations, une aide majorée pour handicap reconnu, ainsi qu’un calcul du droit à l’aide aux soins, à l’aide au logement et au budget lié aux enfants sur la base du revenu corrigé, y compris les composantes étrangères. En Belgique, cela déclenche automatiquement : la déduction fiscale pour les personnes en situation de handicap, le minimum vital majoré en cas d’incapacité de travail reconnue, ainsi qu’une notification au service compétent indiquant que le citoyen peut avoir droit à des allocations complémentaires.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Partie X — La question des profiteurs</h2>
+<p>La mise en place d'un système interconnecté soulève des questions quant à sa résistance à la fraude. Une analyse montre que le système actuel, composé de silos isolés, n'empêche pas les abus, mais ne fait que compliquer leur détection. Les doubles versements dans deux pays sont aujourd’hui techniquement possibles, car le pays A ignore ce que le pays B octroie, et vice versa. Le système européen d'échange de données vise à remédier à cette situation, mais son utilisation n'est pas rendue obligatoire. Un système interconnecté doté de données de statut lisibles est plus difficile à détourner qu'un système de silos, et ce pour trois raisons concrètes.</p>
+<p>Premièrement : un document international attestant du statut d'une personne repose sur des scores issus d'évaluations médicales validées par des organismes reconnus. La simulation d’un score nécessite la coopération active d’un organisme d’évaluation, ce qui transfère la fraude du citoyen vers l’institution — et la rend ainsi détectable et passible de sanctions.</p>
+<p>Deuxièmement : les données d'inscription sont reliées aux registres officiels de la population et ne peuvent pas être modifiées par le citoyen lui-même ; une fausse inscription nécessite la collaboration active de la commune chargée de l'enregistrement.</p>
+<p>Troisièmement : l'activation fiscale automatique compare les données de statut avec le tableau d'activation du pays de résidence ; chaque activation est enregistrée et peut être consultée par les deux pays, ce qui permet de détecter immédiatement toute double activation.</p>
+<p>Un système transparent et interconnecté est, de par sa structure, plus résistant à la fraude qu'un système composé de silos nationaux isolés. La simplification pour le citoyen et la protection contre les abus ne s'excluent pas mutuellement : elles se renforcent l'une l'autre.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Partie XI — Les deux voies : vitesse et portée</h2>
+<p>Dans la pratique, les citoyens transfrontaliers qui rencontrent des difficultés en matière de coordination de la sécurité sociale ont deux voies à leur disposition : la voie juridique et la voie structurelle.</p>
+<p><strong>De juridische weg — individueel, traag, zonder systeemeffect.</strong>La voie judiciaire — individuelle, lente, sans effet systémique. Le réseau informel de médiation touche chaque année plusieurs milliers de citoyens. Une procédure devant un tribunal national dure de 12 à 36 mois. Une procédure préjudicielle devant la Cour de justice dure de 16 à 22 mois. Chaque arrêt ne s'applique qu'à un seul citoyen. Le système ne change pas pour les millions d'autres citoyens transfrontaliers qui sont confrontés au même problème mais qui n'engagent pas de procédure.</p>
+<p><strong>De structurele weg — collectief, eenmalig, universeel.</strong>La voie structurelle — collective, ponctuelle, universelle. Une modification ciblée du règlement européen de coordination s'applique à tous les travailleurs transfrontaliers dès le jour de son entrée en vigueur. Une fois mis en place, un document de statut international élimine définitivement et automatiquement la nécessité d’une nouvelle évaluation pour chaque nouveau citoyen qui travaille à l’étranger. L’activation automatique de la procédure fiscale s’applique à tout citoyen titulaire d’un document de statut et inscrit dans un pays de résidence, sans qu’il ait à connaître, revendiquer ou justifier son droit.</p>
+<p>Un processus législatif européen visant à modifier le règlement de coordination dure en moyenne quatre à six ans. Si un ensemble de réformes entre en vigueur en 2030, il concernera, dès sa première année complète d'application, davantage de citoyens que la voie judiciaire ne l'aurait fait en trente ans. Et ce, chaque année par la suite, automatiquement, pour chaque nouveau citoyen qui franchit la frontière.</p>
+<p>La voie judiciaire apporte des solutions individuelles et ne change rien sur le plan structurel. La voie structurelle, quant à elle, modifie le système pour tout le monde en même temps. Chaque année de retard dans la voie structurelle prive des dizaines de milliers de citoyens de l'accès à des droits dont ils bénéficient déjà légalement.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Partie XII — La déclaration finale personnelle</h2>
+<p>C'est un fait objectif qu'un parcours de rétablissement médical n'est pas compatible avec la conduite d'une procédure institutionnelle multiple. Le fait qu'un citoyen en phase de rétablissement physique doive rassembler ces éléments de preuve montre bien quelles sont les priorités du système actuel. Beaucoup abandonnent ces procédures prématurément, face à l'ampleur des obstacles administratifs.</p>
+<p>Le premier réflexe est toujours de résoudre son propre problème individuel. Cependant, l’enregistrement systématique des chronologies a révélé un schéma structurel qui dépasse le cas individuel. Ce mécanisme touche toutes les personnes qui sortent de la norme. Pour ceux qui s'inscrivent dans la norme, le système fonctionne de manière invisible et sans heurts. Cela ne prouve pas que le système fonctionne de manière universelle ; cela prouve qu'il a été optimisé pour un profil national spécifique.</p>
+<p>Le démantèlement de ces procédures met à nu l'architecture. Les institutions et les réseaux créés à des fins de protection appliquent des procédures déconnectées des conséquences concrètes. Les mécanismes de contrôle s'appuient sur les paramètres du système, et non sur la réalité curative. On gère des conditions abstraites. Parallèlement, le nombre de situations qui dépassent les catégories binaires de la législation ne cesse d’augmenter. La norme est statique, tandis que la réalité sociale est dynamique.</p>
+<p>Ce dossier a été constitué comme un ensemble concret de données illustrant ce qui stagne structurellement. En tant que Franco-Italien d’origine, né en Belgique et résidant aux Pays-Bas, la théorie d’un espace européen unifié a toujours été mon point de départ. La réalité montre que cette théorie est relative et s'applique principalement à ceux qui s'inscrivent parfaitement dans le moule national. Ceux qui en sont exclus se heurtent aux limites de ce modèle.</p>
+<p>Ce dossier sert de compte rendu objectif pour toute personne se retrouvant dans une situation similaire, et de fondement factuel pour les instances habilitées à revoir l'architecture du système.</p>
+<p>La norme ne bouge pas. Moi, si.</p>
+<a class="pub-top" href="#top" title="↑">↑</a>
+<footer class="pub-footer">
+<p><strong>Audit du système</strong> — Vide de compétence transfrontalier en matière de sécurité sociale<br/>
+  Auteur : Eric Messa · Version mise à jour : 5 oktober 2026, 15:03</p>
+<p><a href="home.html">← Aperçu</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<title>Systeem-Audit — Document 0 — Inleiding en leeswijzer</title>
+<style>
+@media screen { p.marker { display: none; } }
+body { font-family: Aptos, Calibri, sans-serif; font-size: 12pt; line-height: 1.5; margin: 40pt; }
+h1 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 28pt; color: #8b1e1e; margin-top: 0; margin-bottom: 6pt; border-bottom: 3px solid #8b1e1e; padding-bottom: 6pt; }
+h2 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 20pt; color: #8b1e1e; margin-top: 0; margin-bottom: 5pt; border-bottom: 2px solid #8b1e1e; padding-bottom: 4pt; }
+h3 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 16pt; color: #8b1e1e; margin-top: 0; margin-bottom: 4pt;  }
+h4 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 14pt; color: #8b1e1e; margin-top: 10pt; margin-bottom: 3pt; }
+h5 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 13pt; color: #333333; margin-top: 8pt; margin-bottom: 3pt; }
+p { margin: 0 0 8pt 0; text-align: justify; }
+p.subtitel { font-style: italic; font-size: 11pt; color: #555555; margin: -2pt 0 10pt 0; }
+hr { border: 0; border-top: 1px solid #ccc; margin: 15pt 0 10pt 0; }
+i { font-size: 10.5pt; color: #555555; }
+.netwerkregel { font-style: italic; color: #333333; margin-bottom: 6pt; }
+.metadata { margin-bottom: 4pt; display: none; }
+.timeline-entry { margin-bottom: 6pt; text-align: left; }
+.date-title { font-weight: bold; color: #000000; }
+.netwerk { font-style: italic; color: #333333; margin-bottom: 4pt; }
+.meta { margin-bottom: 4pt; }
+.meta strong { color: #8b1e1e; }
+.entry { margin-bottom: 4pt; text-align: left; }
+.datum { font-weight: bold; color: #000000; }
+.titel { font-weight: bold; text-transform: uppercase; }
+.opvolging { font-style: italic; color: #555555; }
+p.lead { font-style: italic; color: #444; margin-bottom: 12pt; }
+p.tijd { font-size: 10pt; color: #888888; font-style: italic; letter-spacing: 1pt; text-transform: uppercase; margin-bottom: 4pt; }
+svg { display: block; width: 100%; height: auto; margin: 8pt 0; }
+svg text { font-family: Aptos, Calibri, sans-serif; }
+.figure { background: #ffffff; border: 1px solid #d8d4cb; padding: 12pt; margin: 14pt 0; }
+.caption { font-size: 10pt; color: #4a5559; margin-top: 8pt; border-top: 1px solid #ece8df; padding-top: 6pt; }
+table { width: 100%; border-collapse: collapse; margin: 10pt 0 18pt; font-size: 10.5pt; }
+th { background: #8b1e1e; color: #ffffff; text-align: left; padding: 7pt 9pt; border: 1px solid #8b1e1e; }
+td { padding: 6pt 9pt; border: 1px solid #d5d0c5; vertical-align: top; background: #ffffff; }
+tr:nth-child(even) td { background: #f4f1f8; }
+.status-g { color: #2e7d32; font-weight: 700; }
+.status-o { color: #e65100; font-weight: 700; }
+.status-r { color: #c62828; font-weight: 700; }
+.actie { background: #ede9f5; border-left: 4px solid #8b1e1e; padding: 10pt 14pt; margin: 14pt 0; font-size: 11pt; }
+.actie strong { color: #8b1e1e; }
+.werkversie { background: #fff8e1; border-left: 4px solid #e6a817; padding: 8pt 12pt; margin-bottom: 16pt; font-size: 10.5pt; color: #665500; }
+.afsluiting { background: #f4f1f8; border-left: 4px solid #8b1e1e; padding: 10pt 14pt; margin: 14pt 0; font-size: 11pt; }
+.actor { margin-bottom: 12pt; padding-bottom: 10pt; border-bottom: 1px solid #e8e4dc; }
+.actor-naam { font-weight: 700; color: #1f2421; }
+.actor-rol { font-weight: 600; color: #8b1e1e; }
+.badge-be { color: #8b1e1e; font-weight: 700; }
+.badge-nl { color: #1a3c6e; font-weight: 700; }
+.badge-mem { color: #c1440e; font-weight: 700; }
+.badge-eu { color: #0d7377; font-weight: 700; }
+.banner-be { background: #f7eded; border-left: 5px solid #8b1e1e; padding: 8pt 12pt; margin: 20pt 0 10pt; }
+.banner-be strong { color: #8b1e1e; font-size: 13pt; }
+.banner-nl { background: #edf2f8; border-left: 5px solid #1a3c6e; padding: 8pt 12pt; margin: 20pt 0 10pt; }
+.banner-nl strong { color: #1a3c6e; font-size: 13pt; }
+.banner-eu { background: #eaf4f4; border-left: 5px solid #0d7377; padding: 8pt 12pt; margin: 20pt 0 10pt; }
+.banner-eu strong { color: #0d7377; font-size: 13pt; }
+.legend-row { display: flex; gap: 12pt; margin-top: 4pt; align-items: baseline; font-size: 10.5pt; }
+.legend-num { display: inline-block; width: 22px; height: 22px; border-radius: 50%; color: #fff; text-align: center; line-height: 22px; font-weight: 700; font-size: 10pt; flex-shrink: 0; }
+.noot { font-size: 9.5pt; color: #666; font-style: italic; margin-top: 20pt; padding-top: 10pt; border-top: 1px solid #ddd; line-height: 1.5; }
+.footnotes p { font-size: 10pt; color: #555; margin-bottom: 6pt; text-align: left; }
+.titelblad { text-align: center; margin-top: 200pt; }
+.titelblad h1 { font-size: 36pt; border: none; padding: 0; margin-bottom: 24pt; color: #8b1e1e; }
+.titelblad .ondertitel { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 18pt; color: #333333; margin-bottom: 60pt; }
+.titelblad .documentaanduiding { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 22pt; color: #8b1e1e; font-weight: bold; margin-bottom: 80pt; }
+.titelblad .auteur { font-size: 14pt; color: #333333; margin-bottom: 4pt; }
+.titelblad .meta-lijn { font-size: 12pt; color: #555555; margin-bottom: 4pt; }
+.inhoudsopgave ul { list-style-type: none; padding-left: 0; }
+.inhoudsopgave li { margin-bottom: 3pt; }
+.gebruikersaanwijzing { margin-top: 0; }
+.gebruikersaanwijzing p { font-style: italic; color: #333333; margin-bottom: 6pt; }
+.contactblok { background: #ffffff; border-left: 4px solid #8b1e1e; padding: 15px 20px; margin-top: 30pt; }
+.contactblok p { margin: 0; font-size: 11pt; }
+.contactblok a { color: #8b1e1e; text-decoration: none; font-weight: bold; }
+
+/* === Document-specifieke extra stijlen (via ) === */
+
+/* === PUBLICATIE-CSS START === */
+
+body {
+    font-family: Aptos, Calibri, sans-serif;
+    font-size: 12pt;
+    line-height: 1.6;
+    margin: 0;
+    padding: 40pt;
+    background: #f6f3ec;
+    color: #2a2a2a;
+}
+
+h1 {
+    font-size: 38pt;
+    color: #1a3c6e;
+    margin: 0 0 6pt;
+    letter-spacing: -0.5pt;
+}
+.ondertitel {
+    font-size: 16pt;
+    color: #4a5560;
+    margin: 0 0 14pt;
+    font-weight: 400;
+}
+.auteur {
+    font-size: 11pt;
+    color: #6b7280;
+    margin: 0 0 30pt;
+    font-style: italic;
+}
+.intro {
+    font-size: 12pt;
+    line-height: 1.7;
+    margin: 0 0 40pt;
+    text-align: justify;
+    color: #3a3f45;
+}
+
+/* === Spectrumbalk === */
+.spectrum {
+    height: 4px;
+    display: flex;
+    margin: 0 0 30pt;
+    border-radius: 2px;
+    overflow: hidden;
+}
+.spectrum span { flex: 1; }
+
+/* === Root index: intro-rijen per taal === */
+.intro-rijen { margin: 0 0 40pt; }
+.intro-rij {
+    display: grid;
+    grid-template-columns: 64pt 1fr;
+    gap: 18pt;
+    align-items: start;
+    padding: 22pt 26pt;
+    background: #ffffff;
+    border-left: 6px solid var(--accent);
+    border-radius: 8px;
+    margin-bottom: 14pt;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    transition: transform .15s, box-shadow .2s;
+}
+.intro-rij:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0,0,0,.08);
+}
+.intro-rij .vlag {
+    font-size: 44pt;
+    line-height: 1;
+    text-align: center;
+    padding-top: 2pt;
+}
+.intro-rij h3 {
+    margin: 0 0 6pt;
+    color: var(--accent);
+    font-size: 19pt;
+    letter-spacing: -0.3pt;
+}
+.intro-rij p {
+    margin: 0 0 10pt;
+    font-size: 11pt;
+    color: #4a5560;
+    line-height: 1.55;
+}
+.intro-rij a.goto {
+    display: inline-block;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 11pt;
+    padding: 4pt 0;
+}
+.intro-rij a.goto:hover { text-decoration: underline; }
+
+/* === A/B-melding (meertalig) === */
+.ab-melding {
+    background: #fdf6e3;
+    border-left: 4pt solid #d4a017;
+    padding: 18pt 22pt;
+    margin: 0 0 30pt;
+    border-radius: 6px;
+}
+.ab-melding h3 {
+    margin: 0 0 12pt;
+    color: #8b6200;
+    font-size: 15pt;
+    border: none;
+    padding: 0;
+}
+.ab-melding p {
+    margin: 0 0 10pt;
+    color: #6b4c00;
+    font-size: 11pt;
+    line-height: 1.6;
+}
+.ab-melding p:last-child { margin-bottom: 0; }
+.ab-melding .vlag-klein {
+    font-size: 14pt;
+    margin-right: 8pt;
+}
+
+/* === EU-joke === */
+.eu-joke {
+    text-align: center;
+    font-size: 11pt;
+    color: #6b7280;
+    font-style: italic;
+    margin: 30pt 0 0;
+    padding: 20pt;
+    border-top: 1px dashed #ddd7c9;
+    border-bottom: 1px dashed #ddd7c9;
+    line-height: 1.6;
+}
+.eu-joke .eu-vlag {
+    font-size: 22pt;
+    display: block;
+    margin-bottom: 6pt;
+}
+
+/* === Documentkaarten (per-taal home) === */
+.doc-lijst { list-style: none; padding: 0; margin: 0; }
+.doc-lijst li {
+    position: relative;
+    margin: 0 0 14pt;
+    padding: 22pt 26pt 22pt 28pt;
+    background: #ffffff;
+    border-left: 6px solid #1a3c6e;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    transition: transform .15s, box-shadow .2s;
+    overflow: hidden;
+}
+.doc-lijst li:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+.doc-lijst .docletter {
+    position: absolute;
+    top: -10pt;
+    right: 14pt;
+    font-size: 96pt;
+    font-weight: 900;
+    line-height: 1;
+    opacity: 0.06;
+    pointer-events: none;
+    user-select: none;
+}
+.doc-lijst a.titel {
+    display: block;
+    font-size: 17pt;
+    font-weight: 700;
+    text-decoration: none;
+    margin: 0 0 6pt;
+    position: relative;
+    z-index: 1;
+}
+.doc-lijst a.titel:hover { text-decoration: underline; }
+.doc-lijst .beschrijving {
+    font-size: 10.5pt;
+    color: #4a5560;
+    margin: 0;
+    line-height: 1.55;
+    position: relative;
+    z-index: 1;
+}
+.doc-lijst .downloads {
+    margin-top: 12pt;
+    font-size: 10pt;
+    position: relative;
+    z-index: 1;
+}
+.doc-lijst .downloads a {
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 16px;
+    padding: 4pt 10pt;
+    border-radius: 4px;
+    transition: background .15s;
+    display: inline-block;
+}
+.doc-lijst .downloads a:hover { text-decoration: none; }
+
+.doc-0 { border-left-color: #8b1e1e; background: #fbf5f5; }
+.doc-0 .docletter { color: #8b1e1e; }
+.doc-0 a.titel { color: #8b1e1e; }
+.doc-0 .downloads a { background: #f6eded; color: #8b1e1e; }
+.doc-0 .downloads a:hover { background: #f0dcdc; }
+
+.doc-a { border-left-color: #7a3e9d; background: #faf6fc; }
+.doc-a .docletter { color: #7a3e9d; }
+.doc-a a.titel { color: #7a3e9d; }
+.doc-a .downloads a { background: #f4f0f7; color: #7a3e9d; }
+.doc-a .downloads a:hover { background: #ebe2f0; }
+
+.doc-b { border-left-color: #1a3c6e; background: #f6f8fb; }
+.doc-b .docletter { color: #1a3c6e; }
+.doc-b a.titel { color: #1a3c6e; }
+.doc-b .downloads a { background: #edf0f4; color: #1a3c6e; }
+.doc-b .downloads a:hover { background: #dde4ed; }
+
+.doc-c { border-left-color: #4a3b6b; background: #f8f6fa; }
+.doc-c .docletter { color: #4a3b6b; }
+.doc-c a.titel { color: #4a3b6b; }
+.doc-c .downloads a { background: #f0eff3; color: #4a3b6b; }
+.doc-c .downloads a:hover { background: #e2dfe9; }
+
+.doc-d { border-left-color: #2e7d32; background: #f5faf5; }
+.doc-d .docletter { color: #2e7d32; }
+.doc-d a.titel { color: #2e7d32; }
+.doc-d .downloads a { background: #eef4ef; color: #2e7d32; }
+.doc-d .downloads a:hover { background: #ddeade; }
+
+/* === A/B-banner (per-taal home) === */
+.pub-ab-banner {
+    background: #fdf6e3;
+    border-left: 4pt solid #d4a017;
+    padding: 12pt 18pt;
+    margin: 0 0 30pt;
+    color: #6b4c00;
+    font-size: 11pt;
+    line-height: 1.6;
+    border-radius: 5px;
+}
+.pub-ab-banner strong { color: #8b6200; }
+
+/* === Footer === */
+.footer {
+    margin-top: 70pt;
+    padding-top: 22pt;
+    border-top: 1px solid #ddd7c9;
+    font-size: 9.5pt;
+    color: #6b7280;
+    text-align: center;
+    line-height: 1.7;
+}
+.footer a { color: #1a3c6e; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+
+/* === Navigatie === */
+.pub-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #ffffff;
+    border-bottom: 2px solid #e2ddd2;
+    padding: 10pt 40pt;
+    margin: -40pt -40pt 20pt -40pt;
+    font-family: Aptos, Calibri, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.pub-nav .links {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.pub-nav a {
+    color: #1a3c6e;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 11pt;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+.pub-nav a:hover { background: #eef2f7; border-color: #e2ddd2; }
+.pub-nav a.actief { background: #1a3c6e; color: #ffffff; }
+.pub-nav a.home { border: 1px solid #e2ddd2; }
+
+.pub-nav .langs {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    font-size: 10pt;
+}
+.pub-nav .langs a {
+    padding: 5pt 10pt;
+    font-weight: 700;
+    border: 1px solid #e2ddd2;
+    background: #ffffff;
+}
+.pub-nav .langs a:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+}
+.pub-nav .langs a.actief {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+}
+.pub-nav .langs a.lang-nl { --accent: #FF6B00; --accent-soft: #fff0e0; color: #FF6B00; }
+.pub-nav .langs a.lang-en { --accent: #012169; --accent-soft: #e6ebf3; color: #012169; }
+.pub-nav .langs a.lang-de { --accent: #DD0000; --accent-soft: #fbe6e6; color: #DD0000; }
+.pub-nav .langs a.lang-fr { --accent: #0055A4; --accent-soft: #e6eef6; color: #0055A4; }
+.pub-nav .langs a.actief.lang-nl,
+.pub-nav .langs a.actief.lang-en,
+.pub-nav .langs a.actief.lang-de,
+.pub-nav .langs a.actief.lang-fr { color: #ffffff; }
+
+.pub-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 200;
+    background: #1a3c6e;
+    color: #fff;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18pt;
+    line-height: 1;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .15s;
+}
+.pub-top:hover { transform: scale(1.1); background: #12294d; }
+.pub-footer {
+    margin-top: 60pt;
+    padding-top: 20pt;
+    border-top: 1px solid #ddd7c9;
+    font-size: 10pt;
+    color: #6b7280;
+    text-align: center;
+}
+.pub-footer a { color: #1a3c6e; text-decoration: none; }
+.pub-footer a:hover { text-decoration: underline; }
+
+/* === PUBLICATIE-CSS END === */
+</style>
+</head>
+<body><a id="top"></a>
+<nav class="pub-nav">
+<div class="links"><a class="home" href="home.html">← Übersicht</a><a class="actief" href="document-0.html">Doc 0 · Einleitung</a><a class="" href="document-c.html">Doc C · Visuell</a><a class="" href="document-d.html">Doc D · Synthese</a></div>
+<div class="langs"><a class="lang-nl" href="../nl/document-0.html">🇳🇱 NL</a><a class="lang-en" href="../en/document-0.html">🇬🇧 EN</a><a class="lang-de actief" href="../de/document-0.html">🇩🇪 DE</a><a class="lang-fr" href="../fr/document-0.html">🇫🇷 FR</a></div>
+</nav>
+
+<div class="titelblad">
+<h1>System-Audit</h1>
+<p class="ondertitel">Grenzüberschreitendes Zuständigkeitsvakuum in der sozialen Sicherheit</p>
+<p class="documentaanduiding">Dokument 0 – Einleitung und Lesehinweise</p>
+<p class="auteur">Autor: Eric Messa</p>
+<p class="meta-lijn">Aktualisiert am: 1. Oktober 2026, 13:02 Uhr</p>
+</div>
+<p class="marker">[[PAGEBREAK]]</p>
+<div class="inhoudsopgave">
+<h2>Inhaltsverzeichnis</h2>
+<p class="marker">[[TOC]]</p>
+</div>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Eine europäische Geschichte</h2>
+<p>Diese Geschichte beginnt nicht an einer Grenze. Sie beginnt mit Liebe und Arbeit.</p>
+<p><sup>*</sup>Ein Mann aus der Lombardei. Er fühlt sich als Lombarde, nicht als Italiener. Eine Frau aus dem Elsass. Sie fühlt sich als Elsässerin, nicht als Französin oder Deutsche. Zwei Grenzfälle. Sie begegnen sich im Elsass. Sie ist Krankenschwester. Er ist Arbeiter. Er wird verletzt, landet im Krankenhaus, und dort beginnt alles. Sie heiraten. Als die Firma, bei der er arbeitet, nach Belgien umzieht, ziehen sie mit. Nicht aus Abenteuerlust. Wegen der Arbeit. Es ist Anfang der siebziger Jahre. Die Europäische Wirtschaftsgemeinschaft zählt sechs Mitgliedstaaten. * Die Freizügigkeit der Arbeitnehmer ist ein Grundsatz auf dem Papier. In der Praxis reist der Arbeiter mit Papierformularen, Wechselkursen und der Hoffnung, dass sich die Systeme miteinander vereinbaren lassen. Sie lassen sich in Belgien nieder.</p>
+<p>Dort kommt ihr Kind zur Welt. In Wilrijk, am 15. September 1981. Es ist ein anderes Europa. Mittlerweile gibt es zehn Mitgliedstaaten; Griechenland ist am 1. Januar desselben Jahres beigetreten. Das Schengener Abkommen gibt es noch nicht. An jeder Grenze gibt es Zollstellen und Passkontrollen. Jedes Land hat seine eigene Währung. Das Europäische Währungssystem von 1979 soll die Wechselkurse etwas zügeln. Die Theorie spricht von europäischer Einigung, doch die Realität besteht aus Stempeln und Warteschlangen. Das Kind wächst in Hoboken auf, in einem Haus, in dem ausschließlich Französisch gesprochen wird. Doch hinter dieser einen Sprache verbergen sich drei Welten: die Welt seines Vaters, die Welt seiner Mutter und die flämische Welt, in der es aufwächst. Das Kind trägt diese Welten in sich, noch bevor es laufen kann. In diesem Moment ist es eins. Ein Körper. Ein Name in einer Akte.</p>
+<p><sup>**</sup><strong>BELG</strong>Mit achtzehn Jahren, im Jahr 1999, zieht er allein nach Berchem. Die Europäische Union zählt damals fünfzehn Mitgliedstaaten. Der Euro ist gerade für den bargeldlosen Zahlungsverkehr eingeführt worden, Schengen ist in das europäische Recht aufgenommen worden und die „Unionsbürgerschaft“ ist inzwischen gesetzlich verankert. ** Die Grenzen zwischen Belgien und den Niederlanden sind offen. Doch die Staatsangehörigkeit ist nach wie vor ein exklusives Privileg. Er entscheidet sich für die vollständige Integration und gibt seine vielfältigen Wurzeln auf. Er will Belgier sein. Voll und ganz. Da es in jenen Jahren noch keine doppelte Staatsangehörigkeit gibt, bedeutet das einen radikalen Schnitt: die italienische Staatsangehörigkeit aufgeben. Die französische Staatsangehörigkeit aufgeben. Alles, was er von zu Hause an Identitätspapieren mitbekommen hat, auslöschen, um eine einzige zurückzubekommen, die er selbst gewählt hat. Er ist der Einzige in seiner Familie, der diese Entscheidung trifft. Seine Schwestern behalten ihre Mischung aus verschiedenen Herkunftsorten bei. Er nicht. Er entscheidet sich für eine. Freiwillig. Mit voller Überzeugung, um sich zu integrieren. Von diesem Moment an steht ein einziges Wort auf seinem Personalausweis: BELGIER.</p>
+<p>Danach zieht er nach Gent. Dort lernt er seine zukünftige Frau kennen. Auf ihrem Personalausweis steht genau dasselbe Wort. Zwei Menschen, eine administrative Staatsangehörigkeit. Im Jahr 2007 heiraten sie. Die Union zählt mittlerweile 27 Mitgliedstaaten. Der Euro ist die Alltagswährung, Schengen ist die Norm, die physische Grenze ist längst verschwunden. Sie wohnen in Sint-Niklaas, später in Waasmunster. Vier Umzüge in Belgien, viermal eine neue Akte, viermal ein neues Amt. Jeder Umzug ist ein Verwaltungsvorgang. Jede neue Gemeinde verlangt eine neue Anmeldung. Mit jedem Umzug wächst die Einheit: von eins auf zwei. Zwei Menschen, zwei Akten, zwei administrative Identitäten, die von nun an gemeinsam den Weg durch die Bürokratie gehen müssen.</p>
+<p><sup>***</sup>Im Jahr 2014 ziehen sie gemeinsam nach Zeeuws-Vlaanderen in den Niederlanden. Europa zählt zu diesem Zeitpunkt 28 Mitgliedstaaten. Die physische Grenze ist weggefallen; man fährt ohne anzuhalten von Belgien in die Niederlande. Doch die administrative Grenze wurde unsichtbar gezogen. Dort kommt es zu den ersten Reibereien. Ihr belgischer Führerschein ist in der gesamten Europäischen Union gültig, der niederländische ebenfalls. Dennoch müssen sie den belgischen abgeben. Die Niederlande lassen nur ein gültiges Dokument pro Person zu. *** Sie geben ihn bei der Gemeinde ab und erhalten ihn nie zurück. Was sie stattdessen erhalten, ist ein niederländisches Dokument mit genau derselben europäischen Gültigkeit. Nur das Ausstellungsland hat sich geändert. Von diesem Moment an tragen sie das Paradoxon in ihrer eigenen Brieftasche mit sich. Einen belgischen Personalausweis für ihre Identität. Einen niederländischen Führerschein für ihre Mobilität, der in den Niederlanden als rechtmäßiger Ausweis dient. In Belgien wird derselbe Führerschein nicht als Ausweis anerkannt; dort gilt ausschließlich der belgische Personalausweis. Zwei Dokumente, zwei Länder, ein Mensch. Ihr Leben verteilt sich auf zwei Staaten: Sie wohnen in dem einen, sind im anderen versichert. Theoretisch gehören sie somit zu beiden Ländern, und ihr Leben sollte sich nahtlos über die Grenze hinweg erstrecken. In der Praxis ist das Verwaltungssystem jedoch so programmiert, dass es jeweils nur ein Land gleichzeitig „lesen“ kann. Sobald die Systeme nicht miteinander kommunizieren, wird man „unlesbar“.</p>
+<p>Im Jahr 2016 wird ihr Sohn geboren. Ein Kind, das in sich trägt, was seine Eltern und Großeltern ihm weitergegeben haben. Die flämischen Wurzeln seiner Mutter. Die Sprachen seiner Großeltern – nicht als Nationalität, sondern als Herkunft, als Klang, als Blut. Und Zeeuws-Vlaams, weil er dort lebt, die Luft atmet und dort Freunde findet. Vier Welten in einem Körper. Vier Herkunftsorte in einem Kind. Jeden Tag überquert er die Grenze. Nicht zur Arbeit, wie seine Eltern, sondern zur Schule. Er wohnt in den Niederlanden, lernt aber in Flandern lesen und schreiben. In der Schule lernt er die Sprache seiner Mutter, aber sein Bett steht in Hulst. Und dort beginnt das Unvermeidliche. Für die Flamen ist er ein Niederländer, der in einem Auto mit gelbem Kennzeichen fährt. Für die Niederländer ist er ein Flame, erkennbar an seinem Akzent. Auf dem Spielplatz stecken ihn die anderen Kinder in die Schublade „Belgier“. Nicht, weil ihn jemand danach gefragt hat. Nicht, weil er eine Entscheidung getroffen hat. Sondern weil die Kinder um ihn herum bereits gelernt haben, dass es Schubladen gibt und dass alles, was davon abweicht, klassifiziert werden muss. Drei Menschen, drei Akten, zwei Länder, eine Familie.</p>
+<p><strong>BELG.</strong>Schließlich erhält auch er eine Plastikkarte, die ihm sagen soll, wer er ist. Darauf steht wieder dieses eine Wort: BELG. Die kleine europäische Flagge in der Ecke ist das Einzige, was von dem größeren Ideal übrig geblieben ist. Der Rest wurde unsichtbar gemacht. Das System erfasst eine Dimension, während das Kind vier in sich trägt.</p>
+<p>So funktioniert der Algorithmus des Staates. Er erkennt keine Familie. Er erkennt keinen Organismus, der sich über zwei Länder hinweg entwickelt hat. Er erkennt ausschließlich einzelne Einheiten in einzelnen Fächern in einzelnen Ländern. Wer nicht in das Fach passt, fällt durch die Maschen.</p>
+<p><strong>BELG.</strong><strong>BELG.</strong>Wir schreiben das Jahr 2025. Die Europäische Union zählt nach dem Austritt des Vereinigten Königreichs 27 Mitgliedstaaten. Die Verwaltungen sind digitalisiert, Datenströme verbinden die Hauptstädte, und theoretisch verspricht dies eine reibungslose Union. Und das Kind von 1981? Es ist mittlerweile vierundvierzig Jahre alt. Es erkrankt schwer und landet im Krankenhaus. Die Folgen der Diabeteserkrankung sind irreversibel: die Amputation von zwei Zehen und der Verlust des Sehvermögens auf einem Auge. Die belgischen Ärzte urteilen eindeutig: Sie dürfen nicht mehr Auto fahren. Er kann und will das auch gar nicht mehr. Die niederländischen Ärzte in seinem Wohnsitzland kennen ihn nicht und dürfen ihn aufgrund der strengen Gesetzgebung bezüglich doppelter Registrierungen nicht einmal kennen. Obwohl der niederländische Führerschein bis zur nächsten Augenuntersuchung physisch noch in seiner Brieftasche steckt – die Niederlande wissen noch nichts davon, da die Datenbank sich schlichtweg weigert, die belgische medizinische Realität zu erfassen –, ist seine grenzüberschreitende Mobilität faktisch vorbei. Bald, wenn dieses Dokument unweigerlich abläuft, wird das System die einzige Karte löschen, die ihm in den Niederlanden noch eine administrative Existenz verlieh. Was bleibt, ist der belgische Personalausweis. Ein Wort: BELGIER. Der Mann, der sein ganzes Leben lang über Grenzen hinweg lebte, der seine italienische und französische Identität freiwillig aufgab, um Belgier zu werden, aber die Welt seines Vaters und seiner Mutter nie auslöschen konnte, wird am Ende seiner Reise gnadenlos auf ein einziges Land reduziert. Das System hat ihn eingeholt. Der Kreis schließt sich. Er ist wieder ausschließlich Belgier. Und sein Sohn, der vier Welten in sich trägt, ist mit genau demselben Wort in der Datenbank verzeichnet. BELG. Mehr nicht. Eine kleine europäische Flagge in der Ecke.</p>
+<p>Drei Generationen. Drei Personalausweise. Ein Wort. Das System reduziert jeden auf einen einzigen Datenpunkt. Selbst denjenigen, der versucht hat, sich darüber zu erheben.</p>
+<p><sup>****</sup>Es ist nun Herbst 2026. Während er diesen Prüfbericht tippt, fällt eine Träne auf die Tastatur. Nicht aus Selbstmitleid, sondern aus der puren, bleiernen Erschöpfung eines Kampfes gegen die Leere. Die bittere Tragik besteht darin, dass Europa den Fehler inzwischen kennt. Im April 2026 erzielte der europäische Gesetzgeber in Brüssel eine politische Einigung über die lang erwartete Überarbeitung der alten Koordinierungsvorschriften; im Juli 2026 wurde der überarbeitete Text formell verabschiedet. **** Die Mängel werden anerkannt, das Kompetenzvakuum wurde benannt. Doch die Tinte der Politik fließt unendlich viel langsamer als das Blut der Bürger. Die Systeme werden erst um das Jahr 2030 herum tatsächlich angepasst. Bis dahin ist der Grenzgänger aus Fleisch und Blut der einzige verbliebene Puffer für die versagenden staatlichen Systeme.</p>
+<p>Und selbst dann, im Jahr 2030, sind diese neuen Vorschriften nur ein technologisches Pflaster auf einer viel tieferen institutionellen Wunde. Solange die Nationalstaaten krampfhaft an ihren eigenen geschlossenen Schaltern festhalten, bleibt der Grenzgänger im Kern der unbeabsichtigte Fehler einer halbfertigen Konzeption.</p>
+<p>Genau das wird in diesem Dossier untersucht. Nicht die Staatsangehörigkeit als rechtlicher Status, sondern die Herkunft als menschliche Realität. Und die Frage, warum ein System, das sich selbst als europäisch bezeichnet, die europäische Realität seiner eigenen Bürger auf ein eindimensionales Feld auf einem Personalausweis reduziert.</p>
+<p>Die Geschichte beginnt hier. Die Fakten sind in Dokument B aufgeführt.</p>
+<hr/>
+<div class="footnotes">
+<p><strong>*</strong> Verordening (EEG) nr. 1408/71 van de Raad van 14 juni 1971 betreffende de toepassing van de socialezekerheidsstelsels op werknemers en zelfstandigen en hun gezinsleden die zich binnen de Gemeenschap verplaatsen. Deze verordening verving de oudere Verordeningen nr. 3 en nr. 4 uit 1958 en trad in werking op 1 oktober 1972.</p>
+<p><strong>**</strong> Met het Verdrag van Maastricht (getekend in 1992, in werking getreden eind 1993) werd het "Burgerschap van de Europese Unie" formeel ingevoerd. Elke persoon die de nationaliteit van een lidstaat bezit, is automatisch ook burger van de Unie, met het recht om vrij te reizen en te verblijven. Toch blijft de nationale administratieve uitvoering in de praktijk dominant over dit Europese basisrecht.</p>
+<p><strong>***</strong> Conform de Europese Rijbewijsrichtlijn (2006/126/EG) is er een geharmoniseerd Europees model, maar blijft het beheer strikt gekoppeld aan het territorialiteitsbeginsel van de lidstaat waar men de "normale verblijfplaats" heeft. Dit dwingt grensarbeiders om hun uitgevende land te veranderen na een verhuizing, ondanks de Europese status van het document.</p>
+<p><strong>****</strong> In april 2026 werd na jarenlange triloog-onderhandelingen een voorlopig politiek akkoord bereikt over het 'Labour Mobility Package' (herziening van Verordening 883/2004 en 987/2009); in juli 2026 volgde de formele aanname. De wetgever erkent hierin de institutionele leemtes voor grensarbeiders, maar door de benodigde IT-aanpassingen worden de structurele oplossingen pas tegen 2030 operationeel afdwingbaar.</p>
+</div>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Warum dieses Projekt?</h2>
+<p>Dieses Projekt dokumentiert, was passiert, wenn jemand zwischen zwei nationalen Systemen durchfällt. Ein Fallbeispiel, bis ins Detail dokumentiert: ein Grenzgänger, der in den Niederlanden wohnt und in Belgien arbeitete und der aufgrund eines Zusammentreffens medizinischer und administrativer Umstände zwischen zwei Sozialversicherungssystemen feststeckt, die sich weigern, die Daten des jeweils anderen zu lesen.</p>
+<p>Es handelt sich weder um ein Plädoyer noch um eine Anklage. Es ist eine empirische Untersuchung. Die zugrunde liegende Frage ist einfach: Wie kann es sein, dass ein Bürger, der in zwei Ländern gleichzeitig lebt, von beiden Ländern administrativ unsichtbar gemacht wird?</p>
+<p>Die Antwort liegt weder bei einer einzigen Stelle noch bei einem einzigen Fehler. Sie liegt in der Architektur des Systems selbst. Die nationalen Verwaltungssysteme basieren auf einer binären Logik, die keinen Spielraum für einen Bürger lässt, der gleichzeitig in zwei Systemen erfasst ist. Wer nicht in das eine Fach passt, passt auch nicht in das andere. Und ein drittes Fach gibt es nicht.</p>
+<h2>Was dieses Projekt nicht ist</h2>
+<p>Keine Beschwerde. Keine Anschuldigung gegen Einzelpersonen. Keine persönliche Geschichte. Die Dokumente beschreiben ein System, nicht die Menschen, die darin arbeiten. Die meisten Personen, die in dieser Akte auftauchen, verrichten ihre Arbeit im Rahmen der ihnen vorgegebenen Regeln. Das Problem ist nicht, dass sie böswillig sind. Das Problem ist, dass das System keinen Platz für diejenigen bietet, die nicht in das Standardprofil passen.</p>
+<h2>Die fünf Dokumente</h2>
+<p>Jedes Dokument ist für sich allein lesbar. Jedes beleuchtet denselben Stoff aus einem anderen Blickwinkel.</p>
+<h3>Dokument A – Die narrative Prüfung</h3>
+<p>Erzählt die Geschichte der Organisationen, die gemeinsam das System bilden. Was sie tun, warum es schiefgeht, wie sich das auf das nächste Glied auswirkt. Für alle, die das Gesamtbild verstehen wollen, ohne die zugrunde liegenden Daten durchzugehen.</p>
+<h3>Dokument B – Die Datenmatrix</h3>
+<p>Enthält alle Fakten: Daten, Referenznummern, Korrespondenz, Zeitachsen. Die Grundlage, auf der die anderen Dokumente aufbauen. Für alle, die überprüfen möchten, was genau geschehen ist.</p>
+<h3>Dokument C – Die visuelle Architektur</h3>
+<p>Zeigt die Strukturen, Netzwerke und Datenströme auf, die dem Versagen zugrunde liegen. Schemata und Mechanismen werden sichtbar gemacht – was im Text verborgen bleibt. Für alle, die verstehen wollen, warum die Fakten zu diesen Schlussfolgerungen führen.</p>
+<h3>Dokument D – Die Synthese</h3>
+<p>Führt die Muster zusammen, die sich aus dem Material herauskristallisieren. Welche Paradoxien tauchen immer wieder auf, welche Bruchlinien sind systemisch, welche Rolle spielt die Europäische Union? Für alle, die eine Gesamtbetrachtung wünschen.</p>
+<h2>So werden sie verwendet</h2>
+<p>Fang dort an, wo du anfängst. Jedes Dokument steht für sich allein.</p>
+<p>Wer nur die Geschichte lesen möchte: Dokument A. Wer die Fakten wissen möchte: Dokument B. Wer sich einen visuellen Überblick verschaffen möchte: Dokument C. Wer die Schlussfolgerung lesen möchte: Dokument D.</p>
+<p>Wer alles lesen möchte, beginnt mit Dokument 0, geht dann zu Dokument A, anschließend zu Dokument B für die zugrunde liegenden Fakten, dann zu Dokument C für die Architektur und schließt mit Dokument D ab.</p>
+<h2>Für wen</h2>
+<p>Für alle, die verstehen wollen, wie ein modernes Sozialsystem an seinen eigenen Grenzen scheitert. Politiker, Juristen, Wissenschaftler, Journalisten, Verwaltungsbeamte und die Grenzgänger, die dieselben Erfahrungen machen.</p>
+<p>Das Material ist öffentlich zugänglich und darf frei verwendet werden. Wer daraus zitiert, muss Dokument B als Quelle der Fakten angeben.</p>
+<h2>Quelle und Überprüfung</h2>
+<p>Alle Angaben in diesem Projekt basieren auf Originalkorrespondenz, medizinischen Berichten, Referenznummern und Protokolldateien. Wenn etwas nicht überprüfbar ist, wird dies ausdrücklich erwähnt. Wenn etwas unklar bleibt, wird dies als unklar vermerkt und nicht als Vermutung dargestellt.</p>
+<p>Die Fakten sind in Dokument B festgehalten. Die anderen Dokumente basieren darauf und stützen sich auf dieselbe Quelle.</p>
+<div class="contactblok">
+<p><a href="mailto:systeemaudit@gmail.com">systeemaudit@gmail.com</a>Wer die zugrunde liegenden Belege einsehen, die gesamte Korrespondenz einsehen oder auf das Quellenmaterial zurückgreifen möchte, kann sich unter systeemaudit@gmail.com an uns wenden.</p>
+</div>
+<a class="pub-top" href="#top" title="↑">↑</a>
+<footer class="pub-footer">
+<p><strong>System-Audit</strong> — Grenzüberschreitendes Kompetenzvakuum in der sozialen Sicherheit<br/>
+  Auteur : Eric Messa · Version mise à jour : 5 oktober 2026, 15:03</p>
+<p><a href="home.html">← Übersicht</a></p>
+</footer>
+</body>
+</html>

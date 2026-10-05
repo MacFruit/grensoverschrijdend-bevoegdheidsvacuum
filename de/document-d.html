@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<title>Systeem-Audit — Document D — De synthese</title>
+<style>
+@media screen { p.marker { display: none; } }
+body { font-family: Aptos, Calibri, sans-serif; font-size: 12pt; line-height: 1.5; margin: 40pt; }
+h1 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 28pt; color: #2e7d32; margin-top: 0; margin-bottom: 6pt; border-bottom: 3px solid #2e7d32; padding-bottom: 6pt; }
+h2 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 20pt; color: #2e7d32; margin-top: 0; margin-bottom: 5pt; border-bottom: 2px solid #2e7d32; padding-bottom: 4pt; }
+h3 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 16pt; color: #2e7d32; margin-top: 0; margin-bottom: 4pt;  }
+h4 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 14pt; color: #2e7d32; margin-top: 10pt; margin-bottom: 3pt; }
+h5 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 13pt; color: #333333; margin-top: 8pt; margin-bottom: 3pt; }
+p { margin: 0 0 8pt 0; text-align: justify; }
+p.subtitel { font-style: italic; font-size: 11pt; color: #555555; margin: -2pt 0 10pt 0; }
+hr { border: 0; border-top: 1px solid #ccc; margin: 15pt 0 10pt 0; }
+i { font-size: 10.5pt; color: #555555; }
+.netwerkregel { font-style: italic; color: #333333; margin-bottom: 6pt; }
+.metadata { margin-bottom: 4pt; display: none; }
+.timeline-entry { margin-bottom: 6pt; text-align: left; }
+.date-title { font-weight: bold; color: #000000; }
+.netwerk { font-style: italic; color: #333333; margin-bottom: 4pt; }
+.meta { margin-bottom: 4pt; }
+.meta strong { color: #2e7d32; }
+.entry { margin-bottom: 4pt; text-align: left; }
+.datum { font-weight: bold; color: #000000; }
+.titel { font-weight: bold; text-transform: uppercase; }
+.opvolging { font-style: italic; color: #555555; }
+p.lead { font-style: italic; color: #444; margin-bottom: 12pt; }
+p.tijd { font-size: 10pt; color: #888888; font-style: italic; letter-spacing: 1pt; text-transform: uppercase; margin-bottom: 4pt; }
+svg { display: block; width: 100%; height: auto; margin: 8pt 0; }
+svg text { font-family: Aptos, Calibri, sans-serif; }
+.figure { background: #ffffff; border: 1px solid #d8d4cb; padding: 12pt; margin: 14pt 0; }
+.caption { font-size: 10pt; color: #4a5559; margin-top: 8pt; border-top: 1px solid #ece8df; padding-top: 6pt; }
+table { width: 100%; border-collapse: collapse; margin: 10pt 0 18pt; font-size: 10.5pt; }
+th { background: #2e7d32; color: #ffffff; text-align: left; padding: 7pt 9pt; border: 1px solid #2e7d32; }
+td { padding: 6pt 9pt; border: 1px solid #d5d0c5; vertical-align: top; background: #ffffff; }
+tr:nth-child(even) td { background: #f4f1f8; }
+.status-g { color: #2e7d32; font-weight: 700; }
+.status-o { color: #e65100; font-weight: 700; }
+.status-r { color: #c62828; font-weight: 700; }
+.actie { background: #ede9f5; border-left: 4px solid #2e7d32; padding: 10pt 14pt; margin: 14pt 0; font-size: 11pt; }
+.actie strong { color: #2e7d32; }
+.werkversie { background: #fff8e1; border-left: 4px solid #e6a817; padding: 8pt 12pt; margin-bottom: 16pt; font-size: 10.5pt; color: #665500; }
+.afsluiting { background: #f4f1f8; border-left: 4px solid #2e7d32; padding: 10pt 14pt; margin: 14pt 0; font-size: 11pt; }
+.actor { margin-bottom: 12pt; padding-bottom: 10pt; border-bottom: 1px solid #e8e4dc; }
+.actor-naam { font-weight: 700; color: #1f2421; }
+.actor-rol { font-weight: 600; color: #2e7d32; }
+.badge-be { color: #8b1e1e; font-weight: 700; }
+.badge-nl { color: #1a3c6e; font-weight: 700; }
+.badge-mem { color: #c1440e; font-weight: 700; }
+.badge-eu { color: #0d7377; font-weight: 700; }
+.banner-be { background: #f7eded; border-left: 5px solid #8b1e1e; padding: 8pt 12pt; margin: 20pt 0 10pt; }
+.banner-be strong { color: #8b1e1e; font-size: 13pt; }
+.banner-nl { background: #edf2f8; border-left: 5px solid #1a3c6e; padding: 8pt 12pt; margin: 20pt 0 10pt; }
+.banner-nl strong { color: #1a3c6e; font-size: 13pt; }
+.banner-eu { background: #eaf4f4; border-left: 5px solid #0d7377; padding: 8pt 12pt; margin: 20pt 0 10pt; }
+.banner-eu strong { color: #0d7377; font-size: 13pt; }
+.legend-row { display: flex; gap: 12pt; margin-top: 4pt; align-items: baseline; font-size: 10.5pt; }
+.legend-num { display: inline-block; width: 22px; height: 22px; border-radius: 50%; color: #fff; text-align: center; line-height: 22px; font-weight: 700; font-size: 10pt; flex-shrink: 0; }
+.noot { font-size: 9.5pt; color: #666; font-style: italic; margin-top: 20pt; padding-top: 10pt; border-top: 1px solid #ddd; line-height: 1.5; }
+.footnotes p { font-size: 10pt; color: #555; margin-bottom: 6pt; text-align: left; }
+.titelblad { text-align: center; margin-top: 200pt; }
+.titelblad h1 { font-size: 36pt; border: none; padding: 0; margin-bottom: 24pt; color: #2e7d32; }
+.titelblad .ondertitel { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 18pt; color: #333333; margin-bottom: 60pt; }
+.titelblad .documentaanduiding { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 22pt; color: #2e7d32; font-weight: bold; margin-bottom: 80pt; }
+.titelblad .auteur { font-size: 14pt; color: #333333; margin-bottom: 4pt; }
+.titelblad .meta-lijn { font-size: 12pt; color: #555555; margin-bottom: 4pt; }
+.inhoudsopgave ul { list-style-type: none; padding-left: 0; }
+.inhoudsopgave li { margin-bottom: 3pt; }
+.gebruikersaanwijzing { margin-top: 0; }
+.gebruikersaanwijzing p { font-style: italic; color: #333333; margin-bottom: 6pt; }
+.contactblok { background: #ffffff; border-left: 4px solid #2e7d32; padding: 15px 20px; margin-top: 30pt; }
+.contactblok p { margin: 0; font-size: 11pt; }
+.contactblok a { color: #2e7d32; text-decoration: none; font-weight: bold; }
+
+/* === Document-specifieke extra stijlen (via ) === */
+
+/* === PUBLICATIE-CSS START === */
+
+body {
+    font-family: Aptos, Calibri, sans-serif;
+    font-size: 12pt;
+    line-height: 1.6;
+    margin: 0;
+    padding: 40pt;
+    background: #f6f3ec;
+    color: #2a2a2a;
+}
+
+h1 {
+    font-size: 38pt;
+    color: #1a3c6e;
+    margin: 0 0 6pt;
+    letter-spacing: -0.5pt;
+}
+.ondertitel {
+    font-size: 16pt;
+    color: #4a5560;
+    margin: 0 0 14pt;
+    font-weight: 400;
+}
+.auteur {
+    font-size: 11pt;
+    color: #6b7280;
+    margin: 0 0 30pt;
+    font-style: italic;
+}
+.intro {
+    font-size: 12pt;
+    line-height: 1.7;
+    margin: 0 0 40pt;
+    text-align: justify;
+    color: #3a3f45;
+}
+
+/* === Spectrumbalk === */
+.spectrum {
+    height: 4px;
+    display: flex;
+    margin: 0 0 30pt;
+    border-radius: 2px;
+    overflow: hidden;
+}
+.spectrum span { flex: 1; }
+
+/* === Root index: intro-rijen per taal === */
+.intro-rijen { margin: 0 0 40pt; }
+.intro-rij {
+    display: grid;
+    grid-template-columns: 64pt 1fr;
+    gap: 18pt;
+    align-items: start;
+    padding: 22pt 26pt;
+    background: #ffffff;
+    border-left: 6px solid var(--accent);
+    border-radius: 8px;
+    margin-bottom: 14pt;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    transition: transform .15s, box-shadow .2s;
+}
+.intro-rij:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0,0,0,.08);
+}
+.intro-rij .vlag {
+    font-size: 44pt;
+    line-height: 1;
+    text-align: center;
+    padding-top: 2pt;
+}
+.intro-rij h3 {
+    margin: 0 0 6pt;
+    color: var(--accent);
+    font-size: 19pt;
+    letter-spacing: -0.3pt;
+}
+.intro-rij p {
+    margin: 0 0 10pt;
+    font-size: 11pt;
+    color: #4a5560;
+    line-height: 1.55;
+}
+.intro-rij a.goto {
+    display: inline-block;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 11pt;
+    padding: 4pt 0;
+}
+.intro-rij a.goto:hover { text-decoration: underline; }
+
+/* === A/B-melding (meertalig) === */
+.ab-melding {
+    background: #fdf6e3;
+    border-left: 4pt solid #d4a017;
+    padding: 18pt 22pt;
+    margin: 0 0 30pt;
+    border-radius: 6px;
+}
+.ab-melding h3 {
+    margin: 0 0 12pt;
+    color: #8b6200;
+    font-size: 15pt;
+    border: none;
+    padding: 0;
+}
+.ab-melding p {
+    margin: 0 0 10pt;
+    color: #6b4c00;
+    font-size: 11pt;
+    line-height: 1.6;
+}
+.ab-melding p:last-child { margin-bottom: 0; }
+.ab-melding .vlag-klein {
+    font-size: 14pt;
+    margin-right: 8pt;
+}
+
+/* === EU-joke === */
+.eu-joke {
+    text-align: center;
+    font-size: 11pt;
+    color: #6b7280;
+    font-style: italic;
+    margin: 30pt 0 0;
+    padding: 20pt;
+    border-top: 1px dashed #ddd7c9;
+    border-bottom: 1px dashed #ddd7c9;
+    line-height: 1.6;
+}
+.eu-joke .eu-vlag {
+    font-size: 22pt;
+    display: block;
+    margin-bottom: 6pt;
+}
+
+/* === Documentkaarten (per-taal home) === */
+.doc-lijst { list-style: none; padding: 0; margin: 0; }
+.doc-lijst li {
+    position: relative;
+    margin: 0 0 14pt;
+    padding: 22pt 26pt 22pt 28pt;
+    background: #ffffff;
+    border-left: 6px solid #1a3c6e;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    transition: transform .15s, box-shadow .2s;
+    overflow: hidden;
+}
+.doc-lijst li:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+.doc-lijst .docletter {
+    position: absolute;
+    top: -10pt;
+    right: 14pt;
+    font-size: 96pt;
+    font-weight: 900;
+    line-height: 1;
+    opacity: 0.06;
+    pointer-events: none;
+    user-select: none;
+}
+.doc-lijst a.titel {
+    display: block;
+    font-size: 17pt;
+    font-weight: 700;
+    text-decoration: none;
+    margin: 0 0 6pt;
+    position: relative;
+    z-index: 1;
+}
+.doc-lijst a.titel:hover { text-decoration: underline; }
+.doc-lijst .beschrijving {
+    font-size: 10.5pt;
+    color: #4a5560;
+    margin: 0;
+    line-height: 1.55;
+    position: relative;
+    z-index: 1;
+}
+.doc-lijst .downloads {
+    margin-top: 12pt;
+    font-size: 10pt;
+    position: relative;
+    z-index: 1;
+}
+.doc-lijst .downloads a {
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 16px;
+    padding: 4pt 10pt;
+    border-radius: 4px;
+    transition: background .15s;
+    display: inline-block;
+}
+.doc-lijst .downloads a:hover { text-decoration: none; }
+
+.doc-0 { border-left-color: #8b1e1e; background: #fbf5f5; }
+.doc-0 .docletter { color: #8b1e1e; }
+.doc-0 a.titel { color: #8b1e1e; }
+.doc-0 .downloads a { background: #f6eded; color: #8b1e1e; }
+.doc-0 .downloads a:hover { background: #f0dcdc; }
+
+.doc-a { border-left-color: #7a3e9d; background: #faf6fc; }
+.doc-a .docletter { color: #7a3e9d; }
+.doc-a a.titel { color: #7a3e9d; }
+.doc-a .downloads a { background: #f4f0f7; color: #7a3e9d; }
+.doc-a .downloads a:hover { background: #ebe2f0; }
+
+.doc-b { border-left-color: #1a3c6e; background: #f6f8fb; }
+.doc-b .docletter { color: #1a3c6e; }
+.doc-b a.titel { color: #1a3c6e; }
+.doc-b .downloads a { background: #edf0f4; color: #1a3c6e; }
+.doc-b .downloads a:hover { background: #dde4ed; }
+
+.doc-c { border-left-color: #4a3b6b; background: #f8f6fa; }
+.doc-c .docletter { color: #4a3b6b; }
+.doc-c a.titel { color: #4a3b6b; }
+.doc-c .downloads a { background: #f0eff3; color: #4a3b6b; }
+.doc-c .downloads a:hover { background: #e2dfe9; }
+
+.doc-d { border-left-color: #2e7d32; background: #f5faf5; }
+.doc-d .docletter { color: #2e7d32; }
+.doc-d a.titel { color: #2e7d32; }
+.doc-d .downloads a { background: #eef4ef; color: #2e7d32; }
+.doc-d .downloads a:hover { background: #ddeade; }
+
+/* === A/B-banner (per-taal home) === */
+.pub-ab-banner {
+    background: #fdf6e3;
+    border-left: 4pt solid #d4a017;
+    padding: 12pt 18pt;
+    margin: 0 0 30pt;
+    color: #6b4c00;
+    font-size: 11pt;
+    line-height: 1.6;
+    border-radius: 5px;
+}
+.pub-ab-banner strong { color: #8b6200; }
+
+/* === Footer === */
+.footer {
+    margin-top: 70pt;
+    padding-top: 22pt;
+    border-top: 1px solid #ddd7c9;
+    font-size: 9.5pt;
+    color: #6b7280;
+    text-align: center;
+    line-height: 1.7;
+}
+.footer a { color: #1a3c6e; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+
+/* === Navigatie === */
+.pub-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #ffffff;
+    border-bottom: 2px solid #e2ddd2;
+    padding: 10pt 40pt;
+    margin: -40pt -40pt 20pt -40pt;
+    font-family: Aptos, Calibri, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.pub-nav .links {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.pub-nav a {
+    color: #1a3c6e;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 11pt;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+.pub-nav a:hover { background: #eef2f7; border-color: #e2ddd2; }
+.pub-nav a.actief { background: #1a3c6e; color: #ffffff; }
+.pub-nav a.home { border: 1px solid #e2ddd2; }
+
+.pub-nav .langs {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    font-size: 10pt;
+}
+.pub-nav .langs a {
+    padding: 5pt 10pt;
+    font-weight: 700;
+    border: 1px solid #e2ddd2;
+    background: #ffffff;
+}
+.pub-nav .langs a:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+}
+.pub-nav .langs a.actief {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+}
+.pub-nav .langs a.lang-nl { --accent: #FF6B00; --accent-soft: #fff0e0; color: #FF6B00; }
+.pub-nav .langs a.lang-en { --accent: #012169; --accent-soft: #e6ebf3; color: #012169; }
+.pub-nav .langs a.lang-de { --accent: #DD0000; --accent-soft: #fbe6e6; color: #DD0000; }
+.pub-nav .langs a.lang-fr { --accent: #0055A4; --accent-soft: #e6eef6; color: #0055A4; }
+.pub-nav .langs a.actief.lang-nl,
+.pub-nav .langs a.actief.lang-en,
+.pub-nav .langs a.actief.lang-de,
+.pub-nav .langs a.actief.lang-fr { color: #ffffff; }
+
+.pub-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 200;
+    background: #1a3c6e;
+    color: #fff;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18pt;
+    line-height: 1;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .15s;
+}
+.pub-top:hover { transform: scale(1.1); background: #12294d; }
+.pub-footer {
+    margin-top: 60pt;
+    padding-top: 20pt;
+    border-top: 1px solid #ddd7c9;
+    font-size: 10pt;
+    color: #6b7280;
+    text-align: center;
+}
+.pub-footer a { color: #1a3c6e; text-decoration: none; }
+.pub-footer a:hover { text-decoration: underline; }
+
+/* === PUBLICATIE-CSS END === */
+</style>
+</head>
+<body><a id="top"></a>
+<nav class="pub-nav">
+<div class="links"><a class="home" href="home.html">← Übersicht</a><a class="" href="document-0.html">Doc 0 · Einleitung</a><a class="" href="document-c.html">Doc C · Visuell</a><a class="actief" href="document-d.html">Doc D · Synthese</a></div>
+<div class="langs"><a class="lang-nl" href="../nl/document-d.html">🇳🇱 NL</a><a class="lang-en" href="../en/document-d.html">🇬🇧 EN</a><a class="lang-de actief" href="../de/document-d.html">🇩🇪 DE</a><a class="lang-fr" href="../fr/document-d.html">🇫🇷 FR</a></div>
+</nav>
+
+<div class="titelblad">
+<h1>System-Audit</h1>
+<p class="ondertitel">Grenzüberschreitendes Zuständigkeitsvakuum in der sozialen Sicherheit</p>
+<p class="documentaanduiding">Dokument D – Die Synthese</p>
+<p class="auteur">Autor: Eric Messa</p>
+<p class="meta-lijn">Aktualisiert am: 1. Oktober 2026, 13:02 Uhr</p>
+</div>
+<p class="marker">[[PAGEBREAK]]</p>
+<div class="inhoudsopgave">
+<h2>Inhaltsverzeichnis</h2>
+<p class="marker">[[TOC]]</p>
+</div>
+<p class="marker">[[PAGEBREAK]]</p>
+<div class="gebruikersaanwijzing">
+<p>Dies ist Dokument D – Die Zusammenfassung des System-Audit-Projekts. Es fasst die Muster zusammen, die sich aus dem Material herauskristallisieren: die Paradoxien, die Bruchlinien, die Rolle der Europäischen Union.</p>
+<p>Betrachten Sie es als Schlussfolgerung, nicht als Zusammenfassung.</p>
+</div>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Teil I – Das Wesentliche auf einen Blick</h2>
+<p>Das System ist nicht kaputt. Es funktioniert genau so, wie es konzipiert wurde. Es wurde für Menschen konzipiert, die in eine einzige Kategorie passen: die im selben Land wohnen, arbeiten und versichert sind. Wer in zwei Ländern gleichzeitig lebt, passt in keine der beiden Kategorien. Und das System kennt keine dritte Kategorie. Das System hat eine dritte Kategorie nicht einmal in Betracht gezogen.</p>
+<p>Der Kern dieses Dossiers ist nicht, dass es viele Stellen gibt. Der Kern ist, dass es einen einzigen Mechanismus gibt, der sich wiederholt. Dieser Mechanismus umfasst sechs Fragen, und auf jede Frage gibt das System dieselbe Antwort.</p>
+<p><strong>Waar speelt dit?</strong>Wo tritt dieses Problem auf? Überall dort, wo eine nationale Regelung auf eine grenzüberschreitende Situation angewendet wird. Die Regelung geht davon aus, dass jemand in einem Land wohnt, in einem Land arbeitet und in einem Land versichert ist. Wer gleichzeitig in zwei Ländern lebt, passt nicht in diese Annahme. Das System betrachtet ihn nicht als Ausnahme, die eine Lösung erfordert. Es betrachtet ihn als Fehler, der eine Ablehnung erfordert.</p>
+<p><strong>Wat is het probleem?</strong>Wo liegt das Problem? Das Problem ist nicht, dass der Bürger die Voraussetzungen nicht erfüllt. Das Problem ist, dass die Voraussetzungen nicht für jemanden ausgelegt sind, der die Anforderungen in zwei Ländern gleichzeitig erfüllt. Jedes Land verlangt, dass man die Voraussetzungen auf seiner Seite erfüllt. Der Bürger erfüllt die Voraussetzungen auf beiden Seiten, aber nicht im selben Land. Und somit erfüllt er keine der beiden.</p>
+<p><strong>Wie is verantwoordelijk?</strong>Wer ist verantwortlich? Niemand – und somit jeder. Jede Behörde ist nur für ihren eigenen Bereich zuständig. Jede Behörde verweist auf die andere. Und keine einzige Behörde hat die Befugnis, die andere dazu zu zwingen.</p>
+<p><strong>Wanneer lost het zich op?</strong>Wann wird sich das Problem lösen? Nach Abschluss des laufenden Verfahrens. Aber das laufende Verfahren gerät gerade deshalb ins Stocken, weil jede Instanz auf eine andere wartet. Der Kreis schließt sich, und der Bürger steckt mittendrin.</p>
+<p><strong>Waarom duurt het zo lang?</strong>Warum dauert das so lange? Weil jede Ebene des Systems einen guten Grund hat, nicht einzugreifen. Keine Befugnis, keine Zeit, keine Kapazitäten, keine politische Priorität. Jede Ebene hat ihre eigene Logik, und diese Logiken verstärken sich gegenseitig, anstatt sich gegenseitig zu korrigieren.</p>
+<p><strong>Hoe komt het goed?</strong>Wie lässt sich das Problem lösen? Über die Gerichte. Aber ein Gericht klärt nur einen Einzelfall, nicht das gesamte System. Und der Zugang zu den Gerichten ist nur denjenigen vorbehalten, die es sich leisten können.</p>
+<p>Die Fakten, auf denen diese sechs Antworten beruhen, sind in Dokument A und Dokument B aufgeführt. Die zugrunde liegende Struktur ist in Dokument C beschrieben. Wer die Fakten liest, erkennt die Ablehnungen. Wer den Mechanismus versteht, erkennt, warum die Ablehnungen unvermeidlich sind.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Teil II – Die beiden Welten und ihre Knotenpunkte</h2>
+<p>Es gibt zwei Welten, die sich niemals begegnen: die Welt des Körpers und die Welt des Papiers.</p>
+<p>Die Welt des Körpers kann nicht warten. Eine Infektion wartet nicht. Eine Amputation wartet nicht. Ein Sehverlust wartet nicht. Der Körper hat keine Warteliste, die durch ein System verlängert werden kann. Die Welt des Körpers kennt nur einen Maßstab: heute, gestern, morgen. Und die Uhr steht niemals still.</p>
+<p>In der Welt des Papiers läuft es anders. Dort gilt eine Frist von dreißig Tagen. Dort gilt ein Zeitraum von zwölf Monaten, auf den jemand zurückblicken können muss. Dort gilt eine Einspruchsfrist von drei Monaten. Dort gilt eine Wartezeit von einhundertachtzig Tagen. Dort gilt eine Wartezeit von einhundertvier Wochen. Die Welt der Papierdokumente kennt nur einen Maßstab: das System selbst. Und das System steht niemals still.</p>
+<p>Zwischen diesen beiden Welten gibt es keine Brücke. Es gibt einen Schalter. Ein Schalter kann geschlossen werden. Ein Schalter kann verlegt werden. Ein Schalter kann von jemandem besetzt sein, der nicht befugt ist. Ein Schalter hat es nicht eilig. Ein Schalter hat keinen Körper.</p>
+<p>Aus dieser Kollision entstehen fünf Verwicklungen, die sich nicht entwirren lassen. Die Fakten zu diesen Verwicklungen sind in Dokument A und Dokument B aufgeführt. Hier sind die Mechanismen beschrieben.</p>
+<p><strong>De eerste knoop: de foutieve registratie.</strong>Der erste Knackpunkt: die fehlerhafte Erfassung. Die Behörde, die als Erste eine Definition festlegt – wer der Bürger ist, welches Recht er beantragt, welchen Status er hat –, speichert diese Definition in einer gemeinsamen Datenbank. Alle anderen Behörden greifen auf diese Datenbank zu. Eine fehlerhafte Definition verbreitet sich automatisch im gesamten System. Und keine der später in der Kette beteiligten Behörden hat die Befugnis, die Quelle zu zwingen, ihren Fehler zu korrigieren. Der Fehler beginnt an einer einzigen Stelle und hört nie auf.</p>
+<p><strong>De tweede knoop: het bewijs dat niet kan worden geleverd.</strong>Der zweite Knackpunkt: der Nachweis, der nicht erbracht werden kann. Das System verlangt einen Nachweis. Der Nachweis muss von einer Stelle erbracht werden, die dazu nicht befugt ist, oder von einer Stelle, die sich weigert, ihn zu erbringen, oder von einer Stelle, die nicht weiß, dass sie ihn erbringen muss. Der Bürger kann den Nachweis nicht selbst erstellen. Die Stelle, die ihn erstellen könnte, ist genau die Stelle, die dies nicht tut. Und die Stelle, die ihn benötigt, wartet weiter.</p>
+<p><strong>De derde knoop: de drempel die verschuift.</strong>Der dritte Knotenpunkt: Die Schwelle, die sich verschiebt. Der Bürger legt den geforderten Nachweis vor. Sobald der Nachweis erbracht ist, verschiebt sich die Schwelle. Es wird eine neue Bedingung hinzugefügt. Die alte Bedingung war nicht die eigentliche Bedingung; die neue Bedingung ist die eigentliche Bedingung. Der Bürger legt den neuen Nachweis vor. Die Schwelle verschiebt sich erneut. Der Bürger ist nie fertig, denn „fertig“ ist keine Kategorie in diesem System.</p>
+<p><strong>De vierde knoop: het systeem dat zichzelf blokkeert.</strong>Der vierte Knackpunkt: das System, das sich selbst blockiert. Die Stelle, die den Fehler korrigieren muss, ist dieselbe Stelle, die den Fehler verursacht hat. Und diese Stelle verfügt über kein internes Verfahren, um ihre eigenen Fehler zu korrigieren. Wenn man eine Korrektur beantragt, verlangt die Behörde das Formular, das sie selbst ausstellen muss. Und die Behörde weigert sich, das Formular auszustellen, da noch keine Entscheidung über den Anspruch vorliegt. Der Kreis schließt sich. Die Behörde ist gleichzeitig das Tor und der Torwächter.</p>
+<p><strong>De vijfde knoop: het systeem dat de schade meet maar niet de oorzaak.</strong>Der fünfte Knackpunkt: Das System misst den Schaden, nicht aber die Ursache. Das System misst, was jemand früher verdient hat. Es misst, was jemand gemäß seiner steuerlichen Vergangenheit verdienen könnte. Aber es misst nicht, was jemand heute tatsächlich erhält. Wenn eine Sozialleistung gesperrt wird, sinkt das tatsächliche Einkommen auf null. Das System erfasst diesen Rückgang nicht. Das System rechnet weiterhin mit dem alten Einkommen. Die Familie lebt unterhalb der Armutsgrenze, wird vom System jedoch als nicht arm erfasst. Die Armut wird von der Verwaltung geschaffen und von derselben Verwaltung geleugnet.</p>
+<p><strong>De blinde vlek.</strong>Der blinde Fleck. Die meisten Menschen sehen das nicht. Wer die Grenze nie überschreitet, merkt nicht, dass die Türen verschlossen sind. Wer in der Mitte des Landes wohnt, hat noch nie an einer der beiden Türen geklopft. Das System funktioniert für ihn. Das System ist unsichtbar und bequem. Das ist kein Beweis dafür, dass das System funktioniert. Das ist ein Beweis dafür, dass das System für ein bestimmtes Profil funktioniert.</p>
+<p>Der blinde Fleck ist nicht nur ein nationales Problem. Er besteht auch zwischen Regionen innerhalb eines Landes. Dieselben Mechanismen, die zwischen zwei Ländern wirken, wirken auch zwischen zwei Regionen, zwischen zwei Kantonen, zwischen zwei Bundesländern. Das Versagen wird sichtbar, sobald man eine Grenze überschreitet – sei es nun eine Landesgrenze oder eine Regionalgrenze. Und wer die Grenze nicht überschreitet, sieht es nicht. Das ist keine Entschuldigung, sondern eine strukturelle Gegebenheit.</p>
+<p><strong>De verwarring tussen reisvrijheid en lidmaatschap.</strong>Die Verwechslung von Reisefreiheit und Mitgliedschaft. Es gibt noch eine weitere Dimension dieses blinden Flecks: die Verwechslung zweier unterschiedlicher Dinge, die die Menschen miteinander verwechseln. Das Recht, sich frei zwischen Ländern zu bewegen, ist etwas anderes als das Recht, in einem Land zu arbeiten und dort Sozialansprüche zu erwerben. Ein Land kann Mitglied der Europäischen Union sein, ohne dass man sich dort frei bewegen kann. Ein Land kann den Euro verwenden, ohne Mitglied der Europäischen Union zu sein. Die Kategorien, die Politiker verwenden – Mitglied der Europäischen Union, Mitglied der Freizügigkeit, Mitglied der Eurozone – stimmen nicht mit der gelebten Realität einer Person überein, die die Grenze überquert.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Teil III – Der Mechanismus des Scheiterns</h2>
+<p>Das System besteht aus vier Ebenen. Jede Ebene hat ihre eigene Logik. Und diese Logiken verstärken sich gegenseitig, anstatt sich gegenseitig zu korrigieren.</p>
+<p><strong>De uitvoerende laag: de logica van de regel.</strong>Die ausführende Ebene: die Logik der Regel. Dazu gehören die Behörden, die Krankenkassen und die Sozialämter. Sie wenden die Regeln an. Die Regeln gelten landesweit. Die Regeln gehen davon aus, dass eine Person in einem Land wohnt, in einem Land arbeitet und in einem Land versichert ist. Wer dieser Annahme nicht entspricht, löst einen Fehler aus. Der Fehler wird nicht als Signal gesehen, dass die Regel angepasst werden muss. Der Fehler wird als Beweis dafür angesehen, dass der Bürger den Anforderungen nicht entspricht. Die ausführende Ebene hat keine Befugnis, die Regel zu ändern. Sie hat lediglich die Befugnis, die Regel anzuwenden. Und die Regel ist, wie sie ist.</p>
+<p><strong>De toezichthoudende laag: de logica van de zelfbeperking.</strong>Die Aufsichtsebene: die Logik der Selbstbeschränkung. Das sind die Kontrolleure, die Aufsichtsbehörden, die Ombudsstellen. Sie erkennen den Fehler. Aber sie haben einen guten Grund, nicht einzugreifen. Ein Aufsichtsbeamter, der seine Befugnisse ausreizt, riskiert, dass seine Entscheidung angefochten wird. Die sicherste Position ist immer die engste Auslegung der eigenen Befugnisse. Der Aufsichtsbeamte greift also nicht ein. Nicht, weil er es nicht will. Sondern weil er es nicht wagt. Und seine Angst ist rational: Das System belohnt Selbstbeschränkung und bestraft Mut.</p>
+<p><strong>De democratische laag: de logica van de tijdschaal.</strong>Die demokratische Ebene: die Logik des Zeitrahmens. Dazu gehören das Parlament, der Ombudsmann und die Ausschüsse. Sie nehmen die Beschwerde entgegen. Doch sie agieren in einem Zeitrahmen, der mit der Dringlichkeit der Krise nicht vereinbar ist. Eine Ausschussdebatte dauert Monate. Eine Gesetzesänderung dauert Jahre. Eine medizinische Krise dauert Tage. Die demokratische Ebene kann das Gesetz ändern, tut dies aber nicht, solange kein politischer Druck besteht. Und es gibt keinen politischen Druck für ein Problem, das ausschließlich Grenzgänger betrifft. Der Zeitrahmen der Demokratie und der Zeitrahmen des Körpers sind grundsätzlich unvereinbar.</p>
+<p><strong>De symbolische laag: de logica van de onmacht.</strong>Die symbolische Ebene: die Logik der Ohnmacht. Das ist das Staatsoberhaupt. Er nimmt die Petition entgegen. Er bestätigt den Empfang. Er leitet sie an den zuständigen Minister weiter. Damit endet die Intervention. Die symbolische Ebene verfügt über keine Exekutivgewalt. Sie ist eine Endstation.</p>
+<p><strong>De cirkel.</strong>Der Kreislauf. Jede Ebene hat einen Grund, nicht einzugreifen. Die ausführende Ebene wendet die Regeln an, aber die Regeln sind nicht für diese Situation ausgelegt. Die Aufsichtsinstanz erkennt den Fehler, darf aber nicht eingreifen. Die demokratische Ebene könnte das Gesetz ändern, tut dies aber nicht, solange kein politischer Druck besteht. Die symbolische Ebene hat keine Macht. Und der Einzige, der übrig bleibt, ist der Richter. Doch der Richter löst nur einen Einzelfall, nicht das gesamte System. Und der Richter ist nur für diejenigen zugänglich, die es sich leisten können.</p>
+<p>Das System ist nicht kaputt. Es funktioniert so, wie es konzipiert wurde. Es wurde für Menschen konzipiert, die in die vorgegebenen Rahmen passen. Wer aus diesen Rahmen fällt, landet zwischen den Rahmen. Und zwischen den Rahmen gibt es kein Sicherheitsnetz. Das ist kein Fehler. So ist es nun einmal konzipiert.</p>
+<p><strong>De rode draad door alle lagen.</strong>Der rote Faden, der sich durch alle Ebenen zieht. In jeder Ebene geschieht dasselbe. Eine Behörde stellt ein Problem fest. Die Behörde stellt fest, dass das Problem nicht in ihren Zuständigkeitsbereich fällt. Die Behörde verweist an eine andere Behörde. Die andere Behörde tut dasselbe. Und vom Bürger wird erwartet, dass er die Verbindung zwischen all diesen Behörden herstellt. Der Bürger ist der einzige Akteur im System, der keine Entscheidungsbefugnis hat, aber dennoch der einzige Akteur ist, der dafür sorgen muss, dass das gesamte System funktioniert.</p>
+<p>Die Fakten zu diesem Mechanismus sind in Dokument A und Dokument B aufgeführt. Dort ist festgehalten, welche Stelle welchen Fehler begangen hat, welches Schreiben wann versandt wurde und welche Entscheidung wann getroffen wurde. Hier wird lediglich das Muster dargestellt.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Teil IV – Die Asymmetrie zwischen physischen und administrativen Grenzen</h2>
+<p>Die europäische Integration basiert auf der Aufhebung physischer Grenzen. Im Jahr 1944 unterzeichneten Belgien, die Niederlande und Luxemburg eine Zollunion. Im Jahr 1951 wurde die Europäische Gemeinschaft für Kohle und Stahl gegründet. Im Jahr 1957 folgte die Europäische Wirtschaftsgemeinschaft. 1985 wurde das Schengener Abkommen unterzeichnet, das die Abschaffung der Binnengrenzen regelte. Ziel war der freie Verkehr von Personen, Waren, Dienstleistungen und Kapital.</p>
+<p>In der physischen Realität ist dieses Ziel erreicht worden. Die Grenzposten wurden abgebaut. Der Grenzübertritt erfolgt ohne Kontrollen. Ein Bürger fährt mit dem Auto von den Niederlanden nach Belgien, von Belgien nach Frankreich, von Frankreich nach Deutschland, ohne anzuhalten. Diese Öffnung hat vierzig Jahre gedauert, von 1944 bis 1985. Danach war sie eine Tatsache.</p>
+<p>Die administrative Realität ist weiterhin asymmetrisch. Während die Grenzen für den menschlichen Körper verschwunden sind, wurden die nationalen Verwaltungssysteme nie zusammengeführt oder vereinheitlicht. Jedes Land behält seine eigene Krankenkasse, seine eigene Steuerbehörde, seine eigene Sozialleistungsbehörde und sein eigenes Behindertenregister.</p>
+<p>Hier liegt der grundlegende Konstruktionsfehler. Der europäische Gesetzgeber hat den physischen Raum geöffnet, aber die nationalen Exekutivbehörden haben die zugrunde liegenden Computersysteme ausschließlich auf nationaler Ebene programmiert. Die Infrastruktur – die Autobahn – ist grenzüberschreitend. Die administrative Entscheidungsinstanz – der Schalter – ist streng national geblieben.</p>
+<p>Die gesetzliche Anpassung an diese Entkopplung weist eine strukturelle Verzögerung auf. Im April 2026 wurde im Rahmen eines Trilogs eine vorläufige politische Einigung über die Überarbeitung der Verordnung 883/2004 erzielt, dem Gesetz, das die soziale Sicherheit zwischen den Mitgliedstaaten koordiniert. Im Juli 2026 wurde der überarbeitete Text formell verabschiedet. Die tatsächliche operative Umsetzung – darunter die Verlagerung der Zuständigkeit für Arbeitslosengeld auf das Beschäftigungsland nach einem ununterbrochenen Zeitraum von 22 Wochen – ist jedoch aufgrund erforderlicher IT-Anpassungen erst für 2030 oder 2031 geplant.</p>
+<p>Der gesamte Gesetzgebungszyklus – vom ersten Vorschlag bis zum Inkrafttreten – umfasst somit mehr als zehn Jahre Verhandlungen und vier Jahre Wartezeit bis zur Umsetzung. Vierzehn Jahre für ein Software-Update.</p>
+<p>Auch die digitalen Lösungen in diesem Reformpaket bleiben an der Schwelle zum Datensilo stehen. Die Einführung des Europäischen Sozialversicherungsausweises in Verbindung mit der europäischen digitalen Identitätsbrieftasche digitalisiert den Träger der Dokumente. Dies ermöglicht es Behörden, die Dokumente schnell zu überprüfen, erzwingt jedoch keinen automatischen Datenfluss zwischen den nationalen Systemen. Die Daten werden nicht aktiv an der Quelle abgerufen. Die Vordertür wird digitalisiert, aber die Hintertür bleibt verschlossen.</p>
+<p>Die makroökonomischen Prognosen der Europäischen Kommission sagen bis 2040 Einsparungen und Betrugsverhütung in Höhe von sechs Milliarden Euro voraus. Diese Berechnung lässt die mikroökonomische Realität der dazwischenliegenden vierzehn Jahre außer Acht. Während dieser Latenzzeit werden die Kosten des Systemversagens vollständig auf die Bürger abgewälzt: die Privatbank, die Schulden unter Androhung hoher Strafen parkt, der Energieversorger, der Inkassobüros einschaltet und undurchführbare medizinische Untersuchungen verlangt, sowie der private Markt für medizinische Untersuchungen, der für Fernkonsultationen unrealistische Tarife verlangt. All diese Kosten gehen zu Lasten des Einzelnen, während die Ursache für den Systemstillstand bei der Regierung liegt.</p>
+<p>Die Benelux-Staaten waren einst das Versuchsfeld der europäischen Integration. Im Jahr 1944 wurde hier das Experiment gestartet, das später auf europäischer Ebene wiederholt werden sollte. Die drei Länder haben gezeigt, dass offene Wege möglich sind. Sie haben jedoch nicht gezeigt, dass offene Systeme möglich sind.</p>
+<p>Der Grenzgänger ist die Fehlermeldung eines halbfertigen Entwurfs. Die physische Architektur ist fertiggestellt. Die administrative Architektur hingegen nicht.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Teil V – Die Zahlen und der Maßstab</h2>
+<p>Das Problem ist nicht auf diesen Fall beschränkt. Hier folgt ein Überblick über das Ausmaß auf europäischer Ebene.</p>
+<p>In der Europäischen Union leben Millionen von Menschen in einem anderen Land als dem, in dem sie arbeiten oder aus dem sie stammen. Diese Zahl steigt kontinuierlich an, was auf die Politik der Europäischen Union zur Arbeitsmobilität, die Zunahme der Telearbeit und die Bevölkerungsentwicklung in Grenzregionen zurückzuführen ist.</p>
+<p>Die Zahl der Beschwerden, die beim informellen europäischen Schlichtungsnetzwerk eingehen, steigt jährlich um mehrere Dutzend Prozent. Das Problem wird größer, nicht kleiner.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Teil VI – Die europäische Dimension</h2>
+<p>Das Problem ist kein belgisch-niederländisches. Es ist ein europäisches. Vier Fallbeispiele belegen dies. Diese Fallbeispiele stammen aus öffentlich zugänglicher europäischer Politikliteratur und wissenschaftlicher Forschung. Sie sind nicht in Dokument A oder Dokument B zu finden, da diese Dokumente jeweils nur einen einzelnen Fall beschreiben. Sie sind hier aufgeführt, weil sie zeigen, dass sich der Mechanismus, der in diesem einen Fall sichtbar wird, in jeder europäischen Grenzregion wiederholt.</p>
+<p><strong>Luxemburg.</strong>Luxemburg. Luxemburg hat den höchsten Anteil an grenzüberschreitend tätigen Arbeitnehmern in der EU. Die Koordinierung ihrer sozialen Sicherheit erfolgt über die europäische Verordnung, doch die Steuer- und Sozialversicherungsschwellen für Telearbeit sind grundsätzlich nicht aufeinander abgestimmt. Ein Arbeitnehmer, der zwischen zwei Schwellen von zu Hause aus arbeitet, befindet sich in einem rechtlichen Niemandsland. Zwei Länder erheben auf derselben Grundlage Steuern auf der Basis unvereinbarer Schwellenwertberechnungen. Dies erforderte jahrelange bilaterale Notvereinbarungen, bevor sich eine gewisse Stabilisierung einstellte – und zwar ausschließlich im steuerlichen Bereich, nicht im Bereich der Sozialversicherung.</p>
+<p><strong>De Øresundregio.</strong>Die Öresundregion. In der Region rund um den Öresund pendeln täglich Tausende von Grenzgängern über die Grenze. Sie sind im Arbeitsland sozialversichert, erhalten im Falle von Arbeitslosigkeit jedoch Leistungen aus dem Wohnsitzland. Die Koordination erfordert, dass der Arbeitgeber ein Kündigungsdokument vorlegt, das von der ausländischen Arbeitslosenversicherung als anrechenbar anerkannt wird. In der Praxis verläuft dieser Austausch schleppend, liegen die Dokumente nicht immer in einem automatisch verarbeitbaren Format vor, und der Bürger wartet in der Zwischenzeit ohne Arbeitslosengeld. Die Region verfügt über einen gemeinsamen Ausschuss, der den Informationsfluss überwacht, doch dieser Ausschuss hat keine Befugnisse gegenüber den ausführenden Behörden beider Länder.</p>
+<p><strong>Zwitserland/Frankrijk.</strong>Schweiz/Frankreich. In der Schweiz gibt es schätzungsweise Hunderttausende Grenzgänger aus Frankreich. Durch die Telearbeit ist eine grundlegende Spannung entstanden: Die Steuergrenze für Telearbeit und die Sozialversicherungsgrenze für Telearbeit weichen voneinander ab. Wer im Rahmen dieser beiden Schwellenwerte von zu Hause aus arbeitet, zahlt Steuern in dem einen Land, fällt aber sozialversicherungsrechtlich potenziell unter das andere. Dies erfordert eine gleichzeitige Zugehörigkeit zu zwei Systemen, was die europäische Verordnung ausdrücklich verbietet. Die Lösung erforderte ein Übergangsabkommen, eine Verlängerung und eine formelle Vertragsänderung, verbunden mit täglichen Meldepflichten für Arbeitgeber. Der Verwaltungsaufwand wurde vom Staat auf den Arbeitgeber verlagert; die strukturelle Unvereinbarkeit wurde jedoch nicht beseitigt.</p>
+<p><strong>De Oostenrijks-Oost-Europese corridor.</strong>Der österreichisch-osteuropäische Korridor. Im Korridor zwischen Österreich und den osteuropäischen Mitgliedstaaten ist die massenhafte Entsendung von Arbeitnehmern eine etablierte wirtschaftliche Realität. Bescheinigungen, aus denen hervorgeht, in welchem Land ein entsandter Arbeitnehmer sozialversichert ist, werden in großem Umfang missbräuchlich verwendet, um niedrige Sozialbeiträge im Entsendeland aufrechtzuerhalten, während der Arbeitnehmer tatsächlich dauerhaft im Aufnahmeland arbeitet. Der Gerichtshof hat entschieden, dass selbst dann, wenn eine Bescheinigung offensichtlich in betrügerischer Weise erlangt wurde, der Aufnahmemitgliedstaat seine eigenen Rechtsvorschriften nicht einseitig anwenden darf, bevor er einen Dialog mit dem ausstellenden Mitgliedstaat geführt hat. Diese Dialogpflicht, die dem Schutz des Arbeitnehmers dienen soll, wird in der Praxis von betrügerischen Arbeitgebern genutzt, um die Anwendung der Rechtsvorschriften des Aufnahmelandes monatelang zu verzögern, während der Arbeitnehmer formal ungeschützt ist.</p>
+<p>Die Schlussfolgerung aus allen vier Fallbeispielen ist dieselbe: Selbst in den Regionen Europas mit der höchsten Konzentration an Grenzgängern gibt es keine integrierte Lösung. Nationale Notabkommen sind der einzige Ausweg, ohne dass strukturelle Korrekturen vorgenommen werden.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Teil VII – Der strukturelle Fehler in den europäischen Rechtsvorschriften</h2>
+<p>Die europäische Verordnung zur Koordinierung der sozialen Sicherheit zwischen den Mitgliedstaaten legt fest, welches Land der zuständige Mitgliedstaat ist. Die Verordnung bestimmt ein Land als zuständig – in der Regel das Beschäftigungsland –, sieht jedoch kein automatisches Auffangnetz für Zeiträume vor, in denen die Zuständigkeit umstritten ist, sich vorübergehend ändert oder beide Länder sich weigern, die primäre Zuständigkeit zu übernehmen.</p>
+<p>Das „En/En“-Paradoxon – bei dem der Bürger formal dem System zweier Länder angehört, aber von beiden als in die Zuständigkeit des jeweils anderen fallend betrachtet wird – wird durch die Verordnung nicht gelöst, sondern lediglich beschrieben.</p>
+<p>Das Schlichtungsnetzwerk fungiert als unverbindlicher Kontrollmechanismus. Es erfasst einen Teil der Beschwerden und kommt zu einem Ergebnis, doch dieses Ergebnis hat keine rechtlichen Konsequenzen für die Behörde, die den Antrag ablehnt. Eine Empfehlung ist eben nur eine Empfehlung. Die ausführende Behörde, die diese ignoriert, muss keine Konsequenzen befürchten. Das europäische System zum Austausch von Sozialversicherungsdaten dient dem elektronischen Informationsaustausch, doch sind Antwortfristen für ausländische Anfragen nicht einklagbar. Beide Instrumente sind verfahrensrechtliche Maßnahmen für ein Problem, das strukturell hätte gelöst werden müssen.</p>
+<p>Die Fakten zu diesem architektonischen Fehler sind in Dokument B aufgeführt. Dort ist festgehalten, welche Verordnung welche Bestimmung enthält, welche Urteile welche Auslegung vornehmen und welche Behörden welche Befugnisse haben. Hier wird lediglich das Muster dargestellt.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Teil VIII – Die beiden Lösungswege</h2>
+<p>Grenzüberschreitende Bürger mit einer chronischen Erkrankung oder einer anerkannten Behinderung haben grundsätzlich zwei Möglichkeiten, ihren Lebensunterhalt zu bestreiten.</p>
+<p><strong>De uitkeringsroute.</strong>Der Auszahlungsweg. Erwerbsunfähigkeitsrente über das zuständige Land. Dieser Weg führt zu einer Abhängigkeit vom Staat und unterliegt dem politischen guten Willen des jeweiligen Landes. Die durchschnittliche Erwerbsunfähigkeitsrente in der EU liegt zwischen 800 und 1.800 Euro pro Monat und wird bei dauerhafter Erwerbsunfähigkeit lebenslang gezahlt. Die Zugangsbarriere: Wartezeiten werden grenzüberschreitend nicht anerkannt; Verfahren erfordern eine nationale Beurteilungshistorie; das europäische Austauschsystem arbeitet langsam.</p>
+<p><strong>De fiscale autonomieroute.</strong>Der Weg der steuerlichen Autonomie. Zulagen, erhöhte Beihilfen und Steuererleichterungen im Wohnsitzland auf der Grundlage einer anerkannten Behinderung. Dieser Weg kostet den Staat weniger, fördert die wirtschaftliche Teilhabe und bewahrt die Autonomie des Bürgers. Die Zugangsbarriere ist dieselbe: Der medizinische Status wird grenzüberschreitend nicht anerkannt, die administrative Einstufung eines Landes lässt sich nicht auf ein anderes übertragen, und die Systeme, die die Ansprüche gewährleisten sollen, kommunizieren nicht miteinander.</p>
+<p>Der Weg der steuerlichen Autonomie ist in den meisten politischen Bereichen vorteilhafter als der Weg der Sozialleistungen: Er kostet den Staat weniger, fördert die wirtschaftliche Teilhabe, bewahrt die Autonomie der Bürger und steht im Einklang mit den Zielen der EU zur Arbeitsmobilität. Dennoch ist er ebenso unzugänglich wie der Sozialleistungsweg, solange die grenzüberschreitende Übersetzung des medizinischen Status und die administrative Anerkennung des Status fehlen. Die Barriere ist nicht finanzieller, sondern struktureller Natur.</p>
+<p>Es gibt jedoch einen Aspekt, der die vorangegangene Analyse relativiert: In diesem Fall hat sich der Weg zur steuerlichen Autonomie in Belgien über einen manuellen Umweg tatsächlich als machbar erwiesen. Ein direkt vom Hausarzt ausgestelltes ärztliches Attest, das der BNI-Erklärung beigefügt wird – ohne Umweg über die KSZ und die DG HAN –, löst den erhöhten Steuerfreibetrag aus und führt bei Einreichung der Erklärung zu einem berechneten Saldo von 2.669,97 € zugunsten der Familie (in Erwartung des endgültigen Steuerbescheids). Der gleiche Weg blieb über die automatisierten Behördenketten (8 gegenüber 9 Punkten bei der DG HAN, RIV-Sperre in den Niederlanden) völlig versperrt. Der Unterschied ist aufschlussreich: Der steuerliche Weg ist nicht unmöglich, aber der Bürger und sein Hausarzt müssen die digitale Behördenkette manuell umgehen, damit er funktioniert. Und das hat einen paradoxen Nebeneffekt: Ein höheres Nettoeinkommen der Familie kann die einkommensabhängigen Zulagen bei Parentia und SVB gerade gefährden, da sich die automatische Neuberechnung auf die fiktive Erwerbsfähigkeit auswirkt.</p>
+<p>Darüber hinaus spielt ein Faktor eine Rolle, der beim Vergleich beider Wege oft übersehen wird: die politische Ökonomie der Finanzierung. Die Europäische Union verfügt über kein eigenes Sozialversicherungssystem. Die soziale Sicherheit fällt in die Zuständigkeit der einzelnen Staaten. Was die EU jedoch tut, ist, über den Europäischen Sozialfonds Plus Programme mitzufinanzieren, die auf die Integration in den Arbeitsmarkt und die soziale Inklusion abzielen. Diese Mittel fließen nicht in die Sozialleistungen selbst, sondern in die damit verbundenen Unterstützungsmaßnahmen: Fortbildungen, Begleitung auf dem Weg in die Arbeit und Projekte, die die gesellschaftliche Teilhabe fördern.</p>
+<p>Sozialleistungen werden in der Europäischen Union größtenteils beitragsfinanziert: Im Durchschnitt stammen 64 Prozent der Arbeitslosengeldzahlungen aus Sozialbeiträgen und nicht aus Steuern. Steuerliche Vergünstigungen, wie beispielsweise Steuererleichterungen für Menschen mit Behinderung, werden hingegen fast vollständig aus den nationalen allgemeinen Mitteln finanziert. Die EU verfügt über kein Instrument zur Kofinanzierung steuerlicher Ausgaben der Mitgliedstaaten.</p>
+<p>Dies führt zu einer Finanzierungsasymmetrie. Für leistungsbezogene Programme kann ein Mitgliedstaat eine Kofinanzierung durch die EU beantragen. Für steuerliche Vergünstigungen ist dies nicht möglich. Die Mitgliedstaaten haben daher einen größeren finanziellen Anreiz, den leistungsbezogenen Weg zu stärken als den steuerlichen Weg, unabhängig davon, welcher Weg für den Bürger günstiger ist.</p>
+<p>Der steuerliche Weg kostet den Staat weniger, aber der Staat erhält dafür keine europäische Kofinanzierung. Der Weg über Sozialleistungen kostet den Staat mehr, aber ein Teil der damit verbundenen Kosten kann durch europäische Mittel gedeckt werden. Die politische Ökonomie der Finanzierung beeinflusst somit die politische Entscheidung, unabhängig davon, welcher Weg für den Bürger am effektivsten ist.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Teil IX – Die drei Infrastrukturlösungen</h2>
+<p>Drei konkrete Bausteine beheben die architektonischen Fehler unmittelbar. Sie können einzeln umgesetzt werden, entfalten ihre volle Wirkung jedoch erst in Kombination.</p>
+<p><strong>Bouwsteen 1 — Het inschrijvingsmoment als synchronisatiepunt.</strong>Baustein 1 – Der Zeitpunkt der Anmeldung als Synchronisationspunkt. Wenn sich ein EU-Bürger in Land A offiziell abmeldet und in Land B anmeldet, löst dies einen einzigen autorisierten digitalen Import der relevanten Verwaltungsdaten aus: berufliche Laufbahn, anerkannte medizinische Status, bestehende Ansprüche und familiäre Situation. Die technische Infrastruktur ist vorhanden: Das europäische System zur digitalen Identifizierung bildet die Grundlage, die nationalen Melderegister sind die Auslösepunkte, und das europäische Austauschsystem für soziale Sicherheit stellt die Kapazität bereit. Was fehlt, ist der politische Beschluss, dass die Anmeldung den rechtlichen Auslöser für diese Synchronisierung darstellt, sowie die Verpflichtung des Entsendelandes, die Daten innerhalb einer festgelegten Frist bereitzustellen.</p>
+<p><strong>Bouwsteen 2 — Het Europees Medisch Statusdocument.</strong>Baustein 2 – Das Europäische Medizinische Statusdokument. Ein standardisiertes digitales Dokument, das den Funktionsstatus eines Bürgers grenzüberschreitend lesbar macht. Es erfasst nicht die Diagnose – die Krankheit –, sondern die funktionelle Einschränkung: Was kann die Person tun und was nicht, welcher Prozentsatz der Erwerbsminderung anerkannt ist, welches Land die Anerkennung formell festgestellt hat und zu welchem Datum. Grundlage ist die „International Classification of Functioning, Disability and Health“ der Weltgesundheitsorganisation, die einen universellen Sprachrahmen bietet, der bereits von 29 europäischen Ländern in der Rehabilitationsmedizin und der Gesundheitsstatistik verwendet wird. Jede nationale Behörde veröffentlicht einen Übersetzungsschlüssel: eine veröffentlichte Zuordnung internationaler Werte zu ihren eigenen Verwaltungskategorien. Wenn ein Bürger mit einem Statusdokument einen Antrag bei einer ausländischen Behörde stellt, rechnet das System seinen Wert automatisch in die nationale Kategorie um. Der Bürger wird einmalig bewertet. Die Umrechnung erfolgt automatisch. Eine erneute Begutachtung ist nur erforderlich, wenn sich der medizinische Status ändert.</p>
+<p><strong>Bouwsteen 3 — De automatische fiscale route-activering.</strong>Baustein 3 – Die automatische Aktivierung des steuerlichen Verfahrenswegs. Wenn das Statusdokument eine anerkannte Einschränkung verzeichnet und das Registrierungsdokument die grenzüberschreitende Situation des Bürgers bestätigt, aktiviert das System automatisch die im Wohnsitzland verfügbaren steuerlichen Instrumente. Nicht über einen manuellen Antrag, sondern über eine automatische Entscheidungsregel auf der Grundlage auswertbarer Statusdaten. Die Entscheidungslogik funktioniert wie folgt: Die Punktzahl sowie der Registrierungsstatus werden mit einer national veröffentlichten Aktivierungstabelle abgeglichen. In den Niederlanden löst dies automatisch Folgendes aus: eine Anpassung des Bemessungseinkommens für die Berechnung von Zulagen, eine erhöhte Beihilfe bei anerkannter Behinderung sowie eine Berechnung des Anspruchs auf Pflegezulage, Mietzulage und kindgebundenes Budget auf der Grundlage des korrigierten Einkommens einschließlich ausländischer Komponenten. In Belgien löst dies automatisch Folgendes aus: den Steuerabzug für Menschen mit Behinderung, das erhöhte Existenzminimum bei anerkannter Erwerbsunfähigkeit sowie eine Benachrichtigung an die zuständige Behörde, dass der Bürger möglicherweise Anspruch auf zusätzliche Beihilfen hat.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Teil X – Die Frage nach den Profiteuren</h2>
+<p>Die Einführung eines vernetzten Systems wirft Fragen hinsichtlich der Betrugssicherheit auf. Eine Analyse zeigt, dass das derzeitige System aus unverbundenen Silos Missbrauch nicht verhindert, sondern lediglich dessen Aufdeckung erschwert. Doppelte Leistungszahlungen in zwei Ländern sind heute technisch möglich, da Land A nicht weiß, was Land B gewährt, und umgekehrt. Das europäische Austauschsystem soll dies beheben, wird jedoch nicht konsequent genutzt. Ein vernetztes System mit lesbaren Statusdaten lässt sich aus drei konkreten Gründen schwerer missbrauchen als ein System aus isolierten Silos.</p>
+<p>Erstens: Ein internationales Statusdokument basiert auf Bewertungen, die aus validierten medizinischen Begutachtungen durch anerkannte Stellen abgeleitet werden. Das Fälschen einer Punktzahl erfordert die aktive Mitwirkung einer bewertenden Stelle, wodurch der Betrug vom Bürger auf die Einrichtung verlagert wird – und somit aufdeckbar und sanktionierbar wird.</p>
+<p>Zweitens: Die Eintragungsdaten sind mit den amtlichen Melderegistern verknüpft und können vom Bürger selbst nicht manipuliert werden; eine falsche Eintragung erfordert die aktive Mitwirkung der registrierenden Gemeinde.</p>
+<p>Drittens: Bei der automatischen steuerlichen Aktivierung werden die Statusdaten mit der Aktivierungstabelle des Wohnsitzlandes abgeglichen; jede Aktivierung wird protokolliert und kann von beiden Ländern eingesehen werden, wodurch eine doppelte Aktivierung sofort erkennbar ist.</p>
+<p>Ein transparentes, vernetztes System ist strukturell betrugsresistenter als ein System aus unverbundenen nationalen Silos. Vereinfachung für den Bürger und Schutz vor Missbrauch schließen sich nicht gegenseitig aus – sie verstärken sich gegenseitig.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Teil XI – Die beiden Wege: Geschwindigkeit und Reichweite</h2>
+<p>Grenzüberschreitende Bürger, die Probleme bei der Koordinierung der sozialen Sicherheit haben, stehen in der Praxis vor zwei Möglichkeiten: dem rechtlichen Weg und dem strukturellen Weg.</p>
+<p><strong>De juridische weg — individueel, traag, zonder systeemeffect.</strong>Der Rechtsweg – individuell, langwierig, ohne systemweite Wirkung. Das informelle Vermittlungsnetzwerk erreicht jährlich mehrere Tausend Bürger. Ein nationales Gerichtsverfahren dauert 12 bis 36 Monate. Ein Vorabentscheidungsverfahren vor dem Gerichtshof dauert 16 bis 22 Monate. Jedes Urteil gilt für einen einzelnen Bürger. Für die übrigen Millionen grenzüberschreitend tätiger Bürger, die dasselbe Problem haben, aber kein Verfahren einleiten, ändert sich am System nichts.</p>
+<p><strong>De structurele weg — collectief, eenmalig, universeel.</strong>Der strukturelle Weg – kollektiv, einmalig, universell. Eine gezielte Anpassung der europäischen Koordinierungsverordnung gilt ab dem Tag ihres Inkrafttretens für alle grenzüberschreitend tätigen Arbeitnehmer. Ein internationales Statusdokument beseitigt, sobald es eingeführt ist, die erneute Überprüfung für jeden neuen Bürger, der grenzüberschreitend tätig wird, dauerhaft und automatisch. Die automatische Aktivierung des Steuerverfahrens gilt für jeden Bürger, der über ein Statusdokument verfügt und in einem Wohnsitzland gemeldet ist, ohne dass er sein Recht kennen, geltend machen oder nachweisen muss.</p>
+<p>Ein europäisches Gesetzgebungsverfahren zur Anpassung der Koordinierungsverordnung dauert im Durchschnitt vier bis sechs Jahre. Wenn ein Reformpaket im Jahr 2030 in Kraft tritt, erreicht es in seinem ersten vollen Jahr mehr Bürger als der Rechtsweg in dreißig Jahren. Und jedes Jahr danach erneut, automatisch, für jeden neuen Bürger, der die Grenze überquert.</p>
+<p>Der rechtliche Weg löst Probleme im Einzelfall, verändert aber strukturell nichts. Der strukturelle Weg verändert das System für alle gleichzeitig. Jedes Jahr, in dem es beim strukturellen Weg zu Verzögerungen kommt, werden Zehntausenden von Bürgern Rechte vorenthalten, die ihnen gesetzlich bereits zustehen.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Teil XII – Die persönliche Abschlusserklärung</h2>
+<p>Es ist eine objektive Tatsache, dass ein medizinischer Genesungsprozess nicht mit der Durchführung mehrerer behördlicher Verfahren vereinbar ist. Dass ein Bürger, der sich in körperlicher Genesung befindet, diese Nachweise selbst sammeln muss, verdeutlicht die Prioritäten des derzeitigen Systems. Viele brechen diese Verfahren vorzeitig ab, wenn sie mit dem Ausmaß des administrativen Widerstands konfrontiert werden.</p>
+<p>Der erste Reflex ist immer, das eigene, individuelle Problem zu lösen. Bei der systematischen Erfassung der Zeitachsen zeigte sich jedoch ein strukturelles Muster, das über den Einzelfall hinausgeht. Dieser Mechanismus betrifft jeden, der außerhalb der Standardnorm liegt. Für diejenigen, die innerhalb der Norm leben, funktioniert das System unsichtbar und reibungslos. Das beweist nicht, dass das System universell funktioniert; es beweist, dass es für ein spezifisches, nationales Profil optimiert ist.</p>
+<p>Die Demontage dieser Verfahren legt die Architektur offen. Die zum Schutz geschaffenen Institutionen und Netzwerke wenden Verfahren an, die von den konkreten Folgen losgelöst sind. Kontrollmechanismen gehen von den Parametern des Systems aus, nicht von der Realität der Heilung. Man verwaltet abstrakte Bedingungen. Gleichzeitig nimmt die Zahl der Situationen zu, die über die binären Kategorien der Gesetzgebung hinausgehen. Die Norm ist statisch, während die gesellschaftliche Realität dynamisch ist.</p>
+<p>Dieses Dossier wurde als konkreter Datensatz darüber zusammengestellt, was strukturell stagniert. Als Franzose und Italiener mit belgischem Geburtsort, der in den Niederlanden lebt, war die Theorie eines vereinten europäischen Raums für mich schon immer ein Ausgangspunkt. Die Praxis zeigt, dass diese Theorie an Bedingungen geknüpft ist und vor allem für diejenigen gilt, die genau in das nationale Schema passen. Wer außerhalb dieses Schemas liegt, stößt an die Grenzen dieses Konzepts.</p>
+<p>Dieses Dossier dient als objektive Dokumentation für alle, die in eine ähnliche Situation geraten, sowie als sachliche Grundlage für die Stellen, die für die Überarbeitung der Systemarchitektur zuständig sind.</p>
+<p>Der Standard bleibt unverändert. Ich hingegen nicht.</p>
+<a class="pub-top" href="#top" title="↑">↑</a>
+<footer class="pub-footer">
+<p><strong>System-Audit</strong> — Grenzüberschreitendes Kompetenzvakuum in der sozialen Sicherheit<br/>
+  Auteur : Eric Messa · Version mise à jour : 5 oktober 2026, 15:03</p>
+<p><a href="home.html">← Übersicht</a></p>
+</footer>
+</body>
+</html>

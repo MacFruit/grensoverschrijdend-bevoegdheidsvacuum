@@ -7,6 +7,25 @@ en in België werkte, en die door een samenloop van medische en administratieve
 omstandigheden vastloopt tussen twee uitvoeringsstelsels die weigeren elkaars
 gegevens te lezen.
 
+## Talen
+
+Deze site is beschikbaar in vier talen:
+
+| Taal | Documenten | Status |
+|---|---|---|
+| **Nederlands** | 0, A, B, C, D | Volledig |
+| **English** | 0, C, D | A en B volgen zodra de brongegevens bevroren zijn |
+| **Deutsch** | 0, C, D | A en B volgen zodra de brongegevens bevroren zijn |
+| **Français** | 0, C, D | A et B suivent dès que les données sources seront figées |
+
+De Nederlandse versie is de bronversie. Bij twijfel over de inhoud, interpretatie
+of juridische strekking geldt de Nederlandse tekst. De vertalingen kunnen
+taalkundige onvolkomenheden bevatten of schema's die niet volledig gelokaliseerd
+zijn.
+
+**Begin hier:** [index.html](index.html) voor de taalkeuze, of ga direct naar
+de Nederlandse versie: [nl/home.html](nl/home.html).
+
 ## De vijf documenten
 
 | Document | Titel | Inhoud |
@@ -16,9 +35,6 @@ gegevens te lezen.
 | **B** | De data-matrix | Alle feiten: datums, referentienummers, correspondentie, tijdlijnen |
 | **C** | De visuele architectuur | Schema's en datastromen — het systeem in één oogopslag |
 | **D** | De synthese | Patronen, paradoxen, rol van de EU, drie bouwstenen voor hervorming |
-
-**Begin hier:** [index.html](index.html) voor het overzicht, of direct naar
-[Document B](document-b.html) voor de feiten.
 
 ## Auteur
 
@@ -39,19 +55,28 @@ oorsprong. De casus in dit dossier is de zijne.
   als een verplichting onder de Algemene Verordening Gegevensbescherming (AVG).
 
 ## Bestandsstructuur
-.
-├── index.html Overzicht
-├── document-0.html Inleiding en leeswijzer
-├── document-a.html De narratieve audit
-├── document-b.html De data-matrix
-├── document-c.html De visuele architectuur
-├── document-d.html De synthese
-├── docx/ Word-versies (voor print)
-│ ├── document-0.docx
-│ ├── document-a.docx
-│ ├── document-b.docx
-│ ├── document-c.docx
-│ └── document-d.docx
+
+── index.html Taalkeuze (meertalig)
+├── nl/ Nederlands — volledig
+│ ├── home.html
+│ ├── document-0.html
+│ ├── document-a.html
+│ ├── document-b.html
+│ ├── document-c.html
+│ ├── document-d.html
+│ ├── docx/ Word-versies
+│ └── pdf/ PDF-versies
+├── en/ English — 0, C, D
+│ ├── home.html
+│ ├── document-0.html
+│ ├── document-c.html
+│ ├── document-d.html
+│ ├── docx/
+│ └── pdf/
+├── de/ Deutsch — 0, C, D
+│ └── (idem)
+├── fr/ Français — 0, C, D
+│ └── (idem)
 ├── LICENSE.txt Creative Commons CC BY 4.0
 └── README.md Dit bestand
 
@@ -64,6 +89,9 @@ academisch onderzoek en beleidsanalyse.
 - **Tekst**: CC BY 4.0 — vrij te delen en te bewerken, mits naamsvermelding
   en bronvermelding (Document B als bron van de feiten).
 - **SVG-schema's in Document C**: eveneens CC BY 4.0.
+- **Vertalingen**: vallen onder dezelfde licentie als het origineel. Bij
+  discrepanties tussen een vertaling en het Nederlandstalige origineel is
+  het Nederlandse document leidend.
 - **Eigen medische en administratieve gegevens van de auteur**: blijven
   auteursrechtelijk beschermd, maar mogen geciteerd worden met bronvermelding.
 

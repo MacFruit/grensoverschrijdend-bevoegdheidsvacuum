@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<title>Systeem-Audit — Document D — De synthese</title>
+<style>
+@media screen { p.marker { display: none; } }
+body { font-family: Aptos, Calibri, sans-serif; font-size: 12pt; line-height: 1.5; margin: 40pt; }
+h1 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 28pt; color: #2e7d32; margin-top: 0; margin-bottom: 6pt; border-bottom: 3px solid #2e7d32; padding-bottom: 6pt; }
+h2 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 20pt; color: #2e7d32; margin-top: 0; margin-bottom: 5pt; border-bottom: 2px solid #2e7d32; padding-bottom: 4pt; }
+h3 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 16pt; color: #2e7d32; margin-top: 0; margin-bottom: 4pt;  }
+h4 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 14pt; color: #2e7d32; margin-top: 10pt; margin-bottom: 3pt; }
+h5 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 13pt; color: #333333; margin-top: 8pt; margin-bottom: 3pt; }
+p { margin: 0 0 8pt 0; text-align: justify; }
+p.subtitel { font-style: italic; font-size: 11pt; color: #555555; margin: -2pt 0 10pt 0; }
+hr { border: 0; border-top: 1px solid #ccc; margin: 15pt 0 10pt 0; }
+i { font-size: 10.5pt; color: #555555; }
+.netwerkregel { font-style: italic; color: #333333; margin-bottom: 6pt; }
+.metadata { margin-bottom: 4pt; display: none; }
+.timeline-entry { margin-bottom: 6pt; text-align: left; }
+.date-title { font-weight: bold; color: #000000; }
+.netwerk { font-style: italic; color: #333333; margin-bottom: 4pt; }
+.meta { margin-bottom: 4pt; }
+.meta strong { color: #2e7d32; }
+.entry { margin-bottom: 4pt; text-align: left; }
+.datum { font-weight: bold; color: #000000; }
+.titel { font-weight: bold; text-transform: uppercase; }
+.opvolging { font-style: italic; color: #555555; }
+p.lead { font-style: italic; color: #444; margin-bottom: 12pt; }
+p.tijd { font-size: 10pt; color: #888888; font-style: italic; letter-spacing: 1pt; text-transform: uppercase; margin-bottom: 4pt; }
+svg { display: block; width: 100%; height: auto; margin: 8pt 0; }
+svg text { font-family: Aptos, Calibri, sans-serif; }
+.figure { background: #ffffff; border: 1px solid #d8d4cb; padding: 12pt; margin: 14pt 0; }
+.caption { font-size: 10pt; color: #4a5559; margin-top: 8pt; border-top: 1px solid #ece8df; padding-top: 6pt; }
+table { width: 100%; border-collapse: collapse; margin: 10pt 0 18pt; font-size: 10.5pt; }
+th { background: #2e7d32; color: #ffffff; text-align: left; padding: 7pt 9pt; border: 1px solid #2e7d32; }
+td { padding: 6pt 9pt; border: 1px solid #d5d0c5; vertical-align: top; background: #ffffff; }
+tr:nth-child(even) td { background: #f4f1f8; }
+.status-g { color: #2e7d32; font-weight: 700; }
+.status-o { color: #e65100; font-weight: 700; }
+.status-r { color: #c62828; font-weight: 700; }
+.actie { background: #ede9f5; border-left: 4px solid #2e7d32; padding: 10pt 14pt; margin: 14pt 0; font-size: 11pt; }
+.actie strong { color: #2e7d32; }
+.werkversie { background: #fff8e1; border-left: 4px solid #e6a817; padding: 8pt 12pt; margin-bottom: 16pt; font-size: 10.5pt; color: #665500; }
+.afsluiting { background: #f4f1f8; border-left: 4px solid #2e7d32; padding: 10pt 14pt; margin: 14pt 0; font-size: 11pt; }
+.actor { margin-bottom: 12pt; padding-bottom: 10pt; border-bottom: 1px solid #e8e4dc; }
+.actor-naam { font-weight: 700; color: #1f2421; }
+.actor-rol { font-weight: 600; color: #2e7d32; }
+.badge-be { color: #8b1e1e; font-weight: 700; }
+.badge-nl { color: #1a3c6e; font-weight: 700; }
+.badge-mem { color: #c1440e; font-weight: 700; }
+.badge-eu { color: #0d7377; font-weight: 700; }
+.banner-be { background: #f7eded; border-left: 5px solid #8b1e1e; padding: 8pt 12pt; margin: 20pt 0 10pt; }
+.banner-be strong { color: #8b1e1e; font-size: 13pt; }
+.banner-nl { background: #edf2f8; border-left: 5px solid #1a3c6e; padding: 8pt 12pt; margin: 20pt 0 10pt; }
+.banner-nl strong { color: #1a3c6e; font-size: 13pt; }
+.banner-eu { background: #eaf4f4; border-left: 5px solid #0d7377; padding: 8pt 12pt; margin: 20pt 0 10pt; }
+.banner-eu strong { color: #0d7377; font-size: 13pt; }
+.legend-row { display: flex; gap: 12pt; margin-top: 4pt; align-items: baseline; font-size: 10.5pt; }
+.legend-num { display: inline-block; width: 22px; height: 22px; border-radius: 50%; color: #fff; text-align: center; line-height: 22px; font-weight: 700; font-size: 10pt; flex-shrink: 0; }
+.noot { font-size: 9.5pt; color: #666; font-style: italic; margin-top: 20pt; padding-top: 10pt; border-top: 1px solid #ddd; line-height: 1.5; }
+.footnotes p { font-size: 10pt; color: #555; margin-bottom: 6pt; text-align: left; }
+.titelblad { text-align: center; margin-top: 200pt; }
+.titelblad h1 { font-size: 36pt; border: none; padding: 0; margin-bottom: 24pt; color: #2e7d32; }
+.titelblad .ondertitel { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 18pt; color: #333333; margin-bottom: 60pt; }
+.titelblad .documentaanduiding { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 22pt; color: #2e7d32; font-weight: bold; margin-bottom: 80pt; }
+.titelblad .auteur { font-size: 14pt; color: #333333; margin-bottom: 4pt; }
+.titelblad .meta-lijn { font-size: 12pt; color: #555555; margin-bottom: 4pt; }
+.inhoudsopgave ul { list-style-type: none; padding-left: 0; }
+.inhoudsopgave li { margin-bottom: 3pt; }
+.gebruikersaanwijzing { margin-top: 0; }
+.gebruikersaanwijzing p { font-style: italic; color: #333333; margin-bottom: 6pt; }
+.contactblok { background: #ffffff; border-left: 4px solid #2e7d32; padding: 15px 20px; margin-top: 30pt; }
+.contactblok p { margin: 0; font-size: 11pt; }
+.contactblok a { color: #2e7d32; text-decoration: none; font-weight: bold; }
+
+/* === Document-specifieke extra stijlen (via ) === */
+
+/* === PUBLICATIE-CSS START === */
+
+body {
+    font-family: Aptos, Calibri, sans-serif;
+    font-size: 12pt;
+    line-height: 1.6;
+    margin: 0;
+    padding: 40pt;
+    background: #f6f3ec;
+    color: #2a2a2a;
+}
+
+h1 {
+    font-size: 38pt;
+    color: #1a3c6e;
+    margin: 0 0 6pt;
+    letter-spacing: -0.5pt;
+}
+.ondertitel {
+    font-size: 16pt;
+    color: #4a5560;
+    margin: 0 0 14pt;
+    font-weight: 400;
+}
+.auteur {
+    font-size: 11pt;
+    color: #6b7280;
+    margin: 0 0 30pt;
+    font-style: italic;
+}
+.intro {
+    font-size: 12pt;
+    line-height: 1.7;
+    margin: 0 0 40pt;
+    text-align: justify;
+    color: #3a3f45;
+}
+
+/* === Spectrumbalk === */
+.spectrum {
+    height: 4px;
+    display: flex;
+    margin: 0 0 30pt;
+    border-radius: 2px;
+    overflow: hidden;
+}
+.spectrum span { flex: 1; }
+
+/* === Root index: intro-rijen per taal === */
+.intro-rijen { margin: 0 0 40pt; }
+.intro-rij {
+    display: grid;
+    grid-template-columns: 64pt 1fr;
+    gap: 18pt;
+    align-items: start;
+    padding: 22pt 26pt;
+    background: #ffffff;
+    border-left: 6px solid var(--accent);
+    border-radius: 8px;
+    margin-bottom: 14pt;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    transition: transform .15s, box-shadow .2s;
+}
+.intro-rij:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0,0,0,.08);
+}
+.intro-rij .vlag {
+    font-size: 44pt;
+    line-height: 1;
+    text-align: center;
+    padding-top: 2pt;
+}
+.intro-rij h3 {
+    margin: 0 0 6pt;
+    color: var(--accent);
+    font-size: 19pt;
+    letter-spacing: -0.3pt;
+}
+.intro-rij p {
+    margin: 0 0 10pt;
+    font-size: 11pt;
+    color: #4a5560;
+    line-height: 1.55;
+}
+.intro-rij a.goto {
+    display: inline-block;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 11pt;
+    padding: 4pt 0;
+}
+.intro-rij a.goto:hover { text-decoration: underline; }
+
+/* === A/B-melding (meertalig) === */
+.ab-melding {
+    background: #fdf6e3;
+    border-left: 4pt solid #d4a017;
+    padding: 18pt 22pt;
+    margin: 0 0 30pt;
+    border-radius: 6px;
+}
+.ab-melding h3 {
+    margin: 0 0 12pt;
+    color: #8b6200;
+    font-size: 15pt;
+    border: none;
+    padding: 0;
+}
+.ab-melding p {
+    margin: 0 0 10pt;
+    color: #6b4c00;
+    font-size: 11pt;
+    line-height: 1.6;
+}
+.ab-melding p:last-child { margin-bottom: 0; }
+.ab-melding .vlag-klein {
+    font-size: 14pt;
+    margin-right: 8pt;
+}
+
+/* === EU-joke === */
+.eu-joke {
+    text-align: center;
+    font-size: 11pt;
+    color: #6b7280;
+    font-style: italic;
+    margin: 30pt 0 0;
+    padding: 20pt;
+    border-top: 1px dashed #ddd7c9;
+    border-bottom: 1px dashed #ddd7c9;
+    line-height: 1.6;
+}
+.eu-joke .eu-vlag {
+    font-size: 22pt;
+    display: block;
+    margin-bottom: 6pt;
+}
+
+/* === Documentkaarten (per-taal home) === */
+.doc-lijst { list-style: none; padding: 0; margin: 0; }
+.doc-lijst li {
+    position: relative;
+    margin: 0 0 14pt;
+    padding: 22pt 26pt 22pt 28pt;
+    background: #ffffff;
+    border-left: 6px solid #1a3c6e;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    transition: transform .15s, box-shadow .2s;
+    overflow: hidden;
+}
+.doc-lijst li:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+.doc-lijst .docletter {
+    position: absolute;
+    top: -10pt;
+    right: 14pt;
+    font-size: 96pt;
+    font-weight: 900;
+    line-height: 1;
+    opacity: 0.06;
+    pointer-events: none;
+    user-select: none;
+}
+.doc-lijst a.titel {
+    display: block;
+    font-size: 17pt;
+    font-weight: 700;
+    text-decoration: none;
+    margin: 0 0 6pt;
+    position: relative;
+    z-index: 1;
+}
+.doc-lijst a.titel:hover { text-decoration: underline; }
+.doc-lijst .beschrijving {
+    font-size: 10.5pt;
+    color: #4a5560;
+    margin: 0;
+    line-height: 1.55;
+    position: relative;
+    z-index: 1;
+}
+.doc-lijst .downloads {
+    margin-top: 12pt;
+    font-size: 10pt;
+    position: relative;
+    z-index: 1;
+}
+.doc-lijst .downloads a {
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 16px;
+    padding: 4pt 10pt;
+    border-radius: 4px;
+    transition: background .15s;
+    display: inline-block;
+}
+.doc-lijst .downloads a:hover { text-decoration: none; }
+
+.doc-0 { border-left-color: #8b1e1e; background: #fbf5f5; }
+.doc-0 .docletter { color: #8b1e1e; }
+.doc-0 a.titel { color: #8b1e1e; }
+.doc-0 .downloads a { background: #f6eded; color: #8b1e1e; }
+.doc-0 .downloads a:hover { background: #f0dcdc; }
+
+.doc-a { border-left-color: #7a3e9d; background: #faf6fc; }
+.doc-a .docletter { color: #7a3e9d; }
+.doc-a a.titel { color: #7a3e9d; }
+.doc-a .downloads a { background: #f4f0f7; color: #7a3e9d; }
+.doc-a .downloads a:hover { background: #ebe2f0; }
+
+.doc-b { border-left-color: #1a3c6e; background: #f6f8fb; }
+.doc-b .docletter { color: #1a3c6e; }
+.doc-b a.titel { color: #1a3c6e; }
+.doc-b .downloads a { background: #edf0f4; color: #1a3c6e; }
+.doc-b .downloads a:hover { background: #dde4ed; }
+
+.doc-c { border-left-color: #4a3b6b; background: #f8f6fa; }
+.doc-c .docletter { color: #4a3b6b; }
+.doc-c a.titel { color: #4a3b6b; }
+.doc-c .downloads a { background: #f0eff3; color: #4a3b6b; }
+.doc-c .downloads a:hover { background: #e2dfe9; }
+
+.doc-d { border-left-color: #2e7d32; background: #f5faf5; }
+.doc-d .docletter { color: #2e7d32; }
+.doc-d a.titel { color: #2e7d32; }
+.doc-d .downloads a { background: #eef4ef; color: #2e7d32; }
+.doc-d .downloads a:hover { background: #ddeade; }
+
+/* === A/B-banner (per-taal home) === */
+.pub-ab-banner {
+    background: #fdf6e3;
+    border-left: 4pt solid #d4a017;
+    padding: 12pt 18pt;
+    margin: 0 0 30pt;
+    color: #6b4c00;
+    font-size: 11pt;
+    line-height: 1.6;
+    border-radius: 5px;
+}
+.pub-ab-banner strong { color: #8b6200; }
+
+/* === Footer === */
+.footer {
+    margin-top: 70pt;
+    padding-top: 22pt;
+    border-top: 1px solid #ddd7c9;
+    font-size: 9.5pt;
+    color: #6b7280;
+    text-align: center;
+    line-height: 1.7;
+}
+.footer a { color: #1a3c6e; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+
+/* === Navigatie === */
+.pub-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #ffffff;
+    border-bottom: 2px solid #e2ddd2;
+    padding: 10pt 40pt;
+    margin: -40pt -40pt 20pt -40pt;
+    font-family: Aptos, Calibri, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.pub-nav .links {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.pub-nav a {
+    color: #1a3c6e;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 11pt;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+.pub-nav a:hover { background: #eef2f7; border-color: #e2ddd2; }
+.pub-nav a.actief { background: #1a3c6e; color: #ffffff; }
+.pub-nav a.home { border: 1px solid #e2ddd2; }
+
+.pub-nav .langs {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    font-size: 10pt;
+}
+.pub-nav .langs a {
+    padding: 5pt 10pt;
+    font-weight: 700;
+    border: 1px solid #e2ddd2;
+    background: #ffffff;
+}
+.pub-nav .langs a:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+}
+.pub-nav .langs a.actief {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+}
+.pub-nav .langs a.lang-nl { --accent: #FF6B00; --accent-soft: #fff0e0; color: #FF6B00; }
+.pub-nav .langs a.lang-en { --accent: #012169; --accent-soft: #e6ebf3; color: #012169; }
+.pub-nav .langs a.lang-de { --accent: #DD0000; --accent-soft: #fbe6e6; color: #DD0000; }
+.pub-nav .langs a.lang-fr { --accent: #0055A4; --accent-soft: #e6eef6; color: #0055A4; }
+.pub-nav .langs a.actief.lang-nl,
+.pub-nav .langs a.actief.lang-en,
+.pub-nav .langs a.actief.lang-de,
+.pub-nav .langs a.actief.lang-fr { color: #ffffff; }
+
+.pub-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 200;
+    background: #1a3c6e;
+    color: #fff;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18pt;
+    line-height: 1;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .15s;
+}
+.pub-top:hover { transform: scale(1.1); background: #12294d; }
+.pub-footer {
+    margin-top: 60pt;
+    padding-top: 20pt;
+    border-top: 1px solid #ddd7c9;
+    font-size: 10pt;
+    color: #6b7280;
+    text-align: center;
+}
+.pub-footer a { color: #1a3c6e; text-decoration: none; }
+.pub-footer a:hover { text-decoration: underline; }
+
+/* === PUBLICATIE-CSS END === */
+</style>
+</head>
+<body><a id="top"></a>
+<nav class="pub-nav">
+<div class="links"><a class="home" href="home.html">← Overview</a><a class="" href="document-0.html">Doc 0 · Introduction</a><a class="" href="document-c.html">Doc C · Visual</a><a class="actief" href="document-d.html">Doc D · Synthesis</a></div>
+<div class="langs"><a class="lang-nl" href="../nl/document-d.html">🇳🇱 NL</a><a class="lang-en actief" href="../en/document-d.html">🇬🇧 EN</a><a class="lang-de" href="../de/document-d.html">🇩🇪 DE</a><a class="lang-fr" href="../fr/document-d.html">🇫🇷 FR</a></div>
+</nav>
+
+<div class="titelblad">
+<h1>System Audit</h1>
+<p class="ondertitel">Cross-border jurisdictional vacuum in social security</p>
+<p class="documentaanduiding">Document D — The synthesis</p>
+<p class="auteur">Author: Eric Messa</p>
+<p class="meta-lijn">Last updated: 1 October 2026, 13:02</p>
+</div>
+<p class="marker">[[PAGEBREAK]]</p>
+<div class="inhoudsopgave">
+<h2>Table of Contents</h2>
+<p class="marker">[[TOC]]</p>
+</div>
+<p class="marker">[[PAGEBREAK]]</p>
+<div class="gebruikersaanwijzing">
+<p>This is Document D — The synthesis of the System Audit project. It brings together the patterns that emerge from the material: the paradoxes, the fault lines, and the role of the European Union.</p>
+<p>Read it as the conclusion, not as a summary.</p>
+</div>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Part I — The essentials at a glance</h2>
+<p>The system isn’t broken. It works exactly as it was designed to. It was designed for people who fit into a single category: living, working and being insured in the same country. Anyone who lives in two countries at the same time doesn’t fit into either of them. And the system doesn’t have a third category. The system hasn’t even considered a third category.</p>
+<p>The crux of this issue is not that there are many organisations. The crux is that there is a single mechanism that repeats itself. That mechanism consists of six questions, and the system gives the same answer to each one.</p>
+<p><strong>Waar speelt dit?</strong>Where does this apply? Anywhere a national rule is applied to a cross-border situation. The rule assumes that a person lives in one country, works in one country and is insured in one country. Anyone who has a presence in two countries at the same time does not fit this assumption. The system does not regard them as an exception requiring a solution. It regards them as an error requiring rejection.</p>
+<p><strong>Wat is het probleem?</strong>What is the problem? The problem is not that the citizen does not meet the conditions. The problem is that the conditions were not designed for someone who meets the requirements in two countries at the same time. Each country requires you to meet its own conditions. The citizen meets the conditions on both sides, but not in the same country. And so he meets neither of them.</p>
+<p><strong>Wie is verantwoordelijk?</strong>Who is responsible? No one, and therefore everyone. Each authority is only responsible for its own area. Each authority points the finger at the others. And no authority has the power to compel the others.</p>
+<p><strong>Wanneer lost het zich op?</strong>When will this be resolved? Once the current procedure has been completed. But the current procedure is stalling precisely because each authority is waiting for another. It’s a vicious circle, and the member of the public is caught in the middle.</p>
+<p><strong>Waarom duurt het zo lang?</strong>Why does it take so long? Because every level in the system has a good reason not to intervene. No authority, no time, no capacity, no political priority. Each level has its own logic, and these logics reinforce one another rather than correcting one another.</p>
+<p><strong>Hoe komt het goed?</strong>How will things be sorted out? Through the courts. But the courts resolve individual cases, not the whole system. And the courts are only accessible to those who can afford it.</p>
+<p>The facts underpinning these six answers are set out in Document A and Document B. The underlying architecture is described in Document C. Anyone who reads the facts will see the refusals. Anyone who understands the mechanism will see why the refusals are inevitable.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Part II — The Two Worlds and Their Knots</h2>
+<p>There are two worlds that never meet: the world of the body and the world of paper.</p>
+<p>The world of the body cannot wait. An infection does not wait. An amputation does not wait. Loss of vision does not wait. The body has no waiting list that can be extended by a system. The world of the body knows only one measure: today, yesterday, tomorrow. And the clock never stops.</p>
+<p>The world of paperwork works differently. There, a thirty-day deadline applies. There, a twelve-month period applies, which a person must be able to look back on. There, a three-month period for lodging an objection applies. There, a waiting period of one hundred and eighty days applies. There, a waiting period of one hundred and four weeks applies. The world of paperwork has one standard: the system itself. And the system never stops.</p>
+<p>There is no bridge between those two worlds. There is a counter. A counter can be closed. A counter can be moved. A counter can be manned by someone who is not authorised. A counter is in no hurry. A counter has no body.</p>
+<p>That clash gives rise to five knots that cannot be untangled. The facts relating to those knots are set out in Document A and Document B. The mechanisms are described here.</p>
+<p><strong>De eerste knoop: de foutieve registratie.</strong>The first link in the chain: incorrect registration. The authority that first establishes a definition — who the citizen is, what right they are applying for, what status they have — records that definition in a shared database. All other authorities consult that database. An incorrect definition automatically propagates throughout the entire system. And no authority further down the chain has the power to compel the source to correct its error. The error begins at a single point of contact, and it never ends.</p>
+<p><strong>De tweede knoop: het bewijs dat niet kan worden geleverd.</strong>The second sticking point: the evidence that cannot be provided. The system demands a document as proof. This document must be provided by an authority that is not authorised to provide it, or by an authority that refuses to provide it, or by an authority that is unaware that it is required to provide it. The citizen cannot produce the evidence themselves. The body that can produce it is the very body that does not produce it. And the body that needs it is left waiting.</p>
+<p><strong>De derde knoop: de drempel die verschuift.</strong>The third knot: the shifting threshold. The citizen provides the evidence requested. As soon as the evidence is provided, the threshold shifts. A new condition is added. The old condition was not the real condition; the new condition is the real condition. The citizen provides the new evidence. The threshold shifts once more. The citizen is never ‘done’, because ‘done’ is not a category within the system.</p>
+<p><strong>De vierde knoop: het systeem dat zichzelf blokkeert.</strong>The fourth sticking point: the system that blocks itself. The body responsible for correcting the error is the very same body that made it. And that body has no internal procedure for correcting its own errors. If you ask for a correction, the authority asks for the form that it itself is required to issue. And the authority refuses to issue the form, because no decision has yet been made regarding the entitlement. The circle is complete. The authority is both the gate and the gatekeeper.</p>
+<p><strong>De vijfde knoop: het systeem dat de schade meet maar niet de oorzaak.</strong>The fifth issue: the system that measures the damage but not the cause. The system measures what someone used to earn. It measures what someone, according to their tax history, ought to be able to earn. But it does not measure what someone actually receives today. When a benefit is suspended, actual income falls to zero. The system does not record this drop. The system continues to base its calculations on the old income. The family lives below the poverty line, but is recorded by the system as not being in poverty. Poverty is created by the administration and denied by that same administration.</p>
+<p><strong>De blinde vlek.</strong>The blind spot. Most people don’t see this. Those who never cross the border don’t realise the doors are closed. Anyone living in the centre of the country has never knocked on either door. The system works for them. The system is invisible and comfortable. That is not proof that the system works. It is proof that the system works for a certain type of person.</p>
+<p>This blind spot is not just a national problem. It also exists between regions within a single country. The same mechanisms at play between two countries are also at play between two regions, between two cantons, between two federal states. The failure becomes apparent as soon as you cross a border — whether it is a national border or a regional one. And those who do not cross the border do not see it. That is not an excuse, but a structural reality.</p>
+<p><strong>De verwarring tussen reisvrijheid en lidmaatschap.</strong>The confusion between freedom of movement and membership. There is another aspect to this blind spot: the confusion between two different things that people tend to mix up. The right to travel freely between countries is different from the right to work in a country and accrue social rights there. A country can be a member of the European Union without you being able to travel freely there. A country can use the euro without being a member of the European Union. The categories used by politicians — membership of the European Union, freedom of movement, membership of the eurozone — do not correspond to the lived reality of someone crossing the border.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Part III — The Mechanism of Failure</h2>
+<p>The system has four layers. Each layer has its own logic. And these logics reinforce one another rather than correcting one another.</p>
+<p><strong>De uitvoerende laag: de logica van de regel.</strong>The operational level: the logic of the rules. These are the service centres, the health insurance funds and the benefits agencies. They apply the rules. The rules are national. The rules are based on the assumption that a person lives in one country, works in one country and is insured in one country. Anyone who does not fit this assumption triggers an error. The error is not seen as a sign that the rule needs to be amended. The error is seen as proof that the citizen does not meet the requirements. The executive level has no authority to change the rule. It only has the authority to apply the rule. And the rule is what it is.</p>
+<p><strong>De toezichthoudende laag: de logica van de zelfbeperking.</strong>The supervisory layer: the logic of self-restraint. These are the regulators, the inspectorates and the ombudsman services. They spot the error. But they have a good reason not to intervene. A regulator who stretches the limits of their authority risks having their decision challenged. The safest position is always the narrowest interpretation of one’s own authority. So the regulator does not intervene. Not because they do not want to, but because they do not dare to. And their fear is rational: the system rewards self-restraint and punishes boldness.</p>
+<p><strong>De democratische laag: de logica van de tijdschaal.</strong>The democratic layer: the logic of the timescale. This comprises Parliament, the Ombudsman and the committees. They receive the complaint. But they operate on a timescale that is incompatible with the urgency of the crisis. A committee debate takes months. A legislative amendment takes years. A medical crisis lasts days. The democratic layer can change the law, but it will not do so unless there is political pressure. And there is no political pressure for a problem that affects only cross-border workers. The timescale of democracy and the timescale of the body are fundamentally incompatible.</p>
+<p><strong>De symbolische laag: de logica van de onmacht.</strong>The symbolic level: the logic of powerlessness. This is the Head of State. He receives the petition. He acknowledges receipt. He forwards it to the relevant minister. That is where the intervention ends. The symbolic level has no executive power. It is the final stop.</p>
+<p><strong>De cirkel.</strong>The circle. Each layer has a reason not to intervene. The executive layer applies the rules, but the rules were not designed for this situation. The supervisory layer sees the error, but is not permitted to intervene. The democratic level can change the law, but does not do so as long as there is no political pressure. The symbolic level has no power. And the only one left is the judge. But the judge resolves a single case, not the whole system. And the judge is only accessible to those who can afford it.</p>
+<p>The system isn’t broken. It works exactly as it was designed to. It was designed for people who fit within the lines. Anyone who falls outside the lines falls between the lines. And there’s no safety net between the lines. That’s not a fault. That’s the design.</p>
+<p><strong>De rode draad door alle lagen.</strong>The common thread running through all levels. The same thing happens at every level. An authority identifies a problem. The authority determines that the problem does not fall within its remit. The authority refers the matter to another authority. The other authority does the same. And the citizen is expected to act as the link between all these authorities. The citizen is the only actor in the system who has no authority to make decisions, yet is the only one responsible for keeping the whole system running.</p>
+<p>The facts relating to this mechanism are set out in Document A and Document B. These documents specify which body made which mistake, which letter was sent and when, and which decision was taken and when. This section merely outlines the pattern.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Part IV — The asymmetry between physical and administrative borders</h2>
+<p>European integration is based on the removal of physical borders. In 1944, Belgium, the Netherlands and Luxembourg signed a customs union. In 1951, the European Coal and Steel Community was established. This was followed in 1957 by the European Economic Community. In 1985, the Schengen Agreement was signed, which provided for the abolition of internal borders. The aim was the free movement of people, goods, services and capital.</p>
+<p>In the physical world, that objective has been achieved. The border posts have been dismantled. Movement across national borders takes place without checks. A citizen can drive from the Netherlands to Belgium, from Belgium to France, and from France to Germany, without stopping. It took forty years to achieve this openness, from 1944 to 1985. After that, it was a reality.</p>
+<p>The administrative reality has remained asymmetrical. Whilst the boundaries for the human body have disappeared, national administrative systems have never been merged or standardised. Each country retains its own health insurance fund, its own tax authority, its own benefits agency and its own disability register.</p>
+<p>This is where the fundamental flaw lies. The European legislator has opened up the physical space, but the national executive has programmed the underlying computer systems exclusively at national level. The infrastructure — the motorway — is transnational. The administrative decision-making point — the counter — has remained strictly national.</p>
+<p>The legislative amendment to address this decoupling is subject to a structural delay. In April 2026, a provisional political agreement was reached via a trilogue on the revision of Regulation 883/2004, the legislation that coordinates social security between Member States. In July 2026, the revised text was formally adopted. However, the actual operational implementation — including the transfer of responsibility for unemployment benefits to the country of employment after a continuous period of 22 weeks — is not scheduled until 2030 or 2031 due to the necessary IT adjustments.</p>
+<p>The entire legislative cycle, from the initial proposal to entry into force, thus spans more than ten years of negotiations and four years of waiting for implementation. Fourteen years for a software update.</p>
+<p>The digital solutions in this reform package are also stalling at the threshold of the data silo. The introduction of the European Social Security Pass, linked to the European digital identity wallet, digitises the medium on which the documents are stored. It enables public authorities to verify the documents quickly, but it does not enforce an automatic flow of data between national systems. It does not actively retrieve the data from the source. The front door is being digitised, but the back door remains closed.</p>
+<p>The European Commission’s macroeconomic projections forecast savings and fraud prevention totalling six billion euros by 2040. This calculation ignores the microeconomic reality of the intervening fourteen years. During this latency period, the costs of the system’s failure are passed on in full to the public: the private bank that parks debts subject to heavy penalties, the energy supplier that engages debt collection agencies and demands unfeasible medical examinations, and the private medical assessment market that charges unachievable rates for remote consultations. All these costs are borne by the individual, whilst the cause of the system’s standstill lies with the government.</p>
+<p>The Benelux was once the testing ground for European integration. In 1944, the experiment that would later be replicated on a European scale was launched here. The three countries have demonstrated that open pathways are possible. They have not demonstrated that open systems are possible.</p>
+<p>The ‘border worker’ is the error message indicating a half-finished design. The physical architecture is complete. The administrative architecture is not.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Part V — The figures and the scale</h2>
+<p>The problem is not unique to this case. Here is an overview of the scale at European level.</p>
+<p>In the European Union, millions of people live in a country other than the one where they work or where they come from. This number is growing steadily as a result of the European Union’s policies on labour mobility, the expansion of remote working and demographic trends in border regions.</p>
+<p>The number of complaints received by the informal European mediation network is increasing by tens of per cent each year. The problem is getting bigger, not smaller.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Part VI — The European dimension</h2>
+<p>The problem is not specific to Belgium and the Netherlands. It is a European one. Four case studies demonstrate this. These case studies are drawn from public European policy literature and academic research. They do not appear in Document A or Document B, as those documents describe a single individual case. They are included here because they demonstrate that the mechanism evident in that single case is repeated in every European border region.</p>
+<p><strong>Luxemburg.</strong>Luxembourg. Luxembourg has the highest proportion of cross-border workers in the EU. The coordination of their social security is governed by the European Regulation, but the tax and social security thresholds for remote working are fundamentally out of step with one another. A worker who works from home within the range of these two thresholds finds themselves in a legal grey area. Two countries levy taxes on the same basis, but using incompatible threshold calculations. This has required years of ad hoc bilateral agreements before any stabilisation could be achieved — and only in relation to taxation, not social security.</p>
+<p><strong>De Øresundregio.</strong>The Øresund region. In the region around the Øresund, thousands of cross-border workers commute across the border every day. They are covered by social security in their country of employment but receive unemployment benefits from their country of residence. Coordination requires the employer to provide a notice of termination document that the foreign unemployment fund recognises as valid. In practice, this exchange is slow, the documents are not always in a machine-readable format, and in the meantime, the individual is left waiting without benefits. The region has a joint committee that monitors the flow of information, but this committee has no authority over the implementing bodies in either country.</p>
+<p><strong>Zwitserland/Frankrijk.</strong>Switzerland/France. Switzerland is home to an estimated hundred thousand cross-border workers from France. Teleworking has given rise to a fundamental tension: the tax threshold for teleworking and the social security threshold for teleworking are diverging. Anyone working from home who falls between these two thresholds pays tax in one country but may be subject to social security contributions in the other. This requires simultaneous affiliation to two schemes, which the European regulation explicitly prohibits. The solution required a transitional agreement, an extension and a formal amendment to the treaty, with daily reporting obligations for employers. The administrative burden has shifted from the state to the employer; the structural incompatibility has not been resolved.</p>
+<p><strong>De Oostenrijks-Oost-Europese corridor.</strong>The Austria–Eastern Europe corridor. In the corridor between Austria and Eastern European Member States, the large-scale posting of workers is an established economic reality. Certificates confirming the country in which a posted worker is covered by social security are widely used fraudulently to maintain low social security contributions in the sending country, whilst the worker is in fact working permanently in the host country. The Court of Justice has ruled that even where a certificate has clearly been obtained fraudulently, the host Member State may not unilaterally apply its own legislation before engaging in dialogue with the issuing Member State. This requirement for dialogue, intended to protect the worker, is in practice exploited by fraudulent employers to delay the application of the host country’s legislation for months, whilst the worker remains formally unprotected.</p>
+<p>The conclusion drawn from all four case studies is the same: even in Europe’s most densely populated cross-border worker regions, there is no integrated solution. National emergency agreements are the only way forward, in the absence of structural reforms.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Part VII — The structural flaw in European legislation</h2>
+<p>The European regulation coordinating social security between Member States determines which country is the competent Member State. The regulation designates a single country as responsible — usually the country of employment — but does not provide for an automatic safety net for periods in which the allocation is disputed, changes temporarily, or both countries refuse to accept primary responsibility.</p>
+<p>The ‘both/and’ paradox — whereby a citizen is formally part of the systems of two countries but is regarded by both as the responsibility of the other — is not resolved by the regulation, but merely described.</p>
+<p>The mediation network acts as a non-binding oversight mechanism. It records some of the complaints and produces a finding, but the finding has no legal consequences for the body that refuses to comply. A recommendation is just a recommendation. The implementing body that disregards it faces no consequences. The European Social Security Information Exchange System exists for the electronic exchange of information, but response times for requests from other countries are not enforceable. Both instruments are procedural measures designed to address a problem that should have been resolved at a structural level.</p>
+<p>The facts relating to this architectural flaw are set out in Document B. That document specifies which regulations contain which provisions, which court rulings provide which interpretations, and which bodies have which powers. This document merely outlines the pattern.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Part VIII — The two approaches to a solution</h2>
+<p>In principle, cross-border citizens with a chronic condition or recognised disability have two options for managing their finances.</p>
+<p><strong>De uitkeringsroute.</strong>The benefit route. Disability benefit via the competent country. This route creates dependence on the state and is subject to national political goodwill. The average disability benefit in the EU ranges from 800 to 1,800 euros per month, payable for life in the event of permanent incapacity for work. The barrier to access: waiting periods are not recognised across borders; procedures require a national assessment history; the European exchange system is slow.</p>
+<p><strong>De fiscale autonomieroute.</strong>The fiscal autonomy route. Allowances, increased benefits and tax reductions in the country of residence based on a recognised disability. This route costs the state less, promotes economic participation and preserves citizens’ autonomy. The barrier to access is the same: medical status is not recognised across borders, one country’s administrative category does not translate to another, and the systems that are supposed to activate these entitlements do not communicate with one another.</p>
+<p>The fiscal autonomy route is more favourable than the benefit route in most policy areas: it costs the state less, promotes economic participation, preserves citizens’ autonomy and is in line with the EU’s labour mobility objectives. Nevertheless, it remains just as inaccessible as the benefit route as long as there is no cross-border translation of medical status and no administrative recognition of status. The barrier is not financial but structural.</p>
+<p>However, there is one aspect that puts the earlier analysis into perspective: in this case, the route to tax autonomy in Belgium via a manual bypass has, in fact, proved feasible. A medical certificate issued directly by the GP and submitted with the BNI tax return – bypassing the KSZ and the DG HAN – triggers the increased tax-free allowance and, upon submission of the return, results in a calculated balance of €2,669.97 in the family’s favour (pending the final tax assessment). The same route remained completely blocked via the automated government systems (8 versus 9 points at DG HAN, RIV blockage in the Netherlands). The distinction is instructive: the tax route is not impossible, but the citizen and their GP must manually bypass the digital government chain to make it work. And this has a paradoxical side effect: a higher net family income may actually jeopardise the means-tested allowances from Parentia and the SVB, as the automatic recalculation is based on the notional earning capacity.</p>
+<p>In addition, there is a factor that is often overlooked when comparing the two approaches: the political economy of funding. The European Union does not have its own social security system. Social security is a national competence. What the EU does, however, is co-fund programmes through the European Social Fund Plus that focus on labour market integration and social inclusion. These funds do not go towards the benefits themselves, but towards the support services surrounding them: training, guidance into work, and projects that increase social participation.</p>
+<p>Benefits in the European Union are largely financed through contributions: on average, 64 per cent of unemployment benefits come from social security contributions, not from taxes. Tax benefits, such as tax relief for people with disabilities, on the other hand, are funded almost entirely from national general revenue. The EU has no mechanism for co-financing Member States’ tax expenditure.</p>
+<p>This creates a funding asymmetry. For benefit-related programmes, a Member State can apply for EU co-funding. This is not the case for tax incentives. Member States therefore have a greater financial incentive to strengthen the benefits route than the tax route, regardless of which route is more favourable to the citizen.</p>
+<p>The tax-based approach costs the state less, but the state does not receive any European co-funding for it. The benefit-based approach costs the state more, but part of the associated costs can be covered by European funds. The political economy of the funding thus influences the policy choice, regardless of which route is most effective for the citizen.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Part IX — The three infrastructure solutions</h2>
+<p>Three specific building blocks directly correct the architectural flaws. They can be implemented individually, but are most effective when used in combination.</p>
+<p><strong>Bouwsteen 1 — Het inschrijvingsmoment als synchronisatiepunt.</strong>Building block 1 — The registration moment as a synchronisation point. When an EU citizen officially deregisters in country A and registers in country B, this triggers a single authorised digital import of the relevant administrative data: employment history, recognised medical conditions, current entitlements and family circumstances. The technical infrastructure is in place: the European digital identification system provides the foundation, the national population registers act as the trigger points, and the European social security exchange system provides the capacity. What is missing is the political decision that the registration process is the legal trigger for this synchronisation, and the obligation on the sending country to supply the data within a specified timeframe.</p>
+<p><strong>Bouwsteen 2 — Het Europees Medisch Statusdocument.</strong>Building block 2 — The European Medical Status Document. A standardised digital document that makes a citizen’s functional status readable across borders. It does not record the diagnosis — the illness — but the functional limitation: what the person can and cannot do, what percentage of work disability has been recognised, which country has formally established this recognition, and on what date. It is based on the World Health Organisation’s International Classification of Functioning, Disability and Health, which provides a universal linguistic framework already used by 29 European countries in rehabilitation medicine and health statistics. Each national authority publishes a conversion table: a published mapping of international scores to its own administrative categories. When a citizen submits an application to a foreign authority with a status document, the system automatically converts their score to the national category. The citizen is assessed once. The conversion is automatic. No re-assessment is required unless the medical status changes.</p>
+<p><strong>Bouwsteen 3 — De automatische fiscale route-activering.</strong>Building block 3 — Automatic tax route activation. When the status document records a recognised restriction and the registration document confirms the citizen’s cross-border situation, the system automatically activates the tax instruments available in the country of residence. This is not done via a manual application, but via an automatic decision rule based on readable status data. The decision logic works as follows: the score plus the registration status are compared with a nationally published activation table. In the Netherlands, this automatically triggers: an adjustment to the assessed income for benefit calculations, an increased allowance for recognised disability, and a calculation of entitlement to healthcare allowance, housing benefit and the child-related budget based on the adjusted income, including foreign components. In Belgium, this automatically triggers: the tax deduction for people with a disability, the increased minimum subsistence level in the event of recognised incapacity for work, and a notification to the relevant authority that the citizen may be entitled to supplementary allowances.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Part X — The free-rider problem</h2>
+<p>The implementation of an interconnected system raises questions regarding fraud resistance. An analysis shows that the current system of unconnected silos does not prevent fraud, but merely makes it more difficult to detect. Double payments in two countries are technically possible today because country A does not know what country B is granting, and vice versa. The European exchange system is intended to address this, but its use is not enforced. An interconnected system with readable status data is more difficult to exploit than a system of silos, for three specific reasons.</p>
+<p>Firstly: an international status document is based on scores derived from validated medical assessments carried out by recognised bodies. Falsifying a score requires the active cooperation of an assessing body, which shifts the burden of fraud from the individual to the institution — thereby making it detectable and punishable.</p>
+<p>Secondly, registration details are linked to official population registers and cannot be altered by the individual themselves; a false registration requires the active cooperation of the registering local authority.</p>
+<p>Thirdly: the automatic tax activation process compares status data with the home country’s activation table; every activation is logged and can be viewed by both countries, meaning that duplicate activations can be detected immediately.</p>
+<p>A transparent, interconnected system is structurally more resistant to fraud than a system comprising unconnected national silos. Simplification for the public and protection against abuse are not mutually exclusive — they reinforce one another.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Part XI — The Two Paths: Speed and Scope</h2>
+<p>In practice, cross-border citizens who encounter problems with the coordination of social security have two options: the legal route and the structural route.</p>
+<p><strong>De juridische weg — individueel, traag, zonder systeemeffect.</strong>The legal route — individual, slow, with no systemic impact. The informal mediation network reaches several thousand citizens each year. National court proceedings take 12 to 36 months. Preliminary ruling proceedings before the Court of Justice take 16 to 22 months. Each judgment applies to a single individual citizen. The system does not change for the millions of other cross-border citizens who face the same problem but do not bring proceedings.</p>
+<p><strong>De structurele weg — collectief, eenmalig, universeel.</strong>The structural approach — collective, one-off, universal. A targeted amendment to the European Coordination Regulation will apply to all cross-border workers from the date it comes into force. Once introduced, an international status document will permanently and automatically eliminate the need for re-assessment for every new citizen who moves across borders. Automatic tax route activation applies to every citizen who holds a status document and is registered in a country of residence, without them needing to be aware of, claim or document their entitlement.</p>
+<p>A European legislative process to amend the Coordination Regulation takes, on average, four to six years. If a reform package comes into force in 2030, it will reach more citizens in its first full year than the legal route has in thirty years. And every year thereafter, automatically, for every new citizen who crosses the border.</p>
+<p>The legal route resolves issues on an individual basis and does not bring about any structural change. The structural route changes the system for everyone at the same time. Every year of delay in the structural route deprives tens of thousands of citizens of access to rights they are already legally entitled to.</p>
+<p class="marker">[[PAGEBREAK]]</p>
+<h2>Part XII — The personal closing statement</h2>
+<p>It is an objective fact that a medical recovery process is incompatible with conducting multiple institutional procedures. The fact that a citizen undergoing physical recovery is required to gather this evidence demonstrates the priorities of the current system. Many abandon these procedures prematurely when faced with the scale of the administrative obstacles.</p>
+<p>The initial instinct is always to resolve one’s own, individual problem. However, when the timelines were systematically logged, a structural pattern emerged that goes beyond the individual case. This mechanism affects everyone who falls outside the standard norm. For those who live within the norm, the system operates invisibly and seamlessly. This does not prove that the system works universally; it proves that it has been optimised for a specific, national profile.</p>
+<p>The dismantling of these procedures lays bare the underlying architecture. The institutions and networks established for protection operate procedures that are disconnected from the material consequences. Control mechanisms operate on the basis of the system’s parameters, not on the basis of the reality of remedy. Abstract conditions are managed. At the same time, the number of situations that transcend the binary categories of legislation is growing. The norm is static, whilst social reality is dynamic.</p>
+<p>This dossier has been compiled as a concrete set of data illustrating what is structurally stagnating. As a Franco-Italian by origin, born in Belgium and living in the Netherlands, the theory of a unified European space has always been a starting point for me. Practice shows that this theory is conditional and applies mainly to those who fit exactly within the national mould. Those who fall outside it come up against the limits of that model.</p>
+<p>This report serves as an objective record for anyone who finds themselves in a similar situation, and as factual evidence for the authorities responsible for reviewing the system architecture.</p>
+<p>The standard doesn’t change. I do.</p>
+<a class="pub-top" href="#top" title="↑">↑</a>
+<footer class="pub-footer">
+<p><strong>System Audit</strong> — Cross-border jurisdictional vacuum in social security<br/>
+  Auteur : Eric Messa · Version mise à jour : 5 oktober 2026, 15:03</p>
+<p><a href="home.html">← Overview</a></p>
+</footer>
+</body>
+</html>

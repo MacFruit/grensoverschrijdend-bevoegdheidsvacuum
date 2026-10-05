@@ -133,23 +133,382 @@ tr:nth-child(even) td { background: #f4f1f8; }
     font-size: 10pt; color: #888; text-decoration: none;
 }
 .pub-naar-boven:hover { color: #1a3c6e; text-decoration: underline; }
+
+/* === PUBLICATIE-CSS START === */
+
+body {
+    font-family: Aptos, Calibri, sans-serif;
+    font-size: 12pt;
+    line-height: 1.6;
+    margin: 0;
+    padding: 40pt;
+    background: #f6f3ec;
+    color: #2a2a2a;
+}
+
+h1 {
+    font-size: 38pt;
+    color: #1a3c6e;
+    margin: 0 0 6pt;
+    letter-spacing: -0.5pt;
+}
+.ondertitel {
+    font-size: 16pt;
+    color: #4a5560;
+    margin: 0 0 14pt;
+    font-weight: 400;
+}
+.auteur {
+    font-size: 11pt;
+    color: #6b7280;
+    margin: 0 0 30pt;
+    font-style: italic;
+}
+.intro {
+    font-size: 12pt;
+    line-height: 1.7;
+    margin: 0 0 40pt;
+    text-align: justify;
+    color: #3a3f45;
+}
+
+/* === Spectrumbalk === */
+.spectrum {
+    height: 4px;
+    display: flex;
+    margin: 0 0 30pt;
+    border-radius: 2px;
+    overflow: hidden;
+}
+.spectrum span { flex: 1; }
+
+/* === Root index: intro-rijen per taal === */
+.intro-rijen { margin: 0 0 40pt; }
+.intro-rij {
+    display: grid;
+    grid-template-columns: 64pt 1fr;
+    gap: 18pt;
+    align-items: start;
+    padding: 22pt 26pt;
+    background: #ffffff;
+    border-left: 6px solid var(--accent);
+    border-radius: 8px;
+    margin-bottom: 14pt;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    transition: transform .15s, box-shadow .2s;
+}
+.intro-rij:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0,0,0,.08);
+}
+.intro-rij .vlag {
+    font-size: 44pt;
+    line-height: 1;
+    text-align: center;
+    padding-top: 2pt;
+}
+.intro-rij h3 {
+    margin: 0 0 6pt;
+    color: var(--accent);
+    font-size: 19pt;
+    letter-spacing: -0.3pt;
+}
+.intro-rij p {
+    margin: 0 0 10pt;
+    font-size: 11pt;
+    color: #4a5560;
+    line-height: 1.55;
+}
+.intro-rij a.goto {
+    display: inline-block;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 11pt;
+    padding: 4pt 0;
+}
+.intro-rij a.goto:hover { text-decoration: underline; }
+
+/* === A/B-melding (meertalig) === */
+.ab-melding {
+    background: #fdf6e3;
+    border-left: 4pt solid #d4a017;
+    padding: 18pt 22pt;
+    margin: 0 0 30pt;
+    border-radius: 6px;
+}
+.ab-melding h3 {
+    margin: 0 0 12pt;
+    color: #8b6200;
+    font-size: 15pt;
+    border: none;
+    padding: 0;
+}
+.ab-melding p {
+    margin: 0 0 10pt;
+    color: #6b4c00;
+    font-size: 11pt;
+    line-height: 1.6;
+}
+.ab-melding p:last-child { margin-bottom: 0; }
+.ab-melding .vlag-klein {
+    font-size: 14pt;
+    margin-right: 8pt;
+}
+
+/* === EU-joke === */
+.eu-joke {
+    text-align: center;
+    font-size: 11pt;
+    color: #6b7280;
+    font-style: italic;
+    margin: 30pt 0 0;
+    padding: 20pt;
+    border-top: 1px dashed #ddd7c9;
+    border-bottom: 1px dashed #ddd7c9;
+    line-height: 1.6;
+}
+.eu-joke .eu-vlag {
+    font-size: 22pt;
+    display: block;
+    margin-bottom: 6pt;
+}
+
+/* === Documentkaarten (per-taal home) === */
+.doc-lijst { list-style: none; padding: 0; margin: 0; }
+.doc-lijst li {
+    position: relative;
+    margin: 0 0 14pt;
+    padding: 22pt 26pt 22pt 28pt;
+    background: #ffffff;
+    border-left: 6px solid #1a3c6e;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    transition: transform .15s, box-shadow .2s;
+    overflow: hidden;
+}
+.doc-lijst li:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(0,0,0,.08);
+}
+.doc-lijst .docletter {
+    position: absolute;
+    top: -10pt;
+    right: 14pt;
+    font-size: 96pt;
+    font-weight: 900;
+    line-height: 1;
+    opacity: 0.06;
+    pointer-events: none;
+    user-select: none;
+}
+.doc-lijst a.titel {
+    display: block;
+    font-size: 17pt;
+    font-weight: 700;
+    text-decoration: none;
+    margin: 0 0 6pt;
+    position: relative;
+    z-index: 1;
+}
+.doc-lijst a.titel:hover { text-decoration: underline; }
+.doc-lijst .beschrijving {
+    font-size: 10.5pt;
+    color: #4a5560;
+    margin: 0;
+    line-height: 1.55;
+    position: relative;
+    z-index: 1;
+}
+.doc-lijst .downloads {
+    margin-top: 12pt;
+    font-size: 10pt;
+    position: relative;
+    z-index: 1;
+}
+.doc-lijst .downloads a {
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 16px;
+    padding: 4pt 10pt;
+    border-radius: 4px;
+    transition: background .15s;
+    display: inline-block;
+}
+.doc-lijst .downloads a:hover { text-decoration: none; }
+
+.doc-0 { border-left-color: #8b1e1e; background: #fbf5f5; }
+.doc-0 .docletter { color: #8b1e1e; }
+.doc-0 a.titel { color: #8b1e1e; }
+.doc-0 .downloads a { background: #f6eded; color: #8b1e1e; }
+.doc-0 .downloads a:hover { background: #f0dcdc; }
+
+.doc-a { border-left-color: #7a3e9d; background: #faf6fc; }
+.doc-a .docletter { color: #7a3e9d; }
+.doc-a a.titel { color: #7a3e9d; }
+.doc-a .downloads a { background: #f4f0f7; color: #7a3e9d; }
+.doc-a .downloads a:hover { background: #ebe2f0; }
+
+.doc-b { border-left-color: #1a3c6e; background: #f6f8fb; }
+.doc-b .docletter { color: #1a3c6e; }
+.doc-b a.titel { color: #1a3c6e; }
+.doc-b .downloads a { background: #edf0f4; color: #1a3c6e; }
+.doc-b .downloads a:hover { background: #dde4ed; }
+
+.doc-c { border-left-color: #4a3b6b; background: #f8f6fa; }
+.doc-c .docletter { color: #4a3b6b; }
+.doc-c a.titel { color: #4a3b6b; }
+.doc-c .downloads a { background: #f0eff3; color: #4a3b6b; }
+.doc-c .downloads a:hover { background: #e2dfe9; }
+
+.doc-d { border-left-color: #2e7d32; background: #f5faf5; }
+.doc-d .docletter { color: #2e7d32; }
+.doc-d a.titel { color: #2e7d32; }
+.doc-d .downloads a { background: #eef4ef; color: #2e7d32; }
+.doc-d .downloads a:hover { background: #ddeade; }
+
+/* === A/B-banner (per-taal home) === */
+.pub-ab-banner {
+    background: #fdf6e3;
+    border-left: 4pt solid #d4a017;
+    padding: 12pt 18pt;
+    margin: 0 0 30pt;
+    color: #6b4c00;
+    font-size: 11pt;
+    line-height: 1.6;
+    border-radius: 5px;
+}
+.pub-ab-banner strong { color: #8b6200; }
+
+/* === Footer === */
+.footer {
+    margin-top: 70pt;
+    padding-top: 22pt;
+    border-top: 1px solid #ddd7c9;
+    font-size: 9.5pt;
+    color: #6b7280;
+    text-align: center;
+    line-height: 1.7;
+}
+.footer a { color: #1a3c6e; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+
+/* === Navigatie === */
+.pub-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #ffffff;
+    border-bottom: 2px solid #e2ddd2;
+    padding: 10pt 40pt;
+    margin: -40pt -40pt 20pt -40pt;
+    font-family: Aptos, Calibri, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.pub-nav .links {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.pub-nav a {
+    color: #1a3c6e;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 11pt;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+.pub-nav a:hover { background: #eef2f7; border-color: #e2ddd2; }
+.pub-nav a.actief { background: #1a3c6e; color: #ffffff; }
+.pub-nav a.home { border: 1px solid #e2ddd2; }
+
+.pub-nav .langs {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    font-size: 10pt;
+}
+.pub-nav .langs a {
+    padding: 5pt 10pt;
+    font-weight: 700;
+    border: 1px solid #e2ddd2;
+    background: #ffffff;
+}
+.pub-nav .langs a:hover {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+}
+.pub-nav .langs a.actief {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+}
+.pub-nav .langs a.lang-nl { --accent: #FF6B00; --accent-soft: #fff0e0; color: #FF6B00; }
+.pub-nav .langs a.lang-en { --accent: #012169; --accent-soft: #e6ebf3; color: #012169; }
+.pub-nav .langs a.lang-de { --accent: #DD0000; --accent-soft: #fbe6e6; color: #DD0000; }
+.pub-nav .langs a.lang-fr { --accent: #0055A4; --accent-soft: #e6eef6; color: #0055A4; }
+.pub-nav .langs a.actief.lang-nl,
+.pub-nav .langs a.actief.lang-en,
+.pub-nav .langs a.actief.lang-de,
+.pub-nav .langs a.actief.lang-fr { color: #ffffff; }
+
+.pub-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 200;
+    background: #1a3c6e;
+    color: #fff;
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18pt;
+    line-height: 1;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .15s;
+}
+.pub-top:hover { transform: scale(1.1); background: #12294d; }
+.pub-footer {
+    margin-top: 60pt;
+    padding-top: 20pt;
+    border-top: 1px solid #ddd7c9;
+    font-size: 10pt;
+    color: #6b7280;
+    text-align: center;
+}
+.pub-footer a { color: #1a3c6e; text-decoration: none; }
+.pub-footer a:hover { text-decoration: underline; }
+
+/* === PUBLICATIE-CSS END === */
 </style>
 </head>
 <body><a id="top"></a>
 <nav class="pub-nav">
-<div class="links"><a class="home" href="index.html">← Overzicht</a> <a class="" href="document-0.html">Inleiding</a> <a class="" href="document-a.html">Narratief</a> <a class="" href="document-b.html">Data</a> <a class="" href="document-c.html">Visueel</a> <a class="actief" href="document-d.html">Synthese</a></div>
-<div class="titel-klein">Systeem-Audit · Eric Messa</div>
+<div class="links"><a class="home" href="home.html">← Overzicht</a><a class="" href="document-0.html">Doc 0 · Inleiding</a><a class="" href="document-a.html">Doc A · Narratief</a><a class="" href="document-b.html">Doc B · Data</a><a class="" href="document-c.html">Doc C · Visueel</a><a class="actief" href="document-d.html">Doc D · Synthese</a></div>
+<div class="langs"><a class="lang-nl actief" href="../nl/document-d.html">🇳🇱 NL</a><a class="lang-en" href="../en/document-d.html">🇬🇧 EN</a><a class="lang-de" href="../de/document-d.html">🇩🇪 DE</a><a class="lang-fr" href="../fr/document-d.html">🇫🇷 FR</a></div>
 </nav>
 
+
 <div class="titelblad">
-<h1 id="systeem-audit">Systeem-Audit</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h1 id="systeem-audit">Systeem-Audit</h1>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document D — De synthese</p>
 <p class="auteur">Auteur: Eric Messa</p>
 <p class="meta-lijn">Versie bijgewerkt: 1 oktober 2026, 13:02</p>
 </div>
-
-<div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
+<div class="pub-toc"><h2>Inhoudsopgave</h2><ul>
 <li class="niv1"><a href="#systeem-audit">Systeem-Audit</a></li>
 <li class="niv2"><a href="#inhoudsopgave">Inhoudsopgave</a></li>
 <li class="niv2"><a href="#deel-i-de-kern-in-één-oogopslag">Deel I — De kern in één oogopslag</a></li>
@@ -165,13 +524,11 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <li class="niv2"><a href="#deel-xi-de-twee-wegen-snelheid-en-reikwijdte">Deel XI — De twee wegen: snelheid en reikwijdte</a></li>
 <li class="niv2"><a href="#deel-xii-de-persoonlijke-slotverklaring">Deel XII — De persoonlijke slotverklaring</a></li>
 </ul></div>
-
 <div class="gebruikersaanwijzing">
 <p>Dit is Document D — De synthese van het Systeem-Audit-project. Het brengt de patronen samen die uit het materiaal naar voren komen: de paradoxen, de breuklijnen, de rol van de Europese Unie.</p>
 <p>Lees het als de conclusie, niet als een samenvatting.</p>
 </div>
-
-<h2 id="deel-i-de-kern-in-één-oogopslag">Deel I — De kern in één oogopslag</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="deel-i-de-kern-in-één-oogopslag">Deel I — De kern in één oogopslag</h2>
 <p>Het systeem is niet kapot. Het werkt precies zoals het is ontworpen. Het is ontworpen voor mensen die in één vakje passen: wonen, werken en verzekerd zijn in hetzelfde land. Wie in twee landen tegelijk leeft, past in geen van beide. En het systeem heeft geen derde vakje. Het systeem heeft niet eens een derde vakje overwogen.</p>
 <p>De kern van dit dossier is niet dat er veel instanties zijn. De kern is dat er één mechanisme is dat zich herhaalt. Dat mechanisme heeft zes vragen, en op elke vraag geeft het systeem hetzelfde antwoord.</p>
 <p><strong>Waar speelt dit?</strong> Overal waar een nationale regel op een grensoverschrijdende situatie wordt toegepast. De regel gaat ervan uit dat iemand in één land woont, in één land werkt, en in één land verzekerd is. Wie in twee landen tegelijk bestaat, past niet in die aanname. Het systeem ziet hem niet als een uitzondering die om een oplossing vraagt. Het ziet hem als een fout die om een afwijzing vraagt.</p>
@@ -181,8 +538,7 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <p><strong>Waarom duurt het zo lang?</strong> Omdat elke laag in het systeem een goede reden heeft om niet in te grijpen. Geen bevoegdheid, geen tijd, geen capaciteit, geen politieke prioriteit. Elke laag heeft een eigen logica, en die logica's versterken elkaar in plaats van elkaar te corrigeren.</p>
 <p><strong>Hoe komt het goed?</strong> Via de rechter. Maar de rechter lost één dossier op, niet het hele systeem. En de rechter is alleen toegankelijk voor wie het zich kan veroorloven.</p>
 <p>De feiten die deze zes antwoorden onderbouwen, staan in Document A en Document B. De architectuur die eraan ten grondslag ligt, staat in Document C. Wie de feiten leest, ziet de weigeringen. Wie het mechanisme begrijpt, ziet waarom de weigeringen onvermijdelijk zijn.</p>
-
-<h2 id="deel-ii-de-twee-werelden-en-hun-knopen">Deel II — De twee werelden en hun knopen</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="deel-ii-de-twee-werelden-en-hun-knopen">Deel II — De twee werelden en hun knopen</h2>
 <p>Er zijn twee werelden die elkaar nooit ontmoeten: de wereld van het lichaam en de wereld van het papier.</p>
 <p>De wereld van het lichaam kan niet wachten. Een infectie wacht niet. Een amputatie wacht niet. Een visusverlies wacht niet. Het lichaam heeft geen wachtlijst die door een systeem kan worden verlengd. De wereld van het lichaam kent één maat: vandaag, gisteren, morgen. En de klok stopt nooit.</p>
 <p>De wereld van het papier werkt anders. Daar telt een termijn van dertig dagen. Daar telt een periode van twaalf maanden waarover iemand moet kunnen terugkijken. Daar telt een bezwaartermijn van drie maanden. Daar telt een wachttijd van honderdtachtig dagen. Daar telt een wachttijd van honderdvier weken. De wereld van het papier kent één maat: het systeem zelf. En het systeem stopt nooit.</p>
@@ -196,8 +552,7 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <p><strong>De blinde vlek.</strong> De meeste mensen zien dit niet. Wie nooit de grens oversteekt, merkt niet dat de deuren dicht zijn. Wie in het midden van het land woont, heeft nooit bij een van beide deuren geklopt. Het systeem werkt voor hem. Het systeem is onzichtbaar en comfortabel. Dat is geen bewijs dat het systeem werkt. Dat is bewijs dat het systeem werkt voor een bepaald profiel.</p>
 <p>De blinde vlek is niet alleen een nationaal probleem. Ze bestaat ook tussen regio's binnen één land. Dezelfde mechanismen die tussen twee landen spelen, spelen ook tussen twee gewesten, tussen twee kantons, tussen twee deelstaten. Het falen wordt zichtbaar zodra je een grens oversteekt — of dat nu een landsgrens of een gewestgrens is. En wie de grens niet oversteekt, ziet het niet. Dat is geen excuus, maar een structureel gegeven.</p>
 <p><strong>De verwarring tussen reisvrijheid en lidmaatschap.</strong> Er is nog een dimensie aan de blinde vlek: de verwarring tussen twee verschillende dingen die mensen door elkaar halen. Het recht om vrij te reizen tussen landen is iets anders dan het recht om in een land te werken en er sociale rechten op te bouwen. Een land kan lid zijn van de Europese Unie zonder dat je er vrij kunt reizen. Een land kan de euro gebruiken zonder lid te zijn van de Europese Unie. De categorieën die politici gebruiken — lid van de Europese Unie, lid van de reisvrijheid, lid van de euro — vallen niet samen met de geleefde werkelijkheid van iemand die de grens oversteekt.</p>
-
-<h2 id="deel-iii-het-mechanisme-van-het-falen">Deel III — Het mechanisme van het falen</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="deel-iii-het-mechanisme-van-het-falen">Deel III — Het mechanisme van het falen</h2>
 <p>Het systeem heeft vier lagen. Elke laag heeft een eigen logica. En die logica's versterken elkaar in plaats van elkaar te corrigeren.</p>
 <p><strong>De uitvoerende laag: de logica van de regel.</strong> Dit zijn de loketten, de ziekenfondsen, de uitkeringsinstanties. Zij passen de regels toe. De regels zijn nationaal. De regels gaan ervan uit dat iemand in één land woont, in één land werkt, en in één land verzekerd is. Wie niet in die aanname past, veroorzaakt een fout. De fout wordt niet gezien als een signaal dat de regel moet worden aangepast. De fout wordt gezien als een bewijs dat de burger niet voldoet. De uitvoerende laag heeft geen bevoegdheid om de regel te veranderen. Ze heeft alleen de bevoegdheid om de regel toe te passen. En de regel is wat hij is.</p>
 <p><strong>De toezichthoudende laag: de logica van de zelfbeperking.</strong> Dit zijn de controleurs, de inspecties, de ombudsdiensten. Zij zien de fout. Maar ze hebben een goede reden om niet in te grijpen. Een toezichthouder die zijn bevoegdheid oprekt, riskeert dat zijn beslissing wordt aangevochten. De veiligste positie is altijd de smalste interpretatie van de eigen bevoegdheid. De toezichthouder grijpt dus niet in. Niet omdat hij niet wil. Omdat hij niet durft. En zijn angst is rationeel: het systeem beloont zelfbeperking en bestraft durf.</p>
@@ -207,8 +562,7 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <p>Het systeem is niet kapot. Het werkt zoals het is ontworpen. Het is ontworpen voor mensen die binnen de lijnen passen. Wie buiten de lijnen valt, valt tussen de lijnen. En tussen de lijnen is geen vangnet. Dat is geen fout. Dat is het ontwerp.</p>
 <p><strong>De rode draad door alle lagen.</strong> In elke laag gebeurt hetzelfde. Een instantie ziet een probleem. De instantie stelt vast dat het probleem niet binnen haar bevoegdheid valt. De instantie verwijst naar een andere instantie. De andere instantie doet hetzelfde. En de burger wordt geacht de verbinding te zijn tussen al die instanties. De burger is de enige actor in het systeem die geen bevoegdheid heeft om iets te beslissen, maar die wel de enige actor is die het hele systeem moet laten werken.</p>
 <p>De feiten van dit mechanisme staan in Document A en Document B. Daar staat welke instantie welke fout maakte, welke brief wanneer werd verstuurd, welke beslissing wanneer werd genomen. Hier staat alleen het patroon.</p>
-
-<h2 id="deel-iv-de-asymmetrie-tussen-fysieke-en-administratieve-grenzen">Deel IV — De asymmetrie tussen fysieke en administratieve grenzen</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="deel-iv-de-asymmetrie-tussen-fysieke-en-administratieve-grenzen">Deel IV — De asymmetrie tussen fysieke en administratieve grenzen</h2>
 <p>De Europese integratie is gebouwd op de opheffing van fysieke grenzen. In 1944 ondertekenden België, Nederland en Luxemburg een douane-unie. In 1951 werd de Europese Gemeenschap voor Kolen en Staal opgericht. In 1957 volgde de Europese Economische Gemeenschap. In 1985 werd het Akkoord van Schengen ondertekend, dat de afschaffing van de binnengrenzen regelde. Het doel was de vrije verplaatsing van personen, goederen, diensten en kapitaal.</p>
 <p>In de fysieke realiteit is die doelstelling gerealiseerd. De grensposten zijn ontmanteld. De verplaatsing over de landsgrenzen verloopt zonder controle. Een burger rijdt met de auto van Nederland naar België, van België naar Frankrijk, van Frankrijk naar Duitsland, zonder te stoppen. Die openstelling heeft veertig jaar gekost, van 1944 tot 1985. Daarna was ze een feit.</p>
 <p>De administratieve realiteit is asymmetrisch gebleven. Terwijl de grens voor het menselijk lichaam is verdwenen, zijn de nationale uitvoeringssystemen nooit gefuseerd of gestandaardiseerd. Elk land behoudt zijn eigen ziekenfonds, zijn eigen belastingdienst, zijn eigen uitkeringsinstantie en zijn eigen handicapregistratie.</p>
@@ -219,27 +573,23 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <p>De macro-economische projecties van de Europese Commissie voorspellen tegen 2040 zes miljard euro aan besparingen en fraudepreventie. Deze berekening negeert de micro-economische realiteit van de tussenliggende veertien jaar. Gedurende deze latentietijd worden de kosten van het systeemfalen volledig afgewenteld op de burger: de private bank die schulden parkeert tegen zware sancties, de energieleverancier die incassobureaus inschakelt en onuitvoerbare medische keuringen eist, en de private keuringsmarkt die onhaalbare tarieven hanteert voor consulten op afstand. Al deze kosten slaan neer bij het individu, terwijl de oorzaak van de systeemstilstand bij de overheid ligt.</p>
 <p>De Benelux was ooit de proeftuin van de Europese integratie. In 1944 werd hier het experiment gestart dat later op Europese schaal zou worden herhaald. De drie landen hebben aangetoond dat open wegen mogelijk zijn. Ze hebben niet aangetoond dat open systemen mogelijk zijn.</p>
 <p>De grensarbeider is de foutmelding van een half afgewerkt ontwerp. De fysieke architectuur is voltooid. De administratieve architectuur niet.</p>
-
-<h2 id="deel-v-de-cijfers-en-de-schaal">Deel V — De cijfers en de schaal</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="deel-v-de-cijfers-en-de-schaal">Deel V — De cijfers en de schaal</h2>
 <p>Het probleem is niet uniek voor deze casus. Hier volgt een overzicht van de schaal op Europees niveau.</p>
 <p>In de Europese Unie leven miljoenen mensen in een ander land dan waar ze werken of waar ze vandaan komen. Het aantal groeit structureel door het beleid van de Europese Unie voor arbeidsmobiliteit, de uitbreiding van telewerk en de bevolkingsontwikkeling in grensregio's.</p>
 <p>De instroom van klachten bij het informele Europese bemiddelingsnetwerk groeit met tientallen procenten per jaar. Het probleem wordt groter, niet kleiner.</p>
-
-<h2 id="deel-vi-de-europese-dimensie">Deel VI — De Europese dimensie</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="deel-vi-de-europese-dimensie">Deel VI — De Europese dimensie</h2>
 <p>Het probleem is niet Belgisch-Nederlands. Het is Europees. Vier casussen tonen dat aan. Deze casussen zijn ontleend aan openbare Europese beleidsliteratuur en academisch onderzoek. Ze staan niet in Document A of Document B, want die documenten beschrijven één individuele casus. Ze staan hier omdat ze aantonen dat het mechanisme dat in die ene casus zichtbaar wordt, zich in elke Europese grensregio herhaalt.</p>
 <p><strong>Luxemburg.</strong> Luxemburg heeft de hoogste ratio grensoverschrijdende werknemers van de EU. De coördinatie van hun sociale zekerheid verloopt via de Europese verordening, maar de belasting- en sociale zekerheidsdrempels voor telewerk zijn fundamenteel niet op elkaar afgestemd. Een werknemer die tussen twee drempels thuiswerkt, bevindt zich in een juridisch niemandsland. Twee landen innen op dezelfde grondslag op basis van onverenigbare drempelberekeningen. Dit heeft jaren van bilaterale noodakkoorden vereist voordat er enige stabilisering optrad — en uitsluitend voor de belastingdimensie, niet voor de sociale zekerheidsdimensie.</p>
 <p><strong>De Øresundregio.</strong> In de regio rond de Sont pendelen dagelijks duizenden grensoverschrijdende werknemers over de grens. Zij zijn sociaal verzekerd in het werkland maar ontvangen bij werkloosheid de uitkering vanuit het woonland. De coördinatie vereist dat de werkgever een ontslagdocument levert dat het buitenlandse werkloosheidsfonds als invoerbaar erkent. In de praktijk verloopt die uitwisseling traag, zijn de documenten niet altijd in een automatisch verwerkbaar formaat, en wacht de burger in de tussentijd zonder uitkering. De regio heeft een gezamenlijk comité dat de informatiedoorstroming monitort, maar dit comité heeft geen bevoegdheid over de uitvoeringsinstanties van beide landen.</p>
 <p><strong>Zwitserland/Frankrijk.</strong> Zwitserland telt naar schatting honderdduizenden grensoverschrijdende werknemers uit Frankrijk. Telewerken deed een fundamentele spanning ontstaan: de belastingdrempel voor telewerk en de sociale zekerheidsdrempel voor telewerk lopen uit elkaar. Wie tussen beide drempels thuiswerkt, betaalt belastingen in het ene land maar valt voor sociale zekerheid potentieel onder het andere. Dit vereist gelijktijdige aansluiting bij twee stelsels, wat de Europese verordening expliciet verbiedt. De oplossing heeft een transitieakkoord, een verlenging en een formele verdragswijziging gevergd, met dagelijkse rapportageverplichtingen voor werkgevers. De administratieve last is van de staat naar de werkgever verschoven; de structurele onverenigbaarheid is niet opgelost.</p>
 <p><strong>De Oostenrijks-Oost-Europese corridor.</strong> In de corridor tussen Oostenrijk en Oost-Europese lidstaten is massale detachering van werknemers een gevestigde economische realiteit. Certificaten die bevestigen in welk land een gedetacheerde werknemer sociaal verzekerd is, worden op grote schaal frauduleus gebruikt om lage sociale bijdragen in het detacherende land te handhaven, terwijl de werknemer feitelijk permanent in het ontvangende land werkt. Het Hof van Justitie heeft bepaald dat zelfs wanneer een certificaat kennelijk frauduleus is verkregen, de ontvangende lidstaat zijn eigen wetgeving niet unilateraal mag toepassen voordat hij een dialoog heeft gevoerd met de afgevende lidstaat. Dit dialoogvereiste, bedoeld als bescherming van de werknemer, wordt in de praktijk door frauduleuze werkgevers gebruikt om de toepassing van de ontvangende wetgeving maandenlang te vertragen terwijl de werknemer formeel onbeschermd is.</p>
 <p>De conclusie uit alle vier de casussen is dezelfde: zelfs in de meest geconcentreerde grensarbeidersregio's van Europa bestaat geen geïntegreerde oplossing. Nationale noodakkoorden zijn de enige uitkomst, zonder structurele correctie.</p>
-
-<h2 id="deel-vii-de-architectuurfout-in-de-europese-regelgeving">Deel VII — De architectuurfout in de Europese regelgeving</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="deel-vii-de-architectuurfout-in-de-europese-regelgeving">Deel VII — De architectuurfout in de Europese regelgeving</h2>
 <p>De Europese verordening die de sociale zekerheid tussen lidstaten coördineert, bepaalt welk land de bevoegde lidstaat is. De verordening wijst één land aan als verantwoordelijk — doorgaans het werkland — maar voorziet geen automatisch vangnet voor de periodes waarin de toewijzing omstreden is, tijdelijk verandert, of beide landen weigeren de primaire verantwoordelijkheid te aanvaarden.</p>
 <p>De En/En-paradox — waarbij de burger formeel in het systeem van twee landen zit maar door beide als de verantwoordelijkheid van het andere wordt beschouwd — wordt door de verordening niet opgelost maar slechts omschreven.</p>
 <p>Het bemiddelingsnetwerk fungeert als niet-bindend controlemechanisme. Het registreert een deel van de klachten en produceert een uitkomst, maar de uitkomst heeft geen juridische consequentie voor de instantie die weigert. Een aanbeveling is een aanbeveling. De uitvoeringsinstantie die haar naast zich neerlegt, ondervindt geen gevolg. Het Europese uitwisselingssysteem voor sociale zekerheid bestaat voor elektronische informatie-uitwisseling, maar reactietermijnen voor buitenlandse verzoeken zijn niet afdwingbaar. Beide instrumenten zijn procedurele voorzieningen voor een probleem dat structureel had moeten worden opgelost.</p>
 <p>De feiten van deze architectuurfout staan in Document B. Daar staat welke verordening welke bepaling bevat, welke arresten welke interpretatie geven, welke instanties welke bevoegdheid hebben. Hier staat alleen het patroon.</p>
-
-<h2 id="deel-viii-de-twee-oplossingsroutes">Deel VIII — De twee oplossingsroutes</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="deel-viii-de-twee-oplossingsroutes">Deel VIII — De twee oplossingsroutes</h2>
 <p>De grensoverschrijdende burger met een chronische aandoening of erkende beperking heeft in principe twee routes om financieel te functioneren.</p>
 <p><strong>De uitkeringsroute.</strong> Arbeidsongeschiktheidsuitkering via het bevoegde land. Deze route creëert staatsafhankelijkheid en is onderhevig aan nationale politieke goodwill. De gemiddelde invaliditeitsuitkering in de EU varieert van 800 tot 1.800 euro per maand, levenslang bij permanente arbeidsongeschiktheid. De toegangsbarrière: wachttijden worden niet erkend over grenzen; procedures vereisen nationale beoordelingshistorie; het Europese uitwisselingssysteem werkt traag.</p>
 <p><strong>De fiscale autonomieroute.</strong> Toeslagen, verhoogde tegemoetkomingen en fiscale reducties in het woonland op basis van erkende beperking. Deze route kost de staat minder, bevordert economische participatie en behoudt de autonomie van de burger. De toegangsbarrière is identiek: de medische status wordt niet erkend over grenzen, de administratieve categorie van het ene land vertaalt niet naar het andere, en de systemen die de rechten zouden moeten activeren communiceren niet met elkaar.</p>
@@ -249,39 +599,37 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <p>Uitkeringen zijn in de Europese Unie grotendeels contributioneel gefinancierd: gemiddeld 64 procent van de werkloosheidsuitkeringen komt uit sociale premies, niet uit belastingen. Fiscale voordelen, zoals belastingverminderingen voor personen met een handicap, komen daarentegen vrijwel volledig uit de nationale algemene middelen. De EU heeft geen instrument om fiscale uitgaven van lidstaten te co-financieren.</p>
 <p>Dit creëert een financieringsasymmetrie. Voor uitkeringsgerelateerde programma's kan een lidstaat medefinanciering van de EU aanvragen. Voor fiscale voordelen niet. Lidstaten hebben daardoor een grotere financiële prikkel om de uitkeringsroute te versterken dan de fiscale route, ongeacht welke route voor de burger gunstiger is.</p>
 <p>De fiscale route kost de staat minder, maar de staat ontvangt er geen Europese co-financiering voor. De uitkeringsroute kost de staat meer, maar een deel van de ondersteunende kosten kan worden afgedekt met Europese middelen. De politieke economie van de financiering beïnvloedt daarmee de beleidskeuze, los van de vraag welke route voor de burger het meest effectief is.</p>
-
-<h2 id="deel-ix-de-drie-infrastructurele-oplossingen">Deel IX — De drie infrastructurele oplossingen</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="deel-ix-de-drie-infrastructurele-oplossingen">Deel IX — De drie infrastructurele oplossingen</h2>
 <p>Drie concrete bouwstenen corrigeren de architectuurfouten direct. Ze kunnen afzonderlijk worden ingevoerd, maar bereiken hun volle effect in combinatie.</p>
 <p><strong>Bouwsteen 1 — Het inschrijvingsmoment als synchronisatiepunt.</strong> Wanneer een EU-burger zich officieel uitschrijft in land A en inschrijft in land B, activeert dat één geautoriseerde digitale import van de relevante administratieve data: loopbaanhistoriek, erkende medische statussen, lopende rechten en gezinssituatie. De technische infrastructuur bestaat: het Europese systeem voor digitale identificatie biedt de grondslag, de nationale bevolkingsregisters zijn de triggerpunten, en het Europese uitwisselingssysteem voor sociale zekerheid biedt de capaciteit. Wat ontbreekt is het politieke besluit dat de inschrijvingshandeling de juridische trigger is voor die synchronisatie, en de verplichting voor het uitzendende land om de data te leveren binnen een vastgestelde termijn.</p>
 <p><strong>Bouwsteen 2 — Het Europees Medisch Statusdocument.</strong> Een gestandaardiseerd digitaal document dat de functionele status van een burger over grenzen leesbaar maakt. Het registreert niet de diagnose — de ziekte — maar de functionele beperking: wat kan de persoon wel en niet, welk percentage arbeidsbeperking is erkend, welk land heeft de erkenning formeel vastgesteld en op welke datum. De grondslag is de International Classification of Functioning, Disability and Health van de Wereldgezondheidsorganisatie, die een universeel taalraamwerk biedt dat door 29 Europese landen al wordt gebruikt in de revalidatiegeneeskunde en de gezondheidszorgstatistiek. Elke nationale instantie publiceert een vertaalsleutel: een gepubliceerde mapping van internationale scores naar haar eigen administratieve categorieën. Wanneer een burger met een statusdocument een aanvraag doet bij een buitenlandse instantie, vertaalt het systeem automatisch zijn score naar de nationale categorie. De burger wordt één keer beoordeeld. De vertaling is automatisch. Geen herkeuring nodig tenzij de medische status wijzigt.</p>
 <p><strong>Bouwsteen 3 — De automatische fiscale route-activering.</strong> Wanneer het statusdocument een erkende beperking registreert én het inschrijvingsdocument de grensoverschrijdende situatie van de burger bevestigt, activeert het systeem automatisch de fiscale instrumenten die beschikbaar zijn in het woonland. Niet via een handmatige aanvraag, maar via een automatische beslissingsregel gebaseerd op leesbare statusdata. De beslissingslogica werkt als volgt: de score plus de inschrijvingsstatus worden vergeleken met een nationaal gepubliceerde activeringstabel. In Nederland activeert dit automatisch: aanpassing toetsingsinkomen voor toeslagberekening, verhoogde tegemoetkoming voor erkende handicap, en een berekening van het recht op zorgtoeslag, huurtoeslag en kindgebonden budget op basis van het gecorrigeerde inkomen inclusief buitenlandse componenten. In België activeert dit automatisch: de fiscale aftrek voor personen met een handicap, het verhoogde bestaansminimum bij erkende arbeidsongeschiktheid, en een kennisgeving aan de bevoegde dienst dat de burger recht kan hebben op aanvullende tegemoetkomingen.</p>
-
-<h2 id="deel-x-de-profiteursvraag">Deel X — De profiteursvraag</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="deel-x-de-profiteursvraag">Deel X — De profiteursvraag</h2>
 <p>De implementatie van een verbonden systeem roept vragen op omtrent frauderesistentie. Een analyse toont dat het huidige systeem van onverbonden silo's misbruik niet voorkomt, maar uitsluitend de detectie ervan bemoeilijkt. Dubbele uitkeringen in twee landen zijn vandaag technisch mogelijk omdat land A niet weet wat land B toekent, en vice versa. Het Europese uitwisselingssysteem is bedoeld om dit te ondervangen, maar wordt niet afdwingbaar gebruikt. Een verbonden systeem met leesbare statusdata is moeilijker te misbruiken dan een systeem van silo's, om drie concrete redenen.</p>
 <p>Ten eerste: een internationaal statusdocument is gebaseerd op scores die zijn afgeleid van gevalideerde medische beoordelingen door erkende instanties. Simuleren van een score vereist actieve medewerking van een beoordelend orgaan, wat fraude verschuift van de burger naar de instelling — en daarmee detecteerbaar en sanctioneerbaar maakt.</p>
 <p>Ten tweede: de inschrijvingsdata zijn gekoppeld aan officiële bevolkingsregisters en zijn niet manipuleerbaar door de burger zelf; een valse inschrijving vereist actieve medewerking van de registrerende gemeente.</p>
 <p>Ten derde: de automatische fiscale activering vergelijkt statusdata met de activeringstabel van het woonland; elke activering is gelogd en is voor beide landen raadpleegbaar, waardoor dubbele activering onmiddellijk detecteerbaar is.</p>
 <p>Een transparant, verbonden systeem is structureel frauderesistenter dan een systeem van onverbonden nationale silo's. Vereenvoudiging voor de burger en bescherming tegen misbruik sluiten elkaar niet uit — zij versterken elkaar.</p>
-
-<h2 id="deel-xi-de-twee-wegen-snelheid-en-reikwijdte">Deel XI — De twee wegen: snelheid en reikwijdte</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="deel-xi-de-twee-wegen-snelheid-en-reikwijdte">Deel XI — De twee wegen: snelheid en reikwijdte</h2>
 <p>Grensoverschrijdende burgers die problemen ondervinden met de coördinatie van sociale zekerheid hebben in de praktijk twee wegen: de juridische weg en de structurele weg.</p>
 <p><strong>De juridische weg — individueel, traag, zonder systeemeffect.</strong> Het informele bemiddelingsnetwerk bereikt per jaar enkele duizenden burgers. Een nationale rechtbankprocedure duurt 12 tot 36 maanden. Een prejudiciële procedure bij het Hof van Justitie duurt 16 tot 22 maanden. Elk arrest geldt voor één individuele burger. Het systeem verandert niet voor de overige miljoenen grensoverschrijdende burgers die hetzelfde probleem hebben maar geen procedure starten.</p>
 <p><strong>De structurele weg — collectief, eenmalig, universeel.</strong> Een gerichte aanpassing van de Europese coördinatieverordening is van kracht voor alle grensoverschrijdende werknemers op de dag van inwerkingtreding. Een internationaal statusdocument, eenmaal ingevoerd, elimineert de herkeuring voor elke nieuwe burger die grensoverschrijdend gaat, permanent en automatisch. De automatische fiscale route-activering werkt voor elke burger die een statusdocument heeft en in een woonland ingeschreven staat, zonder dat hij zijn recht hoeft te kennen, te claimen of te documenteren.</p>
 <p>Een Europees wetgevingstraject voor aanpassing van de coördinatieverordening duurt gemiddeld vier tot zes jaar. Als een hervormingspakket in 2030 in werking treedt, bereikt het in zijn eerste volledige jaar meer burgers dan de juridische weg in dertig jaar. En elk jaar daarna opnieuw, automatisch, voor elke nieuwe burger die de grens oversteekt.</p>
 <p>De juridische weg lost individueel op en verandert structureel niets. De structurele weg verandert het systeem voor iedereen tegelijk. Elk jaar vertraging in de structurele weg kost tienduizenden burgers toegang tot rechten die zij wettelijk al hebben.</p>
-
-<h2 id="deel-xii-de-persoonlijke-slotverklaring">Deel XII — De persoonlijke slotverklaring</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="deel-xii-de-persoonlijke-slotverklaring">Deel XII — De persoonlijke slotverklaring</h2>
 <p>Het is een objectief gegeven dat een medisch hersteltraject niet compatibel is met het voeren van een meervoudige institutionele procedure. Dat een burger in fysiek herstel deze bewijslast moet verzamelen, toont de prioritering van het huidige systeem aan. Velen staken deze procedures voortijdig, geconfronteerd met de omvang van de administratieve weerstand.</p>
 <p>De initiële reflex is altijd het oplossen van het eigen, individuele probleem. Echter, bij het systematisch loggen van de tijdlijnen werd een structureel patroon zichtbaar dat de individuele casus overstijgt. Dit mechanisme raakt iedereen die buiten de standaardnorm valt. Voor wie binnen de norm leeft, functioneert het systeem onzichtbaar en frictieloos. Dat bewijst niet dat het systeem universeel werkt; het bewijst dat het is geoptimaliseerd voor een specifiek, nationaal profiel.</p>
 <p>De demontage van deze procedures legt de architectuur bloot. De instituties en netwerken die zijn opgericht ter bescherming, hanteren procedures die ontkoppeld zijn van de materiële gevolgen. Controlemechanismen redeneren vanuit de parameters van het systeem, niet vanuit de curatieve realiteit. Men beheert abstracte voorwaarden. Tegelijkertijd groeit het aantal situaties dat de binaire categorieën van de wetgeving overschrijdt. De norm is statisch, terwijl de maatschappelijke realiteit dynamisch is.</p>
 <p>Dit dossier is samengesteld als een concrete dataset van wat er structureel stagneert. Als Franco-Italiaan van origine, geboren in België, wonend in Nederland, is de theorie van een geünificeerde Europese ruimte altijd een uitgangspunt geweest. De praktijk toont aan dat deze theorie voorwaardelijk is en voornamelijk geldt voor wie exact in de nationale mal past. Wie daarbuiten valt, stuit op de grenzen van dat ontwerp.</p>
 <p>Dit dossier dient als objectieve registratie voor wie in een vergelijkbare situatie terechtkomt, en als feitelijke onderbouwing voor de instanties die de bevoegdheid hebben de systeemarchitectuur te herzien.</p>
 <p>De norm beweegt niet. Ik wel.</p>
-<a class="pub-top" href="#top" title="Naar boven">↑</a>
+
+
+<a class="pub-top" href="#top" title="↑">↑</a>
 <footer class="pub-footer">
-<p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 1 oktober 2026, 13:02</p>
-<p><a href="index.html">← Terug naar overzicht</a></p>
+<p><strong>Systeem-Audit</strong> — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid<br/>
+  Auteur : Eric Messa · Version mise à jour : 5 oktober 2026, 15:03</p>
+<p><a href="home.html">← Overzicht</a></p>
 </footer>
 </body>
 </html>
