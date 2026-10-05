@@ -3,427 +3,128 @@
 <head>
 <meta charset="UTF-8">
 <title>Systeem-Audit — Overzicht</title>
-<style>/* === PUBLICATIE-CSS START === */
-
-body {
-    font-family: Aptos, Calibri, sans-serif;
-    font-size: 12pt;
-    line-height: 1.6;
-    margin: 0;
-    padding: 40pt;
-    background: #f6f3ec;
-    color: #2a2a2a;
-}
-
-h1 {
-    font-size: 38pt;
-    color: #1a3c6e;
-    margin: 0 0 6pt;
-    letter-spacing: -0.5pt;
-}
-.ondertitel {
-    font-size: 16pt;
-    color: #4a5560;
-    margin: 0 0 14pt;
-    font-weight: 400;
-}
-.auteur {
-    font-size: 11pt;
-    color: #6b7280;
-    margin: 0 0 30pt;
-    font-style: italic;
-}
-.intro {
-    font-size: 12pt;
-    line-height: 1.7;
-    margin: 0 0 40pt;
-    text-align: justify;
-    color: #3a3f45;
-}
-
-/* === Spectrumbalk === */
-.spectrum {
-    height: 4px;
-    display: flex;
-    margin: 0 0 30pt;
-    border-radius: 2px;
-    overflow: hidden;
-}
-.spectrum span { flex: 1; }
-
-/* === Root index: intro-rijen per taal === */
-.intro-rijen { margin: 0 0 40pt; }
-.intro-rij {
-    display: grid;
-    grid-template-columns: 64pt 1fr;
-    gap: 18pt;
-    align-items: start;
-    padding: 22pt 26pt;
-    background: #ffffff;
-    border-left: 6px solid var(--accent);
-    border-radius: 8px;
-    margin-bottom: 14pt;
-    box-shadow: 0 1px 3px rgba(0,0,0,.04);
-    transition: transform .15s, box-shadow .2s;
-}
-.intro-rij:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(0,0,0,.08);
-}
-.intro-rij .vlag {
-    font-size: 44pt;
-    line-height: 1;
-    text-align: center;
-    padding-top: 2pt;
-}
-.intro-rij h3 {
-    margin: 0 0 6pt;
-    color: var(--accent);
-    font-size: 19pt;
-    letter-spacing: -0.3pt;
-}
-.intro-rij p {
-    margin: 0 0 10pt;
-    font-size: 11pt;
-    color: #4a5560;
-    line-height: 1.55;
-}
-.intro-rij a.goto {
-    display: inline-block;
-    font-weight: 700;
-    color: var(--accent);
-    text-decoration: none;
-    font-size: 11pt;
-    padding: 4pt 0;
-}
-.intro-rij a.goto:hover { text-decoration: underline; }
-
-/* === A/B-melding (meertalig) === */
-.ab-melding {
-    background: #fdf6e3;
-    border-left: 4pt solid #d4a017;
-    padding: 18pt 22pt;
-    margin: 0 0 30pt;
-    border-radius: 6px;
-}
-.ab-melding h3 {
-    margin: 0 0 12pt;
-    color: #8b6200;
-    font-size: 15pt;
-    border: none;
-    padding: 0;
-}
-.ab-melding p {
-    margin: 0 0 10pt;
-    color: #6b4c00;
-    font-size: 11pt;
-    line-height: 1.6;
-}
-.ab-melding p:last-child { margin-bottom: 0; }
-.ab-melding .vlag-klein {
-    font-size: 14pt;
-    margin-right: 8pt;
-}
-
-/* === EU-joke === */
-.eu-joke {
-    text-align: center;
-    font-size: 11pt;
-    color: #6b7280;
-    font-style: italic;
-    margin: 30pt 0 0;
-    padding: 20pt;
-    border-top: 1px dashed #ddd7c9;
-    border-bottom: 1px dashed #ddd7c9;
-    line-height: 1.6;
-}
-.eu-joke .eu-vlag {
-    font-size: 22pt;
-    display: block;
-    margin-bottom: 6pt;
-}
-
-/* === Documentkaarten (per-taal home) === */
+<style>
+body { font-family: Aptos, Calibri, sans-serif; font-size: 12pt; line-height: 1.6;
+       margin: 0; padding: 0; background: #faf8f5; color: #000; }
+.wrap { max-width: 900px; margin: 0 auto; padding: 40pt 30pt 80pt; }
+h1 { font-size: 36pt; color: #1a3c6e; margin: 0 0 8pt; border: none; }
+.ondertitel { font-size: 16pt; color: #333; margin: 0 0 12pt; }
+.auteur { font-size: 12pt; color: #555; margin: 0 0 40pt; font-style: italic; }
+.intro { font-size: 12pt; line-height: 1.7; margin: 0 0 40pt; text-align: justify; }
 .doc-lijst { list-style: none; padding: 0; margin: 0; }
 .doc-lijst li {
-    position: relative;
-    margin: 0 0 14pt;
-    padding: 22pt 26pt 22pt 28pt;
-    background: #ffffff;
-    border-left: 6px solid #1a3c6e;
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0,0,0,.04);
-    transition: transform .15s, box-shadow .2s;
-    overflow: hidden;
+    margin: 0 0 16pt; padding: 20pt 24pt; background: #fff;
+    border-left: 6px solid #1a3c6e; border-radius: 4px;
+    transition: box-shadow .2s;
 }
-.doc-lijst li:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(0,0,0,.08);
-}
-.doc-lijst .docletter {
-    position: absolute;
-    top: -10pt;
-    right: 14pt;
-    font-size: 96pt;
-    font-weight: 900;
-    line-height: 1;
-    opacity: 0.06;
-    pointer-events: none;
-    user-select: none;
-}
+.doc-lijst li:hover { box-shadow: 0 4px 14px rgba(0,0,0,.08); }
 .doc-lijst a.titel {
-    display: block;
-    font-size: 17pt;
-    font-weight: 700;
-    text-decoration: none;
-    margin: 0 0 6pt;
-    position: relative;
-    z-index: 1;
+    display: block; font-size: 16pt; font-weight: 700;
+    color: #1a3c6e; text-decoration: none; margin: 0 0 6pt;
 }
 .doc-lijst a.titel:hover { text-decoration: underline; }
-.doc-lijst .beschrijving {
-    font-size: 10.5pt;
-    color: #4a5560;
-    margin: 0;
-    line-height: 1.55;
-    position: relative;
-    z-index: 1;
-}
-.doc-lijst .downloads {
-    margin-top: 12pt;
-    font-size: 10pt;
-    position: relative;
-    z-index: 1;
-}
-.doc-lijst .downloads a {
-    text-decoration: none;
-    font-weight: 600;
-    margin-right: 16px;
-    padding: 4pt 10pt;
-    border-radius: 4px;
-    transition: background .15s;
-    display: inline-block;
-}
-.doc-lijst .downloads a:hover { text-decoration: none; }
-
-.doc-0 { border-left-color: #8b1e1e; background: #fbf5f5; }
-.doc-0 .docletter { color: #8b1e1e; }
-.doc-0 a.titel { color: #8b1e1e; }
-.doc-0 .downloads a { background: #f6eded; color: #8b1e1e; }
-.doc-0 .downloads a:hover { background: #f0dcdc; }
-
-.doc-a { border-left-color: #7a3e9d; background: #faf6fc; }
-.doc-a .docletter { color: #7a3e9d; }
-.doc-a a.titel { color: #7a3e9d; }
-.doc-a .downloads a { background: #f4f0f7; color: #7a3e9d; }
-.doc-a .downloads a:hover { background: #ebe2f0; }
-
-.doc-b { border-left-color: #1a3c6e; background: #f6f8fb; }
-.doc-b .docletter { color: #1a3c6e; }
-.doc-b a.titel { color: #1a3c6e; }
-.doc-b .downloads a { background: #edf0f4; color: #1a3c6e; }
-.doc-b .downloads a:hover { background: #dde4ed; }
-
-.doc-c { border-left-color: #4a3b6b; background: #f8f6fa; }
-.doc-c .docletter { color: #4a3b6b; }
-.doc-c a.titel { color: #4a3b6b; }
-.doc-c .downloads a { background: #f0eff3; color: #4a3b6b; }
-.doc-c .downloads a:hover { background: #e2dfe9; }
-
-.doc-d { border-left-color: #2e7d32; background: #f5faf5; }
-.doc-d .docletter { color: #2e7d32; }
-.doc-d a.titel { color: #2e7d32; }
-.doc-d .downloads a { background: #eef4ef; color: #2e7d32; }
-.doc-d .downloads a:hover { background: #ddeade; }
-
-/* === A/B-banner (per-taal home) === */
-.pub-ab-banner {
-    background: #fdf6e3;
-    border-left: 4pt solid #d4a017;
-    padding: 12pt 18pt;
-    margin: 0 0 30pt;
-    color: #6b4c00;
-    font-size: 11pt;
-    line-height: 1.6;
-    border-radius: 5px;
-}
-.pub-ab-banner strong { color: #8b6200; }
-
-/* === Footer === */
-.footer {
-    margin-top: 70pt;
-    padding-top: 22pt;
-    border-top: 1px solid #ddd7c9;
-    font-size: 9.5pt;
-    color: #6b7280;
-    text-align: center;
-    line-height: 1.7;
-}
-.footer a { color: #1a3c6e; text-decoration: none; }
-.footer a:hover { text-decoration: underline; }
-
-/* === Navigatie === */
-.pub-nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: #ffffff;
-    border-bottom: 2px solid #e2ddd2;
-    padding: 10pt 40pt;
-    margin: -40pt -40pt 20pt -40pt;
-    font-family: Aptos, Calibri, sans-serif;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-.pub-nav .links {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    align-items: center;
-}
-.pub-nav a {
-    color: #1a3c6e;
-    text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 11pt;
-    font-weight: 600;
-    border: 1px solid transparent;
-}
-.pub-nav a:hover { background: #eef2f7; border-color: #e2ddd2; }
-.pub-nav a.actief { background: #1a3c6e; color: #ffffff; }
-.pub-nav a.home { border: 1px solid #e2ddd2; }
-
-.pub-nav .langs {
-    display: flex;
-    gap: 4px;
-    align-items: center;
-    font-size: 10pt;
-}
-.pub-nav .langs a {
-    padding: 5pt 10pt;
-    font-weight: 700;
-    border: 1px solid #e2ddd2;
-    background: #ffffff;
-}
-.pub-nav .langs a:hover {
-    background: var(--accent-soft);
-    border-color: var(--accent);
-}
-.pub-nav .langs a.actief {
-    background: var(--accent);
-    color: #ffffff;
-    border-color: var(--accent);
-}
-.pub-nav .langs a.lang-nl { --accent: #FF6B00; --accent-soft: #fff0e0; color: #FF6B00; }
-.pub-nav .langs a.lang-en { --accent: #012169; --accent-soft: #e6ebf3; color: #012169; }
-.pub-nav .langs a.lang-de { --accent: #DD0000; --accent-soft: #fbe6e6; color: #DD0000; }
-.pub-nav .langs a.lang-fr { --accent: #0055A4; --accent-soft: #e6eef6; color: #0055A4; }
-.pub-nav .langs a.actief.lang-nl,
-.pub-nav .langs a.actief.lang-en,
-.pub-nav .langs a.actief.lang-de,
-.pub-nav .langs a.actief.lang-fr { color: #ffffff; }
-
-.pub-top {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 200;
-    background: #1a3c6e;
-    color: #fff;
-    border: none;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 18pt;
-    line-height: 1;
-    box-shadow: 0 2px 8px rgba(0,0,0,.25);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform .15s;
-}
-.pub-top:hover { transform: scale(1.1); background: #12294d; }
-.pub-footer {
-    margin-top: 60pt;
-    padding-top: 20pt;
-    border-top: 1px solid #ddd7c9;
-    font-size: 10pt;
-    color: #6b7280;
-    text-align: center;
-}
-.pub-footer a { color: #1a3c6e; text-decoration: none; }
-.pub-footer a:hover { text-decoration: underline; }
-
-/* === PUBLICATIE-CSS END === */</style>
+.doc-lijst .beschrijving { font-size: 11pt; color: #444; margin: 0; line-height: 1.5; }
+.doc-lijst .downloads { margin-top: 10pt; font-size: 10pt; }
+.doc-lijst .downloads a { color: #7a3e9d; text-decoration: none; font-weight: 600; margin-right: 14px; }
+.doc-lijst .downloads a:hover { text-decoration: underline; }
+.doc-lijst .downloads a.pdf { color: #8b1e1e; }
+.eigen-kleur-0 { border-left-color: #8b1e1e; } .eigen-kleur-0 a.titel { color: #8b1e1e; }
+.eigen-kleur-A { border-left-color: #7a3e9d; } .eigen-kleur-A a.titel { color: #7a3e9d; }
+.eigen-kleur-B { border-left-color: #1a3c6e; } .eigen-kleur-B a.titel { color: #1a3c6e; }
+.eigen-kleur-C { border-left-color: #4a3b6b; } .eigen-kleur-C a.titel { color: #4a3b6b; }
+.eigen-kleur-D { border-left-color: #2e7d32; } .eigen-kleur-D a.titel { color: #2e7d32; }
+.footer { margin-top: 60pt; padding-top: 20pt; border-top: 1px solid #d5d0c5;
+          font-size: 10pt; color: #666; text-align: center; }
+.footer a { color: #1a3c6e; }
+.taalkeuze { display: inline-block; margin-bottom: 20pt; padding: 6px 12px;
+             border: 1px solid #d5d0c5; border-radius: 4px;
+             font-size: 10pt; color: #1a3c6e; text-decoration: none; }
+.taalkeuze:hover { background: #eef2f7; }
+</style>
 </head>
 <body>
-<a id="top"></a>
+<div class="wrap">
 
-<nav class="pub-nav">
-  <div class="links"><a class="home actief" href="home.html">← Overzicht</a></div>
-  <div class="langs"><a class="lang-nl actief" href="../nl/home.html">🇳🇱 NL</a><a class="lang-en" href="../en/home.html">🇬🇧 EN</a><a class="lang-de" href="../de/home.html">🇩🇪 DE</a><a class="lang-fr" href="../fr/home.html">🇫🇷 FR</a></div>
-</nav>
+<a class="taalkeuze" href="../index.html">🌐 Andere taal kiezen</a>
 
-<div class="spectrum"><span style="background:#8b1e1e"></span><span style="background:#7a3e9d"></span><span style="background:#1a3c6e"></span><span style="background:#4a3b6b"></span><span style="background:#2e7d32"></span></div>
 <h1>Systeem-Audit</h1>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
-<p class="auteur">Auteur : Eric Messa · Version mise à jour : 5 oktober 2026, 15:03</p>
+<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 5 oktober 2026, 15:27</p>
 
-<p class="intro">Dit dossier documenteert wat er gebeurt wanneer een burger tussen twee nationale socialezekerheidsstelsels valt. Vijf documenten, elk met een eigen invalshoek, vertellen hetzelfde verhaal.</p>
+<p class="intro">Dit dossier documenteert wat er gebeurt wanneer een burger tussen twee
+nationale socialezekerheidsstelsels valt. Vijf documenten, elk met een eigen invalshoek,
+vertellen hetzelfde verhaal: de botsing tussen een grensoverschrijdende menselijke
+realiteit en nationaal geprogrammeerde uitvoeringssystemen. Document B is de feitelijke
+basis; Document A vertelt het verhaal; Document C toont de architectuur; Document D
+trekt de conclusies; Document 0 is de inleiding en leeswijzer.</p>
+
+<p class="intro"><strong>Elk document is beschikbaar in drie vormen:</strong> als webpagina
+(direct te lezen in de browser), als Word-bestand (.docx, voor wie wil bewerken of
+afdrukken), en als PDF (voor wie een vaste lay-out wil of wil archiveren).</p>
+
 <ul class="doc-lijst">
-<li class="doc-0">
-<span class="docletter">0</span>
-<a class="titel" href="document-0.html">Document 0 — Inleiding</a>
-<p class="beschrijving">Biografisch essay over drie generaties grensarbeid.</p>
+
+<li class="eigen-kleur-0">
+<a class="titel" href="document-0.html">Document 0 — Inleiding en leeswijzer</a>
+<p class="beschrijving">Biografisch essay over drie generaties grensarbeid, van
+Lombardije en de Elzas naar Zeeuws-Vlaanderen. Legt uit waarom dit dossier bestaat
+en hoe de vijf documenten samenhangen.</p>
 <div class="downloads">
-  <a href="docx/document-0.docx">⬇ Word</a>
-  <a href="pdf/document-0.pdf">⬇ PDF</a>
+  <a href="docx/document-0.docx">⬇ Word-versie</a>
+  <a class="pdf" href="pdf/document-0.pdf">⬇ PDF-versie</a>
 </div>
 </li>
-<li class="doc-a">
-<span class="docletter">A</span>
-<a class="titel" href="document-a.html">Document A — Narratief</a>
-<p class="beschrijving">Het verhaal per organisatie, in doorlopende tekst.</p>
+
+<li class="eigen-kleur-A">
+<a class="titel" href="document-a.html">Document A — De narratieve audit</a>
+<p class="beschrijving">Het verhaal per organisatie. Doorlopende tekst met de rol in
+het netwerk, de frictie en de systemische paradox. Voor wie het geheel wil begrijpen
+zonder de onderliggende data te doorlopen.</p>
 <div class="downloads">
-  <a href="docx/document-a.docx">⬇ Word</a>
-  <a href="pdf/document-a.pdf">⬇ PDF</a>
+  <a href="docx/document-a.docx">⬇ Word-versie</a>
+  <a class="pdf" href="pdf/document-a.pdf">⬇ PDF-versie</a>
 </div>
 </li>
-<li class="doc-b">
-<span class="docletter">B</span>
-<a class="titel" href="document-b.html">Document B — Data</a>
-<p class="beschrijving">Alle feiten: datums, referentienummers, correspondentie, tijdlijnen.</p>
+
+<li class="eigen-kleur-B">
+<a class="titel" href="document-b.html">Document B — De data-matrix</a>
+<p class="beschrijving">Alle feiten: datums, referentienummers, correspondentie en
+tijdlijnen. De ruwe laag waarop de andere documenten zijn gebouwd. Voor wie wil
+verifiëren wat er precies is gebeurd.</p>
 <div class="downloads">
-  <a href="docx/document-b.docx">⬇ Word</a>
-  <a href="pdf/document-b.pdf">⬇ PDF</a>
+  <a href="docx/document-b.docx">⬇ Word-versie</a>
+  <a class="pdf" href="pdf/document-b.pdf">⬇ PDF-versie</a>
 </div>
 </li>
-<li class="doc-c">
-<span class="docletter">C</span>
-<a class="titel" href="document-c.html">Document C — Visueel</a>
-<p class="beschrijving">Schema's en datastromen — het systeem in één oogopslag.</p>
+
+<li class="eigen-kleur-C">
+<a class="titel" href="document-c.html">Document C — De visuele architectuur</a>
+<p class="beschrijving">Schema's en datastromen. Twee starre werelden, een membraan
+in het midden, drie kanalen, vier institutionele lagen. Voor wie het systeem in
+één oogopslag wil begrijpen.</p>
 <div class="downloads">
-  <a href="docx/document-c.docx">⬇ Word</a>
-  <a href="pdf/document-c.pdf">⬇ PDF</a>
+  <a href="docx/document-c.docx">⬇ Word-versie</a>
+  <a class="pdf" href="pdf/document-c.pdf">⬇ PDF-versie</a>
 </div>
 </li>
-<li class="doc-d">
-<span class="docletter">D</span>
-<a class="titel" href="document-d.html">Document D — Synthese</a>
-<p class="beschrijving">Patronen, paradoxen, rol van de EU en drie bouwstenen voor hervorming.</p>
+
+<li class="eigen-kleur-D">
+<a class="titel" href="document-d.html">Document D — De synthese</a>
+<p class="beschrijving">Het patroon, de paradoxen, de rol van de Europese Unie en
+drie bouwstenen voor hervorming. De optelsom van A, B en C. Voor wie de conclusie
+wil.</p>
 <div class="downloads">
-  <a href="docx/document-d.docx">⬇ Word</a>
-  <a href="pdf/document-d.pdf">⬇ PDF</a>
+  <a href="docx/document-d.docx">⬇ Word-versie</a>
+  <a class="pdf" href="pdf/document-d.pdf">⬇ PDF-versie</a>
 </div>
-</li></ul>
+</li>
+
+</ul>
+
 <div class="footer">
-<p>Systeem-Audit — Eric Messa</p>
+<p>Openbaar materiaal. Wie eruit citeert, citeert Document B als bron van de feiten.</p>
+</div>
+
 </div>
 </body>
 </html>

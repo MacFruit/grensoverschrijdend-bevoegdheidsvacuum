@@ -133,382 +133,23 @@ tr:nth-child(even) td { background: #f4f1f8; }
     font-size: 10pt; color: #888; text-decoration: none;
 }
 .pub-naar-boven:hover { color: #1a3c6e; text-decoration: underline; }
-
-/* === PUBLICATIE-CSS START === */
-
-body {
-    font-family: Aptos, Calibri, sans-serif;
-    font-size: 12pt;
-    line-height: 1.6;
-    margin: 0;
-    padding: 40pt;
-    background: #f6f3ec;
-    color: #2a2a2a;
-}
-
-h1 {
-    font-size: 38pt;
-    color: #1a3c6e;
-    margin: 0 0 6pt;
-    letter-spacing: -0.5pt;
-}
-.ondertitel {
-    font-size: 16pt;
-    color: #4a5560;
-    margin: 0 0 14pt;
-    font-weight: 400;
-}
-.auteur {
-    font-size: 11pt;
-    color: #6b7280;
-    margin: 0 0 30pt;
-    font-style: italic;
-}
-.intro {
-    font-size: 12pt;
-    line-height: 1.7;
-    margin: 0 0 40pt;
-    text-align: justify;
-    color: #3a3f45;
-}
-
-/* === Spectrumbalk === */
-.spectrum {
-    height: 4px;
-    display: flex;
-    margin: 0 0 30pt;
-    border-radius: 2px;
-    overflow: hidden;
-}
-.spectrum span { flex: 1; }
-
-/* === Root index: intro-rijen per taal === */
-.intro-rijen { margin: 0 0 40pt; }
-.intro-rij {
-    display: grid;
-    grid-template-columns: 64pt 1fr;
-    gap: 18pt;
-    align-items: start;
-    padding: 22pt 26pt;
-    background: #ffffff;
-    border-left: 6px solid var(--accent);
-    border-radius: 8px;
-    margin-bottom: 14pt;
-    box-shadow: 0 1px 3px rgba(0,0,0,.04);
-    transition: transform .15s, box-shadow .2s;
-}
-.intro-rij:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(0,0,0,.08);
-}
-.intro-rij .vlag {
-    font-size: 44pt;
-    line-height: 1;
-    text-align: center;
-    padding-top: 2pt;
-}
-.intro-rij h3 {
-    margin: 0 0 6pt;
-    color: var(--accent);
-    font-size: 19pt;
-    letter-spacing: -0.3pt;
-}
-.intro-rij p {
-    margin: 0 0 10pt;
-    font-size: 11pt;
-    color: #4a5560;
-    line-height: 1.55;
-}
-.intro-rij a.goto {
-    display: inline-block;
-    font-weight: 700;
-    color: var(--accent);
-    text-decoration: none;
-    font-size: 11pt;
-    padding: 4pt 0;
-}
-.intro-rij a.goto:hover { text-decoration: underline; }
-
-/* === A/B-melding (meertalig) === */
-.ab-melding {
-    background: #fdf6e3;
-    border-left: 4pt solid #d4a017;
-    padding: 18pt 22pt;
-    margin: 0 0 30pt;
-    border-radius: 6px;
-}
-.ab-melding h3 {
-    margin: 0 0 12pt;
-    color: #8b6200;
-    font-size: 15pt;
-    border: none;
-    padding: 0;
-}
-.ab-melding p {
-    margin: 0 0 10pt;
-    color: #6b4c00;
-    font-size: 11pt;
-    line-height: 1.6;
-}
-.ab-melding p:last-child { margin-bottom: 0; }
-.ab-melding .vlag-klein {
-    font-size: 14pt;
-    margin-right: 8pt;
-}
-
-/* === EU-joke === */
-.eu-joke {
-    text-align: center;
-    font-size: 11pt;
-    color: #6b7280;
-    font-style: italic;
-    margin: 30pt 0 0;
-    padding: 20pt;
-    border-top: 1px dashed #ddd7c9;
-    border-bottom: 1px dashed #ddd7c9;
-    line-height: 1.6;
-}
-.eu-joke .eu-vlag {
-    font-size: 22pt;
-    display: block;
-    margin-bottom: 6pt;
-}
-
-/* === Documentkaarten (per-taal home) === */
-.doc-lijst { list-style: none; padding: 0; margin: 0; }
-.doc-lijst li {
-    position: relative;
-    margin: 0 0 14pt;
-    padding: 22pt 26pt 22pt 28pt;
-    background: #ffffff;
-    border-left: 6px solid #1a3c6e;
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0,0,0,.04);
-    transition: transform .15s, box-shadow .2s;
-    overflow: hidden;
-}
-.doc-lijst li:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(0,0,0,.08);
-}
-.doc-lijst .docletter {
-    position: absolute;
-    top: -10pt;
-    right: 14pt;
-    font-size: 96pt;
-    font-weight: 900;
-    line-height: 1;
-    opacity: 0.06;
-    pointer-events: none;
-    user-select: none;
-}
-.doc-lijst a.titel {
-    display: block;
-    font-size: 17pt;
-    font-weight: 700;
-    text-decoration: none;
-    margin: 0 0 6pt;
-    position: relative;
-    z-index: 1;
-}
-.doc-lijst a.titel:hover { text-decoration: underline; }
-.doc-lijst .beschrijving {
-    font-size: 10.5pt;
-    color: #4a5560;
-    margin: 0;
-    line-height: 1.55;
-    position: relative;
-    z-index: 1;
-}
-.doc-lijst .downloads {
-    margin-top: 12pt;
-    font-size: 10pt;
-    position: relative;
-    z-index: 1;
-}
-.doc-lijst .downloads a {
-    text-decoration: none;
-    font-weight: 600;
-    margin-right: 16px;
-    padding: 4pt 10pt;
-    border-radius: 4px;
-    transition: background .15s;
-    display: inline-block;
-}
-.doc-lijst .downloads a:hover { text-decoration: none; }
-
-.doc-0 { border-left-color: #8b1e1e; background: #fbf5f5; }
-.doc-0 .docletter { color: #8b1e1e; }
-.doc-0 a.titel { color: #8b1e1e; }
-.doc-0 .downloads a { background: #f6eded; color: #8b1e1e; }
-.doc-0 .downloads a:hover { background: #f0dcdc; }
-
-.doc-a { border-left-color: #7a3e9d; background: #faf6fc; }
-.doc-a .docletter { color: #7a3e9d; }
-.doc-a a.titel { color: #7a3e9d; }
-.doc-a .downloads a { background: #f4f0f7; color: #7a3e9d; }
-.doc-a .downloads a:hover { background: #ebe2f0; }
-
-.doc-b { border-left-color: #1a3c6e; background: #f6f8fb; }
-.doc-b .docletter { color: #1a3c6e; }
-.doc-b a.titel { color: #1a3c6e; }
-.doc-b .downloads a { background: #edf0f4; color: #1a3c6e; }
-.doc-b .downloads a:hover { background: #dde4ed; }
-
-.doc-c { border-left-color: #4a3b6b; background: #f8f6fa; }
-.doc-c .docletter { color: #4a3b6b; }
-.doc-c a.titel { color: #4a3b6b; }
-.doc-c .downloads a { background: #f0eff3; color: #4a3b6b; }
-.doc-c .downloads a:hover { background: #e2dfe9; }
-
-.doc-d { border-left-color: #2e7d32; background: #f5faf5; }
-.doc-d .docletter { color: #2e7d32; }
-.doc-d a.titel { color: #2e7d32; }
-.doc-d .downloads a { background: #eef4ef; color: #2e7d32; }
-.doc-d .downloads a:hover { background: #ddeade; }
-
-/* === A/B-banner (per-taal home) === */
-.pub-ab-banner {
-    background: #fdf6e3;
-    border-left: 4pt solid #d4a017;
-    padding: 12pt 18pt;
-    margin: 0 0 30pt;
-    color: #6b4c00;
-    font-size: 11pt;
-    line-height: 1.6;
-    border-radius: 5px;
-}
-.pub-ab-banner strong { color: #8b6200; }
-
-/* === Footer === */
-.footer {
-    margin-top: 70pt;
-    padding-top: 22pt;
-    border-top: 1px solid #ddd7c9;
-    font-size: 9.5pt;
-    color: #6b7280;
-    text-align: center;
-    line-height: 1.7;
-}
-.footer a { color: #1a3c6e; text-decoration: none; }
-.footer a:hover { text-decoration: underline; }
-
-/* === Navigatie === */
-.pub-nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: #ffffff;
-    border-bottom: 2px solid #e2ddd2;
-    padding: 10pt 40pt;
-    margin: -40pt -40pt 20pt -40pt;
-    font-family: Aptos, Calibri, sans-serif;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-.pub-nav .links {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    align-items: center;
-}
-.pub-nav a {
-    color: #1a3c6e;
-    text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 11pt;
-    font-weight: 600;
-    border: 1px solid transparent;
-}
-.pub-nav a:hover { background: #eef2f7; border-color: #e2ddd2; }
-.pub-nav a.actief { background: #1a3c6e; color: #ffffff; }
-.pub-nav a.home { border: 1px solid #e2ddd2; }
-
-.pub-nav .langs {
-    display: flex;
-    gap: 4px;
-    align-items: center;
-    font-size: 10pt;
-}
-.pub-nav .langs a {
-    padding: 5pt 10pt;
-    font-weight: 700;
-    border: 1px solid #e2ddd2;
-    background: #ffffff;
-}
-.pub-nav .langs a:hover {
-    background: var(--accent-soft);
-    border-color: var(--accent);
-}
-.pub-nav .langs a.actief {
-    background: var(--accent);
-    color: #ffffff;
-    border-color: var(--accent);
-}
-.pub-nav .langs a.lang-nl { --accent: #FF6B00; --accent-soft: #fff0e0; color: #FF6B00; }
-.pub-nav .langs a.lang-en { --accent: #012169; --accent-soft: #e6ebf3; color: #012169; }
-.pub-nav .langs a.lang-de { --accent: #DD0000; --accent-soft: #fbe6e6; color: #DD0000; }
-.pub-nav .langs a.lang-fr { --accent: #0055A4; --accent-soft: #e6eef6; color: #0055A4; }
-.pub-nav .langs a.actief.lang-nl,
-.pub-nav .langs a.actief.lang-en,
-.pub-nav .langs a.actief.lang-de,
-.pub-nav .langs a.actief.lang-fr { color: #ffffff; }
-
-.pub-top {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 200;
-    background: #1a3c6e;
-    color: #fff;
-    border: none;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 18pt;
-    line-height: 1;
-    box-shadow: 0 2px 8px rgba(0,0,0,.25);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform .15s;
-}
-.pub-top:hover { transform: scale(1.1); background: #12294d; }
-.pub-footer {
-    margin-top: 60pt;
-    padding-top: 20pt;
-    border-top: 1px solid #ddd7c9;
-    font-size: 10pt;
-    color: #6b7280;
-    text-align: center;
-}
-.pub-footer a { color: #1a3c6e; text-decoration: none; }
-.pub-footer a:hover { text-decoration: underline; }
-
-/* === PUBLICATIE-CSS END === */
 </style>
 </head>
 <body><a id="top"></a>
 <nav class="pub-nav">
-<div class="links"><a class="home" href="home.html">← Overzicht</a><a class="" href="document-0.html">Doc 0 · Inleiding</a><a class="" href="document-a.html">Doc A · Narratief</a><a class="" href="document-b.html">Doc B · Data</a><a class="actief" href="document-c.html">Doc C · Visueel</a><a class="" href="document-d.html">Doc D · Synthese</a></div>
-<div class="langs"><a class="lang-nl actief" href="../nl/document-c.html">🇳🇱 NL</a><a class="lang-en" href="../en/document-c.html">🇬🇧 EN</a><a class="lang-de" href="../de/document-c.html">🇩🇪 DE</a><a class="lang-fr" href="../fr/document-c.html">🇫🇷 FR</a></div>
+<div class="links"><a class="home" href="home.html">← Overzicht</a> <a class="home" href="../index.html">🌐 Taalkeuze</a> <a class="" href="document-0.html">Inleiding</a> <a class="" href="document-a.html">Narratief</a> <a class="" href="document-b.html">Data</a> <a class="actief" href="document-c.html">Visueel</a> <a class="" href="document-d.html">Synthese</a></div>
+<div class="titel-klein">Systeem-Audit · Eric Messa</div>
 </nav>
 
-
 <div class="titelblad">
-<h1 id="systeem-audit">Systeem-Audit</h1>
+<h1 id="systeem-audit">Systeem-Audit</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document C — De visuele architectuur</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 1 oktober 2026, 13:02</p>
+<p class="meta-lijn">Versie bijgewerkt: 5 oktober 2026, 15:27</p>
 </div>
-<div class="pub-toc"><h2>Inhoudsopgave</h2><ul>
+
+<div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
 <li class="niv1"><a href="#systeem-audit">Systeem-Audit</a></li>
 <li class="niv2"><a href="#inhoudsopgave">Inhoudsopgave</a></li>
 <li class="niv1"><a href="#inleiding-en-leeswijzer">Inleiding en leeswijzer</a></li>
@@ -671,12 +312,13 @@ h1 {
 <li class="niv3"><a href="#wat-dit-schema-doet">Wat dit schema doet</a></li>
 <li class="niv3"><a href="#wat-er-niet-in-staat">Wat er niet in staat</a></li>
 </ul></div>
-<h1 id="inleiding-en-leeswijzer">Inleiding en leeswijzer</h1>
+
+<h1 id="inleiding-en-leeswijzer">Inleiding en leeswijzer</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">Document C is het visuele document van het Systeem-Audit-project. Het toont in één oogopslag wat in de andere documenten verspreid staat: de structuur van het netwerk, de doorstroming tussen instanties, en de mechanismen die het falen veroorzaken.</p>
-<h2 id="wat-dit-document-is">Wat dit document is</h2>
+<h2 id="wat-dit-document-is">Wat dit document is</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p>Document C is geen herhaling van de andere documenten in beeldvorm. Het is een eigen perspectief dat alleen in schema's bestaat. Waar Document A het verhaal vertelt, Document B de feiten ordent, en Document D de conclusies trekt, toont Document C de <strong>architectuur</strong> die aan al die feiten ten grondslag ligt.</p>
 <p>Het document is opgebouwd als een reeks hoofdstukken. Elk hoofdstuk is een eigen schema met korte tekst. Geen doorlopend verhaal, geen lange analyses. Elk schema toont één mechanisme, één patroon, of één verband dat in de andere documenten wel te vinden is, maar nooit in één oogopslag.</p>
-<h2 id="het-verschil-met-de-andere-documenten">Het verschil met de andere documenten</h2>
+<h2 id="het-verschil-met-de-andere-documenten">Het verschil met de andere documenten</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <div class="figure">
 <svg viewbox="0 0 1100 340" xmlns="http://www.w3.org/2000/svg">
 <text fill="#4a3b6b" font-size="13" font-weight="700" letter-spacing="2" text-anchor="middle" x="550" y="30">DE VIJF DOCUMENTEN EN HUN FUNCTIE</text>
@@ -723,7 +365,7 @@ h1 {
 </svg>
 <p class="caption"><strong>Figuur 0.1 — De vijf documenten.</strong> Elk document heeft een eigen functie. Document 0 is de inleiding en leeswijzer, Document A is de narratieve audit, Document B is de data-matrix, Document C is de visuele architectuur, Document D is de synthese. Document C toont de architectuur die aan alles ten grondslag ligt.</p>
 </div>
-<h2 id="de-vaste-grammatica">De vaste grammatica</h2>
+<h2 id="de-vaste-grammatica">De vaste grammatica</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p>Elk hoofdstuk van Document C gebruikt dezelfde visuele taal. Wie die taal eenmaal kent, kan elk schema lezen. Hier volgt het vocabulaire.</p>
 <h3 id="de-twee-werelden">De twee werelden</h3>
 <p>België en Nederland worden getoond als twee <strong>werelden</strong>: starre, gesloten systemen die hun regels niet aanpassen voor een burger die in twee landen tegelijk leeft. Beide werelden zijn opgebouwd uit <strong>vier concentrische lagen</strong>: uitvoering, toezicht, politiek, symboliek.</p>
@@ -762,7 +404,7 @@ h1 {
 <li><strong>Oranje</strong> — het wringt. Er is een kanaal, maar het is smal, eenmalig of vertraagd.</li>
 <li><strong>Rood</strong> — het is geblokkeerd. Er is geen kanaal, of het kanaal is gesloten.</li>
 </ul>
-<h2 id="de-volgorde-van-dit-document">De volgorde van dit document</h2>
+<h2 id="de-volgorde-van-dit-document">De volgorde van dit document</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p>Document C volgt de menselijke volgorde. Het begint bij de mens, daarna bij België (omdat de auteur Belg is), dan bij Nederland, dan tussen beide landen heen en weer, dan naar Europa, dan naar wie naar Europa kijkt, en ten slotte naar de wereld die het geheel zou moeten zien.</p>
 <div class="figure">
 <svg viewbox="0 0 1100 420" xmlns="http://www.w3.org/2000/svg">
@@ -804,12 +446,12 @@ h1 {
 </svg>
 <p class="caption"><strong>Figuur 0.3 — De weg door dit document.</strong> Zeven blokken, in de volgorde van de menselijke werkelijkheid: van het lichaam, via de twee landen, naar Europa, naar wie toekijkt, en ten slotte naar het slot.</p>
 </div>
-<h2 id="hoe-je-het-leest">Hoe je het leest</h2>
+<h2 id="hoe-je-het-leest">Hoe je het leest</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p>Document C is niet bedoeld om in één keer van voor naar achter te worden gelezen. Elk hoofdstuk staat op zichzelf. De lezer kan zelf zijn weg kiezen.</p>
 <p><strong>Voor wie het geheel wil begrijpen:</strong> begin bij Blok I (De mens), daarna volgen de blokken in volgorde. Zo bouwt het beeld zich stap voor stap op: van de mens, via de twee landen, naar Europa, naar wie toekijkt, naar het slot.</p>
 <p><strong>Voor wie specifiek geïnteresseerd is in één onderwerp:</strong> kies het bijbehorende hoofdstuk. De koppelverkoop, de cascade, het UWV, CZ, de gemeente, de Belastingdienst, de Europese laag — elk heeft een eigen hoofdstuk.</p>
 <p><strong>Voor wie het volledige netwerk wil zien:</strong> lees Blok I (De mens) eerst, daarna het slot. Die twee samen geven de structuur in één oogopslag.</p>
-<h2 id="wat-de-lezer-kan-verwachten">Wat de lezer kan verwachten</h2>
+<h2 id="wat-de-lezer-kan-verwachten">Wat de lezer kan verwachten</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <ul>
 <li>Elk schema heeft een eigen titel en een korte toelichting onder het figuur.</li>
 <li>Organisaties worden getoond als blokken of als genummerde dots op een ring. Namen zijn publiek en worden vermeld.</li>
@@ -817,12 +459,13 @@ h1 {
 <li>Bedragen, datums en referentienummers komen uit Document B. Waar een bedrag of datum onzeker is, wordt dat expliciet vermeld.</li>
 <li>Waar het schema een patroon toont dat in Document D nader wordt uitgewerkt, staat een verwijzing naar het betreffende hoofdstuk in D.</li>
 </ul>
-<h2 id="de-positie-van-document-c-in-het-geheel">De positie van Document C in het geheel</h2>
+<h2 id="de-positie-van-document-c-in-het-geheel">De positie van Document C in het geheel</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p>Document C staat tussen Document B en Document D in. Waar B de feiten vastlegt en D de conclusies trekt, toont C de architectuur die het falen mogelijk maakt. Wie de feiten wil: B. Wie de conclusies wil: D. Wie wil begrijpen waarom de feiten tot deze conclusies leiden: C.</p>
 <p>Wat dit document toont, is de kern van het bevoegdheidsvacuüm in één oogopslag: één lichaam, twee werelden, drie kanalen. En een burger die zich in het gat tussen de twee werelden staande moet houden.</p>
 <p class="noot">Dit is Document C — De visuele architectuur. Alle organisaties in dit document zijn rechtspersonen. Natuurlijke personen worden aangeduid met hun functie of hun symbool. De feiten zijn gebaseerd op Document B. De conclusies staan in Document D. Dit document is geen juridisch advies.</p>
-<h1 id="i-de-mens">I. De mens</h1>
-<h2 id="de-presentatie">De presentatie</h2>
+
+<h1 id="i-de-mens">I. De mens</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="de-presentatie">De presentatie</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">Twee starre werelden. Eén membraan dat rekt en krimpt. Drie kanalen met elk een eigen karakter. En binnen elke wereld vier institutionele ringen die de burger moet doorlopen om iets gedaan te krijgen. Dit hoofdstuk toont het speelbord: wie waar staat, hoe de lagen zijn opgebouwd, en welke actoren in elke laag opereren.</p>
 <h3 id="deel-i-a-de-structuur">Deel I-A — De structuur</h3>
 <h4>De twee werelden</h4>
@@ -1403,7 +1046,8 @@ Het mensenrechtenorgaan van de VN, inclusief het CRPD-comité.<br/>
 </tbody>
 </table>
 <p class="noot">Alle organisaties die in dit hoofdstuk worden genoemd zijn rechtspersonen; hun namen zijn publiek en worden vermeld in Document B. Natuurlijke personen worden uitsluitend aangeduid met hun functie of met een symbool (♂, ♀, kleine ♂). Dit is zowel een methodologische keuze als een verplichting onder de Algemene Verordening Gegevensbescherming. De auteur van dit dossier is de patiënt over wie het gaat; zijn eigen medische en administratieve gegevens mag hij publiceren.</p>
-<h2 id="de-cascade">De cascade</h2>
+
+<h2 id="de-cascade">De cascade</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">Blok II toont straks de potjes, het mechanisme en de beslissing. Dit hoofdstuk toont wat er gebeurt wanneer het mechanisme en de beslissing samenkomen op één gezin, in één tijdlijn, met één zichtbaar gevolg: een lege bankrekening.</p>
 <h3 id="frame-1-de-trigger">Frame 1 — De trigger</h3>
 <p class="tijd">11 april 2025 · week 1</p>
@@ -1610,8 +1254,9 @@ Het mensenrechtenorgaan van de VN, inclusief het CRPD-comité.<br/>
 De cascade is geen keten van fouten. Het is één mechanisme dat in vijfvoud reageert op één gebeurtenis. Elke schakel heeft een eigen wet, een eigen loket, een eigen logica. Geen enkele schakel ziet de volgende. En de bankrekening is de enige plek waar alle schakels samenkomen — als resultaat, niet als oorzaak.
 </div>
 <p class="noot">De feiten zijn gebaseerd op Document B. Bedragen zijn terug te vinden in de feitelijke entries per organisatie. Natuurlijke personen worden aangeduid met symbolen (♂, ♀); organisaties met hun publieke naam.</p>
-<h1 id="ii-belgië">II. België</h1>
-<h2 id="de-potjes-en-de-koppelverkoop">De potjes en de koppelverkoop</h2>
+
+<h1 id="ii-belgië">II. België</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="de-potjes-en-de-koppelverkoop">De potjes en de koppelverkoop</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">Een gezin dat door ziekte zijn inkomen verliest, kan in België en Nederland een reeks tegemoetkomingen aanvragen. Deze zijn verspreid over twee landen, twee fiscale stelsels, twee socialezekerheidsstelsels en twee uitkeringslogica's. Dit hoofdstuk inventariseert eerst welke potjes er zijn. Daarna toont het waarom de meeste potjes gesloten blijven — niet door één oorzaak, maar door een mechaniek die in beide landen terugkomt.</p>
 <h3 id="deel-ii-a-de-potjes">Deel II-A — De potjes</h3>
 <p>Het gezin heeft in theorie recht op of kan in theorie aanspraak maken op de volgende tegemoetkomingen. De status per potje is gebaseerd op Document B.</p>
@@ -1914,7 +1559,8 @@ De cascade is geen keten van fouten. Het is één mechanisme dat in vijfvoud rea
 <p>De koppelverkoop tussen de uitkeringsroute en de fiscale route is het meest voorkomende mechanisme. De catch-22's zijn de uitkomst daarvan: cirkelredeneringen tussen twee nationale systemen die elkaar niet lezen, en tussen federale instanties binnen hetzelfde systeem die elkaars drempels niet erkennen.</p>
 <p>Het volgende hoofdstuk zoomt in op de actoren die deze catch-22's in stand houden — niet als personen, maar als functies binnen een architectuur.</p>
 <p class="noot">Alle organisaties in dit hoofdstuk zijn rechtspersonen. Natuurlijke personen worden uitsluitend aangeduid met hun functie of met een symbool (♂, ♀). Dit is zowel een methodologische keuze als een verplichting onder de Algemene Verordening Gegevensbescherming. De potjes-inventaris is gebaseerd op Document B, dat de feitelijke aanvragen, statussen en weigeringen per organisatie vastlegt.</p>
-<h2 id="vaststelling-en-beslissing">Vaststelling en beslissing</h2>
+
+<h2 id="vaststelling-en-beslissing">Vaststelling en beslissing</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">Vijf zorgverleners onderzochten het lichaam. Twee administratieve artsen beslisten erover. Dit hoofdstuk toont dat beide instanties — het Belgische ziekenfonds en de Belgische federale overheidsdienst — hetzelfde mechanisme toepassen, elk met een eigen variant.</p>
 <h3 id="de-vijf-stemmen">De vijf stemmen</h3>
 <div class="figure">
@@ -2007,7 +1653,8 @@ De cascade is geen keten van fouten. Het is één mechanisme dat in vijfvoud rea
 <p>In beide gevallen is de beslissende arts <strong>op de payroll van de instantie</strong>. In beide gevallen wordt een administratieve drempel toegepast die niet in de behandelende wereld bestaat. In beide gevallen wegen vijf onafhankelijke medische vaststellingen minder zwaar dan één administratieve beslissing.</p>
 <p>Dat is geen persoonlijke fout van een individuele arts. Het is de architectuur: de controlerend arts is geen betere arts, geen langere opleiding, geen diepere kennis. Hij is de <em>poortwachter</em> van een administratieve drempel. De poort is gesloten, niet omdat het lichaam niet kapot is — dat is vijf keer bewezen — maar omdat het algoritme achter de poort zegt: <em>de uitkering loopt niet, dus de erkenning loopt niet, dus de fiscale route loopt niet.</em></p>
 <p class="noot">Alle organisaties in dit hoofdstuk zijn rechtspersonen. Natuurlijke personen worden uitsluitend aangeduid met hun functie. De feiten zijn gebaseerd op Document B.</p>
-<h2 id="de-parentia-trap">De Parentia-trap</h2>
+
+<h2 id="de-parentia-trap">De Parentia-trap</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">Een instantie die de medische werkelijkheid aanvaardt, maar vervolgens struikelt over haar eigen inkomensmodel. Drie niveaus, één uitkomst. En het patroon keert terug bij een andere instantie.</p>
 <h3 id="niveau-1-de-ksz-blokkade">Niveau 1 — De KSZ-blokkade</h3>
 <p class="tijd">september 2025 — april 2026</p>
@@ -2143,7 +1790,8 @@ De cascade is geen keten van fouten. Het is één mechanisme dat in vijfvoud rea
 De Parentia-trap bestaat uit drie niveaus. Eerst wordt de medische weg geblokkeerd door een dataprobleem bij een andere instantie. Dan wordt de burger gedwongen een bypass te gebruiken — hetzelfde handmatige bewijs dat ook bij de fiscus werkte. Wanneer het medische bewijs is aanvaard, blijkt het inkomensmodel de werkelijke situatie niet te lezen. En wanneer de burger bij de volgende instantie aanklopt, begint de trap opnieuw.
 </div>
 <p class="noot">Feiten gebaseerd op Document B. Natuurlijke personen aangeduid met symbolen; organisaties met hun publieke naam.</p>
-<h2 id="de-belgische-fiscale-route">De Belgische fiscale route</h2>
+
+<h2 id="de-belgische-fiscale-route">De Belgische fiscale route</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">Tot nu toe toonde dit dossier vooral wat misloopt. Dit hoofdstuk toont het tegenbeeld: de Belgische fiscale route werkt, en levert het gezin jaarlijks een substantieel voordeel op. Vier aftrekposten en verminderingen, waarvan één via een bypass tot stand is gekomen. Die bypass is inmiddels tweemaal bevestigd — eenmaal door de indiening van de aangifte zelf, en eenmaal door een onafhankelijke schriftelijke bevestiging van de fiscus dat de gekozen route juridisch klopt.</p>
 <h3 id="deel-a-wat-er-werkt">Deel A — Wat er werkt</h3>
 <table>
@@ -2358,7 +2006,8 @@ Een fiscaal adviseur (in België via een vakbond of boekhouder) kan dit attest a
 <em>Vergeet niet ook de andere aftrekposten te controleren:</em> huwelijksquotiënt, kinderopvang. Deze worden niet altijd automatisch toegepast.
 </div>
 <p class="noot">De bedragen zijn gebaseerd op de belastingaangifte 2026 en kunnen per dossier variëren. De wetteksten zijn artikel 87, 131, 135, 140-145 en 14535 van het Wetboek van de Inkomstenbelastingen 1992. Alle organisaties in dit hoofdstuk zijn rechtspersonen. Natuurlijke personen worden aangeduid met hun functie of hun symbool. Dit hoofdstuk is geen fiscaal advies.</p>
-<h2 id="de-heropening">De heropening</h2>
+
+<h2 id="de-heropening">De heropening</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">Wie een beslissing van de federale handicapdienst ontvangt en het er niet mee eens is, leest op de brief dat hij naar de arbeidsrechtbank kan. Wat de brief niet vermeldt: er zijn vier andere wegen, goedkoper en sneller, die de burger zelf kan bewandelen.</p>
 <h3 id="wat-de-brief-zegt">Wat de brief zegt</h3>
 <div class="figure">
@@ -2445,7 +2094,8 @@ Een fiscaal adviseur (in België via een vakbond of boekhouder) kan dit attest a
 Let op: de wettelijke termijn om naar de arbeidsrechtbank te gaan blijft drie maanden. Vraag bij twijfel juridisch advies voordat u die termijn laat verstrijken.
 </div>
 <p class="noot">De informatie in dit hoofdstuk is gebaseerd op de officiële pagina "Een heropening aanvragen" van de FOD Sociale Zekerheid (DG Personen met een handicap), laatst bijgewerkt op 15 september 2025. De wettelijke basis en de procedure staan op handicap.belgium.be. Dit hoofdstuk is geen juridisch advies; raadpleeg bij twijfel een gespecialiseerde dienst of advocaat.</p>
-<h2 id="de-cm-en-de-geldstromen">De CM en de geldstromen</h2>
+
+<h2 id="de-cm-en-de-geldstromen">De CM en de geldstromen</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">Het ziekenfonds is geen bank met één rekening. Het is een instelling met drie gescheiden geldstromen: de verplichte ziekteverzekering, het pakket CM-diensten en -voordelen, en de facultatieve verzekeringen. De eerste stroom komt van de overheid via de RSZ. De tweede van het lidgeld. De derde van aparte premies. En elk van die stromen voedt een ander loket. Dit hoofdstuk toont waar het geld vandaan komt, waarom de ene tak wel werkt en de andere niet, en wie uiteindelijk kan ingrijpen wanneer de CM weigert.</p>
 <h3 id="deel-a-de-drie-geldstromen">Deel A — De drie geldstromen</h3>
 <div class="figure">
@@ -2677,8 +2327,9 @@ Let op: de wettelijke termijn om naar de arbeidsrechtbank te gaan blijft drie ma
 <p>Binnen dezelfde instelling bestaan dus twee verschillende regimes. Voor de geneeskundige verzorging hoeft de CM geen mens te beoordelen — ze betaalt een factuur. Voor de uitkeringen moet ze wél beoordelen of iemand arbeidsongeschikt is, en die beoordeling is onderworpen aan voorwaarden die de wet oplegt. Voor een grensarbeider zijn die voorwaarden problematisch, omdat ze zijn gebaseerd op nationale referteperiodes en verblijfsvoorwaarden.</p>
 <p>En wanneer de CM weigert, blijken de twee toezichthoudende instanties — de CDZ en het Arbeidsauditoraat — zich niet bevoegd te achten voor individuele dossiers. De Orde der Artsen kan alleen de individuele arts treffen, niet het systeem dat de beslissing stuurt. De conclusie is geen beschuldiging van kwade wil. Het is de constatering dat het systeem de verantwoordelijkheid voor het geheel nergens belegt. Elke instantie doet haar eigen stukje. En geen enkele instantie draagt het geheel.</p>
 <p class="noot">Alle organisaties in dit hoofdstuk zijn rechtspersonen. Natuurlijke personen worden aangeduid met hun functie of hun symbool (♂, ♀). De informatie over de financiering is gebaseerd op de officiële communicatie van de CM, het RIZIV en de CDZ. De procedurele informatie over het Arbeidsauditoraat en de Orde der Artsen is gebaseerd op Document B en openbare bronnen. Dit hoofdstuk is geen juridisch of financieel advies.</p>
-<h1 id="iii-nederland">III. Nederland</h1>
-<h2 id="het-uwv-en-de-bezwaarmolen">Het UWV en de bezwaarmolen</h2>
+
+<h1 id="iii-nederland">III. Nederland</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="het-uwv-en-de-bezwaarmolen">Het UWV en de bezwaarmolen</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">Het UWV beoordeelt of iemand arbeidsongeschikt is en of er recht bestaat op een uitkering. Wat volgt is geen weigering. Het is een reeks weigeringen. Elke weigering heeft een eigen reden, een eigen procedure, en een eigen uitkomst. Geen enkele weigering wordt inhoudelijk behandeld. En de RVA, de Belgische tegenhanger, hanteert op zijn beurt dezelfde tactiek in de tegenovergestelde richting.</p>
 <h3 id="deel-a-zes-rondes-bij-het-uwv">Deel A — Zes rondes bij het UWV</h3>
 <div class="figure">
@@ -2870,7 +2521,8 @@ Let op: de wettelijke termijn om naar de arbeidsrechtbank te gaan blijft drie ma
 Voor loopbaandocumentatie: vraag bij het AGODI een officiële Berekening Geldelijke Anciënniteit aan als alternatief bewijs voor de RVA. Voor Nederlandse gegevens: injecteer de PD U1 handmatig via het MyCareer-portaal van de FOD Sociale Zekerheid.
 </div>
 <p class="noot">Alle organisaties in dit hoofdstuk zijn rechtspersonen. Natuurlijke personen worden aangeduid met hun functie of hun symbool (♂, ♀). De feiten zijn gebaseerd op Document B. Dit hoofdstuk is geen juridisch advies.</p>
-<h2 id="cz-de-twee-gezichten-van-de-poortwachter">CZ — de twee gezichten van de poortwachter</h2>
+
+<h2 id="cz-de-twee-gezichten-van-de-poortwachter">CZ — de twee gezichten van de poortwachter</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">CZ voert voor een inwoner van Nederland met een baan in België de verdragspolis uit. CZ vergoedt de zorg, maar weigert de registratie die tot zorgtoeslag leidt. CZ weigert ook het ziekenvervoer, met een eis die in het behandelende land niet bestaat. In beide gevallen: het protocol van de instantie gaat boven de medische realiteit. En in beide gevallen: de instanties die de keten zouden moeten sluiten, sluiten hem niet.</p>
 <h3 id="verhaal-1-de-verdragspolis-en-de-zorgtoeslag">Verhaal 1 — De verdragspolis en de zorgtoeslag</h3>
 <h4>Wat de verdragspolis is</h4>
@@ -3123,7 +2775,8 @@ Voor loopbaandocumentatie: vraag bij het AGODI een officiële Berekening Geldeli
 </ol>
 </div>
 <p class="noot">Alle organisaties in dit hoofdstuk zijn rechtspersonen. Natuurlijke personen worden aangeduid met hun functie of hun symbool (♂). De feiten zijn gebaseerd op Document B. Dit hoofdstuk is geen juridisch advies.</p>
-<h2 id="de-gemeente-hulst-trap">De gemeente Hulst-trap</h2>
+
+<h2 id="de-gemeente-hulst-trap">De gemeente Hulst-trap</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">De gemeente is in Nederland de eerste hulplijn voor wie in financiële nood raakt. Voor een grensarbeider in Zeeuws-Vlaanderen zou de gemeente Hulst de logische plek zijn om bijstand, bijzondere bijstand of maatschappelijke ondersteuning te vragen. De praktijk is anders. De gemeente ontvangt de noodkreet, maar geeft geen geld. Ze biedt hardware en hulp. En ze gebruikt rekenmodellen die de werkelijke situatie niet lezen. Inmiddels is er wel een formeel bezwaarschrift in behandeling — maar de beslissing daarop is opnieuw verdaagd.</p>
 <h3 id="deel-a-de-gemeente-als-eerste-hulplijn-die-niet-helpt">Deel A — De gemeente als eerste hulplijn die niet helpt</h3>
 <h4>Wat de gemeente had kunnen doen</h4>
@@ -3421,7 +3074,8 @@ Voor loopbaandocumentatie: vraag bij het AGODI een officiële Berekening Geldeli
 Voor de Wmo-pas en de GPK: een Europese parkeerkaart is een erkend EU-document. De gemeente mag de overname niet zomaar weigeren. Een formeel bezwaarschrift op grond van wederzijdse erkenning kan helpen.
 </div>
 <p class="noot">Alle organisaties in dit hoofdstuk zijn rechtspersonen. Natuurlijke personen worden aangeduid met hun functie of hun symbool (♂). De feiten zijn gebaseerd op Document B. Dit hoofdstuk is geen juridisch advies.</p>
-<h2 id="belastingdienst-en-toeslagen">Belastingdienst en toeslagen</h2>
+
+<h2 id="belastingdienst-en-toeslagen">Belastingdienst en toeslagen</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">De Dienst Toeslagen keert drie inkomensafhankelijke tegemoetkomingen uit: zorgtoeslag, huurtoeslag en kindgebonden budget. Voor dit gezin loopt één volledig vast, één gedeeltelijk, en één werkt. En de belastingaangifte zelf confronteert de burger met een opdracht die hij niet kan uitvoeren: een wereldinkomen invoeren dat hij niet kent, met de verantwoordelijkheid voor de juistheid bij hemzelf.</p>
 <h3 id="deel-a-de-drie-toeslagen">Deel A — De drie toeslagen</h3>
 <div class="figure">
@@ -3596,8 +3250,9 @@ Voor de Wmo-pas en de GPK: een Europese parkeerkaart is een erkend EU-document. 
 Voor de zorgtoeslag specifiek: de blokkade zit bij CZ (RIV-registratie), niet bij de Dienst Toeslagen. Een handmatige correctie via de CZ-declaraties en het bewijs van betaald eigen risico is de route om de blokkade te doorbreken.
 </div>
 <p class="noot">Alle organisaties in dit hoofdstuk zijn rechtspersonen. Natuurlijke personen worden aangeduid met hun functie of hun symbool (♂, ♀). De feiten zijn gebaseerd op Document B. Dit hoofdstuk is geen fiscaal of juridisch advies. Voor de exacte bedragen en voorwaarden: raadpleeg de Belastingdienst of een fiscaal adviseur.</p>
-<h1 id="iv-heen-en-weer">IV. Heen en weer</h1>
-<h2 id="het-manuele-u1-probleem">Het manuele U1-probleem</h2>
+
+<h1 id="iv-heen-en-weer">IV. Heen en weer</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="het-manuele-u1-probleem">Het manuele U1-probleem</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">Het PD U1 is het Europese bewijs van iemands arbeidsverleden. Een grensarbeider heeft het in twee richtingen nodig: om zijn Belgische jaren in Nederland te laten gelden, en om zijn Nederlandse jaren in België te laten gelden. In beide richtingen is de overdracht manueel. En de ESSPASS lost dat in 2030 niet op, want de burger blijft de schakel.</p>
 <h3 id="de-twee-richtingen">De twee richtingen</h3>
 <div class="figure">
@@ -3813,7 +3468,8 @@ Voor de zorgtoeslag specifiek: de blokkade zit bij CZ (RIV-registratie), niet bi
 <strong>Voor wie in dezelfde situatie zit:</strong> het PD U1 is een recht, geen gunst. U kunt het in beide richtingen opvragen — bij de RVA voor Belgische loopbaanjaren, bij het UWV voor Nederlandse loopbaanjaren. Als een van beide instanties weigert om buitenlandse data te importeren, is de bypass via de FOD Sociale Zekerheid (MyCareer-portaal) de enige weg. Vraag bij uw vakbond of bij de sociale dienst naar de juiste procedure. De ESSPASS in 2030 zal de aanvraag eenvoudiger maken, maar niet de blokkade bij de ontvangende instantie opheffen.
 </div>
 <p class="noot">De informatie over het PD U1 is gebaseerd op Document B en op de officiële procedures van de RVA en het UWV. De ESSPASS-informatie is gebaseerd op openbare bronnen van de Europese Commissie en het Europees Parlement over de ESSPASS-verordening, de EUDI Wallet en de gefaseerde implementatie van het Labour Mobility Package. Dit hoofdstuk is geen juridisch advies.</p>
-<h2 id="svb-en-parentia-het-werkende-voorbeeld">SVB en Parentia — het werkende voorbeeld</h2>
+
+<h2 id="svb-en-parentia-het-werkende-voorbeeld">SVB en Parentia — het werkende voorbeeld</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">Niet alles wat tussen België en Nederland speelt, is een blokkade. Dit hoofdstuk toont één dossier waarin de Europese coördinatie daadwerkelijk werkt: de kinderbijslag voor een kind dat in Nederland woont en schoolgaat in Vlaanderen. Twee instanties, twee landen, één kind. Ze vinden elkaar. En dan komt er een herberekening.</p>
 <h3 id="deel-a-de-splitsing">Deel A — De splitsing</h3>
 <p>Voor een kind van ouders die in twee landen werken, verdeelt de Europese coördinatie de kinderbijslag. De regel is dat één land de hoofdbijdrage betaalt, en het andere land het verschil aanvult tot het niveau van het woonland. Voor dit gezin betekent dat:</p>
@@ -3950,7 +3606,8 @@ Voor de zorgtoeslag specifiek: de blokkade zit bij CZ (RIV-registratie), niet bi
 <em>Let op bij retroactieve wijzigingen:</em> zodra een van beide partners een andere fiscale status krijgt, herberekenen zowel Parentia als de SVB de bedragen. Dit kan leiden tot terugvorderingen. Bewaar alle beschikkingen en controleer jaarlijks de herberekeningen.
 </div>
 <p class="noot">De feiten zijn gebaseerd op Document B. De retroactieve herberekening is een voorspelling op basis van het patroon van herberekeningen in het dossier; de definitieve bedragen en de uitkomst zijn nog niet vastgesteld. Alle organisaties in dit hoofdstuk zijn rechtspersonen. Natuurlijke personen worden aangeduid met hun functie of hun symbool (♂, ♀).</p>
-<h2 id="het-lichaam-zonder-achterwacht">Het lichaam zonder achterwacht</h2>
+
+<h2 id="het-lichaam-zonder-achterwacht">Het lichaam zonder achterwacht</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">Een grensarbeider woont in Nederland en wordt behandeld in België. Zijn volledige medische dossier zit in Belgische datasilo's. Wat gebeurt er als er in zijn eigen woonland iets misloopt? Een spoedgeval, een val, een acute complicatie? Wie is dan de dokter die hem kent? Het antwoord is: niemand. De wet verbiedt het.</p>
 <h3 id="deel-a-de-wettelijke-onmogelijkheid">Deel A — De wettelijke onmogelijkheid</h3>
 <p>In Nederland mag een patiënt maar bij één huisartsenpraktijk ingeschreven staan. Wie zich aanmeldt bij een nieuwe praktijk, wordt automatisch uitgeschreven bij de oude. Dat is een landelijk systeem dat dubbele inschrijvingen voorkomt. Voor een gewone Nederlander is dat logisch. Voor een grensarbeider die zijn hele medische leven in het buitenland heeft, is het een probleem.</p>
@@ -4053,7 +3710,8 @@ Voor de zorgtoeslag specifiek: de blokkade zit bij CZ (RIV-registratie), niet bi
 Voor structurele oplossingen op langere termijn: dit is een van de punten waar de Europese Unie nog geen oplossing voor heeft. Uw signaal draagt bij aan de druk om dit te veranderen.
 </div>
 <p class="noot">Alle organisaties in dit hoofdstuk zijn rechtspersonen. Natuurlijke personen worden aangeduid met hun functie of hun symbool (♂). De feiten zijn gebaseerd op Document B. Dit hoofdstuk is geen juridisch of medisch advies.</p>
-<h2 id="de-centrale-pot">De centrale pot</h2>
+
+<h2 id="de-centrale-pot">De centrale pot</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">Alle vorige hoofdstukken beschreven instanties die weigeren, procedures die vastlopen en systemen die de werkelijke situatie niet lezen. Dit hoofdstuk toont het resultaat. Wanneer de uitkeringen niet komen, de toeslagen op nul blijven, de medische kosten blijven oplopen en niemand het gat dicht, dan blijft er nog één speler over: de private markt. De bank. De energieleverancier. De netbeheerder. En die werken niet met protocollen, maar met incassotermijnen.</p>
 <h3 id="deel-a-de-rekening-als-reservoir">Deel A — De rekening als reservoir</h3>
 <div class="figure">
@@ -4184,8 +3842,9 @@ Voor structurele oplossingen op langere termijn: dit is een van de punten waar d
 De private markt is niet verplicht rekening te houden met de oorzaak. Maar een vastgestelde causale keten kan wel de onderhandelingspositie veranderen.
 </div>
 <p class="noot">Alle organisaties in dit hoofdstuk zijn rechtspersonen. Natuurlijke personen worden aangeduid met hun functie of hun symbool (♂, ♀). De feiten en bedragen zijn gebaseerd op Document B. Dit hoofdstuk is geen juridisch of financieel advies.</p>
-<h1 id="v-europa">V. Europa</h1>
-<h2 id="de-europese-laag">De Europese laag</h2>
+
+<h1 id="v-europa">V. Europa</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="de-europese-laag">De Europese laag</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">Wanneer de nationale wegen zijn uitgeput en de nationale politiek niet ingrijpt, blijft er nog één laag: Europa. In theorie zou Europa de oplossing moeten bieden voor een grensoverschrijdend probleem. In de praktijk blijkt dat de meeste Europese instanties geen mandaat hebben om een vastgelopen nationale keten te doorbreken. Maar er zijn in dit dossier twee uitzonderingen opgedoken. Twee openingen waar niemand op had gerekend.</p>
 <h3 id="deel-a-de-europese-en-internationale-laag">Deel A — De Europese en internationale laag</h3>
 <div class="figure">
@@ -4412,8 +4071,9 @@ De private markt is niet verplicht rekening te houden met de oorzaak. Maar een v
 De Europese weg is er. Twee openingen zijn er ook. Het is aan de burger om ze te gebruiken.
 </div>
 <p class="noot">Alle organisaties in dit hoofdstuk zijn rechtspersonen. De wettelijke basis van de verschillende procedures is gebaseerd op de Verdragen van de Europese Unie (art. 258 en 259 VWEU voor de inbreukprocedure), de reglementen van het Europees Parlement (PETI-procedure) en het Statuut van de Raad van Europa (EHRM). De informatie over de klachtprocedures is gebaseerd op Document B. Dit hoofdstuk is geen juridisch advies.</p>
-<h1 id="vi-wie-toekijkt">VI. Wie toekijkt</h1>
-<h2 id="de-controle-en-bemiddelingslaag">De controle- en bemiddelingslaag</h2>
+
+<h1 id="vi-wie-toekijkt">VI. Wie toekijkt</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="de-controle-en-bemiddelingslaag">De controle- en bemiddelingslaag</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">Wanneer een uitvoeringsinstantie weigert, bestaat er een laag die geacht wordt in te grijpen: de ombudsmannen, de bemiddelingsdiensten, de Europese netwerken. In dit dossier is die laag aangesproken. Ze heeft geluisterd, onderzocht, en op elk niveau vastgesteld dat ze niet kan ingrijpen. Aan het einde blijkt dat de zwaarste bemiddelingsroute — de Europese Arbeidsautoriteit — niet eens toegankelijk is.</p>
 <h3 id="deel-a-de-vier-bemiddelaars">Deel A — De vier bemiddelaars</h3>
 <div class="figure">
@@ -4645,7 +4305,8 @@ De Europese weg is er. Twee openingen zijn er ook. Het is aan de burger om ze te
 De bemiddelingslaag is een aanvulling op de juridische weg, geen vervanging. En soms is zelfs de aanvulling gesloten.
 </div>
 <p class="noot">Alle organisaties in dit hoofdstuk zijn rechtspersonen. Natuurlijke personen worden aangeduid met hun functie. De feiten zijn gebaseerd op Document B. De wettelijke kaders zijn gebaseerd op de officiële communicatie van de betrokken instanties. Dit hoofdstuk is geen juridisch advies.</p>
-<h2 id="de-rechtbanken">De rechtbanken</h2>
+
+<h2 id="de-rechtbanken">De rechtbanken</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">Wanneer geen enkele instantie nog ingrijpt, blijft de rechter over. In theorie is dat de plek waar een beslissing kan worden afgedwongen. In de praktijk blijkt de toegang tot die rechter zelf een drempel te zijn — en die drempel is precies het probleem dat de rechter moest oplossen.</p>
 <h3 id="deel-a-de-twee-rechtswegen">Deel A — De twee rechtswegen</h3>
 <div class="figure">
@@ -4795,7 +4456,8 @@ De bemiddelingslaag is een aanvulling op de juridische weg, geen vervanging. En 
 De juridische weg is de laatste weg. Maar hij is niet voor iedereen even toegankelijk.
 </div>
 <p class="noot">Alle organisaties in dit hoofdstuk zijn rechtspersonen. De inkomensgrenzen voor pro deo en toevoeging zijn gebaseerd op de officiële communicatie van de betrokken instanties (advocaat.be, Raad voor Rechtsbijstand). Dit hoofdstuk is geen juridisch advies. Raadpleeg bij twijfel een gespecialiseerde dienst of advocaat.</p>
-<h2 id="de-politiek">De politiek</h2>
+
+<h2 id="de-politiek">De politiek</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">De politiek heeft de macht om wetten te veranderen, budgetten toe te wijzen en uitvoeringsinstanties bij te sturen. In theorie is het de ultieme correctiemacht. In de praktijk blijkt dat de politiek die macht alleen uitoefent wanneer het probleem als een collectief systeemfalen wordt gepresenteerd — niet wanneer het als een individuele klacht aankomt.</p>
 <h3 id="deel-a-de-scheiding-der-machten">Deel A — De scheiding der machten</h3>
 <div class="figure">
@@ -5072,7 +4734,8 @@ De juridische weg is de laatste weg. Maar hij is niet voor iedereen even toegank
 </ul>
 <p>Het verschil is niet cosmetisch. Het bepaalt of de politiek het dossier kan wegschuiven — "wij gaan niet over individuele dossiers" — of dat ze zich ertoe moet verhouden.</p>
 <p class="noot">Alle organisaties in dit hoofdstuk zijn rechtspersonen. Natuurlijke personen worden aangeduid met hun functie of hun symbool (♂, ♀). De feiten zijn gebaseerd op Document B. De constitutionele basis is artikel 33, 36, 37 en 40 van de Belgische Grondwet, en artikel 42 en 68 van de Nederlandse Grondwet. De parlementaire procedures zijn gebaseerd op de reglementen van de Kamer van Volksvertegenwoordigers en de Tweede Kamer. De informatie over de toeslagenaffaire is gebaseerd op openbare rapporten van de Nationale Ombudsman en de parlementaire enquêtecommissie. Dit hoofdstuk is geen juridisch advies.</p>
-<h2 id="de-adel">De adel</h2>
+
+<h2 id="de-adel">De adel</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">De koning is in België en Nederland het symbolische hoofd van de staat. Formeel heeft hij geen zelfstandige macht: zijn handelingen zijn alleen geldig met de medeondertekening van een verantwoordelijke minister. Toch ontvangt hij jaarlijks duizenden verzoekschriften van burgers. Die verzoekschriften zijn geen juridische procedures. Ze zijn een informeel kanaal — en juist omdat ze informeel zijn, kunnen ze de politieke agenda bereiken op een manier die formele klachten niet lukt.</p>
 <h3 id="deel-a-de-formele-macht-wat-de-koning-wel-en-niet-kan">Deel A — De formele macht: wat de koning wel en niet kan</h3>
 <div class="figure">
@@ -5261,7 +4924,8 @@ De juridische weg is de laatste weg. Maar hij is niet voor iedereen even toegank
 <p>Toch is het verzoekschrift aan de koning een kanaal dat de politieke laag wél bereikt. Een gewone klacht blijft in de uitvoerende laag. Een verzoekschrift aan de koning wordt door het Kabinet geanalyseerd, door een minister beantwoord, en — belangrijker — de minister is er politiek verantwoordelijk voor. Daarmee bereikt het signaal een plek waar de uitvoerende laag het niet kan negeren.</p>
 <p>De paradox is dat de koning geen macht heeft, maar zijn postbus wel. Het is een informeel kanaal. Geen juridische procedure. Geen recht op een beslissing. Maar een kanaal dat het signaal een laag hoger brengt. En in een dossier waarin de uitvoerende laag weigert te luisteren, is dat niet niets.</p>
 <p class="noot">Alle organisaties in dit hoofdstuk zijn rechtspersonen. Natuurlijke personen worden aangeduid met hun functie of hun symbool. De constitutionele basis is artikel 28, 33, 36, 37, 57 en 106 van de Belgische Grondwet, en artikel 5, 42 en 68 van de Nederlandse Grondwet. De procedure voor verzoekschriften is gebaseerd op de officiële communicatie van het Koninklijk Paleis en het Kabinet van de Koning. Dit hoofdstuk is geen juridisch advies.</p>
-<h2 id="de-bondgenoten-en-de-waakhond">De bondgenoten en de waakhond</h2>
+
+<h2 id="de-bondgenoten-en-de-waakhond">De bondgenoten en de waakhond</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">Naast de overheid en de private markt bestaan er organisaties die de burger zouden moeten bijstaan: vakbonden, gelijkekansencentra, mensenrechtenorganisaties, academici. In dit dossier komen vier van hen aan bod. Eén helpt daadwerkelijk, met een fiscale dienst die het verschil maakt. Eén verklaart zich onbevoegd op een technisch criterium. En de academische wereld opent zich pas wanneer het dossier onweerlegbaar is geworden — en dan gaat het snel.</p>
 <h3 id="deel-a-acv-de-vakbond-die-helpt-en-stopt">Deel A — ACV: de vakbond die helpt en stopt</h3>
 <p>Het Algemeen Christelijk Vakverbond is de grootste Belgische vakbond. Naast syndicale vertegenwoordiging biedt het juridische bijstand, fiscale dienstverlening, en uitbetalingsdiensten voor werkloosheidsuitkeringen. In dit dossier speelt de vakbond drie rollen.</p>
@@ -5414,8 +5078,9 @@ De juridische weg is de laatste weg. Maar hij is niet voor iedereen even toegank
 </ol>
 </div>
 <p class="noot">Alle organisaties in dit hoofdstuk zijn rechtspersonen. Natuurlijke personen worden aangeduid met hun functie. De feiten zijn gebaseerd op Document B. De rol en het mandaat van UNIA zijn gebaseerd op de Belgische antidiscriminatiewetgeving (Wet van 10 mei 2007). De aangehaalde arresten zijn C-279/93 (Schumacker), C-134/18 (Vester), C-385/17 (Hendrix). Dit hoofdstuk is geen juridisch advies.</p>
-<h1 id="vii-slot">VII. Slot</h1>
-<h2 id="slot-de-volledige-piramide">Slot — de volledige piramide</h2>
+
+<h1 id="vii-slot">VII. Slot</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="slot-de-volledige-piramide">Slot — de volledige piramide</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">Vijf lagen. Drieëntwintig hoofdstukken. Eén lichaam in het midden. Dit is het volledige speelbord van de Systeem-Audit, in één oogopslag.</p>
 <h3 id="de-piramide">De piramide</h3>
 <div class="figure">
@@ -5501,7 +5166,8 @@ De juridische weg is de laatste weg. Maar hij is niet voor iedereen even toegank
 <p>Document C heeft het speelbord en de mechanismen getoond. Document D trekt de conclusies. Drie bouwstenen voor hervorming, gebaseerd op het inzicht dat de fout niet bij de individuele ambtenaar zit, maar in de architectuur van de coördinatie zelf.</p>
 <p>Wat in Document C zichtbaar is geworden, is de structuur van het vacuüm. Wat in Document D wordt uitgewerkt, is de structuur van de oplossing. Niet omdat één maatregel alles oplost, maar omdat de architectuur kan worden aangepast op drie punten waar het nu stilvalt.</p>
 <p class="noot">Dit is het slot van Document C. Alle organisaties in dit document zijn rechtspersonen. Natuurlijke personen worden aangeduid met hun functie of hun symbool (♂, ♀). Document C is de visuele tegenhanger van Document B (data-matrix) en Document A (narratieve audit). De conclusies en bouwstenen staan in Document D (synthese).</p>
-<h2 id="het-volledige-netwerk">Het volledige netwerk</h2>
+
+<h2 id="het-volledige-netwerk">Het volledige netwerk</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="lead">Alle vorige hoofdstukken toonden elk één mechanisme, één instantie, of één patroon. Dit hoofdstuk toont alles tegelijk. Dezelfde knooppunten, dezelfde kanalen, dezelfde kleuren — maar nu in één beeld, zonder ordening, zoals het gezin het ervaart.</p>
 <h3 id="wat-het-gezin-ziet">Wat het gezin ziet</h3>
 <p>De lezer die tot hier is gekomen, heeft elk onderdeel afzonderlijk leren kennen. Elke instantie had een eigen hoofdstuk. Elk mechanisme had een eigen schema. Elke kleur had een eigen betekenis. Maar het gezin dat in deze situatie zit, heeft die orde niet. Het gezin ziet alleen het geheel. En dat geheel is een wirwar.</p>
@@ -5723,13 +5389,12 @@ De juridische weg is de laatste weg. Maar hij is niet voor iedereen even toegank
 <p>En de 96 geblokkeerde verbindingen die hier zichtbaar zijn, zijn alleen de geblokkeerde verbindingen tussen het gezin en de organisaties. In werkelijkheid zijn er ook geblokkeerde verbindingen tussen de organisaties onderling. Tussen CM en UWV. Tussen CZ en CAK. Tussen FOD SZ en FOD Financiën. Elke geblokkeerde verbinding tussen organisaties is een extra laag die het gezin moet navigeren.</p>
 <p>Wat dit schema toont, is niet het volledige netwerk. Het is een representatie van het volledige netwerk. Als alle verbindingen zouden worden getekend, zou het schema onleesbaar worden. En dat is precies het punt.</p>
 <p class="noot">Alle organisaties in dit hoofdstuk zijn rechtspersonen. Natuurlijke personen worden aangeduid met hun functie of hun symbool. De organisaties zijn gebaseerd op Document B. De verbindingen zijn gebaseerd op de feitelijke correspondentie in Document B, waar relevant samengevat. De aantallen (54 organisaties, 127 verbindingen) zijn indicatief; het werkelijke aantal is hoger. Dit hoofdstuk is geen juridisch advies.</p>
-
-
-<a class="pub-top" href="#top" title="↑">↑</a>
+<a class="pub-top" href="#top" title="Naar boven">↑</a>
 <footer class="pub-footer">
-<p><strong>Systeem-Audit</strong> — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid<br/>
-  Auteur : Eric Messa · Version mise à jour : 5 oktober 2026, 15:03</p>
-<p><a href="home.html">← Overzicht</a></p>
+<p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
+  Auteur: Eric Messa · Versie bijgewerkt: 5 oktober 2026, 15:27</p>
+<p><a href="home.html">← Terug naar overzicht</a> ·
+     <a href="../index.html">🌐 Taalkeuze</a></p>
 </footer>
 </body>
 </html>
