@@ -17,8 +17,14 @@ Onder de volgende voorwaarden:
 
 Volledige licentie: https://creativecommons.org/licenses/by/4.0/legalcode.nl
 
-Vertalingen (Engels, Duits, Frans) vallen onder dezelfde licentie als
-het Nederlandstalige origineel. Bij discrepanties tussen een vertaling
-en het Nederlandstalige origineel is het Nederlandse document leidend.
+Het Nederlandstalige origineel is de bronversie en wordt doorlopend
+bijgewerkt. Document E (het rechtenoverzicht) toont de actuele stand
+van de rechten.
+
+De vertalingen (Engels, Duits, Frans) zijn bevroren op een eerder
+moment. Ze vallen onder dezelfde licentie als het Nederlandstalige
+origineel, maar worden niet meer bijgewerkt. Bij discrepanties tussen
+een vertaling en het Nederlandstalige origineel is het Nederlandse
+document leidend.
 
 Wie citeert, citeert Document B als bron van de feiten.
