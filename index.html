@@ -437,30 +437,70 @@ h1 {
 <div class="root-statement">Niet gesubsidieerd door de Europese Unie. Geen subsidie, geen opdracht, geen mandaat.</div>
 </div><div class="rechten-banner" id="rechten-banner">
 <style>
-  .rechten-banner { max-width: 640px; margin: 24px auto 36px; font-family: Aptos, Calibri, sans-serif; }
-  .rb-titel { font-size: 11pt; color: #888; text-transform: uppercase; letter-spacing: 1.5px; text-align: center; margin-bottom: 10px; font-weight: 700; }
-  .rb-slides { position: relative; min-height: 130px; }
-  .rb-slide { display: none; text-decoration: none; color: inherit; background: #ffffff; border: 1px solid #d5d0c5; border-left: 5px solid #1a3c6e; border-radius: 6px; padding: 14px 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: transform .15s, box-shadow .15s; }
+  .rechten-banner { max-width: 900px; margin: 24px auto 32px; padding: 0 20px;
+                    font-family: Aptos, Calibri, sans-serif; }
+  .rb-header { display: flex; justify-content: space-between; align-items: center;
+               gap: 12px; margin-bottom: 12px; }
+  .rb-titel { flex: 1; text-align: center; font-size: 11pt; color: #888;
+              text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; }
+  .rb-pijl { background: #ffffff; border: 1px solid #d5d0c5; border-radius: 50%;
+             width: 36px; height: 36px; cursor: pointer; font-size: 16pt;
+             line-height: 1; color: #1a3c6e; padding: 0; flex-shrink: 0;
+             display: flex; align-items: center; justify-content: center;
+             transition: background .15s, border-color .15s; }
+  .rb-pijl:hover { background: #eef2f7; border-color: #1a3c6e; }
+  .rb-slides { position: relative; min-height: 140px; }
+  .rb-slide { display: none; text-decoration: none; color: inherit;
+              background: #ffffff; border: 1px solid #d5d0c5;
+              border-left: 5px solid #1a3c6e; border-radius: 6px;
+              padding: 16px 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+              transition: transform .15s, box-shadow .15s; }
   .rb-slide.rb-actief { display: block; }
-  .rb-slide:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,0.12); }
-  .rb-kop { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; gap: 12px; flex-wrap: wrap; }
-  .rb-status { display: inline-block; padding: 4px 12px; color: #fff; font-size: 10pt; font-weight: 700; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .rb-slide:hover { transform: translateY(-2px);
+                    box-shadow: 0 4px 14px rgba(0,0,0,0.12); }
+  .rb-kop { display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 10px; gap: 12px; flex-wrap: wrap; }
+  .rb-status { display: inline-block; padding: 4px 12px; color: #fff;
+               font-size: 10pt; font-weight: 700; border-radius: 3px;
+               text-transform: uppercase; letter-spacing: 0.5px; }
   .rb-datum { font-family: Consolas, monospace; font-size: 10pt; color: #888; }
-  .rb-naam { font-size: 15pt; font-weight: 700; color: #1a3c6e; margin-bottom: 4px; }
-  .rb-kort { font-size: 12pt; color: #444; line-height: 1.4; margin-bottom: 10px; }
-  .rb-cta { font-size: 11pt; color: #0d7377; font-weight: 700; text-align: right; }
+  .rb-naam { font-size: 15pt; font-weight: 700; color: #1a3c6e;
+             margin-bottom: 6px; }
+  .rb-kort { font-size: 12pt; color: #444; line-height: 1.45;
+             margin-bottom: 12px; }
+  .rb-cta { font-size: 11pt; color: #0d7377; font-weight: 700;
+            text-align: right; }
+  .rb-teller { display: flex; justify-content: center; align-items: center;
+               gap: 18px; flex-wrap: wrap; margin-top: 14px; padding-top: 12px;
+               border-top: 1px solid #e8e4dc; font-size: 10.5pt; color: #333; }
+  .rb-teller-item { display: inline-flex; align-items: center; gap: 6px;
+                    font-weight: 600; }
+  .rb-teller-totaal { font-weight: 400; color: #888; margin-left: auto;
+                      font-family: Consolas, monospace; font-size: 9.5pt; }
+  .rb-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+            flex-shrink: 0; }
+  .rb-dot-rood { background: #c62828; }
+  .rb-dot-oranje { background: #e65100; }
+  .rb-dot-groen { background: #2e7d32; }
+  .rb-dot-grijs { background: #757575; }
   @media (max-width: 700px) {
-      .rechten-banner { margin: 20px auto 28px; padding: 0 16px; }
-      .rb-titel { font-size: 10pt; letter-spacing: 1px; }
-      .rb-slides { min-height: 150px; }
-      .rb-slide { padding: 16px 18px; }
-      .rb-naam { font-size: 14pt; }
-      .rb-kort { font-size: 12pt; }
-      .rb-datum { font-size: 9.5pt; }
-      .rb-cta { font-size: 11pt; }
+    .rechten-banner { margin: 20px auto 28px; padding: 0 16px; }
+    .rb-titel { font-size: 10pt; letter-spacing: 1px; }
+    .rb-slides { min-height: 160px; }
+    .rb-slide { padding: 16px 18px; }
+    .rb-naam { font-size: 14pt; }
+    .rb-kort { font-size: 12pt; }
+    .rb-datum { font-size: 9.5pt; }
+    .rb-cta { font-size: 11pt; }
+    .rb-teller { gap: 12px; font-size: 10pt; }
+    .rb-teller-totaal { margin-left: 0; width: 100%; text-align: center; }
   }
   </style>
+<div class="rb-header">
+<button class="rb-pijl" onclick="rb_vorige()" title="Vorige">‹</button>
 <div class="rb-titel">Rechtenoverzicht — actuele stand</div>
+<button class="rb-pijl" onclick="rb_volgende()" title="Volgende">›</button>
+</div>
 <div class="rb-slides">
 <a class="rb-slide rb-actief" data-index="0" href="nl/document-e.html#recht-cmziekte" style="border-left-color:#c62828">
 <div class="rb-kop">
@@ -607,16 +647,36 @@ h1 {
 <div class="rb-cta">Bekijk in het rechtenoverzicht →</div>
 </a>
 </div>
+<div class="rb-teller">
+<span class="rb-teller-item"><span class="rb-dot rb-dot-rood"></span>9 vastgelopen</span><span class="rb-teller-item"><span class="rb-dot rb-dot-oranje"></span>2 aangevraagd</span><span class="rb-teller-item"><span class="rb-dot rb-dot-oranje"></span>1 lopend</span><span class="rb-teller-item"><span class="rb-dot rb-dot-groen"></span>4 actief</span><span class="rb-teller-item"><span class="rb-dot rb-dot-grijs"></span>1 afgesloten</span>
+<span class="rb-teller-totaal">17 rechten totaal</span>
+</div>
 <script>
   (function() {
       var slides = document.querySelectorAll('#rechten-banner .rb-slide');
       if (slides.length <= 1) return;
       var huidig = 0;
-      setInterval(function() {
+      var timer = null;
+      var banner = document.getElementById('rechten-banner');
+
+      function toon(i) {
           slides[huidig].classList.remove('rb-actief');
-          huidig = (huidig + 1) % slides.length;
+          huidig = (i + slides.length) % slides.length;
           slides[huidig].classList.add('rb-actief');
-      }, 7000);
+      }
+      function start() {
+          if (timer) clearInterval(timer);
+          timer = setInterval(function() { toon(huidig + 1); }, 7000);
+      }
+      function stop() {
+          if (timer) clearInterval(timer);
+          timer = null;
+      }
+      window.rb_vorige = function() { toon(huidig - 1); start(); };
+      window.rb_volgende = function() { toon(huidig + 1); start(); };
+      banner.addEventListener('mouseenter', stop);
+      banner.addEventListener('mouseleave', start);
+      start();
   })();
   </script>
 </div>
