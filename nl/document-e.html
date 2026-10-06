@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Systeem-Audit — Document E — Het rechtenoverzicht</title>
+<style>
+@media screen { p.marker { display: none; } }
+body { font-family: Aptos, Calibri, sans-serif; font-size: 12pt; line-height: 1.15; margin: 40pt; }
+h1 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 28pt; color: #0d7377; margin-top: 0; margin-bottom: 6pt; border-bottom: 3px solid #0d7377; padding-bottom: 6pt; }
+h2 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 20pt; color: #0d7377; margin-top: 0; margin-bottom: 5pt; border-bottom: 2px solid #0d7377; padding-bottom: 4pt; }
+h3 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 16pt; color: #0d7377; margin-top: 0; margin-bottom: 4pt; border-bottom: 1px solid #0d7377; padding-bottom: 3pt; }
+h4 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 14pt; color: #0d7377; margin-top: 10pt; margin-bottom: 3pt; }
+h5 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 13pt; color: #333333; margin-top: 8pt; margin-bottom: 3pt; }
+p { margin: 0 0 4pt 0; text-align: left; }
+p.subtitel { font-style: italic; font-size: 11pt; color: #555555; margin: -2pt 0 10pt 0; }
+hr { border: 0; border-top: 1px solid #ccc; margin: 15pt 0 10pt 0; }
+i { font-size: 10.5pt; color: #555555; }
+.netwerkregel { font-style: italic; color: #333333; margin-bottom: 6pt; }
+.metadata { margin-bottom: 4pt; display: none; }
+.timeline-entry { margin-bottom: 6pt; text-align: left; }
+.date-title { font-weight: bold; color: #000000; }
+.netwerk { font-style: italic; color: #333333; margin-bottom: 4pt; }
+.meta { margin-bottom: 4pt; }
+.meta strong { color: #0d7377; }
+.entry { margin-bottom: 4pt; text-align: left; }
+.datum { font-weight: bold; color: #000000; }
+.titel { font-weight: bold; text-transform: uppercase; }
+.opvolging { font-style: italic; color: #555555; }
+p.lead { font-style: italic; color: #444; margin-bottom: 12pt; }
+p.tijd { font-size: 10pt; color: #888888; font-style: italic; letter-spacing: 1pt; text-transform: uppercase; margin-bottom: 4pt; }
+svg { display: block; width: 100%; height: auto; margin: 8pt 0; }
+svg text { font-family: Aptos, Calibri, sans-serif; }
+.figure { background: #ffffff; border: 1px solid #d8d4cb; padding: 12pt; margin: 14pt 0; }
+.caption { font-size: 10pt; color: #4a5559; margin-top: 8pt; border-top: 1px solid #ece8df; padding-top: 6pt; }
+table { width: 100%; border-collapse: collapse; margin: 10pt 0 18pt; font-size: 10.5pt; }
+th { background: #0d7377; color: #ffffff; text-align: left; padding: 7pt 9pt; border: 1px solid #0d7377; }
+td { padding: 6pt 9pt; border: 1px solid #d5d0c5; vertical-align: top; background: #ffffff; }
+tr:nth-child(even) td { background: #f4f1f8; }
+.status-g { color: #2e7d32; font-weight: 700; }
+.status-o { color: #e65100; font-weight: 700; }
+.status-r { color: #c62828; font-weight: 700; }
+.actie { background: #ede9f5; border-left: 4px solid #0d7377; padding: 10pt 14pt; margin: 14pt 0; font-size: 11pt; }
+.actie strong { color: #0d7377; }
+.werkversie { background: #fff8e1; border-left: 4px solid #e6a817; padding: 8pt 12pt; margin-bottom: 16pt; font-size: 10.5pt; color: #665500; }
+.afsluiting { background: #f4f1f8; border-left: 4px solid #0d7377; padding: 10pt 14pt; margin: 14pt 0; font-size: 11pt; }
+.actor { margin-bottom: 12pt; padding-bottom: 10pt; border-bottom: 1px solid #e8e4dc; }
+.actor-naam { font-weight: 700; color: #1f2421; }
+.actor-rol { font-weight: 600; color: #0d7377; }
+.badge-be { color: #8b1e1e; font-weight: 700; }
+.badge-nl { color: #1a3c6e; font-weight: 700; }
+.badge-mem { color: #c1440e; font-weight: 700; }
+.badge-eu { color: #0d7377; font-weight: 700; }
+.banner-be { background: #f7eded; border-left: 5px solid #8b1e1e; padding: 8pt 12pt; margin: 20pt 0 10pt; }
+.banner-be strong { color: #8b1e1e; font-size: 13pt; }
+.banner-nl { background: #edf2f8; border-left: 5px solid #1a3c6e; padding: 8pt 12pt; margin: 20pt 0 10pt; }
+.banner-nl strong { color: #1a3c6e; font-size: 13pt; }
+.banner-eu { background: #eaf4f4; border-left: 5px solid #0d7377; padding: 8pt 12pt; margin: 20pt 0 10pt; }
+.banner-eu strong { color: #0d7377; font-size: 13pt; }
+.legend-row { display: flex; gap: 12pt; margin-top: 4pt; align-items: baseline; font-size: 10.5pt; }
+.legend-num { display: inline-block; width: 22px; height: 22px; border-radius: 50%; color: #fff; text-align: center; line-height: 22px; font-weight: 700; font-size: 10pt; flex-shrink: 0; }
+.noot { font-size: 9.5pt; color: #666; font-style: italic; margin-top: 20pt; padding-top: 10pt; border-top: 1px solid #ddd; line-height: 1.5; }
+.footnotes p { font-size: 10pt; color: #555; margin-bottom: 6pt; text-align: left; }
+.titelblad { text-align: center; margin-top: 200pt; }
+.titelblad h1 { font-size: 36pt; border: none; padding: 0; margin-bottom: 24pt; color: #0d7377; }
+.titelblad .ondertitel { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 18pt; color: #333333; margin-bottom: 60pt; }
+.titelblad .documentaanduiding { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 22pt; color: #0d7377; font-weight: bold; margin-bottom: 80pt; }
+.titelblad .auteur { font-size: 14pt; color: #333333; margin-bottom: 4pt; }
+.titelblad .meta-lijn { font-size: 12pt; color: #555555; margin-bottom: 4pt; }
+.inhoudsopgave ul { list-style-type: none; padding-left: 0; }
+.inhoudsopgave li { margin-bottom: 3pt; }
+.gebruikersaanwijzing { margin-top: 0; }
+.gebruikersaanwijzing p { font-style: italic; color: #333333; margin-bottom: 6pt; }
+.contactblok { background: #ffffff; border-left: 4px solid #0d7377; padding: 15px 20px; margin-top: 30pt; }
+.contactblok p { margin: 0; font-size: 11pt; }
+.contactblok a { color: #0d7377; text-decoration: none; font-weight: bold; }
+
+/* === Rechtenoverzicht (Document E) === */
+.recht-kop { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; flex-wrap: wrap; margin-bottom: 4pt; }
+.recht-status { display: inline-block; padding: 3pt 10pt; color: #fff; font-size: 9pt; font-weight: 700; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px; flex-shrink: 0; }
+.recht-kop h2 { flex: 1; margin: 0; padding: 0; border-bottom: none; }
+.recht-kop-wrapper { border-bottom: 2px solid #0d7377; padding-bottom: 6pt; margin-bottom: 12pt; }
+.categorie-titel { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 14pt; color: #555; text-transform: uppercase; letter-spacing: 1pt; margin-top: 24pt; margin-bottom: 10pt; border-bottom: 1px solid #ccc; padding-bottom: 4pt; }
+.sector-titel { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 16pt; color: #0d7377; margin-top: 20pt; margin-bottom: 8pt; }
+.intro-rechten { font-style: italic; color: #444; margin-bottom: 24pt; padding: 10pt 14pt; background: #f7f5f1; border-left: 4px solid #0d7377; }
+
+/* === Mobile view — tot 700px === */
+@media (max-width: 700px) {
+    body { font-size: 11pt; margin: 16pt 14pt; line-height: 1.45; }
+    h1 { font-size: 22pt; }
+    h2 { font-size: 17pt; }
+    h3 { font-size: 14pt; }
+    h4 { font-size: 12pt; }
+    h5 { font-size: 11pt; }
+    p { text-align: left; }
+    table { font-size: 9.5pt; }
+    th, td { padding: 4pt 6pt; }
+    .titelblad { margin-top: 80pt; }
+    .titelblad h1 { font-size: 26pt; }
+    .titelblad .ondertitel { font-size: 14pt; margin-bottom: 30pt; }
+    .titelblad .documentaanduiding { font-size: 16pt; margin-bottom: 40pt; }
+    .titelblad .auteur { font-size: 11pt; }
+    .titelblad .meta-lijn { font-size: 10pt; }
+    .legend-row { flex-direction: column; gap: 4pt; }
+    .actor { padding-bottom: 6pt; margin-bottom: 8pt; }
+    .actie, .afsluiting, .werkversie { padding: 8pt 10pt; font-size: 10.5pt; }
+    .recht-kop { flex-direction: column; align-items: flex-start; gap: 6pt; }
+    .categorie-titel { font-size: 12pt; }
+    .sector-titel { font-size: 14pt; }
+}
+/* === Mobile view — tot 420px === */
+@media (max-width: 420px) {
+    body { font-size: 10.5pt; margin: 12pt 10pt; }
+    h1 { font-size: 19pt; }
+    h2 { font-size: 15pt; }
+    h3 { font-size: 13pt; }
+    table { font-size: 9pt; }
+    th, td { padding: 3pt 5pt; }
+    .titelblad h1 { font-size: 22pt; }
+}
+
+
+
+
+.pub-nav {
+    position: sticky; top: 0; z-index: 100;
+    background: #ffffff; border-bottom: 2px solid #d5d0c5;
+    padding: 10px 20px; margin: -40pt -40pt 20pt -40pt;
+    font-family: Aptos, Calibri, sans-serif;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 16px; flex-wrap: wrap;
+}
+.pub-nav .links { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.pub-nav a {
+    color: #1a3c6e; text-decoration: none; padding: 6px 12px;
+    border-radius: 4px; font-size: 11pt; font-weight: 600;
+    border: 1px solid transparent;
+}
+.pub-nav a:hover { background: #eef2f7; border-color: #d5d0c5; }
+.pub-nav a.actief { background: #1a3c6e; color: #ffffff; }
+.pub-nav a.home { border: 1px solid #d5d0c5; }
+.pub-nav .titel-klein { font-size: 10pt; color: #666; font-style: italic; }
+.pub-top {
+    position: fixed; bottom: 24px; right: 24px; z-index: 200;
+    background: #1a3c6e; color: #fff; border: none;
+    width: 44px; height: 44px; border-radius: 50%;
+    cursor: pointer; font-size: 18pt; line-height: 1;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    text-decoration: none; display: flex; align-items: center; justify-content: center;
+    transition: transform .15s;
+}
+.pub-top:hover { transform: scale(1.1); background: #12294d; }
+.pub-toc {
+    background: #f7f5f1; border-left: 4px solid #1a3c6e;
+    padding: 14pt 18pt; margin: 20pt 0 30pt;
+    border-radius: 4px;
+}
+.pub-toc h2 { margin-top: 0 !important; border-bottom: none !important; font-size: 16pt !important; }
+.pub-toc ul { list-style: none; padding-left: 0; margin: 0; }
+.pub-toc li { margin: 3pt 0; }
+.pub-toc a { color: #1a3c6e; text-decoration: none; font-size: 11pt; }
+.pub-toc a:hover { text-decoration: underline; }
+.pub-toc .niv1 { font-weight: 700; margin-top: 8pt; }
+.pub-toc .niv2 { padding-left: 18pt; }
+.pub-toc .niv3 { padding-left: 36pt; font-size: 10pt; color: #555; }
+.pub-footer {
+    margin-top: 60pt; padding-top: 20pt; border-top: 1px solid #d5d0c5;
+    font-size: 10pt; color: #666; text-align: center;
+}
+.pub-footer a { color: #1a3c6e; }
+.pub-naar-boven {
+    display: block; text-align: right; margin-top: 10pt;
+    font-size: 10pt; color: #888; text-decoration: none;
+}
+.pub-naar-boven:hover { color: #1a3c6e; text-decoration: underline; }
+@media (max-width: 700px) {
+    .pub-nav { padding: 8px 12px; margin: -16pt -14pt 16pt -14pt; }
+    .pub-nav a { padding: 5px 9px; font-size: 10pt; }
+    .pub-nav .titel-klein { display: none; }
+    .pub-toc { padding: 10pt 14pt; }
+    .pub-toc .niv3 { padding-left: 24pt; }
+}
+</style>
+</head>
+<body><a id="top"></a>
+<nav class="pub-nav">
+<div class="links"><a class="home" href="home.html">← Overzicht</a> <a class="home" href="../index.html">🌐 Taalkeuze</a> <a class="" href="document-0.html">Inleiding</a> <a class="" href="document-a.html">Narratief</a> <a class="" href="document-b.html">Data</a> <a class="" href="document-c.html">Visueel</a> <a class="" href="document-d.html">Synthese</a> <a class="actief" href="document-e.html">Rechten</a></div>
+<div class="titel-klein">Systeem-Audit · Eric Messa</div>
+</nav>
+
+<div class="titelblad">
+<h1 id="systeem-audit">Systeem-Audit</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
+<p class="documentaanduiding">Document E — Het rechtenoverzicht</p>
+<p class="auteur">Auteur: Eric Messa</p>
+<p class="meta-lijn">Versie bijgewerkt: 6 oktober 2026, 10:24</p>
+</div>
+
+<div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
+<li class="niv1"><a href="#systeem-audit">Systeem-Audit</a></li>
+<li class="niv2"><a href="#inhoudsopgave">Inhoudsopgave</a></li>
+<li class="niv1"><a href="#i-belgië">I. België</a></li>
+<li class="niv2"><a href="#zorg-fysieke-realiteit">Zorg &amp; Fysieke Realiteit</a></li>
+<li class="niv2"><a href="#ziekte-uitkering-invaliditeit">Ziekte-uitkering / Invaliditeit</a></li>
+<li class="niv2"><a href="#maximumfactuur">Maximumfactuur</a></li>
+<li class="niv2"><a href="#verhoogde-tegemoetkoming">Verhoogde Tegemoetkoming</a></li>
+<li class="niv2"><a href="#verhoogde-maximumfactuur">Verhoogde Maximumfactuur</a></li>
+<li class="niv2"><a href="#financiën-rechten-sociale-zekerheid">Financiën, Rechten &amp; Sociale Zekerheid</a></li>
+<li class="niv2"><a href="#inkomensvervangende-tegemoetkoming">Inkomensvervangende Tegemoetkoming</a></li>
+<li class="niv2"><a href="#vlaams-zorgbudget">Vlaams Zorgbudget</a></li>
+<li class="niv2"><a href="#groeipakket">Groeipakket</a></li>
+<li class="niv2"><a href="#sociale-toeslag-groeipakket">Sociale Toeslag Groeipakket</a></li>
+<li class="niv2"><a href="#verhoogde-belastingvrije-som">Verhoogde Belastingvrije Som</a></li>
+<li class="niv1"><a href="#ii-nederland">II. Nederland</a></li>
+<li class="niv2"><a href="#zorg-verzekering">Zorg &amp; Verzekering</a></li>
+<li class="niv2"><a href="#zorgtoeslag">Zorgtoeslag</a></li>
+<li class="niv2"><a href="#aftrek-zorgkosten">Aftrek Zorgkosten</a></li>
+<li class="niv2"><a href="#financiën-sociale-zekerheid">Financiën &amp; Sociale Zekerheid</a></li>
+<li class="niv2"><a href="#wia-uitkering">WIA-uitkering</a></li>
+<li class="niv2"><a href="#wajong-op-latere-leeftijd">Wajong op latere leeftijd</a></li>
+<li class="niv2"><a href="#aow-opbouw">AOW-opbouw</a></li>
+<li class="niv2"><a href="#bijzondere-bijstand">Bijzondere Bijstand</a></li>
+<li class="niv2"><a href="#kindgebonden-budget">Kindgebonden Budget</a></li>
+<li class="niv2"><a href="#huurtoeslag">Huurtoeslag</a></li>
+</ul></div>
+<div class="intro-rechten">Welke sociale rechten bestaan er, en wat levert elk recht op? Dit overzicht toont per recht de theorie, de voorwaarden, de hindernissen in de praktijk, en de actuele stand van zaken. Bedoeld voor wie wil weten waar hij terecht kan, waar de muur staat, en wat er in de praktijk van een recht overblijft.</div>
+<h1 id="i-belgië">I. België</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 class="sector-titel" id="zorg-fysieke-realiteit">Zorg &amp; Fysieke Realiteit</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<div class="recht-kop-wrapper"><div class="recht-kop"><h2 id="ziekte-uitkering-invaliditeit">Ziekte-uitkering / Invaliditeit</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><span class="recht-status" style="background:#c62828">Vastgelopen</span></div></div>
+<p class="subtitel">CM (Christelijke Mutualiteit)</p>
+<h4>Wat is het?</h4>
+<p>Uitkering bij arbeidsongeschiktheid langer dan een jaar. Vervangt loon
+wanneer je niet meer kan werken door ziekte of handicap.</p>
+<h5>Rechtsgrond</h5>
+<p>BE: Wet betreffende de verplichte verzekering voor geneeskundige
+verzorging en uitkeringen, gecoördineerd op 14 juli 1994 (ZIV-wet).</p>
+<p>EU: Verordening 883/2004, art. 44–50 (samentelling van tijdvakken)
+en het arrest-Vester (C-484/93).</p>
+<h5>Voorwaarden — Belgische burger</h5>
+<ul>
+<li>Ingeschreven bij een ziekenfonds (CM, Liberale, Socialistische, …).</li>
+<li>Minimaal 180 dagen gewerkt hebben als werknemer of zelfstandige.</li>
+<li>Arbeidsongeschikt verklaard door de adviserend arts.</li>
+<li>Wachttijd van 180 dagen vóór de uitkering ingaat.</li>
+</ul>
+<h5>Wat levert het op?</h5>
+<p>Uitkering — direct geld, maandelijks. Bedrag afhankelijk van gezinssituatie
+en duur van de arbeidsongeschiktheid. Eerste jaar circa 60% van het
+begrensd loon, daarna circa 40–65% in invaliditeit.</p>
+<h4>Waarom jij het niet krijgt</h4>
+<div class="logica">
+<p><strong>Wat je zou verwachten.</strong> Je bent aangesloten bij CM in
+België. Je betaalt RSZ en lidgeld. Dat is de Belgische ziekteverzekering.
+Volgens Verordening 883/2004 zouden bijdragen die je in België hebt
+betaald, overdraagbaar moeten zijn — ook als je aan de Nederlandse kant
+van de grens woont.</p>
+<p><strong>Wat er gebeurt.</strong> CM handhaaft de nationale wachttijd
+van 180 dagen in het Belgische stelsel, ongeacht eerdere bijdragen in
+Nederland. De Europese samentelling wordt niet toegepast.</p>
+</div>
+<h5>Verschil standaard inwoner en grensarbeider</h5>
+<p>Een gewone Belgische inwoner bouwt de wachttijd op via werk in België.
+Na 180 dagen ziekte gaat de uitkering in. Een grensarbeider die in
+Nederland heeft gewerkt, ziet die Nederlandse tijdvakken niet
+meetellen voor de Belgische wachttijd.</p>
+<h5>Het mechanisme van het vastlopen</h5>
+<p>CM verwijst naar de nationale wachttijd. De Europese samentelling
+wordt niet toegepast omdat de Nederlandse tijdvakken niet in het
+Belgische ziekenfondsdossier zijn opgenomen. Het ziekenfonds wacht op
+een signaal dat niet komt. De RVA en de SVB sturen geen gegevens door.</p>
+<h5>Welke EU-regel wordt geschonden</h5>
+<p>Vo. 883/2004, art. 6: tijdvakken van verzekering in andere lidstaten
+moeten worden samengeteld. Het arrest-Vester bevestigt dit voor
+ziekte-uitkeringen.</p>
+<h4>Wat kun je eraan doen</h4>
+<h5>Waar vraag je het aan?</h5>
+<p>CM — via je plaatselijk kantoor of het online loket van je ziekenfonds.</p>
+<h5>De alternatieve route</h5>
+<p>Bezwaarschrift bij CM met verwijzing naar Vo. 883/2004, art. 6 en
+het arrest-Vester. Voeg toe:</p>
+<ul>
+<li>Bewijs van eerdere bijdragen in België én Nederland.</li>
+<li>UZ Gent- of ZorgSaam-dossier.</li>
+<li>Medisch attest arbeidsongeschiktheid.</li>
+</ul>
+<p>Als CM niet reageert: tuchtklacht bij de Orde der Artsen en een
+DPO-ingebrekestelling wegens geautomatiseerde besluitvorming.</p>
+<h5>Waar je op moet rekenen</h5>
+<p>Procedure duurt 6 tot 18 maanden. In die periode: geen uitkering.
+Uitkomst hangt af van de beoordelaar.</p>
+<h4>Wat het mij heeft opgeleverd</h4>
+<h5>Wat ik gedaan heb</h5>
+<p>Bezwaarschrift ingediend bij CM, met verwijzing naar Vo. 883/2004
+en het arrest-Vester. Tuchtklacht tegen de CM-arts ingediend wegens
+geautomatiseerde besluitvorming. DPO-ingebrekestelling ingediend.</p>
+<h5>Status</h5>
+<p>Vastgelopen. Uitkering geweigerd.</p>
+<h5>Tijd</h5>
+<p>Loopt sinds 2024.</p>
+<h5>Impact</h5>
+<p>Geen ziekte-uitkering ontvangen. Bedrag niet uitgekeerd.</p>
+<h5>Opvolging</h5>
+<p>Tuchtklacht CM-arts loopt. DPO-ingebrekestelling loopt.</p>
+<p class="afsluiting">Looptijd: 6 tot 18 maanden. Uitkomst onzeker.
+Impact tot nu toe: geen uitkering.</p>
+<div class="recht-kop-wrapper"><div class="recht-kop"><h2 id="maximumfactuur">Maximumfactuur</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><span class="recht-status" style="background:#c62828">Vastgelopen</span></div></div>
+<p class="subtitel">CM · RIZIV · automatisch bij chronische ziekte</p>
+<h4>Wat is het?</h4>
+<p>Een plafond op je jaarlijkse remgeld voor medische kosten. Zodra je
+een bepaald bedrag aan eigen bijdragen hebt betaald, wordt alles
+erboven terugbetaald door je ziekenfonds.</p>
+<h5>Rechtsgrond</h5>
+<p>BE: Wet betreffende de verplichte verzekering voor geneeskundige
+verzorging en uitkeringen, gecoördineerd op 14 juli 1994 (ZIV-wet),
+art. 37 § 19 en het koninklijk besluit van 25 april 2014.</p>
+<p>EU: Verordening 883/2004, art. 4 (gelijke behandeling) en art. 17–35
+(zorgverstrekkingen).</p>
+<h5>Voorwaarden — Belgische burger</h5>
+<ul>
+<li>Aangesloten bij een Belgisch ziekenfonds (CM, Liberale,
+Socialistische, …).</li>
+<li>Ingezetene van België, of verzekerd via de Belgische sociale
+zekerheid.</li>
+<li>De teller loopt automatisch mee op basis van je medische
+facturen.</li>
+</ul>
+<h5>Wat levert het op?</h5>
+<p>Terugbetaling — geld dat je al hebt voorgeschoten, wordt
+teruggestort door het ziekenfonds. Geen uitkering, geen toeslag.
+Het plafond hangt af van je gezinssituatie:</p>
+<ul>
+<li>Zonder VT: circa € 1.250 per gezin per jaar.</li>
+<li>Met Verhoogde Tegemoetkoming: circa € 500 per gezin per jaar.</li>
+</ul>
+<h4>Waarom jij het niet krijgt</h4>
+<div class="logica">
+<p><strong>Wat je zou verwachten.</strong> Je bent aangesloten bij CM
+in België. Je betaalt RSZ en lidgeld. Je medische kosten lopen via
+het Belgische systeem. Dan zou de Maximumfactuur ook op jou van
+toepassing moeten zijn — ook als je aan de Nederlandse kant van de
+grens woont.</p>
+<p><strong>Wat er gebeurt.</strong> De Maximumfactuur wordt berekend op
+basis van Belgische medische facturen. Facturen van Nederlandse
+zorgverleners (UZ Gent wordt soms wél gebruikt, maar Nederlandse
+huisartsen, apotheken en specialisten niet) worden niet meegeteld
+in de teller. Je betaalt dus wel, maar de teller loopt niet op.</p>
+</div>
+<h5>Verschil standaard inwoner en grensarbeider</h5>
+<p>Een gewone Belgische inwoner bouwt de teller automatisch op via elke
+Belgische ziekenhuisfactuur, huisartsfactuur en apotheekfactuur. Een
+grensarbeider die voornamelijk in Nederland zorg gebruikt, ziet zijn
+teller nauwelijks stijgen — ook al betaalt hij dezelfde RSZ en hetzelfde
+CM-lidgeld.</p>
+<h5>Het mechanisme van het vastlopen</h5>
+<p>Het ziekenfonds bouwt de teller op uit gegevens die het van Belgische
+zorgverleners ontvangt. Facturen van buitenlandse zorgverleners komen
+niet in dat systeem. De Europese bepaling dat zorgverstrekkingen in
+andere lidstaten meetellen, wordt in de praktijk niet toegepast.</p>
+<h5>Welke EU-regel wordt geschonden</h5>
+<p>Vo. 883/2004, art. 4: gelijke behandeling ongeacht woonplaats.
+Art. 19 en 27: zorgverstrekkingen in een andere lidstaat moeten
+worden vergoed volgens het stelsel van het bevoegde land. De
+Maximumfactuur is een Belgisch stelsel, dus Belgische vergoedingen
+horen te tellen — ook wanneer ze buiten België zijn opgelopen.</p>
+<h4>Wat kun je eraan doen</h4>
+<h5>Waar vraag je het aan?</h5>
+<p>CM — via je plaatselijk kantoor. De Maximumfactuur wordt automatisch
+berekend, maar je kan een overzicht opvragen en correcties laten
+doorvoeren.</p>
+<h5>De alternatieve route</h5>
+<p>Schriftelijk verzoek bij CM om buitenlandse facturen mee te tellen
+in de teller. Voeg toe:</p>
+<ul>
+<li>Overzicht van Nederlandse medische facturen (huisarts, apotheek,
+specialist).</li>
+<li>Bewijs van betaling van remgeld en eigen bijdragen.</li>
+<li>Verwijzing naar Vo. 883/2004, art. 4, 19 en 27.</li>
+</ul>
+<p>Bij weigering: klacht bij de Ombudsman van het RIZIV en bij het
+College van Geneesheren-Directeurs.</p>
+<h5>Waar je op moet rekenen</h5>
+<p>Procedure duurt 3 tot 9 maanden. Uitkomst hangt af van de beoordelaar.
+In de tussentijd loopt de teller niet op voor buitenlandse facturen.</p>
+<h4>Wat het mij heeft opgeleverd</h4>
+<h5>Wat ik gedaan heb</h5>
+<p>Overzicht van Nederlandse medische facturen opgevraagd en bij CM
+ingediend met verzoek tot meetelling in de Maximumfactuur.</p>
+<h5>Status</h5>
+<p>Vastgelopen. Buitenlandse facturen worden niet meegeteld.</p>
+<h5>Tijd</h5>
+<p>Loopt sinds 2024.</p>
+<h5>Impact</h5>
+<p>Plafond niet bereikt, geen terugbetaling ontvangen.</p>
+<h5>Opvolging</h5>
+<p>Bezwaarschrift ingediend. Wachten op beslissing.</p>
+<p class="afsluiting">Looptijd: 3 tot 9 maanden. Uitkomst onzeker.
+Impact tot nu toe: geen terugbetaling.</p>
+<div class="recht-kop-wrapper"><div class="recht-kop"><h2 id="verhoogde-tegemoetkoming">Verhoogde Tegemoetkoming</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><span class="recht-status" style="background:#c62828">Vastgelopen</span></div></div>
+<p class="subtitel">CM · automatisch bij voorwaarden</p>
+<h4>Wat is het?</h4>
+<p>Een verhoogde tussenkomst van het ziekenfonds in je medische kosten.
+Je betaalt minder remgeld, krijgt hogere terugbetalingen, en opent
+toegang tot andere voordelen (Verhoogde Maximumfactuur, sociaal tarief
+energie, verhoogde kinderbijslag).</p>
+<h5>Rechtsgrond</h5>
+<p>BE: Wet betreffende de verplichte verzekering voor geneeskundige
+verzorging en uitkeringen, gecoördineerd op 14 juli 1994 (ZIV-wet),
+art. 37 § 1 en het koninklijk besluit van 1 april 1996.</p>
+<p>EU: Verordening 883/2004, art. 4 (gelijke behandeling) en
+art. 87 (samentelling van tijdvakken).</p>
+<h5>Voorwaarden — Belgische burger</h5>
+<ul>
+<li>Aangesloten bij een Belgisch ziekenfonds.</li>
+<li>Valt in één van de categorieën:
+  <ul>
+<li>Jaarinkomen onder de grens (circa € 20.000 alleenstaand,
+  € 27.000 gezin).</li>
+<li>Pensioen, leefloon, of volledige werkloosheid met
+  gezinslast.</li>
+<li>Erkende chronische ziekte of handicap.</li>
+<li>Kind ten laste met een handicap.</li>
+</ul>
+</li>
+<li>Status wordt automatisch toegekend — je hoeft niets aan te vragen.</li>
+</ul>
+<h5>Wat levert het op?</h5>
+<p>Status — geen direct geld, wel:
+<ul>
+<li>Lagere remgelden (soms tot 0).</li>
+<li>Toegang tot Verhoogde Maximumfactuur (lagere plafonds).</li>
+<li>Sociaal tarief voor energie en water.</li>
+<li>Verhoogde kinderbijslag.</li>
+<li>Gratis of goedkopere openbaar vervoer in sommige regio's.</li>
+</ul>
+</p>
+<h4>Waarom jij het niet krijgt</h4>
+<div class="logica">
+<p><strong>Wat je zou verwachten.</strong> Je bent aangesloten bij CM.
+Je betaalt RSZ en lidgeld. Je bent chronisch ziek, dus je zou in
+aanmerking moeten komen voor de Verhoogde Tegemoetkoming — die
+status is bedoeld voor mensen zoals jij.</p>
+<p><strong>Wat er gebeurt.</strong> De status wordt toegekend op basis
+van het inkomen dat het ziekenfonds ziet. Voor een grensarbeider komt
+dat inkomen uit Nederlandse bronnen, die niet automatisch worden
+meegerekend. De inkomensgrens wordt overschreden op papier, ook
+als het werkelijke inkomen eronder ligt.</p>
+</div>
+<h5>Verschil standaard inwoner en grensarbeider</h5>
+<p>Een gewone Belgische inwoner heeft een inkomen dat bekend is bij
+de Kruispuntbank van de Sociale Zekerheid (KSZ). Het ziekenfonds
+toetst automatisch. Een grensarbeider heeft een inkomen dat in het
+Nederlandse systeem zit (UWV, SVB, Belastingdienst) en dat de KSZ
+niet kent. De toetsing valt stil.</p>
+<h5>Het mechanisme van het vastlopen</h5>
+<p>De KSZ verzamelt inkomensgegevens van Belgische bronnen. Nederlandse
+inkomensgegevens komen daar niet in voor. Het ziekenfonds ziet dus een
+nul-inkomen of een verouderd inkomen en past de verkeerde categorie
+toe. In plaats van een chronisch zieke met een laag inkomen, wordt
+de grensarbeider gezien als iemand zonder vastgesteld inkomen — en
+dus buiten de doelgroep.</p>
+<h5>Welke EU-regel wordt geschonden</h5>
+<p>Vo. 883/2004, art. 4: gelijke behandeling ongeacht woonplaats.
+Art. 87: samentelling van tijdvakken. De status Verhoogde
+Tegemoetkoming mag niet worden geweigerd op basis van administratieve
+gronden die alleen voor grensarbeiders spelen.</p>
+<h4>Wat kun je eraan doen</h4>
+<h5>Waar vraag je het aan?</h5>
+<p>CM — via je plaatselijk kantoor, met een schriftelijk verzoek tot
+herziening van je VT-status.</p>
+<h5>De alternatieve route</h5>
+<p>Schriftelijk verzoek tot herziening van de VT-status bij CM.
+Voeg toe:</p>
+<ul>
+<li>Bewijs van inkomen uit Nederlandse bron (UWV, SVB, Belastingdienst).</li>
+<li>Medisch attest chronische ziekte of handicap.</li>
+<li>Verwijzing naar Vo. 883/2004, art. 4 en 87.</li>
+</ul>
+<p>Bij weigering: klacht bij de Ombudsman van het RIZIV en bij het
+College van Geneesheren-Directeurs.</p>
+<h5>Waar je op moet rekenen</h5>
+<p>Procedure duurt 3 tot 9 maanden. In de tussentijd: geen VT-status,
+dus hogere remgelden en geen toegang tot de bijhorende voordelen.</p>
+<h4>Wat het mij heeft opgeleverd</h4>
+<h5>Wat ik gedaan heb</h5>
+<p>Schriftelijk verzoek ingediend bij CM tot herziening van de
+VT-status op basis van het werkelijke inkomen, niet het KSZ-inkomen.</p>
+<h5>Status</h5>
+<p>Vastgelopen. VT-status niet toegekend.</p>
+<h5>Tijd</h5>
+<p>Loopt sinds 2024.</p>
+<h5>Impact</h5>
+<p>Geen Verhoogde Tegemoetkoming. Hogere remgelden en geen toegang
+tot de bijhorende voordelen.</p>
+<h5>Opvolging</h5>
+<p>Bezwaarschrift ingediend. Wachten op beslissing.</p>
+<p class="afsluiting">Looptijd: 3 tot 9 maanden. Uitkomst onzeker.
+Impact tot nu toe: geen VT-status.</p>
+<div class="recht-kop-wrapper"><div class="recht-kop"><h2 id="verhoogde-maximumfactuur">Verhoogde Maximumfactuur</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><span class="recht-status" style="background:#c62828">Vastgelopen</span></div></div>
+<p class="subtitel">RIZIV · automatisch bij Verhoogde Tegemoetkoming</p>
+<h4>Wat is het?</h4>
+<p>Een verlaagd plafond op je jaarlijkse remgeld voor medische kosten.
+Zodra je dit lagere bedrag hebt betaald, wordt alles erboven
+terugbetaald door je ziekenfonds. De Verhoogde Maximumfactuur geldt
+alleen voor mensen met de status Verhoogde Tegemoetkoming.</p>
+<h5>Rechtsgrond</h5>
+<p>BE: Wet betreffende de verplichte verzekering voor geneeskundige
+verzorging en uitkeringen, gecoördineerd op 14 juli 1994 (ZIV-wet),
+art. 37 § 19 en het koninklijk besluit van 25 april 2014.</p>
+<p>EU: Verordening 883/2004, art. 4 (gelijke behandeling) en
+art. 17–35 (zorgverstrekkingen).</p>
+<h5>Voorwaarden — Belgische burger</h5>
+<ul>
+<li>Je hebt de status Verhoogde Tegemoetkoming (VT).</li>
+<li>Aangesloten bij een Belgisch ziekenfonds.</li>
+<li>De teller loopt automatisch mee op basis van je medische
+facturen.</li>
+</ul>
+<h5>Wat levert het op?</h5>
+<p>Terugbetaling — geld dat je al hebt voorgeschoten, wordt
+teruggestort door het ziekenfonds. Plafond:
+<ul>
+<li>Zonder VT: circa € 1.250 per gezin per jaar.</li>
+<li>Met VT (dit recht): circa € 500 per gezin per jaar.</li>
+</ul>
+</p>
+<h4>Waarom jij het niet krijgt</h4>
+<div class="logica">
+<p><strong>Wat je zou verwachten.</strong> Je bent chronisch ziek.
+Je zou de Verhoogde Tegemoetkoming moeten krijgen, en daarmee
+automatisch de Verhoogde Maximumfactuur. Dat is een logische keten.</p>
+<p><strong>Wat er gebeurt.</strong> Omdat de Verhoogde Tegemoetkoming
+niet wordt toegekend (zie dat recht), wordt de Verhoogde
+Maximumfactuur ook niet toegekend. De tweede regeling hangt
+volledig af van de eerste. Als de eerste vastloopt, stopt de
+keten.</p>
+</div>
+<h5>Verschil standaard inwoner en grensarbeider</h5>
+<p>Een gewone Belgische inwoner met een chronische ziekte krijgt VT,
+en daarmee automatisch VMAF. Een grensarbeider die in dezelfde
+medische situatie zit, krijgt geen VT (want het KSZ-inkomen klopt
+niet), en dus ook geen VMAF.</p>
+<h5>Het mechanisme van het vastlopen</h5>
+<p>De Verhoogde Maximumfactuur is geen zelfstandig recht. Het is een
+gevolg van de Verhoogde Tegemoetkoming. Zolang de VT-status niet
+wordt toegekend, staat de teller op het gewone Maximumfactuur-plafond
+(circa € 1.250), en niet op het verlaagde plafond (circa € 500).
+Je betaalt dus jaarlijks honderden euro's meer dan iemand in
+dezelfde medische situatie aan de Belgische kant van de grens.</p>
+<h5>Welke EU-regel wordt geschonden</h5>
+<p>Vo. 883/2004, art. 4: gelijke behandeling ongeacht woonplaats.
+De keten VT → VMAF mag niet stilvallen op basis van een
+administratieve registratie-eis die alleen voor grensarbeiders
+speelt.</p>
+<h4>Wat kun je eraan doen</h4>
+<h5>Waar vraag je het aan?</h5>
+<p>CM — via je plaatselijk kantoor. De VMAF kan niet los worden
+aangevraagd. De eerste stap is het verkrijgen van de VT-status.</p>
+<h5>De alternatieve route</h5>
+<p>Schriftelijk verzoek tot herziening van de VT-status bij CM
+(zie Verhoogde Tegemoetkoming). Voeg daarbij:</p>
+<ul>
+<li>Verzoek om ook de Verhoogde Maximumfactuur toe te passen zodra
+de VT-status is toegekend.</li>
+<li>Overzicht van reeds betaald remgeld dat onder het verlaagde
+plafond zou moeten worden terugbetaald.</li>
+<li>Verwijzing naar Vo. 883/2004, art. 4.</li>
+</ul>
+<p>Bij weigering: klacht bij de Ombudsman van het RIZIV.</p>
+<h5>Waar je op moet rekenen</h5>
+<p>Procedure duurt 3 tot 9 maanden, en start pas wanneer de
+VT-status is toegekend. Zolang dat niet gebeurd is, blijft het
+gewone plafond gelden.</p>
+<h4>Wat het mij heeft opgeleverd</h4>
+<h5>Wat ik gedaan heb</h5>
+<p>Verzoek tot herziening van de VT-status ingediend bij CM,
+met het verzoek om bij toekenning ook de VMAF toe te passen.</p>
+<h5>Status</h5>
+<p>Vastgelopen. VMAF niet toegekend, want VT-status niet toegekend.</p>
+<h5>Tijd</h5>
+<p>Loopt sinds 2024.</p>
+<h5>Impact</h5>
+<p>Jaarlijks verschil tussen het gewone en het verlaagde
+Maximumfactuur-plafond: circa € 750.</p>
+<h5>Opvolging</h5>
+<p>Wachten op beslissing VT-status. Daarna automatisch VMAF.</p>
+<p class="afsluiting">Looptijd: afhankelijk van VT-status. Uitkomst
+onzeker. Impact tot nu toe: geen VMAF, jaarlijks verschil circa € 750.</p>
+<h2 class="sector-titel" id="financiën-rechten-sociale-zekerheid">Financiën, Rechten &amp; Sociale Zekerheid</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<div class="recht-kop-wrapper"><div class="recht-kop"><h2 id="inkomensvervangende-tegemoetkoming">Inkomensvervangende Tegemoetkoming</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><span class="recht-status" style="background:#c62828">Vastgelopen</span></div></div>
+<p class="subtitel">FOD Sociale Zekerheid · DG Personen met een Handicap (DG HAN)</p>
+<h4>Wat is het?</h4>
+<p>Een maandelijkse tegemoetkoming voor personen met een erkende handicap
+die door hun beperking maximaal één derde kunnen verdienen van wat een
+gezond persoon op de reguliere arbeidsmarkt kan verdienen. De tegemoetkoming
+vult het ontbrekende inkomen aan.</p>
+<h5>Rechtsgrond</h5>
+<p>BE: Wet van 27 februari 1987 betreffende de tegemoetkomingen aan personen
+met een handicap. Uitvoering door de Directie-generaal Personen met een
+Handicap (DG HAN) van de FOD Sociale Zekerheid.</p>
+<p>EU: Verordening 883/2004, art. 4 (gelijke behandeling) en art. 45 VWEU
+(vrij verkeer van werknemers). Zie ook het arrest-Hendrix (C-287/05) over
+de toepassing van art. 45 VWEU op grensarbeiders.</p>
+<h5>Voorwaarden — Belgische burger</h5>
+<ul>
+<li>Leeftijd: tussen 18 en 65 jaar.</li>
+<li>Belgische nationaliteit, of een vreemdeling met een verblijfsvergunning
+voor meer dan drie maanden.</li>
+<li>Gedomicilieerd in België en daar daadwerkelijk verblijvend.</li>
+<li>Erkende handicap met een verminderd verdienvermogen tot maximaal
+één derde.</li>
+<li>Het gezinsinkomen ligt onder de vastgestelde grens.</li>
+</ul>
+<h5>Wat levert het op?</h5>
+<p>Uitkering — direct geld, maandelijks. Bedrag afhankelijk van de
+gezinssituatie (alleenstaand, samenwonend, met of zonder personen ten laste).
+Voor 2026: basisbedragen geïndexeerd, met een extra verhoging van 2% voor
+alleenstaanden vanaf maart 2026.</p>
+<h4>Waarom jij het niet krijgt</h4>
+<div class="logica">
+<p><strong>Wat je zou verwachten.</strong> Je bent medisch erkend met een
+handicap. Je bent aangesloten bij de Belgische sociale zekerheid via het
+werk van je partner. Je voldoet aan de medische voorwaarden. Dan zou de
+tegemoetkoming automatisch moeten volgen — dat is de logica van een
+sociale zekerheid.</p>
+<p><strong>Wat er gebeurt.</strong> De tegemoetkoming wordt geweigerd
+omdat je niet in België gedomicilieerd bent, maar in Nederland. De
+verblijfsvoorwaarde — een administratieve eis — blokkeert de uitkering,
+ook al voldoe je aan alle medische en inkomensvoorwaarden.</p>
+</div>
+<h5>Verschil standaard inwoner en grensarbeider</h5>
+<p>Een gewone Belgische inwoner met dezelfde medische erkenning ontvangt
+de tegemoetkoming automatisch, op basis van het Belgische adres. Een
+grensarbeider die in Nederland woont maar economisch en sociaal verbonden
+is met België, ziet de aanvraag afgewezen op de verblijfsvoorwaarde.</p>
+<h5>Het mechanisme van het vastlopen</h5>
+<p>DG HAN toetst op formele verblijfsvoorwaarde: gedomicilieerd in België.
+Zonder Belgisch adres in het Rijksregister wordt de aanvraag niet
+inhoudelijk behandeld. De medische erkenning bestaat wel, maar het recht
+op uitkering niet. Het loket verwijst naar de voorwaarde, niet naar het
+recht.</p>
+<h5>Welke EU-regel wordt geschonden</h5>
+<p>Art. 45 VWEU verbiedt belemmeringen van het vrije verkeer van
+werknemers. Het arrest-Hendrix (C-287/05) stelt dat een lidstaat geen
+nationale regeling mag toepassen die grensarbeiders benadeelt. De
+verblijfsvoorwaarde in de Belgische wetgeving is een dergelijke
+belemmering: zij ontzegt een sociaal recht op grond van woonplaats,
+terwijl de betrokkene economisch actief is in België.</p>
+<h4>Wat kun je eraan doen</h4>
+<h5>Waar vraag je het aan?</h5>
+<p>DG Personen met een Handicap (DG HAN) — aanvraag via MyHandicap
+(handicap.belgium.be). Papieren aanvragen worden niet geaccepteerd.</p>
+<h5>De alternatieve route</h5>
+<p>Bezwaarschrift bij DG HAN met verwijzing naar art. 45 VWEU en het
+arrest-Hendrix. Voeg toe:</p>
+<ul>
+<li>Medisch erkenningsbewijs van de handicap.</li>
+<li>Bewijs van economische binding met België (werk van de partner,
+RSZ-bijdragen).</li>
+<li>Verwijzing naar de rechtspraak over de verblijfsvoorwaarde voor
+grensarbeiders.</li>
+</ul>
+<p>Bij blijvende weigering: klacht bij de Federale Ombudsman en bij de
+Europese Commissie wegens schending van art. 45 VWEU.</p>
+<h5>Waar je op moet rekenen</h5>
+<p>Procedure duurt 6 tot 12 maanden. Uitkomst hangt af van de beoordeling
+van de economische binding. De medische erkenning staat vast, maar het
+recht op uitkering is nog niet afgedwongen.</p>
+<h4>Wat het mij heeft opgeleverd</h4>
+<h5>Wat ik gedaan heb</h5>
+<p>Aanvraag ingediend via MyHandicap. Medische erkenning verkregen
+(8 punten). Tegemoetkoming afgewezen wegens het Nederlandse adres.
+Bezwaarschrift ingediend met verwijzing naar art. 45 VWEU en het
+arrest-Hendrix.</p>
+<h5>Status</h5>
+<p>Vastgelopen. Medisch erkend, maar uitkering geweigerd op grond van
+de verblijfsvoorwaarde.</p>
+<h5>Tijd</h5>
+<p>Loopt sinds 2024.</p>
+<h5>Impact</h5>
+<p>Geen inkomensvervangende tegemoetkoming ontvangen.</p>
+<h5>Opvolging</h5>
+<p>Tuchtklacht tegen de keuringsarts loopt. Bezwaarschrift bij DG HAN
+loopt. Wachten op beslissing.</p>
+<p class="afsluiting">Looptijd: 6 tot 12 maanden. Uitkomst onzeker.
+Impact tot nu toe: geen uitkering.</p>
+<div class="recht-kop-wrapper"><div class="recht-kop"><h2 id="vlaams-zorgbudget">Vlaams Zorgbudget</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><span class="recht-status" style="background:#757575">Afgesloten</span></div></div>
+<p class="subtitel">Zorgkas Vlaanderen</p>
+<h4>Wat is het?</h4>
+<p>Een maandelijkse tegemoetkoming van 140 euro voor zwaar zorgbehoevenden
+die thuis wonen of in een woonzorgcentrum verblijven. Het is een vast
+bedrag dat door je zorgkas wordt uitbetaald, ongeacht je inkomen.</p>
+<h5>Rechtsgrond</h5>
+<p>BE: Decreet van 18 mei 2018 houdende de Vlaamse sociale bescherming,
+zoals gewijzigd. Uitvoering door de Zorgkas Vlaanderen.</p>
+<p>EU: Verordening 883/2004, art. 4 (gelijke behandeling) en art. 34
+(samenloop van prestaties).</p>
+<h5>Voorwaarden — Belgische burger</h5>
+<ul>
+<li>Je woont minstens 5 opeenvolgende jaren in Vlaanderen of Brussel.</li>
+<li>Je bent aangesloten bij een erkende zorgkas (verplicht vanaf 26 jaar).</li>
+<li>Je betaalt de jaarlijkse zorgpremie van 100 euro (of 35 euro
+bij Verhoogde Tegemoetkoming).</li>
+<li>Je bent zwaar zorgbehoevend — bewezen via een indicatiestelling
+of medisch attest.</li>
+</ul>
+<h5>Wat levert het op?</h5>
+<p>Uitkering — direct geld, maandelijks. Vast bedrag van 140 euro per maand
+(situatie 1 januari 2026).</p>
+<h4>Waarom jij het niet krijgt</h4>
+<div class="logica">
+<p><strong>Wat je zou verwachten.</strong> Je bent via Liesbet aangesloten
+bij de CM in België. Je betaalt RSZ en lidgeld. Je bent zwaar
+zorgbehoevend. Dan zou de Vlaamse zorgverzekering ook voor jou moeten
+gelden — je bent immers economisch en sociaal verbonden met Vlaanderen.</p>
+<p><strong>Wat er gebeurt.</strong> De Vlaamse sociale bescherming is
+gekoppeld aan een Belgisch rijksregisternummer en een Belgisch adres.
+Zonder die twee elementen kan de aansluiting bij een zorgkas niet
+worden geregistreerd. De zorgkas weigert de inschrijving, en zonder
+inschrijving is er geen recht op het zorgbudget.</p>
+</div>
+<h5>Verschil standaard inwoner en grensarbeider</h5>
+<p>Een gewone Vlaamse inwoner is automatisch aangesloten bij een zorgkas
+zodra hij 26 wordt. De premie wordt jaarlijks afgehouden. Een
+grensarbeider die in Nederland woont, kan alleen vrijwillig aansluiten —
+en dan nog alleen als de Zorgkas zijn aanvraag aanvaardt. Sinds 2022
+geldt bovendien een wachttijd van 5 jaar voor uitgaande grensarbeiders
+die eerder konden aansluiten maar dat niet deden[reference:0].</p>
+<h5>Het mechanisme van het vastlopen</h5>
+<p>De Zorgkas controleert op woonplaats in het Rijksregister. Zonder
+Belgisch adres volgt afwijzing. De grensarbeider wordt verzocht zich
+eerst in België te domiciliëren — een eis die indruist tegen het
+vrij verkeer van personen. Het loket verwijst naar de woonplaats,
+niet naar de zorgbehoefte.</p>
+<h5>Welke EU-regel wordt geschonden</h5>
+<p>Vo. 883/2004, art. 4: gelijke behandeling ongeacht woonplaats.
+Art. 34: prestaties bij ziekte mogen niet worden geweigerd op grond
+van nationaliteit of woonplaats. De koppeling van het zorgbudget aan
+een Belgisch rijksregisternummer is een administratieve drempel die
+grensarbeiders structureel uitsluit.</p>
+<h4>Wat kun je eraan doen</h4>
+<h5>Waar vraag je het aan?</h5>
+<p>Zorgkas Vlaanderen — via je erkende zorgkas (CM-Zorgkas, Helan,
+Liberale, Socialistische, …).</p>
+<h5>De alternatieve route</h5>
+<p>Verzoek tot vrijwillige aansluiting bij een Zorgkas, met verwijzing
+naar Vo. 883/2004, art. 4 en 34. Voeg toe:</p>
+<ul>
+<li>Bewijs van economische binding met België (RSZ-bijdragen,
+werkgever in België).</li>
+<li>Bewijs van zorgbehoefte (medisch attest, indicatiestelling).</li>
+<li>Verwijzing naar de rechtspraak over grensarbeiders en de
+Vlaamse sociale bescherming.</li>
+</ul>
+<p>Bij weigering: klacht bij de Vlaamse Ombudsdienst en bij de
+Europese Commissie wegens schending van het vrij verkeer.</p>
+<h5>Waar je op moet rekenen</h5>
+<p>Procedure duurt 6 tot 12 maanden. Uitkomst hangt af van de bereidheid
+van de Zorgkas om de woonplaatsvoorwaarde te nuanceren. De kans op
+succes is klein zonder tussenkomst van de Europese Commissie.</p>
+<h4>Wat het mij heeft opgeleverd</h4>
+<h5>Wat ik gedaan heb</h5>
+<p>Nooit geïnformeerd over de mogelijkheid tot vrijwillige aansluiting.
+Geen aansluiting bij een Zorgkas. Geen aanvraag voor het zorgbudget
+ingediend, omdat de Zorgkas aangaf dat een Belgisch adres vereist is.</p>
+<h5>Status</h5>
+<p>Afgesloten. Geen recht op zorgbudget, want nooit aangesloten.</p>
+<h5>Tijd</h5>
+<p>Geen procedure gestart.</p>
+<h5>Impact</h5>
+<p>140 euro per maand niet ontvangen. Over een periode van meerdere
+jaren: duizenden euro's aan misgelopen zorgbudget.</p>
+<h5>Opvolging</h5>
+<p>Geen actie meer mogelijk. De wachttijd van 5 jaar is verstreken
+zonder aansluiting.</p>
+<p class="afsluiting">Looptijd: afgesloten. Uitkomst: geen zorgbudget.
+Impact tot nu toe: 140 euro per maand niet ontvangen.</p>
+<div class="recht-kop-wrapper"><div class="recht-kop"><h2 id="groeipakket">Groeipakket</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><span class="recht-status" style="background:#2e7d32">Actief</span></div></div>
+<p class="subtitel">Parentia · automatisch</p>
+<h4>Wat is het?</h4>
+<p>Het Vlaamse kinderbijslagstelsel. Een maandelijkse uitkering per kind,
+automatisch uitbetaald aan het gezin. Sinds 2019 is het Groeipakket in
+Vlaanderen de opvolger van de federale kinderbijslag.</p>
+<h5>Rechtsgrond</h5>
+<p>BE: Decreet van 9 februari 2018 houdende de Vlaamse sociale bescherming
+(basisbedrag Groeipakket). Uitvoering door Parentia en de andere
+uitbetalers van het Groeipakket.</p>
+<p>EU: Verordening 883/2004, art. 4 (gelijke behandeling) en art. 67
+(gezinsbijslagen bij samenloop tussen lidstaten).</p>
+<h5>Voorwaarden — Belgische burger</h5>
+<ul>
+<li>Kind woont in Vlaanderen of Brussel.</li>
+<li>Kind is jonger dan 25 jaar (voor sommige voorwaarden tot 21).</li>
+<li>Gezin is ingeschreven bij een uitbetaler van het Groeipakket.</li>
+<li>Aanvraag gebeurt automatisch bij geboorte of inschrijving van het
+kind in het Rijksregister.</li>
+</ul>
+<h5>Wat levert het op?</h5>
+<p>Uitkering — direct geld, maandelijks. Basisbedrag per kind. Voor het
+eerste kind circa 180 euro per maand, met verhogingen voor volgende
+kinderen. Extra sociale toeslagen zijn mogelijk bij laag inkomen of
+specifieke situaties.</p>
+<h4>Waarom jij het niet krijgt</h4>
+<div class="logica">
+<p><strong>Wat je zou verwachten.</strong> Het Groeipakket is een
+basisrecht voor elk kind. Zodra een kind in België woont of familie
+heeft in België, zou de uitkering automatisch moeten lopen.</p>
+<p><strong>Wat er gebeurt.</strong> Het basisbedrag van het Groeipakket
+loopt in jouw geval wél — via Liesbet als werkende ouder. Het is de
+automatische kant van het recht dat werkt. Wat niet loopt, zijn de
+sociale toeslagen bovenop het basisbedrag, omdat de inkomensgegevens
+niet juist worden doorgegeven.</p>
+</div>
+<h5>Verschil standaard inwoner en grensarbeider</h5>
+<p>Een gewone Belgische inwoner ziet het basisbedrag én de sociale
+toeslagen automatisch berekend op basis van het gezinsinkomen in de
+KSZ-databank. Een grensarbeider krijgt het basisbedrag wel, maar de
+sociale toeslag wordt getoetst op een verouderd of onvolledig inkomen
+in de KSZ-databank.</p>
+<h5>Het mechanisme van het vastlopen</h5>
+<p>Parentia toetst het recht op sociale toeslag op basis van gegevens
+die het van de KSZ ontvangt. Wanneer een bron van inkomsten (invaliditeit,
+arbeidsongeschiktheid) niet correct in de KSZ is opgenomen, wordt het
+toetsingsinkomen te hoog of te laag berekend. Het gevolg is dat de
+sociale toeslag niet wordt toegekend, ook al voldoet het gezin aan de
+voorwaarden.</p>
+<h5>Welke EU-regel wordt geschonden</h5>
+<p>Vo. 883/2004, art. 4: gelijke behandeling ongeacht woonplaats.
+Art. 67: gezinsbijslagen worden verleend volgens de wetgeving van de
+bevoegde lidstaat, en alle tijdvakken van verzekering of werkzaamheid
+in andere lidstaten moeten in aanmerking worden genomen. De
+onvolledige KSZ-databank is een nationale tekortkoming die de
+Europese regel ondermijnt.</p>
+<h4>Wat kun je eraan doen</h4>
+<h5>Waar vraag je het aan?</h5>
+<p>Parentia — via de online klantenzone of telefonisch. Het basisbedrag
+loopt automatisch. Voor de sociale toeslag moet je een herzieningsverzoek
+indienen.</p>
+<h5>De alternatieve route</h5>
+<p>Verzoek tot herziening van de sociale toeslag bij Parentia, met
+bewijsstukken van het werkelijke gezinsinkomen. Voeg toe:</p>
+<ul>
+<li>Bewijs van inkomsten uit Nederland (UWV, SVB, Belastingdienst).</li>
+<li>Medisch bewijs van arbeidsongeschiktheid of invaliditeit.</li>
+<li>Verwijzing naar Vo. 883/2004, art. 67.</li>
+</ul>
+<p>Bij weigering: klacht bij de Vlaamse Ombudsdienst en bij het
+Agentschap Opgroeien.</p>
+<h5>Waar je op moet rekenen</h5>
+<p>Procedure duurt 3 tot 6 maanden. Uitkomst hangt af van de bereidheid
+van Parentia om buitenlandse inkomensgegevens te accepteren.</p>
+<h4>Wat het mij heeft opgeleverd</h4>
+<h5>Wat ik gedaan heb</h5>
+<p>Basisbedrag Groeipakket loopt automatisch via Liesbet als werkende
+ouder. Sociale toeslag is niet toegekend. Verzoek tot herziening
+voorbereid bij Parentia, met bewijs van het werkelijke gezinsinkomen.</p>
+<h5>Status</h5>
+<p>Actief voor het basisbedrag. Vastgelopen voor de sociale toeslag.</p>
+<h5>Tijd</h5>
+<p>Basisbedrag loopt sinds 2020. Herzieningsverzoek sociale toeslag
+loopt sinds 2024.</p>
+<h5>Impact</h5>
+<p>Basisbedrag per kind ontvangen. Sociale toeslag niet ontvangen:
+circa 50 tot 150 euro per maand misgelopen, afhankelijk van het kind
+en het inkomen.</p>
+<h5>Opvolging</h5>
+<p>Wachten op automatische herziening in 2028, of op beslissing op
+het herzieningsverzoek.</p>
+<p class="afsluiting">Looptijd: herzieningsverzoek 3 tot 6 maanden.
+Uitkomst onzeker. Impact tot nu toe: sociale toeslag niet ontvangen.</p>
+<div class="recht-kop-wrapper"><div class="recht-kop"><h2 id="sociale-toeslag-groeipakket">Sociale Toeslag Groeipakket</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><span class="recht-status" style="background:#c62828">Vastgelopen</span></div></div>
+<p class="subtitel">Parentia</p>
+<h4>Wat is het?</h4>
+<p>Een extra maandelijkse toeslag bovenop het basisbedrag van het
+Groeipakket, voor gezinnen met een laag inkomen of in een bijzondere
+situatie (langdurig zieke ouder, alleenstaande ouder, kind met handicap).
+De toeslag wordt bovenop de gewone kinderbijslag uitbetaald.</p>
+<h5>Rechtsgrond</h5>
+<p>BE: Decreet van 9 februari 2018 houdende de Vlaamse sociale bescherming,
+art. 12 tot 17 (sociale toeslagen). Uitvoering door Parentia en de andere
+uitbetalers van het Groeipakket.</p>
+<p>EU: Verordening 883/2004, art. 4 (gelijke behandeling) en art. 67
+(gezinsbijslagen bij samenloop tussen lidstaten).</p>
+<h5>Voorwaarden — Belgische burger</h5>
+<ul>
+<li>Recht op het basisbedrag van het Groeipakket.</li>
+<li>Het gezinsinkomen ligt onder de vastgestelde grens. De grens hangt
+af van de gezinssituatie (alleenstaand, samenwonend, aantal kinderen).</li>
+<li>Toetsing gebeurt automatisch op basis van de inkomensgegevens in de
+KSZ-databank (Kruispuntbank van de Sociale Zekerheid).</li>
+<li>Bijzondere situaties die recht geven op een toeslag: langdurige
+ziekte van een ouder, handicap van een kind, alleenstaande ouder,
+pleegzorg, adoptie.</li>
+</ul>
+<h5>Wat levert het op?</h5>
+<p>Uitkering — direct geld, maandelijks. Bedrag afhankelijk van de
+gezinssituatie. De sociale toeslag kan oplopen tot circa 150 euro per
+kind per maand, bovenop het basisbedrag.</p>
+<h4>Waarom jij het niet krijgt</h4>
+<div class="logica">
+<p><strong>Wat je zou verwachten.</strong> Je bent langdurig ziek.
+Je inkomen is laag. Je gezin zou in aanmerking moeten komen voor de
+sociale toeslag. Het is precies waarvoor die toeslag bestaat: gezinnen
+met een laag inkomen of een zieke ouder ondersteunen.</p>
+<p><strong>Wat er gebeurt.</strong> De ziekmelding van de CM in de
+KSZ-databank ontbreekt of is verouderd. Parentia toetst daardoor op
+een inkomen dat niet meer klopt. Het systeem ziet een te hoog inkomen,
+en dus geen recht op de toeslag.</p>
+</div>
+<h5>Verschil standaard inwoner en grensarbeider</h5>
+<p>Een gewone Belgische inwoner met een laag inkomen heeft de inkomens-
+en ziekmeldingsgegevens volledig in de KSZ-databank staan. De toeslag
+wordt automatisch toegekend. Een grensarbeider heeft te maken met
+inkomensgegevens uit Nederland en met ziekmeldingen die tussen
+verschillende instanties moeten worden doorgegeven. Die doorstroming
+loopt niet automatisch.</p>
+<h5>Het mechanisme van het vastlopen</h5>
+<p>De CM is verantwoordelijk voor het doorgeven van de invaliditeits-
+status aan de KSZ. Wanneer die doorstroming stopt of vertraagt, ziet
+Parentia geen ziekmelding. Zonder die ziekmelding wordt de ouder niet
+als langdurig ziek geregistreerd. Het gevolg is dat de sociale toeslag
+wordt getoetst op het inkomen zonder rekening te houden met de
+ziektetoestand. Het recht wordt geweigerd op basis van een verkeerd
+inkomen, niet op basis van de werkelijke situatie.</p>
+<h5>Welke EU-regel wordt geschonden</h5>
+<p>Vo. 883/2004, art. 4: gelijke behandeling ongeacht woonplaats.
+Art. 67: bij de toekenning van gezinsbijslagen moeten alle
+omstandigheden in aanmerking worden genomen, ongeacht in welke
+lidstaat ze zich voordoen. Een niet-doorgegeven ziekmelding is een
+nationale tekortkoming die de Europese regel ondermijnt.</p>
+<h4>Wat kun je eraan doen</h4>
+<h5>Waar vraag je het aan?</h5>
+<p>Parentia — via de online klantenzone of telefonisch. Het recht op
+de sociale toeslag wordt automatisch getoetst, maar je kan een
+herzieningsverzoek indienen bij een verkeerde toekenning.</p>
+<h5>De alternatieve route</h5>
+<p>Herzieningsverzoek bij Parentia, met bewijsstukken van de
+werkelijke situatie. Voeg toe:</p>
+<ul>
+<li>Medisch bewijs van invaliditeit of langdurige ziekte.</li>
+<li>Bewijs van het werkelijke gezinsinkomen (UWV, SVB, Belastingdienst).</li>
+<li>Verzoek aan CM om de invaliditeitsstatus in de KSZ te actualiseren.</li>
+<li>Verwijzing naar Vo. 883/2004, art. 67.</li>
+</ul>
+<p>Bij weigering: klacht bij de Vlaamse Ombudsdienst en bij het
+Agentschap Opgroeien.</p>
+<h5>Waar je op moet rekenen</h5>
+<p>Procedure duurt 3 tot 6 maanden. Uitkomst hangt af van de bereidheid
+van Parentia om buitenlandse gegevens en niet-geregistreerde ziekmeldingen
+te accepteren.</p>
+<h4>Wat het mij heeft opgeleverd</h4>
+<h5>Wat ik gedaan heb</h5>
+<p>Herzieningsverzoek voorbereid bij Parentia, met bewijs van de
+invaliditeit en het werkelijke gezinsinkomen. Verzoek aan CM om de
+invaliditeitsstatus in de KSZ te actualiseren.</p>
+<h5>Status</h5>
+<p>Vastgelopen. Sociale toeslag niet toegekend wegens verouderd
+KSZ-inkomen.</p>
+<h5>Tijd</h5>
+<p>Loopt sinds 2024.</p>
+<h5>Impact</h5>
+<p>Sociale toeslag niet ontvangen: circa 50 tot 150 euro per maand
+misgelopen, afhankelijk van het kind en het inkomen.</p>
+<h5>Opvolging</h5>
+<p>Wachten op automatische herziening in 2028, of op beslissing op
+het herzieningsverzoek.</p>
+<p class="afsluiting">Looptijd: 3 tot 6 maanden voor het herzieningsverzoek,
+automatische herziening in 2028. Uitkomst onzeker. Impact tot nu toe:
+sociale toeslag niet ontvangen.</p>
+<div class="recht-kop-wrapper"><div class="recht-kop"><h2 id="verhoogde-belastingvrije-som">Verhoogde Belastingvrije Som</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><span class="recht-status" style="background:#e65100">Aangevraagd</span></div></div>
+<p class="subtitel">FOD Financiën</p>
+<h4>Wat is het?</h4>
+<p>Een verhoging van het bedrag aan inkomsten waarop je geen belasting
+betaalt. Mensen met een handicap kunnen een extra schijf van hun
+inkomen onbelast laten. Het verlaagt de te betalen personenbelasting.</p>
+<h5>Rechtsgrond</h5>
+<p>BE: Wetboek van de Inkomstenbelastingen 1992 (WIB 92), art. 131 en
+art. 135. Koninklijk besluit tot uitvoering van het WIB 92 (KB/WIB 92),
+art. 46 en verder.</p>
+<p>EU: Verordening 883/2004, art. 4 (gelijke behandeling) en de
+algemene fiscale non-discriminatiebeginselen van het VWEU.</p>
+<h5>Voorwaarden — Belgische burger</h5>
+<ul>
+<li>Belastingplichtige in België.</li>
+<li>Erkende handicap — beoordeeld op basis van een medisch attest of
+een erkenning door een bevoegde instantie (DG HAN, FOD Sociale Zekerheid,
+of een gelijkwaardige buitenlandse erkenning).</li>
+<li>De verhoging wordt toegepast via de jaarlijkse belastingaangifte.</li>
+</ul>
+<h5>Wat levert het op?</h5>
+<p>Fiscaal voordeel — geen direct geld. Het verlaagt de aanslag
+personenbelasting. Het bedrag van de verhoging hangt af van de
+ernst van de handicap. In de praktijk: honderden tot duizenden euro's
+per jaar minder belasting.</p>
+<h4>Waarom jij het niet krijgt</h4>
+<div class="logica">
+<p><strong>Wat je zou verwachten.</strong> Je hebt een medische erkenning.
+De fiscus zou die erkenning moeten volgen en de verhoogde belastingvrije
+som automatisch moeten toepassen. Dat is immers het hele punt: een
+tegemoetkoming voor mensen met een handicap.</p>
+<p><strong>Wat er gebeurt.</strong> De fiscus vraagt een medisch attest
+via een specifiek formulier (bijlage bij de aangifte). Zonder dat
+formulier wordt de verhoogde som niet toegepast, ook niet als je
+medische erkenning bestaat. Wat zou moeten volgen uit je handicap,
+hangt af van een papieren bewijsstuk dat je zelf moet toevoegen.</p>
+</div>
+<h5>Verschil standaard inwoner en grensarbeider</h5>
+<p>Een gewone Belgische inwoner dient zijn aangifte in met een medisch
+attest van een Belgische arts. De fiscus aanvaardt dat. Een grensarbeider
+die voornamelijk in Nederland woont en daar behandeld wordt, moet
+soms uitleggen waarom het Nederlandse medisch attest ook geldig is.
+De fiscus kan vertraging oplopen of om extra bewijsstukken vragen.</p>
+<h5>Het mechanisme van het vastlopen</h5>
+<p>De fiscus toetst op het formele medisch attest. De erkenning van
+DG HAN of een vergelijkbare instantie is niet automatisch gekoppeld
+aan de fiscale behandeling. Twee aparte systemen, twee aparte
+loketten. De vertraging zit niet in het recht, maar in het doorgeven
+van de medische erkenning tussen sociale zekerheid en fiscaliteit.</p>
+<h5>Welke EU-regel wordt geschonden</h5>
+<p>Vo. 883/2004, art. 4: gelijke behandeling ongeacht woonplaats.
+Een grensarbeider met dezelfde medische erkenning mag niet worden
+benadeeld door de fiscale procedurele eisen die alleen voor
+grensarbeiders extra drempels opwerpen.</p>
+<h4>Wat kun je eraan doen</h4>
+<h5>Waar vraag je het aan?</h5>
+<p>FOD Financiën — via de jaarlijkse belastingaangifte, met het
+formulier voor de verhoogde belastingvrije som als bijlage.</p>
+<h5>De alternatieve route</h5>
+<p>Medisch attest laten opmaken door de huisarts, met vermelding van
+de handicap en de impact op de verdiencapaciteit. Het attest toevoegen
+aan de belastingaangifte. Voeg toe:</p>
+<ul>
+<li>Medisch attest huisarts (specifiek formulier voor de verhoogde
+belastingvrije som).</li>
+<li>Eventueel bijkomend: erkenning DG HAN als ondersteunend bewijs.</li>
+<li>Bewijs van eerdere behandeling in Nederland (indien van toepassing).</li>
+</ul>
+<p>Bij weigering: bezwaarschrift bij de Gewestelijke Directie van de
+Belastingen, en in laatste instantie bij de Rechtbank van Eerste Aanleg.</p>
+<h5>Waar je op moet rekenen</h5>
+<p>De aangifte wordt behandeld binnen 3 tot 6 maanden. Als het
+aanslagbiljet de verhoging correct toepast, is er geen verdere
+procedure nodig. In jouw geval is het aanslagbiljet nog niet
+ontvangen.</p>
+<h4>Wat het mij heeft opgeleverd</h4>
+<h5>Wat ik gedaan heb</h5>
+<p>Medisch attest via huisarts laten opmaken. De fiscus (PG15) heeft
+de route gevalideerd. ACV heeft de definitieve BNI-aangifte ingediend
+op 25 september 2026. Wachten op het aanslagbiljet.</p>
+<h5>Status</h5>
+<p>Aangevraagd. De route is gevalideerd door de fiscus.</p>
+<h5>Tijd</h5>
+<p>Aangifte ingediend op 25-09-2026. Behandelingstermijn: 3 tot 6 maanden.</p>
+<h5>Impact</h5>
+<p>Verwachte verlaging van de aanslag personenbelasting. Bedrag nog niet
+bekend.</p>
+<h5>Opvolging</h5>
+<p>Wachten op het aanslagbiljet.</p>
+<p class="afsluiting">Looptijd: 3 tot 6 maanden. Uitkomst waarschijnlijk
+positief. Impact tot nu toe: nog geen aanslagbiljet ontvangen.</p>
+
+<h1 id="ii-nederland">II. Nederland</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 class="sector-titel" id="zorg-verzekering">Zorg &amp; Verzekering</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<div class="recht-kop-wrapper"><div class="recht-kop"><h2 id="zorgtoeslag">Zorgtoeslag</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><span class="recht-status" style="background:#c62828">Vastgelopen</span></div></div>
+<p class="subtitel">Dienst Toeslagen · CAK · CZ</p>
+<h4>Wat is het?</h4>
+<p>Maandelijkse tegemoetkoming in de premie van je Nederlandse
+zorgverzekering, voor lage inkomens. Direct geld, geen fiscale aftrek.</p>
+<h5>Rechtsgrond</h5>
+<p>NL: Algemene wet inkomensafhankelijke regelingen (Awir), art. 2 en 7.</p>
+<p>EU: Verordening 883/2004, art. 4 (gelijke behandeling) en art. 11
+(aanwijzing bevoegde lidstaat).</p>
+<h5>Voorwaarden — Nederlandse burger</h5>
+<ul>
+<li>Ingeschreven in de BRP op een Nederlands adres.</li>
+<li>Een Nederlandse zorgverzekering (basisverzekering).</li>
+<li>Toetsingsinkomen onder de grens: circa € 40.857 zonder toeslagpartner,
+€ 51.142 met toeslagpartner.</li>
+</ul>
+<h5>Wat levert het op?</h5>
+<p>Tot circa € 130 per maand, afhankelijk van inkomen. Maandelijks uitbetaald.</p>
+<h4>Waarom jij het niet krijgt</h4>
+<div class="logica">
+<p><strong>Wat je zou verwachten.</strong> Je bent via Liesbet aangesloten
+bij de CM in België. Je betaalt RSZ en lidgeld. Dat is de Belgische
+ziekteverzekering. Volgens de Europese regels zou dat overdraagbaar
+moeten zijn: als je zorg nodig hebt, wordt dat gedekt — waar je ook woont.</p>
+<p><strong>Wat er gebeurt.</strong> Nederland erkent die bijdragen niet.
+Het geld is in de Belgische kas beland — RSZ, RIZIV, CM — en niet in de
+Nederlandse kas. Voor de Nederlandse administratie bestaat die betaling
+niet. Je bent wel verzekerd via CZ (verdragspolis), maar de bijdragen
+die je al jaren betaalt, tellen in het Nederlandse systeem niet mee.</p>
+</div>
+<h5>Verschil standaard inwoner en grensarbeider</h5>
+<p>Een gewone Nederlandse inwoner heeft een reguliere NL-polis en wordt
+automatisch herkend in het RIV-register. De toeslag stort maandelijks.
+Een grensarbeider heeft een verdragspolis via CZ. Het CAK weigert die
+administratief in te schrijven in het RIV-register. Voor Toeslagen
+geldt de grensarbeider dan als niet-verzekerd, dus als
+niet-toeslaggerechtigd.</p>
+<h5>Het mechanisme van het vastlopen</h5>
+<p>Dienst Toeslagen weigert uit te betalen omdat het RIV-register
+"onverzekerd" zegt. CAK en CZ weigeren het register aan te passen
+omdat een verdragspolis geen gewone Zvw-polis is. Zorginstituut
+Nederland grijpt niet in en verwijst terug naar CZ. Een rondje
+zonder uitgang.</p>
+<h5>Welke EU-regel wordt geschonden</h5>
+<p>Vo. 883/2004, art. 4: gelijke behandeling ongeacht woonplaats.
+Een nationale registratie-eis (RIV) mag niet als voorwaarde gelden
+wanneer het EU-recht al bepaalt dat je verzekerd bent.</p>
+<h4>Wat kun je eraan doen</h4>
+<h5>Waar vraag je het aan?</h5>
+<p>Dienst Toeslagen — via MijnToeslagen.nl.</p>
+<h5>De alternatieve route</h5>
+<p>Dien een bezwaarschrift in bij Dienst Toeslagen. Voeg toe:</p>
+<ul>
+<li>Kopie van de CZ-verdragspolis.</li>
+<li>Factuur CZ eigen risico, als bewijs van Nederlandse
+eigenrisico-inhouding.</li>
+<li>Verwijzing naar Vo. 883/2004, art. 4 en 11.</li>
+</ul>
+<p>Hiermee forceer je een handmatige beoordeling. De computer mag
+het niet automatisch afwijzen.</p>
+<h5>Waar je op moet rekenen</h5>
+<p>Procedure duurt 6 tot 12 maanden. In die periode: € 0 uitgekeerd.
+Kans op succes hangt af van de beoordelaar, niet van de wet.</p>
+<h4>Wat het mij heeft opgeleverd</h4>
+<h5>Wat ik gedaan heb</h5>
+<p>Formeel bezwaarschrift ingediend, met CZ-verdragspolis en
+eigenrisico-factuur fysiek bijgevoegd om handmatige beoordeling
+af te dwingen.</p>
+<h5>Status</h5>
+<p>Lopend — bezwaar. Uitkomst nog niet bekend.</p>
+<h5>Tijd</h5>
+<p>Loopt sinds medio 2024 — ruim een jaar.</p>
+<h5>Impact</h5>
+<p>€ 0,00 uitgekeerd in 2024, 2025 en tot heden in 2026.</p>
+<h5>Opvolging</h5>
+<p>Uitstel van betaling verkregen in afwachting van handmatige
+beslissing.</p>
+<p class="afsluiting">Looptijd: 6 tot 12 maanden. Uitkomst onzeker.
+Impact tot nu toe: € 0,00.</p>
+<div class="recht-kop-wrapper"><div class="recht-kop"><h2 id="aftrek-zorgkosten">Aftrek Zorgkosten</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><span class="recht-status" style="background:#e65100">Lopend</span></div></div>
+<p class="subtitel">Belastingdienst</p>
+<h4>Wat is het?</h4>
+<p>Een fiscale aftrekpost voor zorgkosten die je niet vergoed krijgt van je
+zorgverzekering of andere instanties. Je mag deze kosten aftrekken van je
+belastbaar inkomen, waardoor je minder inkomstenbelasting betaalt.</p>
+<h5>Rechtsgrond</h5>
+<p>NL: Wet inkomstenbelasting 2001 (Wet IB 2001), art. 6.17 en art. 6.20.
+Uitvoering door de Belastingdienst.</p>
+<p>EU: Verordening 883/2004, art. 4 (gelijke behandeling).</p>
+<h5>Voorwaarden — Nederlandse burger</h5>
+<ul>
+<li>Je bent binnenlands belastingplichtig, of kwalificerend buitenlands
+belastingplichtig.</li>
+<li>Je hebt specifieke zorgkosten gemaakt die niet vergoed worden door je
+zorgverzekering.</li>
+<li>De kosten komen boven het drempelbedrag uit. In 2026: bij een
+drempelinkomen tot € 9.680 is de drempel € 166. Bij een inkomen tussen
+€ 9.681 en € 51.411 is de drempel 1,65% van het inkomen. Bij een inkomen
+boven € 51.412 is de drempel € 848 plus 5,75% van het bedrag boven die
+grens[reference:0].</li>
+<li>Kosten die onder het verplicht of vrijwillig eigen risico vallen, zijn
+niet aftrekbaar[reference:1].</li>
+</ul>
+<h5>Wat levert het op?</h5>
+<p>Fiscaal voordeel — geen direct geld. Het verlaagt je belastbaar inkomen
+in box 1, waardoor je minder inkomstenbelasting betaalt. Het aftrekbare
+bedrag wordt maximaal tegen 37,56% (tarief 2026) verrekend[reference:2].</p>
+<h4>Waarom jij het niet krijgt</h4>
+<div class="logica">
+<p><strong>Wat je zou verwachten.</strong> Je hebt zorgkosten gemaakt die
+niet vergoed worden. De Belastingdienst zou die kosten moeten aftrekken
+van je inkomen, zodat je minder belasting betaalt. Dat is het hele punt
+van de regeling: mensen met hoge zorgkosten tegemoetkomen.</p>
+<p><strong>Wat er gebeurt.</strong> Je bent in Nederland niet kwalificerend
+buitenlands belastingplichtig. Zonder die status heb je geen recht op de
+aftrek, ook niet als je in Nederland belast inkomen hebt en dezelfde
+zorgkosten maakt als een gewone inwoner. De aftrek is gekoppeld aan een
+fiscale status, niet aan de zorgkosten zelf[reference:3].</p>
+</div>
+<h5>Verschil standaard inwoner en grensarbeider</h5>
+<p>Een gewone Nederlandse inwoner trekt zijn zorgkosten af via de jaarlijkse
+aangifte inkomstenbelasting. De Belastingdienst berekent automatisch het
+drempelbedrag en past de aftrek toe. Een grensarbeider die in België woont
+maar Nederlands inkomen heeft, moet eerst aantonen dat hij kwalificerend
+buitenlands belastingplichtig is. Voldoet hij daar niet aan, dan vervalt
+de aftrek — ook voor kosten die in Nederland zijn gemaakt[reference:4].</p>
+<h5>Het mechanisme van het vastlopen</h5>
+<p>De Belastingdienst toetst op de fiscale status van de aanvrager, niet op
+de aard van de zorgkosten. Een grensarbeider die niet aan de voorwaarden
+voor kwalificerend buitenlands belastingplichtige voldoet, wordt behandeld
+als iemand die geen recht heeft op persoonsgebonden aftrekposten. De
+kosten zijn gemaakt, de ziekte is reëel, maar de fiscale deur blijft
+dicht[reference:5].</p>
+<h5>Welke EU-regel wordt geschonden</h5>
+<p>Vo. 883/2004, art. 4: gelijke behandeling ongeacht woonplaats. Een
+grensarbeider met dezelfde zorgkosten als een inwoner mag niet worden
+benadeeld door een nationale fiscale procedurele eis die alleen voor
+grensarbeiders een extra drempel opwerpt. Daarnaast kan de weigering van
+de aftrek een belemmering vormen voor het vrije verkeer van werknemers
+(art. 45 VWEU).</p>
+<h4>Wat kun je eraan doen</h4>
+<h5>Waar vraag je het aan?</h5>
+<p>Belastingdienst — via de jaarlijkse aangifte inkomstenbelasting. De
+aftrek wordt opgevoerd onder de persoonsgebonden aftrekposten.</p>
+<h5>De alternatieve route</h5>
+<p>Bezwaarschrift bij de Belastingdienst met het verzoek om als
+kwalificerend buitenlands belastingplichtige te worden aangemerkt, of om
+de aftrek toe te passen op grond van het EU-recht. Voeg toe:</p>
+<ul>
+<li>Bewijs van Nederlandse belastbare inkomsten.</li>
+<li>Bewijs van de gemaakte zorgkosten (facturen, medisch attest).</li>
+<li>Verwijzing naar Vo. 883/2004, art. 4 en art. 45 VWEU.</li>
+</ul>
+<p>Bij weigering: beroep bij de rechtbank, en in laatste instantie bij de
+Hoge Raad.</p>
+<h5>Waar je op moet rekenen</h5>
+<p>Procedure duurt 6 tot 18 maanden. Uitkomst hangt af van de fiscale
+status en de beoordeling van het EU-recht door de rechter.</p>
+<h4>Wat het mij heeft opgeleverd</h4>
+<h5>Wat ik gedaan heb</h5>
+<p>Aftrek zorgkosten opgevoerd in de aangifte inkomstenbelasting 2025, om
+het Nederlandse toetsingsinkomen te verlagen. De definitieve aanslag vormt
+de basis voor alle toeslagen.</p>
+<h5>Status</h5>
+<p>Ingediend. Wachten op de definitieve aanslag.</p>
+<h5>Tijd</h5>
+<p>Aangifte ingediend in 2026, voor het belastingjaar 2025.</p>
+<h5>Impact</h5>
+<p>Verwachte verlaging van het toetsingsinkomen. Bedrag nog niet bekend.</p>
+<h5>Opvolging</h5>
+<p>Wachten op de definitieve aanslag inkomstenbelasting 2025.</p>
+<p class="afsluiting">Looptijd: 6 tot 18 maanden. Uitkomst onzeker.
+Impact tot nu toe: nog geen aanslag ontvangen.</p>
+<h2 class="sector-titel" id="financiën-sociale-zekerheid">Financiën &amp; Sociale Zekerheid</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<div class="recht-kop-wrapper"><div class="recht-kop"><h2 id="wia-uitkering">WIA-uitkering</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><span class="recht-status" style="background:#c62828">Vastgelopen</span></div></div>
+<p class="subtitel">UWV</p>
+<h4>Wat is het?</h4>
+<p>De WIA is de Nederlandse arbeidsongeschiktheidsuitkering voor werknemers
+die na twee jaar ziekte nog minimaal 35% arbeidsongeschikt zijn. De
+uitkering vult het inkomensverlies aan tot maximaal 75% van het
+gemiddelde loon dat je verdiende voordat je ziek werd.</p>
+<h5>Rechtsgrond</h5>
+<p>NL: Wet werk en inkomen naar arbeidsvermogen (Wet WIA), art. 23
+(wachttijd van 104 weken) en art. 5 (verzekerde). Uitvoering door
+het UWV.</p>
+<p>EU: Verordening 883/2004, art. 4 (gelijke behandeling), art. 6
+(samentelling van tijdvakken) en art. 44–50 (invaliditeitsuitkeringen).
+Zie ook het arrest-Vester (C-134/18) over de samentelling van
+verzekeringstijdvakken.</p>
+<h5>Voorwaarden — Nederlandse burger</h5>
+<ul>
+<li>Je bent verzekerd voor de WIA. Dit betekent: je bent werknemer in
+loondienst, of je ontvangt een Ziektewet-uitkering.</li>
+<li>Je bent 2 jaar (104 weken) ziek.</li>
+<li>Je kunt door je ziekte 65% of minder van je oude loon verdienen.</li>
+<li>Je bereikt nog niet de AOW-leeftijd.</li>
+</ul>
+<h5>Wat levert het op?</h5>
+<p>Uitkering — direct geld, maandelijks. De hoogte hangt af van je
+situatie:</p>
+<ul>
+<li><strong>WGA (Werkhervatting Gedeeltelijk Arbeidsgeschikten):</strong>
+eerste 2 maanden 75% van het WIA-maandloon, daarna 70%. Bij werken
+wordt het inkomen gedeeltelijk verrekend.</li>
+<li><strong>IVA (Inkomensvoorziening Volledig Arbeidsongeschikten):</strong>
+75% van het WIA-maandloon, voor wie nu en in de toekomst bijna of
+helemaal niet meer kan werken.</li>
+<li>Het maximum sv-loon in 2026 is € 79.409 bruto per jaar (€ 6.617,44
+per maand).</li>
+</ul>
+<h4>Waarom jij het niet krijgt</h4>
+<div class="logica">
+<p><strong>Wat je zou verwachten.</strong> Je hebt in Nederland gewerkt.
+Je hebt Nederlandse premies betaald. Je bent na twee jaar ziekte nog
+steeds arbeidsongeschikt. Dan zou het UWV je WIA-uitkering moeten
+toekennen. Dat is immers het hele punt van het stelsel: premie betalen
+betekent recht op uitkering.</p>
+<p><strong>Wat er gebeurt.</strong> De RVA weigert de gegevens via het
+EESSI-systeem aan het UWV te verstrekken. Het UWV hanteert daardoor
+een foute peildatum en negeert de medische dossiers van UZ Gent en
+ZorgSaam. Je bent arbeidsongeschikt, maar het systeem ziet dat niet.</p>
+</div>
+<h5>Verschil standaard inwoner en grensarbeider</h5>
+<p>Een gewone Nederlandse werknemer bouwt zijn WIA-recht op binnen één
+systeem. Het UWV heeft alle gegevens: loon, ziekmelding, medische
+dossiers. De beoordeling verloopt automatisch. Een grensarbeider die
+in België woont maar in Nederland heeft gewerkt, moet zijn gegevens
+via het EESSI-systeem laten overdragen. Wanneer de Belgische instantie
+(RVA) die overdracht weigert, ontbreekt bij het UWV de basis om het
+recht vast te stellen.</p>
+<h5>Het mechanisme van het vastlopen</h5>
+<p>Het UWV toetst op basis van het arbeidsverleden dat het zelf kan
+inzien. Voor een grensarbeider ontbreken de Belgische tijdvakken.
+De RVA zendt de gegevens niet door via EESSI, het elektronische
+uitwisselingssysteem tussen Europese socialezekerheidsinstanties.
+Zonder die gegevens hanteert het UWV een peildatum die niet overeenkomt
+met de werkelijke situatie. De medische dossiers van UZ Gent en
+ZorgSaam worden niet meegenomen, ook al zijn ze beschikbaar. Het
+loket wacht op gegevens die niet komen, en wijst de aanvraag af op
+grond van een administratief gat.</p>
+<h5>Welke EU-regel wordt geschonden</h5>
+<p>Vo. 883/2004, art. 4: gelijke behandeling ongeacht woonplaats.
+Art. 6: tijdvakken van verzekering in andere lidstaten moeten worden
+samengeteld. Het arrest-Vester (C-134/18) bevestigt dat de lidstaten
+verplicht zijn om buitenlandse tijdvakken mee te tellen bij de
+beoordeling van invaliditeitsuitkeringen. De weigering van de RVA om
+gegevens via EESSI te verstrekken is een nationale tekortkoming die
+de Europese regel ondermijnt.</p>
+<h4>Wat kun je eraan doen</h4>
+<h5>Waar vraag je het aan?</h5>
+<p>UWV — via de online klantenservice of het UWV-kantoor. De WIA-uitkering
+moet je zelf aanvragen.</p>
+<h5>De alternatieve route</h5>
+<p>Herzieningsverzoek bij het UWV op grond van artikel 4:6 Awb (nieuw
+gebleken feiten). Voeg toe:</p>
+<ul>
+<li>Medische dossiers van UZ Gent en ZorgSaam.</li>
+<li>Bewijs van de Nederlandse en Belgische arbeidsverledens.</li>
+<li>Verzoek aan de RVA om de EESSI-verzending alsnog uit te voeren.</li>
+<li>Verwijzing naar Vo. 883/2004, art. 4 en 6, en het arrest-Vester.</li>
+</ul>
+<p>Bij weigering: beroep bij de Rechtbank, en in laatste instantie bij
+de Centrale Raad van Beroep.</p>
+<h5>Waar je op moet rekenen</h5>
+<p>Procedure duurt 6 tot 18 maanden. In die periode: geen WIA-uitkering.
+Uitkomst hangt af van de bereidheid van het UWV om de buitenlandse
+dossiers te accepteren en de peildatum te corrigeren.</p>
+<h4>Wat het mij heeft opgeleverd</h4>
+<h5>Wat ik gedaan heb</h5>
+<p>WIA-uitkering aangevraagd bij het UWV. De RVA weigerde de
+EESSI-verzending. Het UWV hanteerde een foute peildatum en negeerde
+de dossiers van UZ Gent en ZorgSaam. Herzieningsverzoek ex art. 4:6
+Awb ingediend met de medische dossiers en een verzoek aan de RVA
+om de gegevens alsnog te verstrekken.</p>
+<h5>Status</h5>
+<p>Vastgelopen. WIA-uitkering niet toegekend.</p>
+<h5>Tijd</h5>
+<p>Loopt sinds 2024.</p>
+<h5>Impact</h5>
+<p>Geen WIA-uitkering ontvangen. Bedrag niet uitgekeerd.</p>
+<h5>Opvolging</h5>
+<p>Herzieningsverzoek ex art. 4:6 Awb loopt. Wachten op beslissing.</p>
+<p class="afsluiting">Looptijd: 6 tot 18 maanden. Uitkomst onzeker.
+Impact tot nu toe: geen uitkering.</p>
+<div class="recht-kop-wrapper"><div class="recht-kop"><h2 id="wajong-op-latere-leeftijd">Wajong op latere leeftijd</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><span class="recht-status" style="background:#e65100">Aangevraagd</span></div></div>
+<p class="subtitel">UWV</p>
+<h4>Wat is het?</h4>
+<p>De Wajong is een uitkering voor jonggehandicapten: mensen die al op
+jonge leeftijd arbeidsongeschikt waren. De standaardregel is dat de
+aandoening moet bestaan op je 17e verjaardag. Wie later arbeidsongeschikt
+raakt, kan onder voorwaarden toch een Wajong-uitkering krijgen als hij
+kan aantonen dat de aandoening al vóór het 18e levensjaar aanwezig was.</p>
+<h5>Rechtsgrond</h5>
+<p>NL: Wet arbeidsongeschiktheidsvoorziening jonggehandicapten (Wajong 2010),
+art. 1:2 (jonggehandicapte) en art. 2:3 (beoordeling arbeidsongeschiktheid).
+Uitvoering door het UWV.</p>
+<p>EU: Verordening 883/2004, art. 4 (gelijke behandeling), art. 6
+(samentelling van tijdvakken) en art. 44–50 (invaliditeitsuitkeringen).</p>
+<h5>Voorwaarden — Nederlandse burger</h5>
+<ul>
+<li>Je bent op je 17e verjaardag arbeidsongeschikt, of je hebt een
+aandoening die al vóór het 18e levensjaar bestond.</li>
+<li>Je bent minimaal 25% arbeidsongeschikt.</li>
+<li>Je bent ingezetene van Nederland, of verzekerd voor de Wajong.</li>
+<li>Je bent nog niet met pensioen.</li>
+</ul>
+<h5>Wat levert het op?</h5>
+<p>Uitkering — direct geld, maandelijks. Hoogte afhankelijk van leeftijd
+en gezinssituatie. In 2026: circa € 1.100 tot € 1.500 bruto per maand,
+aangevuld met vakantiebijslag. Bij volledige en duurzame
+arbeidsongeschiktheid: tot 75% van het minimumjeugdloon.</p>
+<h4>Waarom jij het niet krijgt</h4>
+<div class="logica">
+<p><strong>Wat je zou verwachten.</strong> Je hebt een chronische
+aandoening die al voor je 18e bestond. Je kan dat aantonen. Dan zou het
+UWV je als jonggehandicapte moeten erkennen, ook als je pas op latere
+leeftijd uitviel.</p>
+<p><strong>Wat er gebeurt.</strong> De bewijslast rust op jou. Je moet
+aantonen dat de aandoening al voor je 18e bestond. Voor een grensarbeider
+betekent dat: oude papieren dossiers van vóór het eHealth-tijdperk
+opvragen bij Belgische huisartsen en specialisten die je toen behandelden.
+Die dossiers zijn vaak niet digitaal, niet compleet, of niet meer
+traceerbaar.</p>
+</div>
+<h5>Verschil standaard inwoner en grensarbeider</h5>
+<p>Een gewone Nederlandse inwoner met dezelfde aandoening kan zijn huisarts
+van toen vragen om een verklaring. Het Nederlandse medische dossier is
+continu en digitaal sinds de invoering van het EPD. Een grensarbeider
+heeft een dossier dat versnipperd is over twee landen en teruggaat tot
+een tijd waarin niets digitaal werd vastgelegd. De historische bewijsvoering
+is daardoor veel moeilijker.</p>
+<h5>Het mechanisme van het vastlopen</h5>
+<p>Het UWV toetst op basis van medische bewijzen uit het verleden. Die
+moeten aantonen dat de aandoening al voor het 18e levensjaar bestond.
+Voor grensarbeiders ontbreken vaak de digitale sporen. Wat wel bestaat:
+oude papieren dossiers bij vroegere behandelaars. Het opvragen daarvan
+kost tijd en is niet altijd succesvol. Zonder sluitend bewijs wijst
+het UWV de aanvraag af — niet omdat het recht ontbreekt, maar omdat
+het bewijs niet kan worden geleverd binnen het systeem.</p>
+<h5>Welke EU-regel wordt geschonden</h5>
+<p>Vo. 883/2004, art. 4: gelijke behandeling ongeacht woonplaats.
+Art. 6: tijdvakken van verzekering en eerdere medische dossiers uit
+andere lidstaten moeten worden meegewogen. Een bewijslast die
+grensarbeiders structureel benadeelt, is een indirecte vorm van
+discriminatie op grond van woonplaats.</p>
+<h4>Wat kun je eraan doen</h4>
+<h5>Waar vraag je het aan?</h5>
+<p>UWV — via de online klantenservice of het UWV-kantoor. De Wajong-aanvraag
+moet je zelf indienen.</p>
+<h5>De alternatieve route</h5>
+<p>Wajong-aanvraag indienen bij het UWV met een zo compleet mogelijk
+historisch medisch dossier. Voeg toe:</p>
+<ul>
+<li>Oude papieren dossiers van vóór het eHealth-tijdperk, opgevraagd bij
+vroegere behandelaars in België.</li>
+<li>Verklaringen van Belgische huisartsen en specialisten over de
+aandoening en het ontstaanstijdstip.</li>
+<li>Eventueel: getuigenverklaringen van familie of schoolartsen.</li>
+<li>Verwijzing naar Vo. 883/2004, art. 4 en 6.</li>
+</ul>
+<p>Bij weigering: bezwaarschrift bij het UWV, en in laatste instantie
+beroep bij de Centrale Raad van Beroep.</p>
+<h5>Waar je op moet rekenen</h5>
+<p>Procedure duurt 12 tot 24 maanden. De bewijslast is zwaar. Zonder
+sluitend historisch medisch bewijs is de kans op toekenning klein.</p>
+<h4>Wat het mij heeft opgeleverd</h4>
+<h5>Wat ik gedaan heb</h5>
+<p>Oude papieren dossiers van vóór het eHealth-tijdperk worden momenteel
+opgevraagd bij vroegere behandelaars in België. De aanvraag is in
+voorbereiding.</p>
+<h5>Status</h5>
+<p>In voorbereiding. Aanvraag nog niet ingediend.</p>
+<h5>Tijd</h5>
+<p>Dossieropbouw loopt sinds 2024.</p>
+<h5>Impact</h5>
+<p>Mogelijke Wajong-uitkering: € 1.100 tot € 1.500 bruto per maand.
+Nog niet ontvangen.</p>
+<h5>Opvolging</h5>
+<p>Opvragen oude dossiers bij Belgische behandelaars. Aanvraag wordt
+ingediend zodra het historisch medisch dossier compleet is.</p>
+<p class="afsluiting">Looptijd: 12 tot 24 maanden na indiening. Uitkomst
+onzeker door bewijslast. Impact tot nu toe: aanvraag in voorbereiding.</p>
+<div class="recht-kop-wrapper"><div class="recht-kop"><h2 id="aow-opbouw">AOW-opbouw</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><span class="recht-status" style="background:#2e7d32">Actief</span></div></div>
+<p class="subtitel">SVB · automatisch</p>
+<h4>Wat is het?</h4>
+<p>De Algemene Ouderdomswet (AOW) is het Nederlandse staatspensioen.
+Je bouwt het op vanaf je 15e tot je AOW-leeftijd. Elk jaar dat je
+in Nederland woont, telt mee voor 2% van het uiteindelijke pensioen.
+Na 50 jaar opbouw heb je recht op 100% van het minimumloon.</p>
+<h5>Rechtsgrond</h5>
+<p>NL: Algemene Ouderdomswet (AOW), art. 5 (verzekerde), art. 7
+(opbouw van 2% per jaar) en art. 13 (AOW-leeftijd). Uitvoering door
+de Sociale Verzekeringsbank (SVB).</p>
+<p>EU: Verordening 883/2004, art. 4 (gelijke behandeling) en art. 6
+(samentelling van tijdvakken). Voor gepensioneerden die in een andere
+lidstaat wonen: art. 21 en 22 (export van uitkeringen).</p>
+<h5>Voorwaarden — Nederlandse burger</h5>
+<ul>
+<li>Je bent ingezetene van Nederland tussen je 15e en je AOW-leeftijd.</li>
+<li>De opbouw loopt automatisch — ook als je niet werkt en geen
+premies betaalt.</li>
+<li>Opbouw stopt bij emigratie. Elk jaar buiten Nederland betekent
+2% minder AOW.</li>
+<li>Je vraagt de AOW-uitkering zelf aan bij de SVB, zes maanden voordat
+je de AOW-leeftijd bereikt.</li>
+</ul>
+<h5>Wat levert het op?</h5>
+<p>Uitkering — direct geld, maandelijks vanaf je AOW-leeftijd. Hoogte
+afhankelijk van je opbouw en je gezinssituatie:</p>
+<ul>
+<li>Alleenstaand: circa € 1.500 bruto per maand (100% opbouw).</li>
+<li>Gehuwd of samenwonend: circa € 1.050 bruto per maand per persoon
+(50% opbouw elk).</li>
+<li>Vakantiebijslag in mei: circa 8% van het jaarbedrag.</li>
+</ul>
+<h4>Waarom jij het niet krijgt</h4>
+<div class="logica">
+<p><strong>Wat je zou verwachten.</strong> Je woont in Nederland. Je bent
+ingezetene. Dan bouw je AOW op, ook als je niet werkt. Dat is het
+uitgangspunt van het stelsel: AOW is een volksverzekering, geen
+werknemersverzekering.</p>
+<p><strong>Wat er gebeurt.</strong> De AOW bouwt in jouw geval wél op —
+elk jaar dat je in Nederland woont, komt er 2% bij. Maar de opbouw levert
+nu geen geld op. Het bedrag staat op de achtergrond en wordt pas
+uitbetaald op je AOW-leeftijd. Tot die tijd heb je er niets aan.</p>
+</div>
+<h5>Verschil standaard inwoner en grensarbeider</h5>
+<p>Een gewone Nederlandse inwoner bouwt AOW op gedurende zijn hele leven
+in Nederland. Bij pensionering krijgt hij het volledige bedrag waarop
+hij recht heeft. Een grensarbeider die jaren in het buitenland heeft
+gewoond, heeft gaten in zijn AOW-opbouw. Elk jaar buiten Nederland
+betekent 2% minder AOW, zonder compensatie vanuit het buitenlandse
+stelsel.</p>
+<h5>Het mechanisme van het vastlopen</h5>
+<p>De AOW-opbouw is een slapend recht: het bestaat, maar levert pas
+geld op bij pensionering. In de tussentijd kan het niet worden gebruikt
+om andere uitkeringen of toeslagen te beïnvloeden. Wie in een
+grensoverschrijdende situatie zit, heeft vaak een gefragmenteerd
+pensioen: een deel AOW, een deel Belgisch pensioen, een deel
+aanvullend pensioen. De coördinatie tussen die stelsels is complex,
+en in de praktijk worden gaten in de opbouw niet gecompenseerd.</p>
+<h5>Welke EU-regel wordt geschonden</h5>
+<p>Vo. 883/2004, art. 4: gelijke behandeling ongeacht woonplaats.
+Art. 6: samentelling van tijdvakken. Voor gepensioneerden die in een
+andere lidstaat wonen, art. 21 en 22: het recht op export van
+pensioenuitkeringen. De AOW-opbouw mag niet worden gekort op grond
+van eerdere woonplaats in een andere lidstaat, maar in de praktijk
+ontstaan toch gaten in de opbouw.</p>
+<h4>Wat kun je eraan doen</h4>
+<h5>Waar vraag je het aan?</h5>
+<p>SVB — via de online klantenservice of het SVB-kantoor. De AOW-uitkering
+vraag je aan zes maanden voordat je de AOW-leeftijd bereikt.</p>
+<h5>De alternatieve route</h5>
+<p>Voor de opbouw zelf is geen route nodig — die loopt automatisch. Wat
+je kan doen, is een overzicht opvragen bij de SVB om te zien hoeveel
+AOW je hebt opgebouwd en of er gaten zijn. Voeg daarna, bij pensionering:</p>
+<ul>
+<li>Overzicht van de opgebouwde AOW bij de SVB.</li>
+<li>Overzicht van het Belgische pensioen bij de RVP of de eigen
+pensioeninstelling.</li>
+<li>Verzoek tot coördinatie van de uitkeringen op basis van
+Vo. 883/2004, art. 21 en 22.</li>
+</ul>
+<p>Bij problemen: klacht bij de Nationale Ombudsman en bij de
+Europese Commissie.</p>
+<h5>Waar je op moet rekenen</h5>
+<p>De opbouw loopt automatisch. Coördinatie met het Belgische stelsel
+vergt een aparte aanvraag en kan vertraging oplopen. De uitbetaling
+start op je AOW-leeftijd, niet eerder.</p>
+<h4>Wat het mij heeft opgeleverd</h4>
+<h5>Wat ik gedaan heb</h5>
+<p>De AOW-opbouw loopt automatisch op de achtergrond. Geen aanvraag
+nodig tot de AOW-leeftijd.</p>
+<h5>Status</h5>
+<p>Actief. De opbouw loopt door.</p>
+<h5>Tijd</h5>
+<p>Lopende opbouw sinds inschrijving in Nederland.</p>
+<h5>Impact</h5>
+<p>Levert heden geen liquide inkomen op. De virtuele opbouw is 2% per
+jaar dat in Nederland wordt gewoond. Bij pensionering: uitkering
+volgens het opgebouwde percentage.</p>
+<h5>Opvolging</h5>
+<p>Geen actie nodig tot de AOW-leeftijd. Jaarlijks overzicht opvragen
+bij de SVB wordt aangeraden om de opbouw te controleren.</p>
+<p class="afsluiting">Looptijd: doorlopend tot AOW-leeftijd. Uitkomst:
+opbouw loopt correct. Impact tot nu toe: geen liquiditeit.</p>
+<div class="recht-kop-wrapper"><div class="recht-kop"><h2 id="bijzondere-bijstand">Bijzondere Bijstand</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><span class="recht-status" style="background:#c62828">Vastgelopen</span></div></div>
+<p class="subtitel">Gemeente Hulst</p>
+<h4>Wat is het?</h4>
+<p>Een gemeentelijke tegemoetkoming voor bijzondere kosten die je niet
+kan betalen van je normale inkomen. Anders dan de gewone bijstand is
+Bijzondere Bijstand niet bedoeld voor dagelijkse levenskosten, maar
+voor eenmalige of specifieke uitgaven: medische kosten, juridische
+kosten, bewindvoering, of een financiële noodsituatie.</p>
+<h5>Rechtsgrond</h5>
+<p>NL: Participatiewet, art. 35 (bijzondere bijstand), art. 36
+(bijstandsnorm voor bijzondere kosten) en de gemeentelijke verordening
+van de gemeente Hulst.</p>
+<p>EU: Verordening 883/2004, art. 4 (gelijke behandeling) en art. 70
+(specifieke niet-op bijdragen gebaseerde prestaties).</p>
+<h5>Voorwaarden — Nederlandse burger</h5>
+<ul>
+<li>Je bent ingezetene van de gemeente Hulst.</li>
+<li>Je hebt een inkomen op of rond het sociaal minimum, of een
+onvoorziene noodzakelijke kostenpost.</li>
+<li>De kosten zijn noodzakelijk en kunnen niet worden betaald uit
+het normale inkomen of uit andere regelingen.</li>
+<li>De kosten zijn niet aftrekbaar via de belasting, niet vergoed
+door verzekering, en niet betaalbaar via een lening.</li>
+</ul>
+<h5>Wat levert het op?</h5>
+<p>Uitkering — direct geld. Eenmalig of voor een vastgestelde periode.
+De hoogte hangt af van de kosten en de inkomenssituatie. Soms als
+lening, soms als gift.</p>
+<h4>Waarom jij het niet krijgt</h4>
+<div class="logica">
+<p><strong>Wat je zou verwachten.</strong> Je hebt een financiële
+noodsituatie. Je hebt kosten die je niet uit je inkomen kan betalen.
+De gemeente heeft een zorgplicht voor haar ingezetenen. Dan zou de
+gemeente moeten bijspringen met Bijzondere Bijstand. Dat is precies
+waarvoor de regeling bestaat.</p>
+<p><strong>Wat er gebeurt.</strong> De gemeente weigert de compensatie
+van het financiële vacuüm dat is ontstaan door het grensoverschrijdende
+systeem. De lokale zorgplicht stopt zodra de computer vaststelt dat je
+geen recht hebt op grond van de formele criteria.</p>
+</div>
+<h5>Verschil standaard inwoner en grensarbeider</h5>
+<p>Een gewone Nederlandse inwoner met een laag inkomen kan een beroep
+doen op de gemeentelijke Bijzondere Bijstand. De gemeente toetst op
+inkomen en kosten. Een grensarbeider in dezelfde financiële situatie
+heeft te maken met een inkomen dat gedeeltelijk in het buitenlandse
+stelsel zit. De gemeente kan dat inkomen niet volledig vaststellen,
+en wijst de aanvraag af op basis van een administratief gat.</p>
+<h5>Het mechanisme van het vastlopen</h5>
+<p>De gemeente toetst op basis van gegevens die via het Inlichtingenbureau
+binnenkomen. Nederlandse inkomensgegevens zijn beschikbaar, Belgische
+niet. Wanneer een aanvrager een gemengd inkomen heeft (deels Nederlands,
+deels Belgisch), is het toetsingsinkomen niet volledig vast te stellen.
+De gemeente kiest dan voor de veilige weg: afwijzen. Het financiële
+vacuüm dat hierdoor ontstaat, wordt niet door de gemeente gedicht,
+omdat de gemeente zich beroept op de onvolledigheid van de gegevens.</p>
+<h5>Welke EU-regel wordt geschonden</h5>
+<p>Vo. 883/2004, art. 4: gelijke behandeling ongeacht woonplaats.
+Art. 70: specifieke niet-op bijdragen gebaseerde prestaties mogen niet
+worden geweigerd op grond van nationaliteit of woonplaats, mits de
+betrokkene aan de nationale voorwaarden voldoet. De gemeentelijke
+weigering om buitenlandse inkomensgegevens te erkennen, ondermijnt
+die regel.</p>
+<h4>Wat kun je eraan doen</h4>
+<h5>Waar vraag je het aan?</h5>
+<p>Gemeente Hulst — via het loket Werk en Inkomen, of digitaal via
+de gemeentelijke website.</p>
+<h5>De alternatieve route</h5>
+<p>Bezwaarschrift bij de gemeente Hulst tegen de afwijzing. Voeg toe:</p>
+<ul>
+<li>Bewijs van het financiële vacuüm: overzicht van vaste lasten en
+inkomsten.</li>
+<li>Bewijs van de buitengewone kosten.</li>
+<li>Verklaring dat andere regelingen (UWV, SVB, toeslagen) niet
+toereikend zijn.</li>
+<li>Verwijzing naar Vo. 883/2004, art. 4 en art. 70.</li>
+</ul>
+<p>Bij weigering: beroep bij de Rechtbank Zeeland-West-Brabant, en
+in laatste instantie bij de Centrale Raad van Beroep.</p>
+<h5>Waar je op moet rekenen</h5>
+<p>Beslissing op bezwaar: binnen 6 tot 12 weken, met mogelijke
+verdaging tot 6 maanden. Uitkomst hangt af van de bereidheid van de
+gemeente om buitenlandse inkomensgegevens te erkennen.</p>
+<h4>Wat het mij heeft opgeleverd</h4>
+<h5>Wat ik gedaan heb</h5>
+<p>Aanvraag Bijzondere Bijstand ingediend bij de gemeente Hulst wegens
+financiële overmacht. De gemeente heeft de aanvraag afgewezen op
+grond van de onvolledige inkomensgegevens. Bezwaarschrift ingediend.</p>
+<h5>Status</h5>
+<p>Vastgelopen. Aanvraag afgewezen, bezwaar loopt.</p>
+<h5>Tijd</h5>
+<p>Loopt sinds 2024. Beslissing op bezwaar verdaagd tot eind
+oktober 2026.</p>
+<h5>Impact</h5>
+<p>Geen bijzondere bijstand ontvangen. Financieel vacuüm blijft
+bestaan.</p>
+<h5>Opvolging</h5>
+<p>Beslissing op bezwaar verdaagd tot eind oktober 2026. Wachten op
+uitspraak.</p>
+<p class="afsluiting">Looptijd: 6 tot 12 weken na indiening, verdaagd
+tot eind oktober 2026. Uitkomst onzeker. Impact tot nu toe: geen
+bijzondere bijstand ontvangen.</p>
+<div class="recht-kop-wrapper"><div class="recht-kop"><h2 id="kindgebonden-budget">Kindgebonden Budget</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><span class="recht-status" style="background:#2e7d32">Actief</span></div></div>
+<p class="subtitel">Dienst Toeslagen</p>
+<h4>Wat is het?</h4>
+<p>Een maandelijkse toeslag voor gezinnen met kinderen, bedoeld om de
+kosten van kinderen te verlichten. Anders dan kinderbijslag is het
+Kindgebonden Budget inkomensafhankelijk: het bedrag daalt naarmate
+het gezinsinkomen stijgt.</p>
+<h5>Rechtsgrond</h5>
+<p>NL: Wet op het kindgebonden budget (WKB), art. 1 tot 10. Uitvoering
+door de Dienst Toeslagen.</p>
+<p>EU: Verordening 883/2004, art. 4 (gelijke behandeling) en art. 67
+(gezinsbijslagen bij samenloop tussen lidstaten).</p>
+<h5>Voorwaarden — Nederlandse burger</h5>
+<ul>
+<li>Je ontvangt kinderbijslag op grond van de Algemene Kinderbijslagwet
+(AKW), óf je hebt een kind dat meetelt voor het kindgebonden budget.</li>
+<li>Het gezamenlijk toetsingsinkomen ligt onder de inkomensgrens.</li>
+<li>Je bent ingezetene van Nederland.</li>
+<li>Het recht wordt automatisch getoetst, op basis van gegevens van de
+SVB en de Belastingdienst.</li>
+</ul>
+<h5>Wat levert het op?</h5>
+<p>Uitkering — direct geld, maandelijks. Bedrag afhankelijk van het
+aantal kinderen en het inkomen. In 2026: circa € 130 per maand voor
+het eerste kind, oplopend tot circa € 400 per maand voor meerdere
+kinderen. Eenoudergezinnen krijgen een extra verhoging.</p>
+<h4>Waarom jij het niet krijgt</h4>
+<div class="logica">
+<p><strong>Wat je zou verwachten.</strong> Je hebt kinderen. Je inkomen
+is laag. De Dienst Toeslagen zou je Kindgebonden Budget moeten toekennen
+op basis van het inkomen dat in het systeem staat. Dat is immers het
+hele punt van de regeling: gezinnen met kinderen ondersteunen.</p>
+<p><strong>Wat er gebeurt.</strong> Het recht op Kindgebonden Budget is
+gekoppeld aan het recht op Nederlandse kinderbijslag (AKW). Voor
+grensarbeiders is dat vinkje niet automatisch gezet, omdat de
+Nederlandse kinderbijslag niet loopt — de Belgische loopt via het
+Groeipakket. Zonder het AKW-vinkje blijft het Kindgebonden Budget
+geblokkeerd, ook al heb je kinderen en een laag inkomen.</p>
+</div>
+<h5>Verschil standaard inwoner en grensarbeider</h5>
+<p>Een gewone Nederlandse inwoner ontvangt kinderbijslag via de SVB en
+ziet het Kindgebonden Budget automatisch toegekend. Een grensarbeider
+die in België werkt, ontvangt kinderbijslag via het Belgische
+Groeipakket. Nederland ziet geen AKW-uitkering, en blokkeert daarmee
+ook het Kindgebonden Budget.</p>
+<h5>Het mechanisme van het vastlopen</h5>
+<p>De Dienst Toeslagen controleert het recht op Kindgebonden Budget via
+het SVB-vinkje: staat er een AKW-uitkering op jouw naam? Voor een
+grensarbeider is dat "nee". Het systeem concludeert daaruit dat er geen
+recht is op Kindgebonden Budget, zonder de Europese samentelling van
+gezinsbijslagen (Vo. 883/2004, art. 67) toe te passen. Wat in Nederland
+niet loopt, wordt niet meegenomen in de toetsing.</p>
+<h5>Welke EU-regel wordt geschonden</h5>
+<p>Vo. 883/2004, art. 4: gelijke behandeling ongeacht woonplaats.
+Art. 67: bij samenloop van gezinsbijslagen tussen lidstaten moet
+het recht worden vastgesteld volgens een vaste prioriteitsregel.
+Het enkele feit dat kinderbijslag via een andere lidstaat loopt, mag
+niet betekenen dat een inkomensafhankelijke toeslag vervalt.</p>
+<h4>Wat kun je eraan doen</h4>
+<h5>Waar vraag je het aan?</h5>
+<p>Dienst Toeslagen — via MijnToeslagen.nl.</p>
+<h5>De alternatieve route</h5>
+<p>Bezwaarschrift bij Dienst Toeslagen met het verzoek het recht op
+Kindgebonden Budget vast te stellen zonder het SVB-vinkje. Voeg toe:</p>
+<ul>
+<li>Bewijs van het Belgische Groeipakket.</li>
+<li>Bewijs van het gezamenlijk toetsingsinkomen.</li>
+<li>Verwijzing naar Vo. 883/2004, art. 4 en 67.</li>
+</ul>
+<p>Bij weigering: beroep bij de Rechtbank en in laatste instantie bij
+de Centrale Raad van Beroep.</p>
+<h5>Waar je op moet rekenen</h5>
+<p>Procedure duurt 6 tot 12 maanden. Uitkomst hangt af van de bereidheid
+van Dienst Toeslagen om de EU-regel toe te passen bij een gemengde
+gezinssituatie.</p>
+<h4>Wat het mij heeft opgeleverd</h4>
+<h5>Wat ik gedaan heb</h5>
+<p>Bezwaarschrift ingediend bij Dienst Toeslagen met bewijs van het
+Belgische Groeipakket en het Nederlandse toetsingsinkomen. Verzoek
+tot toepassing van Vo. 883/2004, art. 67.</p>
+<h5>Status</h5>
+<p>Voorlopig toegekend na de SVB-bypass in april 2026. Definitieve
+afrekening volgt na de aanslag inkomstenbelasting 2025.</p>
+<h5>Tijd</h5>
+<p>Loopt sinds 2024. Toekenning na bypass in april 2026.</p>
+<h5>Impact</h5>
+<p>Voorlopig bedrag ontvangen. Definitieve afrekening kan leiden tot
+terugbetaling of nabetaling, afhankelijk van het definitieve inkomen.</p>
+<h5>Opvolging</h5>
+<p>Wachten op de definitieve aanslag inkomstenbelasting 2025.
+Daarna definitieve afrekening.</p>
+<p class="afsluiting">Looptijd: voorlopig toegekend. Definitieve
+afrekening na aanslag 2025. Impact tot nu toe: voorlopig bedrag
+ontvangen, definitieve uitkomst onzeker.</p>
+<div class="recht-kop-wrapper"><div class="recht-kop"><h2 id="huurtoeslag">Huurtoeslag</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><span class="recht-status" style="background:#2e7d32">Actief</span></div></div>
+<p class="subtitel">Dienst Toeslagen</p>
+<h4>Wat is het?</h4>
+<p>Een maandelijkse tegemoetkoming van de Nederlandse overheid in de
+huur voor mensen met een laag inkomen. De toeslag wordt rechtstreeks
+aan de huurder uitbetaald en is bedoeld om de woonlasten betaalbaar
+te houden.</p>
+<h5>Rechtsgrond</h5>
+<p>NL: Wet op de huurtoeslag (Wht), art. 1 tot 26. Uitvoering door de
+Dienst Toeslagen.</p>
+<p>EU: Verordening 883/2004, art. 4 (gelijke behandeling).</p>
+<h5>Voorwaarden — Nederlandse burger</h5>
+<ul>
+<li>Je huurt een zelfstandige woonruimte met eigen keuken, toilet en
+badkamer.</li>
+<li>Je bent ingeschreven in de BRP op het adres van de huurwoning.</li>
+<li>Het gezamenlijk toetsingsinkomen ligt onder de inkomensgrens. In
+2026: circa € 32.950 alleenstaand, circa € 44.850 met toeslagpartner.</li>
+<li>De huur ligt onder de liberalisatiegrens (in 2026: circa € 900 per
+maand).</li>
+<li>Je vermogen blijft onder de vermogensgrens.</li>
+</ul>
+<h5>Wat levert het op?</h5>
+<p>Uitkering — direct geld, maandelijks. Bedrag afhankelijk van huur,
+inkomen en gezinssituatie. In 2026: tot circa € 450 per maand.</p>
+<h4>Waarom jij het niet krijgt</h4>
+<div class="logica">
+<p><strong>Wat je zou verwachten.</strong> Je huurt een woning in
+Nederland. Je inkomen is laag. De Dienst Toeslagen zou huurtoeslag
+moeten toekennen op basis van de huur en het inkomen. Dat is precies
+waarvoor de regeling bestaat.</p>
+<p><strong>Wat er gebeurt.</strong> Voor een grensarbeider kan het
+toetsingsinkomen niet volledig worden vastgesteld, omdat een deel
+van het inkomen in het buitenlandse stelsel zit. De Dienst Toeslagen
+kan daardoor geen betrouwbare berekening maken en past de regeling
+niet toe — ook al is de huur betaald en het inkomen laag.</p>
+</div>
+<h5>Verschil standaard inwoner en grensarbeider</h5>
+<p>Een gewone Nederlandse huurder met een laag inkomen krijgt huurtoeslag
+automatisch berekend op basis van zijn Nederlandse inkomen. Een
+grensarbeider met een gemengd inkomen (deels Nederlands, deels Belgisch)
+heeft te maken met een toetsingsinkomen dat niet volledig beschikbaar
+is in het Nederlandse systeem. De berekening valt stil, en de toeslag
+wordt niet of te laag toegekend.</p>
+<h5>Het mechanisme van het vastlopen</h5>
+<p>De Dienst Toeslagen baseert de berekening op het toetsingsinkomen dat
+via de Belastingdienst en de SVB binnenkomt. Voor een grensarbeider met
+een Belgische inkomensbron ontbreken die gegevens. De toeslag wordt wel
+voorlopig berekend, maar zonder de buitenlandse inkomsten. Het gevolg:
+een te hoge toeslag die later moet worden terugbetaald, of een te lage
+toeslag die nooit wordt gecorrigeerd.</p>
+<h5>Welke EU-regel wordt geschonden</h5>
+<p>Vo. 883/2004, art. 4: gelijke behandeling ongeacht woonplaats.
+Een grensarbeider met een laag inkomen en een gehuurde woning in
+Nederland mag niet worden benadeeld door een administratieve
+tekortkoming in de gegevensuitwisseling.</p>
+<h4>Wat kun je eraan doen</h4>
+<h5>Waar vraag je het aan?</h5>
+<p>Dienst Toeslagen — via MijnToeslagen.nl.</p>
+<h5>De alternatieve route</h5>
+<p>Bezwaarschrift bij Dienst Toeslagen met een volledig overzicht van
+alle inkomensbronnen. Voeg toe:</p>
+<ul>
+<li>Bewijs van het Nederlandse toetsingsinkomen.</li>
+<li>Bewijs van het buitenlandse inkomen (Belgische loonfiches,
+uitkeringsspecificaties).</li>
+<li>Huurcontract en bewijs van inschrijving in de BRP.</li>
+<li>Verzoek tot herberekening van de toeslag op basis van het volledige
+inkomen.</li>
+</ul>
+<p>Bij geschil: bezwaarschrift bij Dienst Toeslagen, en in laatste
+instantie beroep bij de Rechtbank en de Centrale Raad van Beroep.</p>
+<h5>Waar je op moet rekenen</h5>
+<p>Procedure duurt 6 tot 12 maanden. Uitkomst hangt af van de bereidheid
+van Dienst Toeslagen om buitenlandse inkomensgegevens te accepteren en
+de berekening te corrigeren.</p>
+<h4>Wat het mij heeft opgeleverd</h4>
+<h5>Wat ik gedaan heb</h5>
+<p>Huurtoeslag toegekend op basis van het Nederlandse toetsingsinkomen.
+Uitstel van betaling gekregen inzake een verrekening van een eerdere
+schuld tijdens de bezwaarprocedure.</p>
+<h5>Status</h5>
+<p>Voorlopig toegekend. Definitieve afrekening volgt na de aanslag
+inkomstenbelasting 2025.</p>
+<h5>Tijd</h5>
+<p>Loopt sinds 2024.</p>
+<h5>Impact</h5>
+<p>Voorlopig bedrag ontvangen. Definitieve afrekening kan leiden tot
+terugbetaling of nabetaling.</p>
+<h5>Opvolging</h5>
+<p>Uitstel van betaling gekregen tijdens bezwaarprocedure. Wachten op
+de definitieve aanslag inkomstenbelasting 2025.</p>
+<p class="afsluiting">Looptijd: voorlopig toegekend. Definitieve
+afrekening na aanslag 2025. Impact tot nu toe: voorlopig bedrag
+ontvangen, definitieve uitkomst onzeker.</p>
+<a class="pub-top" href="#top" title="Naar boven">↑</a>
+<footer class="pub-footer">
+<p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
+  Auteur: Eric Messa · Versie bijgewerkt: 6 oktober 2026, 10:24</p>
+<p><a href="home.html">← Terug naar overzicht</a> ·
+     <a href="../index.html">🌐 Taalkeuze</a></p>
+</footer>
+</body>
+</html>

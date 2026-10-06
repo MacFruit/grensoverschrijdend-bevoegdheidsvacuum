@@ -2,6 +2,7 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Systeem-Audit — Overzicht</title>
 <style>
 body { font-family: Aptos, Calibri, sans-serif; font-size: 12pt; line-height: 1.6;
@@ -10,7 +11,7 @@ body { font-family: Aptos, Calibri, sans-serif; font-size: 12pt; line-height: 1.
 h1 { font-size: 36pt; color: #1a3c6e; margin: 0 0 8pt; border: none; }
 .ondertitel { font-size: 16pt; color: #333; margin: 0 0 12pt; }
 .auteur { font-size: 12pt; color: #555; margin: 0 0 40pt; font-style: italic; }
-.intro { font-size: 12pt; line-height: 1.7; margin: 0 0 40pt; text-align: justify; }
+.intro { font-size: 12pt; line-height: 1.7; margin: 0 0 40pt; text-align: left; }
 .doc-lijst { list-style: none; padding: 0; margin: 0; }
 .doc-lijst li {
     margin: 0 0 16pt; padding: 20pt 24pt; background: #fff;
@@ -33,6 +34,7 @@ h1 { font-size: 36pt; color: #1a3c6e; margin: 0 0 8pt; border: none; }
 .eigen-kleur-B { border-left-color: #1a3c6e; } .eigen-kleur-B a.titel { color: #1a3c6e; }
 .eigen-kleur-C { border-left-color: #4a3b6b; } .eigen-kleur-C a.titel { color: #4a3b6b; }
 .eigen-kleur-D { border-left-color: #2e7d32; } .eigen-kleur-D a.titel { color: #2e7d32; }
+.eigen-kleur-E { border-left-color: #0d7377; } .eigen-kleur-E a.titel { color: #0d7377; }
 .footer { margin-top: 60pt; padding-top: 20pt; border-top: 1px solid #d5d0c5;
           font-size: 10pt; color: #666; text-align: center; }
 .footer a { color: #1a3c6e; }
@@ -40,6 +42,13 @@ h1 { font-size: 36pt; color: #1a3c6e; margin: 0 0 8pt; border: none; }
              border: 1px solid #d5d0c5; border-radius: 4px;
              font-size: 10pt; color: #1a3c6e; text-decoration: none; }
 .taalkeuze:hover { background: #eef2f7; }
+@media (max-width: 700px) {
+    .wrap { padding: 20pt 16pt 40pt; }
+    h1 { font-size: 26pt; }
+    .ondertitel { font-size: 13pt; }
+    .doc-lijst li { padding: 14pt 16pt; }
+    .doc-lijst a.titel { font-size: 14pt; }
+}
 </style>
 </head>
 <body>
@@ -49,14 +58,15 @@ h1 { font-size: 36pt; color: #1a3c6e; margin: 0 0 8pt; border: none; }
 
 <h1>Systeem-Audit</h1>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
-<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 6 oktober 2026, 09:42</p>
+<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 6 oktober 2026, 10:24</p>
 
 <p class="intro">Dit dossier documenteert wat er gebeurt wanneer een burger tussen twee
 nationale socialezekerheidsstelsels valt. Vijf documenten, elk met een eigen invalshoek,
 vertellen hetzelfde verhaal: de botsing tussen een grensoverschrijdende menselijke
 realiteit en nationaal geprogrammeerde uitvoeringssystemen. Document B is de feitelijke
 basis; Document A vertelt het verhaal; Document C toont de architectuur; Document D
-trekt de conclusies; Document 0 is de inleiding en leeswijzer.</p>
+trekt de conclusies; Document E toont per recht wat het oplevert. Document 0 is de
+inleiding en leeswijzer.</p>
 
 <p class="intro"><strong>Elk document is beschikbaar in drie vormen:</strong> als webpagina
 (direct te lezen in de browser), als Word-bestand (.docx, voor wie wil bewerken of
@@ -66,9 +76,8 @@ afdrukken), en als PDF (voor wie een vaste lay-out wil of wil archiveren).</p>
 
 <li class="eigen-kleur-0">
 <a class="titel" href="document-0.html">Document 0 — Inleiding en leeswijzer</a>
-<p class="beschrijving">Biografisch essay over drie generaties grensarbeid, van
-Lombardije en de Elzas naar Zeeuws-Vlaanderen. Legt uit waarom dit dossier bestaat
-en hoe de vijf documenten samenhangen.</p>
+<p class="beschrijving">Biografisch essay over drie generaties grensarbeid. Legt uit
+waarom dit dossier bestaat en hoe de documenten samenhangen.</p>
 <div class="downloads">
   <a href="docx/document-0.docx">⬇ Word-versie</a>
   <a class="pdf" href="pdf/document-0.pdf">⬇ PDF-versie</a>
@@ -78,8 +87,7 @@ en hoe de vijf documenten samenhangen.</p>
 <li class="eigen-kleur-A">
 <a class="titel" href="document-a.html">Document A — De narratieve audit</a>
 <p class="beschrijving">Het verhaal per organisatie. Doorlopende tekst met de rol in
-het netwerk, de frictie en de systemische paradox. Voor wie het geheel wil begrijpen
-zonder de onderliggende data te doorlopen.</p>
+het netwerk, de frictie en de systemische paradox.</p>
 <div class="downloads">
   <a href="docx/document-a.docx">⬇ Word-versie</a>
   <a class="pdf" href="pdf/document-a.pdf">⬇ PDF-versie</a>
@@ -89,8 +97,7 @@ zonder de onderliggende data te doorlopen.</p>
 <li class="eigen-kleur-B">
 <a class="titel" href="document-b.html">Document B — De data-matrix</a>
 <p class="beschrijving">Alle feiten: datums, referentienummers, correspondentie en
-tijdlijnen. De ruwe laag waarop de andere documenten zijn gebouwd. Voor wie wil
-verifiëren wat er precies is gebeurd.</p>
+tijdlijnen. De ruwe laag waarop de andere documenten zijn gebouwd.</p>
 <div class="downloads">
   <a href="docx/document-b.docx">⬇ Word-versie</a>
   <a class="pdf" href="pdf/document-b.pdf">⬇ PDF-versie</a>
@@ -100,8 +107,7 @@ verifiëren wat er precies is gebeurd.</p>
 <li class="eigen-kleur-C">
 <a class="titel" href="document-c.html">Document C — De visuele architectuur</a>
 <p class="beschrijving">Schema's en datastromen. Twee starre werelden, een membraan
-in het midden, drie kanalen, vier institutionele lagen. Voor wie het systeem in
-één oogopslag wil begrijpen.</p>
+in het midden, drie kanalen, vier institutionele lagen.</p>
 <div class="downloads">
   <a href="docx/document-c.docx">⬇ Word-versie</a>
   <a class="pdf" href="pdf/document-c.pdf">⬇ PDF-versie</a>
@@ -111,11 +117,20 @@ in het midden, drie kanalen, vier institutionele lagen. Voor wie het systeem in
 <li class="eigen-kleur-D">
 <a class="titel" href="document-d.html">Document D — De synthese</a>
 <p class="beschrijving">Het patroon, de paradoxen, de rol van de Europese Unie en
-drie bouwstenen voor hervorming. De optelsom van A, B en C. Voor wie de conclusie
-wil.</p>
+drie bouwstenen voor hervorming.</p>
 <div class="downloads">
   <a href="docx/document-d.docx">⬇ Word-versie</a>
   <a class="pdf" href="pdf/document-d.pdf">⬇ PDF-versie</a>
+</div>
+</li>
+
+<li class="eigen-kleur-E">
+<a class="titel" href="document-e.html">Document E — Het rechtenoverzicht</a>
+<p class="beschrijving">Per recht: wat het is, wie het krijgt, waar het vastloopt,
+en wat het oplevert. Met status per recht.</p>
+<div class="downloads">
+  <a href="docx/document-e.docx">⬇ Word-versie</a>
+  <a class="pdf" href="pdf/document-e.pdf">⬇ PDF-versie</a>
 </div>
 </li>
 

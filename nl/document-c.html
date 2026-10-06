@@ -3,6 +3,7 @@
 <html lang="nl">
 <head>
 <meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Systeem-Audit — Document C — De visuele architectuur</title>
 <style>
 @media screen { p.marker { display: none; } }
@@ -75,11 +76,53 @@ tr:nth-child(even) td { background: #f4f1f8; }
 .contactblok p { margin: 0; font-size: 11pt; }
 .contactblok a { color: #4a3b6b; text-decoration: none; font-weight: bold; }
 
-/* === Document-specifieke extra stijlen (via ) === */
+/* === Rechtenoverzicht (Document E) === */
+.recht-kop { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; flex-wrap: wrap; margin-bottom: 4pt; }
+.recht-status { display: inline-block; padding: 3pt 10pt; color: #fff; font-size: 9pt; font-weight: 700; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px; flex-shrink: 0; }
+.recht-kop h2 { flex: 1; margin: 0; padding: 0; border-bottom: none; }
+.recht-kop-wrapper { border-bottom: 2px solid #4a3b6b; padding-bottom: 6pt; margin-bottom: 12pt; }
+.categorie-titel { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 14pt; color: #555; text-transform: uppercase; letter-spacing: 1pt; margin-top: 24pt; margin-bottom: 10pt; border-bottom: 1px solid #ccc; padding-bottom: 4pt; }
+.sector-titel { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 16pt; color: #4a3b6b; margin-top: 20pt; margin-bottom: 8pt; }
+.intro-rechten { font-style: italic; color: #444; margin-bottom: 24pt; padding: 10pt 14pt; background: #f7f5f1; border-left: 4px solid #4a3b6b; }
+
+/* === Mobile view — tot 700px === */
+@media (max-width: 700px) {
+    body { font-size: 11pt; margin: 16pt 14pt; line-height: 1.45; }
+    h1 { font-size: 22pt; }
+    h2 { font-size: 17pt; }
+    h3 { font-size: 14pt; }
+    h4 { font-size: 12pt; }
+    h5 { font-size: 11pt; }
+    p { text-align: left; }
+    table { font-size: 9.5pt; }
+    th, td { padding: 4pt 6pt; }
+    .titelblad { margin-top: 80pt; }
+    .titelblad h1 { font-size: 26pt; }
+    .titelblad .ondertitel { font-size: 14pt; margin-bottom: 30pt; }
+    .titelblad .documentaanduiding { font-size: 16pt; margin-bottom: 40pt; }
+    .titelblad .auteur { font-size: 11pt; }
+    .titelblad .meta-lijn { font-size: 10pt; }
+    .legend-row { flex-direction: column; gap: 4pt; }
+    .actor { padding-bottom: 6pt; margin-bottom: 8pt; }
+    .actie, .afsluiting, .werkversie { padding: 8pt 10pt; font-size: 10.5pt; }
+    .recht-kop { flex-direction: column; align-items: flex-start; gap: 6pt; }
+    .categorie-titel { font-size: 12pt; }
+    .sector-titel { font-size: 14pt; }
+}
+/* === Mobile view — tot 420px === */
+@media (max-width: 420px) {
+    body { font-size: 10.5pt; margin: 12pt 10pt; }
+    h1 { font-size: 19pt; }
+    h2 { font-size: 15pt; }
+    h3 { font-size: 13pt; }
+    table { font-size: 9pt; }
+    th, td { padding: 3pt 5pt; }
+    .titelblad h1 { font-size: 22pt; }
+}
 
 
 
-/* === Navigatie publicatie === */
+
 .pub-nav {
     position: sticky; top: 0; z-index: 100;
     background: #ffffff; border-bottom: 2px solid #d5d0c5;
@@ -97,9 +140,7 @@ tr:nth-child(even) td { background: #f4f1f8; }
 .pub-nav a:hover { background: #eef2f7; border-color: #d5d0c5; }
 .pub-nav a.actief { background: #1a3c6e; color: #ffffff; }
 .pub-nav a.home { border: 1px solid #d5d0c5; }
-.pub-nav .titel-klein {
-    font-size: 10pt; color: #666; font-style: italic;
-}
+.pub-nav .titel-klein { font-size: 10pt; color: #666; font-style: italic; }
 .pub-top {
     position: fixed; bottom: 24px; right: 24px; z-index: 200;
     background: #1a3c6e; color: #fff; border: none;
@@ -133,11 +174,18 @@ tr:nth-child(even) td { background: #f4f1f8; }
     font-size: 10pt; color: #888; text-decoration: none;
 }
 .pub-naar-boven:hover { color: #1a3c6e; text-decoration: underline; }
+@media (max-width: 700px) {
+    .pub-nav { padding: 8px 12px; margin: -16pt -14pt 16pt -14pt; }
+    .pub-nav a { padding: 5px 9px; font-size: 10pt; }
+    .pub-nav .titel-klein { display: none; }
+    .pub-toc { padding: 10pt 14pt; }
+    .pub-toc .niv3 { padding-left: 24pt; }
+}
 </style>
 </head>
 <body><a id="top"></a>
 <nav class="pub-nav">
-<div class="links"><a class="home" href="home.html">← Overzicht</a> <a class="home" href="../index.html">🌐 Taalkeuze</a> <a class="" href="document-0.html">Inleiding</a> <a class="" href="document-a.html">Narratief</a> <a class="" href="document-b.html">Data</a> <a class="actief" href="document-c.html">Visueel</a> <a class="" href="document-d.html">Synthese</a></div>
+<div class="links"><a class="home" href="home.html">← Overzicht</a> <a class="home" href="../index.html">🌐 Taalkeuze</a> <a class="" href="document-0.html">Inleiding</a> <a class="" href="document-a.html">Narratief</a> <a class="" href="document-b.html">Data</a> <a class="actief" href="document-c.html">Visueel</a> <a class="" href="document-d.html">Synthese</a> <a class="" href="document-e.html">Rechten</a></div>
 <div class="titel-klein">Systeem-Audit · Eric Messa</div>
 </nav>
 
@@ -146,7 +194,7 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document C — De visuele architectuur</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 5 oktober 2026, 15:55</p>
+<p class="meta-lijn">Versie bijgewerkt: 6 oktober 2026, 10:24</p>
 </div>
 
 <div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
@@ -5392,7 +5440,7 @@ De juridische weg is de laatste weg. Maar hij is niet voor iedereen even toegank
 <a class="pub-top" href="#top" title="Naar boven">↑</a>
 <footer class="pub-footer">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 5 oktober 2026, 15:55</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 6 oktober 2026, 10:24</p>
 <p><a href="home.html">← Terug naar overzicht</a> ·
      <a href="../index.html">🌐 Taalkeuze</a></p>
 </footer>
