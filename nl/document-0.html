@@ -219,46 +219,66 @@ html[data-theme="dark"] body {
     background: #1a1a1a;
     color: #e0e0e0;
 }
+
+/* === v9.3 — headings + grijs-fix === */
 html[data-theme="dark"] h1,
 html[data-theme="dark"] h2,
 html[data-theme="dark"] h3,
-html[data-theme="dark"] h4 {
-    color: #7fb3ff;
-    border-color: #4a6fa5;
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h6 {
+    color: #7fb3ff !important;
+    border-color: #4a6fa5 !important;
 }
-html[data-theme="dark"] h5 { color: #a8c5e8; }
-html[data-theme="dark"] p.subtitel { color: #a0a0a0; }
-html[data-theme="dark"] p.lead { color: #b0b0b0; }
-html[data-theme="dark"] p.tijd { color: #a0a0a0; }
-html[data-theme="dark"] .netwerk { color: #b0b0b0; }
-html[data-theme="dark"] .meta { color: #c0c0c0; }
-html[data-theme="dark"] .meta strong { color: #7fb3ff; }
-html[data-theme="dark"] .datum { color: #f0f0f0; }
-html[data-theme="dark"] .titel { color: #e8e8e8; }
-html[data-theme="dark"] .opvolging { color: #a0a0a0; }
-html[data-theme="dark"] .richting-ontvangen { color: #7fb3ff; }
-html[data-theme="dark"] .richting-verzonden { color: #ff8a8a; }
-html[data-theme="dark"] .oorsprong { color: #a0a0a0; }
+html[data-theme="dark"] h5 {
+    color: #a8c5e8 !important;
+}
+
+html[data-theme="dark"] p.subtitel { color: #a8a8a8 !important; }
+html[data-theme="dark"] p.lead     { color: #b8b8b8 !important; }
+html[data-theme="dark"] p.tijd     { color: #a8a8a8 !important; }
+html[data-theme="dark"] .netwerk   { color: #b8b8b8 !important; }
+html[data-theme="dark"] .meta      { color: #c8c8c8 !important; }
+html[data-theme="dark"] .meta strong { color: #7fb3ff !important; }
+html[data-theme="dark"] .datum     { color: #f0f0f0 !important; }
+html[data-theme="dark"] .titel     { color: #e8e8e8 !important; }
+html[data-theme="dark"] .opvolging { color: #a8a8a8 !important; }
+html[data-theme="dark"] .oorsprong { color: #a8a8a8 !important; }
+html[data-theme="dark"] .caption   { color: #a8a8a8 !important; border-top-color: #3a3a3a !important; }
+
+html[data-theme="dark"] .richting-ontvangen { color: #7fb3ff !important; }
+html[data-theme="dark"] .richting-verzonden { color: #ff8a8a !important; }
+
 html[data-theme="dark"] .entry.technisch {
     background: #232323;
     border-left-color: #4a4a4a;
-    color: #a0a0a0;
+    color: #a8a8a8;
 }
-html[data-theme="dark"] .entry.technisch .datum { color: #909090; }
-html[data-theme="dark"] .entry.technisch .titel { color: #b0b0b0; }
-html[data-theme="dark"] .entry.technisch .opvolging { color: #808080; }
-html[data-theme="dark"] .entry.technisch .richting-ontvangen { color: #8fa8c8; }
-html[data-theme="dark"] .entry.technisch .richting-verzonden { color: #c89090; }
+html[data-theme="dark"] .entry.technisch .datum { color: #909090 !important; }
+html[data-theme="dark"] .entry.technisch .titel { color: #b0b0b0 !important; }
+html[data-theme="dark"] .entry.technisch .opvolging { color: #808080 !important; }
+html[data-theme="dark"] .entry.technisch .richting-ontvangen { color: #8fa8c8 !important; }
+html[data-theme="dark"] .entry.technisch .richting-verzonden { color: #c89090 !important; }
+
 html[data-theme="dark"] .technisch-notice {
-    background: #232323; color: #a0a0a0; border-left-color: #4a4a4a;
+    background: #232323; color: #a8a8a8 !important; border-left-color: #4a4a4a;
 }
+
+/* === Voetnoten — waren te donker === */
+html[data-theme="dark"] .footnotes,
+html[data-theme="dark"] .footnotes p {
+    color: #b0b0b0 !important;
+}
+html[data-theme="dark"] .footnotes strong {
+    color: #7fb3ff !important;
+}
+
 html[data-theme="dark"] hr { border-top-color: #3a3a3a; }
-html[data-theme="dark"] .titelblad h1 { color: #7fb3ff; }
-html[data-theme="dark"] .titelblad .ondertitel { color: #c0c0c0; }
-html[data-theme="dark"] .titelblad .documentaanduiding { color: #7fb3ff; }
+html[data-theme="dark"] .titelblad h1 { color: #7fb3ff !important; }
+html[data-theme="dark"] .titelblad .ondertitel { color: #c8c8c8 !important; }
+html[data-theme="dark"] .titelblad .documentaanduiding { color: #7fb3ff !important; }
 html[data-theme="dark"] .titelblad .auteur,
-html[data-theme="dark"] .titelblad .meta-lijn { color: #a0a0a0; }
-html[data-theme="dark"] .gebruikersaanwijzing p { color: #c0c0c0; }
+html[data-theme="dark"] .titelblad .meta-lijn { color: #a8a8a8 !important; }
+html[data-theme="dark"] .gebruikersaanwijzing p { color: #c8c8c8 !important; }
 html[data-theme="dark"] table th { background: #2e4a72; border-color: #2e4a72; }
 html[data-theme="dark"] table td {
     background: #232323; border-color: #3a3a3a; color: #d0d0d0;
@@ -266,85 +286,73 @@ html[data-theme="dark"] table td {
 html[data-theme="dark"] tr:nth-child(even) td { background: #2a2a2a; }
 html[data-theme="dark"] .figure { background: #232323; border-color: #3a3a3a; }
 html[data-theme="dark"] .figure svg { background: transparent; }
-html[data-theme="dark"] .caption {
-    color: #a0a0a0;
-    border-top-color: #3a3a3a;
-}
 html[data-theme="dark"] .intro-rechten {
-    background: #232323; color: #b0b0b0; border-left-color: #4a6fa5;
+    background: #232323; color: #b8b8b8; border-left-color: #4a6fa5;
 }
 html[data-theme="dark"] .actie { background: #2a2440; color: #d0d0d0; }
 html[data-theme="dark"] .afsluiting { background: #2a2440; color: #d0d0d0; }
 html[data-theme="dark"] .werkversie { background: #332c14; color: #d0c090; }
-html[data-theme="dark"] .noot { color: #a0a0a0; border-top-color: #3a3a3a; }
+html[data-theme="dark"] .noot { color: #a8a8a8 !important; border-top-color: #3a3a3a; }
 html[data-theme="dark"] a { color: #7fb3ff; }
 
 /* === Actor-blokken (Document C) === */
-html[data-theme="dark"] .actor {
-    border-bottom-color: #3a3a3a;
-}
-html[data-theme="dark"] .actor-naam { color: #e0e0e0; }
-html[data-theme="dark"] .actor-rol { color: #7fb3ff; }
+html[data-theme="dark"] .actor { border-bottom-color: #3a3a3a; }
+html[data-theme="dark"] .actor-naam { color: #e0e0e0 !important; }
+html[data-theme="dark"] .actor-rol  { color: #7fb3ff !important; }
 
 /* === Sectie-banners (Document C) === */
 html[data-theme="dark"] .banner-be {
-    background: #2a1c1c;
-    border-left-color: #ff8a8a;
+    background: #2a1c1c; border-left-color: #ff8a8a;
 }
-html[data-theme="dark"] .banner-be strong { color: #ff8a8a; }
-
+html[data-theme="dark"] .banner-be strong { color: #ff8a8a !important; }
 html[data-theme="dark"] .banner-nl {
-    background: #1c2129;
-    border-left-color: #7fb3ff;
+    background: #1c2129; border-left-color: #7fb3ff;
 }
-html[data-theme="dark"] .banner-nl strong { color: #7fb3ff; }
-
+html[data-theme="dark"] .banner-nl strong { color: #7fb3ff !important; }
 html[data-theme="dark"] .banner-eu {
-    background: #1c2628;
-    border-left-color: #5fc8cc;
+    background: #1c2628; border-left-color: #5fc8cc;
 }
-html[data-theme="dark"] .banner-eu strong { color: #5fc8cc; }
+html[data-theme="dark"] .banner-eu strong { color: #5fc8cc !important; }
 
 /* === Inline badges === */
-html[data-theme="dark"] .badge-be { color: #ff8a8a; }
-html[data-theme="dark"] .badge-nl { color: #7fb3ff; }
-html[data-theme="dark"] .badge-mem { color: #ffb380; }
-html[data-theme="dark"] .badge-eu { color: #5fc8cc; }
+html[data-theme="dark"] .badge-be  { color: #ff8a8a !important; }
+html[data-theme="dark"] .badge-nl  { color: #7fb3ff !important; }
+html[data-theme="dark"] .badge-mem { color: #ffb380 !important; }
+html[data-theme="dark"] .badge-eu  { color: #5fc8cc !important; }
 
-/* === Sectorkoppen + recht-ankers (Document E) === */
-html[data-theme="dark"] .sector-titel { color: #7fb3ff; }
+/* === Sectorkoppen (Document E) === */
+html[data-theme="dark"] .sector-titel { color: #7fb3ff !important; }
 html[data-theme="dark"] .recht-kop-wrapper { border-bottom-color: #4a6fa5; }
 html[data-theme="dark"] .legend-row { color: #c0c0c0; }
 
 /* === Contactblok === */
 html[data-theme="dark"] .contactblok {
-    background: #232323;
-    border-left-color: #4a6fa5;
+    background: #232323; border-left-color: #4a6fa5;
 }
-html[data-theme="dark"] .contactblok a { color: #7fb3ff; }
+html[data-theme="dark"] .contactblok a { color: #7fb3ff !important; }
 
 /* === Navigatie === */
 html[data-theme="dark"] .pub-nav {
     background: #232323; border-bottom-color: #3a3a3a;
 }
-html[data-theme="dark"] .pub-nav a { color: #b0c8e8; }
+html[data-theme="dark"] .pub-nav a { color: #b0c8e8 !important; }
 html[data-theme="dark"] .pub-nav a:hover { background: #2a2a2a; border-color: #4a4a4a; }
-html[data-theme="dark"] .pub-nav a.actief { background: #4a6fa5; color: #ffffff; }
+html[data-theme="dark"] .pub-nav a.actief { background: #4a6fa5; color: #ffffff !important; }
 html[data-theme="dark"] .pub-nav a.home { border-color: #4a4a4a; }
-html[data-theme="dark"] .pub-nav .titel-klein { color: #888; }
+html[data-theme="dark"] .pub-nav .titel-klein { color: #888 !important; }
 
 html[data-theme="dark"] .pub-toc {
     background: #232323; border-left-color: #4a6fa5;
 }
-html[data-theme="dark"] .pub-toc a { color: #b0c8e8; }
-html[data-theme="dark"] .pub-toc .niv3 { color: #888; }
+html[data-theme="dark"] .pub-toc a { color: #b0c8e8 !important; }
+html[data-theme="dark"] .pub-toc .niv3 { color: #888 !important; }
 
 html[data-theme="dark"] .pub-footer {
     border-top-color: #3a3a3a; color: #888;
 }
-html[data-theme="dark"] .pub-footer a { color: #b0c8e8; }
-html[data-theme="dark"] .pub-naar-boven { color: #888; }
-html[data-theme="dark"] .pub-naar-boven:hover { color: #b0c8e8; }
+html[data-theme="dark"] .pub-footer a { color: #b0c8e8 !important; }
+html[data-theme="dark"] .pub-naar-boven { color: #888 !important; }
+html[data-theme="dark"] .pub-naar-boven:hover { color: #b0c8e8 !important; }
 html[data-theme="dark"] .dm-toggle {
     background: #232323; border-color: #4a4a4a; color: #e0e0e0;
 }
@@ -362,7 +370,6 @@ html[data-theme="dark"] .figure {
 html[data-theme="dark"] .figure img {
     filter: invert(0.88) hue-rotate(180deg);
 }
-
 </style>
 <script>
 (function(){try{var t=localStorage.getItem('systeem-audit-thema');if(t!=='dark'&&t!=='light'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
@@ -378,7 +385,7 @@ html[data-theme="dark"] .figure img {
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document 0 — Inleiding en leeswijzer</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 13 oktober 2026, 19:35</p>
+<p class="meta-lijn">Versie bijgewerkt: 13 oktober 2026, 19:50</p>
 </div>
 
 <div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
@@ -475,7 +482,7 @@ html[data-theme="dark"] .figure img {
 </script>
 <footer class="pub-footer">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 13 oktober 2026, 19:35</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 13 oktober 2026, 19:50</p>
 <p><a href="home.html">← Terug naar overzicht</a> ·
      <a href="../index.html">🌐 Taalkeuze</a></p>
 </footer>
