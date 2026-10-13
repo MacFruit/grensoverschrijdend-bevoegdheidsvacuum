@@ -456,7 +456,7 @@ html[data-theme="dark"] .dm-toggle:hover {
 <div class="spectrum"><span style="background:#8b1e1e"></span><span style="background:#7a3e9d"></span><span style="background:#1a3c6e"></span><span style="background:#4a3b6b"></span><span style="background:#2e7d32"></span></div>
 <h1>Systeem-Audit</h1>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
-<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 13 oktober 2026, 20:31</p><div class="root-inhoud" id="root-inhoud">
+<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 13 oktober 2026, 20:41</p><div class="root-inhoud" id="root-inhoud">
 <style>
   .root-inhoud { max-width: 900px; margin: 24px auto 32px; padding: 0 20px;
                   font-family: Aptos, Calibri, sans-serif; }
@@ -488,6 +488,35 @@ html[data-theme="dark"] .dm-toggle:hover {
     .root-inhoud { padding: 0 16px; margin: 16px auto 24px; }
     .root-intro-grid { grid-template-columns: 1fr; }
     .root-intro-kolom p { font-size: 11pt; }
+  }
+
+  /* intro-rij dark-mode */
+  html[data-theme="dark"] .intro-rij[lang="nl"] {
+      --accent: #ff9147 !important;
+  }
+  html[data-theme="dark"] .intro-rij[lang="en"] {
+      --accent: #7fb3ff !important;
+  }
+  html[data-theme="dark"] .intro-rij[lang="de"] {
+      --accent: #ff8080 !important;
+  }
+  html[data-theme="dark"] .intro-rij[lang="fr"] {
+      --accent: #7fb3ff !important;
+  }
+  html[data-theme="dark"] .intro-rij h3,
+  html[data-theme="dark"] .intro-rij a.goto {
+      text-shadow: 0 0 1px rgba(255,255,255,0.25),
+                   0 0 3px rgba(255,255,255,0.10);
+  }
+  html[data-theme="dark"] .intro-rij {
+      background: #232323 !important;
+      box-shadow: 0 1px 3px rgba(0,0,0,.3) !important;
+  }
+  html[data-theme="dark"] .intro-rij p {
+      color: #b8b8b8 !important;
+  }
+  html[data-theme="dark"] .intro-rijen {
+      /* container */
   }
   </style>
 <div class="root-kaart">
