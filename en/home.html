@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <title>System Audit — Overview</title>
+<script>
+(function(){try{var t=localStorage.getItem('systeem-audit-thema');if(t!=='dark'&&t!=='light'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+</script>
 <style>/* === PUBLICATIE-CSS START === */
 
 body {
@@ -236,6 +239,12 @@ h1 {
 .doc-d .downloads a { background: #eef4ef; color: #2e7d32; }
 .doc-d .downloads a:hover { background: #ddeade; }
 
+.doc-e { border-left-color: #0d7377; background: #f4f9fa; }
+.doc-e .docletter { color: #0d7377; }
+.doc-e a.titel { color: #0d7377; }
+.doc-e .downloads a { background: #ecf4f5; color: #0d7377; }
+.doc-e .downloads a:hover { background: #dceced; }
+
 /* === A/B-banner (per-taal home) === */
 .pub-ab-banner {
     background: #fdf6e3;
@@ -360,6 +369,152 @@ h1 {
 .pub-footer a { color: #1a3c6e; text-decoration: none; }
 .pub-footer a:hover { text-decoration: underline; }
 
+/* === Dark mode === */
+html[data-theme="dark"] { color-scheme: dark; }
+html[data-theme="dark"] body {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+html[data-theme="dark"] h1 { color: #7fb3ff; }
+html[data-theme="dark"] .ondertitel { color: #c0c0c0; }
+html[data-theme="dark"] .auteur { color: #a0a0a0; }
+html[data-theme="dark"] .intro { color: #d0d0d0; }
+
+/* Documentkaarten */
+html[data-theme="dark"] .doc-lijst li {
+    background: #232323;
+    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+}
+html[data-theme="dark"] .doc-lijst li:hover {
+    box-shadow: 0 6px 18px rgba(0,0,0,.5);
+}
+html[data-theme="dark"] .doc-lijst .beschrijving { color: #b8b8b8; }
+
+/* Per-document accentkleuren — opgetild naar dark-tinten */
+html[data-theme="dark"] .doc-0 { border-left-color: #ff8a8a; background: #2a1c1c; }
+html[data-theme="dark"] .doc-0 a.titel { color: #ff8a8a; }
+html[data-theme="dark"] .doc-0 .docletter { color: #ff8a8a; }
+html[data-theme="dark"] .doc-0 .downloads a { background: #3a2424; color: #ff8a8a; }
+html[data-theme="dark"] .doc-0 .downloads a:hover { background: #4a2c2c; }
+
+html[data-theme="dark"] .doc-a { border-left-color: #c89bf0; background: #241c2a; }
+html[data-theme="dark"] .doc-a a.titel { color: #c89bf0; }
+html[data-theme="dark"] .doc-a .docletter { color: #c89bf0; }
+html[data-theme="dark"] .doc-a .downloads a { background: #322440; color: #c89bf0; }
+html[data-theme="dark"] .doc-a .downloads a:hover { background: #3d2c50; }
+
+html[data-theme="dark"] .doc-b { border-left-color: #7fb3ff; background: #1c2129; }
+html[data-theme="dark"] .doc-b a.titel { color: #7fb3ff; }
+html[data-theme="dark"] .doc-b .docletter { color: #7fb3ff; }
+html[data-theme="dark"] .doc-b .downloads a { background: #253040; color: #7fb3ff; }
+html[data-theme="dark"] .doc-b .downloads a:hover { background: #2d3a50; }
+
+html[data-theme="dark"] .doc-c { border-left-color: #a99cd4; background: #211f28; }
+html[data-theme="dark"] .doc-c a.titel { color: #a99cd4; }
+html[data-theme="dark"] .doc-c .docletter { color: #a99cd4; }
+html[data-theme="dark"] .doc-c .downloads a { background: #2c2940; color: #a99cd4; }
+html[data-theme="dark"] .doc-c .downloads a:hover { background: #38344f; }
+
+html[data-theme="dark"] .doc-d { border-left-color: #7fcf88; background: #1c241d; }
+html[data-theme="dark"] .doc-d a.titel { color: #7fcf88; }
+html[data-theme="dark"] .doc-d .docletter { color: #7fcf88; }
+html[data-theme="dark"] .doc-d .downloads a { background: #243a28; color: #7fcf88; }
+html[data-theme="dark"] .doc-d .downloads a:hover { background: #2d4932; }
+
+html[data-theme="dark"] .doc-e { border-left-color: #5fc8cc; background: #1c2628; }
+html[data-theme="dark"] .doc-e a.titel { color: #5fc8cc; }
+html[data-theme="dark"] .doc-e .docletter { color: #5fc8cc; }
+html[data-theme="dark"] .doc-e .downloads a { background: #234245; color: #5fc8cc; }
+html[data-theme="dark"] .doc-e .downloads a:hover { background: #2c5154; }
+
+/* A/B-banner */
+html[data-theme="dark"] .pub-ab-banner {
+    background: #332c14;
+    border-left-color: #d4a017;
+    color: #d0c090;
+}
+html[data-theme="dark"] .pub-ab-banner strong { color: #e8c268; }
+
+/* A/B-melding (voor als je die hier ook gebruikt) */
+html[data-theme="dark"] .ab-melding {
+    background: #332c14;
+    border-left-color: #d4a017;
+}
+html[data-theme="dark"] .ab-melding h3 { color: #e8c268; }
+html[data-theme="dark"] .ab-melding p { color: #d0c090; }
+
+/* EU-joke */
+html[data-theme="dark"] .eu-joke {
+    color: #a0a0a0;
+    border-top-color: #3a3a3a;
+    border-bottom-color: #3a3a3a;
+}
+
+/* Footer */
+html[data-theme="dark"] .footer {
+    color: #888;
+    border-top-color: #3a3a3a;
+}
+html[data-theme="dark"] .footer a { color: #b0c8e8; }
+html[data-theme="dark"] .pub-footer {
+    color: #888;
+    border-top-color: #3a3a3a;
+}
+html[data-theme="dark"] .pub-footer a { color: #b0c8e8; }
+
+/* Navigatie */
+html[data-theme="dark"] .pub-nav {
+    background: #232323;
+    border-bottom-color: #3a3a3a;
+}
+html[data-theme="dark"] .pub-nav a { color: #b0c8e8; }
+html[data-theme="dark"] .pub-nav a:hover { background: #2a2a2a; border-color: #4a4a4a; }
+html[data-theme="dark"] .pub-nav a.actief { background: #4a6fa5; color: #ffffff; }
+html[data-theme="dark"] .pub-nav a.home { border-color: #4a4a4a; }
+html[data-theme="dark"] .pub-nav .langs a {
+    background: #232323;
+    border-color: #4a4a4a;
+}
+html[data-theme="dark"] .pub-nav .langs a.lang-nl { --accent-soft: #3a2a14; }
+html[data-theme="dark"] .pub-nav .langs a.lang-en { --accent-soft: #1a2338; }
+html[data-theme="dark"] .pub-nav .langs a.lang-de { --accent-soft: #3a1818; }
+html[data-theme="dark"] .pub-nav .langs a.lang-fr { --accent-soft: #16273a; }
+html[data-theme="dark"] .pub-nav .langs a.actief { color: #ffffff; }
+
+/* Intro-rijen (voor als je die hier ook gebruikt) */
+html[data-theme="dark"] .intro-rij {
+    background: #232323;
+    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+}
+html[data-theme="dark"] .intro-rij:hover {
+    box-shadow: 0 8px 22px rgba(0,0,0,.5);
+}
+html[data-theme="dark"] .intro-rij h3 { color: var(--accent); }
+html[data-theme="dark"] .intro-rij p { color: #b8b8b8; }
+html[data-theme="dark"] .intro-rij a.goto { color: var(--accent); }
+
+/* Toggle-knop */
+.dm-toggle {
+    position: fixed; bottom: 80px; right: 24px; z-index: 200;
+    background: #ffffff; color: #1a3c6e; border: 1px solid #d5d0c5;
+    width: 44px; height: 44px; border-radius: 50%;
+    cursor: pointer; font-size: 18pt; line-height: 1; padding: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .15s, background .15s, border-color .15s;
+    font-family: Aptos, Calibri, sans-serif;
+}
+.dm-toggle:hover { transform: scale(1.1); background: #eef2f7; border-color: #1a3c6e; }
+.dm-toggle .dm-icon-lm { display: none; }
+html[data-theme="dark"] .dm-toggle .dm-icon-dm { display: none; }
+html[data-theme="dark"] .dm-toggle .dm-icon-lm { display: inline; }
+html[data-theme="dark"] .dm-toggle {
+    background: #232323; border-color: #4a4a4a; color: #e0e0e0;
+}
+html[data-theme="dark"] .dm-toggle:hover {
+    background: #2a2a2a; border-color: #7fb3ff;
+}
+
 /* === PUBLICATIE-CSS END === */</style>
 </head>
 <body>
@@ -373,7 +528,7 @@ h1 {
 <div class="spectrum"><span style="background:#8b1e1e"></span><span style="background:#4a3b6b"></span><span style="background:#2e7d32"></span></div>
 <h1>System Audit</h1>
 <p class="ondertitel">Cross-border jurisdictional vacuum in social security</p>
-<p class="auteur">Auteur : Eric Messa · Version mise à jour : 5 oktober 2026, 15:03</p>
+<p class="auteur">Author: Eric Messa · Version updated: 5 October 2026, 15:03</p>
 <div class="pub-ab-banner"><strong>Documents A and B</strong> — the narrative audit and the data matrix — will only be translated once the source data has been frozen. The facts are still evolving.</div>
 <p class="intro">This dossier documents what happens when a citizen falls between two national social security systems. Translation of the Dutch original — in case of doubt, the Dutch version prevails.</p>
 <ul class="doc-lijst">
@@ -407,5 +562,29 @@ h1 {
 <div class="footer">
 <p>Systeem-Audit — Eric Messa</p>
 </div>
+
+<button class="dm-toggle" type="button" onclick="dm_toggle()" title="Toggle dark/light mode" aria-label="Toggle dark/light mode">
+  <span class="dm-icon-dm">🌙</span>
+  <span class="dm-icon-lm">☀️</span>
+</button>
+<script>
+(function(){
+  function g(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+  function s(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  window.dm_toggle=function(){
+    var r=document.documentElement;
+    var n=r.getAttribute('data-theme')==='dark'?'light':'dark';
+    r.setAttribute('data-theme',n);
+    s('systeem-audit-thema',n);
+  };
+  try{
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(e){
+      if(!g('systeem-audit-thema')){
+        document.documentElement.setAttribute('data-theme',e.matches?'dark':'light');
+      }
+    });
+  }catch(e){}
+})();
+</script>
 </body>
 </html>

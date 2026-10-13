@@ -28,6 +28,25 @@ i { font-size: 10.5pt; color: #555555; }
 .datum { font-weight: bold; color: #000000; }
 .titel { font-weight: bold; text-transform: uppercase; }
 .opvolging { font-style: italic; color: #555555; }
+.entry.technisch { font-size: 10pt; color: #777; font-style: italic;
+                   padding: 2pt 0 2pt 12pt; border-left: 2pt solid #d5d0c5;
+                   margin-left: 4pt; margin-bottom: 5pt; }
+.entry.technisch .datum { color: #888; font-weight: normal; }
+.entry.technisch .titel { color: #666; font-weight: 600;
+                          text-transform: uppercase; font-size: 9.5pt; }
+.entry.technisch .opvolging { color: #999; }
+.richting { font-weight: 700; font-size: 10pt; letter-spacing: 0.5px;
+            margin-right: 3pt; }
+.richting-ontvangen { color: #1a3c6e; }
+.richting-verzonden { color: #8b1e1e; }
+.entry.technisch .richting { font-size: 9pt; }
+.entry.technisch .richting-ontvangen { color: #556a8b; }
+.entry.technisch .richting-verzonden { color: #8b5a5a; }
+.oorsprong { font-style: italic; color: #555555; font-size: 10.5pt; }
+.entry.technisch .oorsprong { color: #999; font-size: 9.5pt; }
+.technisch-notice { background: #f7f5f1; border-left: 4pt solid #d5d0c5;
+                    padding: 8pt 14pt; margin: 12pt 0 20pt;
+                    font-size: 10.5pt; color: #555; font-style: italic; }
 p.lead { font-style: italic; color: #444; margin-bottom: 12pt; }
 p.tijd { font-size: 10pt; color: #888888; font-style: italic; letter-spacing: 1pt; text-transform: uppercase; margin-bottom: 4pt; }
 svg { display: block; width: 100%; height: auto; margin: 8pt 0; }
@@ -169,6 +188,22 @@ tr:nth-child(even) td { background: #f4f1f8; }
     font-size: 10pt; color: #888; text-decoration: none;
 }
 .pub-naar-boven:hover { color: #1a3c6e; text-decoration: underline; }
+
+.dm-toggle {
+    position: fixed; bottom: 80px; right: 24px; z-index: 200;
+    background: #ffffff; color: #1a3c6e; border: 1px solid #d5d0c5;
+    width: 44px; height: 44px; border-radius: 50%;
+    cursor: pointer; font-size: 18pt; line-height: 1; padding: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .15s, background .15s, border-color .15s;
+    font-family: Aptos, Calibri, sans-serif;
+}
+.dm-toggle:hover { transform: scale(1.1); background: #eef2f7; border-color: #1a3c6e; }
+.dm-toggle .dm-icon-lm { display: none; }
+html[data-theme="dark"] .dm-toggle .dm-icon-dm { display: none; }
+html[data-theme="dark"] .dm-toggle .dm-icon-lm { display: inline; }
+
 @media (max-width: 700px) {
     .pub-nav { padding: 8px 12px; margin: -16pt -14pt 16pt -14pt; }
     .pub-nav a { padding: 5px 9px; font-size: 12pt; }
@@ -176,8 +211,162 @@ tr:nth-child(even) td { background: #f4f1f8; }
     .pub-toc { padding: 10pt 14pt; }
     .pub-toc .niv3 { padding-left: 24pt; }
 }
+
+
+html[data-theme="dark"] { color-scheme: dark; }
+
+html[data-theme="dark"] body {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4 {
+    color: #7fb3ff;
+    border-color: #4a6fa5;
+}
+html[data-theme="dark"] h5 { color: #a8c5e8; }
+html[data-theme="dark"] p.subtitel { color: #a0a0a0; }
+html[data-theme="dark"] p.lead { color: #b0b0b0; }
+html[data-theme="dark"] p.tijd { color: #a0a0a0; }
+html[data-theme="dark"] .netwerk { color: #b0b0b0; }
+html[data-theme="dark"] .meta { color: #c0c0c0; }
+html[data-theme="dark"] .meta strong { color: #7fb3ff; }
+html[data-theme="dark"] .datum { color: #f0f0f0; }
+html[data-theme="dark"] .titel { color: #e8e8e8; }
+html[data-theme="dark"] .opvolging { color: #a0a0a0; }
+html[data-theme="dark"] .richting-ontvangen { color: #7fb3ff; }
+html[data-theme="dark"] .richting-verzonden { color: #ff8a8a; }
+html[data-theme="dark"] .oorsprong { color: #a0a0a0; }
+html[data-theme="dark"] .entry.technisch {
+    background: #232323;
+    border-left-color: #4a4a4a;
+    color: #a0a0a0;
+}
+html[data-theme="dark"] .entry.technisch .datum { color: #909090; }
+html[data-theme="dark"] .entry.technisch .titel { color: #b0b0b0; }
+html[data-theme="dark"] .entry.technisch .opvolging { color: #808080; }
+html[data-theme="dark"] .entry.technisch .richting-ontvangen { color: #8fa8c8; }
+html[data-theme="dark"] .entry.technisch .richting-verzonden { color: #c89090; }
+html[data-theme="dark"] .technisch-notice {
+    background: #232323; color: #a0a0a0; border-left-color: #4a4a4a;
+}
+html[data-theme="dark"] hr { border-top-color: #3a3a3a; }
+html[data-theme="dark"] .titelblad h1 { color: #7fb3ff; }
+html[data-theme="dark"] .titelblad .ondertitel { color: #c0c0c0; }
+html[data-theme="dark"] .titelblad .documentaanduiding { color: #7fb3ff; }
+html[data-theme="dark"] .titelblad .auteur,
+html[data-theme="dark"] .titelblad .meta-lijn { color: #a0a0a0; }
+html[data-theme="dark"] .gebruikersaanwijzing p { color: #c0c0c0; }
+html[data-theme="dark"] table th { background: #2e4a72; border-color: #2e4a72; }
+html[data-theme="dark"] table td {
+    background: #232323; border-color: #3a3a3a; color: #d0d0d0;
+}
+html[data-theme="dark"] tr:nth-child(even) td { background: #2a2a2a; }
+html[data-theme="dark"] .figure { background: #232323; border-color: #3a3a3a; }
+html[data-theme="dark"] .figure svg { background: transparent; }
+html[data-theme="dark"] .caption {
+    color: #a0a0a0;
+    border-top-color: #3a3a3a;
+}
+html[data-theme="dark"] .intro-rechten {
+    background: #232323; color: #b0b0b0; border-left-color: #4a6fa5;
+}
+html[data-theme="dark"] .actie { background: #2a2440; color: #d0d0d0; }
+html[data-theme="dark"] .afsluiting { background: #2a2440; color: #d0d0d0; }
+html[data-theme="dark"] .werkversie { background: #332c14; color: #d0c090; }
+html[data-theme="dark"] .noot { color: #a0a0a0; border-top-color: #3a3a3a; }
+html[data-theme="dark"] a { color: #7fb3ff; }
+
+/* === Actor-blokken (Document C) === */
+html[data-theme="dark"] .actor {
+    border-bottom-color: #3a3a3a;
+}
+html[data-theme="dark"] .actor-naam { color: #e0e0e0; }
+html[data-theme="dark"] .actor-rol { color: #7fb3ff; }
+
+/* === Sectie-banners (Document C) === */
+html[data-theme="dark"] .banner-be {
+    background: #2a1c1c;
+    border-left-color: #ff8a8a;
+}
+html[data-theme="dark"] .banner-be strong { color: #ff8a8a; }
+
+html[data-theme="dark"] .banner-nl {
+    background: #1c2129;
+    border-left-color: #7fb3ff;
+}
+html[data-theme="dark"] .banner-nl strong { color: #7fb3ff; }
+
+html[data-theme="dark"] .banner-eu {
+    background: #1c2628;
+    border-left-color: #5fc8cc;
+}
+html[data-theme="dark"] .banner-eu strong { color: #5fc8cc; }
+
+/* === Inline badges === */
+html[data-theme="dark"] .badge-be { color: #ff8a8a; }
+html[data-theme="dark"] .badge-nl { color: #7fb3ff; }
+html[data-theme="dark"] .badge-mem { color: #ffb380; }
+html[data-theme="dark"] .badge-eu { color: #5fc8cc; }
+
+/* === Sectorkoppen + recht-ankers (Document E) === */
+html[data-theme="dark"] .sector-titel { color: #7fb3ff; }
+html[data-theme="dark"] .recht-kop-wrapper { border-bottom-color: #4a6fa5; }
+html[data-theme="dark"] .legend-row { color: #c0c0c0; }
+
+/* === Contactblok === */
+html[data-theme="dark"] .contactblok {
+    background: #232323;
+    border-left-color: #4a6fa5;
+}
+html[data-theme="dark"] .contactblok a { color: #7fb3ff; }
+
+/* === Navigatie === */
+html[data-theme="dark"] .pub-nav {
+    background: #232323; border-bottom-color: #3a3a3a;
+}
+html[data-theme="dark"] .pub-nav a { color: #b0c8e8; }
+html[data-theme="dark"] .pub-nav a:hover { background: #2a2a2a; border-color: #4a4a4a; }
+html[data-theme="dark"] .pub-nav a.actief { background: #4a6fa5; color: #ffffff; }
+html[data-theme="dark"] .pub-nav a.home { border-color: #4a4a4a; }
+html[data-theme="dark"] .pub-nav .titel-klein { color: #888; }
+
+html[data-theme="dark"] .pub-toc {
+    background: #232323; border-left-color: #4a6fa5;
+}
+html[data-theme="dark"] .pub-toc a { color: #b0c8e8; }
+html[data-theme="dark"] .pub-toc .niv3 { color: #888; }
+
+html[data-theme="dark"] .pub-footer {
+    border-top-color: #3a3a3a; color: #888;
+}
+html[data-theme="dark"] .pub-footer a { color: #b0c8e8; }
+html[data-theme="dark"] .pub-naar-boven { color: #888; }
+html[data-theme="dark"] .pub-naar-boven:hover { color: #b0c8e8; }
+html[data-theme="dark"] .dm-toggle {
+    background: #232323; border-color: #4a4a4a; color: #e0e0e0;
+}
+html[data-theme="dark"] .dm-toggle:hover {
+    background: #2a2a2a; border-color: #7fb3ff;
+}
+
+/* === SVG dark-mode === */
+html[data-theme="dark"] .figure svg {
+    filter: invert(0.88) hue-rotate(180deg);
+}
+html[data-theme="dark"] .figure {
+    background: #1e1e1e;
+}
+html[data-theme="dark"] .figure img {
+    filter: invert(0.88) hue-rotate(180deg);
+}
+
 </style>
-</head>
+<script>
+(function(){try{var t=localStorage.getItem('systeem-audit-thema');if(t!=='dark'&&t!=='light'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+</script></head>
 <body><a id="top"></a>
 <nav class="pub-nav">
 <div class="links"><a class="home" href="home.html">← Overzicht</a> <a class="home" href="../index.html">🌐 Taalkeuze</a> <a class="" href="document-0.html">Inleiding</a> <a class="actief" href="document-a.html">Narratief</a> <a class="" href="document-b.html">Data</a> <a class="" href="document-c.html">Visueel</a> <a class="" href="document-d.html">Synthese</a> <a class="" href="document-e.html">Rechten</a></div>
@@ -189,7 +378,7 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document A — De narratieve audit</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 6 oktober 2026, 14:20</p>
+<p class="meta-lijn">Versie bijgewerkt: 13 oktober 2026, 19:35</p>
 </div>
 
 <div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
@@ -197,9 +386,11 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <li class="niv2"><a href="#inhoudsopgave">Inhoudsopgave</a></li>
 <li class="niv1"><a href="#i-belgië">I. België</a></li>
 <li class="niv2"><a href="#zorg-fysieke-realiteit">Zorg &amp; Fysieke Realiteit</a></li>
+<li class="niv3"><a href="#bajart-orthopedie">BAJART ORTHOPEDIE</a></li>
 <li class="niv3"><a href="#huisartsenpraktijk-ter-vierschaar">HUISARTSENPRAKTIJK TER VIERSCHAAR</a></li>
 <li class="niv3"><a href="#onafhankelijke-experts-be">ONAFHANKELIJKE EXPERTS (BE)</a></li>
 <li class="niv3"><a href="#oogartsen-sint-niklaas">OOGARTSEN SINT-NIKLAAS</a></li>
+<li class="niv3"><a href="#orthovano">ORTHOVANO</a></li>
 <li class="niv3"><a href="#uz-gent">UZ GENT</a></li>
 <li class="niv3"><a href="#vitaz">VITAZ</a></li>
 <li class="niv2"><a href="#financiën-rechten-sociale-zekerheid">Financiën, Rechten &amp; Sociale Zekerheid</a></li>
@@ -216,9 +407,9 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <li class="niv2"><a href="#escalatie-controle">Escalatie &amp; Controle</a></li>
 <li class="niv3"><a href="#controledienst-voor-de-ziekenfondsen-cdz">CONTROLEDIENST VOOR DE ZIEKENFONDSEN (CDZ)</a></li>
 <li class="niv3"><a href="#de-federale-ombudsman">DE FEDERALE OMBUDSMAN</a></li>
-<li class="niv3"><a href="#arbeidsauditoraat-gent">ARBEIDSAUDITORAAT GENT</a></li>
 <li class="niv3"><a href="#de-kamer-commissie-sociale-zaken">DE KAMER (COMMISSIE SOCIALE ZAKEN)</a></li>
 <li class="niv3"><a href="#commissie-voor-verzoekschriften">COMMISSIE VOOR VERZOEKSCHRIFTEN</a></li>
+<li class="niv3"><a href="#arbeidsauditoraat-gent">ARBEIDSAUDITORAAT GENT</a></li>
 <li class="niv3"><a href="#koninklijk-paleis-van-belgië">KONINKLIJK PALEIS VAN BELGIË</a></li>
 <li class="niv3"><a href="#orde-der-artsen">ORDE DER ARTSEN</a></li>
 <li class="niv3"><a href="#politieke-partijen-fracties">POLITIEKE PARTIJEN &amp; FRACTIES</a></li>
@@ -273,9 +464,19 @@ tr:nth-child(even) td { background: #f4f1f8; }
 
 <h1 id="i-belgië">I. België</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <h2 id="zorg-fysieke-realiteit">Zorg &amp; Fysieke Realiteit</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h3 id="bajart-orthopedie">BAJART ORTHOPEDIE</h3>
+<p class="subtitel">De Schoen die niet Paste</p>
+<p>Bajart Orthopedie is een orthopedisch schoenmaker met hoofdzetel te Bornem en een afdeling te Grembergen (Dendermonde). De organisatie werkt op voorschrift van artsen en specialisten en levert maatschoenen, semi-orthopedische schoenen en steunzolen binnen het Belgische terugbetalingsstelsel van het RIZIV. De facturatie loopt rechtstreeks met de adviserend arts van de mutualiteit; de patiënt betaalt enkel een remgeld.</p>
+<p>Voor de aanvrager werd in 2025 een orthopedische schoen volledig op maat gemaakt, op voorschrift van dr. Hofman. De kostprijs van de schoen bedroeg meer dan € 2.500, waarvan het remgeld voor de patiënt ongeveer € 50 bedroeg. Vanaf de eerste testfase traden complicaties op: een bloedblaar onder de voorvoet, gevolgd door blijvende wrijvingspijn na elke aanpassing. De aanpassingen werden uitgevoerd op de afdeling te Grembergen, op ongeveer een uur rijden van de woonplaats van de aanvrager. Na elke aanpassing volgde hetzelfde patroon: het probleem bleef, de schoen bleef pijnlijk, en de aanvrager moest opnieuw de rit maken. Bij de definitieve afgifte op 12-09-2025 was de schoen nog steeds niet draagbaar. De klinische werkelijkheid — een naar boven afgebogen voet met ernstige diabetische neuropathie en eerdere amputaties — was niet in de schoen verwerkt.</p>
+<p>Toen de aanvrager de schoen later meenam naar een gespecialiseerde orthopedisch schoentechnoloog binnen het Universitair Ziekenhuis Gent, stelde deze vast dat de schoen structureel te plat was gemaakt, zonder de vereiste opwaartse correctie en zonder voldoende binnenruimte voor de vervormde voet. De UZ Gent-specialist probeerde de schoen te herstellen, maar ook dit leverde geen bruikbaar resultaat op. De schoen bleef pijnlijk bij elke stap. Het eindresultaat is dat € 2.500 aan publieke middelen werd besteed aan een schoen die de patiënt niet kan aandoen, terwijl de patiënt zelf elke aanpassing met een uur reistijd en een fysieke terugslag heeft betaald.<sup>*1*</sup> <sup>*2*</sup></p>
+<div class="footnotes">
+<p>*1* Factuur Remgeld 20/03/2026 – Order 25001331 – Bajart Orthopedie: geleverd op 12/09/2025 (Orthopedische schoenen links en rechts, afgietsels). Remgeld € 52,02.</p>
+<p>*2* Factuur 20250193 d.d. 05-06-2025 – Verbandschoen PO500 maat 39/40 afgeleverd tijdens ziekenhuisopname, € 80,00, betaald op 26-05-2025.</p>
+</div>
+
 <h3 id="huisartsenpraktijk-ter-vierschaar">HUISARTSENPRAKTIJK TER VIERSCHAAR</h3>
 <p class="subtitel">De Eerstelijnsbrug en Institutionele Ontkenning</p>
-<p>Anders dan de gesloten datasilo's van de regionale ziekenhuizen en de weigerachtige houding van de private sector, vormt de eerstelijnszorg de enige constante factor in het traject. Vanaf de pre-crisis nulmeting in het voorjaar van 2025 tot ver in het complexe post-operatieve stadium fungeert de huisartsenpraktijk als de centrale medische regisseur. De cruciale rol van deze actor ligt in de actieve doorbreking van de data-isolatie. Door de geactualiseerde medische samenvatting — inclusief de onomkeerbare amputaties, neuropathie en kritieke weefselafbraak — officieel te publiceren op het federale eHealth-knooppunt, worden deze feiten onweerlegbaar en real-time verankerd. Vanaf dat moment kunnen controlerende en uitkerende instanties zich onmogelijk nog beroepen op een gebrek aan medische informatie.</p>
+<p>Anders dan de gesloten datasilo's van de regionale ziekenhuizen en de weigerachtige houding van de private sector, vormt de eerstelijnszorg de enige constante factor in het traject. Vanaf de pre-crisis nulmeting in het voorjaar van 2025 tot ver in het complexe post-operatieve stadium fungeert de huisartsenpraktijk als de centrale medische regisseur. De cruciale rol van deze actor ligt in de actieve doorbreking van de data-isolatie. Door de geactualiseerde medische samenvatting — inclusief de onomkeerbare amputaties, neuropathie en kritieke weefselafbraak — officieel te publiceren op het federale eHealth-knooppunt, worden deze feiten onweerlegbaar en real-time verankerd. Feitelijk is een beroep op ontbrekende medische informatie daarmee onhoudbaar geworden. De praktijk leert echter dat dit de uitkerende instantie niet weerhoudt om zich formeel alsnog te beroepen op het ontbreken van actuele huisartsverslagen, zoals de CM-ombudsman op 14 juli 2026 deed.</p>
 <p>Wanneer de administratieve impasse over de landsgrenzen heen escaleert, vult de huisarts de leemte die de specialisten in de tweede lijn lieten vallen. De praktijk levert actief de systeemvertaling die de administratie eist. Zo worden de uitgebreide federale inlichtingenformulieren ter erkenning van de zware handicap ingevuld, worden er fiscale dieetbevestigingen opgemaakt en wordt er een overkoepelend getuigschrift van permanente arbeidsongeschiktheid afgeleverd. Hierin wordt de medische toestand niet benaderd als een tijdelijk te genezen defect, maar wordt de horizon van de invaliditeit realistisch vastgeklikt op de grens van de eenentwintigste eeuw.</p>
 <p>De huisarts verricht daarnaast een unieke transnationale handeling door de grens van de eigen jurisdictie te overstijgen. De complexe en gestapelde medische problematiek (comorbiditeit) wordt methodisch geconverteerd naar de specifieke belastbaarheidsmatrix die aan de andere kant van de grens wordt gehanteerd *1*. Deze vertaalslag objectiveert een keiharde energetische limiet van maximaal vier uur actieve belasting per dag. Hiermee levert de Belgische eerstelijnszorg exact het gestructureerde instrumentarium waar de Nederlandse toezichthouder formeel om vraagt voor het vaststellen van het arbeidsvermogen.</p>
 <p>De systeembreuk openbaart zich in dit stadium niet langer in het ontbreken van data, maar in de doelbewuste institutionele ontkenning ervan. Zowel het Belgische ziekenfonds als de Nederlandse uitkeringsinstantie weigeren het sluitende oordeel van de huisarts te accepteren, en kwalificeren deze medische en administratieve synthese als niet-bindend. Men erkent de ontvangst van de documenten, maar negeert de inhoud om de eigen afwijzingsprotocollen in stand te kunnen houden. Dit objectiveert een dwingende systeemparadox: toezichthoudende instanties eisen onafhankelijke medische data om rechten te kunnen toekennen, maar zodra die data sluitend en onweerlegbaar worden aangeleverd door de eerstelijnszorg, worden ze door diezelfde instanties administratief ongeldig verklaard.</p>
@@ -304,9 +505,19 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <p>*2* Ten behoeve van de aanvraag voor een erkenning van ten minste 66% invaliditeit bij de bevoegde Belgische federale overheidsdienst.</p>
 </div>
 
+<h3 id="orthovano">ORTHOVANO</h3>
+<p class="subtitel">De Schoentechnoloog die de Fout Zag</p>
+<p>Orthovano is een gespecialiseerde orthopedisch schoentechnoloog, geaccrediteerd door het RIZIV en verbonden aan een academisch multidisciplinair netwerk rond orthopedisch schoeisel en steunzolen. De organisatie werkt vanuit vestigingen in Kortrijk en Gent en levert aan huisartsen, podologen en ziekenhuisspecialisten. Een belangrijk verschil met de klassieke orthopedische schoenmaker is dat de aanmeting, aanpassing en opvolging voor een deel op verplaatsing gebeurt: de technoloog komt tweemaal per maand op de campus van het Universitair Ziekenhuis Gent, zodat de patiënt niet telkens de fysieke rit naar de winkel moet maken. Dit is precies wat het traject voor de aanvrager vereenvoudigt: de schoenopvolging wordt gekoppeld aan de reeds geplande academische consultaties, wat de reislast halveert.</p>
+<p>In het dossier van de aanvrager speelt Orthovano een sleutelrol als <em>auditor</em> van het eerdere traject. Toen de schoen werd meegebracht die eerder door Bajart Orthopedie op maat was gemaakt, stelde de schoentechnoloog vast dat de schoen structureel te plat was uitgevoerd, dat de vereiste opwaartse correctie voor de opwaarts afgebogen voet ontbrak, en dat er onvoldoende binnenruimte was voor de vervormde voorvoet met amputatiedefect. Dit oordeel verklaart waarom de eerdere aanpassingen keer op keer faalden: het was geen kwestie van bijsturen, maar van een ontwerpfout in de basisconstructie. Het feit dat een academisch verbonden schoentechnoloog tot deze conclusie komt, is een objectieve bevestiging dat het eerdere traject niet op medische gronden faalde, maar op constructieve gronden.</p>
+<p>De overstap naar Orthovano betekent voor de aanvrager een fundamentele verschuiving: van een leverancier die de schoen na verkoop bleef aanpassen zonder de oorzaak te begrijpen, naar een technoloog die de schoen beoordeelt in samenhang met de klinische realiteit en de structurele fout durft te benoemen. De verdere zorg bestaat uit een nieuwe aanmeting, een constructie die rekening houdt met de opwaartse voetstand, en een opvolging die gecombineerd wordt met de academische endocrinologische en podologische controles in hetzelfde ziekenhuis.<sup>*1*</sup> <sup>*2*</sup></p>
+<div class="footnotes">
+<p>*1* Contactgegevens zoals vermeld op de patiëntenkaart: Benoit Vanhoutte, orthopedisch schoentechnoloog, RIZIV 101850-74-000, benoit@orthovano.be, www.orthovano.be. Locatie Kortrijk: Universiteitslaan 4, T 056 21 86 69. Locatie Gent: Martelaarslaan 264, T 09 234 15 74.</p>
+<p>*2* Eerdere constructie: Bajart Orthopedie, order 25001331, afgeleverd op 12-09-2025 (orthopedische schoenen links en rechts + afgietsels), remgeld € 52,02. De schoen bleek niet draagbaar; de structurele fout werd vastgesteld door de UZ Gent-schoentechnoloog.</p>
+</div>
+
 <h3 id="uz-gent">UZ GENT</h3>
 <p class="subtitel">De Academische Overkoepeling en Protocollaire Frictie</p>
-<p>Als direct gevolg van de administratieve verlamming op het regionale niveau, verschuift het zwaartepunt van het dossier in het voorjaar van 2026 naar de academische tweede lijn. Dit universitair ziekenhuis wordt ingeschakeld om de gefragmenteerde en geïsoleerde medische realiteit te consolideren. Anders dan de perifere eilandcultuur hanteert deze instelling een multidisciplinaire aanpak, waarbij endocrinologie, gespecialiseerde wondzorg en oogheelkunde digitaal worden verweven. De opgebouwde data blijft hier niet opgesloten in een interne silo, maar stroomt via de gekoppelde eHealth-platformen *1* direct door naar het centrale nationale netwerk. De patiënt verliest hierdoor zijn onbedoelde rol als handmatige data-koerier, aangezien de klinische feiten — zoals pathologische weefselschade en nierfalen — onweerlegbaar en real-time zichtbaar worden voor de toezichthoudende overheden.</p>
+<p>Als direct gevolg van de administratieve verlamming op het regionale niveau, verschuift het zwaartepunt van het dossier in het voorjaar van 2026 naar de academische tweede lijn. Dit universitair ziekenhuis wordt ingeschakeld om de gefragmenteerde en geïsoleerde medische realiteit te consolideren. Anders dan de perifere eilandcultuur hanteert deze instelling een multidisciplinaire aanpak, waarbij endocrinologie, gespecialiseerde wondzorg en oogheelkunde digitaal worden verweven. De opgebouwde data blijft hier niet opgesloten in een interne silo, maar stroomt via de gekoppelde eHealth-platformen *1* direct door naar het centrale nationale netwerk. De klinische feiten — zoals pathologische weefselschade en nierfalen — worden onweerlegbaar en real-time zichtbaar binnen het Belgische netwerk. Voor de Belgische toezichthouders wordt een beroep op ontbrekende data daarmee feitelijk onhoudbaar. In de praktijk blijft de handmatige tussenkomst echter bestaan: de adviserend arts van de CM beroept zich op een technische beperking (adviserend artsen zouden geen toegang hebben tot het eHealth/CoZo-netwerk), en de FOD Sociale Zekerheid blijft vasthouden aan papieren aanschrijvingen naast de digitale kanalen. Het beschikbaar maken van data betekent niet dat die data ook automatisch worden gebruikt. Voor de Nederlandse kant blijft die echter bestaan: de gegevens stromen niet automatisch door naar verzekeraar CZ of uitkeringsinstantie UWV. De patiënt blijft daar de handmatige schakel, omdat de grensoverschrijdende koppeling ontbreekt.</p>
 <p>Toch botst ook deze hoogwaardige academische infrastructuur vrijwel onmiddellijk op de realiteit van de grens. De frictie ontstaat hier niet door onwil, maar door incompatibele nationale protocollen. Wanneer er acute, invasieve injecties in de oogbol noodzakelijk blijken ter bestrijding van verdere weefselafbraak, weigert de buitenlandse zorgverzekeraar in het woonland de logistieke ondersteuning (zittend ziekenvervoer) te vergoeden. Deze weigering is strikt gebaseerd op het ontbreken van een specifiek gezichtsveldonderzoek *2*, een administratief controle-instrument dat binnen de klinische protocollen van het Belgische academische ziekenhuis niet standaard wordt uitgevoerd voor deze aandoening. De grensarbeider raakt hierdoor logistiek bekneld in een vacuüm tussen twee systemen die elkaars medische standaarden en bewijslasten niet wederzijds erkennen.</p>
 <p>Naast de grensoverschrijdende botsingen openbaren zich ook binnen de instelling zelf aanhoudende systeemfouten, veelal gedreven door strikte parameters in de software. Zo wordt een specifieke diabetische behandelconventie initieel geblokkeerd puur op basis van de buitenlandse domiciliëring van de patiënt, wat dwingt tot handmatige correcties om de toegang tot zorg te herstellen. Een fundamenteler breekpunt is de algoritmische categorisering van de aandoening. Een objectieve laboratoriummeting *3* bewijst definitief dat de alvleesklier niet bezwijkt onder een auto-immuunziekte, maar onder systematische overbelasting. In plaats van deze data te gebruiken voor medisch maatwerk, grijpt het administratieve systeem in: het dossier wordt onherroepelijk vastgeklikt in een strikte, gedegradeerde classificatie *4*. Dit algoritme negeert de ernst van de reeds opgelopen amputaties en orgaanschade volledig, en blokkeert de vergoeding van geavanceerde sensortechnologie simpelweg omdat het toegekende label niet past bij de administratieve polisvoorwaarden.</p>
 <p>Het cruciale en doorslaggevende verschil met de eerste lijn is echter de actieve bereidheid tot administratieve vertaling. Waar eerdere actoren weigerden de klinische feiten te converteren naar maatschappelijk bruikbare documenten, levert de academische structuur deze onmisbare sleutel wél. De specialisten produceren sluitende getuigschriften en vullen de complexe, vormstrenge documenten in *5* die de federale overheid eist. Hiermee objectiveren zij niet alleen de fysieke defecten, maar vertalen zij deze actief naar een blijvende verstoring van de biomechanica en een permanent verlies van zelfredzaamheid. Deze academische bekrachtiging doorbreekt de initiële patstelling, levert de forensische bewijslast die nodig is om de overheden in beweging te dwingen, en legt het fundament voor de escalatie naar de uitvoerende en controlerende instanties verderop in het netwerk.</p>
@@ -356,8 +567,8 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <p class="subtitel">De Poortwachter en de Blokkade van Gegevens</p>
 <p>Na de foutloze administratieve overdracht door de private werkgever, belandt het dossier bij de poortwachter van de Belgische sociale zekerheid: het ziekenfonds. Hier transformeert de procedurele stroom direct in een aanhoudende institutionele blokkade. Vanaf het moment dat de acute fysieke uitval in het voorjaar van 2025 wordt gemeld, weigert deze instantie de inkomensvervangende uitkering toe te kennen. Initieel verschuilt men zich achter een interne registratiefout waarbij de tewerkstelling en het onafhankelijke lidmaatschap van maart 2025 worden genegeerd. Het essentiële verdragsformulier (S072) wordt pas eind juni 2025 naar Nederland doorgegeven, wat de technische oorzaak vormt voor onterechte geautomatiseerde weigeringen wegens 'geen hoedanigheid' in het voorjaar. Wanneer deze foutieve status onhoudbaar blijkt, werpt men een nieuwe, zwaardere barrière op: de weigering om het Europese recht toe te passen.</p>
 <p>Binnen de Europese Unie is wettelijk vastgelegd dat gewerkte jaren over de landsgrenzen heen naadloos bij elkaar opgeteld moeten worden *1*. Het ziekenfonds negeert deze dwingende regelgeving echter volkomen en beoordeelt de aanvraag uitsluitend op basis van de eigen, nationale referteperiode. De decennialange opbouw van sociale rechten in twee verschillende landen wordt hiermee met één administratieve pennenstreek uitgewist.</p>
-<p>De ware frictie in het systeem openbaart zich in de tegenstrijdigheid van het eigen handelen. Terwijl het ziekenfonds weigert het inkomensverlies te compenseren, keurt hun eigen adviserend arts wél duizenden euro's aan orthopedische hulpmiddelen en gespecialiseerde diabeteszorg goed. Men financiert de fysieke reparatie van de amputaties, maar ontkent op papier dat deze zelfde amputaties leiden tot arbeidsongeschiktheid. Deze paradox leidt tot een feitelijke patstelling wanneer de patiënt — om zijn fiscale voordelen te kunnen veiligstellen — uitsluitend om een medisch invaliditeitsattest verzoekt. Het ziekenfonds weigert dit af te leveren met als expliciet argument dat er geen financieel recht op een uitkering is. De objectieve medische waarheid wordt zo onlosmakelijk vastgeketend aan een intern budgettair besluit.</p>
-<p>Om deze ontkenning in stand te houden, sluit de instantie de datastromen naar de buitenwereld af. De registratie van de ziektestatus in de centrale, overkoepelende databank *2* wordt in de zomer van 2025 stopgezet. Hierdoor worden andere overheidsdiensten, zoals uitbetalers van kindergeld en de fiscus, volledig blind gemaakt voor de medische realiteit van het gezin. In het voorjaar van 2026 gaat de instantie nog een stap verder door een fictieve einddatum voor de ziekteperiode in de systemen in te voeren, exact enkele dagen vóór de wettelijke grens van één jaar. Dit blokkeert de automatische wettelijke overgang naar de permanente invaliditeitsstatus.</p>
+<p>De ware frictie in het systeem openbaart zich in de tegenstrijdigheid van het eigen handelen. Terwijl het ziekenfonds weigert het inkomensverlies te compenseren, keurt hun eigen adviserend arts wél duizenden euro's aan orthopedische hulpmiddelen en gespecialiseerde diabeteszorg goed. Men financiert de fysieke reparatie van de amputaties en erkent de medische arbeidsongeschiktheid formeel (medische erkenning I en II, juni 2025; bevestiging 18 september 2026), maar weigert de financiële consequentie: het uitkeringsrecht en het invaliditeitsattest dat daaruit zou moeten volgen. Deze paradox leidt tot een feitelijke patstelling wanneer de patiënt — om zijn fiscale voordelen te kunnen veiligstellen — uitsluitend om een medisch invaliditeitsattest verzoekt. Het ziekenfonds weigert dit af te leveren met als expliciet argument dat er geen financieel recht op een uitkering is. De objectieve medische waarheid wordt zo onlosmakelijk vastgeketend aan een intern budgettair besluit.</p>
+<p>Om deze ontkenning in stand te houden, blokkeert de instantie de datastromen naar de buitenwereld. De registratie van de ziektestatus in de centrale, overkoepelende databank *2* wordt in de zomer van 2025 stopgezet, nadat de aanvrager na een reeks opeenvolgende weigeringen heeft besloten de handmatige indiening van getuigschriften te staken. Beide partijen versterken zo elkaars stilstand: de CM weigert te erkennen, en de aanvrager weigert de administratieve cyclus te blijven voeden die tot die erkenning zou moeten leiden. Hierdoor worden andere overheidsdiensten, zoals uitbetalers van kindergeld en de fiscus, volledig blind gemaakt voor de medische realiteit van het gezin. In het voorjaar van 2026 gaat de instantie nog een stap verder door een fictieve einddatum voor de ziekteperiode in de systemen in te voeren, exact enkele dagen vóór de wettelijke grens van één jaar. Dit blokkeert de automatische wettelijke overgang naar de permanente invaliditeitsstatus.</p>
 <p>Zelfs wanneer de patiënt via academische ziekenhuizen en het federale patiëntenportaal onweerlegbaar bewijs van blijvende orgaanschade aanlevert, weigert de interne ombudsdienst in te grijpen en valideert deze de geconstrueerde administratieve fictie. Het vangnet functioneert hier niet als bescherming, maar als de primaire bron van financiële en administratieve uitputting voor de burger.</p>
 <p>In september 2026 bereikt de administratieve impasse haar definitieve vorm. Op 18 september stelt de dossierbeheerder dat de medische erkenning vaststaat, maar een uitkering wordt geweigerd wegens de nationale wachttijd, waarbij een lopend bezwaarschrift wordt genegeerd. Op 19 september volgt een formele ingebrekestelling van de Functionaris voor Gegevensbescherming (DPO) wegens het niet verschaffen van systeemlogboeken en audit-trails. Eind september levert de DPO van toezichthouder RIZIV de finale objectivering van het systeemfalen: een onafhankelijke raadpleging van het nationale knooppunt bewijst zwart-op-wit dat er in de voorafgaande zes maanden geen enkel elektronisch bericht over het ziekte- of invaliditeitsdossier is uitgewisseld tussen de CM en de Nederlandse instanties (UWV of CZ) *3*. De CM verzuimt actief te communiceren via de dwingende Europese netwerken, waardoor de grensarbeider ongewild de enige overgebleven datalink vormt tussen twee natiestaten.</p>
 <div class="footnotes">
@@ -371,7 +582,7 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <p>Terwijl het ziekenfonds de medische erkenning blokkeert, stuit het dossier bij de federale belastingdienst (FOD Financiën) op een vergelijkbare administratieve leegte. Deze instantie weigert echter niet expliciet om op te treden; zij verschuilt zich simpelweg achter een muur van bevoegdheden. Wanneer een burger door zware medische schade (zoals amputaties en ernstig visusverlies) zijn verdienvermogen verliest, heeft hij wettelijk recht op een financiële compensatie via de belastingen *1*. De fiscus weigert echter om de onweerlegbare medische attesten van de huisarts en academische specialisten zelf in behandeling te nemen of te beoordelen.</p>
 <p>De belastingdienst stelt zich in dit dossier uitsluitend op als een procedurele rekenmachine. Om de belastingverlaging toe te passen, eisen zij een kant-en-klaar digitaal vinkje van een heel andere overheidsdienst: de FOD Sociale Zekerheid (DG Personen met een handicap). Omdat die instantie de medische erkenning maandenlang blokkeert, ontstaat er een klassiek en uitzichtloos 'van het kastje naar de muur'-scenario. De fiscus eist een document dat op dat moment niet geleverd kan worden, en weigert elke verantwoordelijkheid voor de impasse te nemen.</p>
 <p>Wanneer de patiënt deze cirkelredenering probeert te doorbreken door de belastingdienst rechtstreeks een sluitend, overkoepelend invaliditeitsattest van de eigen huisarts te sturen, blijft de muur gesloten. De fiscus weigert niet alleen duidelijkheid te geven over de eigen beoordelingscriteria, maar levert zelfs het procedureel onuitvoerbare advies af om een Nederlandse arts de Belgische voorwaarden te laten evalueren. Een uitweg die wettelijk niet eens bestaat.</p>
-<p>Zelfs wanneer de blokkade in augustus 2026 deels wordt doorbroken en er na een fysieke keuring een officiële federale erkenning van de handicap wordt afgeleverd, verplaatst de belastingdienst simpelweg de doelpalen. De fiscus verwerpt het behaalde medische besluit, omdat het systeem voor dit specifieke fiscale voordeel net een fractie hogere score eist dan de toegekende 8 punten. De zware medische realiteit wordt hierdoor definitief ondergeschikt gemaakt aan een geprogrammeerde wiskundige drempel.</p>
+<p>Zelfs wanneer de blokkade in augustus 2026 deels wordt doorbroken en er na een fysieke keuring een officiële federale erkenning van de handicap wordt afgeleverd, verwerpt de belastingdienst het behaalde medische besluit. De fiscus past de bestaande wettelijke norm toe: voor het specifieke fiscale voordeel is een score van minstens 9 punten vereist, terwijl de keuring 8 punten heeft toegekend. De zware medische realiteit wordt hierdoor ondergeschikt aan een scoreverschil van één punt — een verschil dat niet berust op een nieuw criterium, maar op de vaste drempelwaarde die al in de fiscale wetgeving staat.</p>
 <p>Als ultieme tegenreactie op deze blinde, geautomatiseerde afwijzingen en het ontbreken van correcte internationale gegevensuitwisseling rondom het wereldinkomen, start de grensarbeider een formeel traject om de Europese datastromen op te eisen *2*. De fiscus, die blind vaart op falende digitale registers, wordt hierbij gedwongen om de eigen achterliggende techniek en de gebrekkige grensoverschrijdende communicatie met Nederland transparant te maken.</p>
 <p>Toch blijkt de muur niet absoluut. Via een handmatige bypass — een rechtstreeks medisch attest van de huisarts bij de BNI-aangifte, buiten de KSZ en buiten DG HAN om — wordt de verhoogde belastingvrije som alsnog geactiveerd. De aangifte is op 25 september 2026 ingediend met een berekend saldo van € 2.669,97 in het voordeel. Definitieve verwerking en aanslagbiljet van de FOD Financiën worden afgewacht. En in een onafhankelijke steekproef die een externe onderzoeker bij het Team Beheer en Dienstverlening van de Belasting Niet-Inwoners (PG15 Ledeberg) anoniem uitvoert, bevestigt de fiscus schriftelijk dat het spontaan toevoegen van medische verklaringen aan de aangifte een geldige route is om de fiscale handicapstatus naar Belgisch recht aan te tonen. De bypass is daarmee geen gok meer, maar een door de fiscus zelf gevalideerde weg.</p>
 <div class="footnotes">
@@ -395,7 +606,7 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <p class="subtitel">De Territoriale Blokkade en Algoritmische Procedurefout</p>
 <p>Waar de belastingdienst zich verschool achter het ontbreken van een digitaal vinkje, toont het dossier bij de Directie-Generaal Personen met een Handicap (DG HAN) precies aan waarom dat vinkje onmogelijk te verkrijgen was. Deze federale instantie beheert de formele erkenning van invaliditeit. Het proces loopt hier echter direct bij de voordeur vast op een fundamentele architectuurfout in de software. Wanneer de grensarbeider via het online overheidsportaal wil inloggen om zijn medische situatie te registreren, genereert het systeem onmiddellijk een harde foutcode (Error 5124). De oorzaak is louter territoriaal: het portaal accepteert uitsluitend Belgische adressen. Het systeem bezit letterlijk geen digitale categorie voor een burger die eenentwintig jaar lang in België werkte en sociale bijdragen betaalde, maar aan de andere kant van de landsgrens slaapt.</p>
 <p>Deze digitale blokkade wordt door de instantie vervolgens vertaald naar een keihard beleidsstandpunt. Maandenlang weigert de dienst de aanvraag in behandeling te nemen. Zelfs wanneer er uitsluitend om een zuiver medische evaluatie voor fiscale doeleinden wordt verzocht — uitdrukkelijk losgekoppeld van enige vraag om een uitkering — stelt de overheid dat een Belgisch domicilie een absolute, onwrikbare voorwaarde is. Deze territoriale uitsluiting houdt pas op wanneer de patiënt via de Federale Ombudsman dwingende Europese rechtspraak op tafel legt *1*. Onder die juridische druk is de dienst uiteindelijk genoodzaakt toe te geven dat een landsgrens een medische diagnose niet mag uitsluiten, en wordt het dossier met zware terugwerkende kracht heropend.</p>
-<p>Toch blijft de uitvoering na deze doorbraak diep geworteld in stroperige administratieve processen. Terwijl academische ziekenhuizen hun klinische bevindingen real-time via nationale, beveiligde datanetwerken *2* delen, negeert de FOD deze digitale snelwegen volkomen. De patiënt wordt bestookt met papieren brieven waarin op straffe van procedure-afsluiting wordt geëist dat hij fysieke, handmatig ingevulde formulieren (zoals Formulier 5 voor het gezichtsonderzoek) binnen dertig dagen per post terugstuurt. De burger wordt zo ingezet als analoge koerier voor data die de overheid zelf met één muisklik veilig had kunnen ophalen.</p>
+<p>Toch blijft de uitvoering na deze doorbraak diep geworteld in stroperige administratieve processen. Terwijl academische ziekenhuizen hun klinische bevindingen real-time via nationale, beveiligde datanetwerken *2* delen, negeert de FOD deze digitale snelwegen volkomen. De patiënt wordt bestookt met papieren brieven waarin op straffe van procedure-afsluiting wordt geëist dat hij handmatig ingevulde formulieren binnen dertig dagen aanlevert. Formulier 5 voor het gezichtsonderzoek kan weliswaar digitaal via het MyHandicap-portaal worden ingediend (op 30 juli 2026 ook zo gedaan), maar de FOD kiest voor de aanschrijving de papieren weg, wat tot tien dagen vertraging leidt en de wettelijke dertigdagentermijn onrechtmatig inkort. De burger blijft voor een groot deel van de communicatie een handmatige koerier voor data die de overheid via CoZo of eHealth zelf had kunnen ophalen.</p>
 <p>Het ultieme breekpunt volgt na de fysieke keuring in Gent. De controlearts documenteert de onomkeerbare fysieke schade en levert eindelijk het langverwachte medische attest af, gewaardeerd op 8 punten voor verminderde zelfredzaamheid. Een kritische audit van dit verslag onthult echter ernstige structurele ontwerpfouten. Recente en objectieve meetgegevens uit de academische sector worden compleet genegeerd, en een geconstateerd valrisico en ernstig visusverlies worden onverklaarbaar tot nul punten weggestreept. Bovendien voert het algoritme ongevraagd een inkomensbeoordeling uit. Het resultaat van dit rapport is wiskundig: de toegekende 8 punten erkennen weliswaar de zware fysieke uitval, maar vallen exact één punt onder de magische drempel van 9 punten die de belastingdienst (FOD Financiën) hanteert voor fiscale compensatie. De overheid levert hiermee een erkenning af die in de praktijk volstrekt onbruikbaar is, en dwingt de burger om het gehele, jarenlange bezwaartraject opnieuw op te starten.</p>
 <div class="footnotes">
 <p>*1* Verordening (EG) 883/2004 en de dwingende jurisprudentie van het Europees Hof van Justitie, die garanderen dat Europese burgers niet mogen worden benadeeld op basis van hun woonplaats.</p>
@@ -405,8 +616,8 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <h3 id="parentia">PARENTIA</h3>
 <p class="subtitel">De Geautomatiseerde Patstelling en de Gesloten Cirkel</p>
 <p>De kwetsbaarheid van een volledig geautomatiseerde overheid wordt nergens zo zichtbaar als in het dossier van Parentia, de private uitbetaler van de Vlaamse kinderbijslag en sociale toeslagen. Het algoritme van dit fonds is voor inkomensbepaling blindelings aangesloten op één centrale federale databank *1*. Wanneer de grensarbeider in het voorjaar van 2025 door medische amputaties zijn inkomen volledig verliest, registreert dit systeem die actuele financiële val niet. De automatische processen kijken namelijk twee jaar terug in de tijd. Gevolg: precies op het moment dat de medische en financiële crisis het hevigst is, wordt de sociale toeslag onverbiddelijk stopgezet op basis van inkomensgegevens uit 2023.</p>
-<p>Wanneer de patiënt in het voorjaar van 2026 deze algoritmische fout probeert te corrigeren door handmatig medische attesten en bewijzen van inkomensverlies aan te leveren, ontstaat er een klassieke institutionele patstelling. Parentia erkent de aangeleverde medische bewijzen wel degelijk, maar weigert uit te betalen. De instantie constateert dat het ziekenfonds (de CM) de ziektestatus doelbewust niet heeft doorgegeven aan de centrale databank. Omdat Parentia uit angst voor latere, retroactieve terugvorderingen geen handmatige uitzonderingen durft te maken, besluit men passief te wachten tot het ziekenfonds de data actualiseert. Het resultaat is dat een falende instantie (de CM) de uitbetaling van een andere instantie (Parentia) op afstand blokkeert, terwijl het gezin de financiële schade draagt.</p>
-<p>Deze administratieve stilstand bereikt zijn hoogtepunt in september 2026. Zelfs nadat de patiënt een sluitend federaal attest van zware handicap en een doktersverklaring van permanente invaliditeit indient ter overbrugging van de ontbrekende CM-data, volgt een definitieve weigering. Parentia toetst de inkomensvoorwaarde niet aan de harde realiteit van nul euro actueel inkomen, maar aan theoretisch verdienvermogen en verouderde fiscale data. Het systeem stempelt het huishouden administratief af als te welvarend voor een toeslag, terwijl het in de fysieke werkelijkheid door het falen van de overheid in een diepe liquiditeitscrisis is gestort.</p>
+<p>Wanneer de patiënt in het voorjaar van 2026 deze algoritmische fout probeert te corrigeren door handmatig medische attesten en bewijzen van inkomensverlies aan te leveren, ontstaat er een klassieke institutionele patstelling. Parentia erkent de aangeleverde medische bewijzen weliswaar, maar beroept zich op het ontbreken van de ziektestatus in de Kruispuntbank. De instantie constateert dat het ziekenfonds (de CM) deze status niet heeft doorgegeven en besluit passief te wachten tot de CM de data actualiseert. Het resultaat is dat een falende instantie (de CM) de uitbetaling van een andere instantie (Parentia) op afstand blokkeert, terwijl het gezin de financiële schade draagt.</p>
+<p>Deze administratieve stilstand bereikt zijn hoogtepunt in september 2026. Nadat de patiënt een sluitend federaal attest van zware handicap en een doktersverklaring van permanente invaliditeit indient ter overbrugging van de ontbrekende CM-data, volgt een definitieve weigering. Die weigering is echter niet langer gebaseerd op de ontbrekende KSZ-registratie. Parentia toetst de inkomensvoorwaarde aan de hand van de ontvangen inkomstenattesten over de periode 1 november 2025 tot 31 maart 2026. Uit die attesten concludeert de instantie dat het gezinsinkomen geen zes opeenvolgende maanden onder de wettelijke drempel van € 3.957,10 per maand lag. Het systeem stempelt het huishouden daarmee administratief af als te welvarend voor een toeslag, terwijl het in de fysieke werkelijkheid door het falen van de overheid in een diepe liquiditeitscrisis verkeert.</p>
 <p>Om deze bestuurlijke laksheid en het gebrek aan automatische grensoverschrijdende communicatie bloot te leggen, wordt uiteindelijk de privacywetgeving *2* als breekijzer ingezet. Via de compliance-afdeling van het fonds wordt een formele eis ingediend om de interne logbestanden en de gebrekkige Europese gegevensuitwisseling transparant te maken. De burger wordt zo gedwongen om technische controle-instrumenten in te zetten voor het afdwingen van fundamentele bestaansrechten die een geautomatiseerd systeem negeert.</p>
 <div class="footnotes">
 <p>*1* De Kruispuntbank van de Sociale Zekerheid (KSZ), de digitale spil voor gegevensuitwisseling tussen Belgische sociale instellingen.</p>
@@ -466,16 +677,6 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <p>*1* Verordening (EG) 883/2004 en de dwingende Europese jurisprudentie die lidstaten verbiedt burgers uit te sluiten op basis van territoriale grenzen.</p>
 </div>
 
-<h3 id="arbeidsauditoraat-gent">ARBEIDSAUDITORAAT GENT</h3>
-<p class="subtitel">De Falende Noodrem en het Afschuiven van Toezicht</p>
-<p>Wanneer een machtige uitvoeringsinstantie zoals het ziekenfonds de wet systematisch weigert toe te passen, zou de rechtsstaat een snelle noodrem moeten hebben. Binnen de Belgische sociale zekerheid is die toezichthoudende rol in theorie weggelegd voor het sociaal parket: het Arbeidsauditoraat. Na maanden van administratieve blokkade door de mutualiteit escaleert de grensarbeider het dossier in het najaar van 2026 naar deze justitiële waakhond. De formele melding bevat sluitende bewijzen dat het ziekenfonds structureel de Europese regels voor de optelling van gewerkte jaren negeert *1* en de eigen nationale richtlijnen aan de kant schuift.</p>
-<p>De reactie van het Arbeidsauditoraat legt echter een diepe weeffout in het toezicht bloot. In plaats van in te grijpen bij een instantie die de Europese wetgeving naast zich neerlegt, wast het parket zijn handen in onschuld. Het auditoraat verklaart zich per kerende e-mail simpelweg onbevoegd om toezicht te houden op de handelingen van de ziekenfondsen of de federale gezondheidsinstituten.</p>
-<p>Hier toont zich de tactiek van het bevoegdheidsvacuüm. Het justitiële systeem weigert de situatie te zien als een structureel probleem van institutioneel falen of machtsmisbruik. In plaats daarvan wordt de weigering van de mutualiteit gekwalificeerd als een simpel burgerlijk geschil tussen een ontevreden klant en een verzekeraar. Het auditoraat schuift de volledige verantwoordelijkheid daardoor genadeloos terug naar de burger, met de formele mededeling dat hij de zaak maar voor de Arbeidsrechtbank moet uitvechten.</p>
-<p>Hierdoor faalt het vangnet compleet: de structurele systeemfout wordt niet op een hoger, overkoepelend niveau opgelost, maar wordt gereduceerd tot een traag en uitputtend individueel proces dat de patiënt helemaal zelf moet dragen. Het instituut dat is opgericht om de regels te bewaken, kiest voor de weg van de minste weerstand en trekt zich terug.</p>
-<div class="footnotes">
-<p>*1* De dwingende Europese regelgeving inzake de coördinatie van de socialezekerheidsstelsels (Verordening (EG) 883/2004), die voorschrijft dat lidstaten arbeidsverleden en sociale rechten over de landsgrenzen heen naadloos moeten erkennen.</p>
-</div>
-
 <h3 id="de-kamer-commissie-sociale-zaken">DE KAMER (COMMISSIE SOCIALE ZAKEN)</h3>
 <p class="subtitel">De Zwijgende Volksvertegenwoordiging</p>
 <p>Wanneer administratieve toezichthouders weigeren in te grijpen, is het democratisch parlement de ultieme verdedigingslinie. Binnen de Belgische Kamer is de Commissie Sociale Zaken, Werk en Pensioenen specifiek bevoegd om ministers en overheidsdiensten (zoals het RIZIV en de FOD Sociale Zekerheid) te controleren en ter verantwoording te roepen. In het voorjaar van 2026 wordt deze commissie formeel voorzien van een uitgebreid, objectief dossier dat aantoont hoe uitvoeringsinstanties de Europese regels voor grensarbeiders structureel negeren en burgers in de financiële afgrond duwen.</p>
@@ -491,9 +692,19 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <p>*1* Verordening (EG) 883/2004 en de principes van vrij verkeer van werknemers, waarbij burgers over de grens naadloze toegang moeten hebben tot sociale zekerheid.</p>
 </div>
 
+<h3 id="arbeidsauditoraat-gent">ARBEIDSAUDITORAAT GENT</h3>
+<p class="subtitel">De Falende Noodrem en het Afschuiven van Toezicht</p>
+<p>Wanneer een machtige uitvoeringsinstantie zoals het ziekenfonds de wet systematisch weigert toe te passen, zou de rechtsstaat een snelle noodrem moeten hebben. Binnen de Belgische sociale zekerheid is die toezichthoudende rol in theorie weggelegd voor het sociaal parket: het Arbeidsauditoraat. Na maanden van administratieve blokkade door de mutualiteit escaleert de grensarbeider het dossier in het najaar van 2026 naar deze justitiële waakhond. De formele melding bevat sluitende bewijzen dat het ziekenfonds structureel de Europese regels voor de optelling van gewerkte jaren negeert *1* en de eigen nationale richtlijnen aan de kant schuift.</p>
+<p>De reactie van het Arbeidsauditoraat legt echter een diepe weeffout in het toezicht bloot. In plaats van in te grijpen bij een instantie die de Europese wetgeving naast zich neerlegt, wast het parket zijn handen in onschuld. Het auditoraat verklaart zich per kerende e-mail simpelweg onbevoegd om toezicht te houden op de handelingen van de ziekenfondsen of de federale gezondheidsinstituten.</p>
+<p>Hier toont zich de tactiek van het bevoegdheidsvacuüm. Het justitiële systeem weigert de situatie te zien als een structureel probleem van institutioneel falen of machtsmisbruik. In plaats daarvan wordt de weigering van de mutualiteit gekwalificeerd als een simpel burgerlijk geschil tussen een ontevreden klant en een verzekeraar. Het auditoraat schuift de volledige verantwoordelijkheid daardoor genadeloos terug naar de burger, met de formele mededeling dat hij de zaak maar voor de Arbeidsrechtbank moet uitvechten.</p>
+<p>Hierdoor faalt het vangnet compleet: de structurele systeemfout wordt niet op een hoger, overkoepelend niveau opgelost, maar wordt gereduceerd tot een traag en uitputtend individueel proces dat de patiënt helemaal zelf moet dragen. Het instituut dat is opgericht om de regels te bewaken, kiest voor de weg van de minste weerstand en trekt zich terug.</p>
+<div class="footnotes">
+<p>*1* De dwingende Europese regelgeving inzake de coördinatie van de socialezekerheidsstelsels (Verordening (EG) 883/2004), die voorschrijft dat lidstaten arbeidsverleden en sociale rechten over de landsgrenzen heen naadloos moeten erkennen.</p>
+</div>
+
 <h3 id="koninklijk-paleis-van-belgië">KONINKLIJK PALEIS VAN BELGIË</h3>
 <p class="subtitel">De Symbolische Eindhalte</p>
-<p>Als alle bestuurlijke, toezichthoudende en democratische paden doodlopen, rest er symbolisch nog één instantie: het staatshoofd. In mei 2026 wordt de geconsolideerde Systeem-Audit als formeel verzoekschrift naar het Koninklijk Paleis in Brussel gestuurd. Dit moment legt onbedoeld de letterlijke en figuurlijke onbereikbaarheid van het instituut bloot. Pogingen om het dossier via de officiële digitale kanalen van de monarchie aan te leveren, stuiten op harde netwerkfouten (DNS-falen); de e-mailserver van het Paleis weigert dienst. De burger wordt gedwongen om de data via papieren, aangetekende post en versimpelde webformulieren binnen te loodsen.</p>
+<p>Als alle bestuurlijke, toezichthoudende en democratische paden doodlopen, rest er symbolisch nog één instantie: het staatshoofd. In mei 2026 wordt de geconsolideerde Systeem-Audit als formeel verzoekschrift naar het Koninklijk Paleis in Brussel gestuurd. Dit moment legt onbedoeld de letterlijke en figuurlijke onbereikbaarheid van het instituut bloot. Pogingen om het dossier via de officiële digitale kanalen van de monarchie aan te leveren verlopen moeizaam: de website functioneert op dat moment niet naar behoren. De aanvrager kiest daarom voor aangetekende post in het Frans, de klassieke weg voor een verzoekschrift aan het staatshoofd.</p>
 <p>Wanneer de fysieke brief het Paleis bereikt, toont de afhandeling direct de grenzen van de constitutionele monarchie. Hoewel de Koning de eenheid van de staat vertegenwoordigt, heeft hij binnen een democratie absoluut geen uitvoerende macht om in te grijpen in het beleid van overheidsinstanties of ziekenfondsen. De reactie is dan ook een formele doorgeleiding: het Paleis bevestigt de ontvangst en stuurt het dossier rechtstreeks door naar de bevoegde bewindspersoon, de Vice-eersteminister. </p>
 <p>Met deze handeling stopt de interventie. Het Paleis functioneert niet als een breekijzer, maar als de hoogste symbolische postbus van het land. Zodra het dossier wordt teruggestuurd naar het ministerie — exact de politieke laag die het probleem eerder al had genegeerd — is de escalatieladder van de staat definitief en volledig uitgeput, zonder dat er ook maar één stap richting een inhoudelijke oplossing is gezet.</p>
 
@@ -515,7 +726,7 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <p>Wanneer de uitvoerende instanties en het sociaal parket geen doorgang bieden, verschuift het administratieve traject naar de regisseur van het systeem: het Rijksinstituut voor Ziekte- en Invaliditeitsverzekering (RIZIV). Deze federale overheidsdienst beheert de budgetten en bepaalt de regels waaraan ziekenfondsen zich dienen te houden. In het voorjaar van 2026 wordt de afdeling Internationale Zaken formeel aangeschreven met het verzoek de toepassing van de Europese regels voor grensarbeiders *1* te handhaven en de medische erkenning formeel los te koppelen van het recht op een financiële uitkering.</p>
 <p>De schriftelijke reactie in mei 2026 bevestigt principieel dat een medische vaststelling wettelijk mogelijk is zonder dat daar een financiële uitkering aan gekoppeld is. Hiermee wordt het procedurele verweer van het ziekenfonds – dat deze koppeling dwingend zou zijn – feitelijk ontkracht. Desondanks weigert het instituut deze vaststelling om te zetten in een bindende correctie naar de uitvoerende instantie toe.</p>
 <p>In plaats van sturend op te treden, verwijst de toezichthouder naar de eigen procedurele richtlijnen. Om de onafhankelijke Geneeskundige Raad voor Invaliditeit (GRI) in te schakelen, dicteert de regelgeving dat de aanvraag verplicht via het ziekenfonds moet verlopen. Hiermee ontstaat een gesloten administratieve cirkel: de burger wordt verplicht de instantie in te schakelen die de procedure blokkeert, om de blokkade te laten onderzoeken. Het RIZIV gebruikt zijn bevoegdheid als beheerder van de ziekteverzekering niet om een weigerende instantie te passeren, waardoor de procedure feitelijk stagneert.</p>
-<p>In september 2026 objectiveert de functionaris voor gegevensbescherming (DPO) van het RIZIV een bijkomend structureel falen binnen het netwerk. Uit een onafhankelijke raadpleging van het nationale EESSI-knooppunt *2* blijkt dat er in de voorafgaande zes maanden geen enkel elektronisch bericht inzake de verdragspolis of invaliditeit is uitgewisseld tussen het betrokken Belgische ziekenfonds en de Nederlandse instanties. Hoewel de toezichthouder hiermee het verzuim van de verplichte geautomatiseerde Europese gegevensuitwisseling *3* feitelijk vaststelt, verklaart het RIZIV geen tussenkomst of directe toegang tot deze specifieke uitwisseling te hebben. De instantie registreert de radiostilte, maar neemt geen handhavende stappen tegen het ziekenfonds. Hierdoor blijft de burger genoodzaakt de transnationale gegevensstroom handmatig te faciliteren.</p>
+<p>In september 2026 objectiveert de functionaris voor gegevensbescherming (DPO) van het RIZIV een bijkomend structureel falen binnen het netwerk. Uit een onafhankelijke raadpleging van het nationale EESSI-knooppunt *2* blijkt dat er in de voorafgaande zes maanden geen enkel elektronisch bericht inzake de verdragspolis of invaliditeit is uitgewisseld tussen het betrokken Belgische ziekenfonds en de Nederlandse instanties. Hoewel de toezichthouder hiermee het verzuim van de verplichte geautomatiseerde Europese gegevensuitwisseling *3* feitelijk vaststelt, beroept het RIZIV zich op een procedurele beperking: het DPO-Office doet formeel geen uitspraak over de inhoud van het dossier of over het uitblijven van specifieke berichten, omdat dit vragen over de inhoud van het dossier zouden zijn. De instantie registreert de radiostilte, maar acht zich niet inhoudelijk bevoegd om daar toezichthoudende conclusies aan te verbinden. Het gevolg is dat de feitelijke vaststelling in het lucht blijft hangen: geen handhaving, geen correctie, geen doorwerking naar het ziekenfonds dat de berichten niet verstuurt. Hierdoor blijft de burger genoodzaakt de transnationale gegevensstroom handmatig te faciliteren.</p>
 <div class="footnotes">
 <p>*1* Verordening (EG) 883/2004 en de dwingende jurisprudentie van het Hof van Justitie van de Europese Unie (waaronder het Vester-arrest C-134/18), die de coördinatie van socialezekerheidsstelsels en de naadloze samentelling van verzekeringstijdvakken voorschrijven.</p>
 <p>*2* Electronic Exchange of Social Security Information (EESSI), het beveiligde Europese IT-netwerk voor de geautomatiseerde uitwisseling van gestructureerde elektronische documenten (SED's) tussen nationale instanties.</p>
@@ -540,7 +751,7 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <p class="subtitel">De Verdragspolis en Incompatibele Protocollen</p>
 <p>Voor een inwoner van Nederland die in België werkt, verloopt de ziektekostendekking via een zogenaamde verdragspolis *1*, in dit dossier uitgevoerd door verzekeraar CZ. Deze instantie bevindt zich direct op het kruispunt van twee nationale systemen en illustreert de striktheid van protocollen. CZ vergoedt de fysieke medische rekeningen van zowel de Belgische ziekenhuizen als de Nederlandse thuiszorg probleemloos. De frictie ontstaat pas wanneer er logistieke ondersteuning nodig is in de vorm van zittend ziekenvervoer.</p>
 <p>Ondanks de objectief vastgestelde amputaties en het kritieke visusverlies, wijst CZ het medisch transport af. De verzekeraar baseert deze afwijzing op één ontbrekend controlevinkje: een gezichtsveldonderzoek. Het probleem is dat dit specifieke onderzoek binnen de klinische protocollen van het Belgische ziekenhuis bij deze aandoening helemaal niet standaard wordt uitgevoerd. CZ eist dus een administratief bewijsstuk dat in het behandelende land niet bestaat. Zelfs wanneer de patiënt sluitende alternatieve bewijzen uit een universitair ziekenhuis overlegt en een beroep doet op de hardheidsclausule, weigert de verzekeraar af te wijken van zijn wiskundige rekenmethode. Het algoritme dicteert de uitkomst en de patiënt wordt letterlijk stilgezet.</p>
-<p>Daarnaast veroorzaakt CZ een massale administratieve kettingbotsing op de achtergrond. De verzekeraar verzuimt om de actieve verdragspolis succesvol door te sluizen naar het landelijke Nederlandse verzekeringsregister *2*. Hierdoor 'denkt' de Nederlandse belastingdienst dat de burger onverzekerd is, wat onmiddellijk leidt tot de stopzetting van de wettelijke zorgtoeslag. Een interne datafout bij de verzekeraar vertaalt zich zo direct in een inkomensverlies voor de patiënt.</p>
+<p>Daarnaast blokkeert CZ de wettelijke zorgtoeslag via een bewuste juridische positie. De verzekeraar weigert de actieve verdragspolis te registreren in het landelijke Nederlandse verzekeringsregister *2*, met het formele argument dat een verdragspolis geen Nederlandse zorgverzekering is en er daarom wettelijk geen recht zou bestaan op zorgtoeslag (definitief standpunt 22 mei 2026, bevestigd via BBZ op 29 mei 2026). Het is geen technisch verzuim of databug, maar een weloverwogen uitsluitingsgrond. Het gevolg is dat de Nederlandse belastingdienst de burger als onverzekerd beschouwt, wat de wettelijke zorgtoeslag structureel op nul zet.</p>
 <p>Op 22 september 2026 bevestigt CZ (Divisie Operations) met formele excuses voor de vertraging de ontvangst van het op 7 september 2026 ingediende inzageverzoek aan de Functionaris voor Gegevensbescherming. De instantie verklaart dat het verzoek in behandeling is genomen en zegt een inhoudelijke reactie toe binnen dertig dagen na de originele ontvangstdatum.</p>
 <div class="footnotes">
 <p>*1* Een polis gebaseerd op Europese afspraken waarbij de grensarbeider in het werkland premie betaalt, maar via een verdrag in het woonland aanspraak maakt op medische zorg.</p>
@@ -581,9 +792,17 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <p>*1* Verzoek ingediend op grond van Artikel 15 van de Algemene Verordening Gegevensbescherming (AVG) gericht op de logbestanden van de Europese DAC-infrastructuur (Directive on Administrative Cooperation).</p>
 </div>
 
+<h4>ENERGIEDIRECT</h4>
+<p class="subtitel">De Overdracht Zonder Continuïteit</p>
+<p>De overstap van Vattenfall naar Energiedirect op 1 oktober 2026 is op het eerste gezicht een routineuze commerciële wissel. De consument kiest een nieuwe leverancier, de netbeheerder wikkelt de technische overdracht af, en de maandelijkse facturatie loopt door bij een nieuwe afzender. Wat deze gebeurtenis echter blootlegt, is een fundamentele systeemfout: er bestaat geen mechanisme om een lopend administratief dossier mee te laten verhuizen. De nieuwe leverancier start met een schone lei, terwijl de consument een verleden meesleept waar de nieuwe partij geen weet van heeft.</p>
+<p>In het geval van de grensarbeider betekent dit dat de status van 'medisch kwetsbare consument', die bij Vattenfall maandenlang moeizaam werd opgebouwd, volledig verdampt bij de overdracht. Er is geen verplichte overdracht van dat dossier tussen commerciële energieleveranciers. Er is geen centraal register waarin een beschermingsstatus wordt bijgehouden die losstaat van de leverancier. De burger moet bij elke nieuwe leverancier opnieuw beginnen: dezelfde gezondheidsverklaring, dezelfde medische argumentatie, dezelfde rondgang langs instanties die geen van alle verplicht zijn om eerdere beslissingen over te nemen.</p>
+<p>Dit mechanisme is geen incident, maar een structureel kenmerk van de private nutsmarkt. Waar de overheid bij een adreswijziging de Basisregistratie Personen automatisch bijwerkt, waar een ziekenhuis bij overdracht een digitaal dossier meestuurt, en waar zelfs de Belastingdienst bij verhuizing automatisch de gemeente op de hoogte stelt, geldt in de energiesector het omgekeerde principe: elke leverancier is een eiland. De netbeheerder Stedin fungeert uitsluitend als technisch doorgeefluik voor de fysieke aansluiting; er is geen enkele partij die de administratieve geschiedenis overdraagt.</p>
+<p>Voor een grensarbeider met een complexe medische achtergrond wordt dit een terugkerende beproeving. Elke keer dat een commercieel contract verloopt, elke keer dat een leverancier fuseert of zijn naam wijzigt, en elke keer dat de consument besluit over te stappen, begint de administratieve bewijslast opnieuw. De medisch-kwetsbare status is geen recht dat de burger toekomt, maar een gunst die per commerciële relatie moet worden bevochten. Dit legt een fundamentele asymmetrie bloot tussen de fysieke werkelijkheid — de insuline die gekoeld moet blijven, ongeacht wie de energierekening verstuurt — en de administratieve werkelijkheid van losse leverancierssystemen die geen onderlinge geschiedenis delen.</p>
+<p>De overstap naar Energiedirect is daarmee niet zozeer een nieuwe fase in het dossier, als wel een terugkeer naar het startpunt. De vraag of het lopende betalingsdossier en de medisch-kwetsbare status worden overgedragen, is op het moment van deze audit nog niet beantwoord. Wat vaststaat, is dat er geen systeem bestaat dat dit automatisch regelt. De burger moet het zelf opnieuw aanvragen, en de leverancier heeft geen enkele verplichting om de voorgeschiedenis te erkennen.</p>
+
 <h3 id="gemeente-hulst-hulst-voor-elkaar">GEMEENTE HULST &amp; HULST VOOR ELKAAR</h3>
 <p class="subtitel">De Digitale Muur en de GPK-Weigering</p>
-<p>Als lokaal overheidsorgaan zou de Gemeente Hulst (in de praktijk uitgevoerd door stichting Hulst voor Elkaar) het dichtst bij de burger moeten staan. In de feitelijke praktijk functioneert dit lokale bestuur echter als een ondoordringbare vesting. Gedurende het volledige traject stuit de communicatie op een actieve, technische muur. E-mails en formele AVG-inzageverzoeken gericht aan het bestuur of de functionaris gegevensbescherming botst structureel op harde netwerk- en DNS-fouten, waardoor inkomende correspondentie simpelweg expireert. Wanneer hulpverzoeken via e-loketten of formulieren binnenkomen, worden ze door de frontoffice na maanden van stilzwijgen simpelweg ongelezen uit de mailbox verwijderd.</p>
+<p>Als lokaal overheidsorgaan zou de Gemeente Hulst (in de praktijk uitgevoerd door stichting Hulst voor Elkaar) het dichtst bij de burger moeten staan. In de feitelijke praktijk functioneert dit lokale bestuur echter als een ondoordringbare vesting. Gedurende het volledige traject stuit de communicatie op een actieve, technische muur. E-mails en formele AVG-inzageverzoeken gericht aan het bestuur of de functionaris gegevensbescherming verlopen moeizaam. Persoonlijke adressen binnen het gemeentedomein zijn niet rechtstreeks bereikbaar; alleen de algemene info-adressen staan open voor inkomende correspondentie. Berichten die via de persoonlijke adressen worden verzonden, expireren zonder inhoudelijke behandeling. Zodra een verzoek echter via de algemene kanalen binnenkomt, wordt het wel degelijk in behandeling genomen: op het AVG-inzageverzoek van 2 september 2026 volgt een verzoek tot nadere specificatie (10 september), een opschorting van de beslistermijn wegens ontbrekende identiteitsverificatie (1 oktober) en een deels toegekende, deels afgewezen beslissing (2 oktober). Het patroon is dus niet dat verzoeken categorisch worden genegeerd, maar dat ze alleen via de juiste kanalen kunnen doorkomen. Wanneer hulpverzoeken via e-loketten of formulieren binnenkomen, worden ze door de frontoffice na maanden van stilzwijgen simpelweg ongelezen uit de mailbox verwijderd.</p>
 <p>Het meest treffende voorbeeld van de lokale afschuiving manifesteert zich rond de aanvraag van een Nederlandse Gehandicaptenparkeerkaart (GPK) in de zomer van 2026. De grensarbeider beschikt over een officiële, permanente Europese parkeerkaart en een bindend medisch evaluatieverslag van de Belgische federale overheid (8 punten, erkende mobiliteitsbeperking). Omdat Nederlandse gemeenten steeds vaker digitaal op kenteken handhaven, vraagt de burger om een administratieve overname van deze status voor zijn auto met Nederlands kenteken, om onterechte boetes te voorkomen.</p>
 <p>De gemeente Hulst weigert dit categorisch. Ondanks de overhandiging van officiële Europese overheidsdocumentatie, stelt de frontoffice dat deze onvoldoende zijn. De gemeente eist dat de burger zich onderwerpt aan een lokaal, door hen aangewezen medisch onderzoek, inclusief de betaling van bijbehorende leges. Hiermee negeert de gemeente de kern van de Europese wederzijdse erkenning. In een grensgemeente die volop meeprofiteert van Europese kaders, weigert men op lokaal niveau de geldigheid van een officieel EU-document te accepteren. Men eist een dubbele keuring, creëert daarmee onnodige financiële en administratieve frictie voor een gehandicapte grensarbeider, en legt de bestuurlijke paradox van de grensregio bloot in al haar facetten.</p>
 <p>Op 21 september 2026 bevestigt de gemeente Hulst per formele brief (kenmerk 1064153) de ontvangst op 22 juli 2026 van het bezwaarschrift tegen de beschikking van 22 juni 2026 inzake de bijzondere bijstand. De gemeente verdaagt de beslissing op bezwaar op grond van artikel 7:10 lid 3 Awb met zes weken en verzoekt om retournering van het antwoordformulier horen vóór 30 september 2026. Betrokkene retourneert het formulier ondertekend op 24 september 2026 met de kennisgeving geen gebruik te maken van een mondelinge toelichting.</p>
@@ -594,9 +813,17 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <p>De bank toont zich hiermee flexibeler dan de gehele overheid bij elkaar. Er wordt een strak aflossingsplan van vierentwintig maanden opgesteld, waardoor een dreigend bankroet acuut wordt afgewend. Maar deze reddingsboei komt met een hard prijskaartje en strenge private sancties. De roodstandfaciliteit wordt per direct ingetrokken en het gebruik van de creditcard wordt voor lange tijd verboden. Als direct gevolg hiervan beginnen essentiële automatische incasso's — zoals de betaling aan het waterbedrijf — te mislukken, wat de dagelijkse huishoudelijke stress nog verder opvoert.</p>
 <p>Dit knooppunt fungeert als de ultieme weerspiegeling van de maatschappelijke scheefstand. De commerciële bank lost het acute financiële brandje op dat door het tekortschieten van de overheid is ontstaan, maar zij incasseert daarvoor de rente en legt de burger zware sancties op. De overheidsinstanties die de administratieve crisis hebben veroorzaakt, dragen geen enkele verantwoordelijkheid voor de gemaakte bancaire kosten en verschuilen zich achter hun digitale loketten, terwijl de private bank de rol van de facto schuldeiser van de falende verzorgingsstaat overneemt.</p>
 
+<h4>LEREN IN ZEELAND</h4>
+<p class="subtitel">Het Jaarlijkse Bewijs van Buitenlandse Leerplicht</p>
+<p>Leren in Zeeland is het Regionaal Bureau Leerlingzaken (RBL) Zeeuws-Vlaanderen, een samenwerkingsverband van de gemeenten Hulst, Sluis en Terneuzen dat de Leerplichtwet 1969 uitvoert. Voor een kind dat in Nederland woont maar in België naar school gaat, geldt dat het niet in Nederland staat ingeschreven. De Leerplichtwet voorziet hierin via artikel 5 onder c: een jaarlijks aan te vragen vrijstelling van de inschrijvingsplicht, mits bewezen wordt dat het kind daadwerkelijk een onderwijsinstelling in het buitenland bezoekt.</p>
+<p>Deze vrijstelling is in theorie een ruimhartige regeling. Zij erkent dat leerplicht niet betekent dat een kind fysiek in Nederland naar school moet, en zij opent de deur voor gezinnen die voor een school net over de grens kiezen. De praktijk is echter aanzienlijk stroperiger. De vrijstelling wordt voor één schooljaar verleend. Dat betekent dat de ouder elk jaar opnieuw een aanvraag moet indienen, met een door de buitenlandse school ingevuld, ondertekend en gestempeld attest als bijlage. Er is geen automatische verlenging, geen digitale koppeling, geen meerjarige status.</p>
+<p>De fundamentele breuk in dit mechanisme is dat het RBL-systeem geen gegevens uitwisselt met de Belgische schooladministratie. Waar Nederlandse scholen via DUO elkaars inschrijvingen kunnen verifiëren, en waar de Basisregistratie Personen automatisch synchroniseert met gemeentelijke systemen, stopt de digitale infrastructuur bij de grens. Voor de Belgische school is er geen equivalent van DUO dat aansluiting zoekt met het Nederlandse leerplichtsysteem. Voor Leren in Zeeland is er geen bron om de inschrijving bij Berkenboom of eender welke Vlaamse school te verifiëren. De ouder is daarmee de enige schakel tussen twee systemen die elkaar niet kennen.</p>
+<p>Dit vertaalt zich in een jaarlijks terugkerende administratieve handeling die volledig op handmatige bewijslast berust. De ouder moet het schoolattest opvragen, laten ondertekenen en stempelen, en vervolgens via de website van Leren in Zeeland uploaden. Er is geen categorie in het systeem die deze ouder als 'grensarbeider met kind in buitenland' markeert, waardoor het proces elk jaar opnieuw wordt doorlopen alsof het de eerste keer is. Er is geen uitzondering voor kinderen die meerdere jaren achter elkaar dezelfde Belgische school bezoeken. De wet schrijft voor dat de vrijstelling jaarlijks wordt verleend, en dus vraagt het systeem jaarlijks hetzelfde bewijs.</p>
+<p>Wat dit mechanisme blootlegt, is hoe diep het binaire denken in nationale categorieën verankerd zit. De Leerplichtwet is geschreven voor een werkelijkheid waarin een kind óf in Nederland naar school gaat óf in het buitenland, en waarin het buitenland een uitzondering is die per geval bewezen moet worden. Voor een kind dat zijn hele schoolcarrière in België doorbrengt, is dit niet een uitzondering maar de normale situatie. Het systeem weigert deze realiteit te erkennen. Het blijft vragen om een jaarlijks bewijs van iets dat nooit verandert, omdat het geen categorie kent voor een leven dat structureel over de grens plaatsvindt.</p>
+
 <h3 id="reizen-door-zeeland">REIZEN DOOR ZEELAND</h3>
 <p class="subtitel">Het Vervoersnetwerk</p>
-<p>Het collectieve Wmo-vervoer in de regio, uitgevoerd onder de naam Reizen door Zeeland, vormt de logistieke navelstreng voor een burger die door amputaties en visusverlies niet meer zelfstandig kan reizen. De praktijk van dit vervoerssysteem wordt echter gekenmerkt door interne tegenspraak en strikte planningsregels. Zo meldt het lokale loket in eerste instantie dat de regiotaxi absoluut niet over de grens naar België rijdt, terwijl de centrale planningsdienst even later bevestigt dat ritten naar goedgekeurde academische ziekenhuizen over de grens (zoals het UZ Gent) operationeel wél mogelijk zijn.</p>
+<p>Het collectieve Wmo-vervoer in de regio, uitgevoerd onder de naam Reizen door Zeeland, vormt de logistieke navelstreng voor een burger die door amputaties en visusverlies niet meer zelfstandig kan reizen. De praktijk van dit vervoerssysteem wordt gekenmerkt door strikte planningsregels met een selectieve uitzondering. Het lokale loket deelt al bij de eerste weigering op 9 maart 2026 mee dat de regiotaxi in principe niet over de grens rijdt, maar dat ritten naar Zeeland en naar het academisch ziekenhuis UZ Gent een uitzondering vormen. Die uitzondering geldt echter niet voor andere Belgische bestemmingen: een rit naar een Belgische overheidsinstantie (zoals de keuringsartsen van de FOD in Gent) op exact dezelfde afstand wordt geweigerd. Het systeem bepaalt waar een gehandicapte grensarbeider wel en niet mag komen.</p>
 <p>Het onderscheid dat de centrale maakt, is even procedureel als belastend. Ritten naar een academisch ziekenhuis voor medische behandeling worden goedgekeurd, maar wanneer de burger een rit aanvraagt naar een officiële Belgische overheidsinstantie (zoals de keuringsartsen van de FOD) op exact dezelfde afstand, wordt de rit resoluut geweigerd. Het systeem dicteert waar een gehandicapte grensarbeider mag komen; medische noodzaak weegt minder zwaar dan de administratieve bestemming.</p>
 <p>Daarnaast faalt de operationele uitvoering op elementaire onderdelen. Specifieke zorgvragen — zoals het verzoek om begeleiding van het voertuig naar de ziekenhuisingang bij ernstig visusverlies — worden door de planning consequent genegeerd en geregistreerd alsof het een valide reiziger betreft. Wanneer betalingsproblemen ontstaan door de algemene inkomensstagnatie, blokkeert de vervoerder bovendien per direct de Wmo-pas zonder enige coulance voor de specifieke betalingsritmes van grensarbeiders. De burger is zo voor zijn mobiliteit overgeleverd aan een weinig flexibel logistiek apparaat dat medische realiteit ondergeschikt maakt aan platte kilometerregels en planningsreglementen.</p>
 
@@ -604,7 +831,7 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <p class="subtitel">De Beheerder van de Basisregistratie Personen en de Interstatelijke Datastroom</p>
 <p>De Rijksdienst voor Identiteitsgegevens (RvIG) is de landelijke beheerder van de Basisregistratie Personen (BRP) *1*. De dienst is verantwoordelijk voor de registratie en verstrekking van identiteitsgegevens aan Nederlandse overheidsinstanties, waaronder de Sociale Verzekeringsbank, het Uitvoeringsinstituut Werknemersverzekeringen, het Centraal Administratie Kantoor en de Belastingdienst *2*. Voor elke burger die in Nederland woont, fungeert het Burgerservicenummer (BSN) dat via de BRP wordt toegekend als de primaire sleutel voor alle administratieve processen. In het netwerk van de grensarbeider is RvIG daarmee de Nederlandse tegenhanger van het Belgische Rijksregister.</p>
 <p>De frictie in dit dossier manifesteert zich op het snijvlak van twee nationale bevolkingsregisters. Wanneer een burger zich vanuit België in Nederland vestigt, is een geautomatiseerde overdracht van identiteitsgegevens tussen het Belgische Rijksregister en de Nederlandse BRP vereist. In de praktijk blijkt deze interstatelijke datalink echter niet automatisch te functioneren. De gemeente Hulst, als eerste inschrijvingsloket, voert de registratie uit, maar de koppeling met het Belgische bronregister verloopt manueel en niet-traceerbaar. De burger moet zelf aantonen welke gegevens zijn overgedragen en welke niet *3*.</p>
-<p>Om deze lacune te onderzoeken dient de patiënt op 16 september 2026 een AVG-inzageverzoek in bij RvIG, gericht op de BRP-registratie en de bijbehorende internationale logbestanden uit 2014 *4*. Het verzoek betreft de elektronische mutaties, systeemstempels en metagegevens rondom de initiële inschrijving vanuit België. De eerste communicatie met de privacyjurist van RvIG verloopt moeizaam: de dienst verwijst naar de gemeente Hulst als bronhouder, terwijl de gemeente op haar beurt stelt dat de nationale doorgifte via de systemen van RvIG loopt *5*. Hierdoor ontstaat een bevoegdheidsvraag die dezelfde structuur vertoont als bij FOD IBZ aan Belgische zijde: geen van beide overheidsniveaus acht zich volledig verantwoordelijk voor de grensoverschrijdende datastroom.</p>
+<p>Om deze lacune te onderzoeken dient de patiënt op 16 september 2026 een AVG-inzageverzoek in bij RvIG, gericht op de BRP-registratie en de bijbehorende internationale logbestanden uit 2014 *4*. Het verzoek betreft de elektronische mutaties, systeemstempels en metagegevens rondom de initiële inschrijving vanuit België. De eerste communicatie met de privacyjurist van RvIG verloopt moeizaam. De gemeente Hulst stelt dat de nationale doorgifte via de systemen van RvIG loopt en dat de gemeente niet over deze systeemstempels beschikt. RvIG bevestigt de formele ontvangst van het inzageverzoek, maar verschaft geen helderheid over de eigen rol in de interstatelijke datastroom *5*. Hierdoor ontstaat een bevoegdheidsvraag die dezelfde structuur vertoont als bij FOD IBZ aan Belgische zijde: geen van beide overheidsniveaus acht zich volledig verantwoordelijk voor de grensoverschrijdende datastroom.</p>
 <p>Op 1 oktober 2026 bevestigt RvIG de formele ontvangst van het gecorrigeerde inzageverzoek en zegt een inhoudelijk besluit toe uiterlijk op 16 oktober 2026 *6*. De uitkomst van dat besluit is op het moment van deze audit nog niet bekend. Wat de casus echter al heeft blootgelegd, is structureel: er bestaat geen geautomatiseerde, traceerbare synchronisatie tussen de Belgische en Nederlandse bevolkingsregisters bij een grensoverschrijdende verhuizing. De burger blijft afhankelijk van handmatige procedures om zijn eigen registratiegegevens over de grens kloppend te houden.</p>
 <div class="footnotes">
 <p>*1* Rijksdienst voor Identiteitsgegevens: landelijke beheerder van de Basisregistratie Personen (BRP).</p>
@@ -646,7 +873,7 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <h3 id="valys">VALYS</h3>
 <p class="subtitel">Bovenregionaal Sociaal-Recreatief Vervoer en Logistieke Ketenfrictie</p>
 <p>Valys is het landelijke vervoerssysteem dat in opdracht van het Ministerie van Volksgezondheid, Welzijn en Sport (VWS) het bovenregionale sociaal-recreatieve vervoer voor personen met een mobiliteitsbeperking faciliteert *1*. De organisatie verzorgt uitsluitend ritten die de grens van vijf openbaarvervoerzones vanaf het woonadres overschrijden, en opereert daarmee aanvullend op het gemeentelijke Wmo-vervoer *2*. Het systeem werkt met een persoonlijk kilometerbudget en is ingericht op het combineren van reizigersstromen om operationele efficiëntie te behalen.</p>
-<p>In het dossier van de grensarbeider wordt Valys in september 2026 ingeschakeld voor een Valyspas. De aanvraag wordt op 27 september 2026 ontvangen en op 28 september 2026 goedgekeurd *3*. De formele toekenning van de pas betekent dat de patiënt toegang krijgt tot bovenregionaal vervoer, maar de structurele frictie op de knooppunten tussen Valys en andere vervoerssystemen blijft bestaan. Bij ketenreizen die een overdracht vereisen tussen Valys en het lokale Wmo-vervoer of het reguliere treinverkeer, vertaalt de strikte isolatie van de deelsystemen zich in planningsverschillen en falende ketencommunicatie *4*. Valys opereert uitsluitend binnen de eigen parameters en bezit geen overkoepelende regie om logistieke vertragingen vanuit externe vervoersnetwerken op te vangen.</p>
+<p>In het dossier van de grensarbeider wordt Valys in september 2026 ingeschakeld voor een Valyspas. De aanvraag wordt op 27 september 2026 ontvangen en op 28 september 2026 goedgekeurd *3*. De persoonlijke pas wordt op 30 september 2026 per post geleverd. Vanaf dat moment krijgt de patiënt toegang tot bovenregionaal vervoer. De eerste feitelijke ritten zijn op het moment van deze audit nog niet geboekt; de werkelijke werking van het systeem in de praktijk is nog niet beproefd. Wat wel vaststaat, is de structurele opzet: Valys is een deelsysteem naast het lokale Wmo-vervoer en het reguliere treinverkeer, met eigen parameters en zonder overkoepelende regie over de keten. Of dat in de praktijk tot frictie leidt bij ketenreizen met overdrachten, moet de komende maanden blijken.</p>
 <div class="footnotes">
 <p>*1* *1* Ministerie van VWS, taakomschrijving Valys: landelijk bovenregionaal sociaal-recreatief vervoer voor personen met een mobiliteitsbeperking.</p>
 <p>*2* *2* Valys is bedoeld voor reizen die meer dan vijf openbaarvervoerzones vanaf het woonadres liggen; het mandaat begint waar de gemeentelijke Wmo-plicht eindigt.</p>
@@ -787,10 +1014,32 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <div class="footnotes">
 <p>*1* UN Convention on the Rights of Persons with Disabilities, dat staten verplicht om de drempels voor personen met een handicap (inclusief in de sociale zekerheid) weg te nemen.</p>
 </div>
-<a class="pub-top" href="#top" title="Naar boven">↑</a>
+<a class="pub-top" href="#top" title="Naar boven">↑</a><button aria-label="Schakel donkere/lichte modus" class="dm-toggle" onclick="dm_toggle()" title="Schakel donkere/lichte modus" type="button">
+<span class="dm-icon-dm">🌙</span>
+<span class="dm-icon-lm">☀️</span>
+</button>
+<script>
+(function(){
+  function g(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+  function s(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  window.dm_toggle=function(){
+    var r=document.documentElement;
+    var n=r.getAttribute('data-theme')==='dark'?'light':'dark';
+    r.setAttribute('data-theme',n);
+    s('systeem-audit-thema',n);
+  };
+  try{
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(e){
+      if(!g('systeem-audit-thema')){
+        document.documentElement.setAttribute('data-theme',e.matches?'dark':'light');
+      }
+    });
+  }catch(e){}
+})();
+</script>
 <footer class="pub-footer">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 6 oktober 2026, 14:20</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 13 oktober 2026, 19:35</p>
 <p><a href="home.html">← Terug naar overzicht</a> ·
      <a href="../index.html">🌐 Taalkeuze</a></p>
 </footer>

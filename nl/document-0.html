@@ -28,6 +28,25 @@ i { font-size: 10.5pt; color: #555555; }
 .datum { font-weight: bold; color: #000000; }
 .titel { font-weight: bold; text-transform: uppercase; }
 .opvolging { font-style: italic; color: #555555; }
+.entry.technisch { font-size: 10pt; color: #777; font-style: italic;
+                   padding: 2pt 0 2pt 12pt; border-left: 2pt solid #d5d0c5;
+                   margin-left: 4pt; margin-bottom: 5pt; }
+.entry.technisch .datum { color: #888; font-weight: normal; }
+.entry.technisch .titel { color: #666; font-weight: 600;
+                          text-transform: uppercase; font-size: 9.5pt; }
+.entry.technisch .opvolging { color: #999; }
+.richting { font-weight: 700; font-size: 10pt; letter-spacing: 0.5px;
+            margin-right: 3pt; }
+.richting-ontvangen { color: #1a3c6e; }
+.richting-verzonden { color: #8b1e1e; }
+.entry.technisch .richting { font-size: 9pt; }
+.entry.technisch .richting-ontvangen { color: #556a8b; }
+.entry.technisch .richting-verzonden { color: #8b5a5a; }
+.oorsprong { font-style: italic; color: #555555; font-size: 10.5pt; }
+.entry.technisch .oorsprong { color: #999; font-size: 9.5pt; }
+.technisch-notice { background: #f7f5f1; border-left: 4pt solid #d5d0c5;
+                    padding: 8pt 14pt; margin: 12pt 0 20pt;
+                    font-size: 10.5pt; color: #555; font-style: italic; }
 p.lead { font-style: italic; color: #444; margin-bottom: 12pt; }
 p.tijd { font-size: 10pt; color: #888888; font-style: italic; letter-spacing: 1pt; text-transform: uppercase; margin-bottom: 4pt; }
 svg { display: block; width: 100%; height: auto; margin: 8pt 0; }
@@ -169,6 +188,22 @@ tr:nth-child(even) td { background: #f4f1f8; }
     font-size: 10pt; color: #888; text-decoration: none;
 }
 .pub-naar-boven:hover { color: #1a3c6e; text-decoration: underline; }
+
+.dm-toggle {
+    position: fixed; bottom: 80px; right: 24px; z-index: 200;
+    background: #ffffff; color: #1a3c6e; border: 1px solid #d5d0c5;
+    width: 44px; height: 44px; border-radius: 50%;
+    cursor: pointer; font-size: 18pt; line-height: 1; padding: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .15s, background .15s, border-color .15s;
+    font-family: Aptos, Calibri, sans-serif;
+}
+.dm-toggle:hover { transform: scale(1.1); background: #eef2f7; border-color: #1a3c6e; }
+.dm-toggle .dm-icon-lm { display: none; }
+html[data-theme="dark"] .dm-toggle .dm-icon-dm { display: none; }
+html[data-theme="dark"] .dm-toggle .dm-icon-lm { display: inline; }
+
 @media (max-width: 700px) {
     .pub-nav { padding: 8px 12px; margin: -16pt -14pt 16pt -14pt; }
     .pub-nav a { padding: 5px 9px; font-size: 12pt; }
@@ -176,8 +211,162 @@ tr:nth-child(even) td { background: #f4f1f8; }
     .pub-toc { padding: 10pt 14pt; }
     .pub-toc .niv3 { padding-left: 24pt; }
 }
+
+
+html[data-theme="dark"] { color-scheme: dark; }
+
+html[data-theme="dark"] body {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4 {
+    color: #7fb3ff;
+    border-color: #4a6fa5;
+}
+html[data-theme="dark"] h5 { color: #a8c5e8; }
+html[data-theme="dark"] p.subtitel { color: #a0a0a0; }
+html[data-theme="dark"] p.lead { color: #b0b0b0; }
+html[data-theme="dark"] p.tijd { color: #a0a0a0; }
+html[data-theme="dark"] .netwerk { color: #b0b0b0; }
+html[data-theme="dark"] .meta { color: #c0c0c0; }
+html[data-theme="dark"] .meta strong { color: #7fb3ff; }
+html[data-theme="dark"] .datum { color: #f0f0f0; }
+html[data-theme="dark"] .titel { color: #e8e8e8; }
+html[data-theme="dark"] .opvolging { color: #a0a0a0; }
+html[data-theme="dark"] .richting-ontvangen { color: #7fb3ff; }
+html[data-theme="dark"] .richting-verzonden { color: #ff8a8a; }
+html[data-theme="dark"] .oorsprong { color: #a0a0a0; }
+html[data-theme="dark"] .entry.technisch {
+    background: #232323;
+    border-left-color: #4a4a4a;
+    color: #a0a0a0;
+}
+html[data-theme="dark"] .entry.technisch .datum { color: #909090; }
+html[data-theme="dark"] .entry.technisch .titel { color: #b0b0b0; }
+html[data-theme="dark"] .entry.technisch .opvolging { color: #808080; }
+html[data-theme="dark"] .entry.technisch .richting-ontvangen { color: #8fa8c8; }
+html[data-theme="dark"] .entry.technisch .richting-verzonden { color: #c89090; }
+html[data-theme="dark"] .technisch-notice {
+    background: #232323; color: #a0a0a0; border-left-color: #4a4a4a;
+}
+html[data-theme="dark"] hr { border-top-color: #3a3a3a; }
+html[data-theme="dark"] .titelblad h1 { color: #7fb3ff; }
+html[data-theme="dark"] .titelblad .ondertitel { color: #c0c0c0; }
+html[data-theme="dark"] .titelblad .documentaanduiding { color: #7fb3ff; }
+html[data-theme="dark"] .titelblad .auteur,
+html[data-theme="dark"] .titelblad .meta-lijn { color: #a0a0a0; }
+html[data-theme="dark"] .gebruikersaanwijzing p { color: #c0c0c0; }
+html[data-theme="dark"] table th { background: #2e4a72; border-color: #2e4a72; }
+html[data-theme="dark"] table td {
+    background: #232323; border-color: #3a3a3a; color: #d0d0d0;
+}
+html[data-theme="dark"] tr:nth-child(even) td { background: #2a2a2a; }
+html[data-theme="dark"] .figure { background: #232323; border-color: #3a3a3a; }
+html[data-theme="dark"] .figure svg { background: transparent; }
+html[data-theme="dark"] .caption {
+    color: #a0a0a0;
+    border-top-color: #3a3a3a;
+}
+html[data-theme="dark"] .intro-rechten {
+    background: #232323; color: #b0b0b0; border-left-color: #4a6fa5;
+}
+html[data-theme="dark"] .actie { background: #2a2440; color: #d0d0d0; }
+html[data-theme="dark"] .afsluiting { background: #2a2440; color: #d0d0d0; }
+html[data-theme="dark"] .werkversie { background: #332c14; color: #d0c090; }
+html[data-theme="dark"] .noot { color: #a0a0a0; border-top-color: #3a3a3a; }
+html[data-theme="dark"] a { color: #7fb3ff; }
+
+/* === Actor-blokken (Document C) === */
+html[data-theme="dark"] .actor {
+    border-bottom-color: #3a3a3a;
+}
+html[data-theme="dark"] .actor-naam { color: #e0e0e0; }
+html[data-theme="dark"] .actor-rol { color: #7fb3ff; }
+
+/* === Sectie-banners (Document C) === */
+html[data-theme="dark"] .banner-be {
+    background: #2a1c1c;
+    border-left-color: #ff8a8a;
+}
+html[data-theme="dark"] .banner-be strong { color: #ff8a8a; }
+
+html[data-theme="dark"] .banner-nl {
+    background: #1c2129;
+    border-left-color: #7fb3ff;
+}
+html[data-theme="dark"] .banner-nl strong { color: #7fb3ff; }
+
+html[data-theme="dark"] .banner-eu {
+    background: #1c2628;
+    border-left-color: #5fc8cc;
+}
+html[data-theme="dark"] .banner-eu strong { color: #5fc8cc; }
+
+/* === Inline badges === */
+html[data-theme="dark"] .badge-be { color: #ff8a8a; }
+html[data-theme="dark"] .badge-nl { color: #7fb3ff; }
+html[data-theme="dark"] .badge-mem { color: #ffb380; }
+html[data-theme="dark"] .badge-eu { color: #5fc8cc; }
+
+/* === Sectorkoppen + recht-ankers (Document E) === */
+html[data-theme="dark"] .sector-titel { color: #7fb3ff; }
+html[data-theme="dark"] .recht-kop-wrapper { border-bottom-color: #4a6fa5; }
+html[data-theme="dark"] .legend-row { color: #c0c0c0; }
+
+/* === Contactblok === */
+html[data-theme="dark"] .contactblok {
+    background: #232323;
+    border-left-color: #4a6fa5;
+}
+html[data-theme="dark"] .contactblok a { color: #7fb3ff; }
+
+/* === Navigatie === */
+html[data-theme="dark"] .pub-nav {
+    background: #232323; border-bottom-color: #3a3a3a;
+}
+html[data-theme="dark"] .pub-nav a { color: #b0c8e8; }
+html[data-theme="dark"] .pub-nav a:hover { background: #2a2a2a; border-color: #4a4a4a; }
+html[data-theme="dark"] .pub-nav a.actief { background: #4a6fa5; color: #ffffff; }
+html[data-theme="dark"] .pub-nav a.home { border-color: #4a4a4a; }
+html[data-theme="dark"] .pub-nav .titel-klein { color: #888; }
+
+html[data-theme="dark"] .pub-toc {
+    background: #232323; border-left-color: #4a6fa5;
+}
+html[data-theme="dark"] .pub-toc a { color: #b0c8e8; }
+html[data-theme="dark"] .pub-toc .niv3 { color: #888; }
+
+html[data-theme="dark"] .pub-footer {
+    border-top-color: #3a3a3a; color: #888;
+}
+html[data-theme="dark"] .pub-footer a { color: #b0c8e8; }
+html[data-theme="dark"] .pub-naar-boven { color: #888; }
+html[data-theme="dark"] .pub-naar-boven:hover { color: #b0c8e8; }
+html[data-theme="dark"] .dm-toggle {
+    background: #232323; border-color: #4a4a4a; color: #e0e0e0;
+}
+html[data-theme="dark"] .dm-toggle:hover {
+    background: #2a2a2a; border-color: #7fb3ff;
+}
+
+/* === SVG dark-mode === */
+html[data-theme="dark"] .figure svg {
+    filter: invert(0.88) hue-rotate(180deg);
+}
+html[data-theme="dark"] .figure {
+    background: #1e1e1e;
+}
+html[data-theme="dark"] .figure img {
+    filter: invert(0.88) hue-rotate(180deg);
+}
+
 </style>
-</head>
+<script>
+(function(){try{var t=localStorage.getItem('systeem-audit-thema');if(t!=='dark'&&t!=='light'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+</script></head>
 <body><a id="top"></a>
 <nav class="pub-nav">
 <div class="links"><a class="home" href="home.html">← Overzicht</a> <a class="home" href="../index.html">🌐 Taalkeuze</a> <a class="actief" href="document-0.html">Inleiding</a> <a class="" href="document-a.html">Narratief</a> <a class="" href="document-b.html">Data</a> <a class="" href="document-c.html">Visueel</a> <a class="" href="document-d.html">Synthese</a> <a class="" href="document-e.html">Rechten</a></div>
@@ -189,7 +378,7 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document 0 — Inleiding en leeswijzer</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 6 oktober 2026, 14:20</p>
+<p class="meta-lijn">Versie bijgewerkt: 13 oktober 2026, 19:35</p>
 </div>
 
 <div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
@@ -261,10 +450,32 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <div class="contactblok">
 <p>Wie de onderliggende bewijsstukken wil inzien, de volledige correspondentie wil raadplegen, of een beroep wil doen op het bronmateriaal, kan contact opnemen via <a href="mailto:systeemaudit@gmail.com">systeemaudit@gmail.com</a>.</p>
 </div>
-<a class="pub-top" href="#top" title="Naar boven">↑</a>
+<a class="pub-top" href="#top" title="Naar boven">↑</a><button aria-label="Schakel donkere/lichte modus" class="dm-toggle" onclick="dm_toggle()" title="Schakel donkere/lichte modus" type="button">
+<span class="dm-icon-dm">🌙</span>
+<span class="dm-icon-lm">☀️</span>
+</button>
+<script>
+(function(){
+  function g(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+  function s(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  window.dm_toggle=function(){
+    var r=document.documentElement;
+    var n=r.getAttribute('data-theme')==='dark'?'light':'dark';
+    r.setAttribute('data-theme',n);
+    s('systeem-audit-thema',n);
+  };
+  try{
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(e){
+      if(!g('systeem-audit-thema')){
+        document.documentElement.setAttribute('data-theme',e.matches?'dark':'light');
+      }
+    });
+  }catch(e){}
+})();
+</script>
 <footer class="pub-footer">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 6 oktober 2026, 14:20</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 13 oktober 2026, 19:35</p>
 <p><a href="home.html">← Terug naar overzicht</a> ·
      <a href="../index.html">🌐 Taalkeuze</a></p>
 </footer>

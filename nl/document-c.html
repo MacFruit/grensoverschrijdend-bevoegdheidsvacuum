@@ -28,6 +28,25 @@ i { font-size: 10.5pt; color: #555555; }
 .datum { font-weight: bold; color: #000000; }
 .titel { font-weight: bold; text-transform: uppercase; }
 .opvolging { font-style: italic; color: #555555; }
+.entry.technisch { font-size: 10pt; color: #777; font-style: italic;
+                   padding: 2pt 0 2pt 12pt; border-left: 2pt solid #d5d0c5;
+                   margin-left: 4pt; margin-bottom: 5pt; }
+.entry.technisch .datum { color: #888; font-weight: normal; }
+.entry.technisch .titel { color: #666; font-weight: 600;
+                          text-transform: uppercase; font-size: 9.5pt; }
+.entry.technisch .opvolging { color: #999; }
+.richting { font-weight: 700; font-size: 10pt; letter-spacing: 0.5px;
+            margin-right: 3pt; }
+.richting-ontvangen { color: #1a3c6e; }
+.richting-verzonden { color: #8b1e1e; }
+.entry.technisch .richting { font-size: 9pt; }
+.entry.technisch .richting-ontvangen { color: #556a8b; }
+.entry.technisch .richting-verzonden { color: #8b5a5a; }
+.oorsprong { font-style: italic; color: #555555; font-size: 10.5pt; }
+.entry.technisch .oorsprong { color: #999; font-size: 9.5pt; }
+.technisch-notice { background: #f7f5f1; border-left: 4pt solid #d5d0c5;
+                    padding: 8pt 14pt; margin: 12pt 0 20pt;
+                    font-size: 10.5pt; color: #555; font-style: italic; }
 p.lead { font-style: italic; color: #444; margin-bottom: 12pt; }
 p.tijd { font-size: 10pt; color: #888888; font-style: italic; letter-spacing: 1pt; text-transform: uppercase; margin-bottom: 4pt; }
 svg { display: block; width: 100%; height: auto; margin: 8pt 0; }
@@ -169,6 +188,22 @@ tr:nth-child(even) td { background: #f4f1f8; }
     font-size: 10pt; color: #888; text-decoration: none;
 }
 .pub-naar-boven:hover { color: #1a3c6e; text-decoration: underline; }
+
+.dm-toggle {
+    position: fixed; bottom: 80px; right: 24px; z-index: 200;
+    background: #ffffff; color: #1a3c6e; border: 1px solid #d5d0c5;
+    width: 44px; height: 44px; border-radius: 50%;
+    cursor: pointer; font-size: 18pt; line-height: 1; padding: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .15s, background .15s, border-color .15s;
+    font-family: Aptos, Calibri, sans-serif;
+}
+.dm-toggle:hover { transform: scale(1.1); background: #eef2f7; border-color: #1a3c6e; }
+.dm-toggle .dm-icon-lm { display: none; }
+html[data-theme="dark"] .dm-toggle .dm-icon-dm { display: none; }
+html[data-theme="dark"] .dm-toggle .dm-icon-lm { display: inline; }
+
 @media (max-width: 700px) {
     .pub-nav { padding: 8px 12px; margin: -16pt -14pt 16pt -14pt; }
     .pub-nav a { padding: 5px 9px; font-size: 12pt; }
@@ -176,8 +211,162 @@ tr:nth-child(even) td { background: #f4f1f8; }
     .pub-toc { padding: 10pt 14pt; }
     .pub-toc .niv3 { padding-left: 24pt; }
 }
+
+
+html[data-theme="dark"] { color-scheme: dark; }
+
+html[data-theme="dark"] body {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4 {
+    color: #7fb3ff;
+    border-color: #4a6fa5;
+}
+html[data-theme="dark"] h5 { color: #a8c5e8; }
+html[data-theme="dark"] p.subtitel { color: #a0a0a0; }
+html[data-theme="dark"] p.lead { color: #b0b0b0; }
+html[data-theme="dark"] p.tijd { color: #a0a0a0; }
+html[data-theme="dark"] .netwerk { color: #b0b0b0; }
+html[data-theme="dark"] .meta { color: #c0c0c0; }
+html[data-theme="dark"] .meta strong { color: #7fb3ff; }
+html[data-theme="dark"] .datum { color: #f0f0f0; }
+html[data-theme="dark"] .titel { color: #e8e8e8; }
+html[data-theme="dark"] .opvolging { color: #a0a0a0; }
+html[data-theme="dark"] .richting-ontvangen { color: #7fb3ff; }
+html[data-theme="dark"] .richting-verzonden { color: #ff8a8a; }
+html[data-theme="dark"] .oorsprong { color: #a0a0a0; }
+html[data-theme="dark"] .entry.technisch {
+    background: #232323;
+    border-left-color: #4a4a4a;
+    color: #a0a0a0;
+}
+html[data-theme="dark"] .entry.technisch .datum { color: #909090; }
+html[data-theme="dark"] .entry.technisch .titel { color: #b0b0b0; }
+html[data-theme="dark"] .entry.technisch .opvolging { color: #808080; }
+html[data-theme="dark"] .entry.technisch .richting-ontvangen { color: #8fa8c8; }
+html[data-theme="dark"] .entry.technisch .richting-verzonden { color: #c89090; }
+html[data-theme="dark"] .technisch-notice {
+    background: #232323; color: #a0a0a0; border-left-color: #4a4a4a;
+}
+html[data-theme="dark"] hr { border-top-color: #3a3a3a; }
+html[data-theme="dark"] .titelblad h1 { color: #7fb3ff; }
+html[data-theme="dark"] .titelblad .ondertitel { color: #c0c0c0; }
+html[data-theme="dark"] .titelblad .documentaanduiding { color: #7fb3ff; }
+html[data-theme="dark"] .titelblad .auteur,
+html[data-theme="dark"] .titelblad .meta-lijn { color: #a0a0a0; }
+html[data-theme="dark"] .gebruikersaanwijzing p { color: #c0c0c0; }
+html[data-theme="dark"] table th { background: #2e4a72; border-color: #2e4a72; }
+html[data-theme="dark"] table td {
+    background: #232323; border-color: #3a3a3a; color: #d0d0d0;
+}
+html[data-theme="dark"] tr:nth-child(even) td { background: #2a2a2a; }
+html[data-theme="dark"] .figure { background: #232323; border-color: #3a3a3a; }
+html[data-theme="dark"] .figure svg { background: transparent; }
+html[data-theme="dark"] .caption {
+    color: #a0a0a0;
+    border-top-color: #3a3a3a;
+}
+html[data-theme="dark"] .intro-rechten {
+    background: #232323; color: #b0b0b0; border-left-color: #4a6fa5;
+}
+html[data-theme="dark"] .actie { background: #2a2440; color: #d0d0d0; }
+html[data-theme="dark"] .afsluiting { background: #2a2440; color: #d0d0d0; }
+html[data-theme="dark"] .werkversie { background: #332c14; color: #d0c090; }
+html[data-theme="dark"] .noot { color: #a0a0a0; border-top-color: #3a3a3a; }
+html[data-theme="dark"] a { color: #7fb3ff; }
+
+/* === Actor-blokken (Document C) === */
+html[data-theme="dark"] .actor {
+    border-bottom-color: #3a3a3a;
+}
+html[data-theme="dark"] .actor-naam { color: #e0e0e0; }
+html[data-theme="dark"] .actor-rol { color: #7fb3ff; }
+
+/* === Sectie-banners (Document C) === */
+html[data-theme="dark"] .banner-be {
+    background: #2a1c1c;
+    border-left-color: #ff8a8a;
+}
+html[data-theme="dark"] .banner-be strong { color: #ff8a8a; }
+
+html[data-theme="dark"] .banner-nl {
+    background: #1c2129;
+    border-left-color: #7fb3ff;
+}
+html[data-theme="dark"] .banner-nl strong { color: #7fb3ff; }
+
+html[data-theme="dark"] .banner-eu {
+    background: #1c2628;
+    border-left-color: #5fc8cc;
+}
+html[data-theme="dark"] .banner-eu strong { color: #5fc8cc; }
+
+/* === Inline badges === */
+html[data-theme="dark"] .badge-be { color: #ff8a8a; }
+html[data-theme="dark"] .badge-nl { color: #7fb3ff; }
+html[data-theme="dark"] .badge-mem { color: #ffb380; }
+html[data-theme="dark"] .badge-eu { color: #5fc8cc; }
+
+/* === Sectorkoppen + recht-ankers (Document E) === */
+html[data-theme="dark"] .sector-titel { color: #7fb3ff; }
+html[data-theme="dark"] .recht-kop-wrapper { border-bottom-color: #4a6fa5; }
+html[data-theme="dark"] .legend-row { color: #c0c0c0; }
+
+/* === Contactblok === */
+html[data-theme="dark"] .contactblok {
+    background: #232323;
+    border-left-color: #4a6fa5;
+}
+html[data-theme="dark"] .contactblok a { color: #7fb3ff; }
+
+/* === Navigatie === */
+html[data-theme="dark"] .pub-nav {
+    background: #232323; border-bottom-color: #3a3a3a;
+}
+html[data-theme="dark"] .pub-nav a { color: #b0c8e8; }
+html[data-theme="dark"] .pub-nav a:hover { background: #2a2a2a; border-color: #4a4a4a; }
+html[data-theme="dark"] .pub-nav a.actief { background: #4a6fa5; color: #ffffff; }
+html[data-theme="dark"] .pub-nav a.home { border-color: #4a4a4a; }
+html[data-theme="dark"] .pub-nav .titel-klein { color: #888; }
+
+html[data-theme="dark"] .pub-toc {
+    background: #232323; border-left-color: #4a6fa5;
+}
+html[data-theme="dark"] .pub-toc a { color: #b0c8e8; }
+html[data-theme="dark"] .pub-toc .niv3 { color: #888; }
+
+html[data-theme="dark"] .pub-footer {
+    border-top-color: #3a3a3a; color: #888;
+}
+html[data-theme="dark"] .pub-footer a { color: #b0c8e8; }
+html[data-theme="dark"] .pub-naar-boven { color: #888; }
+html[data-theme="dark"] .pub-naar-boven:hover { color: #b0c8e8; }
+html[data-theme="dark"] .dm-toggle {
+    background: #232323; border-color: #4a4a4a; color: #e0e0e0;
+}
+html[data-theme="dark"] .dm-toggle:hover {
+    background: #2a2a2a; border-color: #7fb3ff;
+}
+
+/* === SVG dark-mode === */
+html[data-theme="dark"] .figure svg {
+    filter: invert(0.88) hue-rotate(180deg);
+}
+html[data-theme="dark"] .figure {
+    background: #1e1e1e;
+}
+html[data-theme="dark"] .figure img {
+    filter: invert(0.88) hue-rotate(180deg);
+}
+
 </style>
-</head>
+<script>
+(function(){try{var t=localStorage.getItem('systeem-audit-thema');if(t!=='dark'&&t!=='light'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+</script></head>
 <body><a id="top"></a>
 <nav class="pub-nav">
 <div class="links"><a class="home" href="home.html">← Overzicht</a> <a class="home" href="../index.html">🌐 Taalkeuze</a> <a class="" href="document-0.html">Inleiding</a> <a class="" href="document-a.html">Narratief</a> <a class="" href="document-b.html">Data</a> <a class="actief" href="document-c.html">Visueel</a> <a class="" href="document-d.html">Synthese</a> <a class="" href="document-e.html">Rechten</a></div>
@@ -189,7 +378,7 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document C — De visuele architectuur</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 6 oktober 2026, 14:20</p>
+<p class="meta-lijn">Versie bijgewerkt: 13 oktober 2026, 19:35</p>
 </div>
 
 <div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
@@ -354,6 +543,7 @@ tr:nth-child(even) td { background: #f4f1f8; }
 <li class="niv3"><a href="#wat-het-gezin-ziet">Wat het gezin ziet</a></li>
 <li class="niv3"><a href="#wat-dit-schema-doet">Wat dit schema doet</a></li>
 <li class="niv3"><a href="#wat-er-niet-in-staat">Wat er niet in staat</a></li>
+<li class="niv3"><a href="#de-drie-zündknoten">De drie Zündknoten</a></li>
 </ul></div>
 
 <h1 id="inleiding-en-leeswijzer">Inleiding en leeswijzer</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
@@ -856,7 +1046,7 @@ Het kabinet van de Koning, dat verzoekschriften van burgers behandelt.<br/>
 <div class="actor">
 <span class="legend-num" style="background:#1a3c6e">24</span> <span class="actor-naam">CZ (Centrale Zorgverzekeraar)</span><br/>
 Grote Nederlandse zorgverzekeraar die de verplichte basisverzekering uitvoert en de verdragspolis aan Nederlandse zijde beheert.<br/>
-<span class="actor-rol">Rol in dit dossier:</span> Vergoedt medische rekeningen, maar weigert ziekenvervoer op basis van een perimetrie-eis die in België niet standaard wordt gemeten. Verzuimt de verdragspolis te registreren in het RIV-register.
+<span class="actor-rol">Rol in dit dossier:</span> Vergoedt medische rekeningen, maar weigert ziekenvervoer op basis van een perimetrie-eis die in België niet standaard wordt gemeten. Registreert de verdragspolis niet in het RIV-register, met het argument dat een verdragspolis geen Nederlandse zorgverzekering is.
 </div>
 <div class="actor">
 <span class="legend-num" style="background:#1a3c6e">25</span> <span class="actor-naam">ZorgSaam</span><br/>
@@ -901,7 +1091,7 @@ De Nederlandse rijksbelastingdienst voor heffing van inkomstenbelasting en premi
 <div class="actor">
 <span class="legend-num" style="background:#1a3c6e">33</span> <span class="actor-naam">ING Nederland</span><br/>
 Commerciële huisbank.<br/>
-<span class="actor-rol">Rol in dit dossier:</span> Biedt een betalingsregeling voor de opgelopen roodstand en creditcardschuld (ca. € 6.709 totaal), met strikte bancaire beperkingen. De bank wordt de facto schuldeiser van de falende verzorgingsstaat.
+<span class="actor-rol">Rol in dit dossier:</span> Biedt een betalingsregeling voor de opgelopen roodstand en creditcardschuld (ca. € 6.708 totaal), met strikte bancaire beperkingen. De bank wordt de facto schuldeiser van de falende verzorgingsstaat.
 </div>
 <div class="actor">
 <span class="legend-num" style="background:#1a3c6e">34</span> <span class="actor-naam">Vattenfall</span><br/>
@@ -916,7 +1106,7 @@ Regionale netbeheerder voor gas en elektriciteit in Zeeland.<br/>
 <div class="actor">
 <span class="legend-num" style="background:#1a3c6e">36</span> <span class="actor-naam">Gemeente Hulst (inclusief Stichting Hulst voor Elkaar)</span><br/>
 Nederlandse grensgemeente en haar uitvoeringsorganisatie voor het sociaal domein (Wmo, Jeugdwet, Participatiewet).<br/>
-<span class="actor-rol">Rol in dit dossier:</span> E-mails en AVG-inzageverzoeken botsen structureel op DNS-fouten. Hulpverzoeken worden na maanden ongelezen verwijderd. De gemeente weigert een administratieve overname van de Europese gehandicaptenparkeerkaart en eist een nieuwe lokale keuring.
+<span class="actor-rol">Rol in dit dossier:</span> E-mails en AVG-inzageverzoeken via persoonlijke adressen binnen het gemeentedomein worden structureel gefilterd. Alleen de algemene info-adressen staan open voor inkomende correspondentie. Berichten via de persoonlijke adressen expireren zonder inhoudelijke behandeling. De gemeente weigert een administratieve overname van de Europese gehandicaptenparkeerkaart en eist een nieuwe lokale keuring.
 </div>
 <div class="actor">
 <span class="legend-num" style="background:#1a3c6e">37</span> <span class="actor-naam">Reizen door Zeeland</span><br/>
@@ -1269,7 +1459,7 @@ Het mensenrechtenorgaan van de VN, inclusief het CRPD-comité.<br/>
 <line stroke="#c62828" stroke-dasharray="3 3" stroke-width="1" x1="400" x2="600" y1="145" y2="145"></line>
 <text fill="#c62828" font-size="11" font-weight="700" text-anchor="middle" x="500" y="128">roodstand bankrekening</text>
 <text fill="#c62828" font-size="11" font-weight="700" text-anchor="middle" x="500" y="175">creditcardschuld</text>
-<text fill="#666" font-size="9" font-style="italic" text-anchor="middle" x="500" y="196">totaal € 6.709</text>
+<text fill="#666" font-size="9" font-style="italic" text-anchor="middle" x="500" y="196">totaal € 6.708</text>
 <text fill="#c62828" font-size="12" font-weight="700" text-anchor="middle" x="500" y="248">REKENING</text>
 <path d="M 610 165 L 780 165" marker-end="url(#c04_svg5_f5-o)" stroke="#e65100" stroke-width="3"></path>
 <rect fill="#fff6f0" height="90" rx="6" stroke="#e65100" stroke-width="1.5" width="170" x="790" y="120"></rect>
@@ -3767,7 +3957,7 @@ Voor structurele oplossingen op langere termijn: dit is een van de punten waar d
 <!-- ING centraal -->
 <rect fill="#faf8f5" height="130" rx="10" stroke="#c62828" stroke-width="3" width="240" x="480" y="90"></rect>
 <rect fill="#c62828" fill-opacity="0.15" height="40" rx="8" width="236" x="482" y="92"></rect>
-<text fill="#c62828" font-size="13" font-weight="700" text-anchor="middle" x="600" y="120">- € 6.709</text>
+<text fill="#c62828" font-size="13" font-weight="700" text-anchor="middle" x="600" y="120">- € 6.708</text>
 <text fill="#333" font-size="11" text-anchor="middle" x="600" y="180">roodstand bankrekening</text>
 <text fill="#333" font-size="11" text-anchor="middle" x="600" y="200">creditcardschuld</text>
 <text fill="#c62828" font-size="12" font-weight="700" text-anchor="middle" x="600" y="240">ING</text>
@@ -4940,8 +5130,8 @@ De juridische weg is de laatste weg. Maar hij is niet voor iedereen even toegank
 <text fill="#333" font-size="10.5" x="85" y="164">13-05-2026</text>
 <text fill="#333" font-size="10.5" x="85" y="186">Per aangetekende post · Franse Requête</text>
 <text fill="#8b1e1e" font-size="11" font-weight="700" x="85" y="220">Technisch probleem:</text>
-<text fill="#333" font-size="10.5" x="85" y="244">DNS-fout op de mailserver van palace.be</text>
-<text fill="#333" font-size="10.5" x="85" y="266">Digitale zending onmogelijk</text>
+<text fill="#333" font-size="10.5" x="85" y="244">De website van het Paleis functioneerde niet naar behoren</text>
+<text fill="#333" font-size="10.5" x="85" y="266">Aanvrager koos daarom voor aangetekende post</text>
 <text fill="#333" font-size="10.5" x="85" y="288">Alleen fysieke brief bereikt het Paleis</text>
 <text fill="#8b1e1e" font-size="11" font-weight="700" x="85" y="322">Uitkomst:</text>
 <text fill="#333" font-size="10.5" x="85" y="346">Ontvangst bevestigd 02-06-2026</text>
@@ -4960,7 +5150,7 @@ De juridische weg is de laatste weg. Maar hij is niet voor iedereen even toegank
 <text fill="#333" font-size="10.5" x="665" y="368">persoonlijk interveniëren · doorgeleiding</text>
 <text fill="#333" font-size="10.5" x="675" y="386">naar de bevoegde minister</text>
 </svg>
-<p class="caption"><strong>Figuur XVIII.5 — De twee verzoekschriften.</strong> In beide landen is een verzoekschrift naar het staatshoofd gestuurd. In België werkte de digitale weg niet door een DNS-fout op de mailserver van het Paleis; alleen de fysieke brief bereikte het Paleis. In Nederland werkte de digitale weg wel. In beide gevallen: doorverwijzing naar de verantwoordelijke minister, zonder inhoudelijke tussenkomst van de koning.</p>
+<p class="caption"><strong>Figuur XVIII.5 — De twee verzoekschriften.</strong> In beide landen is een verzoekschrift naar het staatshoofd gestuurd. In België functioneerde de website van het Paleis niet naar behoren, waardoor de aanvrager koos voor aangetekende post. In Nederland werkte de digitale weg wel. In beide gevallen: doorverwijzing naar de verantwoordelijke minister, zonder inhoudelijke tussenkomst van de koning.</p>
 </div>
 <h3 id="deel-f-wat-dit-hoofdstuk-vaststelt">Deel F — Wat dit hoofdstuk vaststelt</h3>
 <p>De adel — de koning en zijn kabinet — heeft in België en Nederland geen uitvoerende macht. De koning regeert, maar bestuurt niet. Hij is onschendbaar, maar zijn handelingen zijn alleen geldig met de medeondertekening van een verantwoordelijke minister.</p>
@@ -5414,28 +5604,315 @@ De juridische weg is de laatste weg. Maar hij is niet voor iedereen even toegank
 </g>
 <g transform="translate(1640, 60)">
 <text fill="#333" font-size="11" font-weight="700" text-anchor="end" x="0" y="0">AANTAL</text>
-<text fill="#333" font-size="9" text-anchor="end" x="0" y="20">56 actoren (ZIN en SOLVIT gesplitst)</text>
+<text fill="#333" font-size="9" text-anchor="end" x="0" y="20">62 organisaties</text>
 <text fill="#333" font-size="9" text-anchor="end" x="0" y="38">1 gezin</text>
-<text fill="#333" font-size="9" text-anchor="end" x="0" y="56">127 verbindingen</text>
-<text fill="#c62828" font-size="9" font-weight="600" text-anchor="end" x="0" y="74">waarvan 96 geblokkeerd</text>
+<text fill="#333" font-size="9" text-anchor="end" x="0" y="56">honderden verbindingen</text>
+<text fill="#c62828" font-size="9" font-weight="600" text-anchor="end" x="0" y="74">merendeel geblokkeerd</text>
 </g>
 </svg>
 <p class="caption"><strong>Figuur XXIV.1 — Het volledige netwerk.</strong> Wat het gezin ziet wanneer het probeert te navigeren. Twee werelden, elk met een eigen set organisaties. Eén gezin in het midden. En 127 verbindingen, waarvan het grootste deel geblokkeerd. In de vorige hoofdstukken was elk onderdeel afzonderlijk te volgen. Hier is het geheel — zonder ordening, zonder hiërarchie, zonder rust.</p>
 </div>
 <h3 id="wat-dit-schema-doet">Wat dit schema doet</h3>
 <p>Alle vorige hoofdstukken waren geordend. Elk had een titel, een kader, een afgebakend onderwerp. Wie die hoofdstukken leest, krijgt de indruk dat het systeem te begrijpen is, dat elk onderdeel een eigen functie heeft en dat de chaos slechts schijn is.</p>
-<p>Dit schema ontkracht die indruk. Hier is geen ordening. Hier is geen titel per knooppunt. Hier is alleen het geheel: 54 organisaties, één gezin, 127 verbindingen waarvan 96 geblokkeerd. En in het midden een lichaam dat zich moet staande houden.</p>
+<p>Dit schema ontkracht die indruk. Hier is geen ordening. Hier is geen titel per knooppunt. Hier is alleen het geheel: 62 organisaties, één gezin, meer dan honderd verbindingen waarvan het merendeel geblokkeerd. En in het midden een lichaam dat zich moet staande houden.</p>
 <p>De lezer die de vorige 23 hoofdstukken heeft doorlopen, wist waar hij moest kijken. Hij kon de knooppunten volgen, de kanalen herkennen, de kleuren lezen. Maar het gezin dat in deze situatie zit, heeft die ordening niet. Het ziet niet dat Vitaz in de zorgsector valt en CM in de financiële sector. Het ziet niet dat CZ een verdragspolis uitvoert en CAK het register beheert. Het ziet alleen: er zijn mensen die mijn dossier moeten behandelen, en ze doen het niet.</p>
 <p>Dat is wat dit schema toont. Niet het falen van één instantie. Niet het falen van één mechanisme. Maar het falen van het geheel — een netwerk zo complex dat het voor een simpele mens onmogelijk is om er zijn weg in te vinden, en zo star dat het voor een simpele mens onmogelijk is om er iets in te veranderen.</p>
 <h3 id="wat-er-niet-in-staat">Wat er niet in staat</h3>
 <p>De 127 verbindingen die in dit schema zijn getekend, zijn de belangrijkste. In werkelijkheid zijn er meer. Elke brief die naar een instantie gaat, elke keer dat een ambtenaar in een systeem kijkt, elk telefoontje dat wordt gepleegd — dat zijn allemaal verbindingen die niet in dit schema staan.</p>
 <p>En de 96 geblokkeerde verbindingen die hier zichtbaar zijn, zijn alleen de geblokkeerde verbindingen tussen het gezin en de organisaties. In werkelijkheid zijn er ook geblokkeerde verbindingen tussen de organisaties onderling. Tussen CM en UWV. Tussen CZ en CAK. Tussen FOD SZ en FOD Financiën. Elke geblokkeerde verbinding tussen organisaties is een extra laag die het gezin moet navigeren.</p>
 <p>Wat dit schema toont, is niet het volledige netwerk. Het is een representatie van het volledige netwerk. Als alle verbindingen zouden worden getekend, zou het schema onleesbaar worden. En dat is precies het punt.</p>
-<p class="noot">Alle organisaties in dit hoofdstuk zijn rechtspersonen. Natuurlijke personen worden aangeduid met hun functie of hun symbool. De organisaties zijn gebaseerd op Document B. De verbindingen zijn gebaseerd op de feitelijke correspondentie in Document B, waar relevant samengevat. De aantallen (54 organisaties, 127 verbindingen) zijn indicatief; het werkelijke aantal is hoger. Dit hoofdstuk is geen juridisch advies.</p>
-<a class="pub-top" href="#top" title="Naar boven">↑</a>
+<p class="noot">Alle organisaties in dit hoofdstuk zijn rechtspersonen. Natuurlijke personen worden aangeduid met hun functie of hun symbool. De organisaties zijn gebaseerd op Document B. De verbindingen zijn gebaseerd op de feitelijke correspondentie in Document B, waar relevant samengevat. De genoemde aantallen zijn indicatief; het werkelijke aantal verbindingen is hoger. Dit hoofdstuk is geen juridisch advies.</p>
+
+<h3 id="de-drie-zündknoten">De drie Zündknoten</h3>
+<p class="lead">De bioloog en systeemwetenschapper Frederic Vester introduceerde in zijn werk over vernet denken (<em>Die Kunst vernetzt zu denken</em>, 2002) het begrip <em>Wirkungsgefüge</em>: een netwerk van oorzaak en gevolg waarin je niet naar de knooppunten moet kijken, maar naar de verwevenheid tussen de knooppunten. Zijn centrale vraag is telkens dezelfde: welk knooppunt moet je aanraken om een heel stelsel te laten kantelen? In dit hoofdstuk wordt het volledige netwerk van de Systeem-Audit door die bril bekeken. Wat blijkt: het netwerk valt uiteen in drie kaartenhuizen, elk met één ontstekingspunt.</p>
+<h4>Deel A — Wat Vester bedoelt</h4>
+<p>Vester onderscheidt vier soorten knooppunten in een vernet systeem:</p>
+<div class="figure">
+<svg viewbox="0 0 1100 380" xmlns="http://www.w3.org/2000/svg">
+<text fill="#4a3b6b" font-size="13" font-weight="700" letter-spacing="2" text-anchor="middle" x="550" y="30">DE VIER SOORTEN KNOOPPUNTEN</text>
+<rect fill="#fdf2f2" height="270" rx="8" stroke="#c62828" stroke-width="1.5" width="240" x="40" y="70"></rect>
+<text fill="#c62828" font-size="12" font-weight="700" text-anchor="middle" x="160" y="98">ZÜNDKNOTEN</text>
+<text fill="#666" font-size="9.5" font-style="italic" text-anchor="middle" x="160" y="120">ontstekingspunt</text>
+<text fill="#333" font-size="10" x="65" y="155">Klein knooppunt.</text>
+<text fill="#333" font-size="10" x="65" y="173">Grote cascade.</text>
+<text fill="#333" font-size="10" x="65" y="200">Eén aanraking</text>
+<text fill="#333" font-size="10" x="65" y="218">en het hele</text>
+<text fill="#333" font-size="10" x="65" y="236">kaartenhuis valt om.</text>
+<text fill="#666" font-size="9.5" font-style="italic" x="65" y="270">Hier moet je</text>
+<text fill="#666" font-size="9.5" font-style="italic" x="65" y="288">ingrijpen.</text>
+<rect fill="#eaf5ea" height="270" rx="8" stroke="#2e7d32" stroke-width="1.5" width="240" x="300" y="70"></rect>
+<text fill="#2e7d32" font-size="12" font-weight="700" text-anchor="middle" x="420" y="98">PUFFERKNOTEN</text>
+<text fill="#666" font-size="9.5" font-style="italic" text-anchor="middle" x="420" y="120">bufferpunt</text>
+<text fill="#333" font-size="10" x="325" y="155">Vangt een cascade</text>
+<text fill="#333" font-size="10" x="325" y="173">gedeeltelijk op.</text>
+<text fill="#333" font-size="10" x="325" y="200">Dempen van druk.</text>
+<text fill="#333" font-size="10" x="325" y="218">Werken alleen</text>
+<text fill="#333" font-size="10" x="325" y="236">binnen hun eigen kader.</text>
+<text fill="#666" font-size="9.5" font-style="italic" x="325" y="270">Hier houdt het</text>
+<text fill="#666" font-size="9.5" font-style="italic" x="325" y="288">systeem stand.</text>
+<rect fill="#fff8e1" height="270" rx="8" stroke="#e65100" stroke-width="1.5" width="240" x="560" y="70"></rect>
+<text fill="#e65100" font-size="12" font-weight="700" text-anchor="middle" x="680" y="98">SCHWACHSTELLEN</text>
+<text fill="#666" font-size="9.5" font-style="italic" text-anchor="middle" x="680" y="120">zwakke schakel</text>
+<text fill="#333" font-size="10" x="585" y="155">Kraakt onder druk</text>
+<text fill="#333" font-size="10" x="585" y="173">zonder te breken.</text>
+<text fill="#333" font-size="10" x="585" y="200">Verklaart zich</text>
+<text fill="#333" font-size="10" x="585" y="218">onbevoegd,</text>
+<text fill="#333" font-size="10" x="585" y="236">verwijst door.</text>
+<text fill="#666" font-size="9.5" font-style="italic" x="585" y="270">Hier moet je</text>
+<text fill="#666" font-size="9.5" font-style="italic" x="585" y="288">niet zijn.</text>
+<rect fill="#f5f5f5" height="270" rx="8" stroke="#555" stroke-width="1.5" width="240" x="820" y="70"></rect>
+<text fill="#555" font-size="12" font-weight="700" text-anchor="middle" x="940" y="98">BLINDE VLEK</text>
+<text fill="#666" font-size="9.5" font-style="italic" text-anchor="middle" x="940" y="120">wat het systeem niet ziet</text>
+<text fill="#333" font-size="10" x="845" y="155">Het systeem</text>
+<text fill="#333" font-size="10" x="845" y="173">is blind voor</text>
+<text fill="#333" font-size="10" x="845" y="191">zijn eigen gedrag.</text>
+<text fill="#333" font-size="10" x="845" y="218">Het gelooft dat</text>
+<text fill="#333" font-size="10" x="845" y="236">het correct werkt.</text>
+<text fill="#666" font-size="9.5" font-style="italic" x="845" y="270">Hier moet je</text>
+<text fill="#666" font-size="9.5" font-style="italic" x="845" y="288">het systeem</text>
+<text fill="#666" font-size="9.5" font-style="italic" x="845" y="306">confronteren.</text>
+</svg>
+<p class="caption"><strong>Figuur XXV.1 — De vier soorten knooppunten.</strong> Vester onderscheidt in elk vernet systeem vier soorten knooppunten. De kunst van het ingrijpen is niet om ze allemaal aan te pakken, maar om te weten welk knooppunt een cascade ontsteekt en welk knooppunt de cascade opvangt.</p>
+</div>
+<h4>Deel B — Drie kaartenhuizen, drie Zündknoten</h4>
+<p>Wie het volledige netwerk van de Systeem-Audit door Vesters bril bekijkt, ziet niet één kaartenhuis maar drie. Elk kaartenhuis heeft een eigen Zündknoten. En elk van die drie is technisch uitvoerbaar binnen de bestaande regels.</p>
+<div class="figure">
+<svg viewbox="0 0 1300 640" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="c25_z-r" markerheight="9" markerwidth="9" orient="auto" refx="8" refy="3"><polygon fill="#c62828" points="0,0 8,3 0,6"></polygon></marker>
+</defs>
+<text fill="#4a3b6b" font-size="13" font-weight="700" letter-spacing="2" text-anchor="middle" x="650" y="30">DRIE KAARTENHUIZEN · DRIE ZÜNDKNOTEN</text>
+<!-- Kaartenhuis 1 -->
+<rect fill="#fdf2f2" height="540" rx="10" stroke="#c62828" stroke-width="1.5" width="400" x="40" y="70"></rect>
+<text fill="#c62828" font-size="12" font-weight="700" text-anchor="middle" x="240" y="100">KAARTENHUIS 1 · DE KSZ-BLOKKADE</text>
+<circle cx="240" cy="160" fill="#c62828" fill-opacity="0.18" r="34" stroke="#c62828" stroke-width="2.5"></circle>
+<text fill="#c62828" font-size="9" font-weight="700" text-anchor="middle" x="240" y="156">ZÜND-</text>
+<text fill="#c62828" font-size="9" font-weight="700" text-anchor="middle" x="240" y="170">KNOTEN</text>
+<text fill="#333" font-size="9.5" text-anchor="middle" x="240" y="212">CM-adviserend arts</text>
+<text fill="#666" font-size="9" font-style="italic" text-anchor="middle" x="240" y="228">registreert ziektestatus</text>
+<text fill="#666" font-size="9" font-style="italic" text-anchor="middle" x="240" y="242">niet in de Kruispuntbank</text>
+<path d="M 240 250 L 240 275" marker-end="url(#c25_z-r)" stroke="#c62828" stroke-width="2.5"></path>
+<rect fill="#fff" height="300" rx="8" stroke="#c62828" stroke-dasharray="3 2" stroke-width="1" width="320" x="80" y="285"></rect>
+<text fill="#c62828" font-size="10" font-weight="700" text-anchor="middle" x="240" y="308">WAT VALt OM</text>
+<text fill="#333" font-size="10" x="100" y="338">→ Parentia: geen medische grond</text>
+<text fill="#333" font-size="10" x="100" y="358">→ sociale toeslag bevroren</text>
+<text fill="#333" font-size="10" x="100" y="386">→ SVB: geen koppeling</text>
+<text fill="#333" font-size="10" x="100" y="406">→ kindgebonden budget vertraagd</text>
+<text fill="#333" font-size="10" x="100" y="434">→ Dienst Toeslagen: geen signaal</text>
+<text fill="#333" font-size="10" x="100" y="454">→ huurtoeslag herberekend</text>
+<text fill="#333" font-size="10" x="100" y="482">→ FOD Financiën: geen vinkje</text>
+<text fill="#333" font-size="10" x="100" y="502">→ verhoogde belastingvrije som</text>
+<text fill="#333" font-size="10" x="110" y="518">geblokkeerd</text>
+<text fill="#c62828" font-size="9.5" font-weight="600" x="100" y="550">ZES BLOKKADES</text>
+<text fill="#666" font-size="9.5" font-style="italic" x="100" y="566">uit één administratieve</text>
+<text fill="#666" font-size="9.5" font-style="italic" x="100" y="580">handeling</text>
+<!-- Kaartenhuis 2 -->
+<rect fill="#fdf2f2" height="540" rx="10" stroke="#c62828" stroke-width="1.5" width="400" x="460" y="70"></rect>
+<text fill="#c62828" font-size="12" font-weight="700" text-anchor="middle" x="660" y="100">KAARTENHUIS 2 · REFERTEPERIODE</text>
+<circle cx="660" cy="160" fill="#c62828" fill-opacity="0.18" r="34" stroke="#c62828" stroke-width="2.5"></circle>
+<text fill="#c62828" font-size="9" font-weight="700" text-anchor="middle" x="660" y="156">ZÜND-</text>
+<text fill="#c62828" font-size="9" font-weight="700" text-anchor="middle" x="660" y="170">KNOTEN</text>
+<text fill="#333" font-size="9.5" text-anchor="middle" x="660" y="212">CM past Europese</text>
+<text fill="#666" font-size="9" font-style="italic" text-anchor="middle" x="660" y="228">samentelling niet toe</text>
+<text fill="#666" font-size="9" font-style="italic" text-anchor="middle" x="660" y="242">(art. 6 Verordening 883/2004)</text>
+<path d="M 660 250 L 660 275" marker-end="url(#c25_z-r)" stroke="#c62828" stroke-width="2.5"></path>
+<rect fill="#fff" height="300" rx="8" stroke="#c62828" stroke-dasharray="3 2" stroke-width="1" width="320" x="500" y="285"></rect>
+<text fill="#c62828" font-size="10" font-weight="700" text-anchor="middle" x="660" y="308">WAT VALT OM</text>
+<text fill="#333" font-size="10" x="520" y="338">→ ziekte-uitkering geblokkeerd</text>
+<text fill="#666" font-size="9.5" font-style="italic" x="530" y="354">"wachttijd 180 dagen niet vervuld"</text>
+<text fill="#333" font-size="10" x="520" y="382">→ UWV wacht op BE-beslissing</text>
+<text fill="#333" font-size="10" x="520" y="402">→ WIA geblokkeerd</text>
+<text fill="#333" font-size="10" x="520" y="430">→ Vester-arrest niet toegepast</text>
+<text fill="#333" font-size="10" x="520" y="450">→ peildatum foutief vastgesteld</text>
+<text fill="#333" font-size="10" x="520" y="478">→ CZ en CAK: geen EESSI-bericht</text>
+<text fill="#333" font-size="10" x="520" y="498">→ verdragspolis niet gesynct</text>
+<text fill="#333" font-size="10" x="520" y="526">→ burger wordt handmatige</text>
+<text fill="#333" font-size="10" x="530" y="542">data-hub tussen lidstaten</text>
+<text fill="#c62828" font-size="9.5" font-weight="600" x="520" y="566">VIJF BLOKKADES</text>
+<text fill="#666" font-size="9.5" font-style="italic" x="520" y="582">uit het negeren van één</text>
+<text fill="#666" font-size="9.5" font-style="italic" x="520" y="596">Europees wetsartikel</text>
+<!-- Kaartenhuis 3 -->
+<rect fill="#fdf2f2" height="540" rx="10" stroke="#c62828" stroke-width="1.5" width="380" x="880" y="70"></rect>
+<text fill="#c62828" font-size="12" font-weight="700" text-anchor="middle" x="1070" y="100">KAARTENHUIS 3 · WOONPLAATS</text>
+<circle cx="1070" cy="160" fill="#c62828" fill-opacity="0.18" r="34" stroke="#c62828" stroke-width="2.5"></circle>
+<text fill="#c62828" font-size="9" font-weight="700" text-anchor="middle" x="1070" y="156">ZÜND-</text>
+<text fill="#c62828" font-size="9" font-weight="700" text-anchor="middle" x="1070" y="170">KNOTEN</text>
+<text fill="#333" font-size="9.5" text-anchor="middle" x="1070" y="212">FOD SZ hanteert</text>
+<text fill="#666" font-size="9" font-style="italic" text-anchor="middle" x="1070" y="228">"domicilie in België"</text>
+<text fill="#666" font-size="9" font-style="italic" text-anchor="middle" x="1070" y="242">als absolute voorwaarde</text>
+<path d="M 1070 250 L 1070 275" marker-end="url(#c25_z-r)" stroke="#c62828" stroke-width="2.5"></path>
+<rect fill="#fff" height="300" rx="8" stroke="#c62828" stroke-dasharray="3 2" stroke-width="1" width="320" x="910" y="285"></rect>
+<text fill="#c62828" font-size="10" font-weight="700" text-anchor="middle" x="1070" y="308">WAT VALT OM</text>
+<text fill="#333" font-size="10" x="930" y="338">→ IVT geblokkeerd</text>
+<text fill="#333" font-size="10" x="930" y="366">→ fiscale erkenning geblokkeerd</text>
+<text fill="#666" font-size="9.5" font-style="italic" x="940" y="382">8 punten ≠ 9-puntendrempel</text>
+<text fill="#333" font-size="10" x="930" y="410">→ CAK weigert RIV-registratie</text>
+<text fill="#333" font-size="10" x="930" y="430">→ zorgtoeslag blijft op nul</text>
+<text fill="#333" font-size="10" x="930" y="458">→ gemeente Hulst weigert GPK</text>
+<text fill="#333" font-size="10" x="930" y="478">→ nieuwe keuring geëist</text>
+<text fill="#333" font-size="10" x="930" y="506">→ Parentia: inkomensgrens</text>
+<text fill="#333" font-size="10" x="930" y="526">→ sociale toeslag definitief weg</text>
+<text fill="#c62828" font-size="9.5" font-weight="600" x="930" y="558">ZES BLOKKADES</text>
+<text fill="#666" font-size="9.5" font-style="italic" x="930" y="574">uit één territoriale</text>
+<text fill="#666" font-size="9.5" font-style="italic" x="930" y="588">voorwaarde</text>
+</svg>
+<p class="caption"><strong>Figuur XXV.2 — De drie Zündknoten.</strong> Elk kaartenhuis heeft één ontstekingspunt. Raak dat punt aan, en de cascade zwijgt. Wat opvalt: geen van de drie Zündknoten is juridisch onmogelijk. Twee zijn verplichtingen die al bestaan (KSZ-registratie, samentelling onder Verordening 883/2004). Eén is in strijd met vaststaande rechtspraak (woonplaatseis vs. Vester-arrest).</p>
+</div>
+<h4>Deel C — De drie Zündknoten naast elkaar</h4>
+<table>
+<thead>
+<tr><th style="width:22%">Kaartenhuis</th><th style="width:26%">Zündknoten</th><th style="width:26%">Wat valt om</th><th style="width:26%">Juridische status</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. KSZ-blokkade</strong></td>
+<td>CM-adviserend arts registreert de ziektestatus niet in de Kruispuntbank</td>
+<td>Zes blokkades bij vier andere organisaties, in twee landen</td>
+<td>Registratieplicht bestaat al voor de CM onder de ZIV-wetgeving</td>
+</tr>
+<tr>
+<td><strong>2. Referteperiode</strong></td>
+<td>CM past Verordening 883/2004 art. 6 (samentelling) niet toe</td>
+<td>Vijf blokkades bij CM, UWV, WIA en grensoverschrijdende datastroom</td>
+<td>Samentelling is een dwingende Europese verplichting sinds 1971</td>
+</tr>
+<tr>
+<td><strong>3. Woonplaats</strong></td>
+<td>FOD SZ hanteert "domicilie in België" als absolute voorwaarde</td>
+<td>Zes blokkades bij FOD SZ, CAK, gemeente Hulst, Parentia</td>
+<td>Woonplaatseis is in strijd met Vester-arrest C-134/18</td>
+</tr>
+</tbody>
+</table>
+<h4>Deel D — De Pufferknoten: wat vangt de cascade op</h4>
+<p>Tegenover de drie Zündknoten staat een reeks Pufferknoten. Zij vangen een deel van de cascade op, maar nooit het geheel.</p>
+<div class="figure">
+<svg viewbox="0 0 1200 420" xmlns="http://www.w3.org/2000/svg">
+<text fill="#4a3b6b" font-size="13" font-weight="700" letter-spacing="2" text-anchor="middle" x="600" y="30">DE PUFFERKNOTEN</text>
+<rect fill="#eaf5ea" height="300" rx="8" stroke="#2e7d32" stroke-width="1.5" width="220" x="40" y="70"></rect>
+<text fill="#2e7d32" font-size="11.5" font-weight="700" text-anchor="middle" x="150" y="98">DE HUISARTS</text>
+<text fill="#666" font-size="9.5" font-style="italic" text-anchor="middle" x="150" y="120">fiscale bypass</text>
+<text fill="#333" font-size="10" x="60" y="155">Vangt op:</text>
+<text fill="#333" font-size="10" x="60" y="178">• fiscale erkenning</text>
+<text fill="#333" font-size="10" x="60" y="198">• verhoogde belasting-</text>
+<text fill="#333" font-size="10" x="70" y="214">vrije som</text>
+<text fill="#333" font-size="10" x="60" y="248">Vangt niet op:</text>
+<text fill="#c62828" font-size="10" x="60" y="270">• KSZ-registratie</text>
+<text fill="#c62828" font-size="10" x="60" y="290">• ziekte-uitkering</text>
+<text fill="#c62828" font-size="10" x="60" y="310">• zorgtoeslag</text>
+<text fill="#2e7d32" font-size="9.5" font-weight="600" x="60" y="345">Werkt definitief</text>
+<rect fill="#eaf5ea" height="300" rx="8" stroke="#2e7d32" stroke-width="1.5" width="220" x="280" y="70"></rect>
+<text fill="#2e7d32" font-size="11.5" font-weight="700" text-anchor="middle" x="390" y="98">ACV FISCALE DIENST</text>
+<text fill="#666" font-size="9.5" font-style="italic" text-anchor="middle" x="390" y="120">jaarlijkse aangifte</text>
+<text fill="#333" font-size="10" x="300" y="155">Vangt op:</text>
+<text fill="#333" font-size="10" x="300" y="178">• BNI-aangifte</text>
+<text fill="#333" font-size="10" x="300" y="198">• huwelijksquotiënt</text>
+<text fill="#333" font-size="10" x="300" y="218">• kinderopvang</text>
+<text fill="#333" font-size="10" x="300" y="252">Vangt niet op:</text>
+<text fill="#c62828" font-size="10" x="300" y="274">• juridische route CM</text>
+<text fill="#c62828" font-size="10" x="300" y="294">• RIZIV/CDZ</text>
+<text fill="#2e7d32" font-size="9.5" font-weight="600" x="300" y="345">Werkt</text>
+<rect fill="#fff8e1" height="300" rx="8" stroke="#e65100" stroke-width="1.5" width="220" x="520" y="70"></rect>
+<text fill="#e65100" font-size="11.5" font-weight="700" text-anchor="middle" x="630" y="98">GIP</text>
+<text fill="#666" font-size="9.5" font-style="italic" text-anchor="middle" x="630" y="120">grensinformatiepunt</text>
+<text fill="#333" font-size="10" x="540" y="155">Vangt op:</text>
+<text fill="#333" font-size="10" x="540" y="178">• advies</text>
+<text fill="#333" font-size="10" x="540" y="198">• doorverwijzing</text>
+<text fill="#333" font-size="10" x="540" y="232">Vangt niet op:</text>
+<text fill="#c62828" font-size="10" x="540" y="254">• melding systeemfout</text>
+<text fill="#c62828" font-size="10" x="540" y="274">• bindende actie</text>
+<text fill="#e65100" font-size="9.5" font-weight="600" x="540" y="345">Kraakt onder druk</text>
+<rect fill="#fff8e1" height="300" rx="8" stroke="#e65100" stroke-width="1.5" width="220" x="760" y="70"></rect>
+<text fill="#e65100" font-size="11.5" font-weight="700" text-anchor="middle" x="870" y="98">ACADEMIE</text>
+<text fill="#666" font-size="9.5" font-style="italic" text-anchor="middle" x="870" y="120">ITEM · KU Leuven e.a.</text>
+<text fill="#333" font-size="10" x="780" y="155">Vangt op:</text>
+<text fill="#333" font-size="10" x="780" y="178">• juridische analyse</text>
+<text fill="#333" font-size="10" x="780" y="198">• nieuwe routes</text>
+<text fill="#333" font-size="10" x="780" y="218">• validatie</text>
+<text fill="#333" font-size="10" x="780" y="252">Vangt niet op:</text>
+<text fill="#c62828" font-size="10" x="780" y="274">• uitvoerende macht</text>
+<text fill="#c62828" font-size="10" x="780" y="294">• directe actie</text>
+<text fill="#e65100" font-size="9.5" font-weight="600" x="780" y="345">Werkt retrospectief</text>
+<rect fill="#fdf2f2" height="300" rx="8" stroke="#c62828" stroke-width="1.5" width="180" x="1000" y="70"></rect>
+<text fill="#c62828" font-size="11.5" font-weight="700" text-anchor="middle" x="1090" y="98">UNIA</text>
+<text fill="#666" font-size="9.5" font-style="italic" text-anchor="middle" x="1090" y="120">mensenrechten</text>
+<text fill="#333" font-size="10" x="1020" y="155">Vangt op:</text>
+<text fill="#333" font-size="10" x="1020" y="178">• melding</text>
+<text fill="#333" font-size="10" x="1020" y="198">• advies</text>
+<text fill="#333" font-size="10" x="1020" y="232">Vangt niet op:</text>
+<text fill="#c62828" font-size="10" x="1020" y="254">• structurele</text>
+<text fill="#c62828" font-size="10" x="1030" y="270">uitsluiting</text>
+<text fill="#c62828" font-size="10" x="1030" y="286">via wet</text>
+<text fill="#c62828" font-size="9.5" font-weight="600" x="1020" y="345">Onbevoegd</text>
+</svg>
+<p class="caption"><strong>Figuur XXV.3 — De Pufferknoten.</strong> De Pufferknoten vangen de cascade gedeeltelijk op. De huisarts en de fiscale dienst van het ACV werken daadwerkelijk voor hun specifieke deeltaak. Het GIP, de academie en UNIA kraken onder druk: ze adviseren, analyseren, melden — maar hebben geen uitvoerende macht om de cascade echt te stoppen.</p>
+</div>
+<h4>Deel E — De Schwachstellen en de blinde vlek</h4>
+<p>Wat overblijft, zijn de knooppunten die zich bij elke vorm van druk terugtrekken, en de blinde vlek die het systeem zelf niet ziet.</p>
+<div class="figure">
+<svg viewbox="0 0 1200 320" xmlns="http://www.w3.org/2000/svg">
+<text fill="#4a3b6b" font-size="13" font-weight="700" letter-spacing="2" text-anchor="middle" x="600" y="30">SCHWACHSTELLEN EN BLINDE VLEK</text>
+<rect fill="#fff8e1" height="220" rx="8" stroke="#e65100" stroke-width="1.5" width="520" x="60" y="70"></rect>
+<text fill="#e65100" font-size="12" font-weight="700" text-anchor="middle" x="320" y="100">DE SCHWACHSTELLEN</text>
+<text fill="#333" font-size="10" x="85" y="135">• Federale Ombudsman — sluit bij CM-verweer</text>
+<text fill="#333" font-size="10" x="85" y="158">• Nationale Ombudsman — wacht op procedures</text>
+<text fill="#333" font-size="10" x="85" y="181">• CDZ — onbevoegd voor individuele dossiers</text>
+<text fill="#333" font-size="10" x="85" y="204">• Arbeidsauditoraat — verwijst naar burgerlijke rechter</text>
+<text fill="#333" font-size="10" x="85" y="227">• Orde der Artsen — beperkt tot individu</text>
+<text fill="#333" font-size="10" x="85" y="250">• SOLVIT NL/BE — cirkelverwijzing</text>
+<text fill="#333" font-size="10" x="85" y="273">• Nationale partijen — studiediensten</text>
+<rect fill="#f5f5f5" height="220" rx="8" stroke="#555" stroke-width="1.5" width="520" x="620" y="70"></rect>
+<text fill="#555" font-size="12" font-weight="700" text-anchor="middle" x="880" y="100">DE BLINDE VLEK</text>
+<text fill="#333" font-size="10" x="645" y="135">Het systeem ziet niet dat:</text>
+<text fill="#333" font-size="10" x="645" y="162">• het zijn eigen Europese coördinatieregels overtreedt</text>
+<text fill="#333" font-size="10" x="645" y="185">• het de patiënt als data-hub tussen staten gebruikt</text>
+<text fill="#333" font-size="10" x="645" y="208">• het de cascade van cascade naar cascade drijft</text>
+<text fill="#333" font-size="10" x="645" y="231">• het zijn eigen registratieplicht niet nakomt</text>
+<text fill="#333" font-size="10" x="645" y="254">• het zijn eigen rechtspraak (Vester) negeert</text>
+</svg>
+<p class="caption"><strong>Figuur XXV.4 — De Schwachstellen en de blinde vlek.</strong> Tegenover de Zündknoten staat een reeks instanties die onder druk zwichten zonder iets te repareren. En het systeem als geheel is blind voor het feit dat het zijn eigen regels en zijn eigen rechtspraak overtreedt.</p>
+</div>
+<h4>Wat dit hoofdstuk vaststelt</h4>
+<p>Wat Vester laat zien, is dat een vernet systeem niet lineair is. Een fout op één plek plant zich voort naar alle knooppunten die van die plek afhankelijk zijn. En omgekeerd: één correcte ingreep op het juiste knooppunt stopt de cascade voor alle afhankelijke knooppunten.</p>
+<p>In dit netwerk zijn drie Zündknoten te identificeren. Elk is een klein knooppunt met een grote cascade. En — dit is het cruciale punt — geen van de drie is juridisch onmogelijk.</p>
+<p>De KSZ-registratie is een wettelijke plicht van de CM. De samentelling van verzekeringstijdvakken is een dwingende Europese verplichting sinds 1971. De woonplaatseis is in strijd met het Vester-arrest (C-134/18) dat het Hof van Justitie al in 2019 heeft uitgesproken.</p>
+<p>Wat dit betekent, is dat het systeem zichzelf blokkeert op punten waar het niet zou mogen blokkeren. De cascade is niet het gevolg van een technisch onvermogen. Ze is het gevolg van het niet-uitvoeren van regels die al bestaan. En dat is een fundamenteel ander probleem dan een systeem dat technisch niet kán wat het zou moeten.</p>
+<div class="afsluiting">
+<strong>De drie Zündknoten op een rij:</strong>
+<ol style="margin: 8pt 0 4pt 0;">
+<li><strong>De KSZ-registratie door de CM.</strong> Één handeling. Zes blokkades vallen weg bij vier andere organisaties in twee landen. Wettelijke plicht bestaat.</li>
+<li><strong>De samentelling onder Verordening 883/2004.</strong> Één correcte toepassing van één wetsartikel. Vijf blokkades vallen weg. Dwingende Europese verplichting sinds 1971.</li>
+<li><strong>De woonplaatseis bij de FOD SZ.</strong> Één criterium loslaten. Zes blokkades vallen weg. In strijd met Vester-arrest C-134/18.</li>
+</ol>
+Geen van de drie vraagt een wetswijziging. Geen van de drie vraagt een nieuw systeem. Ze vragen de uitvoering van wat al bestaat.
+</div>
+<p class="noot">Frederic Vester (1925-2003) was een Duits bioloog en systeemwetenschapper. Zijn boek <em>Die Kunst vernetzt zu denken</em> (2002) introduceerde het begrip <em>Wirkungsgefüge</em> en de vier soorten knooppunten in vernette systemen (Zündknoten, Pufferknoten, Schwachstellen, blinde vlekken). De toepassing op dit dossier is een analytische keuze; Vester heeft zich niet met grensarbeid beziggehouden. De wettelijke basis voor de drie Zündknoten is: KSZ-registratie (art. 6 en 7 ZIV-wet), samentelling (Verordening (EG) 883/2004 art. 6), woonplaatseis (Vester-arrest C-134/18). Dit hoofdstuk is geen juridisch advies.</p>
+<a class="pub-top" href="#top" title="Naar boven">↑</a><button aria-label="Schakel donkere/lichte modus" class="dm-toggle" onclick="dm_toggle()" title="Schakel donkere/lichte modus" type="button">
+<span class="dm-icon-dm">🌙</span>
+<span class="dm-icon-lm">☀️</span>
+</button>
+<script>
+(function(){
+  function g(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+  function s(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  window.dm_toggle=function(){
+    var r=document.documentElement;
+    var n=r.getAttribute('data-theme')==='dark'?'light':'dark';
+    r.setAttribute('data-theme',n);
+    s('systeem-audit-thema',n);
+  };
+  try{
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(e){
+      if(!g('systeem-audit-thema')){
+        document.documentElement.setAttribute('data-theme',e.matches?'dark':'light');
+      }
+    });
+  }catch(e){}
+})();
+</script>
 <footer class="pub-footer">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 6 oktober 2026, 14:20</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 13 oktober 2026, 19:35</p>
 <p><a href="home.html">← Terug naar overzicht</a> ·
      <a href="../index.html">🌐 Taalkeuze</a></p>
 </footer>
