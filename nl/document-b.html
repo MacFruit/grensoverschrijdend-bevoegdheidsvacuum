@@ -375,6 +375,31 @@ html[data-theme="dark"] .figure {
 html[data-theme="dark"] .figure img {
     filter: invert(0.88) hue-rotate(180deg);
 }
+
+/* === v9.4 — intro-rij accenten === */
+html[data-theme="dark"] .intro-rij[lang="nl"] {
+    --accent: #ff9147 !important;
+    --accent-soft: #3a2814 !important;
+}
+html[data-theme="dark"] .intro-rij[lang="en"] {
+    --accent: #7fb3ff !important;
+    --accent-soft: #1c2940 !important;
+}
+html[data-theme="dark"] .intro-rij[lang="de"] {
+    --accent: #ff8080 !important;
+    --accent-soft: #3a1c1c !important;
+}
+html[data-theme="dark"] .intro-rij[lang="fr"] {
+    --accent: #7fb3ff !important;
+    --accent-soft: #1c2940 !important;
+}
+
+/* Subtiel wit randje voor extra leesbaarheid */
+html[data-theme="dark"] .intro-rij h3,
+html[data-theme="dark"] .intro-rij a.goto {
+    text-shadow: 0 0 1px rgba(255,255,255,0.25),
+                 0 0 3px rgba(255,255,255,0.10);
+}
 </style>
 <script>
 (function(){try{var t=localStorage.getItem('systeem-audit-thema');if(t!=='dark'&&t!=='light'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
@@ -390,7 +415,7 @@ html[data-theme="dark"] .figure img {
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document B — De data-matrix</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 13 oktober 2026, 19:50</p>
+<p class="meta-lijn">Versie bijgewerkt: 13 oktober 2026, 20:03</p>
 </div>
 
 <div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
@@ -1441,7 +1466,7 @@ html[data-theme="dark"] .figure img {
 </script>
 <footer class="pub-footer">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 13 oktober 2026, 19:50</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 13 oktober 2026, 20:03</p>
 <p><a href="home.html">← Terug naar overzicht</a> ·
      <a href="../index.html">🌐 Taalkeuze</a></p>
 </footer>
