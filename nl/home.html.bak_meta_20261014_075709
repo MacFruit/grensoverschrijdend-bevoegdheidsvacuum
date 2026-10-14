@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Systeem-Audit — Overzicht</title>
+<script>
+(function(){try{var t=localStorage.getItem('systeem-audit-thema');if(t!=='dark'&&t!=='light'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+</script>
+<style>
+body { font-family: Aptos, Calibri, sans-serif; font-size: 12pt; line-height: 1.6;
+       margin: 0; padding: 0; background: #faf8f5; color: #000; }
+.wrap { max-width: 900px; margin: 0 auto; padding: 40pt 30pt 80pt; }
+h1 { font-size: 36pt; color: #1a3c6e; margin: 0 0 8pt; border: none; }
+.ondertitel { font-size: 16pt; color: #333; margin: 0 0 12pt; }
+.auteur { font-size: 12pt; color: #555; margin: 0 0 40pt; font-style: italic; }
+.intro { font-size: 12pt; line-height: 1.7; margin: 0 0 40pt; text-align: left; }
+.doc-lijst { list-style: none; padding: 0; margin: 0; }
+.doc-lijst li {
+    margin: 0 0 16pt; padding: 20pt 24pt; background: #fff;
+    border-left: 6px solid #1a3c6e; border-radius: 4px;
+    transition: box-shadow .2s;
+}
+.doc-lijst li:hover { box-shadow: 0 4px 14px rgba(0,0,0,.08); }
+.doc-lijst a.titel {
+    display: block; font-size: 16pt; font-weight: 700;
+    color: #1a3c6e; text-decoration: none; margin: 0 0 6pt;
+}
+.doc-lijst a.titel:hover { text-decoration: underline; }
+.doc-lijst .beschrijving { font-size: 11pt; color: #444; margin: 0; line-height: 1.5; }
+.doc-lijst .downloads { margin-top: 10pt; font-size: 10pt; }
+.doc-lijst .downloads a { color: #7a3e9d; text-decoration: none; font-weight: 600; margin-right: 14px; }
+.doc-lijst .downloads a:hover { text-decoration: underline; }
+.doc-lijst .downloads a.pdf { color: #8b1e1e; }
+.eigen-kleur-0 { border-left-color: #8b1e1e; } .eigen-kleur-0 a.titel { color: #8b1e1e; }
+.eigen-kleur-A { border-left-color: #7a3e9d; } .eigen-kleur-A a.titel { color: #7a3e9d; }
+.eigen-kleur-B { border-left-color: #1a3c6e; } .eigen-kleur-B a.titel { color: #1a3c6e; }
+.eigen-kleur-C { border-left-color: #4a3b6b; } .eigen-kleur-C a.titel { color: #4a3b6b; }
+.eigen-kleur-D { border-left-color: #2e7d32; } .eigen-kleur-D a.titel { color: #2e7d32; }
+.eigen-kleur-E { border-left-color: #0d7377; } .eigen-kleur-E a.titel { color: #0d7377; }
+.footer { margin-top: 60pt; padding-top: 20pt; border-top: 1px solid #d5d0c5;
+          font-size: 10pt; color: #666; text-align: center; }
+.footer a { color: #1a3c6e; }
+.taalkeuze { display: inline-block; margin-bottom: 20pt; padding: 6px 12px;
+             border: 1px solid #d5d0c5; border-radius: 4px;
+             font-size: 10pt; color: #1a3c6e; text-decoration: none; }
+.taalkeuze:hover { background: #eef2f7; }
+@media (max-width: 700px) {
+    .wrap { padding: 20pt 16pt 40pt; }
+    h1 { font-size: 26pt; }
+    .ondertitel { font-size: 14pt; }
+    body { font-size: 13pt; }
+    .intro { font-size: 13pt; }
+    .doc-lijst li { padding: 14pt 16pt; }
+    .doc-lijst a.titel { font-size: 15pt; }
+    .doc-lijst .beschrijving { font-size: 12pt; }
+    .doc-lijst .downloads { font-size: 11pt; }
+}
+
+.pub-nav {
+    position: sticky; top: 0; z-index: 100;
+    background: #ffffff; border-bottom: 2px solid #d5d0c5;
+    padding: 10px 20px; margin: -40pt -40pt 20pt -40pt;
+    font-family: Aptos, Calibri, sans-serif;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 16px; flex-wrap: wrap;
+}
+.pub-nav .links { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.pub-nav a {
+    color: #1a3c6e; text-decoration: none; padding: 6px 12px;
+    border-radius: 4px; font-size: 11pt; font-weight: 600;
+    border: 1px solid transparent;
+}
+.pub-nav a:hover { background: #eef2f7; border-color: #d5d0c5; }
+.pub-nav a.actief { background: #1a3c6e; color: #ffffff; }
+.pub-nav a.home { border: 1px solid #d5d0c5; }
+.pub-nav .titel-klein { font-size: 10pt; color: #666; font-style: italic; }
+.pub-top {
+    position: fixed; bottom: 24px; right: 24px; z-index: 200;
+    background: #1a3c6e; color: #fff; border: none;
+    width: 44px; height: 44px; border-radius: 50%;
+    cursor: pointer; font-size: 18pt; line-height: 1;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    text-decoration: none; display: flex; align-items: center; justify-content: center;
+    transition: transform .15s;
+}
+.pub-top:hover { transform: scale(1.1); background: #12294d; }
+.pub-toc {
+    background: #f7f5f1; border-left: 4px solid #1a3c6e;
+    padding: 14pt 18pt; margin: 20pt 0 30pt;
+    border-radius: 4px;
+}
+.pub-toc h2 { margin-top: 0 !important; border-bottom: none !important; font-size: 16pt !important; }
+.pub-toc ul { list-style: none; padding-left: 0; margin: 0; }
+.pub-toc li { margin: 3pt 0; }
+.pub-toc a { color: #1a3c6e; text-decoration: none; font-size: 11pt; }
+.pub-toc a:hover { text-decoration: underline; }
+.pub-toc .niv1 { font-weight: 700; margin-top: 8pt; }
+.pub-toc .niv2 { padding-left: 18pt; }
+.pub-toc .niv3 { padding-left: 36pt; font-size: 10pt; color: #555; }
+.pub-footer {
+    margin-top: 60pt; padding-top: 20pt; border-top: 1px solid #d5d0c5;
+    font-size: 10pt; color: #666; text-align: center;
+}
+.pub-footer a { color: #1a3c6e; }
+.pub-naar-boven {
+    display: block; text-align: right; margin-top: 10pt;
+    font-size: 10pt; color: #888; text-decoration: none;
+}
+.pub-naar-boven:hover { color: #1a3c6e; text-decoration: underline; }
+
+.dm-toggle {
+    position: fixed; bottom: 80px; right: 24px; z-index: 200;
+    background: #ffffff; color: #1a3c6e; border: 1px solid #d5d0c5;
+    width: 44px; height: 44px; border-radius: 50%;
+    cursor: pointer; font-size: 18pt; line-height: 1; padding: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .15s, background .15s, border-color .15s;
+    font-family: Aptos, Calibri, sans-serif;
+}
+.dm-toggle:hover { transform: scale(1.1); background: #eef2f7; border-color: #1a3c6e; }
+.dm-toggle .dm-icon-lm { display: none; }
+html[data-theme="dark"] .dm-toggle .dm-icon-dm { display: none; }
+html[data-theme="dark"] .dm-toggle .dm-icon-lm { display: inline; }
+
+@media (max-width: 700px) {
+    .pub-nav { padding: 8px 12px; margin: -16pt -14pt 16pt -14pt; }
+    .pub-nav a { padding: 5px 9px; font-size: 12pt; }
+    .pub-nav .titel-klein { display: none; }
+    .pub-toc { padding: 10pt 14pt; }
+    .pub-toc .niv3 { padding-left: 24pt; }
+}
+
+
+html[data-theme="dark"] { color-scheme: dark; }
+
+html[data-theme="dark"] body {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4 {
+    color: #7fb3ff;
+    border-color: #4a6fa5;
+}
+html[data-theme="dark"] h5 { color: #a8c5e8; }
+html[data-theme="dark"] p.subtitel { color: #a0a0a0; }
+html[data-theme="dark"] .netwerk { color: #b0b0b0; }
+html[data-theme="dark"] .meta { color: #c0c0c0; }
+html[data-theme="dark"] .meta strong { color: #7fb3ff; }
+html[data-theme="dark"] .datum { color: #f0f0f0; }
+html[data-theme="dark"] .titel { color: #e8e8e8; }
+html[data-theme="dark"] .opvolging { color: #a0a0a0; }
+html[data-theme="dark"] .richting-ontvangen { color: #7fb3ff; }
+html[data-theme="dark"] .richting-verzonden { color: #ff8a8a; }
+html[data-theme="dark"] .oorsprong { color: #a0a0a0; }
+html[data-theme="dark"] .entry.technisch {
+    background: #232323;
+    border-left-color: #4a4a4a;
+    color: #a0a0a0;
+}
+html[data-theme="dark"] .entry.technisch .datum { color: #909090; }
+html[data-theme="dark"] .entry.technisch .titel { color: #b0b0b0; }
+html[data-theme="dark"] .entry.technisch .opvolging { color: #808080; }
+html[data-theme="dark"] .entry.technisch .richting-ontvangen { color: #8fa8c8; }
+html[data-theme="dark"] .entry.technisch .richting-verzonden { color: #c89090; }
+html[data-theme="dark"] .technisch-notice {
+    background: #232323; color: #a0a0a0; border-left-color: #4a4a4a;
+}
+html[data-theme="dark"] hr { border-top-color: #3a3a3a; }
+html[data-theme="dark"] .titelblad h1 { color: #7fb3ff; }
+html[data-theme="dark"] .titelblad .ondertitel { color: #c0c0c0; }
+html[data-theme="dark"] .titelblad .documentaanduiding { color: #7fb3ff; }
+html[data-theme="dark"] .titelblad .auteur,
+html[data-theme="dark"] .titelblad .meta-lijn { color: #a0a0a0; }
+html[data-theme="dark"] .gebruikersaanwijzing p { color: #c0c0c0; }
+html[data-theme="dark"] table th { background: #2e4a72; border-color: #2e4a72; }
+html[data-theme="dark"] table td {
+    background: #232323; border-color: #3a3a3a; color: #d0d0d0;
+}
+html[data-theme="dark"] tr:nth-child(even) td { background: #2a2a2a; }
+html[data-theme="dark"] .figure { background: #232323; border-color: #3a3a3a; }
+html[data-theme="dark"] .intro-rechten {
+    background: #232323; color: #b0b0b0; border-left-color: #4a6fa5;
+}
+html[data-theme="dark"] .actie { background: #2a2440; color: #d0d0d0; }
+html[data-theme="dark"] .afsluiting { background: #2a2440; color: #d0d0d0; }
+html[data-theme="dark"] .werkversie { background: #332c14; color: #d0c090; }
+html[data-theme="dark"] .noot { color: #a0a0a0; border-top-color: #3a3a3a; }
+html[data-theme="dark"] a { color: #7fb3ff; }
+
+html[data-theme="dark"] .pub-nav {
+    background: #232323; border-bottom-color: #3a3a3a;
+}
+html[data-theme="dark"] .pub-nav a { color: #b0c8e8; }
+html[data-theme="dark"] .pub-nav a:hover { background: #2a2a2a; border-color: #4a4a4a; }
+html[data-theme="dark"] .pub-nav a.actief { background: #4a6fa5; color: #ffffff; }
+html[data-theme="dark"] .pub-nav a.home { border-color: #4a4a4a; }
+html[data-theme="dark"] .pub-nav .titel-klein { color: #888; }
+
+html[data-theme="dark"] .pub-toc {
+    background: #232323; border-left-color: #4a6fa5;
+}
+html[data-theme="dark"] .pub-toc a { color: #b0c8e8; }
+html[data-theme="dark"] .pub-toc .niv3 { color: #888; }
+
+html[data-theme="dark"] .pub-footer {
+    border-top-color: #3a3a3a; color: #888;
+}
+html[data-theme="dark"] .pub-footer a { color: #b0c8e8; }
+html[data-theme="dark"] .pub-naar-boven { color: #888; }
+html[data-theme="dark"] .pub-naar-boven:hover { color: #b0c8e8; }
+html[data-theme="dark"] .dm-toggle {
+    background: #232323; border-color: #4a4a4a; color: #e0e0e0;
+}
+html[data-theme="dark"] .dm-toggle:hover {
+    background: #2a2a2a; border-color: #7fb3ff;
+}
+
+/* === Home dark mode fixes === */
+html[data-theme="dark"] .ondertitel { color: #c0c0c0; }
+html[data-theme="dark"] .auteur { color: #a0a0a0; }
+html[data-theme="dark"] .intro { color: #d0d0d0; }
+
+html[data-theme="dark"] .taalkeuze {
+    color: #b0c8e8;
+    border-color: #4a4a4a;
+    background: #232323;
+}
+html[data-theme="dark"] .taalkeuze:hover { background: #2a2a2a; }
+
+html[data-theme="dark"] .doc-lijst li {
+    background: #232323;
+    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+}
+html[data-theme="dark"] .doc-lijst li:hover {
+    box-shadow: 0 4px 14px rgba(0,0,0,.5);
+}
+html[data-theme="dark"] .doc-lijst a.titel { color: #7fb3ff; }
+html[data-theme="dark"] .doc-lijst .beschrijving { color: #b8b8b8; }
+
+/* Per-document accentkleuren — opgetild naar dark-tinten */
+html[data-theme="dark"] .eigen-kleur-0 { border-left-color: #ff8a8a; }
+html[data-theme="dark"] .eigen-kleur-0 a.titel { color: #ff8a8a; }
+html[data-theme="dark"] .eigen-kleur-A { border-left-color: #c89bf0; }
+html[data-theme="dark"] .eigen-kleur-A a.titel { color: #c89bf0; }
+html[data-theme="dark"] .eigen-kleur-B { border-left-color: #7fb3ff; }
+html[data-theme="dark"] .eigen-kleur-B a.titel { color: #7fb3ff; }
+html[data-theme="dark"] .eigen-kleur-C { border-left-color: #a99cd4; }
+html[data-theme="dark"] .eigen-kleur-C a.titel { color: #a99cd4; }
+html[data-theme="dark"] .eigen-kleur-D { border-left-color: #7fcf88; }
+html[data-theme="dark"] .eigen-kleur-D a.titel { color: #7fcf88; }
+html[data-theme="dark"] .eigen-kleur-E { border-left-color: #5fc8cc; }
+html[data-theme="dark"] .eigen-kleur-E a.titel { color: #5fc8cc; }
+
+html[data-theme="dark"] .doc-lijst .downloads a { color: #c89bf0; }
+html[data-theme="dark"] .doc-lijst .downloads a.pdf { color: #ff8a8a; }
+
+html[data-theme="dark"] .footer {
+    color: #888;
+    border-top-color: #3a3a3a;
+}
+html[data-theme="dark"] .footer a { color: #b0c8e8; }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="taalkeuze" href="../index.html">🌐 Andere taal kiezen</a>
+
+<h1>Systeem-Audit</h1>
+<p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
+<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 13 oktober 2026, 17:00</p>
+
+<p class="intro">Dit dossier documenteert wat er gebeurt wanneer een burger tussen twee
+nationale socialezekerheidsstelsels valt. Elk document heeft een eigen invalshoek en
+vertelt hetzelfde verhaal: de botsing tussen een grensoverschrijdende menselijke
+realiteit en nationaal geprogrammeerde uitvoeringssystemen.</p>
+
+<p class="intro"><strong>Elk document is beschikbaar in drie vormen:</strong> als webpagina
+(direct te lezen in de browser), als Word-bestand (.docx, voor wie wil bewerken of
+afdrukken), en als PDF (voor wie een vaste lay-out wil of wil archiveren).</p>
+
+<ul class="doc-lijst">
+
+<li class="eigen-kleur-0">
+<a class="titel" href="document-0.html">Document 0 — Inleiding en leeswijzer</a>
+<p class="beschrijving">Biografisch essay over drie generaties grensarbeid. Legt uit
+waarom dit dossier bestaat en hoe de documenten samenhangen.</p>
+<div class="downloads">
+  <a href="docx/document-0.docx">⬇ Word-versie</a>
+  <a class="pdf" href="pdf/document-0.pdf">⬇ PDF-versie</a>
+</div>
+</li>
+
+<li class="eigen-kleur-A">
+<a class="titel" href="document-a.html">Document A — De narratieve audit</a>
+<p class="beschrijving">Het verhaal per organisatie. Doorlopende tekst met de rol in
+het netwerk, de frictie en de systemische paradox.</p>
+<div class="downloads">
+  <a href="docx/document-a.docx">⬇ Word-versie</a>
+  <a class="pdf" href="pdf/document-a.pdf">⬇ PDF-versie</a>
+</div>
+</li>
+
+<li class="eigen-kleur-B">
+<a class="titel" href="document-b.html">Document B — De data-matrix</a>
+<p class="beschrijving">Alle feiten: datums, referentienummers, correspondentie en
+tijdlijnen. De ruwe laag waarop de andere documenten zijn gebouwd.</p>
+<div class="downloads">
+  <a href="docx/document-b.docx">⬇ Word-versie</a>
+  <a class="pdf" href="pdf/document-b.pdf">⬇ PDF-versie</a>
+</div>
+</li>
+
+<li class="eigen-kleur-C">
+<a class="titel" href="document-c.html">Document C — De visuele architectuur</a>
+<p class="beschrijving">Schema's en datastromen. Twee starre werelden, een membraan
+in het midden, drie kanalen, vier institutionele lagen.</p>
+<div class="downloads">
+  <a href="docx/document-c.docx">⬇ Word-versie</a>
+  <a class="pdf" href="pdf/document-c.pdf">⬇ PDF-versie</a>
+</div>
+</li>
+
+<li class="eigen-kleur-D">
+<a class="titel" href="document-d.html">Document D — De synthese</a>
+<p class="beschrijving">Het patroon, de paradoxen, de rol van de Europese Unie en
+drie bouwstenen voor hervorming.</p>
+<div class="downloads">
+  <a href="docx/document-d.docx">⬇ Word-versie</a>
+  <a class="pdf" href="pdf/document-d.pdf">⬇ PDF-versie</a>
+</div>
+</li>
+
+<li class="eigen-kleur-E">
+<a class="titel" href="document-e.html">Document E — Het rechtenoverzicht</a>
+<p class="beschrijving">Per recht: wat het is, wie het krijgt, waar het vastloopt,
+en wat het oplevert. Met status per recht.</p>
+<div class="downloads">
+  <a href="docx/document-e.docx">⬇ Word-versie</a>
+  <a class="pdf" href="pdf/document-e.pdf">⬇ PDF-versie</a>
+</div>
+</li>
+
+</ul>
+
+<div class="footer">
+<p>Openbaar materiaal. Wie eruit citeert, citeert Document B als bron van de feiten.</p>
+</div>
+
+</div>
+
+<button class="dm-toggle" type="button" onclick="dm_toggle()" title="Schakel donkere/lichte modus" aria-label="Schakel donkere/lichte modus">
+  <span class="dm-icon-dm">🌙</span>
+  <span class="dm-icon-lm">☀️</span>
+</button>
+<script>
+(function(){
+  function g(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+  function s(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  window.dm_toggle=function(){
+    var r=document.documentElement;
+    var n=r.getAttribute('data-theme')==='dark'?'light':'dark';
+    r.setAttribute('data-theme',n);
+    s('systeem-audit-thema',n);
+  };
+  try{
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(e){
+      if(!g('systeem-audit-thema')){
+        document.documentElement.setAttribute('data-theme',e.matches?'dark':'light');
+      }
+    });
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
