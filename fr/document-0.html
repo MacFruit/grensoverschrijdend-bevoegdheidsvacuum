@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 
-<html lang="nl">
+<html data-auto-lang="fr" data-target-lang="fr" data-theme="dark" lang="nl">
 <head>
 <meta charset="utf-8"/>
-<title>Systeem-Audit — Document 0 — Inleiding en leeswijzer</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inleiding: drie generaties grensarbeid tussen België en Nederland | Systeem-Audit</title>
+<meta content="Biografisch essay over drie generaties grensarbeid en de vraag waarom een systeem dat zichzelf Europees noemt zijn burgers reduceert tot één datapunt op een identiteitskaart." name="description"/>
+<meta content="Inleiding: drie generaties grensarbeid tussen België en Nederland | Systeem-Audit" property="og:title"/>
+<meta content="Biografisch essay over drie generaties grensarbeid en de vraag waarom een systeem dat zichzelf Europees noemt zijn burgers reduceert tot één datapunt op een identiteitskaart." property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://grensarbeid.org/fr/document-0.html" property="og:url"/>
+<meta content="https://grensarbeid.org/assets/kaart_eu.png" property="og:image"/>
+<link href="https://grensarbeid.org/fr/document-0.html" rel="canonical"/>
 <style>
 @media screen { p.marker { display: none; } }
+p.marker { font-size: 1pt; margin: 0; padding: 0; line-height: 1pt; mso-line-height-rule: exactly; }
 body { font-family: Aptos, Calibri, sans-serif; font-size: 12pt; line-height: 1.5; margin: 40pt; }
 h1 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 28pt; color: #8b1e1e; margin-top: 0; margin-bottom: 6pt; border-bottom: 3px solid #8b1e1e; padding-bottom: 6pt; }
 h2 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 20pt; color: #8b1e1e; margin-top: 0; margin-bottom: 5pt; border-bottom: 2px solid #8b1e1e; padding-bottom: 4pt; }
 h3 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 16pt; color: #8b1e1e; margin-top: 0; margin-bottom: 4pt;  }
 h4 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 14pt; color: #8b1e1e; margin-top: 10pt; margin-bottom: 3pt; }
 h5 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 13pt; color: #333333; margin-top: 8pt; margin-bottom: 3pt; }
-p { margin: 0 0 8pt 0; text-align: justify; }
+p { margin: 0 0 8pt 0; text-align: left; }
 p.subtitel { font-style: italic; font-size: 11pt; color: #555555; margin: -2pt 0 10pt 0; }
 hr { border: 0; border-top: 1px solid #ccc; margin: 15pt 0 10pt 0; }
 i { font-size: 10.5pt; color: #555555; }
@@ -23,10 +32,78 @@ i { font-size: 10.5pt; color: #555555; }
 .netwerk { font-style: italic; color: #333333; margin-bottom: 4pt; }
 .meta { margin-bottom: 4pt; }
 .meta strong { color: #8b1e1e; }
-.entry { margin-bottom: 4pt; text-align: left; }
+
+/* === WhatsApp-gevoel / Conversatielayout voor interacties === */
+.entry {
+    margin-bottom: 6pt;
+    padding: 6pt 10pt;
+    border-radius: 6px;
+    box-sizing: border-box;
+    line-height: 1.35;
+    font-size: 10.5pt;
+    word-break: break-word;
+}
 .datum { font-weight: bold; color: #000000; }
-.titel { font-weight: bold; text-transform: uppercase; }
+.titel, .entry-titel { font-weight: bold; text-transform: uppercase; }
 .opvolging { font-style: italic; color: #555555; }
+
+/* IN / Ontvangen: links uitgelijnd, zachte blauwe tint met blauwe linkerbalk */
+.entry-in {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 12%;
+    background-color: #f0f4f9;
+    border-left: 3.5pt solid #1a3c6e;
+    border-right: none;
+}
+.entry-in .datum { color: #1a3c6e; }
+
+/* UIT / Verzonden: rechts uitgelijnd, zachte roze/rode tint met rode rechterbalk */
+.entry-uit {
+    text-align: right;
+    margin-left: 12%;
+    margin-right: 0;
+    background-color: #faf0f2;
+    border-left: none;
+    border-right: 3.5pt solid #8b1e1e;
+}
+.entry-uit .datum { color: #8b1e1e; }
+
+/* Technische / praktische entries: midden cursief, gedimd en minder opvallend */
+.entry.technisch, .entry.praktisch {
+    text-align: center;
+    margin-left: 20pt;
+    margin-right: 20pt;
+    padding: 3pt 8pt;
+    background-color: transparent !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: 1pt dashed #d5d0c5;
+    border-bottom: 1pt dashed #d5d0c5;
+    font-size: 9.5pt;
+    font-style: italic;
+    color: #666;
+    opacity: 0.85;
+}
+.entry.technisch .datum, .entry.praktisch .datum { color: #888; font-weight: normal; font-size: 9pt; }
+.entry.technisch .titel, .entry.praktisch .titel { color: #666; font-weight: normal; font-size: 9pt; text-transform: uppercase; }
+.entry.technisch .opvolging, .entry.praktisch .opvolging { color: #999; }
+.entry.technisch .oorsprong, .entry.praktisch .oorsprong { color: #999; font-size: 9pt; }
+
+.richting { font-weight: 700; font-size: 10pt; letter-spacing: 0.5px; margin-right: 3pt; }
+.richting-ontvangen { color: #1a3c6e; }
+.richting-verzonden { color: #8b1e1e; }
+.oorsprong { font-style: italic; color: #555555; font-size: 10pt; }
+.audit-bewijs { display: inline-flex; align-items: center; gap: 4pt; margin-left: 6pt;
+                padding: 1pt 6pt; border-radius: 3px; background: #f0eee9;
+                border: 1px solid #dcd7cc; font-size: 8.5pt; font-family: Consolas, monospace;
+                color: #4a5568; vertical-align: baseline; white-space: nowrap; }
+.audit-bewijs .bewijs-item { display: inline-block; }
+.entry.technisch .audit-bewijs, .entry.praktisch .audit-bewijs { font-size: 8pt; opacity: 0.8; }
+@media print { .audit-toolbar, .audit-crosslink { display: none !important; } }
+.technisch-notice { background: #f7f5f1; border-left: 4pt solid #d5d0c5;
+                    padding: 8pt 14pt; margin: 12pt 0 20pt;
+                    font-size: 10.5pt; color: #555; font-style: italic; }
 p.lead { font-style: italic; color: #444; margin-bottom: 12pt; }
 p.tijd { font-size: 10pt; color: #888888; font-style: italic; letter-spacing: 1pt; text-transform: uppercase; margin-bottom: 4pt; }
 svg { display: block; width: 100%; height: auto; margin: 8pt 0; }
@@ -61,10 +138,10 @@ tr:nth-child(even) td { background: #f4f1f8; }
 .legend-num { display: inline-block; width: 22px; height: 22px; border-radius: 50%; color: #fff; text-align: center; line-height: 22px; font-weight: 700; font-size: 10pt; flex-shrink: 0; }
 .noot { font-size: 9.5pt; color: #666; font-style: italic; margin-top: 20pt; padding-top: 10pt; border-top: 1px solid #ddd; line-height: 1.5; }
 .footnotes p { font-size: 10pt; color: #555; margin-bottom: 6pt; text-align: left; }
-.titelblad { text-align: center; margin-top: 200pt; }
-.titelblad h1 { font-size: 36pt; border: none; padding: 0; margin-bottom: 24pt; color: #8b1e1e; }
-.titelblad .ondertitel { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 18pt; color: #333333; margin-bottom: 60pt; }
-.titelblad .documentaanduiding { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 22pt; color: #8b1e1e; font-weight: bold; margin-bottom: 80pt; }
+.titelblad { text-align: center; margin-top: 130pt; }
+.titelblad h1 { font-size: 34pt; border: none; padding: 0; margin-bottom: 20pt; color: #8b1e1e; }
+.titelblad .ondertitel { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 17pt; color: #333333; margin-bottom: 40pt; }
+.titelblad .documentaanduiding { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 21pt; color: #8b1e1e; font-weight: bold; margin-bottom: 50pt; }
 .titelblad .auteur { font-size: 14pt; color: #333333; margin-bottom: 4pt; }
 .titelblad .meta-lijn { font-size: 12pt; color: #555555; margin-bottom: 4pt; }
 .inhoudsopgave ul { list-style-type: none; padding-left: 0; }
@@ -75,403 +152,1078 @@ tr:nth-child(even) td { background: #f4f1f8; }
 .contactblok p { margin: 0; font-size: 11pt; }
 .contactblok a { color: #8b1e1e; text-decoration: none; font-weight: bold; }
 
-/* === Document-specifieke extra stijlen (via ) === */
+.recht-kop { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; flex-wrap: wrap; margin-bottom: 4pt; }
+.recht-status { display: inline-block; padding: 3pt 10pt; color: #fff; font-size: 9pt; font-weight: 700; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px; flex-shrink: 0; }
+.recht-kop h2 { flex: 1; margin: 0; padding: 0; border-bottom: none; }
+.recht-kop-wrapper { border-bottom: 2px solid #8b1e1e; padding-bottom: 6pt; margin-bottom: 12pt; scroll-margin-top: 80px; }
+.sector-titel { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 16pt; color: #8b1e1e; margin-top: 20pt; margin-bottom: 8pt; }
+.intro-rechten { font-style: italic; color: #444; margin-bottom: 24pt; padding: 10pt 14pt; background: #f7f5f1; border-left: 4px solid #8b1e1e; }
 
-/* === PUBLICATIE-CSS START === */
+html, body { overflow-x: hidden; }
+.entry { overflow-wrap: break-word; word-break: break-word; }
 
-body {
-    font-family: Aptos, Calibri, sans-serif;
-    font-size: 12pt;
-    line-height: 1.6;
-    margin: 0;
-    padding: 40pt;
-    background: #f6f3ec;
-    color: #2a2a2a;
+@media (max-width: 768px) {
+    body { font-size: 12pt; margin: 16pt 14pt; line-height: 1.5; }
+    h1 { font-size: 24pt; line-height: 1.2; }
+    h2 { font-size: 19pt; line-height: 1.25; }
+    h3 { font-size: 16pt; }
+    h4 { font-size: 14pt; }
+    h5 { font-size: 13pt; }
+    p { text-align: left; }
+    table { font-size: 10.5pt; display: block; overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; }
+    th, td { padding: 5pt 7pt; }
+    .titelblad { margin-top: 60pt; }
+    .titelblad h1 { font-size: 26pt; }
+    .titelblad .ondertitel { font-size: 15pt; margin-bottom: 24pt; }
+    .titelblad .documentaanduiding { font-size: 17pt; margin-bottom: 30pt; }
+    .titelblad .auteur { font-size: 12pt; }
+    .titelblad .meta-lijn { font-size: 11pt; }
+    .legend-row { flex-direction: column; gap: 4pt; }
+    .actor { padding-bottom: 6pt; margin-bottom: 8pt; }
+    .actie, .afsluiting, .werkversie { padding: 10pt 12pt; font-size: 11.5pt; }
+    .recht-kop { flex-direction: column; align-items: flex-start; gap: 6pt; }
+    .sector-titel { font-size: 15pt; }
 }
-
-h1 {
-    font-size: 38pt;
-    color: #1a3c6e;
-    margin: 0 0 6pt;
-    letter-spacing: -0.5pt;
-}
-.ondertitel {
-    font-size: 16pt;
-    color: #4a5560;
-    margin: 0 0 14pt;
-    font-weight: 400;
-}
-.auteur {
-    font-size: 11pt;
-    color: #6b7280;
-    margin: 0 0 30pt;
-    font-style: italic;
-}
-.intro {
-    font-size: 12pt;
-    line-height: 1.7;
-    margin: 0 0 40pt;
-    text-align: justify;
-    color: #3a3f45;
-}
-
-/* === Spectrumbalk === */
-.spectrum {
-    height: 4px;
-    display: flex;
-    margin: 0 0 30pt;
-    border-radius: 2px;
-    overflow: hidden;
-}
-.spectrum span { flex: 1; }
-
-/* === Root index: intro-rijen per taal === */
-.intro-rijen { margin: 0 0 40pt; }
-.intro-rij {
-    display: grid;
-    grid-template-columns: 64pt 1fr;
-    gap: 18pt;
-    align-items: start;
-    padding: 22pt 26pt;
-    background: #ffffff;
-    border-left: 6px solid var(--accent);
-    border-radius: 8px;
-    margin-bottom: 14pt;
-    box-shadow: 0 1px 3px rgba(0,0,0,.04);
-    transition: transform .15s, box-shadow .2s;
-}
-.intro-rij:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(0,0,0,.08);
-}
-.intro-rij .vlag {
-    font-size: 44pt;
-    line-height: 1;
-    text-align: center;
-    padding-top: 2pt;
-}
-.intro-rij h3 {
-    margin: 0 0 6pt;
-    color: var(--accent);
-    font-size: 19pt;
-    letter-spacing: -0.3pt;
-}
-.intro-rij p {
-    margin: 0 0 10pt;
-    font-size: 11pt;
-    color: #4a5560;
-    line-height: 1.55;
-}
-.intro-rij a.goto {
-    display: inline-block;
-    font-weight: 700;
-    color: var(--accent);
-    text-decoration: none;
-    font-size: 11pt;
-    padding: 4pt 0;
-}
-.intro-rij a.goto:hover { text-decoration: underline; }
-
-/* === A/B-melding (meertalig) === */
-.ab-melding {
-    background: #fdf6e3;
-    border-left: 4pt solid #d4a017;
-    padding: 18pt 22pt;
-    margin: 0 0 30pt;
-    border-radius: 6px;
-}
-.ab-melding h3 {
-    margin: 0 0 12pt;
-    color: #8b6200;
-    font-size: 15pt;
-    border: none;
-    padding: 0;
-}
-.ab-melding p {
-    margin: 0 0 10pt;
-    color: #6b4c00;
-    font-size: 11pt;
-    line-height: 1.6;
-}
-.ab-melding p:last-child { margin-bottom: 0; }
-.ab-melding .vlag-klein {
-    font-size: 14pt;
-    margin-right: 8pt;
+@media (max-width: 480px) {
+    body { font-size: 11.5pt; margin: 12pt 10pt; }
+    h1 { font-size: 20pt; }
+    h2 { font-size: 17pt; }
+    h3 { font-size: 14.5pt; }
+    table { font-size: 10pt; }
+    th, td { padding: 4pt 6pt; }
+    .titelblad h1 { font-size: 22pt; }
 }
 
-/* === EU-joke === */
-.eu-joke {
-    text-align: center;
-    font-size: 11pt;
-    color: #6b7280;
-    font-style: italic;
-    margin: 30pt 0 0;
-    padding: 20pt;
-    border-top: 1px dashed #ddd7c9;
-    border-bottom: 1px dashed #ddd7c9;
-    line-height: 1.6;
-}
-.eu-joke .eu-vlag {
-    font-size: 22pt;
-    display: block;
-    margin-bottom: 6pt;
+/* === Professionele A4 Print / Opslaan als PDF Stylesheet === */
+@media print {
+    html, html[data-theme="dark"], body, html[data-theme="dark"] body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        margin: 12mm !important;
+        padding: 0 !important;
+        font-size: 10.5pt !important;
+    }
+    .pub-nav, .pub-top, .dm-toggle, .audit-toolbar, .audit-crosslink,
+    .pub-naar-boven, .bm-modal-overlay, .skiptranslate,
+    .goog-te-banner-frame, #goog-gt-tt {
+        display: none !important;
+    }
+    /* Houd de vertaaldisclaimer bovenaan de PDF zichtbaar! */
+    .pub-ab-banner {
+        display: block !important;
+        background: #fdf6e3 !important;
+        color: #000000 !important;
+        border: 1px solid #d4a017 !important;
+        border-left: 4pt solid #d4a017 !important;
+        padding: 8pt 12pt !important;
+        margin-bottom: 14pt !important;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        color: #1a3c6e !important;
+        page-break-after: avoid !important;
+    }
+    table, tr, .figure, .entry, .actor {
+        page-break-inside: avoid !important;
+    }
+    table th {
+        background: #1a3c6e !important;
+        color: #ffffff !important;
+    }
+    table td {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border-color: #cccccc !important;
+    }
+    /* Schakel de dark-mode invert op SVG's en plaatjes uit tijdens printen! */
+    .figure, html[data-theme="dark"] .figure {
+        background: #ffffff !important;
+        border-color: #cccccc !important;
+    }
+    .figure svg, html[data-theme="dark"] .figure svg,
+    .figure img, html[data-theme="dark"] .figure img {
+        filter: none !important;
+    }
+    .entry-in, html[data-theme="dark"] .entry-in {
+        background: #f0f4f9 !important;
+        color: #000000 !important;
+        border-left: 3pt solid #1a3c6e !important;
+    }
+    .entry-uit, html[data-theme="dark"] .entry-uit {
+        background: #faf0f2 !important;
+        color: #000000 !important;
+        border-right: 3pt solid #8b1e1e !important;
+    }
+    .datum, .titel, .opvolging, .oorsprong {
+        color: #000000 !important;
+    }
+    /* Herstel Inhoudsopgave (TOC) naar helder wit papier zonder zwart blok! */
+    .pub-toc, html[data-theme="dark"] .pub-toc {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border: 1px solid #d5d0c5 !important;
+        border-left: 4px solid #1a3c6e !important;
+        page-break-inside: avoid !important;
+        box-shadow: none !important;
+    }
+    .pub-toc h2, html[data-theme="dark"] .pub-toc h2 {
+        color: #1a3c6e !important;
+    }
+    .pub-toc a, html[data-theme="dark"] .pub-toc a {
+        color: #1a3c6e !important;
+        text-decoration: none !important;
+    }
+    .pub-toc .niv1, html[data-theme="dark"] .pub-toc .niv1,
+    .pub-toc .niv2, html[data-theme="dark"] .pub-toc .niv2 {
+        color: #000000 !important;
+    }
+    .pub-toc .niv3, html[data-theme="dark"] .pub-toc .niv3 {
+        color: #555555 !important;
+    }
+    .pub-toc ul {
+        background: transparent !important;
+    }
+
 }
 
-/* === Documentkaarten (per-taal home) === */
-.doc-lijst { list-style: none; padding: 0; margin: 0; }
-.doc-lijst li {
-    position: relative;
-    margin: 0 0 14pt;
-    padding: 22pt 26pt 22pt 28pt;
-    background: #ffffff;
-    border-left: 6px solid #1a3c6e;
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0,0,0,.04);
-    transition: transform .15s, box-shadow .2s;
-    overflow: hidden;
-}
-.doc-lijst li:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(0,0,0,.08);
-}
-.doc-lijst .docletter {
-    position: absolute;
-    top: -10pt;
-    right: 14pt;
-    font-size: 96pt;
-    font-weight: 900;
-    line-height: 1;
-    opacity: 0.06;
-    pointer-events: none;
-    user-select: none;
-}
-.doc-lijst a.titel {
-    display: block;
-    font-size: 17pt;
-    font-weight: 700;
-    text-decoration: none;
-    margin: 0 0 6pt;
-    position: relative;
-    z-index: 1;
-}
-.doc-lijst a.titel:hover { text-decoration: underline; }
-.doc-lijst .beschrijving {
-    font-size: 10.5pt;
-    color: #4a5560;
-    margin: 0;
-    line-height: 1.55;
-    position: relative;
-    z-index: 1;
-}
-.doc-lijst .downloads {
-    margin-top: 12pt;
-    font-size: 10pt;
-    position: relative;
-    z-index: 1;
-}
-.doc-lijst .downloads a {
-    text-decoration: none;
-    font-weight: 600;
-    margin-right: 16px;
-    padding: 4pt 10pt;
-    border-radius: 4px;
-    transition: background .15s;
-    display: inline-block;
-}
-.doc-lijst .downloads a:hover { text-decoration: none; }
 
-.doc-0 { border-left-color: #8b1e1e; background: #fbf5f5; }
-.doc-0 .docletter { color: #8b1e1e; }
-.doc-0 a.titel { color: #8b1e1e; }
-.doc-0 .downloads a { background: #f6eded; color: #8b1e1e; }
-.doc-0 .downloads a:hover { background: #f0dcdc; }
 
-.doc-a { border-left-color: #7a3e9d; background: #faf6fc; }
-.doc-a .docletter { color: #7a3e9d; }
-.doc-a a.titel { color: #7a3e9d; }
-.doc-a .downloads a { background: #f4f0f7; color: #7a3e9d; }
-.doc-a .downloads a:hover { background: #ebe2f0; }
 
-.doc-b { border-left-color: #1a3c6e; background: #f6f8fb; }
-.doc-b .docletter { color: #1a3c6e; }
-.doc-b a.titel { color: #1a3c6e; }
-.doc-b .downloads a { background: #edf0f4; color: #1a3c6e; }
-.doc-b .downloads a:hover { background: #dde4ed; }
-
-.doc-c { border-left-color: #4a3b6b; background: #f8f6fa; }
-.doc-c .docletter { color: #4a3b6b; }
-.doc-c a.titel { color: #4a3b6b; }
-.doc-c .downloads a { background: #f0eff3; color: #4a3b6b; }
-.doc-c .downloads a:hover { background: #e2dfe9; }
-
-.doc-d { border-left-color: #2e7d32; background: #f5faf5; }
-.doc-d .docletter { color: #2e7d32; }
-.doc-d a.titel { color: #2e7d32; }
-.doc-d .downloads a { background: #eef4ef; color: #2e7d32; }
-.doc-d .downloads a:hover { background: #ddeade; }
-
-/* === A/B-banner (per-taal home) === */
-.pub-ab-banner {
-    background: #fdf6e3;
-    border-left: 4pt solid #d4a017;
-    padding: 12pt 18pt;
-    margin: 0 0 30pt;
-    color: #6b4c00;
-    font-size: 11pt;
-    line-height: 1.6;
-    border-radius: 5px;
-}
-.pub-ab-banner strong { color: #8b6200; }
-
-/* === Footer === */
-.footer {
-    margin-top: 70pt;
-    padding-top: 22pt;
-    border-top: 1px solid #ddd7c9;
-    font-size: 9.5pt;
-    color: #6b7280;
-    text-align: center;
-    line-height: 1.7;
-}
-.footer a { color: #1a3c6e; text-decoration: none; }
-.footer a:hover { text-decoration: underline; }
-
-/* === Navigatie === */
 .pub-nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: #ffffff;
-    border-bottom: 2px solid #e2ddd2;
-    padding: 10pt 40pt;
-    margin: -40pt -40pt 20pt -40pt;
+    position: sticky; top: 0; z-index: 100;
+    background: #ffffff; border-bottom: 2px solid #d5d0c5;
+    padding: 10px 20px; margin: -40pt -40pt 20pt -40pt;
     font-family: Aptos, Calibri, sans-serif;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 16px; flex-wrap: wrap;
 }
-.pub-nav .links {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    align-items: center;
-}
+.pub-nav .links { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
 .pub-nav a {
-    color: #1a3c6e;
-    text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 11pt;
-    font-weight: 600;
+    color: #1a3c6e; text-decoration: none; padding: 6px 12px;
+    border-radius: 4px; font-size: 11pt; font-weight: 600;
     border: 1px solid transparent;
 }
-.pub-nav a:hover { background: #eef2f7; border-color: #e2ddd2; }
+.pub-nav a:hover { background: #eef2f7; border-color: #d5d0c5; }
 .pub-nav a.actief { background: #1a3c6e; color: #ffffff; }
-.pub-nav a.home { border: 1px solid #e2ddd2; }
-
-.pub-nav .langs {
-    display: flex;
-    gap: 4px;
-    align-items: center;
-    font-size: 10pt;
-}
-.pub-nav .langs a {
-    padding: 5pt 10pt;
-    font-weight: 700;
-    border: 1px solid #e2ddd2;
-    background: #ffffff;
-}
-.pub-nav .langs a:hover {
-    background: var(--accent-soft);
-    border-color: var(--accent);
-}
-.pub-nav .langs a.actief {
-    background: var(--accent);
-    color: #ffffff;
-    border-color: var(--accent);
-}
-.pub-nav .langs a.lang-nl { --accent: #FF6B00; --accent-soft: #fff0e0; color: #FF6B00; }
-.pub-nav .langs a.lang-en { --accent: #012169; --accent-soft: #e6ebf3; color: #012169; }
-.pub-nav .langs a.lang-de { --accent: #DD0000; --accent-soft: #fbe6e6; color: #DD0000; }
-.pub-nav .langs a.lang-fr { --accent: #0055A4; --accent-soft: #e6eef6; color: #0055A4; }
-.pub-nav .langs a.actief.lang-nl,
-.pub-nav .langs a.actief.lang-en,
-.pub-nav .langs a.actief.lang-de,
-.pub-nav .langs a.actief.lang-fr { color: #ffffff; }
-
+.pub-nav a.home { border: 1px solid #d5d0c5; }
+.pub-nav .titel-klein { font-size: 10pt; color: #666; font-style: italic; }
 .pub-top {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 200;
-    background: #1a3c6e;
-    color: #fff;
-    border: none;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 18pt;
-    line-height: 1;
+    position: fixed; bottom: 24px; right: 24px; z-index: 200;
+    background: #1a3c6e; color: #fff; border: none;
+    width: 44px; height: 44px; border-radius: 50%;
+    cursor: pointer; font-size: 18pt; line-height: 1;
     box-shadow: 0 2px 8px rgba(0,0,0,.25);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-decoration: none; display: flex; align-items: center; justify-content: center;
     transition: transform .15s;
 }
 .pub-top:hover { transform: scale(1.1); background: #12294d; }
-.pub-footer {
-    margin-top: 60pt;
-    padding-top: 20pt;
-    border-top: 1px solid #ddd7c9;
-    font-size: 10pt;
-    color: #6b7280;
-    text-align: center;
+.pub-toc {
+    background: #f7f5f1; border-left: 4px solid #1a3c6e;
+    padding: 14pt 18pt; margin: 20pt 0 30pt;
+    border-radius: 4px;
 }
-.pub-footer a { color: #1a3c6e; text-decoration: none; }
-.pub-footer a:hover { text-decoration: underline; }
+.pub-toc h2 { margin-top: 0 !important; border-bottom: none !important; font-size: 16pt !important; }
+.pub-toc ul { list-style: none; padding-left: 0; margin: 0; }
+.pub-toc li { margin: 3pt 0; }
+.pub-toc a { color: #1a3c6e; text-decoration: none; font-size: 11pt; }
+.pub-toc a:hover { text-decoration: underline; }
+.pub-toc .niv1 { font-weight: 700; margin-top: 8pt; }
+.pub-toc .niv2 { padding-left: 18pt; }
+.pub-toc .niv3 { padding-left: 36pt; font-size: 10pt; color: #555; }
+.audit-toolbar {
+    background: #ffffff; border: 1px solid #d5d0c5; border-left: 5px solid #1a3c6e;
+    border-radius: 6px; padding: 14pt 18pt; margin: 16pt 0 28pt;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04); font-family: Aptos, Calibri, sans-serif;
+}
+.audit-toolbar .at-stats {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+    font-size: 10.5pt; color: #333; margin-bottom: 10pt; padding-bottom: 8pt;
+    border-bottom: 1px solid #ece8df;
+}
+.audit-toolbar .at-sep { color: #b5afa2; }
+.audit-toolbar .at-verified { color: #1b5e20; }
+.audit-toolbar .at-live-count {
+    margin-left: auto; font-family: Consolas, monospace; font-size: 9.5pt;
+    background: #f0eee9; padding: 2px 8px; border-radius: 12px; color: #444;
+}
+.audit-toolbar .at-controls {
+    display: grid; grid-template-columns: 1fr 280px; gap: 10px; margin-bottom: 10pt;
+}
+.audit-toolbar .at-search, .audit-toolbar .at-select {
+    font-family: inherit; font-size: 10.5pt; padding: 7px 11px;
+    border: 1px solid #ccc6b8; border-radius: 4px; background: #faf8f5; color: #111;
+}
+.audit-toolbar .at-search:focus, .audit-toolbar .at-select:focus {
+    outline: none; border-color: #1a3c6e; background: #fff;
+}
+.audit-toolbar .at-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.audit-toolbar .at-pill {
+    font-family: inherit; font-size: 9.5pt; font-weight: 600;
+    padding: 5px 11px; border-radius: 16px; border: 1px solid #d5d0c5;
+    background: #f7f5f1; color: #333; cursor: pointer; transition: all .15s;
+}
+.audit-toolbar .at-pill:hover { border-color: #1a3c6e; background: #eef2f7; }
+.audit-toolbar .at-pill.actief {
+    background: #1a3c6e; color: #ffffff; border-color: #1a3c6e;
+}
+.audit-org-bar {
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+    gap: 8px; margin: 2pt 0 10pt; padding: 4pt 8pt;
+    background: #f7f5f1; border-radius: 4px; font-size: 9.5pt;
+}
+.audit-org-stat { color: #555; font-family: Consolas, monospace; font-size: 9pt; }
+.audit-crosslink {
+    display: inline-block; color: #1a3c6e; font-weight: 600;
+    text-decoration: none; font-size: 9.5pt;
+}
+.audit-crosslink:hover { text-decoration: underline; }
+@media (max-width: 700px) {
+    .audit-toolbar .at-controls { grid-template-columns: 1fr; }
+    .audit-toolbar .at-live-count { margin-left: 0; }
+}
+.pub-footer {
+    margin-top: 60pt; padding-top: 20pt; border-top: 1px solid #d5d0c5;
+    font-size: 10pt; color: #666; text-align: center;
+}
+.pub-footer a { color: #1a3c6e; }
+.pub-naar-boven {
+    display: block; text-align: right; margin-top: 10pt;
+    font-size: 10pt; color: #888; text-decoration: none;
+}
+.pub-naar-boven:hover { color: #1a3c6e; text-decoration: underline; }
 
-/* === PUBLICATIE-CSS END === */
+.dm-toggle {
+    position: fixed; bottom: 80px; right: 24px; z-index: 200;
+    background: #ffffff; color: #1a3c6e; border: 1px solid #d5d0c5;
+    width: 44px; height: 44px; border-radius: 50%;
+    cursor: pointer; font-size: 18pt; line-height: 1; padding: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .15s, background .15s, border-color .15s;
+    font-family: Aptos, Calibri, sans-serif;
+}
+.dm-toggle:hover { transform: scale(1.1); background: #eef2f7; border-color: #1a3c6e; }
+.dm-toggle .dm-icon-lm { display: none; }
+html[data-theme="dark"] .dm-toggle .dm-icon-dm { display: none; }
+html[data-theme="dark"] .dm-toggle .dm-icon-lm { display: inline; }
+
+
+.pub-nav .nav-acties { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+.pub-contact-btn {
+    background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
+    padding: 5px 12px; border-radius: 4px; font-size: 10pt; font-weight: 600;
+    cursor: pointer; font-family: inherit; transition: all .15s;
+    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+}
+.pub-contact-btn:hover { background: #1a3c6e; color: #ffffff; border-color: #1a3c6e; }
+.pub-contact-footer { margin: 10pt 0 4pt; font-size: 10.5pt; padding: 7px 16px; }
+
+/* Forensische bewijs-badge interactief */
+.audit-bewijs { cursor: pointer; transition: border-color .15s, background .15s, box-shadow .15s; }
+.audit-bewijs:hover {
+    border-color: #1a3c6e; background: #e6edf7;
+    box-shadow: 0 1px 4px rgba(26,60,110,0.18);
+}
+
+.pub-print-btn {
+    background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
+    padding: 5px 12px; border-radius: 4px; font-size: 10pt; font-weight: 600;
+    cursor: pointer; font-family: inherit; transition: all .15s;
+    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+}
+.pub-print-btn:hover { background: #1a3c6e; color: #ffffff; border-color: #1a3c6e; }
+html[data-theme="dark"] .pub-print-btn {
+    background: #232323; color: #b0c8e8; border-color: #4a4a4a;
+}
+html[data-theme="dark"] .pub-print-btn:hover {
+    background: #2a2a2a; border-color: #7fb3ff; color: #ffffff;
+}
+@media (max-width: 768px) {
+    .pub-print-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 38px; }
+}
+
+.pub-lang-select, #int-lang-select {
+    font-family: inherit; font-size: 10pt; font-weight: 600;
+    padding: 4px 8px; border: 1px solid #d5d0c5; border-radius: 4px;
+    background-color: #ffffff; color: #1a3c6e; cursor: pointer;
+    color-scheme: light;
+}
+.pub-lang-select option, #int-lang-select option {
+    background-color: #ffffff; color: #1a3c6e;
+    color-scheme: light;
+}
+html[data-theme="dark"] .pub-lang-select,
+html[data-theme="dark"] #int-lang-select,
+html[data-theme="dark"] select.pub-lang-select {
+    background-color: #232323 !important;
+    background: #232323 !important;
+    border-color: #4a4a4a !important;
+    color: #e0e0e0 !important;
+    color-scheme: dark !important;
+}
+html[data-theme="dark"] .pub-lang-select option,
+html[data-theme="dark"] #int-lang-select option,
+html[data-theme="dark"] select.pub-lang-select option {
+    background-color: #232323 !important;
+    background: #232323 !important;
+    color: #e0e0e0 !important;
+    color-scheme: dark !important;
+}
+
+/* === Professionele A4 Print / Opslaan als PDF Stylesheet === */
+@media print {
+    html, html[data-theme="dark"], body, html[data-theme="dark"] body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        margin: 12mm !important;
+        padding: 0 !important;
+        font-size: 10.5pt !important;
+    }
+    .pub-nav, .pub-top, .dm-toggle, .audit-toolbar, .audit-crosslink,
+    .pub-naar-boven, .bm-modal-overlay, .skiptranslate,
+    .goog-te-banner-frame, #goog-gt-tt {
+        display: none !important;
+    }
+    /* Houd de vertaaldisclaimer bovenaan de PDF zichtbaar! */
+    .pub-ab-banner {
+        display: block !important;
+        background: #fdf6e3 !important;
+        color: #000000 !important;
+        border: 1px solid #d4a017 !important;
+        border-left: 4pt solid #d4a017 !important;
+        padding: 8pt 12pt !important;
+        margin-bottom: 14pt !important;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        color: #1a3c6e !important;
+        page-break-after: avoid !important;
+    }
+    table, tr, .figure, .entry, .actor {
+        page-break-inside: avoid !important;
+    }
+    table th {
+        background: #1a3c6e !important;
+        color: #ffffff !important;
+    }
+    table td {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border-color: #cccccc !important;
+    }
+    /* Schakel de dark-mode invert op SVG's en plaatjes uit tijdens printen! */
+    .figure, html[data-theme="dark"] .figure {
+        background: #ffffff !important;
+        border-color: #cccccc !important;
+    }
+    .figure svg, html[data-theme="dark"] .figure svg,
+    .figure img, html[data-theme="dark"] .figure img {
+        filter: none !important;
+    }
+    .entry-in, html[data-theme="dark"] .entry-in {
+        background: #f0f4f9 !important;
+        color: #000000 !important;
+        border-left: 3pt solid #1a3c6e !important;
+    }
+    .entry-uit, html[data-theme="dark"] .entry-uit {
+        background: #faf0f2 !important;
+        color: #000000 !important;
+        border-right: 3pt solid #8b1e1e !important;
+    }
+    .datum, .titel, .opvolging, .oorsprong {
+        color: #000000 !important;
+    }
+    /* Herstel Inhoudsopgave (TOC) naar helder wit papier zonder zwart blok! */
+    .pub-toc, html[data-theme="dark"] .pub-toc {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border: 1px solid #d5d0c5 !important;
+        border-left: 4px solid #1a3c6e !important;
+        page-break-inside: avoid !important;
+        box-shadow: none !important;
+    }
+    .pub-toc h2, html[data-theme="dark"] .pub-toc h2 {
+        color: #1a3c6e !important;
+    }
+    .pub-toc a, html[data-theme="dark"] .pub-toc a {
+        color: #1a3c6e !important;
+        text-decoration: none !important;
+    }
+    .pub-toc .niv1, html[data-theme="dark"] .pub-toc .niv1,
+    .pub-toc .niv2, html[data-theme="dark"] .pub-toc .niv2 {
+        color: #000000 !important;
+    }
+    .pub-toc .niv3, html[data-theme="dark"] .pub-toc .niv3 {
+        color: #555555 !important;
+    }
+    .pub-toc ul {
+        background: transparent !important;
+    }
+
+}
+
+/* Forensisch Bronopvragings- en Contactvenster (Modal) */
+.bm-modal-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.65); z-index: 1000;
+    display: none; align-items: center; justify-content: center;
+    padding: 20px; backdrop-filter: blur(2px);
+}
+.bm-modal-overlay.bm-open { display: flex; }
+.bm-modal-dialog {
+    background: #ffffff; color: #222222; border-radius: 8px;
+    max-width: 680px; width: 100%; max-height: 90vh; overflow-y: auto;
+    padding: 24px 28px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    border: 1px solid #d5d0c5; font-family: Aptos, Calibri, sans-serif;
+    position: relative; box-sizing: border-box; text-align: left;
+}
+.bm-modal-kop {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    border-bottom: 2px solid #1a3c6e; padding-bottom: 12px; margin-bottom: 16px;
+}
+.bm-modal-kop h3 {
+    margin: 0; font-size: 16pt; color: #1a3c6e; border: none; padding: 0;
+}
+.bm-modal-sluit {
+    background: none; border: none; font-size: 22pt; line-height: 1;
+    color: #888; cursor: pointer; padding: 0 4px;
+}
+.bm-modal-sluit:hover { color: #c62828; }
+.bm-intro {
+    font-size: 10pt; line-height: 1.5; color: #555555; background: #f7f5f1;
+    padding: 10px 14px; border-left: 3px solid #1a3c6e; border-radius: 3px;
+    margin-bottom: 18px;
+}
+.bm-groep { margin-bottom: 14px; }
+.bm-groep label.bm-label {
+    display: block; font-weight: 700; font-size: 10.5pt; color: #1a3c6e; margin-bottom: 5px;
+}
+.bm-input, .bm-textarea {
+    width: 100%; box-sizing: border-box; padding: 8px 12px;
+    border: 1px solid #ccc; border-radius: 4px; font-family: inherit;
+    font-size: 10.5pt; background: #faf8f5; color: #222;
+}
+.bm-input:focus, .bm-textarea:focus {
+    border-color: #1a3c6e; background: #fff; outline: none;
+}
+.bm-textarea { min-height: 90px; resize: vertical; }
+.bm-radio-groep {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px;
+}
+@media (max-width: 580px) {
+    .bm-radio-groep { grid-template-columns: 1fr; }
+}
+.bm-radio-optie {
+    display: flex; align-items: flex-start; gap: 8px; background: #f9f8f6;
+    border: 1px solid #e2ddd5; padding: 8px 10px; border-radius: 4px;
+    font-size: 9.5pt; cursor: pointer;
+}
+.bm-radio-optie:hover { border-color: #1a3c6e; background: #f0f4f9; }
+.bm-radio-optie input { margin-top: 2px; }
+.bm-check-groep {
+    display: flex; align-items: flex-start; gap: 8px; font-size: 9.5pt;
+    color: #444; margin: 14px 0 18px;
+}
+.bm-knoppen { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+.bm-btn-mail {
+    background: #1a3c6e; color: #ffffff; border: 1px solid #1a3c6e;
+    padding: 8px 16px; border-radius: 4px; font-size: 10.5pt; font-weight: 700;
+    cursor: pointer; transition: background .15s;
+}
+.bm-btn-mail:hover { background: #122b50; }
+.bm-btn-copy {
+    background: #f0eee9; color: #333; border: 1px solid #d5d0c5;
+    padding: 8px 14px; border-radius: 4px; font-size: 10.5pt; font-weight: 600;
+    cursor: pointer; transition: all .15s;
+}
+.bm-btn-copy:hover { background: #e2ded5; }
+.bm-btn-copy.bm-copied { background: #2e7d32; color: #ffffff; border-color: #2e7d32; }
+
+@media (max-width: 768px) {
+    .pub-nav { padding: 8px 12px; margin: -16pt -14pt 16pt -14pt; gap: 8px; }
+    .pub-nav .links { gap: 6px; }
+    .pub-nav a { padding: 6px 10px; font-size: 10.5pt; min-height: 38px; display: inline-flex; align-items: center; box-sizing: border-box; }
+    .pub-nav .titel-klein { display: none; }
+    .pub-nav .nav-acties { width: 100%; justify-content: flex-end; margin-top: 4px; }
+    .pub-contact-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 38px; }
+    .pub-toc { padding: 10pt 14pt; }
+    .pub-toc .niv3 { padding-left: 20pt; }
+    .audit-bewijs { white-space: normal; flex-wrap: wrap; }
+    .bm-modal-dialog { padding: 18px 16px; width: 95%; max-height: 94vh; }
+    .bm-modal-kop h3 { font-size: 14pt; }
+    .bm-intro { font-size: 9.5pt; padding: 8px 10px; }
+    .bm-input, .bm-textarea { font-size: 16px; } /* Prevents iOS auto-zoom */
+    .bm-radio-groep { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+    .pub-nav .links a { font-size: 9.5pt; padding: 5px 8px; }
+    .pub-contact-btn { width: 100%; justify-content: center; }
+    .audit-toolbar .at-pills { gap: 4px; }
+    .audit-toolbar .at-pill { font-size: 8.5pt; padding: 4px 8px; min-height: 34px; }
+}
+
+
+html[data-theme="dark"] { color-scheme: dark; }
+
+html[data-theme="dark"] body {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+
+/* === v9.3 — headings + grijs-fix === */
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h6 {
+    color: #7fb3ff !important;
+    border-color: #4a6fa5 !important;
+}
+html[data-theme="dark"] h5 {
+    color: #a8c5e8 !important;
+}
+
+html[data-theme="dark"] p.subtitel { color: #a8a8a8 !important; }
+html[data-theme="dark"] p.lead     { color: #b8b8b8 !important; }
+html[data-theme="dark"] p.tijd     { color: #a8a8a8 !important; }
+html[data-theme="dark"] .netwerk   { color: #b8b8b8 !important; }
+html[data-theme="dark"] .meta      { color: #c8c8c8 !important; }
+html[data-theme="dark"] .meta strong { color: #7fb3ff !important; }
+html[data-theme="dark"] .datum     { color: #f0f0f0 !important; }
+html[data-theme="dark"] .titel     { color: #e8e8e8 !important; }
+html[data-theme="dark"] .opvolging { color: #a8a8a8 !important; }
+html[data-theme="dark"] .oorsprong { color: #a8a8a8 !important; }
+html[data-theme="dark"] .caption   { color: #a8a8a8 !important; border-top-color: #3a3a3a !important; }
+
+html[data-theme="dark"] .richting-ontvangen { color: #7fb3ff !important; }
+html[data-theme="dark"] .richting-verzonden { color: #ff8a8a !important; }
+
+html[data-theme="dark"] .entry.technisch {
+    background: #232323;
+    border-left-color: #4a4a4a;
+    color: #a8a8a8;
+}
+html[data-theme="dark"] .entry.technisch .datum { color: #909090 !important; }
+html[data-theme="dark"] .entry.technisch .titel { color: #b0b0b0 !important; }
+html[data-theme="dark"] .entry.technisch .opvolging { color: #808080 !important; }
+html[data-theme="dark"] .entry.technisch .richting-ontvangen { color: #8fa8c8 !important; }
+html[data-theme="dark"] .entry.technisch .richting-verzonden { color: #c89090 !important; }
+html[data-theme="dark"] .entry.praktisch {
+    background: #1e1e1e; border-left-color: #2e2e2e; color: #808080;
+}
+html[data-theme="dark"] .entry.praktisch .datum { color: #707070 !important; }
+html[data-theme="dark"] .entry.praktisch .titel { color: #858585 !important; }
+html[data-theme="dark"] .entry.praktisch .opvolging { color: #707070 !important; }
+html[data-theme="dark"] .entry.praktisch .richting-ontvangen { color: #6a80a0 !important; }
+html[data-theme="dark"] .entry.praktisch .richting-verzonden { color: #a07070 !important; }
+
+html[data-theme="dark"] .technisch-notice {
+    background: #232323; color: #a8a8a8 !important; border-left-color: #4a4a4a;
+}
+
+/* === Voetnoten — waren te donker === */
+html[data-theme="dark"] .footnotes,
+html[data-theme="dark"] .footnotes p {
+    color: #b0b0b0 !important;
+}
+html[data-theme="dark"] .footnotes strong {
+    color: #7fb3ff !important;
+}
+
+html[data-theme="dark"] hr { border-top-color: #3a3a3a; }
+html[data-theme="dark"] .titelblad h1 { color: #7fb3ff !important; }
+html[data-theme="dark"] .titelblad .ondertitel { color: #c8c8c8 !important; }
+html[data-theme="dark"] .titelblad .documentaanduiding { color: #7fb3ff !important; }
+html[data-theme="dark"] .titelblad .auteur,
+html[data-theme="dark"] .titelblad .meta-lijn { color: #a8a8a8 !important; }
+html[data-theme="dark"] .gebruikersaanwijzing p { color: #c8c8c8 !important; }
+html[data-theme="dark"] table th { background: #2e4a72; border-color: #2e4a72; }
+html[data-theme="dark"] table td {
+    background: #232323; border-color: #3a3a3a; color: #d0d0d0;
+}
+html[data-theme="dark"] tr:nth-child(even) td { background: #2a2a2a; }
+html[data-theme="dark"] .figure { background: #232323; border-color: #3a3a3a; }
+html[data-theme="dark"] .figure svg { background: transparent; }
+html[data-theme="dark"] .intro-rechten {
+    background: #232323; color: #b8b8b8; border-left-color: #4a6fa5;
+}
+html[data-theme="dark"] .actie { background: #2a2440; color: #d0d0d0; }
+html[data-theme="dark"] .afsluiting { background: #2a2440; color: #d0d0d0; }
+html[data-theme="dark"] .werkversie { background: #332c14; color: #d0c090; }
+html[data-theme="dark"] .noot { color: #a8a8a8 !important; border-top-color: #3a3a3a; }
+html[data-theme="dark"] a { color: #7fb3ff; }
+
+/* === Actor-blokken (Document C) === */
+html[data-theme="dark"] .actor { border-bottom-color: #3a3a3a; }
+html[data-theme="dark"] .actor-naam { color: #e0e0e0 !important; }
+html[data-theme="dark"] .actor-rol  { color: #7fb3ff !important; }
+
+/* === Sectie-banners (Document C) === */
+html[data-theme="dark"] .banner-be {
+    background: #2a1c1c; border-left-color: #ff8a8a;
+}
+html[data-theme="dark"] .banner-be strong { color: #ff8a8a !important; }
+html[data-theme="dark"] .banner-nl {
+    background: #1c2129; border-left-color: #7fb3ff;
+}
+html[data-theme="dark"] .banner-nl strong { color: #7fb3ff !important; }
+html[data-theme="dark"] .banner-eu {
+    background: #1c2628; border-left-color: #5fc8cc;
+}
+html[data-theme="dark"] .banner-eu strong { color: #5fc8cc !important; }
+
+/* === Inline badges === */
+html[data-theme="dark"] .badge-be  { color: #ff8a8a !important; }
+html[data-theme="dark"] .badge-nl  { color: #7fb3ff !important; }
+html[data-theme="dark"] .badge-mem { color: #ffb380 !important; }
+html[data-theme="dark"] .badge-eu  { color: #5fc8cc !important; }
+
+/* === Sectorkoppen (Document E) === */
+html[data-theme="dark"] .sector-titel { color: #7fb3ff !important; }
+html[data-theme="dark"] .recht-kop-wrapper { border-bottom-color: #4a6fa5; }
+html[data-theme="dark"] .legend-row { color: #c0c0c0; }
+
+/* === Contactblok === */
+html[data-theme="dark"] .contactblok {
+    background: #232323; border-left-color: #4a6fa5;
+}
+html[data-theme="dark"] .contactblok a { color: #7fb3ff !important; }
+
+/* === Navigatie === */
+html[data-theme="dark"] .pub-nav {
+    background: #232323; border-bottom-color: #3a3a3a;
+}
+html[data-theme="dark"] .pub-nav a { color: #b0c8e8 !important; }
+html[data-theme="dark"] .pub-nav a:hover { background: #2a2a2a; border-color: #4a4a4a; }
+html[data-theme="dark"] .pub-nav a.actief { background: #4a6fa5; color: #ffffff !important; }
+html[data-theme="dark"] .pub-nav a.home { border-color: #4a4a4a; }
+html[data-theme="dark"] .pub-nav .titel-klein { color: #888 !important; }
+
+html[data-theme="dark"] .pub-toc {
+    background: #232323; border-left-color: #4a6fa5;
+}
+html[data-theme="dark"] .pub-toc a { color: #b0c8e8 !important; }
+html[data-theme="dark"] .pub-toc .niv3 { color: #888 !important; }
+html[data-theme="dark"] .audit-toolbar {
+    background: #232323; border-color: #3a3a3a; border-left-color: #7fb3ff;
+}
+html[data-theme="dark"] .audit-toolbar .at-stats {
+    color: #d0d0d0; border-bottom-color: #3a3a3a;
+}
+html[data-theme="dark"] .audit-toolbar .at-verified { color: #81c784; }
+html[data-theme="dark"] .audit-toolbar .at-live-count {
+    background: #1a1a1a; color: #b0c8e8;
+}
+html[data-theme="dark"] .audit-toolbar .at-search,
+html[data-theme="dark"] .audit-toolbar .at-select {
+    background: #1a1a1a; border-color: #4a4a4a; color: #e8e8e8;
+}
+html[data-theme="dark"] .audit-toolbar .at-pill {
+    background: #1a1a1a; border-color: #4a4a4a; color: #c8c8c8;
+}
+html[data-theme="dark"] .audit-toolbar .at-pill.actief {
+    background: #4a6fa5; border-color: #7fb3ff; color: #ffffff;
+}
+html[data-theme="dark"] .audit-org-bar {
+    background: #232323;
+}
+html[data-theme="dark"] .audit-org-stat { color: #a8a8a8; }
+html[data-theme="dark"] .audit-crosslink { color: #7fb3ff !important; }
+html[data-theme="dark"] .audit-bewijs {
+    background: #262930; border-color: #3e4452; color: #a8b5c8;
+}
+html[data-theme="dark"] .entry { background-color: #24272c; }
+html[data-theme="dark"] .entry-in {
+    background-color: #1e2633 !important;
+    border-left-color: #4a88d9 !important;
+}
+html[data-theme="dark"] .entry-in .datum { color: #7fb3ff !important; }
+html[data-theme="dark"] .entry-uit {
+    background-color: #332024 !important;
+    border-right-color: #d9534f !important;
+}
+html[data-theme="dark"] .entry-uit .datum { color: #ff8a8a !important; }
+html[data-theme="dark"] .entry.technisch, html[data-theme="dark"] .entry.praktisch {
+    background-color: transparent !important;
+    border-top-color: #444 !important;
+    border-bottom-color: #444 !important;
+    color: #999 !important;
+}
+html[data-theme="dark"] .entry.technisch .datum, html[data-theme="dark"] .entry.praktisch .datum { color: #888 !important; }
+html[data-theme="dark"] .entry.technisch .titel, html[data-theme="dark"] .entry.praktisch .titel { color: #aaa !important; }
+
+html[data-theme="dark"] .pub-footer {
+    border-top-color: #3a3a3a; color: #888;
+}
+html[data-theme="dark"] .pub-footer a { color: #b0c8e8 !important; }
+html[data-theme="dark"] .pub-naar-boven { color: #888 !important; }
+html[data-theme="dark"] .pub-naar-boven:hover { color: #b0c8e8 !important; }
+html[data-theme="dark"] .dm-toggle {
+    background: #232323; border-color: #4a4a4a; color: #e0e0e0;
+}
+html[data-theme="dark"] .dm-toggle:hover {
+    background: #2a2a2a; border-color: #7fb3ff;
+}
+
+/* === SVG dark-mode === */
+html[data-theme="dark"] .figure svg {
+    filter: invert(0.88) hue-rotate(180deg);
+}
+html[data-theme="dark"] .figure {
+    background: #1e1e1e;
+}
+html[data-theme="dark"] .figure img {
+    filter: invert(0.88) hue-rotate(180deg);
+}
+
+/* === v9.4 — intro-rij accenten === */
+html[data-theme="dark"] .intro-rij[lang="nl"] {
+    --accent: #ff9147 !important;
+    --accent-soft: #3a2814 !important;
+}
+html[data-theme="dark"] .intro-rij[lang="en"] {
+    --accent: #7fb3ff !important;
+    --accent-soft: #1c2940 !important;
+}
+html[data-theme="dark"] .intro-rij[lang="de"] {
+    --accent: #ff8080 !important;
+    --accent-soft: #3a1c1c !important;
+}
+html[data-theme="dark"] .intro-rij[lang="fr"] {
+    --accent: #7fb3ff !important;
+    --accent-soft: #1c2940 !important;
+}
+
+/* Subtiel wit randje voor extra leesbaarheid */
+html[data-theme="dark"] .intro-rij h3 { color: #7fb3ff !important; }
+
+html[data-theme="dark"] .pub-contact-btn {
+    background: #232323; color: #b0c8e8; border-color: #4a4a4a;
+}
+html[data-theme="dark"] .pub-contact-btn:hover {
+    background: #2a2a2a; border-color: #7fb3ff; color: #ffffff;
+}
+html[data-theme="dark"] .audit-bewijs:hover {
+    border-color: #7fb3ff !important; background: #2f3642 !important;
+    box-shadow: 0 1px 6px rgba(127,179,255,0.25);
+}
+html[data-theme="dark"] .bm-modal-dialog {
+    background: #202226; color: #e0e0e0; border-color: #3a3f48;
+}
+html[data-theme="dark"] .bm-modal-kop { border-bottom-color: #4a6fa5; }
+html[data-theme="dark"] .bm-modal-kop h3 { color: #7fb3ff !important; }
+html[data-theme="dark"] .bm-intro {
+    background: #282c34; border-left-color: #7fb3ff; color: #b8b8b8;
+}
+html[data-theme="dark"] .bm-groep label.bm-label { color: #7fb3ff !important; }
+html[data-theme="dark"] .bm-input,
+html[data-theme="dark"] .bm-textarea {
+    background: #181a1f; border-color: #3e4450; color: #e8e8e8;
+}
+html[data-theme="dark"] .bm-input:focus,
+html[data-theme="dark"] .bm-textarea:focus {
+    border-color: #7fb3ff; background: #1f2229;
+}
+html[data-theme="dark"] .bm-radio-optie {
+    background: #262930; border-color: #3e4450; color: #d0d0d0;
+}
+html[data-theme="dark"] .bm-radio-optie:hover {
+    background: #2f3440; border-color: #7fb3ff;
+}
+html[data-theme="dark"] .bm-check-groep { color: #b0b0b0; }
+html[data-theme="dark"] .bm-btn-mail {
+    background: #4a6fa5; border-color: #4a6fa5; color: #ffffff;
+}
+html[data-theme="dark"] .bm-btn-mail:hover { background: #395782; }
+html[data-theme="dark"] .bm-btn-copy {
+    background: #2a2e36; border-color: #404754; color: #e0e0e0;
+}
+html[data-theme="dark"] .bm-btn-copy:hover {
+    background: #353b47; border-color: #7fb3ff;
+}
+
+html[data-theme="dark"] .intro-rij a.goto {
+    text-shadow: 0 0 1px rgba(255,255,255,0.25),
+                 0 0 3px rgba(255,255,255,0.10);
+}
+
+
+/* Forensisch Bronopvragings- en Contactvenster (Modal) */
+.pub-contact-btn {
+    background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
+    padding: 5px 12px; border-radius: 4px; font-size: 10pt; font-weight: 600;
+    cursor: pointer; font-family: inherit; transition: all .15s;
+    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+}
+.pub-contact-btn:hover { background: #1a3c6e; color: #ffffff; border-color: #1a3c6e; }
+.pub-contact-footer { margin: 10pt 0 4pt; font-size: 10.5pt; padding: 7px 16px; }
+
+.audit-bewijs { cursor: pointer; transition: border-color .15s, background .15s, box-shadow .15s; }
+.audit-bewijs:hover {
+    border-color: #1a3c6e; background: #e6edf7;
+    box-shadow: 0 1px 4px rgba(26,60,110,0.18);
+}
+
+.bm-modal-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.65); z-index: 1000;
+    display: none; align-items: center; justify-content: center;
+    padding: 20px; backdrop-filter: blur(2px);
+}
+.bm-modal-overlay.bm-open { display: flex; }
+.bm-modal-dialog {
+    background: #ffffff; color: #222222; border-radius: 8px;
+    max-width: 680px; width: 100%; max-height: 90vh; overflow-y: auto;
+    padding: 24px 28px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    border: 1px solid #d5d0c5; font-family: Aptos, Calibri, sans-serif;
+    position: relative; box-sizing: border-box; text-align: left;
+}
+.bm-modal-kop {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    border-bottom: 2px solid #1a3c6e; padding-bottom: 12px; margin-bottom: 16px;
+}
+.bm-modal-kop h3 {
+    margin: 0; font-size: 16pt; color: #1a3c6e; border: none; padding: 0;
+}
+.bm-modal-sluit {
+    background: none; border: none; font-size: 22pt; line-height: 1;
+    color: #888; cursor: pointer; padding: 0 4px;
+}
+.bm-modal-sluit:hover { color: #c62828; }
+.bm-intro {
+    font-size: 10pt; line-height: 1.5; color: #555555; background: #f7f5f1;
+    padding: 10px 14px; border-left: 3px solid #1a3c6e; border-radius: 3px;
+    margin-bottom: 18px;
+}
+.bm-groep { margin-bottom: 14px; }
+.bm-groep label.bm-label {
+    display: block; font-weight: 700; font-size: 10.5pt; color: #1a3c6e; margin-bottom: 5px;
+}
+.bm-input, .bm-textarea {
+    width: 100%; box-sizing: border-box; padding: 8px 12px;
+    border: 1px solid #ccc; border-radius: 4px; font-family: inherit;
+    font-size: 10.5pt; background: #faf8f5; color: #222;
+}
+.bm-input:focus, .bm-textarea:focus {
+    border-color: #1a3c6e; background: #fff; outline: none;
+}
+.bm-textarea { min-height: 90px; resize: vertical; }
+.bm-radio-groep {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px;
+}
+@media (max-width: 580px) {
+    .bm-radio-groep { grid-template-columns: 1fr; }
+}
+.bm-radio-optie {
+    display: flex; align-items: flex-start; gap: 8px; background: #f9f8f6;
+    border: 1px solid #e2ddd5; padding: 8px 10px; border-radius: 4px;
+    font-size: 9.5pt; cursor: pointer;
+}
+.bm-radio-optie:hover { border-color: #1a3c6e; background: #f0f4f9; }
+.bm-radio-optie input { margin-top: 2px; }
+.bm-check-groep {
+    display: flex; align-items: flex-start; gap: 8px; font-size: 9.5pt;
+    color: #444; margin: 14px 0 18px;
+}
+.bm-knoppen { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+.bm-btn-mail {
+    background: #1a3c6e; color: #ffffff; border: 1px solid #1a3c6e;
+    padding: 8px 16px; border-radius: 4px; font-size: 10.5pt; font-weight: 700;
+    cursor: pointer; transition: background .15s;
+}
+.bm-btn-mail:hover { background: #122b50; }
+.bm-btn-copy {
+    background: #f0eee9; color: #333; border: 1px solid #d5d0c5;
+    padding: 8px 14px; border-radius: 4px; font-size: 10.5pt; font-weight: 600;
+    cursor: pointer; transition: all .15s;
+}
+.bm-btn-copy:hover { background: #e2ded5; }
+.bm-btn-copy.bm-copied { background: #2e7d32; color: #ffffff; border-color: #2e7d32; }
+
+@media (max-width: 768px) {
+    .pub-contact-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 38px; }
+    .bm-modal-dialog { padding: 18px 16px; width: 95%; max-height: 94vh; }
+    .bm-modal-kop h3 { font-size: 14pt; }
+    .bm-intro { font-size: 9.5pt; padding: 8px 10px; }
+    .bm-input, .bm-textarea { font-size: 16px; }
+    .bm-radio-groep { grid-template-columns: 1fr; }
+}
+
+/* Modal Dark-Mode */
+html[data-theme="dark"] .pub-contact-btn {
+    background: #232323; color: #b0c8e8; border-color: #4a4a4a;
+}
+html[data-theme="dark"] .pub-contact-btn:hover {
+    background: #2a2a2a; border-color: #7fb3ff; color: #ffffff;
+}
+html[data-theme="dark"] .audit-bewijs:hover {
+    border-color: #7fb3ff !important; background: #2f3642 !important;
+    box-shadow: 0 1px 6px rgba(127,179,255,0.25);
+}
+html[data-theme="dark"] .bm-modal-dialog {
+    background: #202226; color: #e0e0e0; border-color: #3a3f48;
+}
+html[data-theme="dark"] .bm-modal-kop { border-bottom-color: #4a6fa5; }
+html[data-theme="dark"] .bm-modal-kop h3 { color: #7fb3ff !important; }
+html[data-theme="dark"] .bm-intro {
+    background: #282c34; border-left-color: #7fb3ff; color: #b8b8b8;
+}
+html[data-theme="dark"] .bm-groep label.bm-label { color: #7fb3ff !important; }
+html[data-theme="dark"] .bm-input,
+html[data-theme="dark"] .bm-textarea {
+    background: #181a1f; border-color: #3e4450; color: #e8e8e8;
+}
+html[data-theme="dark"] .bm-input:focus,
+html[data-theme="dark"] .bm-textarea:focus {
+    border-color: #7fb3ff; background: #1f2229;
+}
+html[data-theme="dark"] .bm-radio-optie {
+    background: #262930; border-color: #3e4450; color: #d0d0d0;
+}
+html[data-theme="dark"] .bm-radio-optie:hover {
+    background: #2f3440; border-color: #7fb3ff;
+}
+html[data-theme="dark"] .bm-check-groep { color: #b0b0b0; }
+html[data-theme="dark"] .bm-btn-mail {
+    background: #4a6fa5; border-color: #4a6fa5; color: #ffffff;
+}
+html[data-theme="dark"] .bm-btn-mail:hover { background: #395782; }
+html[data-theme="dark"] .bm-btn-copy {
+    background: #2a2e36; border-color: #404754; color: #e0e0e0;
+}
+html[data-theme="dark"] .bm-btn-copy:hover {
+    background: #353b47; border-color: #7fb3ff;
+}
+
+/* Taal-kiezer styling in navigatie */
+.pub-lang-switch {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: #eef2f7; padding: 2px 4px; border-radius: 4px;
+    border: 1px solid #d5d0c5;
+}
+.pub-lang-btn {
+    text-decoration: none; font-size: 9.5pt; font-weight: 600;
+    color: #1a3c6e; padding: 3px 7px; border-radius: 3px;
+    transition: background .15s, color .15s;
+}
+.pub-lang-btn:hover { background: #dce6f2; }
+.pub-lang-btn.actief { background: #1a3c6e; color: #ffffff !important; }
+
+html[data-theme="dark"] .pub-lang-switch { background: #1f2229; border-color: #3e4450; }
+html[data-theme="dark"] .pub-lang-btn { color: #b0c8e8; }
+html[data-theme="dark"] .pub-lang-btn:hover { background: #2a3342; }
+html[data-theme="dark"] .pub-lang-btn.actief { background: #4a6fa5; color: #ffffff !important; }
+
+/* Google Translate Widget & Frame Styling */
+.goog-te-banner-frame, .skiptranslate iframe, #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+body { top: 0px !important; position: static !important; }
+.goog-text-highlight { background: transparent !important; box-shadow: none !important; }
+font[style] { background: transparent !important; box-shadow: none !important; }
+
+.pub-lang-select, #int-lang-select {
+    font-family: inherit; font-size: 10pt; font-weight: 600;
+    padding: 4px 8px; border: 1px solid #d5d0c5; border-radius: 4px;
+    background-color: #ffffff; color: #1a3c6e; cursor: pointer;
+    color-scheme: light;
+}
+.pub-lang-select option, #int-lang-select option {
+    background-color: #ffffff; color: #1a3c6e;
+    color-scheme: light;
+}
+html[data-theme="dark"] .pub-lang-select,
+html[data-theme="dark"] #int-lang-select,
+html[data-theme="dark"] select.pub-lang-select {
+    background-color: #232323 !important;
+    background: #232323 !important;
+    border-color: #4a4a4a !important;
+    color: #e0e0e0 !important;
+    color-scheme: dark !important;
+}
+html[data-theme="dark"] .pub-lang-select option,
+html[data-theme="dark"] #int-lang-select option,
+html[data-theme="dark"] select.pub-lang-select option {
+    background-color: #232323 !important;
+    background: #232323 !important;
+    color: #e0e0e0 !important;
+    color-scheme: dark !important;
+}
 </style>
-</head>
+<script>
+(function(){try{var t=localStorage.getItem('systeem-audit-thema');if(t!=='dark'&&t!=='light'){t='dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+</script></head>
 <body><a id="top"></a>
-<nav class="pub-nav">
-<div class="links"><a class="home" href="home.html">← Aperçu</a><a class="actief" href="document-0.html">Doc 0 · Introduction</a><a class="" href="document-c.html">Doc C · Visuel</a><a class="" href="document-d.html">Doc D · Synthèse</a></div>
-<div class="langs"><a class="lang-nl" href="../nl/document-0.html">🇳🇱 NL</a><a class="lang-en" href="../en/document-0.html">🇬🇧 EN</a><a class="lang-de" href="../de/document-0.html">🇩🇪 DE</a><a class="lang-fr actief" href="../fr/document-0.html">🇫🇷 FR</a></div>
-</nav>
 
+<nav class="pub-nav">
+<div class="links"><a class="home" href="home.html" id="nav-home-link">← Aperçu</a> <a class="home" href="../index.html">Startportaal</a> <a class="home" href="../home_int.html" id="nav-int-link" title="European &amp; International Portal">🇪🇺 Europees portaal</a> <a class="actief" href="document-0.html">Inleiding</a> <a class="" href="document-a.html">Narratief</a> <a class="" href="document-b.html">Data</a> <a class="" href="document-c.html">Visueel</a> <a class="" href="document-d.html">Synthese</a> <a class="" href="document-e.html">Rechten</a></div>
+<div class="pub-nav-actions" style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+<select autocomplete="off" class="pub-lang-select notranslate" id="int-lang-select" onchange="wisselTaal(this.value)" style="display:none;" translate="no"><option value="nl">🇳🇱 NL (Nederlands)</option><option value="en">🇬🇧 EN (English)</option><option value="de">🇩🇪 DE (Deutsch)</option><option value="fr">🇫🇷 FR (Français)</option><option value="it">🇮🇹 IT (Italiano)</option><option value="es">🇪🇸 ES (Español)</option><option value="pl">🇵🇱 PL (Polski)</option><option value="da">🇩🇰 DA (Dansk)</option><option value="sv">🇸🇪 SV (Svenska)</option><option value="pt">🇵🇹 PT (Português)</option><option value="ro">🇷🇴 RO (Română)</option></select>
+<button class="pub-print-btn notranslate" onclick="window.print()" title="Print of bewaar als PDF" translate="no" type="button">🖨️ Print / PDF</button>
+<button class="pub-contact-btn notranslate" onclick="openBronModal('Navigatie contact')" translate="no" type="button">📄 Demande de pièce source / Contact</button>
+</div>
+</nav><div class="pub-ab-banner" style="margin: 16pt 0 20pt 0;"><strong>Note linguistique et de traduction :</strong> Le néerlandais (nl/) est la seule langue originale faisant foi pour cet Audit-Système. Les traductions visent à rendre les mécanismes transfrontaliers documentés accessibles à l'échelle européenne. En cas de doute ou d'interprétation juridique, seul le texte original néerlandais prévaut.</div>
+<script class="notranslate" translate="no">
+(function() {
+  if (window.location.search.indexOf('int=1') !== -1) {
+    var sel = document.getElementById('int-lang-select');
+    if (sel) sel.style.display = 'inline-block';
+    var intLink = document.getElementById('nav-int-link');
+    if (intLink) intLink.style.display = 'none';
+    var homeLink = document.getElementById('nav-home-link');
+    if (homeLink) homeLink.setAttribute('href', '../home_int.html');
+  }
+})();
+</script>
+
+<script class="notranslate" translate="no">
+(function() {
+  if (window.location.search.indexOf('int=1') !== -1) {
+    var sel = document.getElementById('int-lang-select');
+    if (sel) sel.style.display = 'inline-block';
+    var intLink = document.getElementById('nav-int-link');
+    if (intLink) intLink.style.display = 'none';
+    var homeLink = document.getElementById('nav-home-link');
+    if (homeLink) homeLink.setAttribute('href', '../home_int.html');
+  }
+})();
+</script>
 <div class="titelblad">
-<h1>Audit du système</h1>
-<p class="ondertitel">Vide de compétence transfrontalier en matière de sécurité sociale</p>
-<p class="documentaanduiding">Document 0 — Introduction et guide de lecture</p>
-<p class="auteur">Auteur : Eric Messa</p>
-<p class="meta-lijn">Version mise à jour le 1er octobre 2026 à 13 h 02</p>
+<h1 id="systeem-audit">Systeem-Audit</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
+<p class="documentaanduiding">Document 0 — Inleiding en leeswijzer</p>
+<p class="auteur">Auteur: Eric Messa</p>
+<p class="meta-lijn">Versie bijgewerkt: 26 oktober 2026, 20:30</p>
 </div>
-<p class="marker">[[PAGEBREAK]]</p>
-<div class="inhoudsopgave">
-<h2>Table des matières</h2>
-<p class="marker">[[TOC]]</p>
-</div>
-<p class="marker">[[PAGEBREAK]]</p>
-<h2>Une histoire européenne</h2>
-<p>Ce dossier ne commence pas à une frontière. Il commence par l'amour et le travail.</p>
-<p><sup>*</sup>Un homme originaire de Lombardie. Il se sent Lombard, pas Italien. Une femme originaire d’Alsace. Elle se sent Alsacienne, ni Française ni Allemande. Deux cas limites. Ils se rencontrent en Alsace. Elle est infirmière. Lui est ouvrier. Il se blesse, se retrouve à l’hôpital, et c’est là que tout commence. Ils se marient. Lorsque l’entreprise pour laquelle il travaille déménage en Belgique, ils partent avec elle. Pas par goût de l’aventure. Pour le travail. C’est le début des années 70. La Communauté économique européenne compte six États membres. * La libre circulation des travailleurs est un principe sur le papier. Dans la pratique, l’ouvrier voyage avec des formulaires administratifs, des taux de change et l’espoir que les systèmes s’harmoniseront. Ils s’installent en Belgique.</p>
-<p>C'est là que leur enfant naît. À Wilrijk, le 15 septembre 1981. C'est une autre Europe. L'Union compte désormais dix États membres ; la Grèce y a adhéré le 1er janvier de cette année-là. L'accord de Schengen n'existe pas encore. À chaque frontière, on trouve des postes de douane et des contrôles de passeports. Chaque pays a sa propre monnaie. Le Système monétaire européen de 1979 vise à stabiliser quelque peu les taux de change. La théorie parle d’unification européenne, mais la réalité se résume à des tampons et des files d’attente. L’enfant grandit à Hoboken, dans une maison où l’on ne parle que le français. Mais derrière cette langue unique se cachent trois mondes : celui de son père, celui de sa mère et le monde flamand dans lequel il grandit. L’enfant porte ces mondes en lui, avant même de savoir marcher. À ce moment-là, il ne fait qu’un. Un seul corps. Un seul nom sur un seul dossier.</p>
-<p><sup>**</sup><strong>BELG</strong>À l'âge de dix-huit ans, en 1999, il s'installe seul à Berchem. L'Union européenne compte alors quinze États membres. L’euro vient d’être introduit pour les paiements scripturaux, l’accord de Schengen est intégré au droit européen et la « citoyenneté européenne » est désormais inscrite dans la loi. ** Les frontières entre la Belgique et les Pays-Bas sont ouvertes. Mais la nationalité reste un attribut exclusif. Il opte pour une intégration totale et renonce à ses origines multiples. Il veut être Belge. Entièrement. Comme la double nationalité n’existe pas encore à cette époque, cela implique une rupture radicale : renoncer à la nationalité italienne. Renoncer à la nationalité française. Effacer tout ce que son pays d’origine lui a transmis en matière de documents d’identité, pour en récupérer un seul qu’il a lui-même choisi. Il est le seul de sa famille à faire ce choix. Ses sœurs conservent leur mélange d’origines. Pas lui. Il en choisit une seule. De son plein gré. Avec une conviction totale, pour s’intégrer. À partir de ce moment-là, un seul mot figure sur sa carte d’identité : BELGE.</p>
-<p>Il déménage ensuite à Gand. C’est là qu’il fait la connaissance de sa future épouse. Son nom figurant sur sa carte d’identité est exactement le même. Deux personnes, une seule nationalité administrative. Ils se marient en 2007. L’Union compte désormais 27 États membres. L’euro est la monnaie courante, l’espace Schengen est la norme, la frontière physique a disparu depuis longtemps. Ils vivent à Saint-Nicolas, puis à Waasmunster. Quatre déménagements en Belgique, quatre nouveaux dossiers, quatre nouveaux guichets. Chaque déménagement est une démarche administrative. Chaque nouvelle commune exige une nouvelle inscription. À chaque déménagement, l’unité grandit : de un à deux. Deux personnes, deux dossiers, deux identités administratives qui, désormais, doivent traverser ensemble les méandres de la bureaucratie.</p>
-<p><sup>***</sup>En 2014, ils déménagent ensemble en Flandre zélandaise, aux Pays-Bas. L'Europe compte alors 28 États membres. La frontière physique a disparu ; on roule sans s’arrêter de la Belgique vers les Pays-Bas. Mais la frontière administrative s’est dressée de manière invisible. C’est là que naissent les premiers frictions. Leur permis de conduire belge est valable dans toute l’Union européenne, tout comme le permis néerlandais. Pourtant, ils doivent rendre leur permis belge. Les Pays-Bas n’autorisent qu’un seul document valide par personne. *** Ils le remettent à la mairie et ne le récupèrent jamais. En échange, ils reçoivent un document néerlandais ayant exactement la même validité européenne. Seul le pays de délivrance a changé. À partir de ce moment-là, ils portent ce paradoxe dans leur propre portefeuille. Une carte d’identité belge pour leur identité. Un permis de conduire néerlandais pour leur mobilité, qui fait office de pièce d’identité légale aux Pays-Bas. En Belgique, ce même permis de conduire n’est pas accepté comme pièce d’identité ; seule la carte d’identité belge y est valable. Deux documents, deux pays, une seule personne. Leur vie se répartit entre deux États : ils résident dans l’un, sont assurés dans l’autre. En théorie, ils appartiennent ainsi aux deux pays et leur existence devrait s’adapter sans heurts de part et d’autre de la frontière. Dans la pratique, le système administratif est programmé pour ne reconnaître qu’un seul pays à la fois. Dès que les systèmes ne communiquent pas entre eux, on devient illisible.</p>
-<p>En 2016, leur fils vient au monde. Un enfant qui porte en lui ce que ses parents et ses grands-parents lui ont transmis. Les racines flamandes de sa mère. Les langues de ses grands-parents — non pas en tant que nationalité, mais en tant qu’origine, en tant que sonorité, en tant que sang. Et le zélandais-flamand, parce qu’il y vit, qu’il y respire l’air et qu’il s’y fait des amis. Quatre univers dans un seul corps. Quatre origines dans un seul enfant. Chaque jour, il traverse la frontière. Pas pour aller travailler, comme ses parents, mais pour aller à l’école. Il vit aux Pays-Bas, mais apprend à lire et à écrire en Flandre. À l’école, il apprend la langue de sa mère, mais son lit se trouve à Hulst. Et c’est là que commence l’inévitable. Pour les Flamands, c’est un Néerlandais, au volant d’une voiture immatriculée en jaune. Pour les Néerlandais, c’est un Flamand, reconnaissable à son accent. Dans la cour de récréation, les autres enfants le classent dans la catégorie « Belge ». Non pas parce que quelqu’un le lui a demandé. Non pas parce qu’il a fait un choix. Mais parce que les enfants autour de lui ont déjà appris que des catégories existent, et que tout ce qui s’en écarte doit être classé. Trois personnes, trois dossiers, deux pays, une famille.</p>
-<p><strong>BELG.</strong>Finalement, lui aussi reçoit une petite carte en plastique censée lui dire qui il est. Ce mot-là y figure à nouveau : BELG. Le petit drapeau européen dans le coin est tout ce qui reste de cet idéal plus vaste. Le reste a été rendu invisible. Le système n’enregistre qu’une seule dimension, alors que l’enfant en porte quatre.</p>
-<p>C'est ainsi que fonctionne l'algorithme de l'État. Il ne voit pas de famille. Il ne voit pas d'organisme qui s'est développé sur deux pays. Il ne voit que des entités isolées, dans des cases isolées, dans des pays isolés. Ceux qui ne rentrent pas dans la case tombent entre les mailles du filet.</p>
-<p><strong>BELG.</strong><strong>BELG.</strong>Nous sommes en 2025. L'Union européenne compte 27 États membres, après le retrait du Royaume-Uni. Les administrations sont numérisées, des flux de données relient les capitales et, en théorie, tout laisse présager une union sans heurts. Et l’enfant né en 1981 ? Il a désormais quarante-quatre ans. Il tombe gravement malade et se retrouve à l’hôpital. Les séquelles du diabète sont irréversibles : l’amputation de deux orteils et la perte de la vue d’un œil. Les médecins belges sont formels : vous ne pouvez plus conduire. Il ne le peut plus et ne le veut plus non plus. Les médecins néerlandais de son pays de résidence ne le connaissent pas, et ne sont même pas autorisés à le connaître en raison de la législation stricte relative aux doubles inscriptions. Bien que son permis de conduire néerlandais se trouve encore physiquement dans son portefeuille jusqu’au prochain examen ophtalmologique — les Pays-Bas n’en savent encore rien, car la base de données refuse tout simplement d’enregistrer la réalité médicale belge —, sa mobilité transfrontalière est de fait terminée. Bientôt, lorsque ce document expirera inévitablement, le système effacera la seule carte qui lui conférait encore une existence administrative aux Pays-Bas. Il ne restera plus que la carte d’identité belge. Un seul mot. BELGE. L’homme qui a passé toute sa vie à traverser les frontières, qui a volontairement renoncé à ses identités italienne et française pour devenir Belge, mais qui n’a jamais pu effacer l’univers de son père et de sa mère, est impitoyablement ramené, au terme de son parcours, à un seul pays. Le système l’a rattrapé. La boucle est bouclée. Il est à nouveau exclusivement belge. Et son fils, qui porte en lui quatre univers, figure dans la base de données avec exactement ce même mot. BELGE. Rien de plus. Un petit drapeau européen dans le coin.</p>
-<p>Trois générations. Trois cartes d'identité. Un seul mot. Le système réduit tout le monde à un simple point de données. Même celui qui a tenté de s'en affranchir.</p>
-<p><sup>****</sup>Nous sommes à l’automne 2026. Alors qu’il tape ce rapport d’audit, une larme tombe sur le clavier. Non par apitoiement sur soi-même, mais par pur épuisement, un épuisement de plomb, né d’un combat contre le vide. La tragédie amère, c’est que l’Europe connaît désormais l’erreur. En avril 2026, le législateur européen à Bruxelles est parvenu à un accord politique sur la révision tant attendue des anciennes règles de coordination ; en juillet 2026, le texte révisé a été officiellement adopté. **** Les failles du système sont reconnues, le vide de compétences est identifié. Mais l’encre de la politique coule infiniment plus lentement que le sang du citoyen. Les systèmes ne seront réellement adaptés qu’aux alentours de 2030. D’ici là, le travailleur frontalier, fait de chair et de sang, reste le seul amortisseur face aux défaillances des systèmes étatiques.</p>
-<p>Et même alors, en 2030, ces nouvelles règles ne constitueront qu'un pansement technologique sur une plaie institutionnelle bien plus profonde. Tant que les États-nations s'accrocheront désespérément à leurs propres guichets fermés, le travailleur frontalier restera, au fond, l'erreur involontaire d'un projet inachevé.</p>
-<p>C’est ce que ce dossier examine. Non pas la nationalité en tant que statut juridique, mais l’origine en tant que réalité humaine. Et la question de savoir pourquoi un système qui se dit européen réduit la réalité européenne de ses propres citoyens à un champ unidimensionnel figurant sur une carte d’identité.</p>
-<p>L'histoire commence ici. Les faits sont exposés dans le document B.</p>
+<div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
+<li class="niv1"><a href="#systeem-audit">Systeem-Audit</a></li>
+<li class="niv2"><a href="#inhoudsopgave">Inhoudsopgave</a></li>
+<li class="niv2"><a href="#een-europees-verhaal">Een Europees verhaal</a></li>
+<li class="niv2"><a href="#waarom-dit-project">Waarom dit project</a></li>
+<li class="niv2"><a href="#wat-dit-project-niet-is">Wat dit project niet is</a></li>
+<li class="niv2"><a href="#de-zes-documenten">De zes documenten</a></li>
+<li class="niv3"><a href="#document-0-de-inleiding-en-leeswijzer">Document 0 — De inleiding en leeswijzer</a></li>
+<li class="niv3"><a href="#document-a-de-narratieve-audit">Document A — De narratieve audit</a></li>
+<li class="niv3"><a href="#document-b-de-data-matrix">Document B — De data-matrix</a></li>
+<li class="niv3"><a href="#document-c-de-visuele-architectuur">Document C — De visuele architectuur</a></li>
+<li class="niv3"><a href="#document-d-de-synthese">Document D — De synthese</a></li>
+<li class="niv3"><a href="#document-e-het-rechtenoverzicht">Document E — Het rechtenoverzicht</a></li>
+<li class="niv2"><a href="#hoe-je-ze-gebruikt">Hoe je ze gebruikt</a></li>
+<li class="niv2"><a href="#voor-wie">Voor wie</a></li>
+<li class="niv2"><a href="#bron-en-verificatie">Bron en verificatie</a></li>
+</ul></div>
+<h2 id="een-europees-verhaal">Een Europees verhaal</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p>Dit dossier begint niet bij een grens. Het begint bij liefde en werk.</p>
+<p>Een man uit Lombardije. Hij voelt zich Lombard, niet Italiaan. Een vrouw uit de Elzas. Zij voelt zich Elzasser, niet Française of Duitse. Twee grensgevallen. Ze ontmoeten elkaar in de Elzas. Zij is verpleegster. Hij is arbeider. Hij raakt gewond, belandt in het ziekenhuis, en daar begint het. Ze trouwen. Wanneer het bedrijf waar hij werkt naar België verhuist, verhuizen zij mee. Niet voor avontuur. Voor werk. Het is het begin van de jaren zeventig. De Europese Economische Gemeenschap telt zes lidstaten.<sup>*</sup> Vrij verkeer van werknemers is een principe op papier. In de praktijk reist de arbeider met papieren formulieren, wisselkoersen en de hoop dat de stelsels elkaar zullen vinden. Ze vestigen zich in België.</p>
+<p>Daar wordt hun kind geboren. In Wilrijk, op 15 september 1981. Het is een ander Europa. Er zijn inmiddels tien lidstaten; Griekenland is op 1 januari van dat jaar toegetreden. Het Akkoord van Schengen bestaat nog niet. Aan elke grens staan douaneposten en paspoortcontroles. Elk land heeft zijn eigen munt. Het Europees Monetair Stelsel van 1979 moet de koersen enigszins temmen. De theorie spreekt over Europese eenwording, maar de realiteit bestaat uit stempels en wachtrijen. Het kind groeit op in Hoboken, in een huis waar uitsluitend Frans wordt gesproken. Maar achter die ene taal liggen drie werelden: de wereld van zijn vader, de wereld van zijn moeder, en de Vlaamse wereld waarin hij opgroeit. Het kind draagt die werelden in zich, nog voor het kan lopen. Op dat moment is het één. Eén lichaam. Eén naam op één dossier.</p>
+<p>Op zijn achttiende, in 1999, verhuist hij alleen naar Berchem. De Europese Unie telt dan vijftien lidstaten. De euro is net ingevoerd voor girale betalingen, Schengen is opgenomen in het Europees recht en het "Europees Burgerschap" is inmiddels wettelijk verankerd.<sup>**</sup> De grenzen tussen België en Nederland zijn open. Maar nationaliteit is nog steeds een exclusief bezit. Hij kiest voor volledige integratie en geeft zijn meervoudige oorsprong op. Hij wil Belg zijn. Volkomen. Omdat de dubbele nationaliteit in die jaren nog niet bestaat, betekent dat een harde knip: de Italiaanse nationaliteit opgeven. De Franse nationaliteit opgeven. Alles wat hij van thuis heeft meegekregen aan papieren identiteit uitwissen, om er één terug te krijgen die hij zelf heeft gekozen. Hij is de enige in zijn familie die deze keuze maakt. Zijn zussen behouden hun mix van oorsprongen. Hij niet. Hij kiest voor één. Vrijwillig. Met volle overtuiging, om te integreren. Vanaf dat moment staat er één woord op zijn identiteitskaart: <strong>BELG</strong>.</p>
+<p>Daarna verhuist hij naar Gent. Daar leert hij zijn toekomstige vrouw kennen. Ze draagt exact hetzelfde woord op haar identiteitskaart. Twee mensen, één administratieve nationaliteit. In 2007 trouwen ze. De Unie telt inmiddels 27 lidstaten. De euro is de dagelijkse munt, Schengen is de norm, de fysieke grens is allang verdwenen. Ze wonen in Sint-Niklaas, later in Waasmunster. Vier verhuizingen in België, vier keer een nieuw dossier, vier keer een nieuw loket. Elke verhuizing is een administratieve handeling. Elke nieuwe gemeente eist een nieuwe inschrijving. Met elke verhuizing groeit de eenheid: van één naar twee. Twee mensen, twee dossiers, twee administratieve identiteiten die vanaf nu samen door de bureaucratie moeten.</p>
+<p>In 2014 verhuizen zij samen naar Zeeuws-Vlaanderen in Nederland. Europa telt dan 28 lidstaten. De fysieke grens is opgelost; je rijdt zonder remmen van België naar Nederland. Maar de administratieve grens is onzichtbaar opgetrokken. Daar begint de eerste wrijving. Hun Belgische rijbewijs is geldig in de hele Europese Unie, het Nederlandse ook. Toch moeten ze het Belgische inleveren. Nederland staat maar één geldig document per persoon toe.<sup>***</sup> Ze geven het af bij de gemeente en krijgen het nooit terug. Wat ze in de plaats krijgen, is een Nederlands document met exact dezelfde Europese geldigheid. Alleen het land van uitgifte is veranderd. Vanaf dat moment dragen ze de paradox in hun eigen portemonnee. Een Belgische identiteitskaart voor hun identiteit. Een Nederlands rijbewijs voor hun mobiliteit, dat in Nederland dient als wettig legitimatiebewijs. In België wordt datzelfde rijbewijs niet als identiteitsbewijs aanvaard; daar geldt uitsluitend de Belgische kaart. Twee documenten, twee landen, één mens. Hun leven verdeelt zich over twee staten: wonen in het ene, verzekerd zijn in het andere. In theorie horen ze zo bij beide landen en zou hun bestaan zich naadloos over de grens moeten plooien. In de praktijk is het administratieve systeem geprogrammeerd om telkens maar één land tegelijk te lezen. Zodra de systemen niet met elkaar spreken, word je onleesbaar.</p>
+<p>In 2016 wordt hun zoon geboren. Een kind dat in zich draagt wat zijn ouders en grootouders hem hebben doorgegeven. De Vlaamse wortels van zijn moeder. De talen van zijn grootouders — niet als nationaliteit, maar als oorsprong, als klank, als bloed. En Zeeuws-Vlaams omdat hij er woont, de lucht inademt en er vrienden maakt. Vier werelden in één lichaam. Vier oorsprongen in één kind. Hij steekt elke dag de grens over. Niet voor werk, zoals zijn ouders, maar voor school. Hij woont in Nederland, maar leert lezen en schrijven in Vlaanderen. Op school leert hij de taal van zijn moeder, maar zijn bed staat in Hulst. En daar begint het onvermijdelijke. Voor de Vlamingen is hij een Nederlander, rijdend in een auto met een geel kenteken. Voor de Nederlanders is hij een Vlaming, herkenbaar aan zijn tongval. Op het speelplein steken de andere kinderen hem in het vakje 'Belg'. Niet omdat iemand hem dat gevraagd heeft. Niet omdat hij een keuze heeft gemaakt. Maar omdat de kinderen om hem heen al geleerd hebben dat er vakjes bestaan, en dat alles wat afwijkt, geclassificeerd moet worden. Drie mensen, drie dossiers, twee landen, één gezin.</p>
+<p>Uiteindelijk krijgt ook hij een plastieken kaartje dat hem moet vertellen wie hij is. Daarop staat opnieuw dat ene woord. <strong>BELG.</strong> De kleine Europese vlag in de hoek is het enige wat rest van het grotere ideaal. De rest is onzichtbaar gemaakt. Het systeem registreert één dimensie, terwijl het kind er vier draagt.</p>
+<p>Zo werkt het algoritme van de staat. Het ziet geen gezin. Het ziet geen organisme dat over twee landen is gegroeid. Het ziet uitsluitend losse eenheden in losse vakjes in losse landen. Wie niet in het vakje past, valt tussen de regels door.</p>
+<p>Het is 2025. De Europese Unie telt 27 lidstaten, na de uittreding van het Verenigd Koninkrijk. De overheden zijn gedigitaliseerd, datastromen verbinden de hoofdsteden en de theorie belooft een frictieloze unie. En het kind uit 1981? Hij is inmiddels vierenveertig. Hij wordt ernstig ziek en belandt in de kliniek. De tol van de suikerziekte is onomkeerbaar: de amputatie van twee tenen en het verlies van zicht in één oog. De Belgische artsen oordelen helder: u mag niet meer rijden. Hij kan en wil dat ook niet meer. De Nederlandse artsen in zijn woonland kennen hem niet, en mógen hem door de strikte wetgeving rond dubbele inschrijvingen niet eens kennen. Hoewel het Nederlandse rijbewijs tot de volgende oogtest fysiek nog in zijn portemonnee zit — Nederland weet nog van niets, omdat de database domweg weigert de Belgische medische realiteit in te lezen — is zijn grensoverschrijdende mobiliteit feitelijk voorbij. Straks, wanneer dat document onvermijdelijk vervalt, wist het systeem de enige kaart uit die hem in Nederland nog een administratieve weerspiegeling gaf. Wat overblijft, is de Belgische identiteitskaart. Eén woord. <strong>BELG.</strong> De man die zijn hele leven over grenzen bewoog, die zijn Italiaanse en Franse identiteit vrijwillig opgaf om Belg te worden, maar de wereld van zijn vader en moeder nooit kon uitwissen, wordt aan het einde van zijn rit genadeloos teruggebracht tot één land. Het systeem heeft hem ingehaald. De cirkel is rond. Hij is weer uitsluitend Belg. En zijn zoon, die vier werelden in zich draagt, staat met exact datzelfde woord in de database. <strong>BELG.</strong> Niets meer. Een kleine Europese vlag in de hoek.</p>
+<p>Drie generaties. Drie identiteitskaarten. Eén woord. Het systeem reduceert iedereen tot een enkel datapunt. Zelfs degene die het probeerde te ontstijgen.</p>
+<p>Het is nu najaar 2026. Terwijl hij deze audit uittypt, valt er een traan op het toetsenbord. Niet uit zelfmedelijden, maar uit de pure, loden uitputting van een gevecht tegen de leegte. De bittere tragiek is dat Europa de fout inmiddels kent. In april 2026 bereikte de Europese wetgever in Brussel een politiek akkoord over de langverwachte herziening van de oude coördinatieregels; in juli 2026 werd de herziene tekst formeel aangenomen.<sup>****</sup> De weeffouten worden erkend, het bevoegdheidsvacuüm is benoemd. Maar de inkt van de politiek stroomt eindeloos veel trager dan het bloed van de burger. De systemen worden pas omstreeks 2030 daadwerkelijk aangepast. Tot die tijd is de grensarbeider van vlees en bloed de enige overgebleven schokdemper voor de falende systemen van de staat.</p>
+<p>En zelfs dán, in 2030, vormen die nieuwe regels slechts een technologische pleister op een veel diepere institutionele wonde. Zolang de natiestaten krampachtig vasthouden aan hun eigen gesloten loketten, blijft de grensarbeider in de kern de onbedoelde foutmelding van een half afgewerkt ontwerp.</p>
+<p>Dat is wat dit dossier onderzoekt. Niet de nationaliteit als juridisch statuut. Wel de oorsprong als menselijke werkelijkheid. En de vraag waarom een systeem dat zichzelf Europees noemt, de Europese werkelijkheid van zijn eigen burgers reduceert tot een eendimensionaal veld op een identiteitskaart.</p>
+<p>Het verhaal begint hier. De feiten staan in Document B.</p>
 <hr/>
 <div class="footnotes">
 <p><strong>*</strong> Verordening (EEG) nr. 1408/71 van de Raad van 14 juni 1971 betreffende de toepassing van de socialezekerheidsstelsels op werknemers en zelfstandigen en hun gezinsleden die zich binnen de Gemeenschap verplaatsen. Deze verordening verving de oudere Verordeningen nr. 3 en nr. 4 uit 1958 en trad in werking op 1 oktober 1972.</p>
@@ -479,41 +1231,713 @@ h1 {
 <p><strong>***</strong> Conform de Europese Rijbewijsrichtlijn (2006/126/EG) is er een geharmoniseerd Europees model, maar blijft het beheer strikt gekoppeld aan het territorialiteitsbeginsel van de lidstaat waar men de "normale verblijfplaats" heeft. Dit dwingt grensarbeiders om hun uitgevende land te veranderen na een verhuizing, ondanks de Europese status van het document.</p>
 <p><strong>****</strong> In april 2026 werd na jarenlange triloog-onderhandelingen een voorlopig politiek akkoord bereikt over het 'Labour Mobility Package' (herziening van Verordening 883/2004 en 987/2009); in juli 2026 volgde de formele aanname. De wetgever erkent hierin de institutionele leemtes voor grensarbeiders, maar door de benodigde IT-aanpassingen worden de structurele oplossingen pas tegen 2030 operationeel afdwingbaar.</p>
 </div>
-<p class="marker">[[PAGEBREAK]]</p>
-<h2>Pourquoi ce projet ?</h2>
-<p>Ce projet rend compte de ce qui se passe lorsqu'une personne se retrouve prise entre deux systèmes nationaux. Un cas concret, documenté dans les moindres détails : un travailleur frontalier résidant aux Pays-Bas et travaillant en Belgique, qui, en raison d'un concours de circonstances médicales et administratives, se retrouve coincé entre deux systèmes de prise en charge qui refusent de lire les données l'un de l'autre.</p>
-<p>Ce n'est ni un plaidoyer ni une accusation. Il s'agit d'un audit empirique. La question qui le sous-tend est simple : comment se fait-il qu'un citoyen qui existe à la fois dans deux pays soit rendu invisible sur le plan administratif par ces deux pays ?</p>
-<p>La réponse ne réside ni dans une seule instance, ni dans une seule erreur. Elle réside dans l'architecture même du système. Les systèmes nationaux de mise en œuvre reposent sur une logique binaire qui ne laisse aucune place à un citoyen appartenant simultanément à deux systèmes. Celui qui ne rentre pas dans une case ne rentre pas non plus dans l’autre. Et il n’existe pas de troisième case.</p>
-<h2>Ce que ce projet n'est pas</h2>
-<p>Aucune plainte. Aucune accusation contre des personnes. Aucun récit personnel. Les documents décrivent un système, et non les personnes qui y travaillent. La plupart des personnes qui apparaissent dans ce dossier font leur travail dans le respect des règles qui leur ont été imposées. Le problème n’est pas qu’elles agissent de mauvaise foi. Le problème, c’est que le système ne laisse aucune place à ceux qui ne correspondent pas au profil type.</p>
-<h2>Les cinq documents</h2>
-<p>Chaque document peut être lu indépendamment. Chacun aborde le même sujet sous un angle différent.</p>
-<h3>Document A — L'audit narratif</h3>
-<p>Raconte l'histoire des organisations qui, ensemble, constituent le système. Ce qu'elles font, pourquoi cela ne fonctionne pas, comment cela se répercute sur le maillon suivant. Pour ceux qui souhaitent comprendre l'ensemble sans avoir à passer en revue les données sous-jacentes.</p>
-<h3>Document B — La matrice de données</h3>
-<p>Contient toutes les informations factuelles : dates, numéros de référence, correspondance, chronologies. La base sur laquelle s'appuient les autres documents. Pour ceux qui souhaitent vérifier ce qui s'est exactement passé.</p>
-<h3>Document C — L'architecture visuelle</h3>
-<p>Présente les structures, les réseaux et les flux de données qui sont à l'origine de ces défaillances. Met en lumière des schémas et des mécanismes qui restent invisibles dans le texte. Pour ceux qui souhaitent comprendre pourquoi les faits mènent à ces conclusions.</p>
-<h3>Document D — La synthèse</h3>
-<p>Il rassemble les tendances qui se dégagent de ces données. Quels paradoxes reviennent, quelles lignes de fracture sont systémiques, quel rôle joue l'Union européenne ? Pour ceux qui veulent une synthèse.</p>
-<h2>Comment les utiliser</h2>
-<p>Commencez par là où vous en êtes. Chaque document est indépendant.</p>
-<p>Pour ceux qui veulent uniquement le récit : document A. Pour ceux qui veulent les faits : document B. Pour ceux qui veulent un aperçu visuel : document C. Pour ceux qui veulent la conclusion : document D.</p>
-<p>Si vous souhaitez tout lire, commencez par le document 0, passez ensuite au document A, puis au document B pour les faits de base, ensuite au document C pour l'architecture, et terminez par le document D.</p>
-<h2>Pour qui</h2>
-<p>Pour tous ceux qui souhaitent comprendre comment un système de soins moderne se heurte à ses propres limites. Décideurs politiques, juristes, universitaires, journalistes, fonctionnaires chargés de la mise en œuvre, ainsi que les travailleurs frontaliers qui vivent la même situation.</p>
-<p>Ce document est accessible au public et peut être utilisé librement. Toute personne qui en cite des extraits doit mentionner le Document B comme source des faits.</p>
-<h2>Source et vérification</h2>
-<p>Toutes les informations contenues dans ce projet s'appuient sur la correspondance originale, les rapports médicaux, les numéros de référence et les fichiers journaux. Lorsqu'un élément n'est pas vérifiable, cela est explicitement mentionné. Lorsqu'un élément reste flou, il est présenté comme tel et n'est pas présenté comme une hypothèse.</p>
-<p>Les faits sont consignés dans le document B. Les autres documents s'appuient sur celui-ci et proviennent de la même source.</p>
+<h2 id="waarom-dit-project">Waarom dit project</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p>Dit project documenteert wat er gebeurt wanneer iemand tussen twee nationale systemen valt. Eén casus, tot op het bot gedocumenteerd: een grensarbeider die in Nederland woont en in België werkte, en die door een samenloop van medische en administratieve omstandigheden vastloopt tussen twee uitvoeringsstelsels die weigeren elkaars gegevens te lezen.</p>
+<p>Het is geen pleidooi en geen aanklacht. Het is een empirische audit. De vraag die eraan ten grondslag ligt is simpel: hoe kan het dat een burger die in twee landen tegelijk bestaat, door beide landen administratief onzichtbaar wordt gemaakt?</p>
+<p>Het antwoord ligt niet bij één instantie, en ook niet bij één fout. Het ligt in de architectuur van het systeem zelf. De nationale uitvoeringssystemen zijn gebouwd op een binaire logica die geen ruimte laat voor een burger die tegelijk in twee systemen zit. Wie niet in het ene vakje past, past ook niet in het andere. En een derde vakje bestaat niet.</p>
+<h2 id="wat-dit-project-niet-is">Wat dit project niet is</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p>Geen klacht. Geen aanklacht tegen personen. Geen persoonlijk verhaal. De documenten beschrijven een systeem, niet de mensen die erin werken. De meeste mensen die in dit dossier opduiken doen hun werk binnen de regels die hun zijn gegeven. Het probleem is niet dat ze kwaadwillig zijn. Het probleem is dat het systeem geen ruimte heeft voor wie niet in het standaardprofiel past.</p>
+<h2 id="de-zes-documenten">De zes documenten</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p>Elk document is zelfstandig leesbaar. Elk belicht hetzelfde materiaal vanuit een andere hoek — van de macro-architectuur van Europese verdragen tot de micro-uitvoering aan het loket.</p>
+<h3 id="document-0-de-inleiding-en-leeswijzer">Document 0 — De inleiding en leeswijzer</h3>
+<p>Schetst het uitgangspunt, de kaders en de opbouw van de audit. Voor wie wil weten vanuit welke feitelijke positie dit dossier vertrekt en hoe de verschillende lagen op elkaar ingrijpen.</p>
+<h3 id="document-a-de-narratieve-audit">Document A — De narratieve audit</h3>
+<p>Vertelt het verhaal van de organisaties die samen het systeem vormen. Wat ze doen, volgens welke logica ze werken, waar hun mandaat eindigt en hoe een beslissing doorwerkt op de volgende schakel. Voor wie het geheel wil begrijpen zonder direct de onderliggende data te doorlopen.</p>
+<h3 id="document-b-de-data-matrix">Document B — De data-matrix</h3>
+<p>Bevat alle feiten in chronologische volgorde per organisatie: datums, referentienummers, correspondentie, beslissingen en primaire bronkoppelingen. De forensische bewijslaag waarop alle andere documenten zijn gebouwd. Voor wie wil verifiëren wat er precies is gebeurd.</p>
+<h3 id="document-c-de-visuele-architectuur">Document C — De visuele architectuur</h3>
+<p>Toont de structuren, netwerken en datastromen die aan het vastlopen ten grondslag liggen. Brengt de systeemdynamiek tussen België, Nederland en de Europese Unie in beeld: waar de knooppunten zitten, hoe terugkoppelingen werken en hoe het bovenliggende verdrag zich spiegelt in de uitvoering beneden aan het loket. Voor wie wil zien waarom de feiten tot deze uitkomst leiden.</p>
+<h3 id="document-d-de-synthese">Document D — De synthese</h3>
+<p>Brengt de patronen samen die uit het materiaal naar voren komen. Hoe de twee werkelijkheden — de fysieke en de administratieve — uit elkaar groeien, welke mechanismen steeds terugkeren en welke structurele sleutels het verschil maken tussen stilstand en oplossing. Voor wie de optelsom wil.</p>
+<h3 id="document-e-het-rechtenoverzicht">Document E — Het rechtenoverzicht</h3>
+<p>Toetst per sociaal recht wat de wet belooft, waarom het bij een grensarbeider vastloopt in een Catch-22 of gesloten deur, welke alternatieve route er bestaat en wat het in de praktijk oplevert of nog laat aanslepen. Voor wie per recht de concrete status en uitwerking wil overzien.</p>
+<h2 id="hoe-je-ze-gebruikt">Hoe je ze gebruikt</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p>Begin waar je begint. Elk document staat op zichzelf.</p>
+<p>Wie alleen het verhaal per organisatie wil: Document A. Wie de feiten en bewijsstukken wil: Document B. Wie het visuele systeemoverzicht wil: Document C. Wie de overkoepelende synthese wil: Document D. Wie per sociaal recht wil zien waar het vastloopt, wat er nog loopt en welke route overblijft: Document E.</p>
+<p>Wie alles in samenhang wil lezen, begint bij Document 0, gaat dan naar Document A voor de organisaties, naar Document B voor de onderliggende feiten, naar Document C voor de systeemarchitectuur, naar Document D voor de synthese, en sluit af met Document E voor het actuele rechtenoverzicht.</p>
+<h2 id="voor-wie">Voor wie</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p>Voor iedereen die wil begrijpen hoe een modern verzorgingsstelsel vastloopt op zijn eigen grenzen. Beleidsmakers, juristen, academici, journalisten, uitvoeringsambtenaren, en de grensarbeiders die hetzelfde meemaken.</p>
+<p>Het materiaal is openbaar en vrij te gebruiken. Wie eruit citeert, citeert Document B als de bron van de feiten.</p>
+<h2 id="bron-en-verificatie">Bron en verificatie</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p>Alle vastleggingen in dit project zijn gebaseerd op originele correspondentie, medische verslagen, referentienummers en logbestanden. Waar iets niet verifieerbaar is, wordt dat expliciet vermeld. Waar iets onduidelijk blijft, wordt dat als onduidelijk opgeschreven en niet als vermoeden gepresenteerd.</p>
+<p>De feiten zijn vastgelegd in Document B. De andere documenten zijn daarop gebaseerd en volgen dezelfde bron.</p>
 <div class="contactblok">
-<p><a href="mailto:systeemaudit@gmail.com">systeemaudit@gmail.com</a>Si vous souhaitez consulter les pièces justificatives, l'intégralité de la correspondance ou utiliser les sources, vous pouvez nous contacter à l'adresse systeemaudit@gmail.com.</p>
+<p>Wie de onderliggende bewijsstukken wil inzien, de volledige correspondentie wil raadplegen, of een beroep wil doen op het bronmateriaal, kan contact opnemen via <a href="mailto:systeemaudit@gmail.com">systeemaudit@gmail.com</a>.</p>
 </div>
-<a class="pub-top" href="#top" title="↑">↑</a>
+<a class="pub-top" href="#top" title="Naar boven">↑</a><!-- Forensisch Bronopvragings- en Contactvenster (Modal) -->
+<div class="bm-modal-overlay" id="bm-modal" onclick="if(event.target===this)sluitBronModal()">
+<div aria-labelledby="bm-modal-titel" aria-modal="true" class="bm-modal-dialog" role="dialog">
+<div class="bm-modal-kop">
+<h3 id="bm-modal-titel">📄 Bronstuk opvragen / Contact</h3>
+<button aria-label="Venster sluiten" class="bm-modal-sluit" onclick="sluitBronModal()" type="button">×</button>
+</div>
+<div class="bm-intro">
+      Alle 682 interacties in deze audit zijn gebaseerd op objectieve brondocumenten (originele e-mails met Message-ID's, formele besluiten, brieven en medische verslagen). Om privacy en AVG-rechten van betrokkenen te waarborgen zijn persoonsgegevens in publieke bestanden afgeschermd. Geauthenticeerde onderzoekers, journalisten, toezichthouders en lotgenoten kunnen volledige, ongecensureerde brondossiers opvragen ter verificatie.
+    </div>
+<form id="bm-form" onsubmit="event.preventDefault();stuurEmail();">
+<div class="bm-groep">
+<label class="bm-label" for="bm-onderwerp">Onderwerp / Gevraagd bronstuk of referentie:</label>
+<input class="bm-input" id="bm-onderwerp" placeholder="Bijv. Bronopvraag: CZ Zorgverzekering - 06-10-2026 - Weigering S072" type="text"/>
+</div>
+<div class="bm-groep">
+<label class="bm-label">Uw hoedanigheid / perspectief:</label>
+<div class="bm-radio-groep">
+<label class="bm-radio-optie">
+<input checked="" name="bm-perspectief" type="radio" value="Lotgenoot / Grensarbeider"/>
+<span><strong>Lotgenoot / Grensarbeider</strong><br/><small style="color:#666">Ervaring delen, herkenning, vergelijkbare situatie</small></span>
+</label>
+<label class="bm-radio-optie">
+<input name="bm-perspectief" type="radio" value="Wetenschap / Beleidsonderzoek"/>
+<span><strong>Wetenschap / Beleid</strong><br/><small style="color:#666">Academisch onderzoek, beleidsevaluatie, EESSI/ESSPASS</small></span>
+</label>
+<label class="bm-radio-optie">
+<input name="bm-perspectief" type="radio" value="Journalistiek / Media"/>
+<span><strong>Journalistiek / Media</strong><br/><small style="color:#666">Feitelijke verificatie, achtergrondgesprek, publicatie</small></span>
+</label>
+<label class="bm-radio-optie">
+<input name="bm-perspectief" type="radio" value="Juridisch / Toezichthouder"/>
+<span><strong>Juridisch / Toezichthouder</strong><br/><small style="color:#666">Handhaving, AVG/GDPR, rechtbank, ombudsman</small></span>
+</label>
+</div>
+</div>
+<div class="bm-groep">
+<label class="bm-label" for="bm-vraag">Uw toelichting, vraag of verificatiedoel:</label>
+<textarea class="bm-textarea" id="bm-vraag" placeholder="Beschrijf kort uw onderzoeksvraag, hoedanigheid of situatie..."></textarea>
+</div>
+<div class="bm-check-groep">
+<input checked="" id="bm-akkoord" type="checkbox"/>
+<label for="bm-akkoord">Ik begrijp dat opgevraagde bronstukken uitsluitend voor verificatie, waarheidsvinding of belangenbehartiging worden verstrekt conform de privacywetgeving.</label>
+</div>
+<div class="bm-knoppen">
+<button class="bm-btn-copy" id="bm-copy-btn" onclick="kopieerAanvraag()" type="button">📋 Kopieer aanvraagtekst + e-mailadres</button>
+<button class="bm-btn-mail" type="submit">Open in e-mailprogramma →</button>
+</div>
+</form>
+</div>
+</div>
+<script>
+(function() {
+  window.openBronModal = function(onderwerp) {
+    var modal = document.getElementById('bm-modal');
+    if (!modal) return;
+    var inp = document.getElementById('bm-onderwerp');
+    if (inp) {
+      inp.value = onderwerp || 'Algemeen contact / Vraag over de Systeem-Audit';
+    }
+    modal.classList.add('bm-open');
+    if (inp) inp.focus();
+  };
+
+  window.sluitBronModal = function() {
+    var modal = document.getElementById('bm-modal');
+    if (modal) modal.classList.remove('bm-open');
+  };
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') sluitBronModal();
+  });
+
+  // Event delegation voor klik op .audit-bewijs
+  document.addEventListener('click', function(e) {
+    var badge = e.target.closest ? e.target.closest('.audit-bewijs') : null;
+    if (!badge) return;
+    e.preventDefault();
+
+    var entry = badge.closest ? badge.closest('.entry') : null;
+    var orgNaam = '';
+    var datum = '';
+    var titel = '';
+
+    if (entry) {
+      var dEl = entry.querySelector('.datum');
+      if (dEl) datum = dEl.innerText.trim();
+      var tEl = entry.querySelector('.titel, .entry-titel');
+      if (tEl) titel = tEl.innerText.trim();
+      
+      // Zoek dichtstbijzijnde voorgaande h3
+      var allH3 = document.querySelectorAll('h3');
+      for (var i = allH3.length - 1; i >= 0; i--) {
+        if (allH3[i].compareDocumentPosition(badge) & Node.DOCUMENT_POSITION_FOLLOWING) {
+          orgNaam = allH3[i].innerText.trim();
+          break;
+        }
+      }
+    }
+
+    var cleanOrg = orgNaam.replace(/\s+/g, ' ').replace(/^[\d\.\s]+/, '').trim();
+    var parts = [];
+    if (cleanOrg) parts.push(cleanOrg);
+    if (datum) parts.push(datum);
+    if (titel) parts.push(titel.replace(/\s+/g, ' '));
+    else if (badge.innerText) parts.push(badge.innerText.trim());
+
+    var onderwerp = 'Bronopvraag: ' + parts.join(' - ');
+    openBronModal(onderwerp);
+  });
+
+  function genereerEmailTekst() {
+    var onderwerp = (document.getElementById('bm-onderwerp').value || '').trim();
+    var perspectiefEl = document.querySelector('input[name="bm-perspectief"]:checked');
+    var perspectief = perspectiefEl ? perspectiefEl.value : 'Niet opgegeven';
+    var toelichting = (document.getElementById('bm-vraag').value || '').trim();
+    var akkoord = document.getElementById('bm-akkoord').checked ? 'Ja' : 'Nee';
+
+    var tekst = "Geachte heer Messa / Systeem-Audit,\n\n" +
+      "Betreft: " + onderwerp + "\n" +
+      "Perspectief: " + perspectief + "\n\n" +
+      "Toelichting / Onderzoeksvraag:\n" +
+      (toelichting || "[Geen extra toelichting ingevoerd]") + "\n\n" +
+      "Akkoord met verificatievoorwaarden: " + akkoord + "\n\n" +
+      "---\nVerzonden via het bronopvragingsvenster van grensarbeid.org";
+    return { onderwerp: onderwerp, tekst: tekst };
+  }
+
+  window.stuurEmail = function() {
+    var data = genereerEmailTekst();
+    var mailto = "mailto:systeemaudit@gmail.com" +
+      "?subject=" + encodeURIComponent(data.onderwerp) +
+      "&body=" + encodeURIComponent(data.tekst);
+    window.location.href = mailto;
+  };
+
+  window.kopieerAanvraag = function() {
+    var data = genereerEmailTekst();
+    var klembordTekst = "Aan: systeemaudit@gmail.com\n" +
+      "Onderwerp: " + data.onderwerp + "\n\n" +
+      data.tekst;
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(klembordTekst).then(function() {
+        toonKopieerBevestiging();
+      }).catch(function() {
+        fallbackKopieer(klembordTekst);
+      });
+    } else {
+      fallbackKopieer(klembordTekst);
+    }
+  };
+
+  function fallbackKopieer(tekst) {
+    var ta = document.createElement('textarea');
+    ta.value = tekst;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    try {
+      document.execCommand('copy');
+      toonKopieerBevestiging();
+    } catch(e) {
+      alert('Kopiëren mislukt. U kunt handmatig mailen naar systeemaudit@gmail.com');
+    }
+    document.body.removeChild(ta);
+  }
+
+  function toonKopieerBevestiging() {
+    var btn = document.getElementById('bm-copy-btn');
+    if (!btn) return;
+    var orig = btn.innerText;
+    btn.innerText = '✓ Gekopieerd naar klembord!';
+    btn.classList.add('bm-copied');
+    setTimeout(function() {
+      btn.innerText = orig;
+      btn.classList.remove('bm-copied');
+    }, 2500);
+  }
+})();
+</script><button aria-label="Schakel donkere/lichte modus" class="dm-toggle" onclick="dm_toggle()" title="Schakel donkere/lichte modus" type="button">
+<span class="dm-icon-dm">🌙</span>
+<span class="dm-icon-lm">☀️</span>
+</button>
+<script>
+(function(){
+  function s(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  window.dm_toggle=function(){
+    var r=document.documentElement;
+    var n=r.getAttribute('data-theme')==='dark'?'light':'dark';
+    r.setAttribute('data-theme',n);
+    s('systeem-audit-thema',n);
+  };
+})();
+</script>
 <footer class="pub-footer">
-<p><strong>Audit du système</strong> — Vide de compétence transfrontalier en matière de sécurité sociale<br/>
-  Auteur : Eric Messa · Version mise à jour : 5 oktober 2026, 15:03</p>
-<p><a href="home.html">← Aperçu</a></p>
+<p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
+
+  Auteur: Eric Messa · Versie bijgewerkt: 26 oktober 2026, 20:30</p>
+<p><a href="home.html">← Terug naar overzicht</a> ·
+
+     <a href="../index.html">[Web] Taalkeuze</a></p>
 </footer>
-</body>
+<!-- Direct DOM Translation Engine (works on file://, http://, and https://) -->
+<script class="notranslate" translate="no">
+(function() {
+  var _origTexts = new Map();
+  var _isTranslating = false;
+  var _currentLang = 'nl';
+
+  function getTranslatableNodes() {
+    var nodes = [];
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(node) {
+        if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        var p = node.parentElement;
+        while (p) {
+          if (p.classList && (p.classList.contains('notranslate') || p.id === 'bm-modal' || p.id === 'rechten-banner')) {
+            return NodeFilter.FILTER_REJECT;
+          }
+          var tag = p.tagName.toLowerCase();
+          if (tag === 'script' || tag === 'style' || tag === 'code' || tag === 'pre') {
+            return NodeFilter.FILTER_REJECT;
+          }
+          p = p.parentElement;
+        }
+        var text = node.nodeValue.replace(/\s+/g, ' ').trim();
+        if (text.length >= 2 && /[a-zA-ZÀ-ÿ]{2,}/.test(text)) {
+          return NodeFilter.FILTER_ACCEPT;
+        }
+        return NodeFilter.FILTER_REJECT;
+      }
+    });
+    while (walker.nextNode()) {
+      nodes.push(walker.currentNode);
+    }
+    return nodes;
+  }
+
+  function updatePageLinks(lang) {
+    var links = document.querySelectorAll('a[href]');
+    for (var i = 0; i < links.length; i++) {
+      var a = links[i];
+      var href = a.getAttribute('href');
+      if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('javascript:')) continue;
+      if (href.indexOf('document-') !== -1) {
+        var base = href.split('?')[0];
+        var isPrint = href.indexOf('print=1') !== -1;
+        a.setAttribute('href', base + '?int=1&lang=' + lang + (isPrint ? '&print=1' : ''));
+      } else if (href.indexOf('home_int.html') !== -1) {
+        var base = href.split('?')[0];
+        a.setAttribute('href', base + '?lang=' + lang);
+      }
+    }
+  }
+
+  function syncDropdown(lang) {
+    var sel = document.getElementById('int-lang-select');
+    if (sel && lang) {
+      sel.value = lang;
+    }
+  }
+
+  function bepaalDoeltaal() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var target = urlParams.get('lang');
+    if (!target) {
+      try { target = sessionStorage.getItem('grensarbeid-int-lang'); } catch(e) {}
+    }
+    if (!target) {
+      var navLang = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
+      target = navLang.toLowerCase().split('-')[0];
+    }
+    return target || 'en';
+  }
+
+  function showStatusPill(msg, isSuccess) {
+    var pill = document.getElementById('trans-status-pill');
+    if (!pill) {
+      pill = document.createElement('div');
+      pill.id = 'trans-status-pill';
+      pill.className = 'notranslate';
+      pill.style.cssText = 'position:fixed;bottom:24px;left:24px;z-index:9999;padding:6px 14px;border-radius:20px;font-size:10pt;font-weight:600;font-family:sans-serif;box-shadow:0 4px 12px rgba(0,0,0,0.3);transition:opacity .3s;';
+      document.body.appendChild(pill);
+    }
+    pill.textContent = msg;
+    pill.style.background = isSuccess ? '#2e7d32' : '#003399';
+    pill.style.color = '#ffffff';
+    pill.style.opacity = '1';
+    pill.style.display = 'block';
+    if (isSuccess) {
+      setTimeout(function() {
+        pill.style.opacity = '0';
+        setTimeout(function(){ pill.style.display='none'; }, 300);
+      }, 2500);
+    }
+  }
+
+  window.vertaalPaginaNaar = function(lang) {
+    if (!lang) return Promise.resolve();
+    if (_isTranslating) return Promise.resolve();
+    _isTranslating = true;
+    _currentLang = lang;
+
+    updatePageLinks(lang);
+    syncDropdown(lang);
+
+    var nodes = getTranslatableNodes();
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      if (!_origTexts.has(n)) {
+        _origTexts.set(n, n.nodeValue);
+      }
+    }
+
+    if (lang === 'nl') {
+      for (var i = 0; i < nodes.length; i++) {
+        var n = nodes[i];
+        if (_origTexts.has(n)) {
+          n.nodeValue = _origTexts.get(n);
+        }
+      }
+      _isTranslating = false;
+      showStatusPill('✓ Nederlands (Origineel)', true);
+      return Promise.resolve();
+    }
+
+    showStatusPill('⏳ Translating (' + lang.toUpperCase() + ')...', false);
+
+    var chunks = [];
+    var curNodes = [];
+    var curLen = 0;
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      var orig = _origTexts.get(n).replace(/\s+/g, ' ').trim();
+      if (curLen + orig.length > 3000 && curNodes.length > 0) {
+        chunks.push(curNodes);
+        curNodes = [];
+        curLen = 0;
+      }
+      curNodes.push(n);
+      curLen += orig.length + 1;
+    }
+    if (curNodes.length > 0) chunks.push(curNodes);
+
+    var promises = chunks.map(function(chunk) {
+      var lines = chunk.map(function(n) {
+        return _origTexts.get(n).replace(/\s+/g, ' ').trim();
+      });
+      var q = lines.join('\n');
+      var url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=nl&tl=' + lang + '&dt=t';
+
+      return fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        body: 'q=' + encodeURIComponent(q)
+      })
+      .then(function(resp) { return resp.json(); })
+      .then(function(data) {
+        if (!data || !data[0]) return;
+        var fullTrans = '';
+        for (var p = 0; p < data[0].length; p++) {
+          if (data[0][p][0]) fullTrans += data[0][p][0];
+        }
+        var transLines = fullTrans.split('\n');
+        for (var k = 0; k < chunk.length && k < transLines.length; k++) {
+          var node = chunk[k];
+          var orig = _origTexts.get(node);
+          var leadingSpace = orig.match(/^\s*/)[0];
+          var trailingSpace = orig.match(/\s*$/)[0];
+          node.nodeValue = leadingSpace + transLines[k] + trailingSpace;
+        }
+      })
+      .catch(function(err) {
+        console.warn('Translation error for chunk:', err);
+      });
+    });
+
+    return Promise.all(promises).then(function() {
+      _isTranslating = false;
+      showStatusPill('✓ Translated (' + lang.toUpperCase() + ')', true);
+    });
+  };
+
+  window.wisselTaal = function(lang) {
+    if (!lang) return;
+    try {
+      sessionStorage.setItem('grensarbeid-int-lang', lang);
+    } catch(e) {}
+
+    var curUrl = new URL(window.location.href);
+    curUrl.searchParams.set('lang', lang);
+    window.history.replaceState({}, '', curUrl.toString());
+
+    window.vertaalPaginaNaar(lang);
+  };
+
+  function initOrSync() {
+    var isInt = window.location.search.indexOf('int=1') !== -1;
+    var isHomeInt = location.pathname.indexOf('home_int.html') !== -1;
+
+    if (!isInt && !isHomeInt) {
+      // 100% hard authentic Dutch mode!
+      return;
+    }
+
+    var target = bepaalDoeltaal();
+    syncDropdown(target);
+    updatePageLinks(target);
+
+    if (_currentLang !== target) {
+      window.vertaalPaginaNaar(target).then(function() {
+        if (window.location.search.indexOf('print=1') !== -1) {
+          setTimeout(function() { window.print(); }, 400);
+        }
+      });
+    } else {
+      syncDropdown(target);
+      updatePageLinks(target);
+      if (window.location.search.indexOf('print=1') !== -1) {
+        setTimeout(function() { window.print(); }, 400);
+      }
+    }
+  }
+
+  // Initial execution
+  initOrSync();
+
+  // Listen to pageshow (BFCache restore on back/forward) and popstate
+  window.addEventListener('pageshow', function() {
+    initOrSync();
+  });
+  window.addEventListener('popstate', function() {
+    initOrSync();
+  });
+})();
+</script><!-- Direct DOM Translation Engine (works on file://, http://, and https://) -->
+<script class="notranslate" translate="no">
+(function() {
+  var _origTexts = new Map();
+  var _isTranslating = false;
+  var _currentLang = 'nl';
+
+  function getTranslatableNodes() {
+    var nodes = [];
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(node) {
+        if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        var p = node.parentElement;
+        while (p) {
+          if (p.classList && (p.classList.contains('notranslate') || p.id === 'bm-modal' || p.id === 'rechten-banner')) {
+            return NodeFilter.FILTER_REJECT;
+          }
+          var tag = p.tagName.toLowerCase();
+          if (tag === 'script' || tag === 'style' || tag === 'code' || tag === 'pre') {
+            return NodeFilter.FILTER_REJECT;
+          }
+          p = p.parentElement;
+        }
+        var text = node.nodeValue.replace(/\s+/g, ' ').trim();
+        if (text.length >= 2 && /[a-zA-ZÀ-ÿ]{2,}/.test(text)) {
+          return NodeFilter.FILTER_ACCEPT;
+        }
+        return NodeFilter.FILTER_REJECT;
+      }
+    });
+    while (walker.nextNode()) {
+      nodes.push(walker.currentNode);
+    }
+    return nodes;
+  }
+
+  function updatePageLinks(lang) {
+    var links = document.querySelectorAll('a[href]');
+    for (var i = 0; i < links.length; i++) {
+      var a = links[i];
+      var href = a.getAttribute('href');
+      if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('javascript:')) continue;
+      if (href.indexOf('document-') !== -1) {
+        var base = href.split('?')[0];
+        var isPrint = href.indexOf('print=1') !== -1;
+        a.setAttribute('href', base + '?int=1&lang=' + lang + (isPrint ? '&print=1' : ''));
+      } else if (href.indexOf('home_int.html') !== -1) {
+        var base = href.split('?')[0];
+        a.setAttribute('href', base + '?lang=' + lang);
+      }
+    }
+  }
+
+  function syncDropdown(lang) {
+    var sel = document.getElementById('int-lang-select');
+    if (sel && lang) {
+      sel.value = lang;
+    }
+  }
+
+  function bepaalDoeltaal() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var target = urlParams.get('lang');
+    if (!target) {
+      try { target = sessionStorage.getItem('grensarbeid-int-lang'); } catch(e) {}
+    }
+    if (!target) {
+      var navLang = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
+      target = navLang.toLowerCase().split('-')[0];
+    }
+    return target || 'en';
+  }
+
+  function showStatusPill(msg, isSuccess) {
+    var pill = document.getElementById('trans-status-pill');
+    if (!pill) {
+      pill = document.createElement('div');
+      pill.id = 'trans-status-pill';
+      pill.className = 'notranslate';
+      pill.style.cssText = 'position:fixed;bottom:24px;left:24px;z-index:9999;padding:6px 14px;border-radius:20px;font-size:10pt;font-weight:600;font-family:sans-serif;box-shadow:0 4px 12px rgba(0,0,0,0.3);transition:opacity .3s;';
+      document.body.appendChild(pill);
+    }
+    pill.textContent = msg;
+    pill.style.background = isSuccess ? '#2e7d32' : '#003399';
+    pill.style.color = '#ffffff';
+    pill.style.opacity = '1';
+    pill.style.display = 'block';
+    if (isSuccess) {
+      setTimeout(function() {
+        pill.style.opacity = '0';
+        setTimeout(function(){ pill.style.display='none'; }, 300);
+      }, 2500);
+    }
+  }
+
+  window.vertaalPaginaNaar = function(lang) {
+    if (!lang) return Promise.resolve();
+    if (_isTranslating) return Promise.resolve();
+    _isTranslating = true;
+    _currentLang = lang;
+
+    updatePageLinks(lang);
+    syncDropdown(lang);
+
+    var nodes = getTranslatableNodes();
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      if (!_origTexts.has(n)) {
+        _origTexts.set(n, n.nodeValue);
+      }
+    }
+
+    if (lang === 'nl') {
+      for (var i = 0; i < nodes.length; i++) {
+        var n = nodes[i];
+        if (_origTexts.has(n)) {
+          n.nodeValue = _origTexts.get(n);
+        }
+      }
+      _isTranslating = false;
+      showStatusPill('✓ Nederlands (Origineel)', true);
+      return Promise.resolve();
+    }
+
+    showStatusPill('⏳ Translating (' + lang.toUpperCase() + ')...', false);
+
+    var chunks = [];
+    var curNodes = [];
+    var curLen = 0;
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      var orig = _origTexts.get(n).replace(/\s+/g, ' ').trim();
+      if (curLen + orig.length > 3000 && curNodes.length > 0) {
+        chunks.push(curNodes);
+        curNodes = [];
+        curLen = 0;
+      }
+      curNodes.push(n);
+      curLen += orig.length + 1;
+    }
+    if (curNodes.length > 0) chunks.push(curNodes);
+
+    var promises = chunks.map(function(chunk) {
+      var lines = chunk.map(function(n) {
+        return _origTexts.get(n).replace(/\s+/g, ' ').trim();
+      });
+      var q = lines.join('\n');
+      var url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=nl&tl=' + lang + '&dt=t';
+
+      return fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        body: 'q=' + encodeURIComponent(q)
+      })
+      .then(function(resp) { return resp.json(); })
+      .then(function(data) {
+        if (!data || !data[0]) return;
+        var fullTrans = '';
+        for (var p = 0; p < data[0].length; p++) {
+          if (data[0][p][0]) fullTrans += data[0][p][0];
+        }
+        var transLines = fullTrans.split('\n');
+        for (var k = 0; k < chunk.length && k < transLines.length; k++) {
+          var node = chunk[k];
+          var orig = _origTexts.get(node);
+          var leadingSpace = orig.match(/^\s*/)[0];
+          var trailingSpace = orig.match(/\s*$/)[0];
+          node.nodeValue = leadingSpace + transLines[k] + trailingSpace;
+        }
+      })
+      .catch(function(err) {
+        console.warn('Translation error for chunk:', err);
+      });
+    });
+
+    return Promise.all(promises).then(function() {
+      _isTranslating = false;
+      showStatusPill('✓ Translated (' + lang.toUpperCase() + ')', true);
+    });
+  };
+
+  window.wisselTaal = function(lang) {
+    if (!lang) return;
+    try {
+      sessionStorage.setItem('grensarbeid-int-lang', lang);
+    } catch(e) {}
+
+    var curUrl = new URL(window.location.href);
+    curUrl.searchParams.set('lang', lang);
+    window.history.replaceState({}, '', curUrl.toString());
+
+    window.vertaalPaginaNaar(lang);
+  };
+
+  function initOrSync() {
+    var isInt = window.location.search.indexOf('int=1') !== -1;
+    var isHomeInt = location.pathname.indexOf('home_int.html') !== -1;
+
+    if (!isInt && !isHomeInt) {
+      // 100% hard authentic Dutch mode!
+      return;
+    }
+
+    var target = bepaalDoeltaal();
+    syncDropdown(target);
+    updatePageLinks(target);
+
+    if (_currentLang !== target) {
+      window.vertaalPaginaNaar(target).then(function() {
+        if (window.location.search.indexOf('print=1') !== -1) {
+          setTimeout(function() { window.print(); }, 400);
+        }
+      });
+    } else {
+      syncDropdown(target);
+      updatePageLinks(target);
+      if (window.location.search.indexOf('print=1') !== -1) {
+        setTimeout(function() { window.print(); }, 400);
+      }
+    }
+  }
+
+  // Initial execution
+  initOrSync();
+
+  // Listen to pageshow (BFCache restore on back/forward) and popstate
+  window.addEventListener('pageshow', function() {
+    initOrSync();
+  });
+  window.addEventListener('popstate', function() {
+    initOrSync();
+  });
+})();
+</script></body>
 </html>

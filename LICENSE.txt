@@ -17,14 +17,14 @@ Onder de volgende voorwaarden:
 
 Volledige licentie: https://creativecommons.org/licenses/by/4.0/legalcode.nl
 
-Het Nederlandstalige origineel is de bronversie en wordt doorlopend
-bijgewerkt. Document E (het rechtenoverzicht) toont de actuele stand
+Het Nederlandstalige origineel is de authentieke bronversie en wordt
+doorlopend bijgewerkt. Document E (het rechtenoverzicht) toont de actuele stand
 van de rechten.
 
-De vertalingen (Engels, Duits, Frans) zijn bevroren op een eerder
-moment. Ze vallen onder dezelfde licentie als het Nederlandstalige
-origineel, maar worden niet meer bijgewerkt. Bij discrepanties tussen
-een vertaling en het Nederlandstalige origineel is het Nederlandse
-document leidend.
+De internationale en meertalige weergaven (inclusief het Europees portaal
+en de interactieve vertaalfunctionaliteit voor alle Europese talen) worden
+rechtstreeks gegenereerd vanuit het Nederlandstalige brondossier. Ze vallen onder
+dezelfde CC BY 4.0-licentie. Bij eventuele interpretatieverschillen is het
+Nederlandstalige brondocument altijd leidend en gezaghebbend.
 
 Wie citeert, citeert Document B als bron van de feiten.

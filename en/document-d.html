@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 
-<html lang="nl">
+<html data-auto-lang="en" data-target-lang="en" data-theme="dark" lang="nl">
 <head>
 <meta charset="utf-8"/>
-<title>Systeem-Audit — Document D — De synthese</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>De synthese — patronen, paradoxen en bouwstenen voor hervorming | Systeem-Audit</title>
+<meta content="Het patroon achter het falen, de rol van de Europese Unie, en drie bouwstenen voor hervorming. De conclusies uit de Systeem-Audit." name="description"/>
+<meta content="De synthese — patronen, paradoxen en bouwstenen voor hervorming | Systeem-Audit" property="og:title"/>
+<meta content="Het patroon achter het falen, de rol van de Europese Unie, en drie bouwstenen voor hervorming. De conclusies uit de Systeem-Audit." property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://grensarbeid.org/en/document-d.html" property="og:url"/>
+<meta content="https://grensarbeid.org/assets/kaart_eu.png" property="og:image"/>
+<link href="https://grensarbeid.org/en/document-d.html" rel="canonical"/>
 <style>
 @media screen { p.marker { display: none; } }
+p.marker { font-size: 1pt; margin: 0; padding: 0; line-height: 1pt; mso-line-height-rule: exactly; }
 body { font-family: Aptos, Calibri, sans-serif; font-size: 12pt; line-height: 1.5; margin: 40pt; }
 h1 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 28pt; color: #2e7d32; margin-top: 0; margin-bottom: 6pt; border-bottom: 3px solid #2e7d32; padding-bottom: 6pt; }
 h2 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 20pt; color: #2e7d32; margin-top: 0; margin-bottom: 5pt; border-bottom: 2px solid #2e7d32; padding-bottom: 4pt; }
 h3 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 16pt; color: #2e7d32; margin-top: 0; margin-bottom: 4pt;  }
 h4 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 14pt; color: #2e7d32; margin-top: 10pt; margin-bottom: 3pt; }
 h5 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 13pt; color: #333333; margin-top: 8pt; margin-bottom: 3pt; }
-p { margin: 0 0 8pt 0; text-align: justify; }
+p { margin: 0 0 8pt 0; text-align: left; }
 p.subtitel { font-style: italic; font-size: 11pt; color: #555555; margin: -2pt 0 10pt 0; }
 hr { border: 0; border-top: 1px solid #ccc; margin: 15pt 0 10pt 0; }
 i { font-size: 10.5pt; color: #555555; }
@@ -23,10 +32,78 @@ i { font-size: 10.5pt; color: #555555; }
 .netwerk { font-style: italic; color: #333333; margin-bottom: 4pt; }
 .meta { margin-bottom: 4pt; }
 .meta strong { color: #2e7d32; }
-.entry { margin-bottom: 4pt; text-align: left; }
+
+/* === WhatsApp-gevoel / Conversatielayout voor interacties === */
+.entry {
+    margin-bottom: 6pt;
+    padding: 6pt 10pt;
+    border-radius: 6px;
+    box-sizing: border-box;
+    line-height: 1.35;
+    font-size: 10.5pt;
+    word-break: break-word;
+}
 .datum { font-weight: bold; color: #000000; }
-.titel { font-weight: bold; text-transform: uppercase; }
+.titel, .entry-titel { font-weight: bold; text-transform: uppercase; }
 .opvolging { font-style: italic; color: #555555; }
+
+/* IN / Ontvangen: links uitgelijnd, zachte blauwe tint met blauwe linkerbalk */
+.entry-in {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 12%;
+    background-color: #f0f4f9;
+    border-left: 3.5pt solid #1a3c6e;
+    border-right: none;
+}
+.entry-in .datum { color: #1a3c6e; }
+
+/* UIT / Verzonden: rechts uitgelijnd, zachte roze/rode tint met rode rechterbalk */
+.entry-uit {
+    text-align: right;
+    margin-left: 12%;
+    margin-right: 0;
+    background-color: #faf0f2;
+    border-left: none;
+    border-right: 3.5pt solid #8b1e1e;
+}
+.entry-uit .datum { color: #8b1e1e; }
+
+/* Technische / praktische entries: midden cursief, gedimd en minder opvallend */
+.entry.technisch, .entry.praktisch {
+    text-align: center;
+    margin-left: 20pt;
+    margin-right: 20pt;
+    padding: 3pt 8pt;
+    background-color: transparent !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: 1pt dashed #d5d0c5;
+    border-bottom: 1pt dashed #d5d0c5;
+    font-size: 9.5pt;
+    font-style: italic;
+    color: #666;
+    opacity: 0.85;
+}
+.entry.technisch .datum, .entry.praktisch .datum { color: #888; font-weight: normal; font-size: 9pt; }
+.entry.technisch .titel, .entry.praktisch .titel { color: #666; font-weight: normal; font-size: 9pt; text-transform: uppercase; }
+.entry.technisch .opvolging, .entry.praktisch .opvolging { color: #999; }
+.entry.technisch .oorsprong, .entry.praktisch .oorsprong { color: #999; font-size: 9pt; }
+
+.richting { font-weight: 700; font-size: 10pt; letter-spacing: 0.5px; margin-right: 3pt; }
+.richting-ontvangen { color: #1a3c6e; }
+.richting-verzonden { color: #8b1e1e; }
+.oorsprong { font-style: italic; color: #555555; font-size: 10pt; }
+.audit-bewijs { display: inline-flex; align-items: center; gap: 4pt; margin-left: 6pt;
+                padding: 1pt 6pt; border-radius: 3px; background: #f0eee9;
+                border: 1px solid #dcd7cc; font-size: 8.5pt; font-family: Consolas, monospace;
+                color: #4a5568; vertical-align: baseline; white-space: nowrap; }
+.audit-bewijs .bewijs-item { display: inline-block; }
+.entry.technisch .audit-bewijs, .entry.praktisch .audit-bewijs { font-size: 8pt; opacity: 0.8; }
+@media print { .audit-toolbar, .audit-crosslink { display: none !important; } }
+.technisch-notice { background: #f7f5f1; border-left: 4pt solid #d5d0c5;
+                    padding: 8pt 14pt; margin: 12pt 0 20pt;
+                    font-size: 10.5pt; color: #555; font-style: italic; }
 p.lead { font-style: italic; color: #444; margin-bottom: 12pt; }
 p.tijd { font-size: 10pt; color: #888888; font-style: italic; letter-spacing: 1pt; text-transform: uppercase; margin-bottom: 4pt; }
 svg { display: block; width: 100%; height: auto; margin: 8pt 0; }
@@ -61,10 +138,10 @@ tr:nth-child(even) td { background: #f4f1f8; }
 .legend-num { display: inline-block; width: 22px; height: 22px; border-radius: 50%; color: #fff; text-align: center; line-height: 22px; font-weight: 700; font-size: 10pt; flex-shrink: 0; }
 .noot { font-size: 9.5pt; color: #666; font-style: italic; margin-top: 20pt; padding-top: 10pt; border-top: 1px solid #ddd; line-height: 1.5; }
 .footnotes p { font-size: 10pt; color: #555; margin-bottom: 6pt; text-align: left; }
-.titelblad { text-align: center; margin-top: 200pt; }
-.titelblad h1 { font-size: 36pt; border: none; padding: 0; margin-bottom: 24pt; color: #2e7d32; }
-.titelblad .ondertitel { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 18pt; color: #333333; margin-bottom: 60pt; }
-.titelblad .documentaanduiding { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 22pt; color: #2e7d32; font-weight: bold; margin-bottom: 80pt; }
+.titelblad { text-align: center; margin-top: 130pt; }
+.titelblad h1 { font-size: 34pt; border: none; padding: 0; margin-bottom: 20pt; color: #2e7d32; }
+.titelblad .ondertitel { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 17pt; color: #333333; margin-bottom: 40pt; }
+.titelblad .documentaanduiding { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 21pt; color: #2e7d32; font-weight: bold; margin-bottom: 50pt; }
 .titelblad .auteur { font-size: 14pt; color: #333333; margin-bottom: 4pt; }
 .titelblad .meta-lijn { font-size: 12pt; color: #555555; margin-bottom: 4pt; }
 .inhoudsopgave ul { list-style-type: none; padding-left: 0; }
@@ -75,503 +152,1999 @@ tr:nth-child(even) td { background: #f4f1f8; }
 .contactblok p { margin: 0; font-size: 11pt; }
 .contactblok a { color: #2e7d32; text-decoration: none; font-weight: bold; }
 
-/* === Document-specifieke extra stijlen (via ) === */
+.recht-kop { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; flex-wrap: wrap; margin-bottom: 4pt; }
+.recht-status { display: inline-block; padding: 3pt 10pt; color: #fff; font-size: 9pt; font-weight: 700; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px; flex-shrink: 0; }
+.recht-kop h2 { flex: 1; margin: 0; padding: 0; border-bottom: none; }
+.recht-kop-wrapper { border-bottom: 2px solid #2e7d32; padding-bottom: 6pt; margin-bottom: 12pt; scroll-margin-top: 80px; }
+.sector-titel { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 16pt; color: #2e7d32; margin-top: 20pt; margin-bottom: 8pt; }
+.intro-rechten { font-style: italic; color: #444; margin-bottom: 24pt; padding: 10pt 14pt; background: #f7f5f1; border-left: 4px solid #2e7d32; }
 
-/* === PUBLICATIE-CSS START === */
+html, body { overflow-x: hidden; }
+.entry { overflow-wrap: break-word; word-break: break-word; }
 
-body {
-    font-family: Aptos, Calibri, sans-serif;
-    font-size: 12pt;
-    line-height: 1.6;
-    margin: 0;
-    padding: 40pt;
-    background: #f6f3ec;
-    color: #2a2a2a;
+@media (max-width: 768px) {
+    body { font-size: 12pt; margin: 16pt 14pt; line-height: 1.5; }
+    h1 { font-size: 24pt; line-height: 1.2; }
+    h2 { font-size: 19pt; line-height: 1.25; }
+    h3 { font-size: 16pt; }
+    h4 { font-size: 14pt; }
+    h5 { font-size: 13pt; }
+    p { text-align: left; }
+    table { font-size: 10.5pt; display: block; overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; }
+    th, td { padding: 5pt 7pt; }
+    .titelblad { margin-top: 60pt; }
+    .titelblad h1 { font-size: 26pt; }
+    .titelblad .ondertitel { font-size: 15pt; margin-bottom: 24pt; }
+    .titelblad .documentaanduiding { font-size: 17pt; margin-bottom: 30pt; }
+    .titelblad .auteur { font-size: 12pt; }
+    .titelblad .meta-lijn { font-size: 11pt; }
+    .legend-row { flex-direction: column; gap: 4pt; }
+    .actor { padding-bottom: 6pt; margin-bottom: 8pt; }
+    .actie, .afsluiting, .werkversie { padding: 10pt 12pt; font-size: 11.5pt; }
+    .recht-kop { flex-direction: column; align-items: flex-start; gap: 6pt; }
+    .sector-titel { font-size: 15pt; }
 }
-
-h1 {
-    font-size: 38pt;
-    color: #1a3c6e;
-    margin: 0 0 6pt;
-    letter-spacing: -0.5pt;
-}
-.ondertitel {
-    font-size: 16pt;
-    color: #4a5560;
-    margin: 0 0 14pt;
-    font-weight: 400;
-}
-.auteur {
-    font-size: 11pt;
-    color: #6b7280;
-    margin: 0 0 30pt;
-    font-style: italic;
-}
-.intro {
-    font-size: 12pt;
-    line-height: 1.7;
-    margin: 0 0 40pt;
-    text-align: justify;
-    color: #3a3f45;
-}
-
-/* === Spectrumbalk === */
-.spectrum {
-    height: 4px;
-    display: flex;
-    margin: 0 0 30pt;
-    border-radius: 2px;
-    overflow: hidden;
-}
-.spectrum span { flex: 1; }
-
-/* === Root index: intro-rijen per taal === */
-.intro-rijen { margin: 0 0 40pt; }
-.intro-rij {
-    display: grid;
-    grid-template-columns: 64pt 1fr;
-    gap: 18pt;
-    align-items: start;
-    padding: 22pt 26pt;
-    background: #ffffff;
-    border-left: 6px solid var(--accent);
-    border-radius: 8px;
-    margin-bottom: 14pt;
-    box-shadow: 0 1px 3px rgba(0,0,0,.04);
-    transition: transform .15s, box-shadow .2s;
-}
-.intro-rij:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(0,0,0,.08);
-}
-.intro-rij .vlag {
-    font-size: 44pt;
-    line-height: 1;
-    text-align: center;
-    padding-top: 2pt;
-}
-.intro-rij h3 {
-    margin: 0 0 6pt;
-    color: var(--accent);
-    font-size: 19pt;
-    letter-spacing: -0.3pt;
-}
-.intro-rij p {
-    margin: 0 0 10pt;
-    font-size: 11pt;
-    color: #4a5560;
-    line-height: 1.55;
-}
-.intro-rij a.goto {
-    display: inline-block;
-    font-weight: 700;
-    color: var(--accent);
-    text-decoration: none;
-    font-size: 11pt;
-    padding: 4pt 0;
-}
-.intro-rij a.goto:hover { text-decoration: underline; }
-
-/* === A/B-melding (meertalig) === */
-.ab-melding {
-    background: #fdf6e3;
-    border-left: 4pt solid #d4a017;
-    padding: 18pt 22pt;
-    margin: 0 0 30pt;
-    border-radius: 6px;
-}
-.ab-melding h3 {
-    margin: 0 0 12pt;
-    color: #8b6200;
-    font-size: 15pt;
-    border: none;
-    padding: 0;
-}
-.ab-melding p {
-    margin: 0 0 10pt;
-    color: #6b4c00;
-    font-size: 11pt;
-    line-height: 1.6;
-}
-.ab-melding p:last-child { margin-bottom: 0; }
-.ab-melding .vlag-klein {
-    font-size: 14pt;
-    margin-right: 8pt;
+@media (max-width: 480px) {
+    body { font-size: 11.5pt; margin: 12pt 10pt; }
+    h1 { font-size: 20pt; }
+    h2 { font-size: 17pt; }
+    h3 { font-size: 14.5pt; }
+    table { font-size: 10pt; }
+    th, td { padding: 4pt 6pt; }
+    .titelblad h1 { font-size: 22pt; }
 }
 
-/* === EU-joke === */
-.eu-joke {
-    text-align: center;
-    font-size: 11pt;
-    color: #6b7280;
-    font-style: italic;
-    margin: 30pt 0 0;
-    padding: 20pt;
-    border-top: 1px dashed #ddd7c9;
-    border-bottom: 1px dashed #ddd7c9;
-    line-height: 1.6;
-}
-.eu-joke .eu-vlag {
-    font-size: 22pt;
-    display: block;
-    margin-bottom: 6pt;
+/* === Professionele A4 Print / Opslaan als PDF Stylesheet === */
+@media print {
+    html, html[data-theme="dark"], body, html[data-theme="dark"] body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        margin: 12mm !important;
+        padding: 0 !important;
+        font-size: 10.5pt !important;
+    }
+    .pub-nav, .pub-top, .dm-toggle, .audit-toolbar, .audit-crosslink,
+    .pub-naar-boven, .bm-modal-overlay, .skiptranslate,
+    .goog-te-banner-frame, #goog-gt-tt {
+        display: none !important;
+    }
+    /* Houd de vertaaldisclaimer bovenaan de PDF zichtbaar! */
+    .pub-ab-banner {
+        display: block !important;
+        background: #fdf6e3 !important;
+        color: #000000 !important;
+        border: 1px solid #d4a017 !important;
+        border-left: 4pt solid #d4a017 !important;
+        padding: 8pt 12pt !important;
+        margin-bottom: 14pt !important;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        color: #1a3c6e !important;
+        page-break-after: avoid !important;
+    }
+    table, tr, .figure, .entry, .actor {
+        page-break-inside: avoid !important;
+    }
+    table th {
+        background: #1a3c6e !important;
+        color: #ffffff !important;
+    }
+    table td {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border-color: #cccccc !important;
+    }
+    /* Schakel de dark-mode invert op SVG's en plaatjes uit tijdens printen! */
+    .figure, html[data-theme="dark"] .figure {
+        background: #ffffff !important;
+        border-color: #cccccc !important;
+    }
+    .figure svg, html[data-theme="dark"] .figure svg,
+    .figure img, html[data-theme="dark"] .figure img {
+        filter: none !important;
+    }
+    .entry-in, html[data-theme="dark"] .entry-in {
+        background: #f0f4f9 !important;
+        color: #000000 !important;
+        border-left: 3pt solid #1a3c6e !important;
+    }
+    .entry-uit, html[data-theme="dark"] .entry-uit {
+        background: #faf0f2 !important;
+        color: #000000 !important;
+        border-right: 3pt solid #8b1e1e !important;
+    }
+    .datum, .titel, .opvolging, .oorsprong {
+        color: #000000 !important;
+    }
+    /* Herstel Inhoudsopgave (TOC) naar helder wit papier zonder zwart blok! */
+    .pub-toc, html[data-theme="dark"] .pub-toc {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border: 1px solid #d5d0c5 !important;
+        border-left: 4px solid #1a3c6e !important;
+        page-break-inside: avoid !important;
+        box-shadow: none !important;
+    }
+    .pub-toc h2, html[data-theme="dark"] .pub-toc h2 {
+        color: #1a3c6e !important;
+    }
+    .pub-toc a, html[data-theme="dark"] .pub-toc a {
+        color: #1a3c6e !important;
+        text-decoration: none !important;
+    }
+    .pub-toc .niv1, html[data-theme="dark"] .pub-toc .niv1,
+    .pub-toc .niv2, html[data-theme="dark"] .pub-toc .niv2 {
+        color: #000000 !important;
+    }
+    .pub-toc .niv3, html[data-theme="dark"] .pub-toc .niv3 {
+        color: #555555 !important;
+    }
+    .pub-toc ul {
+        background: transparent !important;
+    }
+
 }
 
-/* === Documentkaarten (per-taal home) === */
-.doc-lijst { list-style: none; padding: 0; margin: 0; }
-.doc-lijst li {
-    position: relative;
-    margin: 0 0 14pt;
-    padding: 22pt 26pt 22pt 28pt;
-    background: #ffffff;
-    border-left: 6px solid #1a3c6e;
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0,0,0,.04);
-    transition: transform .15s, box-shadow .2s;
-    overflow: hidden;
-}
-.doc-lijst li:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(0,0,0,.08);
-}
-.doc-lijst .docletter {
-    position: absolute;
-    top: -10pt;
-    right: 14pt;
-    font-size: 96pt;
-    font-weight: 900;
-    line-height: 1;
-    opacity: 0.06;
-    pointer-events: none;
-    user-select: none;
-}
-.doc-lijst a.titel {
-    display: block;
-    font-size: 17pt;
-    font-weight: 700;
-    text-decoration: none;
-    margin: 0 0 6pt;
-    position: relative;
-    z-index: 1;
-}
-.doc-lijst a.titel:hover { text-decoration: underline; }
-.doc-lijst .beschrijving {
-    font-size: 10.5pt;
-    color: #4a5560;
-    margin: 0;
-    line-height: 1.55;
-    position: relative;
-    z-index: 1;
-}
-.doc-lijst .downloads {
-    margin-top: 12pt;
-    font-size: 10pt;
-    position: relative;
-    z-index: 1;
-}
-.doc-lijst .downloads a {
-    text-decoration: none;
-    font-weight: 600;
-    margin-right: 16px;
-    padding: 4pt 10pt;
-    border-radius: 4px;
-    transition: background .15s;
-    display: inline-block;
-}
-.doc-lijst .downloads a:hover { text-decoration: none; }
 
-.doc-0 { border-left-color: #8b1e1e; background: #fbf5f5; }
-.doc-0 .docletter { color: #8b1e1e; }
-.doc-0 a.titel { color: #8b1e1e; }
-.doc-0 .downloads a { background: #f6eded; color: #8b1e1e; }
-.doc-0 .downloads a:hover { background: #f0dcdc; }
 
-.doc-a { border-left-color: #7a3e9d; background: #faf6fc; }
-.doc-a .docletter { color: #7a3e9d; }
-.doc-a a.titel { color: #7a3e9d; }
-.doc-a .downloads a { background: #f4f0f7; color: #7a3e9d; }
-.doc-a .downloads a:hover { background: #ebe2f0; }
 
-.doc-b { border-left-color: #1a3c6e; background: #f6f8fb; }
-.doc-b .docletter { color: #1a3c6e; }
-.doc-b a.titel { color: #1a3c6e; }
-.doc-b .downloads a { background: #edf0f4; color: #1a3c6e; }
-.doc-b .downloads a:hover { background: #dde4ed; }
-
-.doc-c { border-left-color: #4a3b6b; background: #f8f6fa; }
-.doc-c .docletter { color: #4a3b6b; }
-.doc-c a.titel { color: #4a3b6b; }
-.doc-c .downloads a { background: #f0eff3; color: #4a3b6b; }
-.doc-c .downloads a:hover { background: #e2dfe9; }
-
-.doc-d { border-left-color: #2e7d32; background: #f5faf5; }
-.doc-d .docletter { color: #2e7d32; }
-.doc-d a.titel { color: #2e7d32; }
-.doc-d .downloads a { background: #eef4ef; color: #2e7d32; }
-.doc-d .downloads a:hover { background: #ddeade; }
-
-/* === A/B-banner (per-taal home) === */
-.pub-ab-banner {
-    background: #fdf6e3;
-    border-left: 4pt solid #d4a017;
-    padding: 12pt 18pt;
-    margin: 0 0 30pt;
-    color: #6b4c00;
-    font-size: 11pt;
-    line-height: 1.6;
-    border-radius: 5px;
-}
-.pub-ab-banner strong { color: #8b6200; }
-
-/* === Footer === */
-.footer {
-    margin-top: 70pt;
-    padding-top: 22pt;
-    border-top: 1px solid #ddd7c9;
-    font-size: 9.5pt;
-    color: #6b7280;
-    text-align: center;
-    line-height: 1.7;
-}
-.footer a { color: #1a3c6e; text-decoration: none; }
-.footer a:hover { text-decoration: underline; }
-
-/* === Navigatie === */
 .pub-nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: #ffffff;
-    border-bottom: 2px solid #e2ddd2;
-    padding: 10pt 40pt;
-    margin: -40pt -40pt 20pt -40pt;
+    position: sticky; top: 0; z-index: 100;
+    background: #ffffff; border-bottom: 2px solid #d5d0c5;
+    padding: 10px 20px; margin: -40pt -40pt 20pt -40pt;
     font-family: Aptos, Calibri, sans-serif;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 16px; flex-wrap: wrap;
 }
-.pub-nav .links {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    align-items: center;
-}
+.pub-nav .links { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
 .pub-nav a {
-    color: #1a3c6e;
-    text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 11pt;
-    font-weight: 600;
+    color: #1a3c6e; text-decoration: none; padding: 6px 12px;
+    border-radius: 4px; font-size: 11pt; font-weight: 600;
     border: 1px solid transparent;
 }
-.pub-nav a:hover { background: #eef2f7; border-color: #e2ddd2; }
+.pub-nav a:hover { background: #eef2f7; border-color: #d5d0c5; }
 .pub-nav a.actief { background: #1a3c6e; color: #ffffff; }
-.pub-nav a.home { border: 1px solid #e2ddd2; }
-
-.pub-nav .langs {
-    display: flex;
-    gap: 4px;
-    align-items: center;
-    font-size: 10pt;
-}
-.pub-nav .langs a {
-    padding: 5pt 10pt;
-    font-weight: 700;
-    border: 1px solid #e2ddd2;
-    background: #ffffff;
-}
-.pub-nav .langs a:hover {
-    background: var(--accent-soft);
-    border-color: var(--accent);
-}
-.pub-nav .langs a.actief {
-    background: var(--accent);
-    color: #ffffff;
-    border-color: var(--accent);
-}
-.pub-nav .langs a.lang-nl { --accent: #FF6B00; --accent-soft: #fff0e0; color: #FF6B00; }
-.pub-nav .langs a.lang-en { --accent: #012169; --accent-soft: #e6ebf3; color: #012169; }
-.pub-nav .langs a.lang-de { --accent: #DD0000; --accent-soft: #fbe6e6; color: #DD0000; }
-.pub-nav .langs a.lang-fr { --accent: #0055A4; --accent-soft: #e6eef6; color: #0055A4; }
-.pub-nav .langs a.actief.lang-nl,
-.pub-nav .langs a.actief.lang-en,
-.pub-nav .langs a.actief.lang-de,
-.pub-nav .langs a.actief.lang-fr { color: #ffffff; }
-
+.pub-nav a.home { border: 1px solid #d5d0c5; }
+.pub-nav .titel-klein { font-size: 10pt; color: #666; font-style: italic; }
 .pub-top {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 200;
-    background: #1a3c6e;
-    color: #fff;
-    border: none;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 18pt;
-    line-height: 1;
+    position: fixed; bottom: 24px; right: 24px; z-index: 200;
+    background: #1a3c6e; color: #fff; border: none;
+    width: 44px; height: 44px; border-radius: 50%;
+    cursor: pointer; font-size: 18pt; line-height: 1;
     box-shadow: 0 2px 8px rgba(0,0,0,.25);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-decoration: none; display: flex; align-items: center; justify-content: center;
     transition: transform .15s;
 }
 .pub-top:hover { transform: scale(1.1); background: #12294d; }
-.pub-footer {
-    margin-top: 60pt;
-    padding-top: 20pt;
-    border-top: 1px solid #ddd7c9;
-    font-size: 10pt;
-    color: #6b7280;
-    text-align: center;
+.pub-toc {
+    background: #f7f5f1; border-left: 4px solid #1a3c6e;
+    padding: 14pt 18pt; margin: 20pt 0 30pt;
+    border-radius: 4px;
 }
-.pub-footer a { color: #1a3c6e; text-decoration: none; }
-.pub-footer a:hover { text-decoration: underline; }
+.pub-toc h2 { margin-top: 0 !important; border-bottom: none !important; font-size: 16pt !important; }
+.pub-toc ul { list-style: none; padding-left: 0; margin: 0; }
+.pub-toc li { margin: 3pt 0; }
+.pub-toc a { color: #1a3c6e; text-decoration: none; font-size: 11pt; }
+.pub-toc a:hover { text-decoration: underline; }
+.pub-toc .niv1 { font-weight: 700; margin-top: 8pt; }
+.pub-toc .niv2 { padding-left: 18pt; }
+.pub-toc .niv3 { padding-left: 36pt; font-size: 10pt; color: #555; }
+.audit-toolbar {
+    background: #ffffff; border: 1px solid #d5d0c5; border-left: 5px solid #1a3c6e;
+    border-radius: 6px; padding: 14pt 18pt; margin: 16pt 0 28pt;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04); font-family: Aptos, Calibri, sans-serif;
+}
+.audit-toolbar .at-stats {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+    font-size: 10.5pt; color: #333; margin-bottom: 10pt; padding-bottom: 8pt;
+    border-bottom: 1px solid #ece8df;
+}
+.audit-toolbar .at-sep { color: #b5afa2; }
+.audit-toolbar .at-verified { color: #1b5e20; }
+.audit-toolbar .at-live-count {
+    margin-left: auto; font-family: Consolas, monospace; font-size: 9.5pt;
+    background: #f0eee9; padding: 2px 8px; border-radius: 12px; color: #444;
+}
+.audit-toolbar .at-controls {
+    display: grid; grid-template-columns: 1fr 280px; gap: 10px; margin-bottom: 10pt;
+}
+.audit-toolbar .at-search, .audit-toolbar .at-select {
+    font-family: inherit; font-size: 10.5pt; padding: 7px 11px;
+    border: 1px solid #ccc6b8; border-radius: 4px; background: #faf8f5; color: #111;
+}
+.audit-toolbar .at-search:focus, .audit-toolbar .at-select:focus {
+    outline: none; border-color: #1a3c6e; background: #fff;
+}
+.audit-toolbar .at-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.audit-toolbar .at-pill {
+    font-family: inherit; font-size: 9.5pt; font-weight: 600;
+    padding: 5px 11px; border-radius: 16px; border: 1px solid #d5d0c5;
+    background: #f7f5f1; color: #333; cursor: pointer; transition: all .15s;
+}
+.audit-toolbar .at-pill:hover { border-color: #1a3c6e; background: #eef2f7; }
+.audit-toolbar .at-pill.actief {
+    background: #1a3c6e; color: #ffffff; border-color: #1a3c6e;
+}
+.audit-org-bar {
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+    gap: 8px; margin: 2pt 0 10pt; padding: 4pt 8pt;
+    background: #f7f5f1; border-radius: 4px; font-size: 9.5pt;
+}
+.audit-org-stat { color: #555; font-family: Consolas, monospace; font-size: 9pt; }
+.audit-crosslink {
+    display: inline-block; color: #1a3c6e; font-weight: 600;
+    text-decoration: none; font-size: 9.5pt;
+}
+.audit-crosslink:hover { text-decoration: underline; }
+@media (max-width: 700px) {
+    .audit-toolbar .at-controls { grid-template-columns: 1fr; }
+    .audit-toolbar .at-live-count { margin-left: 0; }
+}
+.pub-footer {
+    margin-top: 60pt; padding-top: 20pt; border-top: 1px solid #d5d0c5;
+    font-size: 10pt; color: #666; text-align: center;
+}
+.pub-footer a { color: #1a3c6e; }
+.pub-naar-boven {
+    display: block; text-align: right; margin-top: 10pt;
+    font-size: 10pt; color: #888; text-decoration: none;
+}
+.pub-naar-boven:hover { color: #1a3c6e; text-decoration: underline; }
 
-/* === PUBLICATIE-CSS END === */
+.dm-toggle {
+    position: fixed; bottom: 80px; right: 24px; z-index: 200;
+    background: #ffffff; color: #1a3c6e; border: 1px solid #d5d0c5;
+    width: 44px; height: 44px; border-radius: 50%;
+    cursor: pointer; font-size: 18pt; line-height: 1; padding: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .15s, background .15s, border-color .15s;
+    font-family: Aptos, Calibri, sans-serif;
+}
+.dm-toggle:hover { transform: scale(1.1); background: #eef2f7; border-color: #1a3c6e; }
+.dm-toggle .dm-icon-lm { display: none; }
+html[data-theme="dark"] .dm-toggle .dm-icon-dm { display: none; }
+html[data-theme="dark"] .dm-toggle .dm-icon-lm { display: inline; }
+
+
+.pub-nav .nav-acties { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+.pub-contact-btn {
+    background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
+    padding: 5px 12px; border-radius: 4px; font-size: 10pt; font-weight: 600;
+    cursor: pointer; font-family: inherit; transition: all .15s;
+    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+}
+.pub-contact-btn:hover { background: #1a3c6e; color: #ffffff; border-color: #1a3c6e; }
+.pub-contact-footer { margin: 10pt 0 4pt; font-size: 10.5pt; padding: 7px 16px; }
+
+/* Forensische bewijs-badge interactief */
+.audit-bewijs { cursor: pointer; transition: border-color .15s, background .15s, box-shadow .15s; }
+.audit-bewijs:hover {
+    border-color: #1a3c6e; background: #e6edf7;
+    box-shadow: 0 1px 4px rgba(26,60,110,0.18);
+}
+
+.pub-print-btn {
+    background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
+    padding: 5px 12px; border-radius: 4px; font-size: 10pt; font-weight: 600;
+    cursor: pointer; font-family: inherit; transition: all .15s;
+    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+}
+.pub-print-btn:hover { background: #1a3c6e; color: #ffffff; border-color: #1a3c6e; }
+html[data-theme="dark"] .pub-print-btn {
+    background: #232323; color: #b0c8e8; border-color: #4a4a4a;
+}
+html[data-theme="dark"] .pub-print-btn:hover {
+    background: #2a2a2a; border-color: #7fb3ff; color: #ffffff;
+}
+@media (max-width: 768px) {
+    .pub-print-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 38px; }
+}
+
+.pub-lang-select, #int-lang-select {
+    font-family: inherit; font-size: 10pt; font-weight: 600;
+    padding: 4px 8px; border: 1px solid #d5d0c5; border-radius: 4px;
+    background-color: #ffffff; color: #1a3c6e; cursor: pointer;
+    color-scheme: light;
+}
+.pub-lang-select option, #int-lang-select option {
+    background-color: #ffffff; color: #1a3c6e;
+    color-scheme: light;
+}
+html[data-theme="dark"] .pub-lang-select,
+html[data-theme="dark"] #int-lang-select,
+html[data-theme="dark"] select.pub-lang-select {
+    background-color: #232323 !important;
+    background: #232323 !important;
+    border-color: #4a4a4a !important;
+    color: #e0e0e0 !important;
+    color-scheme: dark !important;
+}
+html[data-theme="dark"] .pub-lang-select option,
+html[data-theme="dark"] #int-lang-select option,
+html[data-theme="dark"] select.pub-lang-select option {
+    background-color: #232323 !important;
+    background: #232323 !important;
+    color: #e0e0e0 !important;
+    color-scheme: dark !important;
+}
+
+/* === Professionele A4 Print / Opslaan als PDF Stylesheet === */
+@media print {
+    html, html[data-theme="dark"], body, html[data-theme="dark"] body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        margin: 12mm !important;
+        padding: 0 !important;
+        font-size: 10.5pt !important;
+    }
+    .pub-nav, .pub-top, .dm-toggle, .audit-toolbar, .audit-crosslink,
+    .pub-naar-boven, .bm-modal-overlay, .skiptranslate,
+    .goog-te-banner-frame, #goog-gt-tt {
+        display: none !important;
+    }
+    /* Houd de vertaaldisclaimer bovenaan de PDF zichtbaar! */
+    .pub-ab-banner {
+        display: block !important;
+        background: #fdf6e3 !important;
+        color: #000000 !important;
+        border: 1px solid #d4a017 !important;
+        border-left: 4pt solid #d4a017 !important;
+        padding: 8pt 12pt !important;
+        margin-bottom: 14pt !important;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        color: #1a3c6e !important;
+        page-break-after: avoid !important;
+    }
+    table, tr, .figure, .entry, .actor {
+        page-break-inside: avoid !important;
+    }
+    table th {
+        background: #1a3c6e !important;
+        color: #ffffff !important;
+    }
+    table td {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border-color: #cccccc !important;
+    }
+    /* Schakel de dark-mode invert op SVG's en plaatjes uit tijdens printen! */
+    .figure, html[data-theme="dark"] .figure {
+        background: #ffffff !important;
+        border-color: #cccccc !important;
+    }
+    .figure svg, html[data-theme="dark"] .figure svg,
+    .figure img, html[data-theme="dark"] .figure img {
+        filter: none !important;
+    }
+    .entry-in, html[data-theme="dark"] .entry-in {
+        background: #f0f4f9 !important;
+        color: #000000 !important;
+        border-left: 3pt solid #1a3c6e !important;
+    }
+    .entry-uit, html[data-theme="dark"] .entry-uit {
+        background: #faf0f2 !important;
+        color: #000000 !important;
+        border-right: 3pt solid #8b1e1e !important;
+    }
+    .datum, .titel, .opvolging, .oorsprong {
+        color: #000000 !important;
+    }
+    /* Herstel Inhoudsopgave (TOC) naar helder wit papier zonder zwart blok! */
+    .pub-toc, html[data-theme="dark"] .pub-toc {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border: 1px solid #d5d0c5 !important;
+        border-left: 4px solid #1a3c6e !important;
+        page-break-inside: avoid !important;
+        box-shadow: none !important;
+    }
+    .pub-toc h2, html[data-theme="dark"] .pub-toc h2 {
+        color: #1a3c6e !important;
+    }
+    .pub-toc a, html[data-theme="dark"] .pub-toc a {
+        color: #1a3c6e !important;
+        text-decoration: none !important;
+    }
+    .pub-toc .niv1, html[data-theme="dark"] .pub-toc .niv1,
+    .pub-toc .niv2, html[data-theme="dark"] .pub-toc .niv2 {
+        color: #000000 !important;
+    }
+    .pub-toc .niv3, html[data-theme="dark"] .pub-toc .niv3 {
+        color: #555555 !important;
+    }
+    .pub-toc ul {
+        background: transparent !important;
+    }
+
+}
+
+/* Forensisch Bronopvragings- en Contactvenster (Modal) */
+.bm-modal-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.65); z-index: 1000;
+    display: none; align-items: center; justify-content: center;
+    padding: 20px; backdrop-filter: blur(2px);
+}
+.bm-modal-overlay.bm-open { display: flex; }
+.bm-modal-dialog {
+    background: #ffffff; color: #222222; border-radius: 8px;
+    max-width: 680px; width: 100%; max-height: 90vh; overflow-y: auto;
+    padding: 24px 28px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    border: 1px solid #d5d0c5; font-family: Aptos, Calibri, sans-serif;
+    position: relative; box-sizing: border-box; text-align: left;
+}
+.bm-modal-kop {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    border-bottom: 2px solid #1a3c6e; padding-bottom: 12px; margin-bottom: 16px;
+}
+.bm-modal-kop h3 {
+    margin: 0; font-size: 16pt; color: #1a3c6e; border: none; padding: 0;
+}
+.bm-modal-sluit {
+    background: none; border: none; font-size: 22pt; line-height: 1;
+    color: #888; cursor: pointer; padding: 0 4px;
+}
+.bm-modal-sluit:hover { color: #c62828; }
+.bm-intro {
+    font-size: 10pt; line-height: 1.5; color: #555555; background: #f7f5f1;
+    padding: 10px 14px; border-left: 3px solid #1a3c6e; border-radius: 3px;
+    margin-bottom: 18px;
+}
+.bm-groep { margin-bottom: 14px; }
+.bm-groep label.bm-label {
+    display: block; font-weight: 700; font-size: 10.5pt; color: #1a3c6e; margin-bottom: 5px;
+}
+.bm-input, .bm-textarea {
+    width: 100%; box-sizing: border-box; padding: 8px 12px;
+    border: 1px solid #ccc; border-radius: 4px; font-family: inherit;
+    font-size: 10.5pt; background: #faf8f5; color: #222;
+}
+.bm-input:focus, .bm-textarea:focus {
+    border-color: #1a3c6e; background: #fff; outline: none;
+}
+.bm-textarea { min-height: 90px; resize: vertical; }
+.bm-radio-groep {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px;
+}
+@media (max-width: 580px) {
+    .bm-radio-groep { grid-template-columns: 1fr; }
+}
+.bm-radio-optie {
+    display: flex; align-items: flex-start; gap: 8px; background: #f9f8f6;
+    border: 1px solid #e2ddd5; padding: 8px 10px; border-radius: 4px;
+    font-size: 9.5pt; cursor: pointer;
+}
+.bm-radio-optie:hover { border-color: #1a3c6e; background: #f0f4f9; }
+.bm-radio-optie input { margin-top: 2px; }
+.bm-check-groep {
+    display: flex; align-items: flex-start; gap: 8px; font-size: 9.5pt;
+    color: #444; margin: 14px 0 18px;
+}
+.bm-knoppen { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+.bm-btn-mail {
+    background: #1a3c6e; color: #ffffff; border: 1px solid #1a3c6e;
+    padding: 8px 16px; border-radius: 4px; font-size: 10.5pt; font-weight: 700;
+    cursor: pointer; transition: background .15s;
+}
+.bm-btn-mail:hover { background: #122b50; }
+.bm-btn-copy {
+    background: #f0eee9; color: #333; border: 1px solid #d5d0c5;
+    padding: 8px 14px; border-radius: 4px; font-size: 10.5pt; font-weight: 600;
+    cursor: pointer; transition: all .15s;
+}
+.bm-btn-copy:hover { background: #e2ded5; }
+.bm-btn-copy.bm-copied { background: #2e7d32; color: #ffffff; border-color: #2e7d32; }
+
+@media (max-width: 768px) {
+    .pub-nav { padding: 8px 12px; margin: -16pt -14pt 16pt -14pt; gap: 8px; }
+    .pub-nav .links { gap: 6px; }
+    .pub-nav a { padding: 6px 10px; font-size: 10.5pt; min-height: 38px; display: inline-flex; align-items: center; box-sizing: border-box; }
+    .pub-nav .titel-klein { display: none; }
+    .pub-nav .nav-acties { width: 100%; justify-content: flex-end; margin-top: 4px; }
+    .pub-contact-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 38px; }
+    .pub-toc { padding: 10pt 14pt; }
+    .pub-toc .niv3 { padding-left: 20pt; }
+    .audit-bewijs { white-space: normal; flex-wrap: wrap; }
+    .bm-modal-dialog { padding: 18px 16px; width: 95%; max-height: 94vh; }
+    .bm-modal-kop h3 { font-size: 14pt; }
+    .bm-intro { font-size: 9.5pt; padding: 8px 10px; }
+    .bm-input, .bm-textarea { font-size: 16px; } /* Prevents iOS auto-zoom */
+    .bm-radio-groep { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+    .pub-nav .links a { font-size: 9.5pt; padding: 5px 8px; }
+    .pub-contact-btn { width: 100%; justify-content: center; }
+    .audit-toolbar .at-pills { gap: 4px; }
+    .audit-toolbar .at-pill { font-size: 8.5pt; padding: 4px 8px; min-height: 34px; }
+}
+
+
+html[data-theme="dark"] { color-scheme: dark; }
+
+html[data-theme="dark"] body {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+
+/* === v9.3 — headings + grijs-fix === */
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h6 {
+    color: #7fb3ff !important;
+    border-color: #4a6fa5 !important;
+}
+html[data-theme="dark"] h5 {
+    color: #a8c5e8 !important;
+}
+
+html[data-theme="dark"] p.subtitel { color: #a8a8a8 !important; }
+html[data-theme="dark"] p.lead     { color: #b8b8b8 !important; }
+html[data-theme="dark"] p.tijd     { color: #a8a8a8 !important; }
+html[data-theme="dark"] .netwerk   { color: #b8b8b8 !important; }
+html[data-theme="dark"] .meta      { color: #c8c8c8 !important; }
+html[data-theme="dark"] .meta strong { color: #7fb3ff !important; }
+html[data-theme="dark"] .datum     { color: #f0f0f0 !important; }
+html[data-theme="dark"] .titel     { color: #e8e8e8 !important; }
+html[data-theme="dark"] .opvolging { color: #a8a8a8 !important; }
+html[data-theme="dark"] .oorsprong { color: #a8a8a8 !important; }
+html[data-theme="dark"] .caption   { color: #a8a8a8 !important; border-top-color: #3a3a3a !important; }
+
+html[data-theme="dark"] .richting-ontvangen { color: #7fb3ff !important; }
+html[data-theme="dark"] .richting-verzonden { color: #ff8a8a !important; }
+
+html[data-theme="dark"] .entry.technisch {
+    background: #232323;
+    border-left-color: #4a4a4a;
+    color: #a8a8a8;
+}
+html[data-theme="dark"] .entry.technisch .datum { color: #909090 !important; }
+html[data-theme="dark"] .entry.technisch .titel { color: #b0b0b0 !important; }
+html[data-theme="dark"] .entry.technisch .opvolging { color: #808080 !important; }
+html[data-theme="dark"] .entry.technisch .richting-ontvangen { color: #8fa8c8 !important; }
+html[data-theme="dark"] .entry.technisch .richting-verzonden { color: #c89090 !important; }
+html[data-theme="dark"] .entry.praktisch {
+    background: #1e1e1e; border-left-color: #2e2e2e; color: #808080;
+}
+html[data-theme="dark"] .entry.praktisch .datum { color: #707070 !important; }
+html[data-theme="dark"] .entry.praktisch .titel { color: #858585 !important; }
+html[data-theme="dark"] .entry.praktisch .opvolging { color: #707070 !important; }
+html[data-theme="dark"] .entry.praktisch .richting-ontvangen { color: #6a80a0 !important; }
+html[data-theme="dark"] .entry.praktisch .richting-verzonden { color: #a07070 !important; }
+
+html[data-theme="dark"] .technisch-notice {
+    background: #232323; color: #a8a8a8 !important; border-left-color: #4a4a4a;
+}
+
+/* === Voetnoten — waren te donker === */
+html[data-theme="dark"] .footnotes,
+html[data-theme="dark"] .footnotes p {
+    color: #b0b0b0 !important;
+}
+html[data-theme="dark"] .footnotes strong {
+    color: #7fb3ff !important;
+}
+
+html[data-theme="dark"] hr { border-top-color: #3a3a3a; }
+html[data-theme="dark"] .titelblad h1 { color: #7fb3ff !important; }
+html[data-theme="dark"] .titelblad .ondertitel { color: #c8c8c8 !important; }
+html[data-theme="dark"] .titelblad .documentaanduiding { color: #7fb3ff !important; }
+html[data-theme="dark"] .titelblad .auteur,
+html[data-theme="dark"] .titelblad .meta-lijn { color: #a8a8a8 !important; }
+html[data-theme="dark"] .gebruikersaanwijzing p { color: #c8c8c8 !important; }
+html[data-theme="dark"] table th { background: #2e4a72; border-color: #2e4a72; }
+html[data-theme="dark"] table td {
+    background: #232323; border-color: #3a3a3a; color: #d0d0d0;
+}
+html[data-theme="dark"] tr:nth-child(even) td { background: #2a2a2a; }
+html[data-theme="dark"] .figure { background: #232323; border-color: #3a3a3a; }
+html[data-theme="dark"] .figure svg { background: transparent; }
+html[data-theme="dark"] .intro-rechten {
+    background: #232323; color: #b8b8b8; border-left-color: #4a6fa5;
+}
+html[data-theme="dark"] .actie { background: #2a2440; color: #d0d0d0; }
+html[data-theme="dark"] .afsluiting { background: #2a2440; color: #d0d0d0; }
+html[data-theme="dark"] .werkversie { background: #332c14; color: #d0c090; }
+html[data-theme="dark"] .noot { color: #a8a8a8 !important; border-top-color: #3a3a3a; }
+html[data-theme="dark"] a { color: #7fb3ff; }
+
+/* === Actor-blokken (Document C) === */
+html[data-theme="dark"] .actor { border-bottom-color: #3a3a3a; }
+html[data-theme="dark"] .actor-naam { color: #e0e0e0 !important; }
+html[data-theme="dark"] .actor-rol  { color: #7fb3ff !important; }
+
+/* === Sectie-banners (Document C) === */
+html[data-theme="dark"] .banner-be {
+    background: #2a1c1c; border-left-color: #ff8a8a;
+}
+html[data-theme="dark"] .banner-be strong { color: #ff8a8a !important; }
+html[data-theme="dark"] .banner-nl {
+    background: #1c2129; border-left-color: #7fb3ff;
+}
+html[data-theme="dark"] .banner-nl strong { color: #7fb3ff !important; }
+html[data-theme="dark"] .banner-eu {
+    background: #1c2628; border-left-color: #5fc8cc;
+}
+html[data-theme="dark"] .banner-eu strong { color: #5fc8cc !important; }
+
+/* === Inline badges === */
+html[data-theme="dark"] .badge-be  { color: #ff8a8a !important; }
+html[data-theme="dark"] .badge-nl  { color: #7fb3ff !important; }
+html[data-theme="dark"] .badge-mem { color: #ffb380 !important; }
+html[data-theme="dark"] .badge-eu  { color: #5fc8cc !important; }
+
+/* === Sectorkoppen (Document E) === */
+html[data-theme="dark"] .sector-titel { color: #7fb3ff !important; }
+html[data-theme="dark"] .recht-kop-wrapper { border-bottom-color: #4a6fa5; }
+html[data-theme="dark"] .legend-row { color: #c0c0c0; }
+
+/* === Contactblok === */
+html[data-theme="dark"] .contactblok {
+    background: #232323; border-left-color: #4a6fa5;
+}
+html[data-theme="dark"] .contactblok a { color: #7fb3ff !important; }
+
+/* === Navigatie === */
+html[data-theme="dark"] .pub-nav {
+    background: #232323; border-bottom-color: #3a3a3a;
+}
+html[data-theme="dark"] .pub-nav a { color: #b0c8e8 !important; }
+html[data-theme="dark"] .pub-nav a:hover { background: #2a2a2a; border-color: #4a4a4a; }
+html[data-theme="dark"] .pub-nav a.actief { background: #4a6fa5; color: #ffffff !important; }
+html[data-theme="dark"] .pub-nav a.home { border-color: #4a4a4a; }
+html[data-theme="dark"] .pub-nav .titel-klein { color: #888 !important; }
+
+html[data-theme="dark"] .pub-toc {
+    background: #232323; border-left-color: #4a6fa5;
+}
+html[data-theme="dark"] .pub-toc a { color: #b0c8e8 !important; }
+html[data-theme="dark"] .pub-toc .niv3 { color: #888 !important; }
+html[data-theme="dark"] .audit-toolbar {
+    background: #232323; border-color: #3a3a3a; border-left-color: #7fb3ff;
+}
+html[data-theme="dark"] .audit-toolbar .at-stats {
+    color: #d0d0d0; border-bottom-color: #3a3a3a;
+}
+html[data-theme="dark"] .audit-toolbar .at-verified { color: #81c784; }
+html[data-theme="dark"] .audit-toolbar .at-live-count {
+    background: #1a1a1a; color: #b0c8e8;
+}
+html[data-theme="dark"] .audit-toolbar .at-search,
+html[data-theme="dark"] .audit-toolbar .at-select {
+    background: #1a1a1a; border-color: #4a4a4a; color: #e8e8e8;
+}
+html[data-theme="dark"] .audit-toolbar .at-pill {
+    background: #1a1a1a; border-color: #4a4a4a; color: #c8c8c8;
+}
+html[data-theme="dark"] .audit-toolbar .at-pill.actief {
+    background: #4a6fa5; border-color: #7fb3ff; color: #ffffff;
+}
+html[data-theme="dark"] .audit-org-bar {
+    background: #232323;
+}
+html[data-theme="dark"] .audit-org-stat { color: #a8a8a8; }
+html[data-theme="dark"] .audit-crosslink { color: #7fb3ff !important; }
+html[data-theme="dark"] .audit-bewijs {
+    background: #262930; border-color: #3e4452; color: #a8b5c8;
+}
+html[data-theme="dark"] .entry { background-color: #24272c; }
+html[data-theme="dark"] .entry-in {
+    background-color: #1e2633 !important;
+    border-left-color: #4a88d9 !important;
+}
+html[data-theme="dark"] .entry-in .datum { color: #7fb3ff !important; }
+html[data-theme="dark"] .entry-uit {
+    background-color: #332024 !important;
+    border-right-color: #d9534f !important;
+}
+html[data-theme="dark"] .entry-uit .datum { color: #ff8a8a !important; }
+html[data-theme="dark"] .entry.technisch, html[data-theme="dark"] .entry.praktisch {
+    background-color: transparent !important;
+    border-top-color: #444 !important;
+    border-bottom-color: #444 !important;
+    color: #999 !important;
+}
+html[data-theme="dark"] .entry.technisch .datum, html[data-theme="dark"] .entry.praktisch .datum { color: #888 !important; }
+html[data-theme="dark"] .entry.technisch .titel, html[data-theme="dark"] .entry.praktisch .titel { color: #aaa !important; }
+
+html[data-theme="dark"] .pub-footer {
+    border-top-color: #3a3a3a; color: #888;
+}
+html[data-theme="dark"] .pub-footer a { color: #b0c8e8 !important; }
+html[data-theme="dark"] .pub-naar-boven { color: #888 !important; }
+html[data-theme="dark"] .pub-naar-boven:hover { color: #b0c8e8 !important; }
+html[data-theme="dark"] .dm-toggle {
+    background: #232323; border-color: #4a4a4a; color: #e0e0e0;
+}
+html[data-theme="dark"] .dm-toggle:hover {
+    background: #2a2a2a; border-color: #7fb3ff;
+}
+
+/* === SVG dark-mode === */
+html[data-theme="dark"] .figure svg {
+    filter: invert(0.88) hue-rotate(180deg);
+}
+html[data-theme="dark"] .figure {
+    background: #1e1e1e;
+}
+html[data-theme="dark"] .figure img {
+    filter: invert(0.88) hue-rotate(180deg);
+}
+
+/* === v9.4 — intro-rij accenten === */
+html[data-theme="dark"] .intro-rij[lang="nl"] {
+    --accent: #ff9147 !important;
+    --accent-soft: #3a2814 !important;
+}
+html[data-theme="dark"] .intro-rij[lang="en"] {
+    --accent: #7fb3ff !important;
+    --accent-soft: #1c2940 !important;
+}
+html[data-theme="dark"] .intro-rij[lang="de"] {
+    --accent: #ff8080 !important;
+    --accent-soft: #3a1c1c !important;
+}
+html[data-theme="dark"] .intro-rij[lang="fr"] {
+    --accent: #7fb3ff !important;
+    --accent-soft: #1c2940 !important;
+}
+
+/* Subtiel wit randje voor extra leesbaarheid */
+html[data-theme="dark"] .intro-rij h3 { color: #7fb3ff !important; }
+
+html[data-theme="dark"] .pub-contact-btn {
+    background: #232323; color: #b0c8e8; border-color: #4a4a4a;
+}
+html[data-theme="dark"] .pub-contact-btn:hover {
+    background: #2a2a2a; border-color: #7fb3ff; color: #ffffff;
+}
+html[data-theme="dark"] .audit-bewijs:hover {
+    border-color: #7fb3ff !important; background: #2f3642 !important;
+    box-shadow: 0 1px 6px rgba(127,179,255,0.25);
+}
+html[data-theme="dark"] .bm-modal-dialog {
+    background: #202226; color: #e0e0e0; border-color: #3a3f48;
+}
+html[data-theme="dark"] .bm-modal-kop { border-bottom-color: #4a6fa5; }
+html[data-theme="dark"] .bm-modal-kop h3 { color: #7fb3ff !important; }
+html[data-theme="dark"] .bm-intro {
+    background: #282c34; border-left-color: #7fb3ff; color: #b8b8b8;
+}
+html[data-theme="dark"] .bm-groep label.bm-label { color: #7fb3ff !important; }
+html[data-theme="dark"] .bm-input,
+html[data-theme="dark"] .bm-textarea {
+    background: #181a1f; border-color: #3e4450; color: #e8e8e8;
+}
+html[data-theme="dark"] .bm-input:focus,
+html[data-theme="dark"] .bm-textarea:focus {
+    border-color: #7fb3ff; background: #1f2229;
+}
+html[data-theme="dark"] .bm-radio-optie {
+    background: #262930; border-color: #3e4450; color: #d0d0d0;
+}
+html[data-theme="dark"] .bm-radio-optie:hover {
+    background: #2f3440; border-color: #7fb3ff;
+}
+html[data-theme="dark"] .bm-check-groep { color: #b0b0b0; }
+html[data-theme="dark"] .bm-btn-mail {
+    background: #4a6fa5; border-color: #4a6fa5; color: #ffffff;
+}
+html[data-theme="dark"] .bm-btn-mail:hover { background: #395782; }
+html[data-theme="dark"] .bm-btn-copy {
+    background: #2a2e36; border-color: #404754; color: #e0e0e0;
+}
+html[data-theme="dark"] .bm-btn-copy:hover {
+    background: #353b47; border-color: #7fb3ff;
+}
+
+html[data-theme="dark"] .intro-rij a.goto {
+    text-shadow: 0 0 1px rgba(255,255,255,0.25),
+                 0 0 3px rgba(255,255,255,0.10);
+}
+
+
+/* Forensisch Bronopvragings- en Contactvenster (Modal) */
+.pub-contact-btn {
+    background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
+    padding: 5px 12px; border-radius: 4px; font-size: 10pt; font-weight: 600;
+    cursor: pointer; font-family: inherit; transition: all .15s;
+    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+}
+.pub-contact-btn:hover { background: #1a3c6e; color: #ffffff; border-color: #1a3c6e; }
+.pub-contact-footer { margin: 10pt 0 4pt; font-size: 10.5pt; padding: 7px 16px; }
+
+.audit-bewijs { cursor: pointer; transition: border-color .15s, background .15s, box-shadow .15s; }
+.audit-bewijs:hover {
+    border-color: #1a3c6e; background: #e6edf7;
+    box-shadow: 0 1px 4px rgba(26,60,110,0.18);
+}
+
+.bm-modal-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.65); z-index: 1000;
+    display: none; align-items: center; justify-content: center;
+    padding: 20px; backdrop-filter: blur(2px);
+}
+.bm-modal-overlay.bm-open { display: flex; }
+.bm-modal-dialog {
+    background: #ffffff; color: #222222; border-radius: 8px;
+    max-width: 680px; width: 100%; max-height: 90vh; overflow-y: auto;
+    padding: 24px 28px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    border: 1px solid #d5d0c5; font-family: Aptos, Calibri, sans-serif;
+    position: relative; box-sizing: border-box; text-align: left;
+}
+.bm-modal-kop {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    border-bottom: 2px solid #1a3c6e; padding-bottom: 12px; margin-bottom: 16px;
+}
+.bm-modal-kop h3 {
+    margin: 0; font-size: 16pt; color: #1a3c6e; border: none; padding: 0;
+}
+.bm-modal-sluit {
+    background: none; border: none; font-size: 22pt; line-height: 1;
+    color: #888; cursor: pointer; padding: 0 4px;
+}
+.bm-modal-sluit:hover { color: #c62828; }
+.bm-intro {
+    font-size: 10pt; line-height: 1.5; color: #555555; background: #f7f5f1;
+    padding: 10px 14px; border-left: 3px solid #1a3c6e; border-radius: 3px;
+    margin-bottom: 18px;
+}
+.bm-groep { margin-bottom: 14px; }
+.bm-groep label.bm-label {
+    display: block; font-weight: 700; font-size: 10.5pt; color: #1a3c6e; margin-bottom: 5px;
+}
+.bm-input, .bm-textarea {
+    width: 100%; box-sizing: border-box; padding: 8px 12px;
+    border: 1px solid #ccc; border-radius: 4px; font-family: inherit;
+    font-size: 10.5pt; background: #faf8f5; color: #222;
+}
+.bm-input:focus, .bm-textarea:focus {
+    border-color: #1a3c6e; background: #fff; outline: none;
+}
+.bm-textarea { min-height: 90px; resize: vertical; }
+.bm-radio-groep {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px;
+}
+@media (max-width: 580px) {
+    .bm-radio-groep { grid-template-columns: 1fr; }
+}
+.bm-radio-optie {
+    display: flex; align-items: flex-start; gap: 8px; background: #f9f8f6;
+    border: 1px solid #e2ddd5; padding: 8px 10px; border-radius: 4px;
+    font-size: 9.5pt; cursor: pointer;
+}
+.bm-radio-optie:hover { border-color: #1a3c6e; background: #f0f4f9; }
+.bm-radio-optie input { margin-top: 2px; }
+.bm-check-groep {
+    display: flex; align-items: flex-start; gap: 8px; font-size: 9.5pt;
+    color: #444; margin: 14px 0 18px;
+}
+.bm-knoppen { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+.bm-btn-mail {
+    background: #1a3c6e; color: #ffffff; border: 1px solid #1a3c6e;
+    padding: 8px 16px; border-radius: 4px; font-size: 10.5pt; font-weight: 700;
+    cursor: pointer; transition: background .15s;
+}
+.bm-btn-mail:hover { background: #122b50; }
+.bm-btn-copy {
+    background: #f0eee9; color: #333; border: 1px solid #d5d0c5;
+    padding: 8px 14px; border-radius: 4px; font-size: 10.5pt; font-weight: 600;
+    cursor: pointer; transition: all .15s;
+}
+.bm-btn-copy:hover { background: #e2ded5; }
+.bm-btn-copy.bm-copied { background: #2e7d32; color: #ffffff; border-color: #2e7d32; }
+
+@media (max-width: 768px) {
+    .pub-contact-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 38px; }
+    .bm-modal-dialog { padding: 18px 16px; width: 95%; max-height: 94vh; }
+    .bm-modal-kop h3 { font-size: 14pt; }
+    .bm-intro { font-size: 9.5pt; padding: 8px 10px; }
+    .bm-input, .bm-textarea { font-size: 16px; }
+    .bm-radio-groep { grid-template-columns: 1fr; }
+}
+
+/* Modal Dark-Mode */
+html[data-theme="dark"] .pub-contact-btn {
+    background: #232323; color: #b0c8e8; border-color: #4a4a4a;
+}
+html[data-theme="dark"] .pub-contact-btn:hover {
+    background: #2a2a2a; border-color: #7fb3ff; color: #ffffff;
+}
+html[data-theme="dark"] .audit-bewijs:hover {
+    border-color: #7fb3ff !important; background: #2f3642 !important;
+    box-shadow: 0 1px 6px rgba(127,179,255,0.25);
+}
+html[data-theme="dark"] .bm-modal-dialog {
+    background: #202226; color: #e0e0e0; border-color: #3a3f48;
+}
+html[data-theme="dark"] .bm-modal-kop { border-bottom-color: #4a6fa5; }
+html[data-theme="dark"] .bm-modal-kop h3 { color: #7fb3ff !important; }
+html[data-theme="dark"] .bm-intro {
+    background: #282c34; border-left-color: #7fb3ff; color: #b8b8b8;
+}
+html[data-theme="dark"] .bm-groep label.bm-label { color: #7fb3ff !important; }
+html[data-theme="dark"] .bm-input,
+html[data-theme="dark"] .bm-textarea {
+    background: #181a1f; border-color: #3e4450; color: #e8e8e8;
+}
+html[data-theme="dark"] .bm-input:focus,
+html[data-theme="dark"] .bm-textarea:focus {
+    border-color: #7fb3ff; background: #1f2229;
+}
+html[data-theme="dark"] .bm-radio-optie {
+    background: #262930; border-color: #3e4450; color: #d0d0d0;
+}
+html[data-theme="dark"] .bm-radio-optie:hover {
+    background: #2f3440; border-color: #7fb3ff;
+}
+html[data-theme="dark"] .bm-check-groep { color: #b0b0b0; }
+html[data-theme="dark"] .bm-btn-mail {
+    background: #4a6fa5; border-color: #4a6fa5; color: #ffffff;
+}
+html[data-theme="dark"] .bm-btn-mail:hover { background: #395782; }
+html[data-theme="dark"] .bm-btn-copy {
+    background: #2a2e36; border-color: #404754; color: #e0e0e0;
+}
+html[data-theme="dark"] .bm-btn-copy:hover {
+    background: #353b47; border-color: #7fb3ff;
+}
+
+/* Taal-kiezer styling in navigatie */
+.pub-lang-switch {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: #eef2f7; padding: 2px 4px; border-radius: 4px;
+    border: 1px solid #d5d0c5;
+}
+.pub-lang-btn {
+    text-decoration: none; font-size: 9.5pt; font-weight: 600;
+    color: #1a3c6e; padding: 3px 7px; border-radius: 3px;
+    transition: background .15s, color .15s;
+}
+.pub-lang-btn:hover { background: #dce6f2; }
+.pub-lang-btn.actief { background: #1a3c6e; color: #ffffff !important; }
+
+html[data-theme="dark"] .pub-lang-switch { background: #1f2229; border-color: #3e4450; }
+html[data-theme="dark"] .pub-lang-btn { color: #b0c8e8; }
+html[data-theme="dark"] .pub-lang-btn:hover { background: #2a3342; }
+html[data-theme="dark"] .pub-lang-btn.actief { background: #4a6fa5; color: #ffffff !important; }
+
+/* Google Translate Widget & Frame Styling */
+.goog-te-banner-frame, .skiptranslate iframe, #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+body { top: 0px !important; position: static !important; }
+.goog-text-highlight { background: transparent !important; box-shadow: none !important; }
+font[style] { background: transparent !important; box-shadow: none !important; }
+
+.pub-lang-select, #int-lang-select {
+    font-family: inherit; font-size: 10pt; font-weight: 600;
+    padding: 4px 8px; border: 1px solid #d5d0c5; border-radius: 4px;
+    background-color: #ffffff; color: #1a3c6e; cursor: pointer;
+    color-scheme: light;
+}
+.pub-lang-select option, #int-lang-select option {
+    background-color: #ffffff; color: #1a3c6e;
+    color-scheme: light;
+}
+html[data-theme="dark"] .pub-lang-select,
+html[data-theme="dark"] #int-lang-select,
+html[data-theme="dark"] select.pub-lang-select {
+    background-color: #232323 !important;
+    background: #232323 !important;
+    border-color: #4a4a4a !important;
+    color: #e0e0e0 !important;
+    color-scheme: dark !important;
+}
+html[data-theme="dark"] .pub-lang-select option,
+html[data-theme="dark"] #int-lang-select option,
+html[data-theme="dark"] select.pub-lang-select option {
+    background-color: #232323 !important;
+    background: #232323 !important;
+    color: #e0e0e0 !important;
+    color-scheme: dark !important;
+}
 </style>
-</head>
+<script>
+(function(){try{var t=localStorage.getItem('systeem-audit-thema');if(t!=='dark'&&t!=='light'){t='dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+</script></head>
 <body><a id="top"></a>
-<nav class="pub-nav">
-<div class="links"><a class="home" href="home.html">← Overview</a><a class="" href="document-0.html">Doc 0 · Introduction</a><a class="" href="document-c.html">Doc C · Visual</a><a class="actief" href="document-d.html">Doc D · Synthesis</a></div>
-<div class="langs"><a class="lang-nl" href="../nl/document-d.html">🇳🇱 NL</a><a class="lang-en actief" href="../en/document-d.html">🇬🇧 EN</a><a class="lang-de" href="../de/document-d.html">🇩🇪 DE</a><a class="lang-fr" href="../fr/document-d.html">🇫🇷 FR</a></div>
-</nav>
 
+<nav class="pub-nav">
+<div class="links"><a class="home" href="home.html" id="nav-home-link">← Overview</a> <a class="home" href="../index.html">Startportaal</a> <a class="home" href="../home_int.html" id="nav-int-link" title="European &amp; International Portal">🇪🇺 Europees portaal</a> <a class="" href="document-0.html">Inleiding</a> <a class="" href="document-a.html">Narratief</a> <a class="" href="document-b.html">Data</a> <a class="" href="document-c.html">Visueel</a> <a class="actief" href="document-d.html">Synthese</a> <a class="" href="document-e.html">Rechten</a></div>
+<div class="pub-nav-actions" style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+<select autocomplete="off" class="pub-lang-select notranslate" id="int-lang-select" onchange="wisselTaal(this.value)" style="display:none;" translate="no"><option value="nl">🇳🇱 NL (Nederlands)</option><option value="en">🇬🇧 EN (English)</option><option value="de">🇩🇪 DE (Deutsch)</option><option value="fr">🇫🇷 FR (Français)</option><option value="it">🇮🇹 IT (Italiano)</option><option value="es">🇪🇸 ES (Español)</option><option value="pl">🇵🇱 PL (Polski)</option><option value="da">🇩🇰 DA (Dansk)</option><option value="sv">🇸🇪 SV (Svenska)</option><option value="pt">🇵🇹 PT (Português)</option><option value="ro">🇷🇴 RO (Română)</option></select>
+<button class="pub-print-btn notranslate" onclick="window.print()" title="Print of bewaar als PDF" translate="no" type="button">🖨️ Print / PDF</button>
+<button class="pub-contact-btn notranslate" onclick="openBronModal('Navigatie contact')" translate="no" type="button">📄 Request source record / Contact</button>
+</div>
+</nav><div class="pub-ab-banner" style="margin: 16pt 0 20pt 0;"><strong>Language &amp; Translation Notice:</strong> Dutch (nl/) is the sole authentic source language of this System-Audit. The automated translations of the overview, documents, visual architecture, synthesis and rights matrix are provided to make the documented cross-border mechanisms accessible across Europe. In case of any ambiguity or legal interpretation, the original Dutch text and source files prevail.</div>
+<script class="notranslate" translate="no">
+(function() {
+  if (window.location.search.indexOf('int=1') !== -1) {
+    var sel = document.getElementById('int-lang-select');
+    if (sel) sel.style.display = 'inline-block';
+    var intLink = document.getElementById('nav-int-link');
+    if (intLink) intLink.style.display = 'none';
+    var homeLink = document.getElementById('nav-home-link');
+    if (homeLink) homeLink.setAttribute('href', '../home_int.html');
+  }
+})();
+</script>
+
+<script class="notranslate" translate="no">
+(function() {
+  if (window.location.search.indexOf('int=1') !== -1) {
+    var sel = document.getElementById('int-lang-select');
+    if (sel) sel.style.display = 'inline-block';
+    var intLink = document.getElementById('nav-int-link');
+    if (intLink) intLink.style.display = 'none';
+    var homeLink = document.getElementById('nav-home-link');
+    if (homeLink) homeLink.setAttribute('href', '../home_int.html');
+  }
+})();
+</script>
 <div class="titelblad">
-<h1>System Audit</h1>
-<p class="ondertitel">Cross-border jurisdictional vacuum in social security</p>
-<p class="documentaanduiding">Document D — The synthesis</p>
-<p class="auteur">Author: Eric Messa</p>
-<p class="meta-lijn">Last updated: 1 October 2026, 13:02</p>
+<h1 id="systeem-audit">Systeem-Audit</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
+<p class="documentaanduiding">Document D — De synthese</p>
+<p class="auteur">Auteur: Eric Messa</p>
+<p class="meta-lijn">Versie bijgewerkt: 26 oktober 2026, 20:30</p>
 </div>
-<p class="marker">[[PAGEBREAK]]</p>
-<div class="inhoudsopgave">
-<h2>Table of Contents</h2>
-<p class="marker">[[TOC]]</p>
-</div>
-<p class="marker">[[PAGEBREAK]]</p>
+<div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
+<li class="niv1"><a href="#systeem-audit">Systeem-Audit</a></li>
+<li class="niv2"><a href="#inhoudsopgave">Inhoudsopgave</a></li>
+<li class="niv2"><a href="#deel-i-de-kern-in-één-oogopslag">Deel I — De kern in één oogopslag</a></li>
+<li class="niv2"><a href="#deel-ii-de-twee-werelden-en-hun-knopen">Deel II — De twee werelden en hun knopen</a></li>
+<li class="niv2"><a href="#deel-iii-het-mechanisme-van-het-falen">Deel III — Het mechanisme van het falen</a></li>
+<li class="niv3"><a href="#de-drie-systeemwetten-achter-de-blokkade">De drie systeemwetten achter de blokkade</a></li>
+<li class="niv2"><a href="#deel-iv-de-asymmetrie-tussen-fysieke-en-administratieve-grenzen">Deel IV — De asymmetrie tussen fysieke en administratieve grenzen</a></li>
+<li class="niv2"><a href="#deel-v-de-cijfers-en-de-schaal">Deel V — De cijfers en de schaal</a></li>
+<li class="niv2"><a href="#deel-vi-de-europese-dimensie">Deel VI — De Europese dimensie</a></li>
+<li class="niv2"><a href="#deel-vii-de-architectuurfout-in-de-europese-regelgeving">Deel VII — De architectuurfout in de Europese regelgeving</a></li>
+<li class="niv2"><a href="#deel-viii-de-twee-oplossingsroutes">Deel VIII — De twee oplossingsroutes</a></li>
+<li class="niv2"><a href="#deel-ix-de-drie-infrastructurele-oplossingen">Deel IX — De drie infrastructurele oplossingen</a></li>
+<li class="niv2"><a href="#deel-x-de-profiteursvraag">Deel X — De profiteursvraag</a></li>
+<li class="niv2"><a href="#deel-xi-de-twee-wegen-snelheid-en-reikwijdte">Deel XI — De twee wegen: snelheid en reikwijdte</a></li>
+<li class="niv2"><a href="#deel-xii-de-avg-stresstest-en-het-eessi-spook-van-2030">Deel XII — De AVG-stresstest en het EESSI-spook van 2030</a></li>
+<li class="niv2"><a href="#deel-xiii-de-persoonlijke-slotverklaring">Deel XIII — De persoonlijke slotverklaring</a></li>
+</ul></div>
 <div class="gebruikersaanwijzing">
-<p>This is Document D — The synthesis of the System Audit project. It brings together the patterns that emerge from the material: the paradoxes, the fault lines, and the role of the European Union.</p>
-<p>Read it as the conclusion, not as a summary.</p>
+<p>Dit is Document D — De synthese van het Systeem-Audit-project. Het brengt de patronen samen die uit het materiaal naar voren komen: de paradoxen, de breuklijnen, de rol van de Europese Unie.</p>
+<p>Lees het als de conclusie, niet als een samenvatting.</p>
 </div>
-<p class="marker">[[PAGEBREAK]]</p>
-<h2>Part I — The essentials at a glance</h2>
-<p>The system isn’t broken. It works exactly as it was designed to. It was designed for people who fit into a single category: living, working and being insured in the same country. Anyone who lives in two countries at the same time doesn’t fit into either of them. And the system doesn’t have a third category. The system hasn’t even considered a third category.</p>
-<p>The crux of this issue is not that there are many organisations. The crux is that there is a single mechanism that repeats itself. That mechanism consists of six questions, and the system gives the same answer to each one.</p>
-<p><strong>Waar speelt dit?</strong>Where does this apply? Anywhere a national rule is applied to a cross-border situation. The rule assumes that a person lives in one country, works in one country and is insured in one country. Anyone who has a presence in two countries at the same time does not fit this assumption. The system does not regard them as an exception requiring a solution. It regards them as an error requiring rejection.</p>
-<p><strong>Wat is het probleem?</strong>What is the problem? The problem is not that the citizen does not meet the conditions. The problem is that the conditions were not designed for someone who meets the requirements in two countries at the same time. Each country requires you to meet its own conditions. The citizen meets the conditions on both sides, but not in the same country. And so he meets neither of them.</p>
-<p><strong>Wie is verantwoordelijk?</strong>Who is responsible? No one, and therefore everyone. Each authority is only responsible for its own area. Each authority points the finger at the others. And no authority has the power to compel the others.</p>
-<p><strong>Wanneer lost het zich op?</strong>When will this be resolved? Once the current procedure has been completed. But the current procedure is stalling precisely because each authority is waiting for another. It’s a vicious circle, and the member of the public is caught in the middle.</p>
-<p><strong>Waarom duurt het zo lang?</strong>Why does it take so long? Because every level in the system has a good reason not to intervene. No authority, no time, no capacity, no political priority. Each level has its own logic, and these logics reinforce one another rather than correcting one another.</p>
-<p><strong>Hoe komt het goed?</strong>How will things be sorted out? Through the courts. But the courts resolve individual cases, not the whole system. And the courts are only accessible to those who can afford it.</p>
-<p>The facts underpinning these six answers are set out in Document A and Document B. The underlying architecture is described in Document C. Anyone who reads the facts will see the refusals. Anyone who understands the mechanism will see why the refusals are inevitable.</p>
-<p class="marker">[[PAGEBREAK]]</p>
-<h2>Part II — The Two Worlds and Their Knots</h2>
-<p>There are two worlds that never meet: the world of the body and the world of paper.</p>
-<p>The world of the body cannot wait. An infection does not wait. An amputation does not wait. Loss of vision does not wait. The body has no waiting list that can be extended by a system. The world of the body knows only one measure: today, yesterday, tomorrow. And the clock never stops.</p>
-<p>The world of paperwork works differently. There, a thirty-day deadline applies. There, a twelve-month period applies, which a person must be able to look back on. There, a three-month period for lodging an objection applies. There, a waiting period of one hundred and eighty days applies. There, a waiting period of one hundred and four weeks applies. The world of paperwork has one standard: the system itself. And the system never stops.</p>
-<p>There is no bridge between those two worlds. There is a counter. A counter can be closed. A counter can be moved. A counter can be manned by someone who is not authorised. A counter is in no hurry. A counter has no body.</p>
-<p>That clash gives rise to five knots that cannot be untangled. The facts relating to those knots are set out in Document A and Document B. The mechanisms are described here.</p>
-<p><strong>De eerste knoop: de foutieve registratie.</strong>The first link in the chain: incorrect registration. The authority that first establishes a definition — who the citizen is, what right they are applying for, what status they have — records that definition in a shared database. All other authorities consult that database. An incorrect definition automatically propagates throughout the entire system. And no authority further down the chain has the power to compel the source to correct its error. The error begins at a single point of contact, and it never ends.</p>
-<p><strong>De tweede knoop: het bewijs dat niet kan worden geleverd.</strong>The second sticking point: the evidence that cannot be provided. The system demands a document as proof. This document must be provided by an authority that is not authorised to provide it, or by an authority that refuses to provide it, or by an authority that is unaware that it is required to provide it. The citizen cannot produce the evidence themselves. The body that can produce it is the very body that does not produce it. And the body that needs it is left waiting.</p>
-<p><strong>De derde knoop: de drempel die verschuift.</strong>The third knot: the shifting threshold. The citizen provides the evidence requested. As soon as the evidence is provided, the threshold shifts. A new condition is added. The old condition was not the real condition; the new condition is the real condition. The citizen provides the new evidence. The threshold shifts once more. The citizen is never ‘done’, because ‘done’ is not a category within the system.</p>
-<p><strong>De vierde knoop: het systeem dat zichzelf blokkeert.</strong>The fourth sticking point: the system that blocks itself. The body responsible for correcting the error is the very same body that made it. And that body has no internal procedure for correcting its own errors. If you ask for a correction, the authority asks for the form that it itself is required to issue. And the authority refuses to issue the form, because no decision has yet been made regarding the entitlement. The circle is complete. The authority is both the gate and the gatekeeper.</p>
-<p><strong>De vijfde knoop: het systeem dat de schade meet maar niet de oorzaak.</strong>The fifth issue: the system that measures the damage but not the cause. The system measures what someone used to earn. It measures what someone, according to their tax history, ought to be able to earn. But it does not measure what someone actually receives today. When a benefit is suspended, actual income falls to zero. The system does not record this drop. The system continues to base its calculations on the old income. The family lives below the poverty line, but is recorded by the system as not being in poverty. Poverty is created by the administration and denied by that same administration.</p>
-<p><strong>De blinde vlek.</strong>The blind spot. Most people don’t see this. Those who never cross the border don’t realise the doors are closed. Anyone living in the centre of the country has never knocked on either door. The system works for them. The system is invisible and comfortable. That is not proof that the system works. It is proof that the system works for a certain type of person.</p>
-<p>This blind spot is not just a national problem. It also exists between regions within a single country. The same mechanisms at play between two countries are also at play between two regions, between two cantons, between two federal states. The failure becomes apparent as soon as you cross a border — whether it is a national border or a regional one. And those who do not cross the border do not see it. That is not an excuse, but a structural reality.</p>
-<p><strong>De verwarring tussen reisvrijheid en lidmaatschap.</strong>The confusion between freedom of movement and membership. There is another aspect to this blind spot: the confusion between two different things that people tend to mix up. The right to travel freely between countries is different from the right to work in a country and accrue social rights there. A country can be a member of the European Union without you being able to travel freely there. A country can use the euro without being a member of the European Union. The categories used by politicians — membership of the European Union, freedom of movement, membership of the eurozone — do not correspond to the lived reality of someone crossing the border.</p>
-<p class="marker">[[PAGEBREAK]]</p>
-<h2>Part III — The Mechanism of Failure</h2>
-<p>The system has four layers. Each layer has its own logic. And these logics reinforce one another rather than correcting one another.</p>
-<p><strong>De uitvoerende laag: de logica van de regel.</strong>The operational level: the logic of the rules. These are the service centres, the health insurance funds and the benefits agencies. They apply the rules. The rules are national. The rules are based on the assumption that a person lives in one country, works in one country and is insured in one country. Anyone who does not fit this assumption triggers an error. The error is not seen as a sign that the rule needs to be amended. The error is seen as proof that the citizen does not meet the requirements. The executive level has no authority to change the rule. It only has the authority to apply the rule. And the rule is what it is.</p>
-<p><strong>De toezichthoudende laag: de logica van de zelfbeperking.</strong>The supervisory layer: the logic of self-restraint. These are the regulators, the inspectorates and the ombudsman services. They spot the error. But they have a good reason not to intervene. A regulator who stretches the limits of their authority risks having their decision challenged. The safest position is always the narrowest interpretation of one’s own authority. So the regulator does not intervene. Not because they do not want to, but because they do not dare to. And their fear is rational: the system rewards self-restraint and punishes boldness.</p>
-<p><strong>De democratische laag: de logica van de tijdschaal.</strong>The democratic layer: the logic of the timescale. This comprises Parliament, the Ombudsman and the committees. They receive the complaint. But they operate on a timescale that is incompatible with the urgency of the crisis. A committee debate takes months. A legislative amendment takes years. A medical crisis lasts days. The democratic layer can change the law, but it will not do so unless there is political pressure. And there is no political pressure for a problem that affects only cross-border workers. The timescale of democracy and the timescale of the body are fundamentally incompatible.</p>
-<p><strong>De symbolische laag: de logica van de onmacht.</strong>The symbolic level: the logic of powerlessness. This is the Head of State. He receives the petition. He acknowledges receipt. He forwards it to the relevant minister. That is where the intervention ends. The symbolic level has no executive power. It is the final stop.</p>
-<p><strong>De cirkel.</strong>The circle. Each layer has a reason not to intervene. The executive layer applies the rules, but the rules were not designed for this situation. The supervisory layer sees the error, but is not permitted to intervene. The democratic level can change the law, but does not do so as long as there is no political pressure. The symbolic level has no power. And the only one left is the judge. But the judge resolves a single case, not the whole system. And the judge is only accessible to those who can afford it.</p>
-<p>The system isn’t broken. It works exactly as it was designed to. It was designed for people who fit within the lines. Anyone who falls outside the lines falls between the lines. And there’s no safety net between the lines. That’s not a fault. That’s the design.</p>
-<p><strong>De rode draad door alle lagen.</strong>The common thread running through all levels. The same thing happens at every level. An authority identifies a problem. The authority determines that the problem does not fall within its remit. The authority refers the matter to another authority. The other authority does the same. And the citizen is expected to act as the link between all these authorities. The citizen is the only actor in the system who has no authority to make decisions, yet is the only one responsible for keeping the whole system running.</p>
-<p>The facts relating to this mechanism are set out in Document A and Document B. These documents specify which body made which mistake, which letter was sent and when, and which decision was taken and when. This section merely outlines the pattern.</p>
-<p class="marker">[[PAGEBREAK]]</p>
-<h2>Part IV — The asymmetry between physical and administrative borders</h2>
-<p>European integration is based on the removal of physical borders. In 1944, Belgium, the Netherlands and Luxembourg signed a customs union. In 1951, the European Coal and Steel Community was established. This was followed in 1957 by the European Economic Community. In 1985, the Schengen Agreement was signed, which provided for the abolition of internal borders. The aim was the free movement of people, goods, services and capital.</p>
-<p>In the physical world, that objective has been achieved. The border posts have been dismantled. Movement across national borders takes place without checks. A citizen can drive from the Netherlands to Belgium, from Belgium to France, and from France to Germany, without stopping. It took forty years to achieve this openness, from 1944 to 1985. After that, it was a reality.</p>
-<p>The administrative reality has remained asymmetrical. Whilst the boundaries for the human body have disappeared, national administrative systems have never been merged or standardised. Each country retains its own health insurance fund, its own tax authority, its own benefits agency and its own disability register.</p>
-<p>This is where the fundamental flaw lies. The European legislator has opened up the physical space, but the national executive has programmed the underlying computer systems exclusively at national level. The infrastructure — the motorway — is transnational. The administrative decision-making point — the counter — has remained strictly national.</p>
-<p>The legislative amendment to address this decoupling is subject to a structural delay. In April 2026, a provisional political agreement was reached via a trilogue on the revision of Regulation 883/2004, the legislation that coordinates social security between Member States. In July 2026, the revised text was formally adopted. However, the actual operational implementation — including the transfer of responsibility for unemployment benefits to the country of employment after a continuous period of 22 weeks — is not scheduled until 2030 or 2031 due to the necessary IT adjustments.</p>
-<p>The entire legislative cycle, from the initial proposal to entry into force, thus spans more than ten years of negotiations and four years of waiting for implementation. Fourteen years for a software update.</p>
-<p>The digital solutions in this reform package are also stalling at the threshold of the data silo. The introduction of the European Social Security Pass, linked to the European digital identity wallet, digitises the medium on which the documents are stored. It enables public authorities to verify the documents quickly, but it does not enforce an automatic flow of data between national systems. It does not actively retrieve the data from the source. The front door is being digitised, but the back door remains closed.</p>
-<p>The European Commission’s macroeconomic projections forecast savings and fraud prevention totalling six billion euros by 2040. This calculation ignores the microeconomic reality of the intervening fourteen years. During this latency period, the costs of the system’s failure are passed on in full to the public: the private bank that parks debts subject to heavy penalties, the energy supplier that engages debt collection agencies and demands unfeasible medical examinations, and the private medical assessment market that charges unachievable rates for remote consultations. All these costs are borne by the individual, whilst the cause of the system’s standstill lies with the government.</p>
-<p>The Benelux was once the testing ground for European integration. In 1944, the experiment that would later be replicated on a European scale was launched here. The three countries have demonstrated that open pathways are possible. They have not demonstrated that open systems are possible.</p>
-<p>The ‘border worker’ is the error message indicating a half-finished design. The physical architecture is complete. The administrative architecture is not.</p>
-<p class="marker">[[PAGEBREAK]]</p>
-<h2>Part V — The figures and the scale</h2>
-<p>The problem is not unique to this case. Here is an overview of the scale at European level.</p>
-<p>In the European Union, millions of people live in a country other than the one where they work or where they come from. This number is growing steadily as a result of the European Union’s policies on labour mobility, the expansion of remote working and demographic trends in border regions.</p>
-<p>The number of complaints received by the informal European mediation network is increasing by tens of per cent each year. The problem is getting bigger, not smaller.</p>
-<p class="marker">[[PAGEBREAK]]</p>
-<h2>Part VI — The European dimension</h2>
-<p>The problem is not specific to Belgium and the Netherlands. It is a European one. Four case studies demonstrate this. These case studies are drawn from public European policy literature and academic research. They do not appear in Document A or Document B, as those documents describe a single individual case. They are included here because they demonstrate that the mechanism evident in that single case is repeated in every European border region.</p>
-<p><strong>Luxemburg.</strong>Luxembourg. Luxembourg has the highest proportion of cross-border workers in the EU. The coordination of their social security is governed by the European Regulation, but the tax and social security thresholds for remote working are fundamentally out of step with one another. A worker who works from home within the range of these two thresholds finds themselves in a legal grey area. Two countries levy taxes on the same basis, but using incompatible threshold calculations. This has required years of ad hoc bilateral agreements before any stabilisation could be achieved — and only in relation to taxation, not social security.</p>
-<p><strong>De Øresundregio.</strong>The Øresund region. In the region around the Øresund, thousands of cross-border workers commute across the border every day. They are covered by social security in their country of employment but receive unemployment benefits from their country of residence. Coordination requires the employer to provide a notice of termination document that the foreign unemployment fund recognises as valid. In practice, this exchange is slow, the documents are not always in a machine-readable format, and in the meantime, the individual is left waiting without benefits. The region has a joint committee that monitors the flow of information, but this committee has no authority over the implementing bodies in either country.</p>
-<p><strong>Zwitserland/Frankrijk.</strong>Switzerland/France. Switzerland is home to an estimated hundred thousand cross-border workers from France. Teleworking has given rise to a fundamental tension: the tax threshold for teleworking and the social security threshold for teleworking are diverging. Anyone working from home who falls between these two thresholds pays tax in one country but may be subject to social security contributions in the other. This requires simultaneous affiliation to two schemes, which the European regulation explicitly prohibits. The solution required a transitional agreement, an extension and a formal amendment to the treaty, with daily reporting obligations for employers. The administrative burden has shifted from the state to the employer; the structural incompatibility has not been resolved.</p>
-<p><strong>De Oostenrijks-Oost-Europese corridor.</strong>The Austria–Eastern Europe corridor. In the corridor between Austria and Eastern European Member States, the large-scale posting of workers is an established economic reality. Certificates confirming the country in which a posted worker is covered by social security are widely used fraudulently to maintain low social security contributions in the sending country, whilst the worker is in fact working permanently in the host country. The Court of Justice has ruled that even where a certificate has clearly been obtained fraudulently, the host Member State may not unilaterally apply its own legislation before engaging in dialogue with the issuing Member State. This requirement for dialogue, intended to protect the worker, is in practice exploited by fraudulent employers to delay the application of the host country’s legislation for months, whilst the worker remains formally unprotected.</p>
-<p>The conclusion drawn from all four case studies is the same: even in Europe’s most densely populated cross-border worker regions, there is no integrated solution. National emergency agreements are the only way forward, in the absence of structural reforms.</p>
-<p class="marker">[[PAGEBREAK]]</p>
-<h2>Part VII — The structural flaw in European legislation</h2>
-<p>The European regulation coordinating social security between Member States determines which country is the competent Member State. The regulation designates a single country as responsible — usually the country of employment — but does not provide for an automatic safety net for periods in which the allocation is disputed, changes temporarily, or both countries refuse to accept primary responsibility.</p>
-<p>The ‘both/and’ paradox — whereby a citizen is formally part of the systems of two countries but is regarded by both as the responsibility of the other — is not resolved by the regulation, but merely described.</p>
-<p>The mediation network acts as a non-binding oversight mechanism. It records some of the complaints and produces a finding, but the finding has no legal consequences for the body that refuses to comply. A recommendation is just a recommendation. The implementing body that disregards it faces no consequences. The European Social Security Information Exchange System exists for the electronic exchange of information, but response times for requests from other countries are not enforceable. Both instruments are procedural measures designed to address a problem that should have been resolved at a structural level.</p>
-<p>The facts relating to this architectural flaw are set out in Document B. That document specifies which regulations contain which provisions, which court rulings provide which interpretations, and which bodies have which powers. This document merely outlines the pattern.</p>
-<p class="marker">[[PAGEBREAK]]</p>
-<h2>Part VIII — The two approaches to a solution</h2>
-<p>In principle, cross-border citizens with a chronic condition or recognised disability have two options for managing their finances.</p>
-<p><strong>De uitkeringsroute.</strong>The benefit route. Disability benefit via the competent country. This route creates dependence on the state and is subject to national political goodwill. The average disability benefit in the EU ranges from 800 to 1,800 euros per month, payable for life in the event of permanent incapacity for work. The barrier to access: waiting periods are not recognised across borders; procedures require a national assessment history; the European exchange system is slow.</p>
-<p><strong>De fiscale autonomieroute.</strong>The fiscal autonomy route. Allowances, increased benefits and tax reductions in the country of residence based on a recognised disability. This route costs the state less, promotes economic participation and preserves citizens’ autonomy. The barrier to access is the same: medical status is not recognised across borders, one country’s administrative category does not translate to another, and the systems that are supposed to activate these entitlements do not communicate with one another.</p>
-<p>The fiscal autonomy route is more favourable than the benefit route in most policy areas: it costs the state less, promotes economic participation, preserves citizens’ autonomy and is in line with the EU’s labour mobility objectives. Nevertheless, it remains just as inaccessible as the benefit route as long as there is no cross-border translation of medical status and no administrative recognition of status. The barrier is not financial but structural.</p>
-<p>However, there is one aspect that puts the earlier analysis into perspective: in this case, the route to tax autonomy in Belgium via a manual bypass has, in fact, proved feasible. A medical certificate issued directly by the GP and submitted with the BNI tax return – bypassing the KSZ and the DG HAN – triggers the increased tax-free allowance and, upon submission of the return, results in a calculated balance of €2,669.97 in the family’s favour (pending the final tax assessment). The same route remained completely blocked via the automated government systems (8 versus 9 points at DG HAN, RIV blockage in the Netherlands). The distinction is instructive: the tax route is not impossible, but the citizen and their GP must manually bypass the digital government chain to make it work. And this has a paradoxical side effect: a higher net family income may actually jeopardise the means-tested allowances from Parentia and the SVB, as the automatic recalculation is based on the notional earning capacity.</p>
-<p>In addition, there is a factor that is often overlooked when comparing the two approaches: the political economy of funding. The European Union does not have its own social security system. Social security is a national competence. What the EU does, however, is co-fund programmes through the European Social Fund Plus that focus on labour market integration and social inclusion. These funds do not go towards the benefits themselves, but towards the support services surrounding them: training, guidance into work, and projects that increase social participation.</p>
-<p>Benefits in the European Union are largely financed through contributions: on average, 64 per cent of unemployment benefits come from social security contributions, not from taxes. Tax benefits, such as tax relief for people with disabilities, on the other hand, are funded almost entirely from national general revenue. The EU has no mechanism for co-financing Member States’ tax expenditure.</p>
-<p>This creates a funding asymmetry. For benefit-related programmes, a Member State can apply for EU co-funding. This is not the case for tax incentives. Member States therefore have a greater financial incentive to strengthen the benefits route than the tax route, regardless of which route is more favourable to the citizen.</p>
-<p>The tax-based approach costs the state less, but the state does not receive any European co-funding for it. The benefit-based approach costs the state more, but part of the associated costs can be covered by European funds. The political economy of the funding thus influences the policy choice, regardless of which route is most effective for the citizen.</p>
-<p class="marker">[[PAGEBREAK]]</p>
-<h2>Part IX — The three infrastructure solutions</h2>
-<p>Three specific building blocks directly correct the architectural flaws. They can be implemented individually, but are most effective when used in combination.</p>
-<p><strong>Bouwsteen 1 — Het inschrijvingsmoment als synchronisatiepunt.</strong>Building block 1 — The registration moment as a synchronisation point. When an EU citizen officially deregisters in country A and registers in country B, this triggers a single authorised digital import of the relevant administrative data: employment history, recognised medical conditions, current entitlements and family circumstances. The technical infrastructure is in place: the European digital identification system provides the foundation, the national population registers act as the trigger points, and the European social security exchange system provides the capacity. What is missing is the political decision that the registration process is the legal trigger for this synchronisation, and the obligation on the sending country to supply the data within a specified timeframe.</p>
-<p><strong>Bouwsteen 2 — Het Europees Medisch Statusdocument.</strong>Building block 2 — The European Medical Status Document. A standardised digital document that makes a citizen’s functional status readable across borders. It does not record the diagnosis — the illness — but the functional limitation: what the person can and cannot do, what percentage of work disability has been recognised, which country has formally established this recognition, and on what date. It is based on the World Health Organisation’s International Classification of Functioning, Disability and Health, which provides a universal linguistic framework already used by 29 European countries in rehabilitation medicine and health statistics. Each national authority publishes a conversion table: a published mapping of international scores to its own administrative categories. When a citizen submits an application to a foreign authority with a status document, the system automatically converts their score to the national category. The citizen is assessed once. The conversion is automatic. No re-assessment is required unless the medical status changes.</p>
-<p><strong>Bouwsteen 3 — De automatische fiscale route-activering.</strong>Building block 3 — Automatic tax route activation. When the status document records a recognised restriction and the registration document confirms the citizen’s cross-border situation, the system automatically activates the tax instruments available in the country of residence. This is not done via a manual application, but via an automatic decision rule based on readable status data. The decision logic works as follows: the score plus the registration status are compared with a nationally published activation table. In the Netherlands, this automatically triggers: an adjustment to the assessed income for benefit calculations, an increased allowance for recognised disability, and a calculation of entitlement to healthcare allowance, housing benefit and the child-related budget based on the adjusted income, including foreign components. In Belgium, this automatically triggers: the tax deduction for people with a disability, the increased minimum subsistence level in the event of recognised incapacity for work, and a notification to the relevant authority that the citizen may be entitled to supplementary allowances.</p>
-<p class="marker">[[PAGEBREAK]]</p>
-<h2>Part X — The free-rider problem</h2>
-<p>The implementation of an interconnected system raises questions regarding fraud resistance. An analysis shows that the current system of unconnected silos does not prevent fraud, but merely makes it more difficult to detect. Double payments in two countries are technically possible today because country A does not know what country B is granting, and vice versa. The European exchange system is intended to address this, but its use is not enforced. An interconnected system with readable status data is more difficult to exploit than a system of silos, for three specific reasons.</p>
-<p>Firstly: an international status document is based on scores derived from validated medical assessments carried out by recognised bodies. Falsifying a score requires the active cooperation of an assessing body, which shifts the burden of fraud from the individual to the institution — thereby making it detectable and punishable.</p>
-<p>Secondly, registration details are linked to official population registers and cannot be altered by the individual themselves; a false registration requires the active cooperation of the registering local authority.</p>
-<p>Thirdly: the automatic tax activation process compares status data with the home country’s activation table; every activation is logged and can be viewed by both countries, meaning that duplicate activations can be detected immediately.</p>
-<p>A transparent, interconnected system is structurally more resistant to fraud than a system comprising unconnected national silos. Simplification for the public and protection against abuse are not mutually exclusive — they reinforce one another.</p>
-<p class="marker">[[PAGEBREAK]]</p>
-<h2>Part XI — The Two Paths: Speed and Scope</h2>
-<p>In practice, cross-border citizens who encounter problems with the coordination of social security have two options: the legal route and the structural route.</p>
-<p><strong>De juridische weg — individueel, traag, zonder systeemeffect.</strong>The legal route — individual, slow, with no systemic impact. The informal mediation network reaches several thousand citizens each year. National court proceedings take 12 to 36 months. Preliminary ruling proceedings before the Court of Justice take 16 to 22 months. Each judgment applies to a single individual citizen. The system does not change for the millions of other cross-border citizens who face the same problem but do not bring proceedings.</p>
-<p><strong>De structurele weg — collectief, eenmalig, universeel.</strong>The structural approach — collective, one-off, universal. A targeted amendment to the European Coordination Regulation will apply to all cross-border workers from the date it comes into force. Once introduced, an international status document will permanently and automatically eliminate the need for re-assessment for every new citizen who moves across borders. Automatic tax route activation applies to every citizen who holds a status document and is registered in a country of residence, without them needing to be aware of, claim or document their entitlement.</p>
-<p>A European legislative process to amend the Coordination Regulation takes, on average, four to six years. If a reform package comes into force in 2030, it will reach more citizens in its first full year than the legal route has in thirty years. And every year thereafter, automatically, for every new citizen who crosses the border.</p>
-<p>The legal route resolves issues on an individual basis and does not bring about any structural change. The structural route changes the system for everyone at the same time. Every year of delay in the structural route deprives tens of thousands of citizens of access to rights they are already legally entitled to.</p>
-<p class="marker">[[PAGEBREAK]]</p>
-<h2>Part XII — The personal closing statement</h2>
-<p>It is an objective fact that a medical recovery process is incompatible with conducting multiple institutional procedures. The fact that a citizen undergoing physical recovery is required to gather this evidence demonstrates the priorities of the current system. Many abandon these procedures prematurely when faced with the scale of the administrative obstacles.</p>
-<p>The initial instinct is always to resolve one’s own, individual problem. However, when the timelines were systematically logged, a structural pattern emerged that goes beyond the individual case. This mechanism affects everyone who falls outside the standard norm. For those who live within the norm, the system operates invisibly and seamlessly. This does not prove that the system works universally; it proves that it has been optimised for a specific, national profile.</p>
-<p>The dismantling of these procedures lays bare the underlying architecture. The institutions and networks established for protection operate procedures that are disconnected from the material consequences. Control mechanisms operate on the basis of the system’s parameters, not on the basis of the reality of remedy. Abstract conditions are managed. At the same time, the number of situations that transcend the binary categories of legislation is growing. The norm is static, whilst social reality is dynamic.</p>
-<p>This dossier has been compiled as a concrete set of data illustrating what is structurally stagnating. As a Franco-Italian by origin, born in Belgium and living in the Netherlands, the theory of a unified European space has always been a starting point for me. Practice shows that this theory is conditional and applies mainly to those who fit exactly within the national mould. Those who fall outside it come up against the limits of that model.</p>
-<p>This report serves as an objective record for anyone who finds themselves in a similar situation, and as factual evidence for the authorities responsible for reviewing the system architecture.</p>
-<p>The standard doesn’t change. I do.</p>
-<a class="pub-top" href="#top" title="↑">↑</a>
+<h2 id="deel-i-de-kern-in-één-oogopslag">Deel I — De kern in één oogopslag</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p>Het systeem is niet kapot. Het werkt precies zoals het is ontworpen. Het is ontworpen voor mensen die in één vakje passen: wonen, werken en verzekerd zijn in hetzelfde land. Wie in twee landen tegelijk leeft, past in geen van beide. En het systeem heeft geen derde vakje. Het systeem heeft niet eens een derde vakje overwogen.</p>
+<p>De kern van dit dossier is niet dat er veel instanties zijn. De kern is dat er één mechanisme is dat zich herhaalt. Dat mechanisme heeft zes vragen, en op elke vraag geeft het systeem hetzelfde antwoord.</p>
+<p><strong>Waar speelt dit?</strong> Overal waar een nationale regel op een grensoverschrijdende situatie wordt toegepast. De regel gaat ervan uit dat iemand in één land woont, in één land werkt, en in één land verzekerd is. Wie in twee landen tegelijk bestaat, past niet in die aanname. Het systeem ziet hem niet als een uitzondering die om een oplossing vraagt. Het ziet hem als een fout die om een afwijzing vraagt.</p>
+<p><strong>Wat is het probleem?</strong> Het probleem is niet dat de burger niet voldoet aan de voorwaarden. Het probleem is dat de voorwaarden niet zijn gebouwd voor iemand die in twee landen tegelijk voldoet. Elk land eist dat je aan zijn kant voldoet. De burger voldoet aan beide kanten, maar niet in hetzelfde land. En dus voldoet hij aan geen van beide.</p>
+<p><strong>Wie is verantwoordelijk?</strong> Niemand, en dus iedereen. Elke instantie is alleen bevoegd voor haar eigen stukje. Elke instantie wijst naar de andere. En geen enkele instantie heeft de bevoegdheid om de andere te dwingen.</p>
+<p><strong>Wanneer lost het zich op?</strong> Na de lopende procedure. Maar de lopende procedure loopt juist vast omdat elke instantie wacht op een andere. De cirkel is gesloten, en de burger zit erin.</p>
+<p><strong>Waarom duurt het zo lang?</strong> Omdat elke laag in het systeem een goede reden heeft om niet in te grijpen. Geen bevoegdheid, geen tijd, geen capaciteit, geen politieke prioriteit. Elke laag heeft een eigen logica, en die logica's versterken elkaar in plaats van elkaar te corrigeren.</p>
+<p><strong>Hoe komt het goed?</strong> Via de rechter. Maar de rechter lost één dossier op, niet het hele systeem. En de rechter is alleen toegankelijk voor wie het zich kan veroorloven.</p>
+<p>De feiten die deze zes antwoorden onderbouwen, staan in Document A en Document B. De architectuur die eraan ten grondslag ligt, staat in Document C. Wie de feiten leest, ziet de weigeringen. Wie het mechanisme begrijpt, ziet waarom de weigeringen onvermijdelijk zijn.</p>
+<h2 id="deel-ii-de-twee-werelden-en-hun-knopen">Deel II — De twee werelden en hun knopen</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p>Er zijn twee werelden die elkaar nooit ontmoeten: de wereld van het lichaam en de wereld van het papier.</p>
+<p>De wereld van het lichaam kan niet wachten. Een infectie wacht niet. Een amputatie wacht niet. Een visusverlies wacht niet. Het lichaam heeft geen wachtlijst die door een systeem kan worden verlengd. De wereld van het lichaam kent één maat: vandaag, gisteren, morgen. En de klok stopt nooit.</p>
+<p>De wereld van het papier werkt anders. Daar telt een termijn van dertig dagen. Daar telt een periode van twaalf maanden waarover iemand moet kunnen terugkijken. Daar telt een bezwaartermijn van drie maanden. Daar telt een wachttijd van honderdtachtig dagen. Daar telt een wachttijd van honderdvier weken. De wereld van het papier kent één maat: het systeem zelf. En het systeem stopt nooit.</p>
+<p>Tussen die twee werelden zit geen brug. Er is een loket. Een loket kan worden gesloten. Een loket kan worden verplaatst. Een loket kan worden bezet door iemand die niet bevoegd is. Een loket heeft geen haast. Een loket heeft geen lichaam.</p>
+<p>Uit die botsing ontstaan vijf knopen die niet kunnen worden ontward. De feiten van die knopen staan in Document A en Document B. Hier staan de mechanismen.</p>
+<p><strong>De eerste knoop: de foutieve registratie.</strong> De instantie die als eerste een definitie vastlegt — wie de burger is, welk recht hij aanvraagt, welk statuut hij heeft — schrijft die definitie weg in een gedeelde databank. Alle andere instanties lezen die databank. Een foutieve definitie plant zich automatisch voort door het hele systeem. En geen enkele instantie die later in de keten komt, heeft de bevoegdheid om de bron te dwingen zijn fout te corrigeren. De fout begint bij één loket, en hij eindigt nooit.</p>
+<p><strong>De tweede knoop: het bewijs dat niet kan worden geleverd.</strong> Het systeem eist een bewijsstuk. Het bewijsstuk moet worden geleverd door een instantie die niet bevoegd is om het te leveren, of door een instantie die weigert het te leveren, of door een instantie die niet weet dat ze het moet leveren. De burger kan het bewijs niet zelf maken. De instantie die het kan maken, is de instantie die het niet maakt. En de instantie die het nodig heeft, blijft wachten.</p>
+<p><strong>De derde knoop: de drempel die verschuift.</strong> De burger levert het bewijs dat wordt gevraagd. Zodra het bewijs is geleverd, verschuift de drempel. Er wordt een nieuwe voorwaarde toegevoegd. De oude voorwaarde was niet de echte voorwaarde; de nieuwe voorwaarde is de echte voorwaarde. De burger levert het nieuwe bewijs. De drempel verschuift opnieuw. De burger is nooit klaar, want "klaar" is geen categorie in het systeem.</p>
+<p><strong>De vierde knoop: het systeem dat zichzelf blokkeert.</strong> De instantie die de fout moet corrigeren, is dezelfde instantie die de fout heeft gemaakt. En die instantie heeft geen interne procedure om haar eigen fouten te corrigeren. Als je vraagt om correctie, vraagt de instantie om het formulier dat de instantie zelf moet afleveren. En de instantie weigert het formulier af te leveren, omdat er nog geen beslissing is over het recht. De cirkel is gesloten. De instantie is de poort en de portier tegelijk.</p>
+<p><strong>De vijfde knoop: het systeem dat de schade meet maar niet de oorzaak.</strong> Het systeem meet wat iemand vroeger verdiende. Het meet wat iemand volgens zijn fiscale geschiedenis zou moeten kunnen verdienen. Maar het meet niet wat iemand vandaag werkelijk ontvangt. Wanneer een uitkering wordt geblokkeerd, daalt het werkelijke inkomen tot nul. Het systeem registreert die daling niet. Het systeem blijft rekenen met het oude inkomen. Het gezin leeft onder de armoedegrens, maar wordt door het systeem als niet-arm geregistreerd. De armoede wordt door de administratie gecreëerd en door dezelfde administratie ontkend.</p>
+<p><strong>De blinde vlek.</strong> De meeste mensen zien dit niet. Wie nooit de grens oversteekt, merkt niet dat de deuren dicht zijn. Wie in het midden van het land woont, heeft nooit bij een van beide deuren geklopt. Het systeem werkt voor hem. Het systeem is onzichtbaar en comfortabel. Dat is geen bewijs dat het systeem werkt. Dat is bewijs dat het systeem werkt voor een bepaald profiel.</p>
+<p>De blinde vlek is niet alleen een nationaal probleem. Ze bestaat ook tussen regio's binnen één land. Dezelfde mechanismen die tussen twee landen spelen, spelen ook tussen twee gewesten, tussen twee kantons, tussen twee deelstaten. Het falen wordt zichtbaar zodra je een grens oversteekt — of dat nu een landsgrens of een gewestgrens is. En wie de grens niet oversteekt, ziet het niet. Dat is geen excuus, maar een structureel gegeven.</p>
+<p><strong>De verwarring tussen reisvrijheid en lidmaatschap.</strong> Er is nog een dimensie aan de blinde vlek: de verwarring tussen twee verschillende dingen die mensen door elkaar halen. Het recht om vrij te reizen tussen landen is iets anders dan het recht om in een land te werken en er sociale rechten op te bouwen. Een land kan lid zijn van de Europese Unie zonder dat je er vrij kunt reizen. Een land kan de euro gebruiken zonder lid te zijn van de Europese Unie. De categorieën die politici gebruiken — lid van de Europese Unie, lid van de reisvrijheid, lid van de euro — vallen niet samen met de geleefde werkelijkheid van iemand die de grens oversteekt.</p>
+<h2 id="deel-iii-het-mechanisme-van-het-falen">Deel III — Het mechanisme van het falen</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p>Het systeem heeft vier lagen. Elke laag heeft een eigen logica. En die logica's versterken elkaar in plaats van elkaar te corrigeren.</p>
+<p><strong>De uitvoerende laag: de logica van de regel.</strong> Dit zijn de loketten, de ziekenfondsen, de uitkeringsinstanties. Zij passen de regels toe. De regels zijn nationaal. De regels gaan ervan uit dat iemand in één land woont, in één land werkt, en in één land verzekerd is. Wie niet in die aanname past, veroorzaakt een fout. De fout wordt niet gezien als een signaal dat de regel moet worden aangepast. De fout wordt gezien als een bewijs dat de burger niet voldoet. De uitvoerende laag heeft geen bevoegdheid om de regel te veranderen. Ze heeft alleen de bevoegdheid om de regel toe te passen. En de regel is wat hij is.</p>
+<p><strong>De toezichthoudende laag: de logica van de zelfbeperking.</strong> Dit zijn de controleurs, de inspecties, de ombudsdiensten. Zij zien de fout. Maar ze hebben een goede reden om niet in te grijpen. Een toezichthouder die zijn bevoegdheid oprekt, riskeert dat zijn beslissing wordt aangevochten. De veiligste positie is altijd de smalste interpretatie van de eigen bevoegdheid. De toezichthouder grijpt dus niet in. Niet omdat hij niet wil. Omdat hij niet durft. En zijn angst is rationeel: het systeem beloont zelfbeperking en bestraft durf.</p>
+<p><strong>De democratische laag: de logica van de tijdschaal.</strong> Dit is het parlement, de ombudsman, de commissies. Zij ontvangen de klacht. Maar ze bewegen op een tijdschaal die niet compatibel is met de urgentie van de crisis. Een commissiedebat duurt maanden. Een wetswijziging duurt jaren. Een medische crisis duurt dagen. De democratische laag kan de wet veranderen, maar ze doet het niet zolang er geen politieke druk is. En er is geen politieke druk voor een probleem dat alleen grensarbeiders treft. De tijdschaal van de democratie en de tijdschaal van het lichaam zijn fundamenteel onverenigbaar.</p>
+<p><strong>De symbolische laag: de logica van de onmacht.</strong> Dit is het staatshoofd. Hij ontvangt het verzoekschrift. Hij bevestigt de ontvangst. Hij stuurt het door naar de bevoegde minister. Daarmee stopt de interventie. De symbolische laag heeft geen uitvoerende macht. Hij is een eindhalte.</p>
+<p><strong>De cirkel.</strong> Elke laag heeft een reden om niet in te grijpen. De uitvoerende laag past de regels toe, maar de regels zijn niet gebouwd voor deze situatie. De toezichthoudende laag ziet de fout, maar mag niet ingrijpen. De democratische laag kan de wet veranderen, maar doet het niet zolang er geen politieke druk is. De symbolische laag heeft geen macht. En de enige die overblijft is de rechter. Maar de rechter lost één dossier op, niet het hele systeem. En de rechter is alleen toegankelijk voor wie het zich kan veroorloven.</p>
+<p>Het systeem is niet kapot. Het werkt zoals het is ontworpen. Het is ontworpen voor mensen die binnen de lijnen passen. Wie buiten de lijnen valt, valt tussen de lijnen. En tussen de lijnen is geen vangnet. Dat is geen fout. Dat is het ontwerp.</p>
+<h3 id="de-drie-systeemwetten-achter-de-blokkade">De drie systeemwetten achter de blokkade</h3>
+<p>Wie voorbij de afzonderlijke brieven kijkt, ziet dat dit ontwerp gehoorzaamt aan drie vaste systeemwetten die zowel in de klassieke structuurleer als in de moderne systeemdynamica van Frederic Vester terugkeren:</p>
+<p><strong>1. Zo boven, zo beneden (de wet van correspondentie).</strong> Wat op het hoogste politieke en Europese niveau onopgelost wordt gelaten, herhaalt zich op exact dezelfde schaal aan het kleinste uitvoeringsloket. Omdat de Europese Unie bovenaan vrij verkeer belooft zonder een dwingende koppeling tussen nationale databanken af te dwingen, weigert het loket onderaan een formulier dat niet in het eigen nationale sjabloon past. En wat buiten in het administratieve netwerk verkaveld is in losse hokjes, dwingt binnen in het dagelijks leven de zieke burger om zijn eigen lichaam en gezin op te knippen in losse bewijsstukken per land.</p>
+<p><strong>2. De binaire valstrik (de wet van polariteit).</strong> De werkelijkheid van een grensarbeider bestaat uit gradaties en verbinding: wonen aan de ene kant van de grens, werken en premies betalen aan de andere kant, en zorg ontvangen waar de medische noodzaak ligt. Administratieve IT-systemen kennen echter geen overgangsgebied; zij werken binair met <code>1</code> (volledig binnenlands profiel) of <code>0</code> (buitenlands profiel). Zodra een dossier beide polen tegelijk raakt, slaat de schakelaar in beide landen op <code>0</code>: in België ben je 'geen inwoner', in Nederland ben je 'niet binnenlands verzekerd'.</p>
+<p><strong>3. Actie, terugkoppeling en cascade (de wet van oorzaak en ritme).</strong> In een gekoppeld netwerk (wat Vester een <em>Wirkungsgefüge</em> noemt) blijft een fout nooit op één plek liggen. Eén niet-gezet vinkje op een kritiek knooppunt (een <em>Zündknoten</em>) plant zich met een vaste cadans voort naar belastingdiensten, toeslagen, gemeenteloketten en ziekenfondsen aan beide zijden van de grens. De burger vangt die trilling telkens met vertraging op: een fout uit jaar één wordt een terugvordering in jaar twee en een geblokkeerde aanvraag in jaar drie.</p>
+<p><strong>De rode draad door alle lagen.</strong> In elke laag gebeurt hetzelfde. Een instantie ziet een probleem. De instantie stelt vast dat het probleem niet binnen haar bevoegdheid valt. De instantie verwijst naar een andere instantie. De andere instantie doet hetzelfde. En de burger wordt geacht de verbinding te zijn tussen al die instanties. De burger is de enige actor in het systeem die geen bevoegdheid heeft om iets te beslissen, maar die wel de enige actor is die het hele systeem moet laten werken.</p>
+<p>De feiten van dit mechanisme staan in Document A en Document B. De visuele netwerken en knooppunten staan in Document C. De concrete uitwerking per sociaal recht staat in Document E. Hier staat het patroon dat ze verbindt.</p>
+<h2 id="deel-iv-de-asymmetrie-tussen-fysieke-en-administratieve-grenzen">Deel IV — De asymmetrie tussen fysieke en administratieve grenzen</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p>De Europese integratie is gebouwd op de opheffing van fysieke grenzen. In 1944 ondertekenden België, Nederland en Luxemburg een douane-unie. In 1951 werd de Europese Gemeenschap voor Kolen en Staal opgericht. In 1957 volgde de Europese Economische Gemeenschap. In 1985 werd het Akkoord van Schengen ondertekend, dat de afschaffing van de binnengrenzen regelde. Het doel was de vrije verplaatsing van personen, goederen, diensten en kapitaal.</p>
+<p>In de fysieke realiteit is die doelstelling gerealiseerd. De grensposten zijn ontmanteld. De verplaatsing over de landsgrenzen verloopt zonder controle. Een burger rijdt met de auto van Nederland naar België, van België naar Frankrijk, van Frankrijk naar Duitsland, zonder te stoppen. Die openstelling heeft veertig jaar gekost, van 1944 tot 1985. Daarna was ze een feit.</p>
+<p>De administratieve realiteit is asymmetrisch gebleven. Terwijl de grens voor het menselijk lichaam is verdwenen, zijn de nationale uitvoeringssystemen nooit gefuseerd of gestandaardiseerd. Elk land behoudt zijn eigen ziekenfonds, zijn eigen belastingdienst, zijn eigen uitkeringsinstantie en zijn eigen handicapregistratie.</p>
+<p>Hier ligt de fundamentele weeffout. De Europese wetgever heeft de fysieke ruimte geopend, maar de nationale uitvoerende macht heeft de achterliggende computersystemen uitsluitend nationaal geprogrammeerd. De infrastructuur — de snelweg — is transnationaal. Het administratieve beslispunt — het loket — is strikt nationaal gebleven.</p>
+<p>De wetgevende correctie voor deze ontkoppeling vertoont een structurele vertraging. In april 2026 is via een triloog een voorlopig politiek akkoord bereikt over de herziening van Verordening 883/2004, de wet die de sociale zekerheid tussen lidstaten coördineert. In juli 2026 werd de herziene tekst formeel aangenomen. De daadwerkelijke operationele implementatie — waaronder de verschuiving van de werkloosheidsbevoegdheid naar het werkland na een aaneengesloten periode van 22 weken — is echter pas gepland voor 2030 of 2031 wegens vereiste IT-aanpassingen.</p>
+<p>De volledige wetgevingscyclus, van eerste voorstel tot inwerkingtreding, beslaat hiermee meer dan tien jaar onderhandelen en vier jaar wachten op de uitvoering. Veertien jaar voor een software-update.</p>
+<p>Ook de digitale oplossingen in dit hervormingspakket stagneren op de drempel van de datasilo. De introductie van de European Social Security Pass, gekoppeld aan de Europese digitale identiteitsportemonnee, digitaliseert de drager van de documenten. Het stelt overheden in staat de documenten snel te verifiëren, maar het dwingt geen automatische gegevensstroom af tussen de nationale systemen. Het haalt de gegevens niet actief op bij de bron. De voordeur wordt gedigitaliseerd, maar de achterdeur blijft gesloten.</p>
+<p>De macro-economische projecties van de Europese Commissie voorspellen tegen 2040 zes miljard euro aan besparingen en fraudepreventie. Deze berekening negeert de micro-economische realiteit van de tussenliggende veertien jaar. Gedurende deze latentietijd worden de kosten van het systeemfalen volledig afgewenteld op de burger: de private bank die schulden parkeert tegen zware sancties, de energieleverancier die incassobureaus inschakelt en onuitvoerbare medische keuringen eist, en de private keuringsmarkt die onhaalbare tarieven hanteert voor consulten op afstand. Al deze kosten slaan neer bij het individu, terwijl de oorzaak van de systeemstilstand bij de overheid ligt.</p>
+<p>De Benelux was ooit de proeftuin van de Europese integratie. In 1944 werd hier het experiment gestart dat later op Europese schaal zou worden herhaald. De drie landen hebben aangetoond dat open wegen mogelijk zijn. Ze hebben niet aangetoond dat open systemen mogelijk zijn.</p>
+<p>De grensarbeider is de foutmelding van een half afgewerkt ontwerp. De fysieke architectuur is voltooid. De administratieve architectuur niet.</p>
+<h2 id="deel-v-de-cijfers-en-de-schaal">Deel V — De cijfers en de schaal</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p>Het probleem is niet uniek voor deze casus. Het is de structurele weerslag van een fundamentele weeffout in de Europese integratie: een gemeenschappelijke arbeidsmarkt zonder geïntegreerde uitvoering.</p>
+<p>Binnen de Europese Unie wonen en werken circa 1,5 miljoen grensarbeiders, waarvan ruim 40.000 pendelaars tussen België en Nederland. Deze groep groeit gestaag door de uitbreiding van telewerk, internationale arbeidsmobiliteit en de demografische verwevenheid van grensregio's zoals Zeeuws-Vlaanderen en het Waasland.</p>
+<p>In deze individuele casus alleen al zijn in een tijdsbestek van 18 maanden niet minder dan <strong>62 afzonderlijke instanties en rechtspersonen</strong> betrokken geraakt: van lokale ziekenhuizen, mutualiteiten en gemeenten tot nationale uitkeringsinstituten, ministeries en het Europees Parlement. De audit documenteert meer dan 660 afzonderlijke administratieve en medische handelingen.</p>
+<p>Op Europees niveau vertaalt deze frictie zich in duizenden formele klachten: sociale zekerheid en grensoverschrijdende zorg vormen jaar na jaar de absolute koploper in het SOLVIT-netwerk (structureel meer dan 40% van alle klachten). Hoewel het EESSI-netwerk (Electronic Exchange of Social Security Information) ontworpen is om miljoenen Structured Electronic Documents (SEDs) naadloos uit te wisselen, toont de feitelijke audit aan dat de gegevensuitwisseling in de praktijk maandenlang stilvalt zonder dat één van de lidstaten ingrijpt. De bureaucratische schaal is massaal; de menselijke tol is acuut.</p>
+<h2 id="deel-vi-de-europese-dimensie">Deel VI — De Europese dimensie</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p>Het probleem is niet Belgisch-Nederlands. Het is Europees. Vier casussen tonen dat aan. Deze casussen zijn ontleend aan openbare Europese beleidsliteratuur en academisch onderzoek. Ze staan niet in Document A of Document B, want die documenten beschrijven één individuele casus. Ze staan hier omdat ze aantonen dat het mechanisme dat in die ene casus zichtbaar wordt, zich in elke Europese grensregio herhaalt.</p>
+<p><strong>Luxemburg.</strong> Luxemburg heeft de hoogste ratio grensoverschrijdende werknemers van de EU. De coördinatie van hun sociale zekerheid verloopt via de Europese verordening, maar de belasting- en sociale zekerheidsdrempels voor telewerk zijn fundamenteel niet op elkaar afgestemd. Een werknemer die tussen twee drempels thuiswerkt, bevindt zich in een juridisch niemandsland. Twee landen innen op dezelfde grondslag op basis van onverenigbare drempelberekeningen. Dit heeft jaren van bilaterale noodakkoorden vereist voordat er enige stabilisering optrad — en uitsluitend voor de belastingdimensie, niet voor de sociale zekerheidsdimensie.</p>
+<p><strong>De Øresundregio.</strong> In de regio rond de Sont pendelen dagelijks duizenden grensoverschrijdende werknemers over de grens. Zij zijn sociaal verzekerd in het werkland maar ontvangen bij werkloosheid de uitkering vanuit het woonland. De coördinatie vereist dat de werkgever een ontslagdocument levert dat het buitenlandse werkloosheidsfonds als invoerbaar erkent. In de praktijk verloopt die uitwisseling traag, zijn de documenten niet altijd in een automatisch verwerkbaar formaat, en wacht de burger in de tussentijd zonder uitkering. De regio heeft een gezamenlijk comité dat de informatiedoorstroming monitort, maar dit comité heeft geen bevoegdheid over de uitvoeringsinstanties van beide landen.</p>
+<p><strong>Zwitserland/Frankrijk.</strong> Zwitserland telt naar schatting honderdduizenden grensoverschrijdende werknemers uit Frankrijk. Telewerken deed een fundamentele spanning ontstaan: de belastingdrempel voor telewerk en de sociale zekerheidsdrempel voor telewerk lopen uit elkaar. Wie tussen beide drempels thuiswerkt, betaalt belastingen in het ene land maar valt voor sociale zekerheid potentieel onder het andere. Dit vereist gelijktijdige aansluiting bij twee stelsels, wat de Europese verordening expliciet verbiedt. De oplossing heeft een transitieakkoord, een verlenging en een formele verdragswijziging gevergd, met dagelijkse rapportageverplichtingen voor werkgevers. De administratieve last is van de staat naar de werkgever verschoven; de structurele onverenigbaarheid is niet opgelost.</p>
+<p><strong>De Oostenrijks-Oost-Europese corridor.</strong> In de corridor tussen Oostenrijk en Oost-Europese lidstaten is massale detachering van werknemers een gevestigde economische realiteit. Certificaten die bevestigen in welk land een gedetacheerde werknemer sociaal verzekerd is, worden op grote schaal frauduleus gebruikt om lage sociale bijdragen in het detacherende land te handhaven, terwijl de werknemer feitelijk permanent in het ontvangende land werkt. Het Hof van Justitie heeft bepaald dat zelfs wanneer een certificaat kennelijk frauduleus is verkregen, de ontvangende lidstaat zijn eigen wetgeving niet unilateraal mag toepassen voordat hij een dialoog heeft gevoerd met de afgevende lidstaat. Dit dialoogvereiste, bedoeld als bescherming van de werknemer, wordt in de praktijk door frauduleuze werkgevers gebruikt om de toepassing van de ontvangende wetgeving maandenlang te vertragen terwijl de werknemer formeel onbeschermd is.</p>
+<p>De conclusie uit alle vier de casussen is dezelfde: zelfs in de meest geconcentreerde grensarbeidersregio's van Europa bestaat geen geïntegreerde oplossing. Nationale noodakkoorden zijn de enige uitkomst, zonder structurele correctie.</p>
+<h2 id="deel-vii-de-architectuurfout-in-de-europese-regelgeving">Deel VII — De architectuurfout in de Europese regelgeving</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p>De Europese verordening die de sociale zekerheid tussen lidstaten coördineert (Verordening (EG) nr. 883/2004 en toepassingsverordening nr. 987/2009), bepaalt welk land de bevoegde lidstaat is. De verordening wijst één land aan als verantwoordelijk — doorgaans het werkland — maar voorziet geen automatisch en afdwingbaar vangnet voor de periodes waarin de toewijzing omstreden is, gegevensuitwisseling uitblijft, of beide landen weigeren de primaire verantwoordelijkheid te aanvaarden.</p>
+<p>De En/En-paradox — waarbij de burger formeel in het systeem van twee landen zit maar door beide als de verantwoordelijkheid van het andere wordt beschouwd — wordt door de verordening niet opgelost maar slechts omschreven. Artikel 6 verplicht tot het samentellen van verzekeringstijdvakken en het arrest-Vester (C-134/18) verbiedt dat een grensarbeider tussen twee nationale stelsels in het luchtledige valt, maar aan de basis ontbreekt een mechanisme dat een weigerende uitvoeringsinstantie binnen een harde termijn tot registratie of voorlopige uitbetaling dwingt.</p>
+<p>Het Europese bemiddelingsnetwerk (SOLVIT) fungeert als een niet-bindend controlemechanisme. Het registreert een deel van de klachten en produceert een analyse, maar heeft geen doorzettingsmacht zodra een nationale instantie volhardt of een dossier als 'complex' wordt aangemerkt. Het Europese elektronische uitwisselingssysteem voor sociale zekerheid (EESSI) biedt de digitale pijplijn, maar zolang het verzenden of inlezen van een elektronisch bericht (SED) in de praktijk niet afdwingbaar is, blijft de pijplijn leeg. Beide instrumenten zijn procedurele voorzieningen voor een probleem dat in de systeemarchitectuur zelf had moeten worden opgelost.</p>
+<p>De feiten van deze architectuurfout staan in Document B. De doorwerking op elk van de zeventien concrete sociale rechten — van ziekte-uitkering en WIA tot zorgtoeslag, invaliditeit en kinderbijslag — staat uitgewerkt in Document E.</p>
+<h2 id="deel-viii-de-twee-oplossingsroutes">Deel VIII — De twee oplossingsroutes</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p>De grensoverschrijdende burger met een chronische aandoening of erkende beperking heeft in principe twee routes om financieel te functioneren.</p>
+<p><strong>De uitkeringsroute.</strong> Arbeidsongeschiktheidsuitkering via het bevoegde land. Deze route creëert staatsafhankelijkheid en is onderhevig aan nationale politieke goodwill. De gemiddelde invaliditeitsuitkering in de EU varieert van 800 tot 1.800 euro per maand, levenslang bij permanente arbeidsongeschiktheid. De toegangsbarrière: wachttijden worden niet erkend over grenzen; procedures vereisen nationale beoordelingshistorie; het Europese uitwisselingssysteem werkt traag.</p>
+<p><strong>De fiscale autonomieroute.</strong> Toeslagen, verhoogde tegemoetkomingen en fiscale reducties in het woonland op basis van erkende beperking. Deze route kost de staat minder, bevordert economische participatie en behoudt de autonomie van de burger. De toegangsbarrière is identiek: de medische status wordt niet erkend over grenzen, de administratieve categorie van het ene land vertaalt niet naar het andere, en de systemen die de rechten zouden moeten activeren communiceren niet met elkaar.</p>
+<p>De fiscale autonomieroute is op de meeste beleidsassen gunstiger dan de uitkeringsroute: ze kost de staat minder, bevordert economische participatie, behoudt burgerautonomie en sluit aan bij de arbeidsmobiliteitsdoelstellingen van de EU. Ze is desondanks even ontoegankelijk als de uitkeringsroute, zolang de medische statusvertaling en de administratieve statuserkenning over grenzen ontbreken. De barrière is niet financieel maar architecturaal.</p>
+<p>Er is evenwel een dimensie die de eerdere analyse relativeert: in dit dossier is de fiscale autonomieroute in België via een handmatige bypass wél haalbaar gebleken. Een rechtstreeks medisch attest van de huisarts bij de BNI-aangifte, buiten de KSZ en buiten DG HAN om, activeert de verhoogde belastingvrije som en resulteert bij indiening van de aangifte in een berekend saldo van € 2.669,97 in het voordeel van het gezin (in afwachting van het definitieve aanslagbiljet). Dezelfde route bleef via de geautomatiseerde overheidsketens (8 versus 9 punten bij DG HAN, RIV-blokkade in Nederland) volledig potdicht. Het onderscheid is leerzaam: de fiscale route is niet onmogelijk, maar de burger en zijn eerstelijnsarts moeten de digitale overheidsketen handmatig omzeilen om hem te laten werken. En dat heeft een paradoxaal neveneffect: een hoger netto gezinsinkomen kan de inkomensafhankelijke toeslagen bij Parentia en SVB juist bedreigen, doordat de automatische herberekening op het fictieve verdienvermogen terugslaat.</p>
+<p>Daarnaast speelt een factor die in de vergelijking tussen beide routes vaak over het hoofd wordt gezien: de politieke economie van de financiering. De Europese Unie heeft geen eigen socialezekerheidsstelsel. Sociale zekerheid is een nationale bevoegdheid. Wat de EU wel doet, is via het Europees Sociaal Fonds Plus programma's co-financieren die gericht zijn op arbeidsmarktintegratie en sociale inclusie. Deze middelen gaan niet naar de uitkering zelf, maar naar de ondersteuning eromheen: opleidingen, begeleiding naar werk, en projecten die maatschappelijke participatie vergroten.</p>
+<p>Uitkeringen zijn in de Europese Unie grotendeels contributioneel gefinancierd: gemiddeld 64 procent van de werkloosheidsuitkeringen komt uit sociale premies, niet uit belastingen. Fiscale voordelen, zoals belastingverminderingen voor personen met een handicap, komen daarentegen vrijwel volledig uit de nationale algemene middelen. De EU heeft geen instrument om fiscale uitgaven van lidstaten te co-financieren.</p>
+<p>Dit creëert een financieringsasymmetrie. Voor uitkeringsgerelateerde programma's kan een lidstaat medefinanciering van de EU aanvragen. Voor fiscale voordelen niet. Lidstaten hebben daardoor een grotere financiële prikkel om de uitkeringsroute te versterken dan de fiscale route, ongeacht welke route voor de burger gunstiger is.</p>
+<p>De fiscale route kost de staat minder, maar de staat ontvangt er geen Europese co-financiering voor. De uitkeringsroute kost de staat meer, maar een deel van de ondersteunende kosten kan worden afgedekt met Europese middelen. De politieke economie van de financiering beïnvloedt daarmee de beleidskeuze, los van de vraag welke route voor de burger het meest effectief is.</p>
+<h2 id="deel-ix-de-drie-infrastructurele-oplossingen">Deel IX — De drie infrastructurele oplossingen</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p>Drie concrete bouwstenen corrigeren de architectuurfouten direct. Ze kunnen afzonderlijk worden ingevoerd, maar bereiken hun volle effect in combinatie.</p>
+<p><strong>Bouwsteen 1 — Het inschrijvingsmoment als synchronisatiepunt.</strong> Wanneer een EU-burger zich officieel uitschrijft in land A en inschrijft in land B, activeert dat één geautoriseerde digitale import van de relevante administratieve data: loopbaanhistoriek, erkende medische statussen, lopende rechten en gezinssituatie. De technische infrastructuur bestaat: het Europese systeem voor digitale identificatie biedt de grondslag, de nationale bevolkingsregisters zijn de triggerpunten, en het Europese uitwisselingssysteem voor sociale zekerheid biedt de capaciteit. Wat ontbreekt is het politieke besluit dat de inschrijvingshandeling de juridische trigger is voor die synchronisatie, en de verplichting voor het uitzendende land om de data te leveren binnen een vastgestelde termijn.</p>
+<p><strong>Bouwsteen 2 — Het Europees Medisch Statusdocument.</strong> Een gestandaardiseerd digitaal document dat de functionele status van een burger over grenzen leesbaar maakt. Het registreert niet de diagnose — de ziekte — maar de functionele beperking: wat kan de persoon wel en niet, welk percentage arbeidsbeperking is erkend, welk land heeft de erkenning formeel vastgesteld en op welke datum. De grondslag is de International Classification of Functioning, Disability and Health van de Wereldgezondheidsorganisatie, die een universeel taalraamwerk biedt dat door 29 Europese landen al wordt gebruikt in de revalidatiegeneeskunde en de gezondheidszorgstatistiek. Elke nationale instantie publiceert een vertaalsleutel: een gepubliceerde mapping van internationale scores naar haar eigen administratieve categorieën. Wanneer een burger met een statusdocument een aanvraag doet bij een buitenlandse instantie, vertaalt het systeem automatisch zijn score naar de nationale categorie. De burger wordt één keer beoordeeld. De vertaling is automatisch. Geen herkeuring nodig tenzij de medische status wijzigt.</p>
+<p><strong>Bouwsteen 3 — De automatische fiscale route-activering.</strong> Wanneer het statusdocument een erkende beperking registreert én het inschrijvingsdocument de grensoverschrijdende situatie van de burger bevestigt, activeert het systeem automatisch de fiscale instrumenten die beschikbaar zijn in het woonland. Niet via een handmatige aanvraag, maar via een automatische beslissingsregel gebaseerd op leesbare statusdata. De beslissingslogica werkt als volgt: de score plus de inschrijvingsstatus worden vergeleken met een nationaal gepubliceerde activeringstabel. In Nederland activeert dit automatisch: aanpassing toetsingsinkomen voor toeslagberekening, verhoogde tegemoetkoming voor erkende handicap, en een berekening van het recht op zorgtoeslag, huurtoeslag en kindgebonden budget op basis van het gecorrigeerde inkomen inclusief buitenlandse componenten. In België activeert dit automatisch: de fiscale aftrek voor personen met een handicap, het verhoogde bestaansminimum bij erkende arbeidsongeschiktheid, en een kennisgeving aan de bevoegde dienst dat de burger recht kan hebben op aanvullende tegemoetkomingen.</p>
+<h2 id="deel-x-de-profiteursvraag">Deel X — De profiteursvraag</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p>De implementatie van een verbonden systeem roept vragen op omtrent frauderesistentie. Een analyse toont dat het huidige systeem van onverbonden silo's misbruik niet voorkomt, maar uitsluitend de detectie ervan bemoeilijkt. Dubbele uitkeringen in twee landen zijn vandaag technisch mogelijk omdat land A niet weet wat land B toekent, en vice versa. Het Europese uitwisselingssysteem is bedoeld om dit te ondervangen, maar wordt niet afdwingbaar gebruikt. Een verbonden systeem met leesbare statusdata is moeilijker te misbruiken dan een systeem van silo's, om drie concrete redenen.</p>
+<p>Ten eerste: een internationaal statusdocument is gebaseerd op scores die zijn afgeleid van gevalideerde medische beoordelingen door erkende instanties. Simuleren van een score vereist actieve medewerking van een beoordelend orgaan, wat fraude verschuift van de burger naar de instelling — en daarmee detecteerbaar en sanctioneerbaar maakt.</p>
+<p>Ten tweede: de inschrijvingsdata zijn gekoppeld aan officiële bevolkingsregisters en zijn niet manipuleerbaar door de burger zelf; een valse inschrijving vereist actieve medewerking van de registrerende gemeente.</p>
+<p>Ten derde: de automatische fiscale activering vergelijkt statusdata met de activeringstabel van het woonland; elke activering is gelogd en is voor beide landen raadpleegbaar, waardoor dubbele activering onmiddellijk detecteerbaar is.</p>
+<p>Een transparant, verbonden systeem is structureel frauderesistenter dan een systeem van onverbonden nationale silo's. Vereenvoudiging voor de burger en bescherming tegen misbruik sluiten elkaar niet uit — zij versterken elkaar.</p>
+<h2 id="deel-xi-de-twee-wegen-snelheid-en-reikwijdte">Deel XI — De twee wegen: snelheid en reikwijdte</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p>Grensoverschrijdende burgers die problemen ondervinden met de coördinatie van sociale zekerheid hebben in de praktijk twee wegen: de juridische weg en de structurele weg.</p>
+<p><strong>De juridische weg — individueel, traag, zonder systeemeffect.</strong> Het informele bemiddelingsnetwerk bereikt per jaar enkele duizenden burgers. Een nationale rechtbankprocedure duurt 12 tot 36 maanden. Een prejudiciële procedure bij het Hof van Justitie duurt 16 tot 22 maanden. Elk arrest geldt voor één individuele burger. Het systeem verandert niet voor de overige miljoenen grensoverschrijdende burgers die hetzelfde probleem hebben maar geen procedure starten.</p>
+<p><strong>De structurele weg — collectief, eenmalig, universeel.</strong> Een gerichte aanpassing van de Europese coördinatieverordening is van kracht voor alle grensoverschrijdende werknemers op de dag van inwerkingtreding. Een internationaal statusdocument, eenmaal ingevoerd, elimineert de herkeuring voor elke nieuwe burger die grensoverschrijdend gaat, permanent en automatisch. De automatische fiscale route-activering werkt voor elke burger die een statusdocument heeft en in een woonland ingeschreven staat, zonder dat hij zijn recht hoeft te kennen, te claimen of te documenteren.</p>
+<p>Een Europees wetgevingstraject voor aanpassing van de coördinatieverordening duurt gemiddeld vier tot zes jaar. Als een hervormingspakket in 2030 in werking treedt, bereikt het in zijn eerste volledige jaar meer burgers dan de juridische weg in dertig jaar. En elk jaar daarna opnieuw, automatisch, voor elke nieuwe burger die de grens oversteekt.</p>
+<p>De juridische weg lost individueel op en verandert structureel niets. De structurele weg verandert het systeem voor iedereen tegelijk. Elk jaar vertraging in de structurele weg kost tienduizenden burgers toegang tot rechten die zij wettelijk al hebben.</p>
+<h2 id="deel-xii-de-avg-stresstest-en-het-eessi-spook-van-2030">Deel XII — De AVG-stresstest en het EESSI-spook van 2030</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p class="subtitel">De wet die niet voor iedereen hetzelfde leest: hoe zestien instanties reageren wanneer de burger om de logboeken vraagt.</p>
+<h4>1. Inleiding — Van passief slachtoffer naar actieve systeemauditor (De gecoördineerde operatie van september 2026)</h4>
+<p>Op 1 en 2 september 2026 voltrok zich een kantelpunt in dit dossier. Na achttien maanden van ambtelijke cirkelredeneringen, waarin Belgische en Nederlandse instanties elkaar onophoudelijk de zwartepiet toespeelden en beweerden dat zij "moesten wachten op gegevens uit het buurland", besloten de aanvrager en zijn partner het initiatief definitief over te nemen. Het passief afwachten van niet-nagekomen toezeggingen werd vervangen door een gecoördineerde forensische stresstest van het gehele grensoverschrijdende overheidsapparaat. Bij zestien betrokken overheids-, uitvoerings- en toezichtsinstanties in België en Nederland werden gelijktijdig formele inzageverzoeken ingediend op grond van artikel 15 van de Algemene Verordening Gegevensbescherming (AVG / GDPR).</p>
+<p>Het doel van deze grootschalige audit was niet het opvragen van reeds bekende besluitbrieven of dossierstukken die allang in de fysieke ordners zaten. Het verzoek richtte zich specifiek op de internationale achterkamer van de overheid: de technische audit-trails, de communicatielogboeken en de transmissiestatus van het Europese EESSI-netwerk (Electronic Exchange of Social Security Information). Welke Structured Electronic Documents (SED's) en bijbehorende Business Use Cases (BUC's) waren er tussen 11 april 2025 en september 2026 feitelijk verzonden en ontvangen? Welke geautomatiseerde gegevensstromen liepen er via de Europese DAC-richtlijn voor fiscale gegevens en tussen de bevolkingsregisters (het Belgische Rijksregister en de Nederlandse Basisregistratie Personen)? En bovenal: spraken de systemen de waarheid wanneer ambtenaren stelden dat de vertraging "aan de overkant van de grens" lag?</p>
+<p>Deze stresstest staat in een directe en urgente historische context. In juli 2026 bereikten de Europese ministers een akkoord over de herziening van de Europese coördinatieverordeningen (Verordening 883/2004 en 987/2009), met een voorziene inwerkingtreding rond 2030 of 2031. De Europese Commissie houdt burgers en parlementen voor dat de toekomstige European Social Security Pass (ESSPASS) alle fricties zal wegnemen door een naadloze, digitale snelweg te creëren. De resultaten van deze AVG-audit leggen echter een ontluisterende waarheid bloot: het spook van 2030 maskeert een hedendaags executief faillissement. De digitale kabels en servers tussen België en Nederland liggen er immers al jaren. Het probleem van de grensarbeider is geen gebrek aan technologie, maar het structurele verzuim van nationale instanties om op de verzendknop te drukken — gevolgd door een krampachtige reflex om de logboeken hermetisch af te sluiten zodra de burger om het bewijs van die stilstand vraagt.</p>
+<h4>2. Patroon 1 — Het medische controlespoor versus het bestuurlijke verantwoordingsspoor (Vitaz en Gemeente Waasmunster)</h4>
+<p>Dat technische complexiteit of privacybescherming niet de werkelijke redenen zijn voor administratieve vertraging, wordt onomstotelijk bewezen door twee instanties die buiten het institutionele conflictspeelveld stonden: algemeen ziekenhuis Vitaz in Sint-Niklaas en de voormalige Belgische woongemeente Waasmunster.</p>
+<p>Toen de aanvrager op 7 maart 2026, na zijn overstap naar de gespecialiseerde diabetische voetkliniek van het UZ Gent, bij de ombudsdienst van Vitaz een AVG-verzoek indiende om zijn volledige klinische dossier op te vragen, voltrok de gegevensverstrekking zich voorbeeldig. Zonder formulierdwang, zonder legitimatie-obstakels en zonder administratieve vertraging ontving de aanvrager binnen drie dagen (op 10 maart 2026) een beveiligde digitale downloadlink. Het volledige medische dossier — inclusief operatieverslagen van de amputaties, specialistische rapporten van oogheelkunde en nefrologie, anesthesieverslagen en laboratoriumwaarden — werd direct en transparant overhandigd. Ziekenhuis Vitaz had niets te verbergen: haar gegevens weerspiegelden immers de zuivere, fysieke realiteit van het geteisterde lichaam.</p>
+<p>Hetzelfde patroon tekende zich af bij de Gemeente Waasmunster. Op het verzoek van 1 september 2026 om de historische bevolkings- en uitschrijvingslogs uit 2014 te verstrekken, antwoordde de gemeente op 1 oktober 2026 met een helder en openhartig bestuursbesluit. De gemeente legde transparant uit dat de technische servertransmissies na twaalf jaar volgens de wettelijke bewaartermijnen waren vernietigd, maar bevestigde direct dat de uitschrijving wegens emigratie naar Nederland destijds correct in het Rijksregister was doorgevoerd en nog altijd ongewijzigd zichtbaar was.</p>
+<p>Het contrast met het sociale-zekerheidsspoor is fundamenteel en veelzeggend. Waar de waarheid de instantie niet kan belasten omdat zij louter een medische of historische werkelijkheid registreert, werkt de AVG vlekkeloos, digitaal en snel. Maar op het moment dat een AVG-verzoek raakt aan de beleidsmatige en financiële verantwoordelijkheid van uitkeringsinstanties — waar logbestanden zwart-op-wit moeten aantonen wie heeft stilgezeten, wie termijnen heeft overschreden of wie Europese verordeningen heeft genegeerd — verandert dezelfde overheid in een gesloten bastion dat alle registers opentrekt om inzage te verhinderen.</p>
+<h4>3. Patroon 2 — De analoge slotgracht en de verdwijntruc (UWV, SVB, FOD IBZ, Parentia/Partena en Gemeente Hulst)</h4>
+<p>Zodra de gecoördineerde AVG-verzoeken op 1 en 2 september 2026 de bureaus van de sociale-zekerheids- en belastinginstanties bereikten, trad bij vijf afzonderlijke organisaties een identiek verdedigingsmechanisme in werking: het opwerpen van kunstmatige, analoge drempels om de burger te ontmoedigen en de wettelijke beslistermijn van artikel 12 lid 3 AVG te traineren, in flagrante strijd met artikel 12 lid 2 AVG en de bindende EDPB-richtsnoeren 01/2022 inzake de uitoefening van het inzagerecht.</p>
+<p><strong>UWV (Nederland) — De analoge postzegel voor digitale serverlogs:</strong> Hoewel de aanvrager zijn verzoek via het officiële webportaal MijnUWV indiende — ingelogd met zijn persoonlijke DigiD op het hoogste betrouwbaarheidsniveau — weigerde het UWV het digitale verzoek in behandeling te nemen. De uitvoeringsinstantie eiste dat de aanvrager voor het opvragen van <em>elektronische</em> EESSI-serverlogs een papieren brief met een postzegel van € 1,40 en een fysieke fotokopie van zijn identiteitsbewijs naar een postbus in Almere stuurde. Een instantie die miljarden euro's aan digitalisering besteedt, dwingt een slechtziende burger met amputaties terug naar de postkoets om digitale transmissiedata te maskeren.</p>
+<p><strong>Sociale Verzekeringsbank (SVB, Nederland) — De formulierdwang:</strong> Toen de partner van de aanvrager op 1 september 2026 per e-mail een formeel AVG-verzoek indiende bij de directie van de SVB, weigerde de SVB op 4 september 2026 om dit rechtsgeldige verzoek te registreren. In plaats van het verzoek door te geleiden naar de Functionaris voor Gegevensbescherming, eiste de SVB dat de burger verplicht een specifiek online formulier met voorgeprogrammeerde keuzemenu's invulde. Pas wanneer de burger zich in het ambtelijke keurslijf perste, mocht de wettelijke termijnklok beginnen te lopen.</p>
+<p><strong>FOD Binnenlandse Zaken (België) — De dichte firewall:</strong> Toen de aanvrager op 2 oktober 2026 de federale Functionaris voor Gegevensbescherming van Binnenlandse Zaken in gebreke wilde stellen wegens het overschrijden van de wettelijke maandtermijn, stuitten de e-mails aan zowel <code>dpo@ibz.fgov.be</code> als <code>dpo@ibz.be</code> op een harde serverfout: <code>550 5.4.1 Access denied</code>. De officiële mailbox van de federale privacytoezichthouder bleek voor externe burgers hermetisch afgegrendeld door een overheidsfirewall. De ingebrekestelling kon pas na intensief speurwerk via een generiek webformulier naar binnen worden geforceerd.</p>
+<p><strong>Parentia / Partena (België) — De administratieve verdwijntruc en het verzet:</strong> Het Vlaamse kinderbijslagfonds Parentia koos aanvankelijk voor een opmerkelijke methode. Op 14 september 2026 stuurde een dossierbehandelaar van het lokale kantoor Parentia Hasselt een e-mail naar de partner van de aanvrager: <em>"Kan je bevestigen dat wij uw e-mail van 01/09/2026, waarin om het bezorgen van bewijsstukken werd verzocht, als nietig mogen beschouwen gezien de lopende behandeling van het onderzoek naar de sociale toeslag?"</em> Een formeel verzoek onder Europees grondrecht werd botweg weggezet als een administratieve rimpel die men hoopte te laten verdwijnen. Nadat de aanvrager op 15 september met scherpe juridische argumenten protesteerde en eiste het AVG-verzoek los van de materiële klacht te behandelen, greep de koepelorganisatie in: op 17 september bevestigde Parentia dat het verzoek rechtsgeldig was, waarna Partena Corporate Compliance (ref. <code>12609 00112</code>) op 1 oktober 2026 wél een met het INSZ beveiligd digitaal archief leverde met de EESSI-uitwisseling (SED's F001 en F002) tussen Parentia en de Nederlandse SVB. Daarmee werd de grensoverschrijdende uitwisseling bevestigd, al bleef de achterliggende KSZ- en inkomensblokkade van het lokale kantoor in stand.</p>
+<p><strong>Gemeente Hulst (Nederland) — Het bureaucratische theaterstuk:</strong> Het dieptepunt van deze vertragingstactieken vond plaats bij de Gemeente Hulst. Hoewel de gemeente de aanvrager al meer dan een jaar intensief kende via lopende Wmo-aanvragen, bezwaarprocedures rond de gehandicaptenparkeerkaart en bijzondere bijstand, en zij al lang beschikte over geverifieerde kopieën van zijn paspoort, stuurde de gemeente op 1 oktober 2026 — exact op dag 29 van de 30-dagentermijn — een aangetekend opschortingsbesluit (kenmerk <code>1086452</code>). De gemeente beweerde plotseling dat zij de identiteit van de aanvrager <em>"formeel nog niet voldoende kon vaststellen"</em>. De immobiele en slechtziende burger kreeg drie onmogelijke opties voorgeschoteld: fysiek verschijnen aan de publieksbalie, met zijn paspoort voor een Microsoft Teams-webcam gaan zitten, of opnieuw inloggen met DigiD via een specifieke gemeentelink. De aanvrager koos voor de laatste optie en logde exact 40 minuten later in met DigiD (zaaknummer <code>1101271</code>). Daarmee viel het ambtelijke masker direct af: de volgende ochtend, op 2 oktober om 08:25 uur, verzond de gemeente via vijf haperende SmartLockr-wachtwoordmails een omvangrijk besluit van 47 pagina's. Het besluit lag al die tijd kant-en-klaar op de plank; de identiteitsverificatie werd louter als procedurele vertragingsvalstrik ingezet.</p>
+<h4>4. Patroon 3 — De papieren rookbom, de zwarte stift en de paniek achter de stropdas (CM en SVB)</h4>
+<p>Waar overheden niet langer konden ontkennen dat zij gegevens moesten verstrekken, gebruikten zij de vorm van de verstrekking als wapen om de inhoudelijke realiteit te verhullen. Twee dossiers springen eruit als schoolvoorbeelden van institutionele obstructie: de Christelijke Mutualiteit in België en de Sociale Verzekeringsbank in Nederland.</p>
+<p><strong>De Christelijke Mutualiteit (CM — DPO-Office / Adjunct-DPO):</strong> Na het initiële verzoek van 1 september en een formele aangetekende ingebrekestelling op 19/21 september (Track &amp; Trace <code>RF000501165NL</code>), waarin specifiek werd gevraagd naar de EESSI-transmissielogs, de betekenis van de geheimzinnige sjablooncode <code>BD - BR100_MFN/AB2001 (11.03.0012) - 000002 - 20-05-2026 - Conform - 810915 199 48 - v4</code>, de grondslag voor de 100%-afwijzing in plaats van de statutaire 10%-sanctieregel, en de exacte tijdstempels waarop de adviserend arts op 20 mei 2026 de UZ Gent-verslagen had geraadpleegd, reageerde het ziekenfonds op 29 september met een klassieke papieren rookbom. De CM dumpte een ongestructureerd PDF-bestand van 294 pagina's (<code>Recht_van_inzage_CM.pdf</code>) over de schutting — overigens zonder wachtwoord, dat pas laat op de avond na herhaald aandringen werd nagezonden.</p>
+<p>Tussen deze honderden pagina's leverde de CM echter onbedoeld het ultieme bewijs van haar eigen systeemfalen. In de bijlage <code>20250622_S072.pdf</code> werd zichtbaar dat na de geautomatiseerde DIMONA-indiensttreding van de aanvrager op 10 maart 2025, het ziekenfonds het dossier ruim drie maanden op de plank had laten liggen. Terwijl de computersystemen van de CM op 21 mei en 5 juni 2025 automatische weigeringen wegens "geen hoedanigheid als gerechtigde" uitbraakten, werd het verplichte Europese S072-signaal (bewijs van zorgverzekering) pas op 22 juni 2025 naar Nederland verstuurd. Toen de aanvrager het DPO-Office op 29 september met deze feiten en de onafhankelijke controle van toezichthouder RIZIV confronteerde, sloeg bij Adjunct-DPO Yannick Van Leeuwen op 30 september de paniek toe. In een verhit antwoord plaatste hij de woorden "eis" en "vraag" denigrerend tussen aanhalingstekens en formuleerde hij vier stellingen die juridisch volstrekt onhoudbaar zijn onder de AVG en het arrest <em>Pankki S</em> (HvJ EU C-579/21):</p>
+<ul>
+<li>Hij beweerde dat het <em>ontbreken</em> van verplichte EESSI-berichten "per definitie geen persoonsgegeven" kan zijn;</li>
+<li>Hij stelde dat in geautomatiseerde stuurcodes waarin het rijksregisternummer van de burger is verwerkt, alleen het nummer zelf een persoonsgegeven is en de rest van de programmacode niet;</li>
+<li>Hij weigerde de toegangslogs van de adviserend arts op 20 mei 2026 te verstrekken omdat dit <em>"een potentiële invloed kan hebben op de integriteit van ons informatiesysteem"</em>;</li>
+<li>En voor de rectificatie van de foutieve arbeidsongeschiktheidsstatus in de Kruispuntbank (artikel 16 AVG) wees het DPO-Office elke verantwoordelijkheid af en verwees het de burger doodleuk terug naar de lokale balie die hem al achttien maanden negeerde.</li>
+</ul>
+<p><strong>De Sociale Verzekeringsbank (SVB — Bureaucratische schizofrenie en 142 pagina's gelakt papier):</strong> De SVB vertoonde in dit audit-traject een fascinerende gespleten persoonlijkheid. Aan de materiële kant was de SVB de enige instantie in Nederland die haar wettelijke zorgplicht serieus nam: toen de gezinsbijslagaanvraag op naam van de werkende moeder op 31 maart 2026 dreigde vast te lopen, adviseerde de SVB eigener beweging om de aanvraag op naam van de niet-werkende vader te stellen, kende zij op 20 april 2026 met terugwerkende kracht de aanvullende kinderbijslag toe (€ 685,82) en deblokkeerde zij zo het Kindgebonden Budget. Maar zodra dezelfde burger via de AVG vroeg om de digitale logboeken van het EESSI-netwerk, schoot dezelfde SVB in een krampachtige defensieve reflex.</p>
+<p>Op 24 oktober 2026 (besluit verzonden per post op 27 oktober, kenmerk <code>VZ 6825169-0</code>) leverde de SVB een pakket af dat symbool staat voor de bureaucratische waanzin: <strong>142 afgedrukte pagina's</strong> aan elektronische SED-berichten per fysieke postbode. Pagina na pagina was onleesbaar gemaakt met dikke zwarte lakbalken over de namen, geboortedata en identificatienummers van de eigen echtgenote, het eigen kind en behandelende artsen, onder het absurde voorwendsel van "de bescherming van de privacy van derden". De SVB motiveerde haar weigeringen met de openhartige bekentenis dat gegevens worden achtergehouden <em>"als dit de belangen van de SVB schaadt of als dit de controle en het toezicht door de SVB belemmert"</em>. En op pagina 1 trok de SVB definitief de stekker uit de Europese digitale illusie met de historische bekentenis: <em>"2. logbestanden, transmissiestatus en datumstempels van de gerelateerde BUC's - deze informatie hebben wij niet tot onze beschikking."</em> De overheid levert de wagons op papier, maar het logboek van de locomotief is spoorloos.</p>
+<h4>5. Patroon 4 — Het Pontius Pilatus-effect en de onbedoelde kroongetuigen (RIZIV, RVA, FOD SZ, SFPD, CZ, FOD IBZ en RvIG)</h4>
+<p>Waar individuele instanties weigerden verantwoordelijkheid te nemen, leverden zij door hun collectieve ontkenningen gezamenlijk het sluitende bewijs van de institutionele stilstand. De reacties van de overige zeven instanties vormen het forensische fundament van deze audit:</p>
+<p><strong>RIZIV (29 september 2026) — De toezichthouder die de stilstand bevestigt:</strong> De Functionaris voor Gegevensbescherming van het Rijksinstituut voor Ziekte- en Invaliditeitsverzekering (RIZIV) voerde een onafhankelijke audit uit op het Belgische nationale EESSI-knooppunt. Zijn schriftelijke bevinding was vernietigend: in de afgelopen zes maanden was er onder het INSZ van de aanvrager slechts één enkele EESSI-uitwisseling geregistreerd (het gezinsbijslagverkeer tussen Parentia en de SVB) en <strong>exact nul elektronische berichten tussen de CM en CZ of het UWV</strong>. Het ziekenfonds had in zes maanden tijd geen enkel digitaal signaal over de ziekte of invaliditeit naar Nederland gestuurd. Toen de aanvrager dezelfde dag vroeg hoe het RIZIV als toezichthouder ging optreden tegen dit plichtsverzuim onder artikel 76 van Verordening 883/2004, viel het RIZIV prompt stil en werd er niet meer geantwoord.</p>
+<p><strong>RVA (29 september 2026) — "Wij zijn enkel zender":</strong> DPO Martin Senechal van de Rijksdienst voor Arbeidsvoorziening (RVA) bevestigde per officieel besluit dat er met het Nederlandse UWV <strong>geen enkele gegevensuitwisseling via EESSI</strong> heeft plaatsgevonden en dat de RVA <strong>geen enkele informatievraag van het UWV</strong> heeft ontvangen. De RVA benadrukte dat zij op jaarbasis honderdduizenden attesten via EESSI verstuurt, maar stelde dat zij op grond van de privacywetgeving nooit uit eigen beweging gegevens naar Nederland mag sturen zolang het UWV geen formele koppeling legt tussen het Belgische INSZ en het Nederlandse BSN. De RVA waste haar handen in onschuld: het UWV vraagt niets, dus zendt Brussel niets.</p>
+<p><strong>FOD Sociale Zekerheid — DG Personen met een Handicap (30 september en 12 oktober 2026):</strong> DPO John Van Damme zorgde voor een dubbele ontmaskering. Op 30 september leverde hij aanvankelijk slechts de door de burger zelf ingezonden documenten, met de verbijsterende mededeling dat de Belgische federale dienst voor gehandicapten <strong>helemaal geen gebruikmaakt van het Europese EESSI-systeem</strong> (<em>"gezien het geringe aantal aanvragen uit de EER-zone"</em>). Een federale overheidsdienst die weigert aan te sluiten op de Europese digitale infrastructuur. Na een scherpe ingebrekestelling met verwijzing naar het <em>Pankki S</em>-arrest leverde de DPO op 12 oktober alsnog de diepe milliseconde-systeemlogs van het MyHandicap-portaal. Daaruit bleek dat de aanvrager bij zijn drie digitale hulpaanvragen (26 juli, 30 september en 4 oktober 2025) telkens binnen 0,1 seconde volautomatisch door de Kruispuntbank-koppeling werd buitengegooid met foutcode <code>5124;NNATSTR : Persoon heeft geen domicilieadres in België</code>. De computer discrimineerde op woonplaats nog vóór een menselijke ambtenaar het dossier had gezien.</p>
+<p><strong>Federale Pensioendienst (SFPD, 2 oktober 2026):</strong> Pas 31 minuten nadat een formele ingebrekestelling met gekwalificeerde Belgische eID-handtekening werd binnengeschoten, reageerde DPO Ivo Tuytens. Zijn conclusie was even kort als veelzeggend: in de systemen van de pensioendienst bevindt zich <strong>geen enkel EESSI-gegeven</strong>. De burger moest zijn loopbaangegevens zelf maar opzoeken op het portaal <code>mypension.be</code>: <em>"Mijns inziens zou U best eerst contact opnemen met het buitenlands organisme of er wel iets wordt verstuurd naar de SFPD."</em></p>
+<p><strong>Zorgverzekeraar CZ (6 oktober 2026):</strong> Manager Klantenservice L. Bruitsman ontkende in een formeel schrijven iedere analoge drempel (<em>"Wij herkennen ons niet in deze beschrijving"</em>) en weigerde categorisch om inzage te geven in de voorbereiding op de herziene Verordening 883/2004 (<em>"Uiteraard mag u ervan uitgaan dat CZ uitvoering geeft aan de op haar rustende wettelijke verplichtingen"</em>). Bovendien weigerde CZ om afschriften van het S072-berichtenverkeer te verstrekken en verwees zij de burger door naar het CAK — terwijl CZ als verdragspolisuitvoerder zélf de exclusieve partij is die de S072-formulieren met de Belgische CM uitwisselt.</p>
+<p><strong>FOD Binnenlandse Zaken (7 oktober 2026) en RvIG Nederland (15 oktober 2026):</strong> De bevolkingsregisters legden de ultieme systeemfout bloot. FOD IBZ leverde op 7 oktober een voorbeeldig en gedetailleerd Excel-logboek (<code>2026_115_logs.xlsx</code>) van alle externe bevragingen op het Belgische Rijksregister. Hieruit werd zichtbaar dat de Kruispuntbank van de Sociale Zekerheid (KSZ) fungeert als een ondoorzichtige proxy: individuele fondsen bevragen het Rijksregister onder de vlag van de KSZ, waardoor niet te herleiden is wie welke mutatie heeft verricht. Samen met het formele besluit van de Rijksdienst voor Identiteitsgegevens (RvIG, kenmerk <code>c26092182</code>) en het BRP-dossier van Hulst werd het structurele vacuüm bewezen: bij een grensoverschrijdende verhuizing bestaat er <strong>nul geautomatiseerde gegevenskoppeling tussen het Belgische Rijksregister en de Nederlandse BRP</strong>. Terwijl binnen Nederland 23 instanties (waaronder de Belastingdienst, het CJIB, het BKR en gerechtsdeurwaarders via de SNG) volautomatisch op het BSN zijn aangesloten om de burger te volgen en te beboeten, stopt de gegevensuitwisseling voor sociale bescherming exact bij de grenspaal.</p>
+<h4>6. Overzichtstabel van de zestien aangeschreven instanties (Stand 26 oktober 2026)</h4>
+<p>Onderstaande tabel toont de integrale stand van zaken van de gecoördineerde AVG-inzageoperatie per 26 oktober 2026. De zestien instanties zijn gerangschikt naar land en categorie.</p>
+<table style="width:100%; table-layout:fixed; font-size:9.5pt;">
+<thead>
+<tr>
+<th style="width:23%">Instantie &amp; Land</th>
+<th style="width:20%">Verzoek &amp; Reactie</th>
+<th style="width:28%">Vastgesteld gedragspatroon</th>
+<th style="width:29%">Status &amp; Forensisch bewijs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Ziekenhuis Vitaz</strong> (BE)</td>
+<td>Verzoek: 07-03-2026<br/>Besluit: 10-03-2026</td>
+<td>Wrijvingsloze medische transparantie</td>
+<td><span class="status-g">Volledig geleverd</span><br/>Digitaal medisch dossier binnen 3 dagen verstrekt.</td>
+</tr>
+<tr>
+<td><strong>2. Gemeente Waasmunster</strong> (BE)</td>
+<td>Verzoek: 01-09-2026<br/>Besluit: 01-10-2026</td>
+<td>Transparante historische verantwoording</td>
+<td><span class="status-g">Volledig geleverd</span><br/>Rijksregisterhistorie (emigratie 2014) bevestigd.</td>
+</tr>
+<tr>
+<td><strong>3. FOD Binnenlandse Zaken</strong> (BE)</td>
+<td>Verzoek: 02-09-2026<br/>Besluit: 07-10-2026</td>
+<td>Firewall-obstructie; daarna openheid</td>
+<td><span class="status-g">Volledig geleverd</span><br/>Excel-logboek <code>2026_115_logs.xlsx</code>; bewijst 0 koppeling BRP.</td>
+</tr>
+<tr>
+<td><strong>4. Parentia / Partena</strong> (BE)</td>
+<td>Verzoek: 01-09-2026<br/>Besluit: 01-10-2026</td>
+<td>Nietig-truc lokaal kantoor; EESSI-levering door Partena Compliance</td>
+<td><span class="status-o">Na verzet geleverd (01-10)</span><br/>Lokale nietig-truc verijdeld; EESSI-stroom met SVB bevestigd.</td>
+</tr>
+<tr>
+<td><strong>5. Christelijke Mutualiteit (CM)</strong> (BE)</td>
+<td>Verzoek: 01-09-2026<br/>Besluit: 29/30-09-2026</td>
+<td>Papieren rookbom &amp; afwijzing technische logs</td>
+<td><span class="status-r">Geweigerd / Inbreuk AVG</span><br/>294p dump; S072-stilstand bewezen; EESSI- en artslogs geweigerd.</td>
+</tr>
+<tr>
+<td><strong>6. RIZIV Toezicht</strong> (BE)</td>
+<td>Verzoek: 01-09-2026<br/>Besluit: 29-09-2026</td>
+<td>Kroongetuige knooppunt; stilte op toezicht</td>
+<td><span class="status-o">Deels geleverd</span><br/>Bewijst 0 EESSI-berichten van CM in 6 mnd; toezichtsvraag onbeantwoord.</td>
+</tr>
+<tr>
+<td><strong>7. RVA</strong> (BE)</td>
+<td>Verzoek: 01-09-2026<br/>Besluit: 29-09-2026</td>
+<td>Pontius Pilatus ("wij zijn enkel zender")</td>
+<td><span class="status-g">Volledig geleverd</span><br/>Bewijst 0 EESSI-berichten met UWV wegens ontbreken koppeling.</td>
+</tr>
+<tr>
+<td><strong>8. FOD Sociale Zekerheid (DG HAN)</strong> (BE)</td>
+<td>Verzoek: 01-09-2026<br/>Besluit: 30-09 &amp; 12-10-2026</td>
+<td>EESSI-ontkenning; geautomatiseerde uitsluiting</td>
+<td><span class="status-g">Volledig geleverd</span><br/>MyHandicap-logs tonen foutcode <code>5124</code> (geen domicilie) binnen 0,1s.</td>
+</tr>
+<tr>
+<td><strong>9. Federale Pensioendienst (SFPD)</strong> (BE)</td>
+<td>Verzoek: 01-09-2026<br/>Besluit: 02-10-2026</td>
+<td>Afschuiven naar portaal &amp; buitenland</td>
+<td><span class="status-g">Volledig geleverd</span><br/>Bevestigt ontbreken EESSI-data in pensioendossier.</td>
+</tr>
+<tr>
+<td><strong>10. FOD Financiën</strong> (BE)</td>
+<td>Verzoek: 01-09-2026<br/>Reactie: 02-10-2026</td>
+<td>Stilzwijgende weigering &amp; termijnoverschrijding</td>
+<td><span class="status-r">Geweigerd / Inbreuk AVG</span><br/>Excuusmail wegens miscommunicatie; nul data geleverd.</td>
+</tr>
+<tr>
+<td><strong>11. UWV</strong> (NL)</td>
+<td>Verzoek: 01-09-2026<br/>Verdaagd: 12-10-2026</td>
+<td>Analoge slotgracht &amp; eenzijdige termijnverschuiving</td>
+<td><span class="status-o">Verdaagd tot 11-11-2026</span><br/>Kenmerk <code>2026.10.0356</code>; EESSI- en RVA-logs achtergehouden.</td>
+</tr>
+<tr>
+<td><strong>12. Sociale Verzekeringsbank (SVB)</strong> (NL)</td>
+<td>Verzoek: 01-09-2026<br/>Besluit: 24/27-10-2026</td>
+<td>Formulierdwang, zwarte stift &amp; papieren rookbom</td>
+<td><span class="status-r">Inbreuk AVG</span><br/>142p papier; gezinsdata gelakt; bekent geen BUC-logs te hebben.</td>
+</tr>
+<tr>
+<td><strong>13. Gemeente Hulst</strong> (NL)</td>
+<td>Verzoek: 02-09-2026<br/>Besluit: 02-10-2026</td>
+<td>Identiteits-theaterstuk &amp; afscherming systeemlogs</td>
+<td><span class="status-r">Deels geweigerd</span><br/>Besluit 47p; weigert interne bewerkingslogs van ambtenaren.</td>
+</tr>
+<tr>
+<td><strong>14. Zorgverzekeraar CZ</strong> (NL)</td>
+<td>Verzoek: 01-09-2026<br/>Besluit: 06-10-2026</td>
+<td>Ontkenning drempels &amp; weigering S072-inzage</td>
+<td><span class="status-r">Geweigerd / Inbreuk AVG</span><br/>Weigert afschrift S072-verkeer; verwijst onterecht naar CAK.</td>
+</tr>
+<tr>
+<td><strong>15. Rijksdienst voor Identiteitsgegevens (RvIG)</strong> (NL)</td>
+<td>Verzoek: 01-09-2026<br/>Besluit: 15-10-2026</td>
+<td>Bevestiging van het administratieve vacuüm</td>
+<td><span class="status-g">Volledig geleverd</span><br/>Besluit <code>c26092182</code>; bewijst 0 koppeling BRP met Rijksregister.</td>
+</tr>
+<tr>
+<td><strong>16. Belastingdienst &amp; Toeslagen</strong> (NL)</td>
+<td>Verzoek: 02-09-2026<br/>Verdaagd: 22-10-2026</td>
+<td>Eenzijdige verdaging &amp; afschermen DAC-logs</td>
+<td><span class="status-o">Verdaagd tot 30-11-2026</span><br/>Kenmerk <code>3199.60.602.T.25.0.0013</code>; DAC- en RIV-logs open.</td>
+</tr>
+</tbody>
+</table>
+<h4>7. De filosofische kern en de Cliffhanger van november 2026</h4>
+<p>De uitkomsten van deze gecoördineerde AVG-stresstest overstijgen de individuele dossiers. Zij leggen de diepere rechtsfilosofische asymmetrie van de moderne bureaucratische staat bloot. Waarom mag een overheidsorgaan een dwingende Europese verordening — of het nu gaat om de coördinatieregels van Verordening 883/2004, de termijnen van artikel 12 AVG, of de bindende rechtspraak van het Hof van Justitie in het arrest <em>Pankki S</em> (C-579/21) — straffeloos reduceren tot een vrijblijvende inspanningsverplichting vol administratieve uitvluchten (<em>"niet beschikbaar"</em>, <em>"bedreigt integriteit systeem"</em>, <em>"geen persoonsgegeven"</em>)? Terwijl diezelfde overheid de burger bij één gemist vinkje, één niet-aangevinkt veld of één dag termijnoverschrijding volautomatisch en genadeloos financieel liquideert?</p>
+<p>De wet is in theorie geschreven als een schild om de burger te beschermen tegen de almacht van het staatsapparaat. In de uitvoeringspraktijk van de grensoverschrijdende sociale zekerheid is de wet echter door legers van interne juristen en privacy-functionarissen omgevormd tot een zwaard: een instrumenteel pantser dat uitsluitend wordt gehanteerd om het apparaat te beschermen tegen de transparantie en controle door de burger. Men verschuilt zich achter de AVG om niet te hoeven verantwoorden waarom een doodzieke grensarbeider achttien maanden zonder inkomen en zorgvervoer is achtergelaten.</p>
+<p><strong>De Cliffhanger — De ontknoping in november 2026:</strong> Terwijl veertien van de zestien aangeschreven instanties hun kaarten inmiddels noodgedwongen op tafel hebben moeten leggen — en daarmee elkaars stilstand en verzuim onweerlegbaar hebben bevestigd — houden de twee zwaarste Nederlandse blokkades de deur nog altijd krampachtig gesloten achter een eenzijdige termijnverlenging:</p>
+<ul>
+<li><strong>Het UWV</strong> heeft na de formele ingebrekestelling van 2 oktober 2026 de ontvangstdatum van het verzoek van 1 september eigenmachtig verplaatst naar 16 september en de beslistermijn eenzijdig verdaagd tot <strong>11 november 2026</strong> (kenmerk <code>2026.10.0356</code>). Het UWV beseft kennelijk nog niet dat de Belgische instanties RIZIV en RVA op 29 september al officieel hebben verklaard dat het UWV in zes maanden tijd exact nul elektronische berichten heeft verzonden.</li>
+<li><strong>De Belastingdienst en Dienst Toeslagen</strong> hebben het verzoek van 2 september om openbaarmaking van de internationale DAC-stromen en de RIV-blokkade op 22 oktober eenzijdig verdaagd tot <strong>30 november 2026</strong> (kenmerk <code>3199.60.602.T.25.0.0013</code>). Ook aan Belgische zijde heeft <strong>FOD Financiën</strong> na haar excuusmail wegens "interne miscommunicatie" van 2 oktober 2026 tot op heden volledige radiostilte bewaard en haar inhoudelijke logboeken nog altijd niet geleverd.</li>
+</ul>
+<p>Dit hoofdstuk is daarmee geen afgesloten geschiedenis, maar een lopende forensische reconstructie. Eind november 2026, wanneer de verdagingstermijnen van het UWV en de Belastingdienst onherroepelijk zijn verstreken, valt het doek over de laatste uitvluchten. Met de dan complete dataset van alle zestien instanties wordt dit dossier integraal neergelegd bij de Gegevensbeschermingsautoriteit (GBA) in Brussel en de Autoriteit Persoonsgegevens (AP) in Den Haag, als het ultieme bewijs van een haperende Unie waarin instanties elkaars gegevens weigeren in te lezen terwijl het gezin op het breukvlak bezwijkt.</p>
+<h2 id="deel-xiii-de-persoonlijke-slotverklaring">Deel XIII — De persoonlijke slotverklaring</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<p>Het is een objectief gegeven dat een medisch hersteltraject niet compatibel is met het voeren van een meervoudige institutionele procedure. Dat een burger in fysiek herstel deze bewijslast moet verzamelen, toont de prioritering van het huidige systeem aan. Velen staken deze procedures voortijdig, geconfronteerd met de omvang van de administratieve weerstand.</p>
+<p>De initiële reflex is altijd het oplossen van het eigen, individuele probleem. Echter, bij het systematisch loggen van de tijdlijnen werd een structureel patroon zichtbaar dat de individuele casus overstijgt. Dit mechanisme raakt iedereen die buiten de standaardnorm valt. Voor wie binnen de norm leeft, functioneert het systeem onzichtbaar en frictieloos. Dat bewijst niet dat het systeem universeel werkt; het bewijst dat het is geoptimaliseerd voor een specifiek, nationaal profiel.</p>
+<p>De demontage van deze procedures legt de architectuur bloot. De instituties en netwerken die zijn opgericht ter bescherming, hanteren procedures die ontkoppeld zijn van de materiële gevolgen. Controlemechanismen redeneren vanuit de parameters van het systeem, niet vanuit de curatieve realiteit. Men beheert abstracte voorwaarden. Tegelijkertijd groeit het aantal situaties dat de binaire categorieën van de wetgeving overschrijdt. De norm is statisch, terwijl de maatschappelijke realiteit dynamisch is.</p>
+<p>Dit dossier is samengesteld als een concrete dataset van wat er structureel stagneert. Als Franco-Italiaan van origine, geboren in België, wonend in Nederland, is de theorie van een geünificeerde Europese ruimte altijd een uitgangspunt geweest. De praktijk toont aan dat deze theorie voorwaardelijk is en voornamelijk geldt voor wie exact in de nationale mal past. Wie daarbuiten valt, stuit op de grenzen van dat ontwerp.</p>
+<p>Dit dossier dient als objectieve registratie voor wie in een vergelijkbare situatie terechtkomt, en als feitelijke onderbouwing voor de instanties die de bevoegdheid hebben de systeemarchitectuur te herzien.</p>
+<p>De norm beweegt niet. Ik wel.</p>
+<a class="pub-top" href="#top" title="Naar boven">↑</a><!-- Forensisch Bronopvragings- en Contactvenster (Modal) -->
+<div class="bm-modal-overlay" id="bm-modal" onclick="if(event.target===this)sluitBronModal()">
+<div aria-labelledby="bm-modal-titel" aria-modal="true" class="bm-modal-dialog" role="dialog">
+<div class="bm-modal-kop">
+<h3 id="bm-modal-titel">📄 Bronstuk opvragen / Contact</h3>
+<button aria-label="Venster sluiten" class="bm-modal-sluit" onclick="sluitBronModal()" type="button">×</button>
+</div>
+<div class="bm-intro">
+      Alle 682 interacties in deze audit zijn gebaseerd op objectieve brondocumenten (originele e-mails met Message-ID's, formele besluiten, brieven en medische verslagen). Om privacy en AVG-rechten van betrokkenen te waarborgen zijn persoonsgegevens in publieke bestanden afgeschermd. Geauthenticeerde onderzoekers, journalisten, toezichthouders en lotgenoten kunnen volledige, ongecensureerde brondossiers opvragen ter verificatie.
+    </div>
+<form id="bm-form" onsubmit="event.preventDefault();stuurEmail();">
+<div class="bm-groep">
+<label class="bm-label" for="bm-onderwerp">Onderwerp / Gevraagd bronstuk of referentie:</label>
+<input class="bm-input" id="bm-onderwerp" placeholder="Bijv. Bronopvraag: CZ Zorgverzekering - 06-10-2026 - Weigering S072" type="text"/>
+</div>
+<div class="bm-groep">
+<label class="bm-label">Uw hoedanigheid / perspectief:</label>
+<div class="bm-radio-groep">
+<label class="bm-radio-optie">
+<input checked="" name="bm-perspectief" type="radio" value="Lotgenoot / Grensarbeider"/>
+<span><strong>Lotgenoot / Grensarbeider</strong><br/><small style="color:#666">Ervaring delen, herkenning, vergelijkbare situatie</small></span>
+</label>
+<label class="bm-radio-optie">
+<input name="bm-perspectief" type="radio" value="Wetenschap / Beleidsonderzoek"/>
+<span><strong>Wetenschap / Beleid</strong><br/><small style="color:#666">Academisch onderzoek, beleidsevaluatie, EESSI/ESSPASS</small></span>
+</label>
+<label class="bm-radio-optie">
+<input name="bm-perspectief" type="radio" value="Journalistiek / Media"/>
+<span><strong>Journalistiek / Media</strong><br/><small style="color:#666">Feitelijke verificatie, achtergrondgesprek, publicatie</small></span>
+</label>
+<label class="bm-radio-optie">
+<input name="bm-perspectief" type="radio" value="Juridisch / Toezichthouder"/>
+<span><strong>Juridisch / Toezichthouder</strong><br/><small style="color:#666">Handhaving, AVG/GDPR, rechtbank, ombudsman</small></span>
+</label>
+</div>
+</div>
+<div class="bm-groep">
+<label class="bm-label" for="bm-vraag">Uw toelichting, vraag of verificatiedoel:</label>
+<textarea class="bm-textarea" id="bm-vraag" placeholder="Beschrijf kort uw onderzoeksvraag, hoedanigheid of situatie..."></textarea>
+</div>
+<div class="bm-check-groep">
+<input checked="" id="bm-akkoord" type="checkbox"/>
+<label for="bm-akkoord">Ik begrijp dat opgevraagde bronstukken uitsluitend voor verificatie, waarheidsvinding of belangenbehartiging worden verstrekt conform de privacywetgeving.</label>
+</div>
+<div class="bm-knoppen">
+<button class="bm-btn-copy" id="bm-copy-btn" onclick="kopieerAanvraag()" type="button">📋 Kopieer aanvraagtekst + e-mailadres</button>
+<button class="bm-btn-mail" type="submit">Open in e-mailprogramma →</button>
+</div>
+</form>
+</div>
+</div>
+<script>
+(function() {
+  window.openBronModal = function(onderwerp) {
+    var modal = document.getElementById('bm-modal');
+    if (!modal) return;
+    var inp = document.getElementById('bm-onderwerp');
+    if (inp) {
+      inp.value = onderwerp || 'Algemeen contact / Vraag over de Systeem-Audit';
+    }
+    modal.classList.add('bm-open');
+    if (inp) inp.focus();
+  };
+
+  window.sluitBronModal = function() {
+    var modal = document.getElementById('bm-modal');
+    if (modal) modal.classList.remove('bm-open');
+  };
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') sluitBronModal();
+  });
+
+  // Event delegation voor klik op .audit-bewijs
+  document.addEventListener('click', function(e) {
+    var badge = e.target.closest ? e.target.closest('.audit-bewijs') : null;
+    if (!badge) return;
+    e.preventDefault();
+
+    var entry = badge.closest ? badge.closest('.entry') : null;
+    var orgNaam = '';
+    var datum = '';
+    var titel = '';
+
+    if (entry) {
+      var dEl = entry.querySelector('.datum');
+      if (dEl) datum = dEl.innerText.trim();
+      var tEl = entry.querySelector('.titel, .entry-titel');
+      if (tEl) titel = tEl.innerText.trim();
+      
+      // Zoek dichtstbijzijnde voorgaande h3
+      var allH3 = document.querySelectorAll('h3');
+      for (var i = allH3.length - 1; i >= 0; i--) {
+        if (allH3[i].compareDocumentPosition(badge) & Node.DOCUMENT_POSITION_FOLLOWING) {
+          orgNaam = allH3[i].innerText.trim();
+          break;
+        }
+      }
+    }
+
+    var cleanOrg = orgNaam.replace(/\s+/g, ' ').replace(/^[\d\.\s]+/, '').trim();
+    var parts = [];
+    if (cleanOrg) parts.push(cleanOrg);
+    if (datum) parts.push(datum);
+    if (titel) parts.push(titel.replace(/\s+/g, ' '));
+    else if (badge.innerText) parts.push(badge.innerText.trim());
+
+    var onderwerp = 'Bronopvraag: ' + parts.join(' - ');
+    openBronModal(onderwerp);
+  });
+
+  function genereerEmailTekst() {
+    var onderwerp = (document.getElementById('bm-onderwerp').value || '').trim();
+    var perspectiefEl = document.querySelector('input[name="bm-perspectief"]:checked');
+    var perspectief = perspectiefEl ? perspectiefEl.value : 'Niet opgegeven';
+    var toelichting = (document.getElementById('bm-vraag').value || '').trim();
+    var akkoord = document.getElementById('bm-akkoord').checked ? 'Ja' : 'Nee';
+
+    var tekst = "Geachte heer Messa / Systeem-Audit,\n\n" +
+      "Betreft: " + onderwerp + "\n" +
+      "Perspectief: " + perspectief + "\n\n" +
+      "Toelichting / Onderzoeksvraag:\n" +
+      (toelichting || "[Geen extra toelichting ingevoerd]") + "\n\n" +
+      "Akkoord met verificatievoorwaarden: " + akkoord + "\n\n" +
+      "---\nVerzonden via het bronopvragingsvenster van grensarbeid.org";
+    return { onderwerp: onderwerp, tekst: tekst };
+  }
+
+  window.stuurEmail = function() {
+    var data = genereerEmailTekst();
+    var mailto = "mailto:systeemaudit@gmail.com" +
+      "?subject=" + encodeURIComponent(data.onderwerp) +
+      "&body=" + encodeURIComponent(data.tekst);
+    window.location.href = mailto;
+  };
+
+  window.kopieerAanvraag = function() {
+    var data = genereerEmailTekst();
+    var klembordTekst = "Aan: systeemaudit@gmail.com\n" +
+      "Onderwerp: " + data.onderwerp + "\n\n" +
+      data.tekst;
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(klembordTekst).then(function() {
+        toonKopieerBevestiging();
+      }).catch(function() {
+        fallbackKopieer(klembordTekst);
+      });
+    } else {
+      fallbackKopieer(klembordTekst);
+    }
+  };
+
+  function fallbackKopieer(tekst) {
+    var ta = document.createElement('textarea');
+    ta.value = tekst;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    try {
+      document.execCommand('copy');
+      toonKopieerBevestiging();
+    } catch(e) {
+      alert('Kopiëren mislukt. U kunt handmatig mailen naar systeemaudit@gmail.com');
+    }
+    document.body.removeChild(ta);
+  }
+
+  function toonKopieerBevestiging() {
+    var btn = document.getElementById('bm-copy-btn');
+    if (!btn) return;
+    var orig = btn.innerText;
+    btn.innerText = '✓ Gekopieerd naar klembord!';
+    btn.classList.add('bm-copied');
+    setTimeout(function() {
+      btn.innerText = orig;
+      btn.classList.remove('bm-copied');
+    }, 2500);
+  }
+})();
+</script><button aria-label="Schakel donkere/lichte modus" class="dm-toggle" onclick="dm_toggle()" title="Schakel donkere/lichte modus" type="button">
+<span class="dm-icon-dm">🌙</span>
+<span class="dm-icon-lm">☀️</span>
+</button>
+<script>
+(function(){
+  function s(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  window.dm_toggle=function(){
+    var r=document.documentElement;
+    var n=r.getAttribute('data-theme')==='dark'?'light':'dark';
+    r.setAttribute('data-theme',n);
+    s('systeem-audit-thema',n);
+  };
+})();
+</script>
 <footer class="pub-footer">
-<p><strong>System Audit</strong> — Cross-border jurisdictional vacuum in social security<br/>
-  Auteur : Eric Messa · Version mise à jour : 5 oktober 2026, 15:03</p>
-<p><a href="home.html">← Overview</a></p>
+<p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
+
+  Auteur: Eric Messa · Versie bijgewerkt: 26 oktober 2026, 20:30</p>
+<p><a href="home.html">← Terug naar overzicht</a> ·
+
+     <a href="../index.html">[Web] Taalkeuze</a></p>
 </footer>
-</body>
+<!-- Direct DOM Translation Engine (works on file://, http://, and https://) -->
+<script class="notranslate" translate="no">
+(function() {
+  var _origTexts = new Map();
+  var _isTranslating = false;
+  var _currentLang = 'nl';
+
+  function getTranslatableNodes() {
+    var nodes = [];
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(node) {
+        if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        var p = node.parentElement;
+        while (p) {
+          if (p.classList && (p.classList.contains('notranslate') || p.id === 'bm-modal' || p.id === 'rechten-banner')) {
+            return NodeFilter.FILTER_REJECT;
+          }
+          var tag = p.tagName.toLowerCase();
+          if (tag === 'script' || tag === 'style' || tag === 'code' || tag === 'pre') {
+            return NodeFilter.FILTER_REJECT;
+          }
+          p = p.parentElement;
+        }
+        var text = node.nodeValue.replace(/\s+/g, ' ').trim();
+        if (text.length >= 2 && /[a-zA-ZÀ-ÿ]{2,}/.test(text)) {
+          return NodeFilter.FILTER_ACCEPT;
+        }
+        return NodeFilter.FILTER_REJECT;
+      }
+    });
+    while (walker.nextNode()) {
+      nodes.push(walker.currentNode);
+    }
+    return nodes;
+  }
+
+  function updatePageLinks(lang) {
+    var links = document.querySelectorAll('a[href]');
+    for (var i = 0; i < links.length; i++) {
+      var a = links[i];
+      var href = a.getAttribute('href');
+      if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('javascript:')) continue;
+      if (href.indexOf('document-') !== -1) {
+        var base = href.split('?')[0];
+        var isPrint = href.indexOf('print=1') !== -1;
+        a.setAttribute('href', base + '?int=1&lang=' + lang + (isPrint ? '&print=1' : ''));
+      } else if (href.indexOf('home_int.html') !== -1) {
+        var base = href.split('?')[0];
+        a.setAttribute('href', base + '?lang=' + lang);
+      }
+    }
+  }
+
+  function syncDropdown(lang) {
+    var sel = document.getElementById('int-lang-select');
+    if (sel && lang) {
+      sel.value = lang;
+    }
+  }
+
+  function bepaalDoeltaal() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var target = urlParams.get('lang');
+    if (!target) {
+      try { target = sessionStorage.getItem('grensarbeid-int-lang'); } catch(e) {}
+    }
+    if (!target) {
+      var navLang = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
+      target = navLang.toLowerCase().split('-')[0];
+    }
+    return target || 'en';
+  }
+
+  function showStatusPill(msg, isSuccess) {
+    var pill = document.getElementById('trans-status-pill');
+    if (!pill) {
+      pill = document.createElement('div');
+      pill.id = 'trans-status-pill';
+      pill.className = 'notranslate';
+      pill.style.cssText = 'position:fixed;bottom:24px;left:24px;z-index:9999;padding:6px 14px;border-radius:20px;font-size:10pt;font-weight:600;font-family:sans-serif;box-shadow:0 4px 12px rgba(0,0,0,0.3);transition:opacity .3s;';
+      document.body.appendChild(pill);
+    }
+    pill.textContent = msg;
+    pill.style.background = isSuccess ? '#2e7d32' : '#003399';
+    pill.style.color = '#ffffff';
+    pill.style.opacity = '1';
+    pill.style.display = 'block';
+    if (isSuccess) {
+      setTimeout(function() {
+        pill.style.opacity = '0';
+        setTimeout(function(){ pill.style.display='none'; }, 300);
+      }, 2500);
+    }
+  }
+
+  window.vertaalPaginaNaar = function(lang) {
+    if (!lang) return Promise.resolve();
+    if (_isTranslating) return Promise.resolve();
+    _isTranslating = true;
+    _currentLang = lang;
+
+    updatePageLinks(lang);
+    syncDropdown(lang);
+
+    var nodes = getTranslatableNodes();
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      if (!_origTexts.has(n)) {
+        _origTexts.set(n, n.nodeValue);
+      }
+    }
+
+    if (lang === 'nl') {
+      for (var i = 0; i < nodes.length; i++) {
+        var n = nodes[i];
+        if (_origTexts.has(n)) {
+          n.nodeValue = _origTexts.get(n);
+        }
+      }
+      _isTranslating = false;
+      showStatusPill('✓ Nederlands (Origineel)', true);
+      return Promise.resolve();
+    }
+
+    showStatusPill('⏳ Translating (' + lang.toUpperCase() + ')...', false);
+
+    var chunks = [];
+    var curNodes = [];
+    var curLen = 0;
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      var orig = _origTexts.get(n).replace(/\s+/g, ' ').trim();
+      if (curLen + orig.length > 3000 && curNodes.length > 0) {
+        chunks.push(curNodes);
+        curNodes = [];
+        curLen = 0;
+      }
+      curNodes.push(n);
+      curLen += orig.length + 1;
+    }
+    if (curNodes.length > 0) chunks.push(curNodes);
+
+    var promises = chunks.map(function(chunk) {
+      var lines = chunk.map(function(n) {
+        return _origTexts.get(n).replace(/\s+/g, ' ').trim();
+      });
+      var q = lines.join('\n');
+      var url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=nl&tl=' + lang + '&dt=t';
+
+      return fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        body: 'q=' + encodeURIComponent(q)
+      })
+      .then(function(resp) { return resp.json(); })
+      .then(function(data) {
+        if (!data || !data[0]) return;
+        var fullTrans = '';
+        for (var p = 0; p < data[0].length; p++) {
+          if (data[0][p][0]) fullTrans += data[0][p][0];
+        }
+        var transLines = fullTrans.split('\n');
+        for (var k = 0; k < chunk.length && k < transLines.length; k++) {
+          var node = chunk[k];
+          var orig = _origTexts.get(node);
+          var leadingSpace = orig.match(/^\s*/)[0];
+          var trailingSpace = orig.match(/\s*$/)[0];
+          node.nodeValue = leadingSpace + transLines[k] + trailingSpace;
+        }
+      })
+      .catch(function(err) {
+        console.warn('Translation error for chunk:', err);
+      });
+    });
+
+    return Promise.all(promises).then(function() {
+      _isTranslating = false;
+      showStatusPill('✓ Translated (' + lang.toUpperCase() + ')', true);
+    });
+  };
+
+  window.wisselTaal = function(lang) {
+    if (!lang) return;
+    try {
+      sessionStorage.setItem('grensarbeid-int-lang', lang);
+    } catch(e) {}
+
+    var curUrl = new URL(window.location.href);
+    curUrl.searchParams.set('lang', lang);
+    window.history.replaceState({}, '', curUrl.toString());
+
+    window.vertaalPaginaNaar(lang);
+  };
+
+  function initOrSync() {
+    var isInt = window.location.search.indexOf('int=1') !== -1;
+    var isHomeInt = location.pathname.indexOf('home_int.html') !== -1;
+
+    if (!isInt && !isHomeInt) {
+      // 100% hard authentic Dutch mode!
+      return;
+    }
+
+    var target = bepaalDoeltaal();
+    syncDropdown(target);
+    updatePageLinks(target);
+
+    if (_currentLang !== target) {
+      window.vertaalPaginaNaar(target).then(function() {
+        if (window.location.search.indexOf('print=1') !== -1) {
+          setTimeout(function() { window.print(); }, 400);
+        }
+      });
+    } else {
+      syncDropdown(target);
+      updatePageLinks(target);
+      if (window.location.search.indexOf('print=1') !== -1) {
+        setTimeout(function() { window.print(); }, 400);
+      }
+    }
+  }
+
+  // Initial execution
+  initOrSync();
+
+  // Listen to pageshow (BFCache restore on back/forward) and popstate
+  window.addEventListener('pageshow', function() {
+    initOrSync();
+  });
+  window.addEventListener('popstate', function() {
+    initOrSync();
+  });
+})();
+</script><!-- Direct DOM Translation Engine (works on file://, http://, and https://) -->
+<script class="notranslate" translate="no">
+(function() {
+  var _origTexts = new Map();
+  var _isTranslating = false;
+  var _currentLang = 'nl';
+
+  function getTranslatableNodes() {
+    var nodes = [];
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(node) {
+        if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        var p = node.parentElement;
+        while (p) {
+          if (p.classList && (p.classList.contains('notranslate') || p.id === 'bm-modal' || p.id === 'rechten-banner')) {
+            return NodeFilter.FILTER_REJECT;
+          }
+          var tag = p.tagName.toLowerCase();
+          if (tag === 'script' || tag === 'style' || tag === 'code' || tag === 'pre') {
+            return NodeFilter.FILTER_REJECT;
+          }
+          p = p.parentElement;
+        }
+        var text = node.nodeValue.replace(/\s+/g, ' ').trim();
+        if (text.length >= 2 && /[a-zA-ZÀ-ÿ]{2,}/.test(text)) {
+          return NodeFilter.FILTER_ACCEPT;
+        }
+        return NodeFilter.FILTER_REJECT;
+      }
+    });
+    while (walker.nextNode()) {
+      nodes.push(walker.currentNode);
+    }
+    return nodes;
+  }
+
+  function updatePageLinks(lang) {
+    var links = document.querySelectorAll('a[href]');
+    for (var i = 0; i < links.length; i++) {
+      var a = links[i];
+      var href = a.getAttribute('href');
+      if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('javascript:')) continue;
+      if (href.indexOf('document-') !== -1) {
+        var base = href.split('?')[0];
+        var isPrint = href.indexOf('print=1') !== -1;
+        a.setAttribute('href', base + '?int=1&lang=' + lang + (isPrint ? '&print=1' : ''));
+      } else if (href.indexOf('home_int.html') !== -1) {
+        var base = href.split('?')[0];
+        a.setAttribute('href', base + '?lang=' + lang);
+      }
+    }
+  }
+
+  function syncDropdown(lang) {
+    var sel = document.getElementById('int-lang-select');
+    if (sel && lang) {
+      sel.value = lang;
+    }
+  }
+
+  function bepaalDoeltaal() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var target = urlParams.get('lang');
+    if (!target) {
+      try { target = sessionStorage.getItem('grensarbeid-int-lang'); } catch(e) {}
+    }
+    if (!target) {
+      var navLang = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
+      target = navLang.toLowerCase().split('-')[0];
+    }
+    return target || 'en';
+  }
+
+  function showStatusPill(msg, isSuccess) {
+    var pill = document.getElementById('trans-status-pill');
+    if (!pill) {
+      pill = document.createElement('div');
+      pill.id = 'trans-status-pill';
+      pill.className = 'notranslate';
+      pill.style.cssText = 'position:fixed;bottom:24px;left:24px;z-index:9999;padding:6px 14px;border-radius:20px;font-size:10pt;font-weight:600;font-family:sans-serif;box-shadow:0 4px 12px rgba(0,0,0,0.3);transition:opacity .3s;';
+      document.body.appendChild(pill);
+    }
+    pill.textContent = msg;
+    pill.style.background = isSuccess ? '#2e7d32' : '#003399';
+    pill.style.color = '#ffffff';
+    pill.style.opacity = '1';
+    pill.style.display = 'block';
+    if (isSuccess) {
+      setTimeout(function() {
+        pill.style.opacity = '0';
+        setTimeout(function(){ pill.style.display='none'; }, 300);
+      }, 2500);
+    }
+  }
+
+  window.vertaalPaginaNaar = function(lang) {
+    if (!lang) return Promise.resolve();
+    if (_isTranslating) return Promise.resolve();
+    _isTranslating = true;
+    _currentLang = lang;
+
+    updatePageLinks(lang);
+    syncDropdown(lang);
+
+    var nodes = getTranslatableNodes();
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      if (!_origTexts.has(n)) {
+        _origTexts.set(n, n.nodeValue);
+      }
+    }
+
+    if (lang === 'nl') {
+      for (var i = 0; i < nodes.length; i++) {
+        var n = nodes[i];
+        if (_origTexts.has(n)) {
+          n.nodeValue = _origTexts.get(n);
+        }
+      }
+      _isTranslating = false;
+      showStatusPill('✓ Nederlands (Origineel)', true);
+      return Promise.resolve();
+    }
+
+    showStatusPill('⏳ Translating (' + lang.toUpperCase() + ')...', false);
+
+    var chunks = [];
+    var curNodes = [];
+    var curLen = 0;
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      var orig = _origTexts.get(n).replace(/\s+/g, ' ').trim();
+      if (curLen + orig.length > 3000 && curNodes.length > 0) {
+        chunks.push(curNodes);
+        curNodes = [];
+        curLen = 0;
+      }
+      curNodes.push(n);
+      curLen += orig.length + 1;
+    }
+    if (curNodes.length > 0) chunks.push(curNodes);
+
+    var promises = chunks.map(function(chunk) {
+      var lines = chunk.map(function(n) {
+        return _origTexts.get(n).replace(/\s+/g, ' ').trim();
+      });
+      var q = lines.join('\n');
+      var url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=nl&tl=' + lang + '&dt=t';
+
+      return fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        body: 'q=' + encodeURIComponent(q)
+      })
+      .then(function(resp) { return resp.json(); })
+      .then(function(data) {
+        if (!data || !data[0]) return;
+        var fullTrans = '';
+        for (var p = 0; p < data[0].length; p++) {
+          if (data[0][p][0]) fullTrans += data[0][p][0];
+        }
+        var transLines = fullTrans.split('\n');
+        for (var k = 0; k < chunk.length && k < transLines.length; k++) {
+          var node = chunk[k];
+          var orig = _origTexts.get(node);
+          var leadingSpace = orig.match(/^\s*/)[0];
+          var trailingSpace = orig.match(/\s*$/)[0];
+          node.nodeValue = leadingSpace + transLines[k] + trailingSpace;
+        }
+      })
+      .catch(function(err) {
+        console.warn('Translation error for chunk:', err);
+      });
+    });
+
+    return Promise.all(promises).then(function() {
+      _isTranslating = false;
+      showStatusPill('✓ Translated (' + lang.toUpperCase() + ')', true);
+    });
+  };
+
+  window.wisselTaal = function(lang) {
+    if (!lang) return;
+    try {
+      sessionStorage.setItem('grensarbeid-int-lang', lang);
+    } catch(e) {}
+
+    var curUrl = new URL(window.location.href);
+    curUrl.searchParams.set('lang', lang);
+    window.history.replaceState({}, '', curUrl.toString());
+
+    window.vertaalPaginaNaar(lang);
+  };
+
+  function initOrSync() {
+    var isInt = window.location.search.indexOf('int=1') !== -1;
+    var isHomeInt = location.pathname.indexOf('home_int.html') !== -1;
+
+    if (!isInt && !isHomeInt) {
+      // 100% hard authentic Dutch mode!
+      return;
+    }
+
+    var target = bepaalDoeltaal();
+    syncDropdown(target);
+    updatePageLinks(target);
+
+    if (_currentLang !== target) {
+      window.vertaalPaginaNaar(target).then(function() {
+        if (window.location.search.indexOf('print=1') !== -1) {
+          setTimeout(function() { window.print(); }, 400);
+        }
+      });
+    } else {
+      syncDropdown(target);
+      updatePageLinks(target);
+      if (window.location.search.indexOf('print=1') !== -1) {
+        setTimeout(function() { window.print(); }, 400);
+      }
+    }
+  }
+
+  // Initial execution
+  initOrSync();
+
+  // Listen to pageshow (BFCache restore on back/forward) and popstate
+  window.addEventListener('pageshow', function() {
+    initOrSync();
+  });
+  window.addEventListener('popstate', function() {
+    initOrSync();
+  });
+})();
+</script></body>
 </html>

@@ -1,562 +1,440 @@
 <!DOCTYPE html>
 
-<html lang="nl">
+<html data-auto-lang="nl" data-target-lang="nl" data-theme="dark" lang="nl">
 <head>
 <meta charset="utf-8"/>
-<title>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</title>
-<meta content="Empirische audit van het bevoegdheidsvacuüm tussen België en Nederland. Zes documenten over grensarbeid, ziekte-uitkering, toeslagen en het structurele falen van nationale uitvoeringssystemen." name="description"/>
-<meta content="Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid" property="og:title"/>
-<meta content="Empirische audit van het bevoegdheidsvacuüm tussen België en Nederland. Zes documenten over grensarbeid, ziekte-uitkering, toeslagen en het structurele falen van nationale uitvoeringssystemen." property="og:description"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GRENSARBEID.ORG — Systeem-Audit · Grensoverschrijdend bevoegdheidsvacuüm</title>
+<meta content="Empirische audit van het bevoegdheidsvacuüm tussen België en Nederland. Twee nationale systemen, 62 instanties, 680+ proceshandelingen." name="description"/>
+<link href="https://grensarbeid.org/" rel="canonical"/>
+<meta content="GRENSARBEID.ORG — Systeem-Audit · Grensoverschrijdend bevoegdheidsvacuüm" property="og:title"/>
+<meta content="Empirische audit van het bevoegdheidsvacuüm tussen België en Nederland. Twee nationale systemen, 62 instanties, 680+ proceshandelingen." property="og:description"/>
 <meta content="website" property="og:type"/>
+<meta content="https://grensarbeid.org/" property="og:url"/>
+<meta content="https://grensarbeid.org/assets/kaart_eu.png" property="og:image"/>
 <script>
-(function(){try{var t=localStorage.getItem('systeem-audit-thema');if(t!=='dark'&&t!=='light'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+(function(){try{var t=localStorage.getItem('systeem-audit-thema');if(t!=='dark'&&t!=='light'){t='dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
 </script>
-<style>/* === PUBLICATIE-CSS START === */
-
+<style>
 body {
     font-family: Aptos, Calibri, sans-serif;
     font-size: 12pt;
     line-height: 1.6;
     margin: 0;
-    padding: 40pt;
+    padding: 30pt;
     background: #f6f3ec;
     color: #2a2a2a;
 }
+.container { max-width: 960px; margin: 0 auto; }
 
-h1 {
-    font-size: 38pt;
-    color: #1a3c6e;
-    margin: 0 0 6pt;
-    letter-spacing: -0.5pt;
-}
-.ondertitel {
-    font-size: 16pt;
-    color: #4a5560;
-    margin: 0 0 14pt;
-    font-weight: 400;
-}
-.auteur {
-    font-size: 11pt;
-    color: #6b7280;
-    margin: 0 0 30pt;
-    font-style: italic;
-}
-.intro {
-    font-size: 12pt;
-    line-height: 1.7;
-    margin: 0 0 40pt;
-    text-align: justify;
-    color: #3a3f45;
-}
-
-/* === Spectrumbalk === */
-.spectrum {
-    height: 4px;
-    display: flex;
-    margin: 0 0 30pt;
-    border-radius: 2px;
-    overflow: hidden;
-}
+.spectrum { height: 4px; display: flex; margin: 0 0 24pt; border-radius: 2px; overflow: hidden; }
 .spectrum span { flex: 1; }
 
-/* === Root index: intro-rijen per taal === */
-.intro-rijen { margin: 0 0 40pt; }
-.intro-rij {
+h1 { font-size: 32pt; color: #1a3c6e; margin: 0 0 6pt; letter-spacing: -0.5pt; text-align: center; }
+.ondertitel { font-size: 14pt; color: #4a5560; margin: 0 0 8pt; font-weight: 400; text-align: center; }
+.auteur { font-size: 10.5pt; color: #6b7280; margin: 0 0 26pt; font-style: italic; text-align: center; }
+
+/* Kaart */
+.root-kaart { margin: 0 0 20pt; }
+.root-kaart img { display: block; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+html[data-theme="dark"] .root-kaart img {
+    border: 1px solid #3a3a3a;
+    box-shadow: 0 4px 20px rgba(0,0,0,.6);
+    filter: invert(0.92) hue-rotate(180deg) brightness(0.95) saturate(1.1);
+}
+
+/* Intro kolommen */
+.root-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0 0 24pt; }
+.root-intro-kolom { background: #ffffff; border: 1px solid #e8e4dc; border-radius: 6px; padding: 12px 14px; }
+.root-intro-kop { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; }
+.root-intro-vlag { font-size: 16pt; line-height: 1; }
+.root-intro-taal { font-weight: 700; font-size: 10pt; color: #1a3c6e; text-transform: uppercase; letter-spacing: 0.5px; }
+.root-intro-kolom p { margin: 0; font-size: 10.5pt; line-height: 1.45; color: #333; }
+
+/* KEUZEPANEEL: TWEE HOOFDPOORTEN */
+.keuze-kop {
+    text-align: center; margin: 34pt 0 16pt;
+}
+.keuze-kop h2 {
+    font-size: 20pt; color: #1a3c6e; margin: 0 0 6pt;
+}
+.keuze-kop p {
+    font-size: 11pt; color: #555; margin: 0;
+}
+
+.portaal-grid {
     display: grid;
-    grid-template-columns: 64pt 1fr;
-    gap: 18pt;
-    align-items: start;
-    padding: 22pt 26pt;
+    grid-template-columns: 1fr 1fr;
+    gap: 20pt;
+    margin: 0 0 34pt;
+}
+.portaal-kaart {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
     background: #ffffff;
-    border-left: 6px solid var(--accent);
-    border-radius: 8px;
-    margin-bottom: 14pt;
-    box-shadow: 0 1px 3px rgba(0,0,0,.04);
-    transition: transform .15s, box-shadow .2s;
+    border: 2px solid #e2ddd2;
+    border-radius: 12px;
+    padding: 26pt 22pt;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform .18s, box-shadow .2s, border-color .2s;
+    position: relative;
+    overflow: hidden;
 }
-.intro-rij:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(0,0,0,.08);
+.portaal-kaart:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
 }
-.intro-rij .vlag {
-    font-size: 44pt;
-    line-height: 1;
-    text-align: center;
-    padding-top: 2pt;
+.portaal-nl:hover { border-color: #ff6b00; }
+.portaal-eu:hover { border-color: #003399; }
+
+.portaal-vlag-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16pt;
 }
-.intro-rij h3 {
+
+.portaal-badge {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 9.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10pt;
+}
+.badge-nl { background: #fff0e0; color: #d05500; border: 1px solid #ffd8b3; }
+.badge-eu { background: #e6ebf5; color: #003399; border: 1px solid #c2d1ed; }
+
+.portaal-kaart h3 {
+    font-size: 18pt;
     margin: 0 0 6pt;
-    color: var(--accent);
-    font-size: 19pt;
-    letter-spacing: -0.3pt;
+    color: #1a3c6e;
 }
-.intro-rij p {
-    margin: 0 0 10pt;
+.portaal-ondertitel {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #6b7280;
+    margin: 0 0 12pt;
+}
+.portaal-beschrijving {
     font-size: 11pt;
     color: #4a5560;
     line-height: 1.55;
+    margin: 0 0 16pt;
+    flex-grow: 1;
 }
-.intro-rij a.goto {
-    display: inline-block;
-    font-weight: 700;
-    color: var(--accent);
-    text-decoration: none;
-    font-size: 11pt;
-    padding: 4pt 0;
+.portaal-punten {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20pt;
+    font-size: 10pt;
+    color: #333;
 }
-.intro-rij a.goto:hover { text-decoration: underline; }
+.portaal-punten li {
+    margin: 5pt 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 
-/* === A/B-melding (meertalig) === */
+.portaal-actie {
+    margin-top: auto;
+}
+.btn-poort {
+    display: block;
+    text-align: center;
+    padding: 10pt 16pt;
+    border-radius: 6px;
+    font-size: 11pt;
+    font-weight: 700;
+    transition: background .15s, color .15s;
+}
+.btn-poort-nl {
+    background: #ff6b00;
+    color: #ffffff;
+}
+.portaal-kaart:hover .btn-poort-nl {
+    background: #e05e00;
+}
+.btn-poort-eu {
+    background: #003399;
+    color: #ffffff;
+}
+.portaal-kaart:hover .btn-poort-eu {
+    background: #002266;
+}
+
+/* Disclaimer & EU-joke */
 .ab-melding {
     background: #fdf6e3;
     border-left: 4pt solid #d4a017;
-    padding: 18pt 22pt;
-    margin: 0 0 30pt;
+    padding: 14pt 18pt;
+    margin: 0 0 24pt;
     border-radius: 6px;
 }
-.ab-melding h3 {
-    margin: 0 0 12pt;
-    color: #8b6200;
-    font-size: 15pt;
-    border: none;
-    padding: 0;
-}
-.ab-melding p {
-    margin: 0 0 10pt;
-    color: #6b4c00;
-    font-size: 11pt;
-    line-height: 1.6;
-}
+.ab-melding h3 { margin: 0 0 8pt; color: #8b6200; font-size: 12pt; }
+.ab-melding p { margin: 0 0 8pt; font-size: 10.5pt; color: #6b4c00; line-height: 1.5; }
 .ab-melding p:last-child { margin-bottom: 0; }
-.ab-melding .vlag-klein {
-    font-size: 14pt;
-    margin-right: 8pt;
-}
 
-/* === EU-joke === */
 .eu-joke {
-    text-align: center;
-    font-size: 11pt;
-    color: #6b7280;
-    font-style: italic;
-    margin: 30pt 0 0;
-    padding: 20pt;
-    border-top: 1px dashed #ddd7c9;
-    border-bottom: 1px dashed #ddd7c9;
-    line-height: 1.6;
+    text-align: center; font-size: 11pt; color: #6b7280; font-style: italic;
+    margin: 24pt 0; padding: 16pt;
+    border-top: 1px dashed #ddd7c9; border-bottom: 1px dashed #ddd7c9;
 }
-.eu-joke .eu-vlag {
-    font-size: 22pt;
-    display: block;
-    margin-bottom: 6pt;
-}
+.eu-joke .eu-vlag { font-size: 20pt; display: block; margin-bottom: 4pt; }
 
-/* === Documentkaarten (per-taal home) === */
-.doc-lijst { list-style: none; padding: 0; margin: 0; }
-.doc-lijst li {
-    position: relative;
-    margin: 0 0 14pt;
-    padding: 22pt 26pt 22pt 28pt;
-    background: #ffffff;
-    border-left: 6px solid #1a3c6e;
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0,0,0,.04);
-    transition: transform .15s, box-shadow .2s;
-    overflow: hidden;
-}
-.doc-lijst li:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(0,0,0,.08);
-}
-.doc-lijst .docletter {
-    position: absolute;
-    top: -10pt;
-    right: 14pt;
-    font-size: 96pt;
-    font-weight: 900;
-    line-height: 1;
-    opacity: 0.06;
-    pointer-events: none;
-    user-select: none;
-}
-.doc-lijst a.titel {
-    display: block;
-    font-size: 17pt;
-    font-weight: 700;
-    text-decoration: none;
-    margin: 0 0 6pt;
-    position: relative;
-    z-index: 1;
-}
-.doc-lijst a.titel:hover { text-decoration: underline; }
-.doc-lijst .beschrijving {
-    font-size: 10.5pt;
-    color: #4a5560;
-    margin: 0;
-    line-height: 1.55;
-    position: relative;
-    z-index: 1;
-}
-.doc-lijst .downloads {
-    margin-top: 12pt;
-    font-size: 10pt;
-    position: relative;
-    z-index: 1;
-}
-.doc-lijst .downloads a {
-    text-decoration: none;
-    font-weight: 600;
-    margin-right: 16px;
-    padding: 4pt 10pt;
-    border-radius: 4px;
-    transition: background .15s;
-    display: inline-block;
-}
-.doc-lijst .downloads a:hover { text-decoration: none; }
-
-.doc-0 { border-left-color: #8b1e1e; background: #fbf5f5; }
-.doc-0 .docletter { color: #8b1e1e; }
-.doc-0 a.titel { color: #8b1e1e; }
-.doc-0 .downloads a { background: #f6eded; color: #8b1e1e; }
-.doc-0 .downloads a:hover { background: #f0dcdc; }
-
-.doc-a { border-left-color: #7a3e9d; background: #faf6fc; }
-.doc-a .docletter { color: #7a3e9d; }
-.doc-a a.titel { color: #7a3e9d; }
-.doc-a .downloads a { background: #f4f0f7; color: #7a3e9d; }
-.doc-a .downloads a:hover { background: #ebe2f0; }
-
-.doc-b { border-left-color: #1a3c6e; background: #f6f8fb; }
-.doc-b .docletter { color: #1a3c6e; }
-.doc-b a.titel { color: #1a3c6e; }
-.doc-b .downloads a { background: #edf0f4; color: #1a3c6e; }
-.doc-b .downloads a:hover { background: #dde4ed; }
-
-.doc-c { border-left-color: #4a3b6b; background: #f8f6fa; }
-.doc-c .docletter { color: #4a3b6b; }
-.doc-c a.titel { color: #4a3b6b; }
-.doc-c .downloads a { background: #f0eff3; color: #4a3b6b; }
-.doc-c .downloads a:hover { background: #e2dfe9; }
-
-.doc-d { border-left-color: #2e7d32; background: #f5faf5; }
-.doc-d .docletter { color: #2e7d32; }
-.doc-d a.titel { color: #2e7d32; }
-.doc-d .downloads a { background: #eef4ef; color: #2e7d32; }
-.doc-d .downloads a:hover { background: #ddeade; }
-
-/* === A/B-banner (per-taal home) === */
-.pub-ab-banner {
-    background: #fdf6e3;
-    border-left: 4pt solid #d4a017;
-    padding: 12pt 18pt;
-    margin: 0 0 30pt;
-    color: #6b4c00;
-    font-size: 11pt;
-    line-height: 1.6;
-    border-radius: 5px;
-}
-.pub-ab-banner strong { color: #8b6200; }
-
-/* === Footer === */
 .footer {
-    margin-top: 70pt;
-    padding-top: 22pt;
-    border-top: 1px solid #ddd7c9;
-    font-size: 9.5pt;
-    color: #6b7280;
-    text-align: center;
-    line-height: 1.7;
-}
-.footer a { color: #1a3c6e; text-decoration: none; }
-.footer a:hover { text-decoration: underline; }
-
-/* === Navigatie === */
-.pub-nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: #ffffff;
-    border-bottom: 2px solid #e2ddd2;
-    padding: 10pt 40pt;
-    margin: -40pt -40pt 20pt -40pt;
-    font-family: Aptos, Calibri, sans-serif;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-}
-.pub-nav .links {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    align-items: center;
-}
-.pub-nav a {
-    color: #1a3c6e;
-    text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 11pt;
-    font-weight: 600;
-    border: 1px solid transparent;
-}
-.pub-nav a:hover { background: #eef2f7; border-color: #e2ddd2; }
-.pub-nav a.actief { background: #1a3c6e; color: #ffffff; }
-.pub-nav a.home { border: 1px solid #e2ddd2; }
-
-.pub-nav .langs {
-    display: flex;
-    gap: 4px;
-    align-items: center;
-    font-size: 10pt;
-}
-.pub-nav .langs a {
-    padding: 5pt 10pt;
-    font-weight: 700;
-    border: 1px solid #e2ddd2;
-    background: #ffffff;
-}
-.pub-nav .langs a:hover {
-    background: var(--accent-soft);
-    border-color: var(--accent);
-}
-.pub-nav .langs a.actief {
-    background: var(--accent);
-    color: #ffffff;
-    border-color: var(--accent);
-}
-.pub-nav .langs a.lang-nl { --accent: #FF6B00; --accent-soft: #fff0e0; color: #FF6B00; }
-.pub-nav .langs a.lang-en { --accent: #012169; --accent-soft: #e6ebf3; color: #012169; }
-.pub-nav .langs a.lang-de { --accent: #DD0000; --accent-soft: #fbe6e6; color: #DD0000; }
-.pub-nav .langs a.lang-fr { --accent: #0055A4; --accent-soft: #e6eef6; color: #0055A4; }
-.pub-nav .langs a.actief.lang-nl,
-.pub-nav .langs a.actief.lang-en,
-.pub-nav .langs a.actief.lang-de,
-.pub-nav .langs a.actief.lang-fr { color: #ffffff; }
-
-.pub-top {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 200;
-    background: #1a3c6e;
-    color: #fff;
-    border: none;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 18pt;
-    line-height: 1;
-    box-shadow: 0 2px 8px rgba(0,0,0,.25);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform .15s;
-}
-.pub-top:hover { transform: scale(1.1); background: #12294d; }
-.pub-footer {
-    margin-top: 60pt;
-    padding-top: 20pt;
-    border-top: 1px solid #ddd7c9;
-    font-size: 10pt;
-    color: #6b7280;
-    text-align: center;
-}
-.pub-footer a { color: #1a3c6e; text-decoration: none; }
-.pub-footer a:hover { text-decoration: underline; }
-
-/* === Dark mode (root + home) === */
-html[data-theme="dark"] { color-scheme: dark; }
-html[data-theme="dark"] body {
-    background: #1a1a1a;
-    color: #e0e0e0;
-}
-html[data-theme="dark"] h1 { color: #7fb3ff; }
-html[data-theme="dark"] .ondertitel { color: #c0c0c0; }
-html[data-theme="dark"] .auteur { color: #a0a0a0; }
-html[data-theme="dark"] .intro { color: #d0d0d0; }
-
-/* Intro-rijen (taalkeuze onderaan) */
-html[data-theme="dark"] .intro-rij {
-    background: #232323;
-    box-shadow: 0 1px 3px rgba(0,0,0,.3);
-}
-html[data-theme="dark"] .intro-rij:hover {
-    box-shadow: 0 8px 22px rgba(0,0,0,.5);
-}
-html[data-theme="dark"] .intro-rij h3 { color: var(--accent); }
-html[data-theme="dark"] .intro-rij p { color: #b8b8b8; }
-html[data-theme="dark"] .intro-rij a.goto { color: var(--accent); }
-
-/* A/B-melding */
-html[data-theme="dark"] .ab-melding {
-    background: #332c14;
-    border-left-color: #d4a017;
-}
-html[data-theme="dark"] .ab-melding h3 { color: #e8c268; }
-html[data-theme="dark"] .ab-melding p { color: #d0c090; }
-
-/* EU-joke */
-html[data-theme="dark"] .eu-joke {
-    color: #a0a0a0;
-    border-top-color: #3a3a3a;
-    border-bottom-color: #3a3a3a;
+    margin-top: 30pt; padding-top: 18pt; border-top: 1px solid #ddd7c9;
+    font-size: 9.5pt; color: #6b7280; text-align: center;
 }
 
-/* Documentkaarten (voor als je ze ooit in de root zet) */
-html[data-theme="dark"] .doc-lijst li {
-    background: #232323;
-    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+/* Dark Mode Overrides */
+html[data-theme="dark"] body { background: #1a1a1a !important; color: #e0e0e0 !important; }
+html[data-theme="dark"] h1, html[data-theme="dark"] .keuze-kop h2 { color: #7fb3ff !important; }
+html[data-theme="dark"] .ondertitel, html[data-theme="dark"] .keuze-kop p { color: #c0c0c0 !important; }
+html[data-theme="dark"] .root-intro-kolom { background: #232323 !important; border-color: #3a3a3a !important; }
+html[data-theme="dark"] .root-intro-taal { color: #7fb3ff !important; }
+html[data-theme="dark"] .root-intro-kolom p { color: #c0c0c0 !important; }
+html[data-theme="dark"] .portaal-kaart {
+    background: #232323 !important;
+    border-color: #3a3a3a !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,.4) !important;
 }
-html[data-theme="dark"] .doc-lijst a.titel { color: #7fb3ff; }
-html[data-theme="dark"] .doc-lijst .beschrijving { color: #b8b8b8; }
-html[data-theme="dark"] .doc-0 { border-left-color: #ff8a8a; background: #2a1c1c; }
-html[data-theme="dark"] .doc-0 a.titel { color: #ff8a8a; }
-html[data-theme="dark"] .doc-a { border-left-color: #c89bf0; background: #241c2a; }
-html[data-theme="dark"] .doc-a a.titel { color: #c89bf0; }
-html[data-theme="dark"] .doc-b { border-left-color: #7fb3ff; background: #1c2129; }
-html[data-theme="dark"] .doc-b a.titel { color: #7fb3ff; }
-html[data-theme="dark"] .doc-c { border-left-color: #a99cd4; background: #211f28; }
-html[data-theme="dark"] .doc-c a.titel { color: #a99cd4; }
-html[data-theme="dark"] .doc-d { border-left-color: #7fcf88; background: #1c241d; }
-html[data-theme="dark"] .doc-d a.titel { color: #7fcf88; }
+html[data-theme="dark"] .portaal-kaart h3 { color: #f0f0f0 !important; }
+html[data-theme="dark"] .portaal-ondertitel { color: #888888 !important; }
+html[data-theme="dark"] .portaal-beschrijving { color: #b0b0b0 !important; }
+html[data-theme="dark"] .portaal-punten { color: #cccccc !important; }
+html[data-theme="dark"] .portaal-nl:hover { border-color: #ff9147 !important; }
+html[data-theme="dark"] .portaal-eu:hover { border-color: #7fb3ff !important; }
+html[data-theme="dark"] .badge-nl { background: #3d2314 !important; color: #ff9147 !important; border-color: #66381e !important; }
+html[data-theme="dark"] .badge-eu { background: #14233d !important; color: #7fb3ff !important; border-color: #1e3866 !important; }
+html[data-theme="dark"] .ab-melding { background: #332c14 !important; border-left-color: #d4a017 !important; }
+html[data-theme="dark"] .ab-melding h3 { color: #e8c268 !important; }
+html[data-theme="dark"] .ab-melding p { color: #d0c090 !important; }
+html[data-theme="dark"] .eu-joke { color: #a0a0a0 !important; border-color: #3a3a3a !important; }
+html[data-theme="dark"] .footer { color: #888 !important; border-color: #3a3a3a !important; }
 
-/* Footer */
-html[data-theme="dark"] .footer {
-    color: #888;
-    border-top-color: #3a3a3a;
+@media (max-width: 750px) {
+    body { padding: 14pt; }
+    h1 { font-size: 22pt; }
+    .portaal-grid { grid-template-columns: 1fr; }
+    .root-intro-grid { grid-template-columns: 1fr; }
 }
-html[data-theme="dark"] .footer a { color: #b0c8e8; }
+</style>
+<style>
 
-/* Toggle-knop */
-.dm-toggle {
-    position: fixed; bottom: 80px; right: 24px; z-index: 200;
-    background: #ffffff; color: #1a3c6e; border: 1px solid #d5d0c5;
-    width: 44px; height: 44px; border-radius: 50%;
-    cursor: pointer; font-size: 18pt; line-height: 1; padding: 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,.25);
-    display: flex; align-items: center; justify-content: center;
-    transition: transform .15s, background .15s, border-color .15s;
-    font-family: Aptos, Calibri, sans-serif;
+/* Forensisch Bronopvragings- en Contactvenster (Modal) */
+.pub-contact-btn {
+    background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
+    padding: 5px 12px; border-radius: 4px; font-size: 10pt; font-weight: 600;
+    cursor: pointer; font-family: inherit; transition: all .15s;
+    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
 }
-.dm-toggle:hover { transform: scale(1.1); background: #eef2f7; border-color: #1a3c6e; }
-.dm-toggle .dm-icon-lm { display: none; }
-html[data-theme="dark"] .dm-toggle .dm-icon-dm { display: none; }
-html[data-theme="dark"] .dm-toggle .dm-icon-lm { display: inline; }
-html[data-theme="dark"] .dm-toggle {
-    background: #232323; border-color: #4a4a4a; color: #e0e0e0;
-}
-html[data-theme="dark"] .dm-toggle:hover {
-    background: #2a2a2a; border-color: #7fb3ff;
+.pub-contact-btn:hover { background: #1a3c6e; color: #ffffff; border-color: #1a3c6e; }
+.pub-contact-footer { margin: 10pt 0 4pt; font-size: 10.5pt; padding: 7px 16px; }
+
+.audit-bewijs { cursor: pointer; transition: border-color .15s, background .15s, box-shadow .15s; }
+.audit-bewijs:hover {
+    border-color: #1a3c6e; background: #e6edf7;
+    box-shadow: 0 1px 4px rgba(26,60,110,0.18);
 }
 
-/* === PUBLICATIE-CSS END === */</style>
+.bm-modal-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.65); z-index: 1000;
+    display: none; align-items: center; justify-content: center;
+    padding: 20px; backdrop-filter: blur(2px);
+}
+.bm-modal-overlay.bm-open { display: flex; }
+.bm-modal-dialog {
+    background: #ffffff; color: #222222; border-radius: 8px;
+    max-width: 680px; width: 100%; max-height: 90vh; overflow-y: auto;
+    padding: 24px 28px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    border: 1px solid #d5d0c5; font-family: Aptos, Calibri, sans-serif;
+    position: relative; box-sizing: border-box; text-align: left;
+}
+.bm-modal-kop {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    border-bottom: 2px solid #1a3c6e; padding-bottom: 12px; margin-bottom: 16px;
+}
+.bm-modal-kop h3 {
+    margin: 0; font-size: 16pt; color: #1a3c6e; border: none; padding: 0;
+}
+.bm-modal-sluit {
+    background: none; border: none; font-size: 22pt; line-height: 1;
+    color: #888; cursor: pointer; padding: 0 4px;
+}
+.bm-modal-sluit:hover { color: #c62828; }
+.bm-intro {
+    font-size: 10pt; line-height: 1.5; color: #555555; background: #f7f5f1;
+    padding: 10px 14px; border-left: 3px solid #1a3c6e; border-radius: 3px;
+    margin-bottom: 18px;
+}
+.bm-groep { margin-bottom: 14px; }
+.bm-groep label.bm-label {
+    display: block; font-weight: 700; font-size: 10.5pt; color: #1a3c6e; margin-bottom: 5px;
+}
+.bm-input, .bm-textarea {
+    width: 100%; box-sizing: border-box; padding: 8px 12px;
+    border: 1px solid #ccc; border-radius: 4px; font-family: inherit;
+    font-size: 10.5pt; background: #faf8f5; color: #222;
+}
+.bm-input:focus, .bm-textarea:focus {
+    border-color: #1a3c6e; background: #fff; outline: none;
+}
+.bm-textarea { min-height: 90px; resize: vertical; }
+.bm-radio-groep {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px;
+}
+@media (max-width: 580px) {
+    .bm-radio-groep { grid-template-columns: 1fr; }
+}
+.bm-radio-optie {
+    display: flex; align-items: flex-start; gap: 8px; background: #f9f8f6;
+    border: 1px solid #e2ddd5; padding: 8px 10px; border-radius: 4px;
+    font-size: 9.5pt; cursor: pointer;
+}
+.bm-radio-optie:hover { border-color: #1a3c6e; background: #f0f4f9; }
+.bm-radio-optie input { margin-top: 2px; }
+.bm-check-groep {
+    display: flex; align-items: flex-start; gap: 8px; font-size: 9.5pt;
+    color: #444; margin: 14px 0 18px;
+}
+.bm-knoppen { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+.bm-btn-mail {
+    background: #1a3c6e; color: #ffffff; border: 1px solid #1a3c6e;
+    padding: 8px 16px; border-radius: 4px; font-size: 10.5pt; font-weight: 700;
+    cursor: pointer; transition: background .15s;
+}
+.bm-btn-mail:hover { background: #122b50; }
+.bm-btn-copy {
+    background: #f0eee9; color: #333; border: 1px solid #d5d0c5;
+    padding: 8px 14px; border-radius: 4px; font-size: 10.5pt; font-weight: 600;
+    cursor: pointer; transition: all .15s;
+}
+.bm-btn-copy:hover { background: #e2ded5; }
+.bm-btn-copy.bm-copied { background: #2e7d32; color: #ffffff; border-color: #2e7d32; }
+
+@media (max-width: 768px) {
+    .pub-contact-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 38px; }
+    .bm-modal-dialog { padding: 18px 16px; width: 95%; max-height: 94vh; }
+    .bm-modal-kop h3 { font-size: 14pt; }
+    .bm-intro { font-size: 9.5pt; padding: 8px 10px; }
+    .bm-input, .bm-textarea { font-size: 16px; }
+    .bm-radio-groep { grid-template-columns: 1fr; }
+}
+
+/* Modal Dark-Mode */
+html[data-theme="dark"] .pub-contact-btn {
+    background: #232323; color: #b0c8e8; border-color: #4a4a4a;
+}
+html[data-theme="dark"] .pub-contact-btn:hover {
+    background: #2a2a2a; border-color: #7fb3ff; color: #ffffff;
+}
+html[data-theme="dark"] .audit-bewijs:hover {
+    border-color: #7fb3ff !important; background: #2f3642 !important;
+    box-shadow: 0 1px 6px rgba(127,179,255,0.25);
+}
+html[data-theme="dark"] .bm-modal-dialog {
+    background: #202226; color: #e0e0e0; border-color: #3a3f48;
+}
+html[data-theme="dark"] .bm-modal-kop { border-bottom-color: #4a6fa5; }
+html[data-theme="dark"] .bm-modal-kop h3 { color: #7fb3ff !important; }
+html[data-theme="dark"] .bm-intro {
+    background: #282c34; border-left-color: #7fb3ff; color: #b8b8b8;
+}
+html[data-theme="dark"] .bm-groep label.bm-label { color: #7fb3ff !important; }
+html[data-theme="dark"] .bm-input,
+html[data-theme="dark"] .bm-textarea {
+    background: #181a1f; border-color: #3e4450; color: #e8e8e8;
+}
+html[data-theme="dark"] .bm-input:focus,
+html[data-theme="dark"] .bm-textarea:focus {
+    border-color: #7fb3ff; background: #1f2229;
+}
+html[data-theme="dark"] .bm-radio-optie {
+    background: #262930; border-color: #3e4450; color: #d0d0d0;
+}
+html[data-theme="dark"] .bm-radio-optie:hover {
+    background: #2f3440; border-color: #7fb3ff;
+}
+html[data-theme="dark"] .bm-check-groep { color: #b0b0b0; }
+html[data-theme="dark"] .bm-btn-mail {
+    background: #4a6fa5; border-color: #4a6fa5; color: #ffffff;
+}
+html[data-theme="dark"] .bm-btn-mail:hover { background: #395782; }
+html[data-theme="dark"] .bm-btn-copy {
+    background: #2a2e36; border-color: #404754; color: #e0e0e0;
+}
+html[data-theme="dark"] .bm-btn-copy:hover {
+    background: #353b47; border-color: #7fb3ff;
+}
+
+/* Taal-kiezer styling in navigatie */
+.pub-lang-switch {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: #eef2f7; padding: 2px 4px; border-radius: 4px;
+    border: 1px solid #d5d0c5;
+}
+.pub-lang-btn {
+    text-decoration: none; font-size: 9.5pt; font-weight: 600;
+    color: #1a3c6e; padding: 3px 7px; border-radius: 3px;
+    transition: background .15s, color .15s;
+}
+.pub-lang-btn:hover { background: #dce6f2; }
+.pub-lang-btn.actief { background: #1a3c6e; color: #ffffff !important; }
+
+html[data-theme="dark"] .pub-lang-switch { background: #1f2229; border-color: #3e4450; }
+html[data-theme="dark"] .pub-lang-btn { color: #b0c8e8; }
+html[data-theme="dark"] .pub-lang-btn:hover { background: #2a3342; }
+html[data-theme="dark"] .pub-lang-btn.actief { background: #4a6fa5; color: #ffffff !important; }
+
+/* Google Translate Widget & Frame Styling */
+.goog-te-banner-frame, .skiptranslate iframe, #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+body { top: 0px !important; position: static !important; }
+.goog-text-highlight { background: transparent !important; box-shadow: none !important; }
+font[style] { background: transparent !important; box-shadow: none !important; }
+
+.pub-lang-select, #int-lang-select {
+    font-family: inherit; font-size: 10pt; font-weight: 600;
+    padding: 4px 8px; border: 1px solid #d5d0c5; border-radius: 4px;
+    background-color: #ffffff; color: #1a3c6e; cursor: pointer;
+    color-scheme: light;
+}
+.pub-lang-select option, #int-lang-select option {
+    background-color: #ffffff; color: #1a3c6e;
+    color-scheme: light;
+}
+html[data-theme="dark"] .pub-lang-select,
+html[data-theme="dark"] #int-lang-select,
+html[data-theme="dark"] select.pub-lang-select {
+    background-color: #232323 !important;
+    background: #232323 !important;
+    border-color: #4a4a4a !important;
+    color: #e0e0e0 !important;
+    color-scheme: dark !important;
+}
+html[data-theme="dark"] .pub-lang-select option,
+html[data-theme="dark"] #int-lang-select option,
+html[data-theme="dark"] select.pub-lang-select option {
+    background-color: #232323 !important;
+    background: #232323 !important;
+    color: #e0e0e0 !important;
+    color-scheme: dark !important;
+}
+
+</style>
 </head>
 <body>
-<a id="top"></a>
+<div class="container">
 <div class="spectrum"><span style="background:#8b1e1e"></span><span style="background:#7a3e9d"></span><span style="background:#1a3c6e"></span><span style="background:#4a3b6b"></span><span style="background:#2e7d32"></span></div>
-<h1>Systeem-Audit</h1>
-<p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
-<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 14 oktober 2026, 08:14</p><div class="root-inhoud" id="root-inhoud">
-<style>
-  .root-inhoud { max-width: 900px; margin: 24px auto 32px; padding: 0 20px;
-                  font-family: Aptos, Calibri, sans-serif; }
-  .root-kaart { margin: 0 0 20px; }
-  .root-kaart img { display: block; width: 100%; height: auto;
-                    border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-                    transition: filter .2s, box-shadow .2s, border-color .2s;
-                    border: 1px solid transparent; }
-  html[data-theme="dark"] .root-kaart img {
-      border: 1px solid #3a3a3a;
-      box-shadow: 0 4px 20px rgba(0,0,0,.6);
-      filter: invert(0.92) hue-rotate(180deg) brightness(0.95) saturate(1.1);
-  }
-  .root-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
-                     margin: 0; }
-  .root-intro-kolom { background: #ffffff; border: 1px solid #e8e4dc;
-                      border-radius: 6px; padding: 12px 14px; }
-  .root-intro-kop { display: flex; align-items: baseline; gap: 8px;
-                    margin-bottom: 6px; }
-  .root-intro-vlag { font-size: 16pt; line-height: 1; }
-  .root-intro-taal { font-weight: 700; font-size: 10pt; color: #1a3c6e;
-                     text-transform: uppercase; letter-spacing: 0.5px; }
-  .root-intro-kolom p { margin: 0; font-size: 10.5pt; line-height: 1.45;
-                        color: #333; }
-  html[data-theme="dark"] .root-intro-kolom { background: #232323; border-color: #3a3a3a; }
-  html[data-theme="dark"] .root-intro-taal { color: #7fb3ff; }
-  html[data-theme="dark"] .root-intro-kolom p { color: #c0c0c0; }
-  @media (max-width: 700px) {
-    .root-inhoud { padding: 0 16px; margin: 16px auto 24px; }
-    .root-intro-grid { grid-template-columns: 1fr; }
-    .root-intro-kolom p { font-size: 11pt; }
-  }
-
-  /* intro-rij dark-mode */
-  html[data-theme="dark"] .intro-rij[lang="nl"] {
-      --accent: #ff9147 !important;
-  }
-  html[data-theme="dark"] .intro-rij[lang="en"] {
-      --accent: #7fb3ff !important;
-  }
-  html[data-theme="dark"] .intro-rij[lang="de"] {
-      --accent: #ff8080 !important;
-  }
-  html[data-theme="dark"] .intro-rij[lang="fr"] {
-      --accent: #7fb3ff !important;
-  }
-  html[data-theme="dark"] .intro-rij h3,
-  html[data-theme="dark"] .intro-rij a.goto {
-      text-shadow: 0 0 1px rgba(255,255,255,0.25),
-                   0 0 3px rgba(255,255,255,0.10);
-  }
-  html[data-theme="dark"] .intro-rij {
-      background: #232323 !important;
-      box-shadow: 0 1px 3px rgba(0,0,0,.3) !important;
-  }
-  html[data-theme="dark"] .intro-rij p {
-      color: #b8b8b8 !important;
-  }
-  html[data-theme="dark"] .intro-rijen {
-      /* container */
-  }
-  </style>
-<div class="root-kaart">
-<img alt="Grensregio's in de Europese Unie — focus op Zeeuws-Vlaanderen" src="assets/kaart_eu.png"/>
-</div>
-<div class="root-intro-grid">
-<div class="root-intro-kolom" lang="nl">
-<div class="root-intro-kop">
-<span class="root-intro-vlag">🇳🇱</span>
-<span class="root-intro-taal">Nederlands</span>
-</div>
-<p>Systeem-Audit is geen klacht. Het is een kaart. Zes documenten die laten zien wat er gebeurt wanneer een burger tussen twee nationale socialezekerheidsstelsels valt. Wat werkt, wat vastloopt, en wat het oplevert.</p>
-</div>
-<div class="root-intro-kolom" lang="en">
-<div class="root-intro-kop">
-<span class="root-intro-vlag">🇬🇧</span>
-<span class="root-intro-taal">English</span>
-</div>
-<p>Systeem-Audit is not a complaint. It is a map. Six documents showing what happens when a citizen falls between two national social security systems. What works, what gets stuck, and what it delivers.</p>
-</div>
-<div class="root-intro-kolom" lang="de">
-<div class="root-intro-kop">
-<span class="root-intro-vlag">🇩🇪</span>
-<span class="root-intro-taal">Deutsch</span>
-</div>
-<p>Systeem-Audit ist keine Beschwerde. Es ist eine Karte. Sechs Dokumente, die zeigen, was passiert, wenn ein Bürger zwischen zwei nationale Sozialsysteme fällt. Was funktioniert, wo es stockt, und was es bringt.</p>
-</div>
-<div class="root-intro-kolom" lang="fr">
-<div class="root-intro-kop">
-<span class="root-intro-vlag">🇫🇷</span>
-<span class="root-intro-taal">Français</span>
-</div>
-<p>Systeem-Audit n'est pas une plainte. C'est une carte. Six documents qui montrent ce qui se passe lorsqu'un citoyen tombe entre deux systèmes nationaux de sécurité sociale. Ce qui fonctionne, ce qui bloque, et ce que cela rapporte.</p>
-</div>
-</div>
-</div><div class="rechten-banner" id="rechten-banner">
+<h1>GRENSARBEID.ORG — Systeem-Audit</h1>
+<p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen</p>
+<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 26 oktober 2026, 20:30</p><div class="rechten-banner" id="rechten-banner">
 <style>
   .rechten-banner { max-width: 900px; margin: 24px auto 32px; padding: 0 20px;
                     font-family: Aptos, Calibri, sans-serif; }
@@ -634,25 +512,25 @@ html[data-theme="dark"] .dm-toggle:hover {
 <a class="rb-slide rb-actief" data-index="0" href="nl/document-e.html#recht-cmziekte" style="border-left-color:#c62828">
 <div class="rb-kop">
 <span class="rb-status" style="background:#c62828">Vastgelopen</span>
-<span class="rb-datum">bijgewerkt 14-10-2026</span>
+<span class="rb-datum">bijgewerkt 26-10-2026</span>
 </div>
 <div class="rb-naam">Ziekte-uitkering / Invaliditeit</div>
 <div class="rb-kort">Tuchtklacht CM-arts loopt</div>
 <div class="rb-cta">Bekijk in het rechtenoverzicht →</div>
 </a>
-<a class="rb-slide" data-index="1" href="nl/document-e.html#recht-maximumfactuur" style="border-left-color:#c62828">
+<a class="rb-slide" data-index="1" href="nl/document-e.html#recht-maximumfactuur" style="border-left-color:#2e7d32">
 <div class="rb-kop">
-<span class="rb-status" style="background:#c62828">Vastgelopen</span>
-<span class="rb-datum">bijgewerkt 14-10-2026</span>
+<span class="rb-status" style="background:#2e7d32">Actief</span>
+<span class="rb-datum">bijgewerkt 26-10-2026</span>
 </div>
 <div class="rb-naam">Maximumfactuur</div>
-<div class="rb-kort">Buitenlandse facturen tellen niet mee</div>
+<div class="rb-kort">Toegekend voor 2025 (€ 238,15 teruggestort)</div>
 <div class="rb-cta">Bekijk in het rechtenoverzicht →</div>
 </a>
 <a class="rb-slide" data-index="2" href="nl/document-e.html#recht-verhoogdetegemoetkoming" style="border-left-color:#c62828">
 <div class="rb-kop">
 <span class="rb-status" style="background:#c62828">Vastgelopen</span>
-<span class="rb-datum">bijgewerkt 14-10-2026</span>
+<span class="rb-datum">bijgewerkt 26-10-2026</span>
 </div>
 <div class="rb-naam">Verhoogde Tegemoetkoming</div>
 <div class="rb-kort">Status niet toegekend</div>
@@ -661,7 +539,7 @@ html[data-theme="dark"] .dm-toggle:hover {
 <a class="rb-slide" data-index="3" href="nl/document-e.html#recht-verhoogdemaximumfactuur" style="border-left-color:#c62828">
 <div class="rb-kop">
 <span class="rb-status" style="background:#c62828">Vastgelopen</span>
-<span class="rb-datum">bijgewerkt 14-10-2026</span>
+<span class="rb-datum">bijgewerkt 26-10-2026</span>
 </div>
 <div class="rb-naam">Verhoogde Maximumfactuur</div>
 <div class="rb-kort">Wacht op VT-status</div>
@@ -670,7 +548,7 @@ html[data-theme="dark"] .dm-toggle:hover {
 <a class="rb-slide" data-index="4" href="nl/document-e.html#recht-inkomensvervangendetegemoetkoming" style="border-left-color:#c62828">
 <div class="rb-kop">
 <span class="rb-status" style="background:#c62828">Vastgelopen</span>
-<span class="rb-datum">bijgewerkt 14-10-2026</span>
+<span class="rb-datum">bijgewerkt 26-10-2026</span>
 </div>
 <div class="rb-naam">Inkomensvervangende Tegemoetkoming</div>
 <div class="rb-kort">Medisch erkend, afgewezen op adres</div>
@@ -679,7 +557,7 @@ html[data-theme="dark"] .dm-toggle:hover {
 <a class="rb-slide" data-index="5" href="nl/document-e.html#recht-groeipakket" style="border-left-color:#2e7d32">
 <div class="rb-kop">
 <span class="rb-status" style="background:#2e7d32">Actief</span>
-<span class="rb-datum">bijgewerkt 14-10-2026</span>
+<span class="rb-datum">bijgewerkt 26-10-2026</span>
 </div>
 <div class="rb-naam">Groeipakket</div>
 <div class="rb-kort">Basisbedrag loopt, sociale toeslag niet</div>
@@ -688,7 +566,7 @@ html[data-theme="dark"] .dm-toggle:hover {
 <a class="rb-slide" data-index="6" href="nl/document-e.html#recht-socialetoeslaggroeipakket" style="border-left-color:#c62828">
 <div class="rb-kop">
 <span class="rb-status" style="background:#c62828">Vastgelopen</span>
-<span class="rb-datum">bijgewerkt 14-10-2026</span>
+<span class="rb-datum">bijgewerkt 26-10-2026</span>
 </div>
 <div class="rb-naam">Sociale Toeslag Groeipakket</div>
 <div class="rb-kort">Wacht op herziening KSZ 2028</div>
@@ -697,7 +575,7 @@ html[data-theme="dark"] .dm-toggle:hover {
 <a class="rb-slide" data-index="7" href="nl/document-e.html#recht-belastingvrijesom" style="border-left-color:#e65100">
 <div class="rb-kop">
 <span class="rb-status" style="background:#e65100">Aangevraagd</span>
-<span class="rb-datum">bijgewerkt 14-10-2026</span>
+<span class="rb-datum">bijgewerkt 26-10-2026</span>
 </div>
 <div class="rb-naam">Verhoogde Belastingvrije Som</div>
 <div class="rb-kort">Aangifte ingediend 25-09-2026</div>
@@ -706,7 +584,7 @@ html[data-theme="dark"] .dm-toggle:hover {
 <a class="rb-slide" data-index="8" href="nl/document-e.html#recht-zorgtoeslag" style="border-left-color:#c62828">
 <div class="rb-kop">
 <span class="rb-status" style="background:#c62828">Vastgelopen</span>
-<span class="rb-datum">bijgewerkt 14-10-2026</span>
+<span class="rb-datum">bijgewerkt 26-10-2026</span>
 </div>
 <div class="rb-naam">Zorgtoeslag</div>
 <div class="rb-kort">Bezwaar loopt — € 0,00 uitgekeerd</div>
@@ -715,7 +593,7 @@ html[data-theme="dark"] .dm-toggle:hover {
 <a class="rb-slide" data-index="9" href="nl/document-e.html#recht-aftrekzorgkosten" style="border-left-color:#e65100">
 <div class="rb-kop">
 <span class="rb-status" style="background:#e65100">Lopend</span>
-<span class="rb-datum">bijgewerkt 14-10-2026</span>
+<span class="rb-datum">bijgewerkt 26-10-2026</span>
 </div>
 <div class="rb-naam">Aftrek Zorgkosten</div>
 <div class="rb-kort">Aangifte ingediend</div>
@@ -724,7 +602,7 @@ html[data-theme="dark"] .dm-toggle:hover {
 <a class="rb-slide" data-index="10" href="nl/document-e.html#recht-wia" style="border-left-color:#c62828">
 <div class="rb-kop">
 <span class="rb-status" style="background:#c62828">Vastgelopen</span>
-<span class="rb-datum">bijgewerkt 14-10-2026</span>
+<span class="rb-datum">bijgewerkt 26-10-2026</span>
 </div>
 <div class="rb-naam">WIA-uitkering</div>
 <div class="rb-kort">Herzieningsverzoek loopt</div>
@@ -733,7 +611,7 @@ html[data-theme="dark"] .dm-toggle:hover {
 <a class="rb-slide" data-index="11" href="nl/document-e.html#recht-wajong" style="border-left-color:#e65100">
 <div class="rb-kop">
 <span class="rb-status" style="background:#e65100">Aangevraagd</span>
-<span class="rb-datum">bijgewerkt 14-10-2026</span>
+<span class="rb-datum">bijgewerkt 26-10-2026</span>
 </div>
 <div class="rb-naam">Wajong op latere leeftijd</div>
 <div class="rb-kort">Dossiers opvragen bij behandelaars</div>
@@ -742,7 +620,7 @@ html[data-theme="dark"] .dm-toggle:hover {
 <a class="rb-slide" data-index="12" href="nl/document-e.html#recht-aow" style="border-left-color:#2e7d32">
 <div class="rb-kop">
 <span class="rb-status" style="background:#2e7d32">Actief</span>
-<span class="rb-datum">bijgewerkt 14-10-2026</span>
+<span class="rb-datum">bijgewerkt 26-10-2026</span>
 </div>
 <div class="rb-naam">AOW-opbouw</div>
 <div class="rb-kort">Opbouw loopt automatisch</div>
@@ -751,7 +629,7 @@ html[data-theme="dark"] .dm-toggle:hover {
 <a class="rb-slide" data-index="13" href="nl/document-e.html#recht-bijzonderebijstand" style="border-left-color:#c62828">
 <div class="rb-kop">
 <span class="rb-status" style="background:#c62828">Vastgelopen</span>
-<span class="rb-datum">bijgewerkt 14-10-2026</span>
+<span class="rb-datum">bijgewerkt 26-10-2026</span>
 </div>
 <div class="rb-naam">Bijzondere Bijstand</div>
 <div class="rb-kort">Beslissing verdaagd tot eind oktober</div>
@@ -760,7 +638,7 @@ html[data-theme="dark"] .dm-toggle:hover {
 <a class="rb-slide" data-index="14" href="nl/document-e.html#recht-kindgebondenbudget" style="border-left-color:#2e7d32">
 <div class="rb-kop">
 <span class="rb-status" style="background:#2e7d32">Actief</span>
-<span class="rb-datum">bijgewerkt 14-10-2026</span>
+<span class="rb-datum">bijgewerkt 26-10-2026</span>
 </div>
 <div class="rb-naam">Kindgebonden Budget</div>
 <div class="rb-kort">Voorlopig toegekend april 2026</div>
@@ -769,7 +647,7 @@ html[data-theme="dark"] .dm-toggle:hover {
 <a class="rb-slide" data-index="15" href="nl/document-e.html#recht-huurtoeslag" style="border-left-color:#2e7d32">
 <div class="rb-kop">
 <span class="rb-status" style="background:#2e7d32">Actief</span>
-<span class="rb-datum">bijgewerkt 14-10-2026</span>
+<span class="rb-datum">bijgewerkt 26-10-2026</span>
 </div>
 <div class="rb-naam">Huurtoeslag</div>
 <div class="rb-kort">Voorlopig toegekend, uitstel verkregen</div>
@@ -777,7 +655,7 @@ html[data-theme="dark"] .dm-toggle:hover {
 </a>
 </div>
 <div class="rb-teller">
-<span class="rb-teller-item"><span class="rb-dot rb-dot-rood"></span>9 vastgelopen</span><span class="rb-teller-item"><span class="rb-dot rb-dot-oranje"></span>2 aangevraagd</span><span class="rb-teller-item"><span class="rb-dot rb-dot-oranje"></span>1 lopend</span><span class="rb-teller-item"><span class="rb-dot rb-dot-groen"></span>4 actief</span><span class="rb-teller-item"><span class="rb-dot rb-dot-grijs"></span>1 afgesloten</span>
+<span class="rb-teller-item"><span class="rb-dot rb-dot-rood"></span>8 vastgelopen</span><span class="rb-teller-item"><span class="rb-dot rb-dot-oranje"></span>2 aangevraagd</span><span class="rb-teller-item"><span class="rb-dot rb-dot-oranje"></span>1 lopend</span><span class="rb-teller-item"><span class="rb-dot rb-dot-groen"></span>5 actief</span><span class="rb-teller-item"><span class="rb-dot rb-dot-grijs"></span>1 afgesloten</span>
 <span class="rb-teller-totaal">17 rechten totaal</span>
 </div>
 <script>
@@ -809,54 +687,335 @@ html[data-theme="dark"] .dm-toggle:hover {
   })();
   </script>
 </div>
-<div class="intro-rijen">
-<div class="intro-rij" lang="nl" style="--accent:#FF6B00; --accent-soft:#fff6f0">
-<div class="vlag">🇳🇱</div>
-<div>
-<h3>Nederlands</h3>
-<p>Dit dossier documenteert wat er gebeurt wanneer een burger tussen twee nationale socialezekerheidsstelsels valt. Vijf documenten, elk met een eigen invalshoek, vertellen hetzelfde verhaal.</p>
-<a class="goto" href="nl/home.html">Bekijk in het Nederlands →</a>
+<div class="root-kaart">
+<img alt="Grensregio's in de Europese Unie — focus op Zeeuws-Vlaanderen" src="assets/kaart_eu.png"/>
+</div>
+<div class="root-intro-grid">
+<div class="root-intro-kolom" lang="nl">
+<div class="root-intro-kop">
+<span class="root-intro-vlag">🇳🇱</span>
+<span class="root-intro-taal">Nederlands</span>
+</div>
+<p>Geen adviesloket en geen pleister op een vastgelopen formulier. Deze site toont aan de hand van één volledig gedocumenteerd dossier (62 instanties, meer dan 660 handelingen) hoe de Belgische en Nederlandse systemen achter de schermen werkelijk op elkaar inwerken — waar ze blokkeren, waarom brieven elkaar tegenspreken, en welke hefbomen wél werken.</p>
+</div> <div class="root-intro-kolom" lang="en">
+<div class="root-intro-kop">
+<span class="root-intro-vlag">🇬🇧</span>
+<span class="root-intro-taal">English</span>
+</div>
+<p>Not an advice desk and not a band-aid on a stalled form. Through one fully documented case (62 institutions, over 660 actions), this site shows how the Belgian and Dutch systems actually interact behind the scenes — where they lock up, why official letters contradict each other, and which levers actually work.</p>
+</div> <div class="root-intro-kolom" lang="de">
+<div class="root-intro-kop">
+<span class="root-intro-vlag">🇩🇪</span>
+<span class="root-intro-taal">Deutsch</span>
+</div>
+<p>Keine Beratungsstelle und kein Pflaster auf einem festgefahrenen Formular. Anhand einer vollständig dokumentierten Akte (62 Behörden, über 660 Vorgänge) zeigt diese Seite, wie das belgische und das niederländische System hinter den Kulissen tatsächlich zusammenwirken — wo sie blockieren, warum Briefe sich widersprechen und welche Hebel wirklich funktionieren.</p>
+</div> <div class="root-intro-kolom" lang="fr">
+<div class="root-intro-kop">
+<span class="root-intro-vlag">🇫🇷</span>
+<span class="root-intro-taal">Français</span>
+</div>
+<p>Ni un guichet de conseil, ni un pansement sur un formulaire bloqué. À travers un dossier entièrement documenté (62 institutions, plus de 660 actes), ce site montre comment les systèmes belge et néerlandais interagissent réellement en coulisses — où ils bloquent, pourquoi les courriers se contredisent et quels leviers fonctionnent vraiment.</p>
 </div>
 </div>
-<div class="intro-rij" lang="en" style="--accent:#012169; --accent-soft:#f0f2f6">
-<div class="vlag">🇬🇧</div>
-<div>
-<h3>English</h3>
-<p>This dossier documents what happens when a citizen falls between two national social security systems. Translation of the Dutch original — in case of doubt, the Dutch version prevails.</p>
-<a class="goto" href="en/home.html">View in English →</a>
+
+<div class="keuze-kop">
+<h2>Kies uw toegang / Select your entry point:</h2>
+<p>Selecteer het authentieke Nederlandstalige brondossier of het meertalige Europese portaal.</p>
+</div>
+<div class="portaal-grid">
+<!-- POORT 1: NEDERLAND & BELGIË -->
+<a class="portaal-kaart portaal-nl" href="nl/home.html">
+<div class="portaal-vlag-box">
+<svg class="portaal-vlag-diagonaal" height="80" viewbox="0 0 120 80" width="120" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clippath id="clip-nl">
+<polygon points="0,0 120,0 0,80"></polygon>
+</clippath>
+<clippath id="clip-be">
+<polygon points="120,0 120,80 0,80"></polygon>
+</clippath>
+<filter height="120%" id="shadow-nlbe" width="120%" x="-10%" y="-10%">
+<fedropshadow dx="0" dy="2" flood-opacity="0.25" stddeviation="3"></fedropshadow>
+</filter>
+</defs>
+<rect fill="#ffffff" filter="url(#shadow-nlbe)" height="80" rx="8" width="120"></rect>
+<g clip-path="url(#clip-nl)">
+<rect fill="#AE1C28" height="26.7" rx="8" width="120" x="0" y="0"></rect>
+<rect fill="#FFFFFF" height="26.6" width="120" x="0" y="26.7"></rect>
+<rect fill="#21468B" height="26.7" rx="8" width="120" x="0" y="53.3"></rect>
+</g>
+<g clip-path="url(#clip-be)">
+<rect fill="#000000" height="80" rx="8" width="40" x="0" y="0"></rect>
+<rect fill="#FDDA24" height="80" width="40" x="40" y="0"></rect>
+<rect fill="#EF3340" height="80" rx="8" width="40" x="80" y="0"></rect>
+</g>
+<line stroke="#ffffff" stroke-width="3.5" x1="120" x2="0" y1="0" y2="80"></line>
+<rect fill="none" height="80" rx="8" stroke="rgba(0,0,0,0.15)" stroke-width="1" width="120"></rect>
+</svg>
+</div>
+<div class="portaal-body">
+<div class="portaal-badge badge-nl">🇳🇱 / 🇧🇪 Authentieke Bronversie</div>
+<h3>Nederland &amp; België</h3>
+<p class="portaal-ondertitel">Volledig Nederlands dossier · Juridisch leidend · Originele documenten</p>
+<p class="portaal-beschrijving">
+          Voor Nederlandse en Belgische burgers, advocaten, rechtbanken, sociale secretariaten, beleidsmakers en grenswerkers.
+          Het integrale empirische dossier van 62 instanties, meer dan 660 proceshandelingen en 6 documenten (0, A, B, C, D, E) — inclusief officiële Word- en PDF-downloads.
+        </p>
+<ul class="portaal-punten">
+<li>✓ 100% authentieke juridische brontaal (nooit automatisch vertaald)</li>
+<li>✓ Originele Word- en PDF-dossiers direct downloadbaar</li>
+<li>✓ Volledige forensische data-matrix en visuele architectuur</li>
+</ul>
+<div class="portaal-actie">
+<span class="btn-poort btn-poort-nl">Naar het Nederlandse Dossier →</span>
 </div>
 </div>
-<div class="intro-rij" lang="de" style="--accent:#DD0000; --accent-soft:#fdf0f0">
-<div class="vlag">🇩🇪</div>
-<div>
-<h3>Deutsch</h3>
-<p>Dieses Dossier dokumentiert, was passiert, wenn ein Bürger zwischen zwei nationale Sozialsysteme fällt. Übersetzung des niederländischen Originals — im Zweifel gilt die niederländische Fassung.</p>
-<a class="goto" href="de/home.html">Auf Deutsch ansehen →</a>
+</a>
+<!-- POORT 2: EUROPEES & INTERNATIONAAL -->
+<a class="portaal-kaart portaal-eu" href="home_int.html">
+<div class="portaal-vlag-box">
+<svg class="portaal-vlag-eu" height="80" viewbox="0 0 120 80" width="120" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<filter height="120%" id="shadow-eu" width="120%" x="-10%" y="-10%">
+<fedropshadow dx="0" dy="2" flood-opacity="0.25" stddeviation="3"></fedropshadow>
+</filter>
+</defs>
+<rect fill="#003399" filter="url(#shadow-eu)" height="80" rx="8" width="120"></rect>
+<rect fill="none" height="80" rx="8" stroke="rgba(255,255,255,0.2)" stroke-width="1" width="120"></rect>
+<g fill="#FFCC00">
+<polygon points="60.0,14.4 61.1,17.8 64.6,17.8 61.8,19.9 62.9,23.3 60.0,21.2 57.1,23.3 58.2,19.9 55.4,17.8 58.9,17.8"></polygon>
+<polygon points="71.0,17.4 72.1,20.8 75.6,20.8 72.8,22.9 73.9,26.3 71.0,24.2 68.1,26.3 69.2,22.9 66.4,20.8 69.9,20.8"></polygon>
+<polygon points="79.1,25.4 80.2,28.8 83.7,28.8 80.9,30.9 82.0,34.3 79.1,32.2 76.2,34.3 77.3,30.9 74.5,28.8 78.0,28.8"></polygon>
+<polygon points="82.0,36.4 83.1,39.8 86.6,39.8 83.8,41.9 84.9,45.3 82.0,43.2 79.1,45.3 80.2,41.9 77.4,39.8 80.9,39.8"></polygon>
+<polygon points="79.1,47.4 80.2,50.8 83.7,50.8 80.9,52.9 82.0,56.3 79.1,54.2 76.2,56.3 77.3,52.9 74.5,50.8 78.0,50.8"></polygon>
+<polygon points="71.0,55.4 72.1,58.8 75.6,58.8 72.8,60.9 73.9,64.3 71.0,62.2 68.1,64.3 69.2,60.9 66.4,58.8 69.9,58.8"></polygon>
+<polygon points="60.0,58.4 61.1,61.8 64.6,61.8 61.8,63.9 62.9,67.3 60.0,65.2 57.1,67.3 58.2,63.9 55.4,61.8 58.9,61.8"></polygon>
+<polygon points="49.0,55.4 50.1,58.8 53.6,58.8 50.8,60.9 51.9,64.3 49.0,62.2 46.1,64.3 47.2,60.9 44.4,58.8 47.9,58.8"></polygon>
+<polygon points="40.9,47.4 42.0,50.8 45.5,50.8 42.7,52.9 43.8,56.3 40.9,54.2 38.0,56.3 39.1,52.9 36.3,50.8 39.8,50.8"></polygon>
+<polygon points="38.0,36.4 39.1,39.8 42.6,39.8 39.8,41.9 40.9,45.3 38.0,43.2 35.1,45.3 36.2,41.9 33.4,39.8 36.9,39.8"></polygon>
+<polygon points="40.9,25.4 42.0,28.8 45.5,28.8 42.7,30.9 43.8,34.3 40.9,32.2 38.0,34.3 39.1,30.9 36.3,28.8 39.8,28.8"></polygon>
+<polygon points="49.0,17.4 50.1,20.8 53.6,20.8 50.8,22.9 51.9,26.3 49.0,24.2 46.1,26.3 47.2,22.9 44.4,20.8 47.9,20.8"></polygon>
+</g>
+</svg>
+</div>
+<div class="portaal-body">
+<div class="portaal-badge badge-eu">🇪🇺 European &amp; International Portal</div>
+<h3>Europees &amp; Internationaal</h3>
+<p class="portaal-ondertitel">Cross-Border System Audit · Real-Time Translation · Clean PDF</p>
+<p class="portaal-beschrijving">
+          For European citizens, cross-border workers, EU institutions (EU Commission, ELA, SOLVIT) and international researchers.
+          Translates automatically into English, German, French or your browser language, with interactive online reading and printable reports.
+        </p>
+<ul class="portaal-punten">
+<li>✓ Adapts automatically to your browser language (English default)</li>
+<li>✓ Multi-language selector covering all official EU languages</li>
+<li>✓ High-quality online reading &amp; print-to-PDF in your language</li>
+</ul>
+<div class="portaal-actie">
+<span class="btn-poort btn-poort-eu">Enter European Portal →</span>
 </div>
 </div>
-<div class="intro-rij" lang="fr" style="--accent:#0055A4; --accent-soft:#f0f5fa">
-<div class="vlag">🇫🇷</div>
-<div>
-<h3>Français</h3>
-<p>Ce dossier documente ce qui se passe lorsqu'un citoyen tombe entre deux systèmes nationaux de sécurité sociale. Traduction de l'original néerlandais — en cas de doute, la version néerlandaise fait foi.</p>
-<a class="goto" href="fr/home.html">Voir en français →</a>
+</a>
 </div>
-</div></div>
 <div class="ab-melding">
-<h3>⚠️ A &amp; B — nog niet vertaald · not yet translated · noch nicht übersetzt · pas encore traduits</h3>
-<p><span class="vlag-klein">🇬🇧</span>Documents A and B remain in Dutch for now — the underlying data are still moving too much.</p><p><span class="vlag-klein">🇩🇪</span>Die Dokumente A und B bleiben vorerst auf Niederländisch — die zugrunde liegenden Daten bewegen sich noch zu sehr.</p><p><span class="vlag-klein">🇫🇷</span>Les documents A et B restent pour l'instant en néerlandais — les données sous-jacentes bougent encore trop.</p>
+<h3>⚠️ Language &amp; Translation Notice · Taal- en vertaalverantwoording</h3>
+<p><span class="vlag-klein">🇳🇱</span><strong>Nederlands (nl/):</strong> De enige authentieke brontaal van deze Systeem-Audit. In geval van twijfel of juridische interpretatie is uitsluitend de Nederlandse tekst leidend.</p>
+<p><span class="vlag-klein">🇬🇧</span><strong>Language &amp; Translation Notice:</strong> Dutch (nl/) is the sole authentic source language of this System-Audit. The translations are provided to make the documented cross-border mechanisms accessible across Europe. In case of any ambiguity or legal interpretation, the original Dutch text and source files prevail.</p>
 </div>
 <p class="eu-joke"><span class="eu-vlag">🇪🇺</span><strong>Niet gesubsidieerd door de Europese Unie.</strong> Ditzelfde falende systeem dat hier besproken wordt wel.</p>
-<div class="footer">
-<p>Openbaar materiaal — CC BY 4.0 · Wie citeert, citeert Document B als bron van de feiten.</p>
+<div class="footer notranslate" translate="no">
+<p>Openbaar materiaal · <button class="pub-contact-btn" onclick="openBronModal('Algemeen contact via index')">📄 Bronstuk opvragen / Contact</button></p>
 </div>
+</div>
+<!-- Forensisch Bronopvragings- en Contactvenster (Modal) -->
+<div class="bm-modal-overlay" id="bm-modal" onclick="if(event.target===this)sluitBronModal()">
+<div aria-labelledby="bm-modal-titel" aria-modal="true" class="bm-modal-dialog" role="dialog">
+<div class="bm-modal-kop">
+<h3 id="bm-modal-titel">📄 Bronstuk opvragen / Contact</h3>
+<button aria-label="Venster sluiten" class="bm-modal-sluit" onclick="sluitBronModal()" type="button">×</button>
+</div>
+<div class="bm-intro">
+      Alle 682 interacties in deze audit zijn gebaseerd op objectieve brondocumenten (originele e-mails met Message-ID's, formele besluiten, brieven en medische verslagen). Om privacy en AVG-rechten van betrokkenen te waarborgen zijn persoonsgegevens in publieke bestanden afgeschermd. Geauthenticeerde onderzoekers, journalisten, toezichthouders en lotgenoten kunnen volledige, ongecensureerde brondossiers opvragen ter verificatie.
+    </div>
+<form id="bm-form" onsubmit="event.preventDefault();stuurEmail();">
+<div class="bm-groep">
+<label class="bm-label" for="bm-onderwerp">Onderwerp / Gevraagd bronstuk of referentie:</label>
+<input class="bm-input" id="bm-onderwerp" placeholder="Bijv. Bronopvraag: CZ Zorgverzekering - 06-10-2026 - Weigering S072" type="text"/>
+</div>
+<div class="bm-groep">
+<label class="bm-label">Uw hoedanigheid / perspectief:</label>
+<div class="bm-radio-groep">
+<label class="bm-radio-optie">
+<input checked="" name="bm-perspectief" type="radio" value="Lotgenoot / Grensarbeider"/>
+<span><strong>Lotgenoot / Grensarbeider</strong><br/><small style="color:#666">Ervaring delen, herkenning, vergelijkbare situatie</small></span>
+</label>
+<label class="bm-radio-optie">
+<input name="bm-perspectief" type="radio" value="Wetenschap / Beleidsonderzoek"/>
+<span><strong>Wetenschap / Beleid</strong><br/><small style="color:#666">Academisch onderzoek, beleidsevaluatie, EESSI/ESSPASS</small></span>
+</label>
+<label class="bm-radio-optie">
+<input name="bm-perspectief" type="radio" value="Journalistiek / Media"/>
+<span><strong>Journalistiek / Media</strong><br/><small style="color:#666">Feitelijke verificatie, achtergrondgesprek, publicatie</small></span>
+</label>
+<label class="bm-radio-optie">
+<input name="bm-perspectief" type="radio" value="Juridisch / Toezichthouder"/>
+<span><strong>Juridisch / Toezichthouder</strong><br/><small style="color:#666">Handhaving, AVG/GDPR, rechtbank, ombudsman</small></span>
+</label>
+</div>
+</div>
+<div class="bm-groep">
+<label class="bm-label" for="bm-vraag">Uw toelichting, vraag of verificatiedoel:</label>
+<textarea class="bm-textarea" id="bm-vraag" placeholder="Beschrijf kort uw onderzoeksvraag, hoedanigheid of situatie..."></textarea>
+</div>
+<div class="bm-check-groep">
+<input checked="" id="bm-akkoord" type="checkbox"/>
+<label for="bm-akkoord">Ik begrijp dat opgevraagde bronstukken uitsluitend voor verificatie, waarheidsvinding of belangenbehartiging worden verstrekt conform de privacywetgeving.</label>
+</div>
+<div class="bm-knoppen">
+<button class="bm-btn-copy" id="bm-copy-btn" onclick="kopieerAanvraag()" type="button">📋 Kopieer aanvraagtekst + e-mailadres</button>
+<button class="bm-btn-mail" type="submit">Open in e-mailprogramma →</button>
+</div>
+</form>
+</div>
+</div>
+<script>
+(function() {
+  window.openBronModal = function(onderwerp) {
+    var modal = document.getElementById('bm-modal');
+    if (!modal) return;
+    var inp = document.getElementById('bm-onderwerp');
+    if (inp) {
+      inp.value = onderwerp || 'Algemeen contact / Vraag over de Systeem-Audit';
+    }
+    modal.classList.add('bm-open');
+    if (inp) inp.focus();
+  };
+
+  window.sluitBronModal = function() {
+    var modal = document.getElementById('bm-modal');
+    if (modal) modal.classList.remove('bm-open');
+  };
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') sluitBronModal();
+  });
+
+  // Event delegation voor klik op .audit-bewijs
+  document.addEventListener('click', function(e) {
+    var badge = e.target.closest ? e.target.closest('.audit-bewijs') : null;
+    if (!badge) return;
+    e.preventDefault();
+
+    var entry = badge.closest ? badge.closest('.entry') : null;
+    var orgNaam = '';
+    var datum = '';
+    var titel = '';
+
+    if (entry) {
+      var dEl = entry.querySelector('.datum');
+      if (dEl) datum = dEl.innerText.trim();
+      var tEl = entry.querySelector('.titel, .entry-titel');
+      if (tEl) titel = tEl.innerText.trim();
+      
+      // Zoek dichtstbijzijnde voorgaande h3
+      var allH3 = document.querySelectorAll('h3');
+      for (var i = allH3.length - 1; i >= 0; i--) {
+        if (allH3[i].compareDocumentPosition(badge) & Node.DOCUMENT_POSITION_FOLLOWING) {
+          orgNaam = allH3[i].innerText.trim();
+          break;
+        }
+      }
+    }
+
+    var cleanOrg = orgNaam.replace(/\s+/g, ' ').replace(/^[\d\.\s]+/, '').trim();
+    var parts = [];
+    if (cleanOrg) parts.push(cleanOrg);
+    if (datum) parts.push(datum);
+    if (titel) parts.push(titel.replace(/\s+/g, ' '));
+    else if (badge.innerText) parts.push(badge.innerText.trim());
+
+    var onderwerp = 'Bronopvraag: ' + parts.join(' - ');
+    openBronModal(onderwerp);
+  });
+
+  function genereerEmailTekst() {
+    var onderwerp = (document.getElementById('bm-onderwerp').value || '').trim();
+    var perspectiefEl = document.querySelector('input[name="bm-perspectief"]:checked');
+    var perspectief = perspectiefEl ? perspectiefEl.value : 'Niet opgegeven';
+    var toelichting = (document.getElementById('bm-vraag').value || '').trim();
+    var akkoord = document.getElementById('bm-akkoord').checked ? 'Ja' : 'Nee';
+
+    var tekst = "Geachte heer Messa / Systeem-Audit,\n\n" +
+      "Betreft: " + onderwerp + "\n" +
+      "Perspectief: " + perspectief + "\n\n" +
+      "Toelichting / Onderzoeksvraag:\n" +
+      (toelichting || "[Geen extra toelichting ingevoerd]") + "\n\n" +
+      "Akkoord met verificatievoorwaarden: " + akkoord + "\n\n" +
+      "---\nVerzonden via het bronopvragingsvenster van grensarbeid.org";
+    return { onderwerp: onderwerp, tekst: tekst };
+  }
+
+  window.stuurEmail = function() {
+    var data = genereerEmailTekst();
+    var mailto = "mailto:systeemaudit@gmail.com" +
+      "?subject=" + encodeURIComponent(data.onderwerp) +
+      "&body=" + encodeURIComponent(data.tekst);
+    window.location.href = mailto;
+  };
+
+  window.kopieerAanvraag = function() {
+    var data = genereerEmailTekst();
+    var klembordTekst = "Aan: systeemaudit@gmail.com\n" +
+      "Onderwerp: " + data.onderwerp + "\n\n" +
+      data.tekst;
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(klembordTekst).then(function() {
+        toonKopieerBevestiging();
+      }).catch(function() {
+        fallbackKopieer(klembordTekst);
+      });
+    } else {
+      fallbackKopieer(klembordTekst);
+    }
+  };
+
+  function fallbackKopieer(tekst) {
+    var ta = document.createElement('textarea');
+    ta.value = tekst;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    try {
+      document.execCommand('copy');
+      toonKopieerBevestiging();
+    } catch(e) {
+      alert('Kopiëren mislukt. U kunt handmatig mailen naar systeemaudit@gmail.com');
+    }
+    document.body.removeChild(ta);
+  }
+
+  function toonKopieerBevestiging() {
+    var btn = document.getElementById('bm-copy-btn');
+    if (!btn) return;
+    var orig = btn.innerText;
+    btn.innerText = '✓ Gekopieerd naar klembord!';
+    btn.classList.add('bm-copied');
+    setTimeout(function() {
+      btn.innerText = orig;
+      btn.classList.remove('bm-copied');
+    }, 2500);
+  }
+})();
+</script>
 <button aria-label="Schakel donkere/lichte modus" class="dm-toggle" onclick="dm_toggle()" title="Schakel donkere/lichte modus" type="button">
 <span class="dm-icon-dm">🌙</span>
 <span class="dm-icon-lm">☀️</span>
 </button>
 <script>
 (function(){
-  function g(k){try{return localStorage.getItem(k);}catch(e){return null;}}
   function s(k,v){try{localStorage.setItem(k,v);}catch(e){}}
   window.dm_toggle=function(){
     var r=document.documentElement;
@@ -864,13 +1023,6 @@ html[data-theme="dark"] .dm-toggle:hover {
     r.setAttribute('data-theme',n);
     s('systeem-audit-thema',n);
   };
-  try{
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(e){
-      if(!g('systeem-audit-thema')){
-        document.documentElement.setAttribute('data-theme',e.matches?'dark':'light');
-      }
-    });
-  }catch(e){}
 })();
 </script>
 </body>
