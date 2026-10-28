@@ -3,6 +3,8 @@
 
 > **Geen adviesloket en geen pleister op een vastgelopen formulier.** Deze site toont aan de hand van één volledig gedocumenteerd dossier (62 instanties, meer dan 680 handelingen) hoe de Belgische en Nederlandse systemen achter de schermen werkelijk op elkaar inwerken — waar ze blokkeren, waarom brieven elkaar tegenspreken, en welke hefbomen wél werken.
 
+*Status: Live op [grensarbeid.org](https://grensarbeid.org/) · Peildatum: 28 oktober 2026*
+
 ---
 
 ### Kerncijfers van het dossier
