@@ -59,6 +59,16 @@
    - Geoptimaliseerde typografie, touch-targets van minimaal 38px en horizontale swipe-containers voor brede tabellen.
    - Inputvelden afgestemd op iOS om ongewenst inzoomen te voorkomen (`font-size: 16px`).
    - Standaard voorzien van een hoogwaardige donkere modus (`Dark Mode`) met themageheugen (`localStorage`).
+4. **Eigen Favicon-suite & Branding**:
+   - Multi-resolutie `favicon.ico` (16×16, 32×32, 48×48, 64×64 px) en web PNG's (`assets/favicon-16x16.png`, `assets/favicon-32x32.png`, `assets/apple-touch-icon.png` 180×180 px voor iOS WebClips, `assets/logo.png` 512×512 px master).
+   - Afgeleid van `Logowebsite.jpg` met softwarematige verwijdering van de faux dambordachtergrond naar echte transparantie.
+   - Geïntegreerd in de `<head>` van alle 30 portal- en documentpagina's.
+5. **Drieregelige Footer-Disclaimer & BackMe Steunlink**:
+   - Cynische slotverklaring in de footer met vector/raster EU-vlag en discrete hyperlink naar de crowdfunding-campagne op [BackMe](https://systeemaudit.backme.org/):
+     > 🇪🇺 **NIET gesubsidieerd door de Europese Unie.**  
+     > Het falende systeem dat hier besproken wordt, uiteraard wél.  
+     > Dit onafhankelijke archief blijft uitsluitend in de lucht dankzij [vrijwillige bijdragen](https://systeemaudit.backme.org/).
+   - Bevat een speciale rendering-fix voor Windows desktop (waar `Segoe UI Emoji` geen vlaggen bevat en anders cursieve letters "EU" toont) via een inline vector asset `assets/vlag_eu.svg` met automatische fallback naar `assets/vlag_eu.png`.
 
 ---
 
