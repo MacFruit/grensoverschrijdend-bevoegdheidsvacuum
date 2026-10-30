@@ -580,14 +580,16 @@ html[data-theme="dark"] .d0-paper-col {
 }
 
 .d0-rep-card {
-    width: 148px;
+    width: 158px;
     max-width: 100%;
-    height: 94px;
+    height: auto;
+    min-height: 94px;
     border-radius: 7px;
     padding: 6px 8px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 4px;
     position: relative;
     box-shadow: 0 4px 10px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.35);
     font-family: Consolas, "Courier New", monospace;
@@ -596,7 +598,7 @@ html[data-theme="dark"] .d0-paper-col {
     box-sizing: border-box;
 }
 .d0-rep-be-id { background: linear-gradient(135deg, #b8e1cc 0%, #8ec5a9 55%, #a8d5ba 100%); border: 1px solid #5fa883; color: #0f291e; }
-.d0-rep-be-vreemd { background: linear-gradient(135deg, #fde68a 0%, #f59e0b 100%); border: 1px solid #d97706; color: #451a03; }
+.d0-rep-be-vreemd { background: linear-gradient(135deg, #7dd3fc 0%, #38bdf8 55%, #0284c7 100%); border: 1px solid #0369a1; color: #082f49; }
 .d0-rep-nl-rbw { background: linear-gradient(135deg, #f7bfd0 0%, #ea9ab2 55%, #f3b0c4 100%); border: 1px solid #d47a96; color: #3b0d1d; }
 .d0-rep-be-rbw { background: linear-gradient(135deg, #f2a4b8 0%, #d97c93 100%); border: 1px solid #b85d74; color: #2e0812; }
 .d0-rep-it-doc { background: linear-gradient(135deg, #c2d6c8 0%, #99b8a3 100%); border: 1px solid #6c9178; color: #122618; }
@@ -620,13 +622,14 @@ html[data-theme="dark"] .d0-paper-col {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 5px;
     border-bottom: 1px solid rgba(0,0,0,0.12);
     padding-bottom: 2px;
 }
 
 .d0-eu-corner {
-    width: 32px;
-    height: 20px;
+    width: 30px;
+    height: 19px;
     background: #003399;
     border-radius: 3px;
     display: flex;
@@ -638,27 +641,32 @@ html[data-theme="dark"] .d0-paper-col {
 }
 .d0-eu-stars, html[data-theme="dark"] .d0-eu-stars {
     position: absolute;
-    width: 18px !important;
-    height: 18px !important;
+    width: 17px !important;
+    height: 17px !important;
     margin: 0 !important;
     top: 0.5px;
-    left: 6px;
+    left: 5.5px;
     filter: none !important;
 }
 .d0-eu-code {
     color: #ffffff;
     font-family: Aptos, Arial, sans-serif;
     font-weight: 900;
-    font-size: 7.5pt;
+    font-size: 7pt;
     z-index: 2;
 }
 
 .d0-rc-type {
     font-family: Aptos, Arial, sans-serif;
-    font-size: 6.5pt;
+    font-size: 6pt;
     font-weight: 800;
     text-transform: uppercase;
     text-align: right;
+    line-height: 1.1;
+    flex: 1;
+    min-width: 0;
+    word-break: normal;
+    overflow-wrap: anywhere;
 }
 .d0-rc-mid {
     display: flex;
@@ -1936,14 +1944,13 @@ html[data-theme="dark"] select.pub-lang-select option {
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document 0 — Inleiding en leeswijzer</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 30 oktober 2026, 23:53</p>
+<p class="meta-lijn">Versie bijgewerkt: 31 oktober 2026, 00:09</p>
 </div>
 
 <div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
 <li class="niv1"><a href="#systeem-audit">Systeem-Audit</a></li>
 <li class="niv2"><a href="#inhoudsopgave">Inhoudsopgave</a></li>
 <li class="niv2"><a href="#een-europees-verhaal">Een Europees verhaal</a></li>
-<li class="niv3"><a href="#de-logica-van-de-machine-twaalf-feitelijke-systeemparadoxen-uit-document-b">De Logica van de Machine — Twaalf feitelijke systeemparadoxen uit Document B</a></li>
 <li class="niv2"><a href="#waarom-dit-project">Waarom dit project</a></li>
 <li class="niv2"><a href="#wat-dit-project-niet-is">Wat dit project niet is</a></li>
 <li class="niv2"><a href="#de-zes-documenten">De zes documenten</a></li>
@@ -2232,18 +2239,39 @@ html[data-theme="dark"] select.pub-lang-select option {
 <div class="d0-eu-corner">
 <span class="d0-eu-code notranslate" translate="no">BE</span>
 </div>
-<div class="d0-rc-type">VREEMDELINGENKAART</div>
+<div class="d0-rc-type">EEG-VERBLIJFSKAART</div>
 </div>
 <div class="d0-rc-mid">
 <div class="d0-rc-chip"></div>
 <div class="d0-rc-bars">
 <span class="d0-bar d0-b-lg"></span>
 <span class="d0-bar d0-b-sm"></span>
-<div class="d0-rc-sub">Geb: Wilrijk</div>
+<div class="d0-rc-sub">Blauwe kaart | Wilrijk</div>
 </div>
 </div>
 <div class="d0-rc-bot">
 <span class="notranslate" translate="no">NAT: ITA</span>
+</div>
+</div>
+</div>
+<div class="d0-cards-wrap">
+<div class="d0-rep-card d0-rep-it-doc d0-card-dim">
+<div class="d0-rc-top">
+<div class="d0-eu-corner">
+<span class="d0-eu-code notranslate" translate="no">IT</span>
+</div>
+<div class="d0-rc-type">PASSAPORTO</div>
+</div>
+<div class="d0-rc-mid">
+<div class="d0-rc-chip"></div>
+<div class="d0-rc-bars">
+<span class="d0-bar d0-b-lg"></span>
+<span class="d0-bar d0-b-sm"></span>
+<div class="d0-rc-sub">Consulaat (via vader)</div>
+</div>
+</div>
+<div class="d0-rc-bot">
+<span>GEEN BE-ID</span>
 </div>
 </div>
 <div class="d0-rep-card d0-rep-fr-doc d0-card-dim">
@@ -2258,11 +2286,11 @@ html[data-theme="dark"] select.pub-lang-select option {
 <div class="d0-rc-bars">
 <span class="d0-bar d0-b-lg"></span>
 <span class="d0-bar d0-b-sm"></span>
-<div class="d0-rc-sub">Via moeder</div>
+<div class="d0-rc-sub">Consulaat (via moeder)</div>
 </div>
 </div>
 <div class="d0-rc-bot">
-<span>ONGELDIG IN BE</span>
+<span>GEEN BE-ID</span>
 </div>
 </div>
 </div>
@@ -3139,360 +3167,6 @@ html[data-theme="dark"] select.pub-lang-select option {
 <p><strong>****</strong> Deze grensoverschrijdende patstelling tussen medische rijongeschiktheid in het werk-/zorgland (België: UZ Gent, Oogartsen Sint-Niklaas, RIZIV) en het uitblijven van medische en arbeidsrechtelijke erkenning in het woonland (Nederland: UWV, CBR/RDW) vormt een rechtstreeks uitvloeisel van het bevoegdheidsvacuüm onder Verordening (EG) nr. 883/2004 en Richtlijn 2006/126/EG. Zie voor de onderliggende medische en administratieve bewijsstukken <a href="document-b.html#org-uzgent">Document B (UZ Gent, Oogartsen Sint-Niklaas &amp; UWV)</a>.</p>
 <p><strong>*****</strong> In april 2026 werd na jarenlange triloog-onderhandelingen een voorlopig politiek akkoord bereikt over het 'Labour Mobility Package' (herziening van Verordening 883/2004 en 987/2009); in juli 2026 volgde de formele aanname. De wetgever erkent hierin de institutionele leemtes voor grensarbeiders, maar door de benodigde IT-aanpassingen worden de structurele oplossingen pas tegen 2030 operationeel afdwingbaar.</p>
 </div>
-<div class="d0-paradoxen-sectie">
-<h3 id="de-logica-van-de-machine-twaalf-feitelijke-systeemparadoxen-uit-document-b">De Logica van de Machine — Twaalf feitelijke systeemparadoxen uit Document B</h3>
-<p class="lead">Twaalf empirische vignetten uit het reconstructiedossier die aantonen hoe geautomatiseerde administraties wetgeving, logica en menselijke lichamen breken om hun eigen binaire systeemconsistentie te beschermen.</p>
-<div class="d0-paradoxen-grid">
-<article class="d0-paradox-card">
-<header class="d0-px-hdr">
-<span class="d0-px-num notranslate" translate="no">01</span>
-<div>
-<h4 class="d0-px-title">De Papieren Cloud</h4>
-<span class="d0-px-sub">Sociale Verzekeringsbank (SVB) • 24 oktober 2026</span>
-</div>
-</header>
-<div class="d0-px-body">
-<div class="d0-px-block">
-<div class="d0-px-lbl">De Aanvraag</div>
-<div class="d0-px-txt">Een digitaal AVG-inzageverzoek om de elektronische logboeken en tijdstempels van het Europese EESSI-netwerk.</div>
-</div>
-<div class="d0-px-block d0-px-sys">
-<div class="d0-px-lbl">Het Systeem</div>
-<div class="d0-px-txt">"Logbestanden, transmissiestatus en datumstempels van de gerelateerde BUC's — deze informatie hebben wij niet tot onze beschikking."</div>
-</div>
-<div class="d0-px-block d0-px-real">
-<div class="d0-px-lbl">De Feitelijke Realiteit</div>
-<div class="d0-px-txt">Om te bewijzen dat de digitale logboeken niet bestaan, print de SVB 142 pagina's aan digitale EESSI-berichten uit op papier, zet er met de hand zwarte lakbalken op over de namen van de eigen gezinsleden, en laat het pakket per fysieke postbode aan de voordeur bezorgen.</div>
-</div>
-</div>
-<footer class="d0-px-ftr">
-<a class="d0-px-link" href="document-b.html#org-svb">
-<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
-<span>Doc B: SVB (24-10-2026, kenmerk VZ 6825169-0)</span>
-</a>
-</footer>
-</article>
-<article class="d0-paradox-card">
-<header class="d0-px-hdr">
-<span class="d0-px-num notranslate" translate="no">02</span>
-<div>
-<h4 class="d0-px-title">De Stroboscoop-suikerval</h4>
-<span class="d0-px-sub">UZ Gent &amp; Huisartsenpraktijk • 28 september 2026</span>
-</div>
-</header>
-<div class="d0-px-body">
-<div class="d0-px-block">
-<div class="d0-px-lbl">De Situatie</div>
-<div class="d0-px-txt">Tijdens oogheelkundige laserbehandelingen (felle lichtflitsen op een verwijde pupil met kunstlens) valt de patiënt driemaal achtereen flauw in de behandelstoel.</div>
-</div>
-<div class="d0-px-block d0-px-sys">
-<div class="d0-px-lbl">Het Systeem</div>
-<div class="d0-px-txt">Het ziekenhuis houdt het op een lage bloedsuiker en verwijst niet door naar een neuroloog.</div>
-</div>
-<div class="d0-px-block d0-px-real">
-<div class="d0-px-lbl">De Feitelijke Realiteit</div>
-<div class="d0-px-txt">De gekoppelde glucosesensor (Dexcom ONE+) registreert tijdens de ingreep 36 onafgebroken metingen tussen 111 en 137 mg/dL (gemiddeld 125,67 mg/dL, stabieler dan een gezonde volwassene) met een spontane adrenerge tegenregulatie van +21 mg/dL in tien minuten zonder suikerinname. De patiënt moet zelf via de huisarts een verwijsbrief voor Neurologie halen; wachttijd tot 13 april 2027 (zes maanden), waardoor alle oogbehandelingen een half jaar moeten worden opgeschort.</div>
-</div>
-</div>
-<footer class="d0-px-ftr">
-<a class="d0-px-link" href="document-b.html#org-uzgent">
-<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
-<span>Doc B: UZ Gent &amp; Huisarts (Mail #1a0eacca / #1a1326f2)</span>
-</a>
-</footer>
-</article>
-<article class="d0-paradox-card">
-<header class="d0-px-hdr">
-<span class="d0-px-num notranslate" translate="no">03</span>
-<div>
-<h4 class="d0-px-title">De Gevaarlijke Integriteit</h4>
-<span class="d0-px-sub">Christelijke Mutualiteit (CM) • 30 september 2026</span>
-</div>
-</header>
-<div class="d0-px-body">
-<div class="d0-px-block">
-<div class="d0-px-lbl">De Aanvraag</div>
-<div class="d0-px-txt">De burger vraagt via Artikel 15 AVG inzage in de toegangslogs van 20 mei 2026 om te controleren of de adviserend arts zijn medisch dossier heeft geopend vóór het weigeren van zijn erkenning.</div>
-</div>
-<div class="d0-px-block d0-px-sys">
-<div class="d0-px-lbl">Het Systeem</div>
-<div class="d0-px-txt">De Adjunct-DPO van de CM weigert inzage in de systeem- en toegangslogs omdat dit "een potentiële invloed kan hebben op de integriteit van ons informatiesysteem".</div>
-</div>
-<div class="d0-px-block d0-px-real">
-<div class="d0-px-lbl">De Feitelijke Realiteit</div>
-<div class="d0-px-txt">Een beveiligingslogboek dat wettelijk bestaat om de integriteit van medische gegevens te bewaken, mag niet worden ingezien door de patiënt omdat het lezen van het logboek het computersysteem zou kunnen aantasten.</div>
-</div>
-</div>
-<footer class="d0-px-ftr">
-<a class="d0-px-link" href="document-b.html#org-cmchristelijkemutualiteit">
-<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
-<span>Doc B: CM (30-09-2026, Mail #1a0f2a13)</span>
-</a>
-</footer>
-</article>
-<article class="d0-paradox-card">
-<header class="d0-px-hdr">
-<span class="d0-px-num notranslate" translate="no">04</span>
-<div>
-<h4 class="d0-px-title">De 30-Kilometer-Paradox</h4>
-<span class="d0-px-sub">Reizen door Zeeland • 18 mei 2026</span>
-</div>
-</header>
-<div class="d0-px-body">
-<div class="d0-px-block">
-<div class="d0-px-lbl">De Aanvraag</div>
-<div class="d0-px-txt">Een gehandicapte grensarbeider met geamputeerde tenen en blindheid aan één oog boekt een Wmo-regiotaxi vanuit Graauw naar Gent.</div>
-</div>
-<div class="d0-px-block d0-px-sys">
-<div class="d0-px-lbl">Het Systeem</div>
-<div class="d0-px-txt">De rit naar de verplichte medische keuring van de Belgische overheid (FOD Sociale Zekerheid) in Gent wordt geweigerd wegens de "30-kilometerzone".</div>
-</div>
-<div class="d0-px-block d0-px-real">
-<div class="d0-px-lbl">De Feitelijke Realiteit</div>
-<div class="d0-px-txt">Exact dezelfde afstand vanuit Graauw naar het Universitair Ziekenhuis in datzelfde Gent wordt door dezelfde centrale probleemloos gereden à € 19,65 per enkele reis. Een kilometer naar een ziekenhuisbed is administratief korter dan een kilometer naar een keuringsarts.</div>
-</div>
-</div>
-<footer class="d0-px-ftr">
-<a class="d0-px-link" href="document-b.html#org-reizendoorzeeland">
-<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
-<span>Doc B: Reizen door Zeeland (18-05-2026, Mail #19e3a632)</span>
-</a>
-</footer>
-</article>
-<article class="d0-paradox-card">
-<header class="d0-px-hdr">
-<span class="d0-px-num notranslate" translate="no">05</span>
-<div>
-<h4 class="d0-px-title">De Vrijwillige Weigering</h4>
-<span class="d0-px-sub">Oogartsen Sint-Niklaas • 19 maart 2026</span>
-</div>
-</header>
-<div class="d0-px-body">
-<div class="d0-px-block">
-<div class="d0-px-lbl">De Situatie</div>
-<div class="d0-px-txt">Door het stopzetten van inkomen en het weigeren van medisch grensvervoer door verzekeraar CZ kan de patiënt de niet-geconventioneerde ooginjecties en het vervoer niet meer betalen en moet hij het traject in november 2025 noodgedwongen staken.</div>
-</div>
-<div class="d0-px-block d0-px-sys">
-<div class="d0-px-lbl">Het Systeem</div>
-<div class="d0-px-txt">In het klinische eindrapport registreert de praktijk de gedwongen stopzetting als een "weigering van de patiënt".</div>
-</div>
-<div class="d0-px-block d0-px-real">
-<div class="d0-px-lbl">De Feitelijke Realiteit</div>
-<div class="d0-px-txt">Financiële en logistieke overmacht veroorzaakt door het systeem wordt administratief omgezet in een vrije patiëntkeuze — waarna verzekeraars datzelfde rapport gebruiken als argument om verdere dekking af te wijzen.</div>
-</div>
-</div>
-<footer class="d0-px-ftr">
-<a class="d0-px-link" href="document-b.html#org-oogartsensintniklaas">
-<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
-<span>Doc B: Oogartsen Sint-Niklaas (Mail #19a4ea38 / #19d050b8)</span>
-</a>
-</footer>
-</article>
-<article class="d0-paradox-card">
-<header class="d0-px-hdr">
-<span class="d0-px-num notranslate" translate="no">06</span>
-<div>
-<h4 class="d0-px-title">De Wachtende Zenders</h4>
-<span class="d0-px-sub">RVA (BE) &amp; UWV (NL) • September / Oktober 2026</span>
-</div>
-</header>
-<div class="d0-px-body">
-<div class="d0-px-block">
-<div class="d0-px-lbl">De Situatie</div>
-<div class="d0-px-txt">Achttien maanden lang wacht het Nederlandse UWV op Belgische gegevens, en wacht België op Nederland.</div>
-</div>
-<div class="d0-px-block d0-px-sys">
-<div class="d0-px-lbl">Het Systeem</div>
-<div class="d0-px-txt">RVA: "Elektronische uitwisseling gebeurt steeds op initiatief van de ontvangende partij (UWV)." • UWV: "Er zijn geen persoonsgegevens gedeeld met externe partijen."</div>
-</div>
-<div class="d0-px-block d0-px-real">
-<div class="d0-px-lbl">De Feitelijke Realiteit</div>
-<div class="d0-px-txt">Twee oprichtende EU-lidstaten staren achttien maanden naar een lege digitale snelweg, terwijl de zieke burger met 700 gram papier op het postkantoor de enige datakabel vormt.</div>
-</div>
-</div>
-<footer class="d0-px-ftr">
-<a class="d0-px-link" href="document-b.html#org-rva">
-<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
-<span>Doc B: RVA (#1a0ed170) &amp; UWV (Dossier 2026.10.0356)</span>
-</a>
-</footer>
-</article>
-<article class="d0-paradox-card">
-<header class="d0-px-hdr">
-<span class="d0-px-num notranslate" translate="no">07</span>
-<div>
-<h4 class="d0-px-title">Het 40-Minuten-Wonder</h4>
-<span class="d0-px-sub">Gemeente Hulst • 1 &amp; 2 oktober 2026</span>
-</div>
-</header>
-<div class="d0-px-body">
-<div class="d0-px-block">
-<div class="d0-px-lbl">De Situatie</div>
-<div class="d0-px-txt">De burger (al ruim een jaar bekend in het gemeentelijke Wmo- en bijstandsdossier, inclusief paspoortkopieën) wacht op zijn AVG-inzagebesluit.</div>
-</div>
-<div class="d0-px-block d0-px-sys">
-<div class="d0-px-lbl">Het Systeem</div>
-<div class="d0-px-txt">Op dag 29 van de wettelijke 30-dagentermijn schort de gemeente de beslistermijn op wegens "ontbrekende identiteitsverificatie".</div>
-</div>
-<div class="d0-px-block d0-px-real">
-<div class="d0-px-lbl">De Feitelijke Realiteit</div>
-<div class="d0-px-txt">De burger verifieert zijn identiteit 40 minuten later via DigiD. De volgende ochtend om 08:25 uur ligt een volledig uitgewerkt juridisch besluit met 47 pagina's aan BRP-overzichten klaar. De identiteitstwijfel diende enkel als formele pauzeknop.</div>
-</div>
-</div>
-<footer class="d0-px-ftr">
-<a class="d0-px-link" href="document-b.html#org-gemeentehulst">
-<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
-<span>Doc B: Gemeente Hulst (01/02-10-2026, Mail #1a0fbb78)</span>
-</a>
-</footer>
-</article>
-<article class="d0-paradox-card">
-<header class="d0-px-hdr">
-<span class="d0-px-num notranslate" translate="no">08</span>
-<div>
-<h4 class="d0-px-title">De Zelf-Opheffende Wet</h4>
-<span class="d0-px-sub">Parentia • 14 september 2026</span>
-</div>
-</header>
-<div class="d0-px-body">
-<div class="d0-px-block">
-<div class="d0-px-lbl">De Situatie</div>
-<div class="d0-px-txt">De burger dient op 1 september 2026 een formeel AVG-inzageverzoek (Art. 15) in voor zijn grensoverschrijdende EESSI-dossiers.</div>
-</div>
-<div class="d0-px-block d0-px-sys">
-<div class="d0-px-lbl">Het Systeem</div>
-<div class="d0-px-txt">Na een administratieve weigering van de sociale toeslag vraagt Parentia per e-mail of de burger wil bevestigen dat zijn AVG-inzageverzoek "als nietig mag worden beschouwd".</div>
-</div>
-<div class="d0-px-block d0-px-real">
-<div class="d0-px-lbl">De Feitelijke Realiteit</div>
-<div class="d0-px-txt">Nadat de burger weigert zijn eigen wettelijke inzagerecht nietig te verklaren, levert de afdeling Corporate Compliance twee weken later zonder problemen het volledige EESSI-archief af.</div>
-</div>
-</div>
-<footer class="d0-px-ftr">
-<a class="d0-px-link" href="document-b.html#org-parentia">
-<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
-<span>Doc B: Parentia (Mail #1a05c57e / #1a0f8151)</span>
-</a>
-</footer>
-</article>
-<article class="d0-paradox-card">
-<header class="d0-px-hdr">
-<span class="d0-px-num notranslate" translate="no">09</span>
-<div>
-<h4 class="d0-px-title">De Schoen van € 2.450 voor een 'Gezonde' Voet</h4>
-<span class="d0-px-sub">Christelijke Mutualiteit (CM) • Juni / Juli 2025</span>
-</div>
-</header>
-<div class="d0-px-body">
-<div class="d0-px-block">
-<div class="d0-px-lbl">De Situatie</div>
-<div class="d0-px-txt">Na de amputatie van twee tenen aan de rechtervoet vraagt de grensarbeider een ziekte-uitkering en een medisch invaliditeitsattest aan.</div>
-</div>
-<div class="d0-px-block d0-px-sys">
-<div class="d0-px-lbl">Het Systeem</div>
-<div class="d0-px-txt">De CM weigert het invaliditeitsattest voor de belastingdienst af te leveren omdat er geen financieel recht op een uitkering is, en stopt de registratie in de Kruispuntbank.</div>
-</div>
-<div class="d0-px-block d0-px-real">
-<div class="d0-px-lbl">De Feitelijke Realiteit</div>
-<div class="d0-px-txt">Diezelfde adviserend arts van de CM keurt gelijktijdig € 2.450,00 goed voor orthopedische maatschoenen wegens onomkeerbare amputaties. De voet is geamputeerd voor de schoenmaker, maar administratief gezond voor de fiscus.</div>
-</div>
-</div>
-<footer class="d0-px-ftr">
-<a class="d0-px-link" href="document-b.html#org-cmchristelijkemutualiteit">
-<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
-<span>Doc B: CM (Doc: AkkoordVoetklapper / Mail #19d43a49)</span>
-</a>
-</footer>
-</article>
-<article class="d0-paradox-card">
-<header class="d0-px-hdr">
-<span class="d0-px-num notranslate" translate="no">10</span>
-<div>
-<h4 class="d0-px-title">Het Magische Negende Punt &amp; De Mindcoach</h4>
-<span class="d0-px-sub">FOD Sociale Zekerheid &amp; FOD Financiën • Aug / Sept 2026</span>
-</div>
-</header>
-<div class="d0-px-body">
-<div class="d0-px-block">
-<div class="d0-px-lbl">De Situatie</div>
-<div class="d0-px-txt">De burger wordt fysiek gekeurd in Gent na teenamputaties, zware neuropathie, valrisico en blindheid aan het linkeroog (visus 0,02).</div>
-</div>
-<div class="d0-px-block d0-px-sys">
-<div class="d0-px-lbl">Het Systeem</div>
-<div class="d0-px-txt">FOD SZ vertaalt het valrisico en het visusverlies naar 0 extra punten, neemt een nooit gevolgde opleiding tot "mindcoach" op als voltooid beroep, en kent 8 punten toe. FOD Financiën weigert het fiscaal voordeel (eist minstens 9 punten).</div>
-</div>
-<div class="d0-px-block d0-px-real">
-<div class="d0-px-lbl">De Feitelijke Realiteit</div>
-<div class="d0-px-txt">Twee federale ministeries lezen hetzelfde medische dossier, maar door één punt verschil tussen twee schalen valt de burger fiscaal tussen wal en schip — totdat de eigen huisarts met een handmatig attest van &gt;66% invaliditeit via de BNI-aangifte de hele puntenblokkade omzeilt.</div>
-</div>
-</div>
-<footer class="d0-px-ftr">
-<a class="d0-px-link" href="document-b.html#org-fodsocialezekerheiddghan">
-<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
-<span>Doc B: FOD SZ &amp; FOD Financiën (Mail #1a0332ef)</span>
-</a>
-</footer>
-</article>
-<article class="d0-paradox-card">
-<header class="d0-px-hdr">
-<span class="d0-px-num notranslate" translate="no">11</span>
-<div>
-<h4 class="d0-px-title">Het Tabblad 'Multimedia'</h4>
-<span class="d0-px-sub">ZorgSaam Ziekenhuis • 15 april 2026</span>
-</div>
-</header>
-<div class="d0-px-body">
-<div class="d0-px-block">
-<div class="d0-px-lbl">De Situatie</div>
-<div class="d0-px-txt">Omdat er geen automatische gegevensuitwisseling tussen het Belgische en Nederlandse ziekenhuis bestaat, uploadt de patiënt handmatig 25 MB aan Belgische operatie- en amputatieverslagen in het Nederlandse portaal.</div>
-</div>
-<div class="d0-px-block d0-px-sys">
-<div class="d0-px-lbl">Het Systeem</div>
-<div class="d0-px-txt">In het centrale medische overzicht van ZorgSaam blijven alle actieve diagnosevelden leeg.</div>
-</div>
-<div class="d0-px-block d0-px-real">
-<div class="d0-px-lbl">De Feitelijke Realiteit</div>
-<div class="d0-px-txt">De ziekenhuissoftware weigert buitenlandse verslagen in de medische velden op te nemen en archiveert ze passief onder het tabblad 'Multimedia', waardoor de amputaties voor elke meekijkende Nederlandse arts onzichtbaar blijven.</div>
-</div>
-</div>
-<footer class="d0-px-ftr">
-<a class="d0-px-link" href="document-b.html#org-zorgsaam">
-<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
-<span>Doc B: ZorgSaam (Mail #19d49372 / #19d9085b)</span>
-</a>
-</footer>
-</article>
-<article class="d0-paradox-card">
-<header class="d0-px-hdr">
-<span class="d0-px-num notranslate" translate="no">12</span>
-<div>
-<h4 class="d0-px-title">Het Blanco Formulier uit Straatsburg</h4>
-<span class="d0-px-sub">Europees Hof voor de Rechten van de Mens (EHRM) • 18 juni 2026</span>
-</div>
-</header>
-<div class="d0-px-body">
-<div class="d0-px-block">
-<div class="d0-px-lbl">De Situatie</div>
-<div class="d0-px-txt">Na uitputting van de nationale en bemiddelende instanties verzendt de burger per verzekerde post een volledig gedocumenteerd Franstalig verzoekschrift met de integrale Tijdlijn-Matrix naar het Europees Hof voor de Rechten van de Mens tegen zowel België als Nederland.</div>
-</div>
-<div class="d0-px-block d0-px-sys">
-<div class="d0-px-lbl">Het Systeem</div>
-<div class="d0-px-txt">Het Hof verklaart de klacht niet-ontvankelijk wegens het niet uitputten van alle nationale rechtsgangen, reduceert het tweelandenconflict eenzijdig tot een zaak tegen België alleen, en stuurt als antwoord een blanco standaardformulier terug zonder begeleidende brief.</div>
-</div>
-<div class="d0-px-block d0-px-real">
-<div class="d0-px-lbl">De Feitelijke Realiteit</div>
-<div class="d0-px-txt">Om bij het mensenrechtenhof te mogen klagen dat twee staten je financieel droogleggen en elk rechtsmiddel blokkeren, moet je eerst met tienduizenden euro's die je niet hebt jarenlang in twee landen afzonderlijk procederen.</div>
-</div>
-</div>
-<footer class="d0-px-ftr">
-<a class="d0-px-link" href="document-b.html#org-ehrm">
-<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
-<span>Doc B: EHRM (18-06-2026, Doc: BeslissingOntvankelijkheid)</span>
-</a>
-</footer>
-</article>
-</div>
-</div>
 
 <h2 id="waarom-dit-project">Waarom dit project</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p>Dit project documenteert wat er gebeurt wanneer iemand tussen twee nationale systemen valt. Eén casus, tot op het bot gedocumenteerd: een grensarbeider die in Nederland woont en in België werkte, en die door een samenloop van medische en administratieve omstandigheden vastloopt tussen twee uitvoeringsstelsels die weigeren elkaars gegevens te lezen.</p>
@@ -3727,7 +3401,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <footer class="pub-footer">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
 
-  Auteur: Eric Messa · Versie bijgewerkt: 30 oktober 2026, 23:53</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 31 oktober 2026, 00:09</p>
 <p><a href="home.html">← Terug naar overzicht</a> ·
 
      <a href="../index.html">[Web] Taalkeuze</a></p>
