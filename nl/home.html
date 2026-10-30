@@ -118,15 +118,18 @@ html[data-theme="dark"] .pub-nav .langs a, html[data-theme="dark"] .pub-lang-btn
 html[data-theme="dark"] .pub-nav .langs a.actief, html[data-theme="dark"] .pub-lang-btn.actief { background: #4a6fa5 !important; color: #ffffff !important; border-color: #7fb3ff !important; }
 
 
+html { overflow-x: hidden; }
+body { margin: 0 !important; padding: 40pt !important; overflow-x: visible !important; box-sizing: border-box; }
 .pub-nav {
     position: sticky; top: 0; z-index: 100;
     background: #ffffff; border-bottom: 2px solid #d5d0c5;
-    padding: 10px 20px; margin: -40pt -40pt 20pt -40pt;
+    padding: 10px 24px; margin: -40pt -40pt 20pt -40pt;
     font-family: Aptos, Calibri, sans-serif;
     display: flex; justify-content: space-between; align-items: center;
-    gap: 16px; flex-wrap: wrap;
+    gap: 12px 16px; flex-wrap: wrap; box-sizing: border-box;
 }
 .pub-nav .links { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.pub-nav .pub-nav-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-left: auto; }
 .pub-nav a {
     color: #1a3c6e; text-decoration: none; padding: 6px 12px;
     border-radius: 4px; font-size: 11pt; font-weight: 600;
@@ -468,11 +471,12 @@ html[data-theme="dark"] select.pub-lang-select option {
 .bm-btn-copy.bm-copied { background: #2e7d32; color: #ffffff; border-color: #2e7d32; }
 
 @media (max-width: 768px) {
+    body { margin: 0 !important; padding: 16pt 14pt !important; }
     .pub-nav { padding: 8px 12px; margin: -16pt -14pt 16pt -14pt; gap: 8px; }
     .pub-nav .links { gap: 6px; }
     .pub-nav a { padding: 6px 10px; font-size: 10.5pt; min-height: 38px; display: inline-flex; align-items: center; box-sizing: border-box; }
     .pub-nav .titel-klein { display: none; }
-    .pub-nav .nav-acties { width: 100%; justify-content: flex-end; margin-top: 4px; }
+    .pub-nav .nav-acties, .pub-nav .pub-nav-actions { width: 100%; justify-content: flex-end; margin-top: 4px; }
     .pub-contact-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 38px; }
     .pub-toc { padding: 10pt 14pt; }
     .pub-toc .niv3 { padding-left: 20pt; }
@@ -484,6 +488,8 @@ html[data-theme="dark"] select.pub-lang-select option {
     .bm-radio-groep { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
+    body { margin: 0 !important; padding: 12pt 10pt !important; }
+    .pub-nav { padding: 8px 10px; margin: -12pt -10pt 14pt -10pt; }
     .pub-nav .links a { font-size: 9.5pt; padding: 5px 8px; }
     .pub-contact-btn { width: 100%; justify-content: center; }
     .audit-toolbar .at-pills { gap: 4px; }
@@ -991,7 +997,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 
 <h1>GRENSARBEID.ORG — Systeem-Audit</h1>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen</p>
-<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 31 oktober 2026, 00:09</p>
+<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 31 oktober 2026, 00:20</p>
 
 
 

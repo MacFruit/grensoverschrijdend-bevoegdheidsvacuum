@@ -289,6 +289,770 @@ html, body { overflow-x: hidden; }
 
 }
 
+
+/* === Geneste Cellen vs. Papieren Werkelijkheid & 12 Systeemparadoxen (Document 0) === */
+.d0-intermezzo {
+    margin: 16pt 0 22pt 0;
+    border-radius: 8px;
+    border: 1px solid #d5d0c5;
+    background: #f7f5f1;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    font-family: Aptos, Calibri, sans-serif;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+html[data-theme="dark"] .d0-intermezzo {
+    background: #181a1f;
+    border-color: #323642;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+}
+
+.d0-im-head {
+    display: grid;
+    grid-template-columns: 1.45fr 80px 0.95fr;
+    border-bottom: 1px solid #d5d0c5;
+    background: #efeae1;
+    font-size: 9pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+html[data-theme="dark"] .d0-im-head {
+    background: #20232a;
+    border-bottom-color: #323642;
+}
+
+.d0-im-h-left {
+    padding: 6pt 12pt;
+    color: #0d7377;
+    border-left: 4px solid #0d7377;
+}
+html[data-theme="dark"] .d0-im-h-left { color: #38bdf8; border-left-color: #38bdf8; }
+
+.d0-im-h-mid {
+    padding: 6pt 4pt;
+    text-align: center;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+html[data-theme="dark"] .d0-im-h-mid { color: #94a3b8; }
+
+.d0-im-h-right {
+    padding: 6pt 12pt;
+    color: #8b1e1e;
+    text-align: right;
+    border-right: 4px solid #8b1e1e;
+}
+html[data-theme="dark"] .d0-im-h-right { color: #f87171; border-right-color: #ef4444; }
+
+.d0-im-body {
+    display: grid;
+    grid-template-columns: 1.45fr 80px 0.95fr;
+    gap: 10pt;
+    padding: 12pt;
+    align-items: stretch;
+}
+
+.d0-im-mid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.d0-im-mid::before {
+    content: "";
+    position: absolute;
+    top: -12pt; bottom: -12pt;
+    left: calc(50% - 1px);
+    width: 2px;
+    background: repeating-linear-gradient(to bottom, #ccc6b8 0, #ccc6b8 4px, transparent 4px, transparent 8px);
+}
+html[data-theme="dark"] .d0-im-mid::before {
+    background: repeating-linear-gradient(to bottom, #384152 0, #384152 4px, transparent 4px, transparent 8px);
+}
+
+.d0-year-badge {
+    position: relative;
+    z-index: 2;
+    background: #ffffff;
+    border: 1px solid #1a3c6e;
+    color: #1a3c6e;
+    border-radius: 6px;
+    padding: 5pt 6pt;
+    font-size: 8.5pt;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    box-sizing: border-box;
+}
+.d0-year-badge span {
+    display: block;
+    font-size: 7.5pt;
+    color: #8b1e1e;
+    margin-top: 1pt;
+}
+html[data-theme="dark"] .d0-year-badge {
+    background: #232730;
+    border-color: #4a6fa5;
+    color: #e2e8f0;
+}
+html[data-theme="dark"] .d0-year-badge span { color: #fbbf24; }
+
+/* Concentrische Macro -> Micro Cellen */
+.d0-dna-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8pt;
+    justify-content: center;
+    min-width: 0;
+}
+
+.d0-cell-ring {
+    border-radius: 14px;
+    padding: 6pt 9pt;
+    display: flex;
+    flex-direction: column;
+    gap: 5pt;
+    box-sizing: border-box;
+    min-width: 0;
+}
+.d0-ring-macro {
+    background: rgba(13, 115, 119, 0.05);
+    border: 1.5px solid rgba(13, 115, 119, 0.35);
+}
+.d0-ring-state {
+    background: rgba(26, 60, 110, 0.04);
+    border: 1.5px solid rgba(26, 60, 110, 0.3);
+    border-radius: 12px;
+}
+.d0-ring-region {
+    background: rgba(13, 115, 119, 0.06);
+    border: 1.5px dashed rgba(13, 115, 119, 0.42);
+    border-radius: 10px;
+}
+.d0-ring-prov {
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(26, 60, 110, 0.25);
+    border-radius: 9px;
+}
+.d0-ring-core {
+    background: #ffffff;
+    border: 1.5px solid #0d7377;
+    border-radius: 8px;
+    padding: 5pt 8pt;
+    box-shadow: 0 1px 5px rgba(13, 115, 119, 0.12);
+}
+
+html[data-theme="dark"] .d0-ring-macro {
+    background: rgba(6, 182, 212, 0.04);
+    border-color: rgba(6, 182, 212, 0.32);
+}
+html[data-theme="dark"] .d0-ring-state {
+    background: rgba(16, 185, 129, 0.05);
+    border-color: rgba(16, 185, 129, 0.35);
+}
+html[data-theme="dark"] .d0-ring-region {
+    background: rgba(52, 211, 153, 0.05);
+    border-color: rgba(52, 211, 153, 0.42);
+}
+html[data-theme="dark"] .d0-ring-prov {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(167, 243, 208, 0.28);
+}
+html[data-theme="dark"] .d0-ring-core {
+    background: radial-gradient(circle at center, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0.06) 100%);
+    border-color: #34d399;
+}
+
+.d0-ring-hdr {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5pt;
+}
+
+.d0-cell-split {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+    gap: 6pt;
+}
+
+/* Vlag-chip */
+.d0-fb-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4pt;
+    background: #ffffff;
+    border: 1px solid #d5d0c5;
+    border-radius: 5px;
+    padding: 2pt 6pt;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+html[data-theme="dark"] .d0-fb-chip {
+    background: rgba(15, 23, 42, 0.7);
+    border-color: rgba(255, 255, 255, 0.14);
+}
+
+.d0-fb-img, html[data-theme="dark"] .d0-fb-img {
+    height: 22px !important;
+    width: auto !important;
+    max-width: 34px !important;
+    margin: 0 !important;
+    border-radius: 2px;
+    object-fit: contain;
+    filter: none !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    flex-shrink: 0;
+}
+.d0-ring-core .d0-fb-img {
+    height: 25px !important;
+}
+
+.d0-fb-txt {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
+    min-width: 0;
+}
+.d0-fb-lbl {
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: #1f2421;
+    white-space: nowrap;
+}
+.d0-fb-sub {
+    font-size: 7pt;
+    color: #666;
+    white-space: nowrap;
+}
+html[data-theme="dark"] .d0-fb-lbl { color: #f1f5f9; }
+html[data-theme="dark"] .d0-fb-sub { color: #94a3b8; }
+
+.d0-mut-tag {
+    display: inline-flex;
+    align-items: center;
+    font-size: 7.5pt;
+    font-weight: 700;
+    padding: 1.5pt 5pt;
+    border-radius: 4px;
+    background: #fff8e1;
+    border: 1px solid #e6a817;
+    color: #795500;
+    white-space: normal;
+}
+html[data-theme="dark"] .d0-mut-tag {
+    background: rgba(245, 158, 11, 0.16);
+    border-color: rgba(245, 158, 11, 0.45);
+    color: #fcd34d;
+}
+
+/* Rechterkolom: Papieren Reductie */
+.d0-paper-col {
+    background: rgba(139, 30, 30, 0.04);
+    border: 1px solid rgba(139, 30, 30, 0.22);
+    border-radius: 12px;
+    padding: 10pt;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8pt;
+    min-width: 0;
+}
+html[data-theme="dark"] .d0-paper-col {
+    background: rgba(239, 68, 68, 0.04);
+    border-color: rgba(239, 68, 68, 0.28);
+}
+
+.d0-cards-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8pt;
+    max-width: 100%;
+}
+
+.d0-rep-card {
+    width: 158px;
+    max-width: 100%;
+    height: auto;
+    min-height: 94px;
+    border-radius: 7px;
+    padding: 6px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.35);
+    font-family: Consolas, "Courier New", monospace;
+    overflow: hidden;
+    text-align: left;
+    box-sizing: border-box;
+}
+.d0-rep-be-id { background: linear-gradient(135deg, #b8e1cc 0%, #8ec5a9 55%, #a8d5ba 100%); border: 1px solid #5fa883; color: #0f291e; }
+.d0-rep-be-vreemd { background: linear-gradient(135deg, #7dd3fc 0%, #38bdf8 55%, #0284c7 100%); border: 1px solid #0369a1; color: #082f49; }
+.d0-rep-nl-rbw { background: linear-gradient(135deg, #f7bfd0 0%, #ea9ab2 55%, #f3b0c4 100%); border: 1px solid #d47a96; color: #3b0d1d; }
+.d0-rep-be-rbw { background: linear-gradient(135deg, #f2a4b8 0%, #d97c93 100%); border: 1px solid #b85d74; color: #2e0812; }
+.d0-rep-it-doc { background: linear-gradient(135deg, #c2d6c8 0%, #99b8a3 100%); border: 1px solid #6c9178; color: #122618; }
+.d0-rep-fr-doc { background: linear-gradient(135deg, #bdd2eb 0%, #91b3db 100%); border: 1px solid #668fbe; color: #0e1e33; }
+
+.d0-card-dim { opacity: 0.42; filter: grayscale(0.65); }
+.d0-card-cross::after {
+    content: "✕";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(220, 38, 38, 0.88);
+    pointer-events: none;
+}
+
+.d0-rc-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    padding-bottom: 2px;
+}
+
+.d0-eu-corner {
+    width: 30px;
+    height: 19px;
+    background: #003399;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.35);
+    flex-shrink: 0;
+}
+.d0-eu-stars, html[data-theme="dark"] .d0-eu-stars {
+    position: absolute;
+    width: 17px !important;
+    height: 17px !important;
+    margin: 0 !important;
+    top: 0.5px;
+    left: 5.5px;
+    filter: none !important;
+}
+.d0-eu-code {
+    color: #ffffff;
+    font-family: Aptos, Arial, sans-serif;
+    font-weight: 900;
+    font-size: 7pt;
+    z-index: 2;
+}
+
+.d0-rc-type {
+    font-family: Aptos, Arial, sans-serif;
+    font-size: 6pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: right;
+    line-height: 1.1;
+    flex: 1;
+    min-width: 0;
+    word-break: normal;
+    overflow-wrap: anywhere;
+}
+.d0-rc-mid {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.d0-rc-chip {
+    width: 16px;
+    height: 12px;
+    border-radius: 2px;
+    background: linear-gradient(135deg, #eab308, #ca8a04);
+    border: 1px solid rgba(0,0,0,0.25);
+    flex-shrink: 0;
+}
+.d0-rc-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5px;
+    flex: 1;
+    min-width: 0;
+}
+.d0-rc-sub {
+    font-family: Aptos, Arial, sans-serif;
+    font-size: 6.5pt;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.d0-bar { display: block; height: 3px; border-radius: 2px; background: rgba(0,0,0,0.18); }
+.d0-b-lg { width: 76%; }
+.d0-b-sm { width: 50%; }
+
+.d0-rc-bot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Aptos, Arial, sans-serif;
+    font-size: 7.5pt;
+    font-weight: 900;
+    background: rgba(255,255,255,0.55);
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.d0-law-pill {
+    font-size: 8pt;
+    font-weight: 700;
+    padding: 3pt 8pt;
+    border-radius: 4px;
+    background: #f7eded;
+    border: 1px solid #d9a7a7;
+    color: #8b1e1e;
+    text-align: center;
+}
+html[data-theme="dark"] .d0-law-pill {
+    background: rgba(239, 68, 68, 0.16);
+    border-color: rgba(239, 68, 68, 0.4);
+    color: #fca5a5;
+}
+
+.d0-irony-pill {
+    font-size: 8pt;
+    font-weight: 700;
+    padding: 4pt 8pt;
+    border-radius: 4px;
+    background: #fff8e1;
+    border: 1px dashed #d97706;
+    color: #795500;
+    text-align: center;
+}
+html[data-theme="dark"] .d0-irony-pill {
+    background: rgba(245, 158, 11, 0.15);
+    border-color: #f59e0b;
+    color: #fde68a;
+}
+
+/* Grote Clou Kids-ID in Laag 4 */
+.d0-kids-clou {
+    width: 236px;
+    max-width: 100%;
+    height: auto;
+    min-height: 152px;
+    border-radius: 11px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 6px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.45);
+    box-sizing: border-box;
+}
+.d0-kids-clou .d0-eu-corner { width: 42px; height: 28px; }
+.d0-kids-clou .d0-eu-stars { width: 24px !important; height: 24px !important; left: 8px; }
+.d0-kids-clou .d0-eu-code { font-size: 9.5pt; }
+.d0-kids-grid {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 10px;
+    align-items: center;
+}
+.d0-photo-sil {
+    width: 40px; height: 48px;
+    border-radius: 4px;
+    background: rgba(0,0,0,0.12);
+    border: 1px solid rgba(0,0,0,0.22);
+    display: flex; align-items: center; justify-content: center;
+}
+.d0-photo-sil svg { width: 26px !important; height: 26px !important; margin: 0 !important; fill: rgba(0,0,0,0.35); filter: none !important; }
+.d0-kids-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-family: Consolas, monospace;
+    font-size: 7.5pt;
+    font-weight: 700;
+}
+.d0-kf-row { display: flex; justify-content: space-between; gap: 4px; border-bottom: 1px dotted rgba(0,0,0,0.2); flex-wrap: wrap; }
+.d0-nat-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 12px;
+    border-radius: 20px;
+    border: 2.5px solid #dc2626;
+    background: rgba(220, 38, 38, 0.22);
+    color: #7f1d1d;
+    font-family: Aptos, Arial, sans-serif;
+    font-weight: 900;
+    font-size: 9.5pt;
+    box-shadow: 0 0 14px #ef4444;
+    animation: d0-pulse 1.4s infinite alternate;
+}
+@keyframes d0-pulse {
+    0% { transform: scale(0.97); box-shadow: 0 0 6px #ef4444; }
+    100% { transform: scale(1.05); box-shadow: 0 0 18px #ef4444; }
+}
+
+/* === De 12 Feitelijke Systeemparadoxen (Brug naar Document B) === */
+.d0-paradoxen-sectie {
+    margin: 28pt 0 20pt 0;
+    padding-top: 14pt;
+    border-top: 2px solid #8b1e1e;
+}
+html[data-theme="dark"] .d0-paradoxen-sectie {
+    border-top-color: #4a6fa5;
+}
+.d0-paradoxen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 16pt;
+    margin-top: 14pt;
+}
+.d0-paradox-card {
+    background: #ffffff;
+    border: 1px solid #d5d0c5;
+    border-radius: 8px;
+    padding: 14pt 16pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    page-break-inside: avoid;
+    break-inside: avoid;
+    box-sizing: border-box;
+}
+html[data-theme="dark"] .d0-paradox-card {
+    background: #20232a;
+    border-color: #323642;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+}
+.d0-px-hdr {
+    display: flex;
+    align-items: baseline;
+    gap: 10pt;
+    margin-bottom: 10pt;
+    padding-bottom: 8pt;
+    border-bottom: 1px solid #ece8df;
+}
+html[data-theme="dark"] .d0-px-hdr {
+    border-bottom-color: #323642;
+}
+.d0-px-num {
+    font-family: Consolas, monospace;
+    font-size: 11pt;
+    font-weight: 800;
+    color: #8b1e1e;
+    background: #f7eded;
+    padding: 2pt 7pt;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+html[data-theme="dark"] .d0-px-num {
+    color: #ff9147;
+    background: rgba(255, 145, 71, 0.14);
+}
+.d0-px-title {
+    font-size: 12.5pt;
+    font-weight: 700;
+    color: #1a3c6e;
+    margin: 0;
+    line-height: 1.25;
+}
+html[data-theme="dark"] .d0-px-title {
+    color: #f1f5f9 !important;
+}
+.d0-px-sub {
+    display: block;
+    font-size: 9pt;
+    color: #666;
+    font-weight: 400;
+    margin-top: 2pt;
+}
+html[data-theme="dark"] .d0-px-sub {
+    color: #94a3b8;
+}
+.d0-px-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8pt;
+    margin-bottom: 12pt;
+}
+.d0-px-block {
+    background: #f7f5f1;
+    border-left: 3px solid #888;
+    padding: 7pt 10pt;
+    border-radius: 0 5px 5px 0;
+}
+html[data-theme="dark"] .d0-px-block {
+    background: #16181d;
+    border-left-color: #4b5563;
+}
+.d0-px-block.d0-px-sys {
+    background: #f0f4f9;
+    border-left-color: #1a3c6e;
+}
+html[data-theme="dark"] .d0-px-block.d0-px-sys {
+    background: rgba(73, 134, 231, 0.08);
+    border-left-color: #4986e7;
+}
+.d0-px-block.d0-px-real {
+    background: #fdf6ec;
+    border-left-color: #c1440e;
+}
+html[data-theme="dark"] .d0-px-block.d0-px-real {
+    background: rgba(255, 145, 71, 0.09);
+    border-left-color: #ff9147;
+}
+.d0-px-lbl {
+    font-size: 8.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 2pt;
+    color: #555;
+}
+html[data-theme="dark"] .d0-px-lbl { color: #a5b0c7; }
+.d0-px-sys .d0-px-lbl { color: #1a3c6e; }
+html[data-theme="dark"] .d0-px-sys .d0-px-lbl { color: #7fb3ff; }
+.d0-px-real .d0-px-lbl { color: #c1440e; }
+html[data-theme="dark"] .d0-px-real .d0-px-lbl { color: #ff9147; }
+
+.d0-px-txt {
+    font-size: 10pt;
+    line-height: 1.45;
+    color: #222;
+}
+html[data-theme="dark"] .d0-px-txt { color: #e2e8f0; }
+
+.d0-px-ftr {
+    margin-top: auto;
+    padding-top: 8pt;
+    border-top: 1px dashed #d5d0c5;
+}
+html[data-theme="dark"] .d0-px-ftr { border-top-color: #323642; }
+
+.d0-px-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5pt;
+    background: #f0eee9;
+    border: 1px solid #d5d0c5;
+    color: #1a3c6e;
+    font-size: 8.5pt;
+    font-family: Consolas, monospace;
+    padding: 4pt 8pt;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.15s;
+}
+.d0-px-link:hover {
+    background: #1a3c6e;
+    color: #ffffff !important;
+    border-color: #1a3c6e;
+}
+html[data-theme="dark"] .d0-px-link {
+    background: #14161a;
+    border-color: #323642;
+    color: #93c5fd !important;
+}
+html[data-theme="dark"] .d0-px-link:hover {
+    background: #1e293b;
+    border-color: #60a5fa;
+    color: #ffffff !important;
+}
+.d0-px-link svg {
+    width: 12px !important;
+    height: 12px !important;
+    margin: 0 !important;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+/* Mobiele weergave voor Intermezzo's en Paradox-kaarten */
+@media (max-width: 900px) {
+    .d0-im-head, .d0-im-body { grid-template-columns: 1fr; }
+    .d0-im-mid::before { display: none; }
+    .d0-im-h-right { text-align: left; border-right: none; border-left: 4px solid #8b1e1e; }
+    .d0-year-badge { width: auto; min-width: 120px; padding: 4pt 12pt; }
+}
+@media (max-width: 768px) {
+    .d0-intermezzo { margin: 12pt 0 18pt 0; }
+    .d0-im-body { padding: 8pt; gap: 8pt; }
+    .d0-cell-split { grid-template-columns: 1fr; }
+    .d0-cell-ring { padding: 5pt 6pt; border-radius: 10px; }
+    .d0-fb-lbl, .d0-fb-sub { white-space: normal; }
+    .d0-paradoxen-grid { grid-template-columns: 1fr; gap: 12pt; }
+    .d0-paradox-card { padding: 11pt 12pt; }
+}
+@media (max-width: 480px) {
+    .d0-im-body { padding: 6pt; }
+    .d0-cell-ring { padding: 4pt 5pt; }
+    .d0-fb-chip { padding: 2pt 4pt; }
+    .d0-fb-lbl { font-size: 8pt; }
+    .d0-rep-card { width: 138px; height: 90px; }
+    .d0-kids-clou { width: 100%; max-width: 230px; }
+}
+
+/* Print-regels voor Intermezzo's en Paradox-kaarten */
+@media print {
+    .d0-intermezzo, html[data-theme="dark"] .d0-intermezzo,
+    .d0-paradox-card, html[data-theme="dark"] .d0-paradox-card {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border-color: #cccccc !important;
+        box-shadow: none !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+    .d0-im-head, html[data-theme="dark"] .d0-im-head {
+        background: #f0eee9 !important;
+        border-bottom-color: #cccccc !important;
+    }
+    .d0-im-h-left, html[data-theme="dark"] .d0-im-h-left { color: #0d7377 !important; }
+    .d0-im-h-right, html[data-theme="dark"] .d0-im-h-right { color: #8b1e1e !important; }
+    .d0-fb-img, html[data-theme="dark"] .d0-fb-img,
+    .d0-eu-stars, html[data-theme="dark"] .d0-eu-stars {
+        filter: none !important;
+    }
+    .d0-fb-chip, html[data-theme="dark"] .d0-fb-chip,
+    .d0-ring-core, html[data-theme="dark"] .d0-ring-core,
+    .d0-year-badge, html[data-theme="dark"] .d0-year-badge {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border-color: #999999 !important;
+    }
+    .d0-fb-lbl, html[data-theme="dark"] .d0-fb-lbl,
+    .d0-px-title, html[data-theme="dark"] .d0-px-title,
+    .d0-px-txt, html[data-theme="dark"] .d0-px-txt {
+        color: #000000 !important;
+    }
+    .d0-fb-sub, html[data-theme="dark"] .d0-fb-sub,
+    .d0-px-sub, html[data-theme="dark"] .d0-px-sub {
+        color: #444444 !important;
+    }
+    .d0-px-block, html[data-theme="dark"] .d0-px-block {
+        background: #f7f5f1 !important;
+        color: #000000 !important;
+    }
+    .d0-nat-circle {
+        animation: none !important;
+        box-shadow: none !important;
+    }
+}
+
 h5 { margin-top: 18pt !important; margin-bottom: 8pt !important;       color: #1a3c6e !important; letter-spacing: 1pt;       text-transform: uppercase; font-size: 11pt !important; }
 p.entry  { margin-bottom: 7pt !important; }
 p.meta   { margin-bottom: 5pt !important; }
@@ -297,15 +1061,18 @@ p.subtitel { margin-bottom: 14pt !important; }
 
 
 
+html { overflow-x: hidden; }
+body { margin: 0 !important; padding: 40pt !important; overflow-x: visible !important; box-sizing: border-box; }
 .pub-nav {
     position: sticky; top: 0; z-index: 100;
     background: #ffffff; border-bottom: 2px solid #d5d0c5;
-    padding: 10px 20px; margin: -40pt -40pt 20pt -40pt;
+    padding: 10px 24px; margin: -40pt -40pt 20pt -40pt;
     font-family: Aptos, Calibri, sans-serif;
     display: flex; justify-content: space-between; align-items: center;
-    gap: 16px; flex-wrap: wrap;
+    gap: 12px 16px; flex-wrap: wrap; box-sizing: border-box;
 }
 .pub-nav .links { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.pub-nav .pub-nav-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-left: auto; }
 .pub-nav a {
     color: #1a3c6e; text-decoration: none; padding: 6px 12px;
     border-radius: 4px; font-size: 11pt; font-weight: 600;
@@ -647,11 +1414,12 @@ html[data-theme="dark"] select.pub-lang-select option {
 .bm-btn-copy.bm-copied { background: #2e7d32; color: #ffffff; border-color: #2e7d32; }
 
 @media (max-width: 768px) {
+    body { margin: 0 !important; padding: 16pt 14pt !important; }
     .pub-nav { padding: 8px 12px; margin: -16pt -14pt 16pt -14pt; gap: 8px; }
     .pub-nav .links { gap: 6px; }
     .pub-nav a { padding: 6px 10px; font-size: 10.5pt; min-height: 38px; display: inline-flex; align-items: center; box-sizing: border-box; }
     .pub-nav .titel-klein { display: none; }
-    .pub-nav .nav-acties { width: 100%; justify-content: flex-end; margin-top: 4px; }
+    .pub-nav .nav-acties, .pub-nav .pub-nav-actions { width: 100%; justify-content: flex-end; margin-top: 4px; }
     .pub-contact-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 38px; }
     .pub-toc { padding: 10pt 14pt; }
     .pub-toc .niv3 { padding-left: 20pt; }
@@ -663,6 +1431,8 @@ html[data-theme="dark"] select.pub-lang-select option {
     .bm-radio-groep { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
+    body { margin: 0 !important; padding: 12pt 10pt !important; }
+    .pub-nav { padding: 8px 10px; margin: -12pt -10pt 14pt -10pt; }
     .pub-nav .links a { font-size: 9.5pt; padding: 5px 8px; }
     .pub-contact-btn { width: 100%; justify-content: center; }
     .audit-toolbar .at-pills { gap: 4px; }
@@ -1198,7 +1968,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document B — De data-matrix</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 30 oktober 2026, 20:07</p>
+<p class="meta-lijn">Versie bijgewerkt: 31 oktober 2026, 00:20</p>
 </div>
 <div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
 <li class="niv1"><a href="#systeem-audit">Systeem-Audit</a></li>
@@ -2450,7 +3220,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <footer class="pub-footer">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
 
-  Auteur: Eric Messa · Versie bijgewerkt: 31 oktober 2026, 00:09</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 31 oktober 2026, 00:20</p>
 <p><a href="home.html">← Terug naar overzicht</a> ·
 
      <a href="../index.html">[Web] Taalkeuze</a></p>
