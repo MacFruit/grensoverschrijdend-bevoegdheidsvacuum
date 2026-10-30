@@ -290,6 +290,762 @@ html, body { overflow-x: hidden; }
 }
 
 
+/* === Geneste Cellen vs. Papieren Werkelijkheid & 12 Systeemparadoxen (Document 0) === */
+.d0-intermezzo {
+    margin: 16pt 0 22pt 0;
+    border-radius: 8px;
+    border: 1px solid #d5d0c5;
+    background: #f7f5f1;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    font-family: Aptos, Calibri, sans-serif;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+html[data-theme="dark"] .d0-intermezzo {
+    background: #181a1f;
+    border-color: #323642;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+}
+
+.d0-im-head {
+    display: grid;
+    grid-template-columns: 1.45fr 80px 0.95fr;
+    border-bottom: 1px solid #d5d0c5;
+    background: #efeae1;
+    font-size: 9pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+html[data-theme="dark"] .d0-im-head {
+    background: #20232a;
+    border-bottom-color: #323642;
+}
+
+.d0-im-h-left {
+    padding: 6pt 12pt;
+    color: #0d7377;
+    border-left: 4px solid #0d7377;
+}
+html[data-theme="dark"] .d0-im-h-left { color: #38bdf8; border-left-color: #38bdf8; }
+
+.d0-im-h-mid {
+    padding: 6pt 4pt;
+    text-align: center;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+html[data-theme="dark"] .d0-im-h-mid { color: #94a3b8; }
+
+.d0-im-h-right {
+    padding: 6pt 12pt;
+    color: #8b1e1e;
+    text-align: right;
+    border-right: 4px solid #8b1e1e;
+}
+html[data-theme="dark"] .d0-im-h-right { color: #f87171; border-right-color: #ef4444; }
+
+.d0-im-body {
+    display: grid;
+    grid-template-columns: 1.45fr 80px 0.95fr;
+    gap: 10pt;
+    padding: 12pt;
+    align-items: stretch;
+}
+
+.d0-im-mid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.d0-im-mid::before {
+    content: "";
+    position: absolute;
+    top: -12pt; bottom: -12pt;
+    left: calc(50% - 1px);
+    width: 2px;
+    background: repeating-linear-gradient(to bottom, #ccc6b8 0, #ccc6b8 4px, transparent 4px, transparent 8px);
+}
+html[data-theme="dark"] .d0-im-mid::before {
+    background: repeating-linear-gradient(to bottom, #384152 0, #384152 4px, transparent 4px, transparent 8px);
+}
+
+.d0-year-badge {
+    position: relative;
+    z-index: 2;
+    background: #ffffff;
+    border: 1px solid #1a3c6e;
+    color: #1a3c6e;
+    border-radius: 6px;
+    padding: 5pt 6pt;
+    font-size: 8.5pt;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    box-sizing: border-box;
+}
+.d0-year-badge span {
+    display: block;
+    font-size: 7.5pt;
+    color: #8b1e1e;
+    margin-top: 1pt;
+}
+html[data-theme="dark"] .d0-year-badge {
+    background: #232730;
+    border-color: #4a6fa5;
+    color: #e2e8f0;
+}
+html[data-theme="dark"] .d0-year-badge span { color: #fbbf24; }
+
+/* Concentrische Macro -> Micro Cellen */
+.d0-dna-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8pt;
+    justify-content: center;
+    min-width: 0;
+}
+
+.d0-cell-ring {
+    border-radius: 14px;
+    padding: 6pt 9pt;
+    display: flex;
+    flex-direction: column;
+    gap: 5pt;
+    box-sizing: border-box;
+    min-width: 0;
+}
+.d0-ring-macro {
+    background: rgba(13, 115, 119, 0.05);
+    border: 1.5px solid rgba(13, 115, 119, 0.35);
+}
+.d0-ring-state {
+    background: rgba(26, 60, 110, 0.04);
+    border: 1.5px solid rgba(26, 60, 110, 0.3);
+    border-radius: 12px;
+}
+.d0-ring-region {
+    background: rgba(13, 115, 119, 0.06);
+    border: 1.5px dashed rgba(13, 115, 119, 0.42);
+    border-radius: 10px;
+}
+.d0-ring-prov {
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(26, 60, 110, 0.25);
+    border-radius: 9px;
+}
+.d0-ring-core {
+    background: #ffffff;
+    border: 1.5px solid #0d7377;
+    border-radius: 8px;
+    padding: 5pt 8pt;
+    box-shadow: 0 1px 5px rgba(13, 115, 119, 0.12);
+}
+
+html[data-theme="dark"] .d0-ring-macro {
+    background: rgba(6, 182, 212, 0.04);
+    border-color: rgba(6, 182, 212, 0.32);
+}
+html[data-theme="dark"] .d0-ring-state {
+    background: rgba(16, 185, 129, 0.05);
+    border-color: rgba(16, 185, 129, 0.35);
+}
+html[data-theme="dark"] .d0-ring-region {
+    background: rgba(52, 211, 153, 0.05);
+    border-color: rgba(52, 211, 153, 0.42);
+}
+html[data-theme="dark"] .d0-ring-prov {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(167, 243, 208, 0.28);
+}
+html[data-theme="dark"] .d0-ring-core {
+    background: radial-gradient(circle at center, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0.06) 100%);
+    border-color: #34d399;
+}
+
+.d0-ring-hdr {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5pt;
+}
+
+.d0-cell-split {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+    gap: 6pt;
+}
+
+/* Vlag-chip */
+.d0-fb-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4pt;
+    background: #ffffff;
+    border: 1px solid #d5d0c5;
+    border-radius: 5px;
+    padding: 2pt 6pt;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+html[data-theme="dark"] .d0-fb-chip {
+    background: rgba(15, 23, 42, 0.7);
+    border-color: rgba(255, 255, 255, 0.14);
+}
+
+.d0-fb-img, html[data-theme="dark"] .d0-fb-img {
+    height: 22px !important;
+    width: auto !important;
+    max-width: 34px !important;
+    margin: 0 !important;
+    border-radius: 2px;
+    object-fit: contain;
+    filter: none !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    flex-shrink: 0;
+}
+.d0-ring-core .d0-fb-img {
+    height: 25px !important;
+}
+
+.d0-fb-txt {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
+    min-width: 0;
+}
+.d0-fb-lbl {
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: #1f2421;
+    white-space: nowrap;
+}
+.d0-fb-sub {
+    font-size: 7pt;
+    color: #666;
+    white-space: nowrap;
+}
+html[data-theme="dark"] .d0-fb-lbl { color: #f1f5f9; }
+html[data-theme="dark"] .d0-fb-sub { color: #94a3b8; }
+
+.d0-mut-tag {
+    display: inline-flex;
+    align-items: center;
+    font-size: 7.5pt;
+    font-weight: 700;
+    padding: 1.5pt 5pt;
+    border-radius: 4px;
+    background: #fff8e1;
+    border: 1px solid #e6a817;
+    color: #795500;
+    white-space: normal;
+}
+html[data-theme="dark"] .d0-mut-tag {
+    background: rgba(245, 158, 11, 0.16);
+    border-color: rgba(245, 158, 11, 0.45);
+    color: #fcd34d;
+}
+
+/* Rechterkolom: Papieren Reductie */
+.d0-paper-col {
+    background: rgba(139, 30, 30, 0.04);
+    border: 1px solid rgba(139, 30, 30, 0.22);
+    border-radius: 12px;
+    padding: 10pt;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8pt;
+    min-width: 0;
+}
+html[data-theme="dark"] .d0-paper-col {
+    background: rgba(239, 68, 68, 0.04);
+    border-color: rgba(239, 68, 68, 0.28);
+}
+
+.d0-cards-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8pt;
+    max-width: 100%;
+}
+
+.d0-rep-card {
+    width: 148px;
+    max-width: 100%;
+    height: 94px;
+    border-radius: 7px;
+    padding: 6px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.35);
+    font-family: Consolas, "Courier New", monospace;
+    overflow: hidden;
+    text-align: left;
+    box-sizing: border-box;
+}
+.d0-rep-be-id { background: linear-gradient(135deg, #b8e1cc 0%, #8ec5a9 55%, #a8d5ba 100%); border: 1px solid #5fa883; color: #0f291e; }
+.d0-rep-be-vreemd { background: linear-gradient(135deg, #fde68a 0%, #f59e0b 100%); border: 1px solid #d97706; color: #451a03; }
+.d0-rep-nl-rbw { background: linear-gradient(135deg, #f7bfd0 0%, #ea9ab2 55%, #f3b0c4 100%); border: 1px solid #d47a96; color: #3b0d1d; }
+.d0-rep-be-rbw { background: linear-gradient(135deg, #f2a4b8 0%, #d97c93 100%); border: 1px solid #b85d74; color: #2e0812; }
+.d0-rep-it-doc { background: linear-gradient(135deg, #c2d6c8 0%, #99b8a3 100%); border: 1px solid #6c9178; color: #122618; }
+.d0-rep-fr-doc { background: linear-gradient(135deg, #bdd2eb 0%, #91b3db 100%); border: 1px solid #668fbe; color: #0e1e33; }
+
+.d0-card-dim { opacity: 0.42; filter: grayscale(0.65); }
+.d0-card-cross::after {
+    content: "✕";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(220, 38, 38, 0.88);
+    pointer-events: none;
+}
+
+.d0-rc-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    padding-bottom: 2px;
+}
+
+.d0-eu-corner {
+    width: 32px;
+    height: 20px;
+    background: #003399;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.35);
+    flex-shrink: 0;
+}
+.d0-eu-stars, html[data-theme="dark"] .d0-eu-stars {
+    position: absolute;
+    width: 18px !important;
+    height: 18px !important;
+    margin: 0 !important;
+    top: 0.5px;
+    left: 6px;
+    filter: none !important;
+}
+.d0-eu-code {
+    color: #ffffff;
+    font-family: Aptos, Arial, sans-serif;
+    font-weight: 900;
+    font-size: 7.5pt;
+    z-index: 2;
+}
+
+.d0-rc-type {
+    font-family: Aptos, Arial, sans-serif;
+    font-size: 6.5pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: right;
+}
+.d0-rc-mid {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.d0-rc-chip {
+    width: 16px;
+    height: 12px;
+    border-radius: 2px;
+    background: linear-gradient(135deg, #eab308, #ca8a04);
+    border: 1px solid rgba(0,0,0,0.25);
+    flex-shrink: 0;
+}
+.d0-rc-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5px;
+    flex: 1;
+    min-width: 0;
+}
+.d0-rc-sub {
+    font-family: Aptos, Arial, sans-serif;
+    font-size: 6.5pt;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.d0-bar { display: block; height: 3px; border-radius: 2px; background: rgba(0,0,0,0.18); }
+.d0-b-lg { width: 76%; }
+.d0-b-sm { width: 50%; }
+
+.d0-rc-bot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Aptos, Arial, sans-serif;
+    font-size: 7.5pt;
+    font-weight: 900;
+    background: rgba(255,255,255,0.55);
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.d0-law-pill {
+    font-size: 8pt;
+    font-weight: 700;
+    padding: 3pt 8pt;
+    border-radius: 4px;
+    background: #f7eded;
+    border: 1px solid #d9a7a7;
+    color: #8b1e1e;
+    text-align: center;
+}
+html[data-theme="dark"] .d0-law-pill {
+    background: rgba(239, 68, 68, 0.16);
+    border-color: rgba(239, 68, 68, 0.4);
+    color: #fca5a5;
+}
+
+.d0-irony-pill {
+    font-size: 8pt;
+    font-weight: 700;
+    padding: 4pt 8pt;
+    border-radius: 4px;
+    background: #fff8e1;
+    border: 1px dashed #d97706;
+    color: #795500;
+    text-align: center;
+}
+html[data-theme="dark"] .d0-irony-pill {
+    background: rgba(245, 158, 11, 0.15);
+    border-color: #f59e0b;
+    color: #fde68a;
+}
+
+/* Grote Clou Kids-ID in Laag 4 */
+.d0-kids-clou {
+    width: 236px;
+    max-width: 100%;
+    height: auto;
+    min-height: 152px;
+    border-radius: 11px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 6px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.45);
+    box-sizing: border-box;
+}
+.d0-kids-clou .d0-eu-corner { width: 42px; height: 28px; }
+.d0-kids-clou .d0-eu-stars { width: 24px !important; height: 24px !important; left: 8px; }
+.d0-kids-clou .d0-eu-code { font-size: 9.5pt; }
+.d0-kids-grid {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 10px;
+    align-items: center;
+}
+.d0-photo-sil {
+    width: 40px; height: 48px;
+    border-radius: 4px;
+    background: rgba(0,0,0,0.12);
+    border: 1px solid rgba(0,0,0,0.22);
+    display: flex; align-items: center; justify-content: center;
+}
+.d0-photo-sil svg { width: 26px !important; height: 26px !important; margin: 0 !important; fill: rgba(0,0,0,0.35); filter: none !important; }
+.d0-kids-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-family: Consolas, monospace;
+    font-size: 7.5pt;
+    font-weight: 700;
+}
+.d0-kf-row { display: flex; justify-content: space-between; gap: 4px; border-bottom: 1px dotted rgba(0,0,0,0.2); flex-wrap: wrap; }
+.d0-nat-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 12px;
+    border-radius: 20px;
+    border: 2.5px solid #dc2626;
+    background: rgba(220, 38, 38, 0.22);
+    color: #7f1d1d;
+    font-family: Aptos, Arial, sans-serif;
+    font-weight: 900;
+    font-size: 9.5pt;
+    box-shadow: 0 0 14px #ef4444;
+    animation: d0-pulse 1.4s infinite alternate;
+}
+@keyframes d0-pulse {
+    0% { transform: scale(0.97); box-shadow: 0 0 6px #ef4444; }
+    100% { transform: scale(1.05); box-shadow: 0 0 18px #ef4444; }
+}
+
+/* === De 12 Feitelijke Systeemparadoxen (Brug naar Document B) === */
+.d0-paradoxen-sectie {
+    margin: 28pt 0 20pt 0;
+    padding-top: 14pt;
+    border-top: 2px solid #8b1e1e;
+}
+html[data-theme="dark"] .d0-paradoxen-sectie {
+    border-top-color: #4a6fa5;
+}
+.d0-paradoxen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 16pt;
+    margin-top: 14pt;
+}
+.d0-paradox-card {
+    background: #ffffff;
+    border: 1px solid #d5d0c5;
+    border-radius: 8px;
+    padding: 14pt 16pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    page-break-inside: avoid;
+    break-inside: avoid;
+    box-sizing: border-box;
+}
+html[data-theme="dark"] .d0-paradox-card {
+    background: #20232a;
+    border-color: #323642;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+}
+.d0-px-hdr {
+    display: flex;
+    align-items: baseline;
+    gap: 10pt;
+    margin-bottom: 10pt;
+    padding-bottom: 8pt;
+    border-bottom: 1px solid #ece8df;
+}
+html[data-theme="dark"] .d0-px-hdr {
+    border-bottom-color: #323642;
+}
+.d0-px-num {
+    font-family: Consolas, monospace;
+    font-size: 11pt;
+    font-weight: 800;
+    color: #8b1e1e;
+    background: #f7eded;
+    padding: 2pt 7pt;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+html[data-theme="dark"] .d0-px-num {
+    color: #ff9147;
+    background: rgba(255, 145, 71, 0.14);
+}
+.d0-px-title {
+    font-size: 12.5pt;
+    font-weight: 700;
+    color: #1a3c6e;
+    margin: 0;
+    line-height: 1.25;
+}
+html[data-theme="dark"] .d0-px-title {
+    color: #f1f5f9 !important;
+}
+.d0-px-sub {
+    display: block;
+    font-size: 9pt;
+    color: #666;
+    font-weight: 400;
+    margin-top: 2pt;
+}
+html[data-theme="dark"] .d0-px-sub {
+    color: #94a3b8;
+}
+.d0-px-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8pt;
+    margin-bottom: 12pt;
+}
+.d0-px-block {
+    background: #f7f5f1;
+    border-left: 3px solid #888;
+    padding: 7pt 10pt;
+    border-radius: 0 5px 5px 0;
+}
+html[data-theme="dark"] .d0-px-block {
+    background: #16181d;
+    border-left-color: #4b5563;
+}
+.d0-px-block.d0-px-sys {
+    background: #f0f4f9;
+    border-left-color: #1a3c6e;
+}
+html[data-theme="dark"] .d0-px-block.d0-px-sys {
+    background: rgba(73, 134, 231, 0.08);
+    border-left-color: #4986e7;
+}
+.d0-px-block.d0-px-real {
+    background: #fdf6ec;
+    border-left-color: #c1440e;
+}
+html[data-theme="dark"] .d0-px-block.d0-px-real {
+    background: rgba(255, 145, 71, 0.09);
+    border-left-color: #ff9147;
+}
+.d0-px-lbl {
+    font-size: 8.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 2pt;
+    color: #555;
+}
+html[data-theme="dark"] .d0-px-lbl { color: #a5b0c7; }
+.d0-px-sys .d0-px-lbl { color: #1a3c6e; }
+html[data-theme="dark"] .d0-px-sys .d0-px-lbl { color: #7fb3ff; }
+.d0-px-real .d0-px-lbl { color: #c1440e; }
+html[data-theme="dark"] .d0-px-real .d0-px-lbl { color: #ff9147; }
+
+.d0-px-txt {
+    font-size: 10pt;
+    line-height: 1.45;
+    color: #222;
+}
+html[data-theme="dark"] .d0-px-txt { color: #e2e8f0; }
+
+.d0-px-ftr {
+    margin-top: auto;
+    padding-top: 8pt;
+    border-top: 1px dashed #d5d0c5;
+}
+html[data-theme="dark"] .d0-px-ftr { border-top-color: #323642; }
+
+.d0-px-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5pt;
+    background: #f0eee9;
+    border: 1px solid #d5d0c5;
+    color: #1a3c6e;
+    font-size: 8.5pt;
+    font-family: Consolas, monospace;
+    padding: 4pt 8pt;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.15s;
+}
+.d0-px-link:hover {
+    background: #1a3c6e;
+    color: #ffffff !important;
+    border-color: #1a3c6e;
+}
+html[data-theme="dark"] .d0-px-link {
+    background: #14161a;
+    border-color: #323642;
+    color: #93c5fd !important;
+}
+html[data-theme="dark"] .d0-px-link:hover {
+    background: #1e293b;
+    border-color: #60a5fa;
+    color: #ffffff !important;
+}
+.d0-px-link svg {
+    width: 12px !important;
+    height: 12px !important;
+    margin: 0 !important;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+/* Mobiele weergave voor Intermezzo's en Paradox-kaarten */
+@media (max-width: 900px) {
+    .d0-im-head, .d0-im-body { grid-template-columns: 1fr; }
+    .d0-im-mid::before { display: none; }
+    .d0-im-h-right { text-align: left; border-right: none; border-left: 4px solid #8b1e1e; }
+    .d0-year-badge { width: auto; min-width: 120px; padding: 4pt 12pt; }
+}
+@media (max-width: 768px) {
+    .d0-intermezzo { margin: 12pt 0 18pt 0; }
+    .d0-im-body { padding: 8pt; gap: 8pt; }
+    .d0-cell-split { grid-template-columns: 1fr; }
+    .d0-cell-ring { padding: 5pt 6pt; border-radius: 10px; }
+    .d0-fb-lbl, .d0-fb-sub { white-space: normal; }
+    .d0-paradoxen-grid { grid-template-columns: 1fr; gap: 12pt; }
+    .d0-paradox-card { padding: 11pt 12pt; }
+}
+@media (max-width: 480px) {
+    .d0-im-body { padding: 6pt; }
+    .d0-cell-ring { padding: 4pt 5pt; }
+    .d0-fb-chip { padding: 2pt 4pt; }
+    .d0-fb-lbl { font-size: 8pt; }
+    .d0-rep-card { width: 138px; height: 90px; }
+    .d0-kids-clou { width: 100%; max-width: 230px; }
+}
+
+/* Print-regels voor Intermezzo's en Paradox-kaarten */
+@media print {
+    .d0-intermezzo, html[data-theme="dark"] .d0-intermezzo,
+    .d0-paradox-card, html[data-theme="dark"] .d0-paradox-card {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border-color: #cccccc !important;
+        box-shadow: none !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+    .d0-im-head, html[data-theme="dark"] .d0-im-head {
+        background: #f0eee9 !important;
+        border-bottom-color: #cccccc !important;
+    }
+    .d0-im-h-left, html[data-theme="dark"] .d0-im-h-left { color: #0d7377 !important; }
+    .d0-im-h-right, html[data-theme="dark"] .d0-im-h-right { color: #8b1e1e !important; }
+    .d0-fb-img, html[data-theme="dark"] .d0-fb-img,
+    .d0-eu-stars, html[data-theme="dark"] .d0-eu-stars {
+        filter: none !important;
+    }
+    .d0-fb-chip, html[data-theme="dark"] .d0-fb-chip,
+    .d0-ring-core, html[data-theme="dark"] .d0-ring-core,
+    .d0-year-badge, html[data-theme="dark"] .d0-year-badge {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border-color: #999999 !important;
+    }
+    .d0-fb-lbl, html[data-theme="dark"] .d0-fb-lbl,
+    .d0-px-title, html[data-theme="dark"] .d0-px-title,
+    .d0-px-txt, html[data-theme="dark"] .d0-px-txt {
+        color: #000000 !important;
+    }
+    .d0-fb-sub, html[data-theme="dark"] .d0-fb-sub,
+    .d0-px-sub, html[data-theme="dark"] .d0-px-sub {
+        color: #444444 !important;
+    }
+    .d0-px-block, html[data-theme="dark"] .d0-px-block {
+        background: #f7f5f1 !important;
+        color: #000000 !important;
+    }
+    .d0-nat-circle {
+        animation: none !important;
+        box-shadow: none !important;
+    }
+}
+
+
 
 
 .pub-nav {
@@ -1193,12 +1949,13 @@ html[data-theme="dark"] select.pub-lang-select option {
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document 0 — Inleiding en leeswijzer</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 30 oktober 2026, 10:05</p>
+<p class="meta-lijn">Versie bijgewerkt: 30 oktober 2026, 23:43</p>
 </div>
 <div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
 <li class="niv1"><a href="#systeem-audit">Systeem-Audit</a></li>
 <li class="niv2"><a href="#inhoudsopgave">Inhoudsopgave</a></li>
 <li class="niv2"><a href="#een-europees-verhaal">Een Europees verhaal</a></li>
+<li class="niv3"><a href="#de-logica-van-de-machine-twaalf-feitelijke-systeemparadoxen-uit-document-b">De Logica van de Machine — Twaalf feitelijke systeemparadoxen uit Document B</a></li>
 <li class="niv2"><a href="#waarom-dit-project">Waarom dit project</a></li>
 <li class="niv2"><a href="#wat-dit-project-niet-is">Wat dit project niet is</a></li>
 <li class="niv2"><a href="#de-zes-documenten">De zes documenten</a></li>
@@ -1215,16 +1972,1172 @@ html[data-theme="dark"] select.pub-lang-select option {
 <h2 id="een-europees-verhaal">Een Europees verhaal</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p>Dit dossier begint niet bij een grens. Het begint bij liefde en werk.</p>
 <p>Een man uit Lombardije. Hij voelt zich Lombard, niet Italiaan. Een vrouw uit de Elzas. Zij voelt zich Elzasser, niet Française of Duitse. Twee grensgevallen. Ze ontmoeten elkaar in de Elzas. Zij is verpleegster. Hij is arbeider. Hij raakt gewond, belandt in het ziekenhuis, en daar begint het. Ze trouwen. Wanneer het bedrijf waar hij werkt naar België verhuist, verhuizen zij mee. Niet voor avontuur. Voor werk. Het is het begin van de jaren zeventig. De Europese Economische Gemeenschap telt zes lidstaten.<sup>*</sup> Vrij verkeer van werknemers is een principe op papier. In de praktijk reist de arbeider met papieren formulieren, wisselkoersen en de hoop dat de stelsels elkaar zullen vinden. Ze vestigen zich in België.</p>
+<div class="d0-intermezzo">
+<div class="d0-im-head">
+<div class="d0-im-h-left">🧬 Menselijke Werkelijkheid (Geneste Cellen: Macro ➔ Micro)</div>
+<div class="d0-im-h-mid">Tijdlaag</div>
+<div class="d0-im-h-right">📄 Papieren Werkelijkheid (Administratief Hokje)</div>
+</div>
+<div class="d0-im-body">
+<div class="d0-dna-col">
+<div class="d0-cell-split">
+<div class="d0-cell-ring d0-ring-macro">
+<div class="d0-ring-hdr"><span class="d0-mut-tag">1940: Geen VN • Geen EEG</span></div>
+<div class="d0-cell-ring d0-ring-state">
+<div class="d0-ring-hdr"><span class="d0-fb-chip" title="Frankrijk">
+<img alt="Frankrijk" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_france.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_France.svg';}" src="../assets/vlaggen/flag_france.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Frankrijk</span></span>
+</span></div>
+<div class="d0-cell-ring d0-ring-region">
+<div class="d0-ring-hdr"><span class="d0-fb-chip" title="Île-de-France">
+<img alt="Île-de-France" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_ile_de_france.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Pavillon_royal_de_la_France.svg';}" src="../assets/vlaggen/flag_ile_de_france.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Île-de-France</span></span>
+</span></div>
+<div class="d0-cell-ring d0-ring-prov">
+<div class="d0-ring-hdr">
+<span class="d0-fb-chip" title="Seine (75)">
+<img alt="Seine (75)" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/blason_paris_seine.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Blason_paris_75.svg';}" src="../assets/vlaggen/blason_paris_seine.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Seine (75)</span></span>
+</span>
+<span class="d0-mut-tag">1968 ➔</span>
+<span class="d0-fb-chip" title="Seine-St-Denis (93)">
+<img alt="Seine-St-Denis (93)" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/blason_seine_st_denis.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Blason_d%C3%A9partement_fr_Seine-Saint-Denis.svg';}" src="../assets/vlaggen/blason_seine_st_denis.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Seine-St-Denis (93)</span></span>
+</span>
+</div>
+<div class="d0-cell-ring d0-ring-core">
+<div class="d0-ring-hdr"><span class="d0-fb-chip" title="Bondy">
+<img alt="Bondy" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/blason_bondy.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Blason_bondy.svg';}" src="../assets/vlaggen/blason_bondy.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Bondy</span><span class="d0-fb-sub">Geboorte vader 1940</span></span>
+</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d0-cell-ring d0-ring-macro">
+<div class="d0-ring-hdr">
+<span class="d0-fb-chip" title="VN">
+<img alt="VN" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_un.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_the_United_Nations.svg';}" src="../assets/vlaggen/flag_un.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">VN</span><span class="d0-fb-sub">1945</span></span>
+</span>
+<span class="d0-fb-chip" title="EEG">
+<img alt="EEG" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_eu.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Europe.svg';}" src="../assets/vlaggen/flag_eu.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">EEG</span><span class="d0-fb-sub">6★ 1958</span></span>
+</span>
+</div>
+<div class="d0-cell-ring d0-ring-state">
+<div class="d0-ring-hdr">
+<span class="d0-fb-chip" title="Koninkrijk IT">
+<img alt="Koninkrijk IT" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_italy_1940.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Italy_(1861-1946).svg';}" src="../assets/vlaggen/flag_italy_1940.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Koninkrijk IT</span><span class="d0-fb-sub">1940</span></span>
+</span>
+<span class="d0-mut-tag">1946 ➔</span>
+<span class="d0-fb-chip" title="Republiek IT">
+<img alt="Republiek IT" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_italy.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Italy.svg';}" src="../assets/vlaggen/flag_italy.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Republiek IT</span></span>
+</span>
+</div>
+<div class="d0-cell-ring d0-ring-region">
+<div class="d0-ring-hdr"><span class="d0-fb-chip" title="Lombardije">
+<img alt="Lombardije" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_lombardy.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Lombardy.svg';}" src="../assets/vlaggen/flag_lombardy.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Lombardije</span></span>
+</span></div>
+<div class="d0-cell-ring d0-ring-prov">
+<div class="d0-ring-hdr"><span class="d0-fb-chip" title="Prov. Bergamo">
+<img alt="Prov. Bergamo" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/stemma_bergamo_prov.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Provincia_di_Bergamo-Stemma.svg';}" src="../assets/vlaggen/stemma_bergamo_prov.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Prov. Bergamo</span></span>
+</span></div>
+<div class="d0-cell-ring d0-ring-core">
+<div class="d0-ring-hdr"><span class="d0-fb-chip" title="Vertova">
+<img alt="Vertova" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/stemma_vertova.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Vertova-Stemma.svg';}" src="../assets/vlaggen/stemma_vertova.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Vertova</span><span class="d0-fb-sub">Val Seriana</span></span>
+</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d0-cell-ring d0-ring-macro">
+<div class="d0-ring-hdr">
+<span class="d0-fb-chip" title="VN">
+<img alt="VN" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_un.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_the_United_Nations.svg';}" src="../assets/vlaggen/flag_un.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">VN</span></span>
+</span>
+<span class="d0-fb-chip" title="EEG">
+<img alt="EEG" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_eu.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Europe.svg';}" src="../assets/vlaggen/flag_eu.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">EEG</span><span class="d0-fb-sub">6★</span></span>
+</span>
+<span class="d0-fb-chip" title="Frankrijk">
+<img alt="Frankrijk" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_france.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_France.svg';}" src="../assets/vlaggen/flag_france.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Frankrijk</span></span>
+</span>
+<span class="d0-fb-chip" title="Elzas">
+<img alt="Elzas" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_alsace.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Alsace.svg';}" src="../assets/vlaggen/flag_alsace.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Elzas</span><span class="d0-fb-sub">Rot un Wiss</span></span>
+</span>
+</div>
+<div class="d0-cell-split">
+<div class="d0-cell-ring d0-ring-prov">
+<div class="d0-ring-hdr"><span class="d0-fb-chip" title="Bas-Rhin (67)">
+<img alt="Bas-Rhin (67)" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/blason_bas_rhin.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Blason_d%C3%A9partement_fr_Bas-Rhin.svg';}" src="../assets/vlaggen/blason_bas_rhin.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Bas-Rhin (67)</span></span>
+</span></div>
+<div class="d0-cell-ring d0-ring-core">
+<div class="d0-ring-hdr"><span class="d0-fb-chip" title="Sélestat">
+<img alt="Sélestat" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/blason_selestat.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Blason_ville_fr_S%C3%A9lestat_(Alsace).svg';}" src="../assets/vlaggen/blason_selestat.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Sélestat</span><span class="d0-fb-sub">Geboorte moeder 1948</span></span>
+</span></div>
+</div>
+</div>
+<div class="d0-cell-ring d0-ring-prov">
+<div class="d0-ring-hdr"><span class="d0-fb-chip" title="Haut-Rhin (68)">
+<img alt="Haut-Rhin (68)" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/blason_haut_rhin.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Blason_d%C3%A9partement_fr_Haut-Rhin.svg';}" src="../assets/vlaggen/blason_haut_rhin.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Haut-Rhin (68)</span></span>
+</span></div>
+<div class="d0-cell-ring d0-ring-core">
+<div class="d0-ring-hdr">
+<span class="d0-fb-chip" title="Hattstatt">
+<img alt="Hattstatt" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/blason_hattstatt.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Blason_Hattstatt.svg';}" src="../assets/vlaggen/blason_hattstatt.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Hattstatt</span><span class="d0-fb-sub">Wonen</span></span>
+</span>
+<span class="d0-fb-chip" title="Colmar">
+<img alt="Colmar" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/blason_colmar.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Blason_ancien_Colmar_(Haut-Rhin).svg';}" src="../assets/vlaggen/blason_colmar.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Colmar</span><span class="d0-fb-sub">🏥 Ziekenhuis (Fusie)</span></span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d0-im-mid"><div class="d0-year-badge">1940 – '70<span>EEG 6★</span></div></div>
+<div class="d0-paper-col">
+<div class="d0-law-pill">Ius Sanguinis • Verdrag v. Straatsburg (1963)</div>
+<div class="d0-cards-wrap">
+<div class="d0-rep-card d0-rep-it-doc">
+<div class="d0-rc-top">
+<div class="d0-eu-corner">
+<span class="d0-eu-code notranslate" translate="no">IT</span>
+</div>
+<div class="d0-rc-type">PASSAPORTO</div>
+</div>
+<div class="d0-rc-mid">
+<div class="d0-rc-chip"></div>
+<div class="d0-rc-bars">
+<span class="d0-bar d0-b-lg"></span>
+<span class="d0-bar d0-b-sm"></span>
+<div class="d0-rc-sub">Geb. Bondy = 0%</div>
+</div>
+</div>
+<div class="d0-rc-bot">
+<span class="notranslate" translate="no">NAT: ITA</span>
+</div>
+</div>
+<div class="d0-rep-card d0-rep-fr-doc">
+<div class="d0-rc-top">
+<div class="d0-eu-corner">
+<span class="d0-eu-code notranslate" translate="no">FR</span>
+</div>
+<div class="d0-rc-type">CARTE ID / PASS.</div>
+</div>
+<div class="d0-rc-mid">
+<div class="d0-rc-chip"></div>
+<div class="d0-rc-bars">
+<span class="d0-bar d0-b-lg"></span>
+<span class="d0-bar d0-b-sm"></span>
+<div class="d0-rc-sub">100% FR</div>
+</div>
+</div>
+<div class="d0-rc-bot">
+<span class="notranslate" translate="no">NAT: FRA</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <p>Daar wordt hun kind geboren. In Wilrijk, op 15 september 1981. Het is een ander Europa. Er zijn inmiddels tien lidstaten; Griekenland is op 1 januari van dat jaar toegetreden. Het Akkoord van Schengen bestaat nog niet. Aan elke grens staan douaneposten en paspoortcontroles. Elk land heeft zijn eigen munt. Het Europees Monetair Stelsel van 1979 moet de koersen enigszins temmen. De theorie spreekt over Europese eenwording, maar de realiteit bestaat uit stempels en wachtrijen. Het kind groeit op in Hoboken, in een huis waar uitsluitend Frans wordt gesproken. Maar achter die ene taal liggen drie werelden: de wereld van zijn vader, de wereld van zijn moeder, en de Vlaamse wereld waarin hij opgroeit. Het kind draagt die werelden in zich, nog voor het kan lopen. Op dat moment is het één. Eén lichaam. Eén naam op één dossier.</p>
+<div class="d0-intermezzo">
+<div class="d0-im-head">
+<div class="d0-im-h-left">🧬 Menselijke Werkelijkheid (Geneste Cellen: Macro ➔ Micro)</div>
+<div class="d0-im-h-mid">Tijdlaag</div>
+<div class="d0-im-h-right">📄 Papieren Werkelijkheid (Administratief Hokje)</div>
+</div>
+<div class="d0-im-body">
+<div class="d0-dna-col">
+<div class="d0-cell-ring d0-ring-macro">
+<div class="d0-ring-hdr">
+<span class="d0-fb-chip" title="VN">
+<img alt="VN" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_un.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_the_United_Nations.svg';}" src="../assets/vlaggen/flag_un.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">VN</span></span>
+</span>
+<span class="d0-fb-chip" title="EEG 10★">
+<img alt="EEG 10★" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_eu.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Europe.svg';}" src="../assets/vlaggen/flag_eu.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">EEG 10★</span><span class="d0-fb-sub">Pas 1985 EEG-vlag</span></span>
+</span>
+<span class="d0-fb-chip" title="Benelux">
+<img alt="Benelux" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_benelux.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Benelux.svg';}" src="../assets/vlaggen/flag_benelux.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Benelux</span></span>
+</span>
+</div>
+<div class="d0-cell-ring d0-ring-state">
+<div class="d0-ring-hdr"><span class="d0-fb-chip" title="België">
+<img alt="België" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_belgium.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Belgium.svg';}" src="../assets/vlaggen/flag_belgium.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">België</span><span class="d0-fb-sub">1980➔1993 Fed.</span></span>
+</span></div>
+<div class="d0-cell-ring d0-ring-region">
+<div class="d0-ring-hdr"><span class="d0-fb-chip" title="Vlaanderen">
+<img alt="Vlaanderen" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_flanders.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Flanders.svg';}" src="../assets/vlaggen/flag_flanders.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Vlaanderen</span></span>
+</span></div>
+<div class="d0-cell-ring d0-ring-prov">
+<div class="d0-ring-hdr"><span class="d0-fb-chip" title="Prov. Antwerpen">
+<img alt="Prov. Antwerpen" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_prov_antwerp.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Antwerp.svg';}" src="../assets/vlaggen/flag_prov_antwerp.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Prov. Antwerpen</span></span>
+</span></div>
+<div class="d0-cell-split">
+<div class="d0-cell-ring d0-ring-core">
+<div class="d0-ring-hdr">
+<span class="d0-mut-tag">15-09-1981: Zelfst. Gem.</span>
+<span class="d0-fb-chip" title="Wilrijk">
+<img alt="Wilrijk" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/arms_wilrijk.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Wilrijk_CoatOfArms.svg';}" src="../assets/vlaggen/arms_wilrijk.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Wilrijk</span><span class="d0-fb-sub">Geboorte</span></span>
+</span>
+<span class="d0-fb-chip" title="Hoboken">
+<img alt="Hoboken" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/arms_hoboken.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Armoiries_d%27Ursel.svg';}" src="../assets/vlaggen/arms_hoboken.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Hoboken</span><span class="d0-fb-sub">Jeugd</span></span>
+</span>
+</div>
+</div>
+<div class="d0-cell-ring d0-ring-core">
+<div class="d0-ring-hdr">
+<span class="d0-mut-tag">01-01-1983: Fusie ➔ District</span>
+<span class="d0-fb-chip" title="Stad Antwerpen">
+<img alt="Stad Antwerpen" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_antwerp.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Antwerp.svg';}" src="../assets/vlaggen/flag_antwerp.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Stad Antwerpen</span></span>
+</span>
+<span class="d0-fb-chip" title="Distr. Wilrijk">
+<img alt="Distr. Wilrijk" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/arms_wilrijk.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Wilrijk_CoatOfArms.svg';}" src="../assets/vlaggen/arms_wilrijk.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Distr. Wilrijk</span></span>
+</span>
+<span class="d0-fb-chip" title="Distr. Hoboken">
+<img alt="Distr. Hoboken" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/arms_hoboken.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Armoiries_d%27Ursel.svg';}" src="../assets/vlaggen/arms_hoboken.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Distr. Hoboken</span></span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d0-im-mid"><div class="d0-year-badge">1981 – '99<span>EEG 10★</span></div></div>
+<div class="d0-paper-col">
+<div class="d0-law-pill">🇧🇪 ❌ Geboorterecht geweigerd • Vreemdeling in geboorteland</div>
+<div class="d0-cards-wrap">
+<div class="d0-rep-card d0-rep-be-vreemd">
+<div class="d0-rc-top">
+<div class="d0-eu-corner">
+<span class="d0-eu-code notranslate" translate="no">BE</span>
+</div>
+<div class="d0-rc-type">VREEMDELINGENKAART</div>
+</div>
+<div class="d0-rc-mid">
+<div class="d0-rc-chip"></div>
+<div class="d0-rc-bars">
+<span class="d0-bar d0-b-lg"></span>
+<span class="d0-bar d0-b-sm"></span>
+<div class="d0-rc-sub">Geb: Wilrijk</div>
+</div>
+</div>
+<div class="d0-rc-bot">
+<span class="notranslate" translate="no">NAT: ITA</span>
+</div>
+</div>
+<div class="d0-rep-card d0-rep-fr-doc d0-card-dim">
+<div class="d0-rc-top">
+<div class="d0-eu-corner">
+<span class="d0-eu-code notranslate" translate="no">FR</span>
+</div>
+<div class="d0-rc-type">CARTE D'IDENTITÉ</div>
+</div>
+<div class="d0-rc-mid">
+<div class="d0-rc-chip"></div>
+<div class="d0-rc-bars">
+<span class="d0-bar d0-b-lg"></span>
+<span class="d0-bar d0-b-sm"></span>
+<div class="d0-rc-sub">Via moeder</div>
+</div>
+</div>
+<div class="d0-rc-bot">
+<span>ONGELDIG IN BE</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <p>Op zijn achttiende, in 1999, verhuist hij alleen naar Berchem. De Europese Unie telt dan vijftien lidstaten. De euro is net ingevoerd voor girale betalingen, Schengen is opgenomen in het Europees recht en het "Europees Burgerschap" is inmiddels wettelijk verankerd.<sup>**</sup> De grenzen tussen België en Nederland zijn open. Maar nationaliteit is nog steeds een exclusief bezit. Hij kiest voor volledige integratie en geeft zijn meervoudige oorsprong op. Hij wil Belg zijn. Volkomen. Omdat de dubbele nationaliteit in die jaren nog niet bestaat, betekent dat een harde knip: de Italiaanse nationaliteit opgeven. De Franse nationaliteit opgeven. Alles wat hij van thuis heeft meegekregen aan papieren identiteit uitwissen, om er één terug te krijgen die hij zelf heeft gekozen. Hij is de enige in zijn familie die deze keuze maakt. Zijn zussen behouden hun mix van oorsprongen. Hij niet. Hij kiest voor één. Vrijwillig. Met volle overtuiging, om te integreren. Vanaf dat moment staat er één woord op zijn identiteitskaart: <strong>BELG</strong>.</p>
+<div class="d0-intermezzo">
+<div class="d0-im-head">
+<div class="d0-im-h-left">🧬 Menselijke Werkelijkheid (Geneste Cellen: Macro ➔ Micro)</div>
+<div class="d0-im-h-mid">Tijdlaag</div>
+<div class="d0-im-h-right">📄 Papieren Werkelijkheid (Administratief Hokje)</div>
+</div>
+<div class="d0-im-body">
+<div class="d0-dna-col">
+<div class="d0-cell-ring d0-ring-macro">
+<div class="d0-ring-hdr">
+<span class="d0-fb-chip" title="VN">
+<img alt="VN" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_un.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_the_United_Nations.svg';}" src="../assets/vlaggen/flag_un.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">VN</span></span>
+</span>
+<span class="d0-fb-chip" title="EU">
+<img alt="EU" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_eu.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Europe.svg';}" src="../assets/vlaggen/flag_eu.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">EU</span><span class="d0-fb-sub">15★</span></span>
+</span>
+<span class="d0-fb-chip" title="Benelux">
+<img alt="Benelux" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_benelux.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Benelux.svg';}" src="../assets/vlaggen/flag_benelux.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Benelux</span></span>
+</span>
+<span class="d0-fb-chip" title="België">
+<img alt="België" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_belgium.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Belgium.svg';}" src="../assets/vlaggen/flag_belgium.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">België</span></span>
+</span>
+<span class="d0-fb-chip" title="Vlaams Gewest">
+<img alt="Vlaams Gewest" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_flanders.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Flanders.svg';}" src="../assets/vlaggen/flag_flanders.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Vlaams Gewest</span></span>
+</span>
+</div>
+<div class="d0-cell-ring d0-ring-prov">
+<div class="d0-ring-hdr">
+<span class="d0-fb-chip" title="Prov. Antwerpen">
+<img alt="Prov. Antwerpen" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_prov_antwerp.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Antwerp.svg';}" src="../assets/vlaggen/flag_prov_antwerp.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Prov. Antwerpen</span></span>
+</span>
+<span class="d0-fb-chip" title="Stad Antwerpen">
+<img alt="Stad Antwerpen" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_antwerp.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Antwerp.svg';}" src="../assets/vlaggen/flag_antwerp.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Stad Antwerpen</span></span>
+</span>
+<span class="d0-fb-chip" title="Distr. Berchem">
+<img alt="Distr. Berchem" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_berchem.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Berchem,_Antwerp.svg';}" src="../assets/vlaggen/flag_berchem.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Distr. Berchem</span><span class="d0-fb-sub">18 jaar</span></span>
+</span>
+</div>
+<div class="d0-cell-ring d0-ring-core">
+<div class="d0-ring-hdr">
+<span class="d0-mut-tag">Erfelijke kern ongewijzigd aanwezig:</span>
+<span class="d0-fb-chip" title="Bondy">
+<img alt="Bondy" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/blason_bondy.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Blason_bondy.svg';}" src="../assets/vlaggen/blason_bondy.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Bondy</span></span>
+</span>
+<span class="d0-fb-chip" title="Vertova">
+<img alt="Vertova" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/stemma_vertova.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Vertova-Stemma.svg';}" src="../assets/vlaggen/stemma_vertova.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Vertova</span></span>
+</span>
+<span class="d0-fb-chip" title="Sélestat">
+<img alt="Sélestat" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/blason_selestat.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Blason_ville_fr_S%C3%A9lestat_(Alsace).svg';}" src="../assets/vlaggen/blason_selestat.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Sélestat</span></span>
+</span>
+<span class="d0-fb-chip" title="Hattstatt">
+<img alt="Hattstatt" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/blason_hattstatt.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Blason_Hattstatt.svg';}" src="../assets/vlaggen/blason_hattstatt.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Hattstatt</span></span>
+</span>
+<span class="d0-fb-chip" title="Colmar">
+<img alt="Colmar" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/blason_colmar.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Blason_ancien_Colmar_(Haut-Rhin).svg';}" src="../assets/vlaggen/blason_colmar.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Colmar</span></span>
+</span>
+<span class="d0-fb-chip" title="Wilrijk">
+<img alt="Wilrijk" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/arms_wilrijk.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Wilrijk_CoatOfArms.svg';}" src="../assets/vlaggen/arms_wilrijk.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Wilrijk</span></span>
+</span>
+<span class="d0-fb-chip" title="Hoboken">
+<img alt="Hoboken" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/arms_hoboken.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Armoiries_d%27Ursel.svg';}" src="../assets/vlaggen/arms_hoboken.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Hoboken</span></span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d0-im-mid"><div class="d0-year-badge">1999<span>EU 15★</span></div></div>
+<div class="d0-paper-col">
+<div class="d0-cards-wrap">
+<div class="d0-rep-card d0-rep-it-doc d0-card-dim d0-card-cross">
+<div class="d0-rc-top">
+<div class="d0-eu-corner">
+<svg class="d0-eu-stars" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="none" r="14" stroke="#ffcc00" stroke-dasharray="2.2 5.1" stroke-width="2.2"></circle>
+</svg>
+<span class="d0-eu-code notranslate" translate="no">IT</span>
+</div>
+<div class="d0-rc-type">PASSAPORTO</div>
+</div>
+<div class="d0-rc-mid">
+<div class="d0-rc-chip"></div>
+<div class="d0-rc-bars">
+<span class="d0-bar d0-b-lg"></span>
+<span class="d0-bar d0-b-sm"></span>
+</div>
+</div>
+<div class="d0-rc-bot">
+<span>AFSTAND</span>
+</div>
+</div>
+<div class="d0-rep-card d0-rep-fr-doc d0-card-dim d0-card-cross">
+<div class="d0-rc-top">
+<div class="d0-eu-corner">
+<svg class="d0-eu-stars" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="none" r="14" stroke="#ffcc00" stroke-dasharray="2.2 5.1" stroke-width="2.2"></circle>
+</svg>
+<span class="d0-eu-code notranslate" translate="no">FR</span>
+</div>
+<div class="d0-rc-type">PASSEPORT</div>
+</div>
+<div class="d0-rc-mid">
+<div class="d0-rc-chip"></div>
+<div class="d0-rc-bars">
+<span class="d0-bar d0-b-lg"></span>
+<span class="d0-bar d0-b-sm"></span>
+</div>
+</div>
+<div class="d0-rc-bot">
+<span>AFSTAND</span>
+</div>
+</div>
+</div>
+<div class="d0-law-pill">✂️ 1999: Verplichte amputatie IT &amp; FR voor 1 hokje [BEL]</div>
+<div class="d0-cards-wrap">
+<div class="d0-rep-card d0-rep-be-id">
+<div class="d0-rc-top">
+<div class="d0-eu-corner">
+<svg class="d0-eu-stars" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="none" r="14" stroke="#ffcc00" stroke-dasharray="2.2 5.1" stroke-width="2.2"></circle>
+</svg>
+<span class="d0-eu-code notranslate" translate="no">BE</span>
+</div>
+<div class="d0-rc-type">IDENTITEITSKAART</div>
+</div>
+<div class="d0-rc-mid">
+<div class="d0-rc-chip"></div>
+<div class="d0-rc-bars">
+<span class="d0-bar d0-b-lg"></span>
+<span class="d0-bar d0-b-sm"></span>
+<div class="d0-rc-sub">1 enkel woord</div>
+</div>
+</div>
+<div class="d0-rc-bot">
+<span class="notranslate" translate="no">NAT: BEL</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <p>Daarna verhuist hij naar Gent. Daar leert hij zijn toekomstige vrouw kennen. Ze draagt exact hetzelfde woord op haar identiteitskaart. Twee mensen, één administratieve nationaliteit. In 2007 trouwen ze. De Unie telt inmiddels 27 lidstaten. De euro is de dagelijkse munt, Schengen is de norm, de fysieke grens is allang verdwenen. Ze wonen in Sint-Niklaas, later in Waasmunster. Vier verhuizingen in België, vier keer een nieuw dossier, vier keer een nieuw loket. Elke verhuizing is een administratieve handeling. Elke nieuwe gemeente eist een nieuwe inschrijving. Met elke verhuizing groeit de eenheid: van één naar twee. Twee mensen, twee dossiers, twee administratieve identiteiten die vanaf nu samen door de bureaucratie moeten.</p>
+<div class="d0-intermezzo">
+<div class="d0-im-head">
+<div class="d0-im-h-left">🧬 Menselijke Werkelijkheid (Geneste Cellen: Macro ➔ Micro)</div>
+<div class="d0-im-h-mid">Tijdlaag</div>
+<div class="d0-im-h-right">📄 Papieren Werkelijkheid (Administratief Hokje)</div>
+</div>
+<div class="d0-im-body">
+<div class="d0-dna-col">
+<div class="d0-cell-ring d0-ring-macro">
+<div class="d0-ring-hdr">
+<span class="d0-fb-chip" title="VN">
+<img alt="VN" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_un.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_the_United_Nations.svg';}" src="../assets/vlaggen/flag_un.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">VN</span></span>
+</span>
+<span class="d0-fb-chip" title="EU">
+<img alt="EU" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_eu.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Europe.svg';}" src="../assets/vlaggen/flag_eu.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">EU</span><span class="d0-fb-sub">27★</span></span>
+</span>
+<span class="d0-fb-chip" title="Benelux">
+<img alt="Benelux" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_benelux.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Benelux.svg';}" src="../assets/vlaggen/flag_benelux.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Benelux</span></span>
+</span>
+<span class="d0-fb-chip" title="België">
+<img alt="België" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_belgium.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Belgium.svg';}" src="../assets/vlaggen/flag_belgium.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">België</span></span>
+</span>
+<span class="d0-fb-chip" title="Vlaanderen">
+<img alt="Vlaanderen" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_flanders.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Flanders.svg';}" src="../assets/vlaggen/flag_flanders.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Vlaanderen</span></span>
+</span>
+</div>
+<div class="d0-cell-split">
+<!-- Stamboom Partner: 100% binnen België (West-Vlaanderen -> Oost-Vlaanderen) -->
+<div class="d0-cell-ring d0-ring-state">
+<div class="d0-ring-hdr"><span class="d0-mut-tag">Stamboom Partner (100% BE / Vlaanderen)</span></div>
+<div class="d0-cell-ring d0-ring-prov">
+<div class="d0-ring-hdr"><span class="d0-fb-chip" title="Prov. West-Vlaanderen">
+<img alt="Prov. West-Vlaanderen" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_west_vlaanderen.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_West_Flanders.svg';}" src="../assets/vlaggen/flag_west_vlaanderen.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Prov. West-Vlaanderen</span><span class="d0-fb-sub">Familiewortels</span></span>
+</span></div>
+<div class="d0-cell-ring d0-ring-core">
+<div class="d0-ring-hdr">
+<span class="d0-fb-chip" title="Gem. Jabbeke">
+<img alt="Gem. Jabbeke" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_jabbeke.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Jabbeke_vlag.svg';}" src="../assets/vlaggen/flag_jabbeke.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Gem. Jabbeke</span></span>
+</span>
+<span class="d0-fb-chip" title="Snellegem">
+<img alt="Snellegem" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/arms_snellegem.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Jabbeke_vlag.svg';}" src="../assets/vlaggen/arms_snellegem.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Snellegem</span><span class="d0-fb-sub">Fusie 1977</span></span>
+</span>
+</div>
+</div>
+</div>
+<div class="d0-cell-ring d0-ring-prov">
+<div class="d0-ring-hdr"><span class="d0-fb-chip" title="Prov. Oost-Vlaanderen">
+<img alt="Prov. Oost-Vlaanderen" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_oost_vlaanderen.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Oost-Vlaanderen.svg';}" src="../assets/vlaggen/flag_oost_vlaanderen.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Prov. Oost-Vlaanderen</span></span>
+</span></div>
+<div class="d0-cell-ring d0-ring-core">
+<div class="d0-ring-hdr">
+<span class="d0-fb-chip" title="Lokeren">
+<img alt="Lokeren" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_lokeren.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Lokeren.svg';}" src="../assets/vlaggen/flag_lokeren.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Lokeren</span><span class="d0-fb-sub">Geboorte</span></span>
+</span>
+<span class="d0-fb-chip" title="Buggenhout">
+<img alt="Buggenhout" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_buggenhout.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Buggenhout_vlag.svg';}" src="../assets/vlaggen/flag_buggenhout.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Buggenhout</span><span class="d0-fb-sub">Wonen</span></span>
+</span>
+<span class="d0-fb-chip" title="Temse">
+<img alt="Temse" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_temse.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Temse.svg';}" src="../assets/vlaggen/flag_temse.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Temse</span></span>
+</span>
+<span class="d0-fb-chip" title="Elversele">
+<img alt="Elversele" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/arms_temse.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Blason_ville_be_Temse_(2).svg';}" src="../assets/vlaggen/arms_temse.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Elversele</span><span class="d0-fb-sub">Fusie 1977</span></span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Ontmoeting & Huwelijk -->
+<div class="d0-cell-ring d0-ring-state">
+<div class="d0-ring-hdr"><span class="d0-mut-tag">Samenkomst &amp; Huwelijk (2007)</span></div>
+<div class="d0-cell-ring d0-ring-prov">
+<div class="d0-ring-hdr"><span class="d0-fb-chip" title="Prov. Oost-Vlaanderen">
+<img alt="Prov. Oost-Vlaanderen" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_oost_vlaanderen.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Oost-Vlaanderen.svg';}" src="../assets/vlaggen/flag_oost_vlaanderen.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Prov. Oost-Vlaanderen</span></span>
+</span></div>
+<div class="d0-cell-ring d0-ring-core">
+<div class="d0-ring-hdr">
+<span class="d0-fb-chip" title="Gent">
+<img alt="Gent" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_ghent.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Vlag_van_Gent.svg';}" src="../assets/vlaggen/flag_ghent.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Gent</span><span class="d0-fb-sub">Ontmoeting</span></span>
+</span>
+<span class="d0-mut-tag">💍 2007 ➔</span>
+<span class="d0-fb-chip" title="Sint-Niklaas">
+<img alt="Sint-Niklaas" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_sint_niklaas.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Sint-Niklaas.svg';}" src="../assets/vlaggen/flag_sint_niklaas.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Sint-Niklaas</span><span class="d0-fb-sub">Huwelijk</span></span>
+</span>
+<span class="d0-fb-chip" title="Waasmunster">
+<img alt="Waasmunster" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_waasmunster.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Waasmunster.svg';}" src="../assets/vlaggen/flag_waasmunster.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Waasmunster</span><span class="d0-fb-sub">Wonen</span></span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d0-im-mid"><div class="d0-year-badge">2000 – '08<span>EU 27★</span></div></div>
+<div class="d0-paper-col">
+<div class="d0-cards-wrap">
+<div class="d0-rep-card d0-rep-be-id">
+<div class="d0-rc-top">
+<div class="d0-eu-corner">
+<svg class="d0-eu-stars" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="none" r="14" stroke="#ffcc00" stroke-dasharray="2.2 5.1" stroke-width="2.2"></circle>
+</svg>
+<span class="d0-eu-code notranslate" translate="no">BE</span>
+</div>
+<div class="d0-rc-type">eID CARD</div>
+</div>
+<div class="d0-rc-mid">
+<div class="d0-rc-chip"></div>
+<div class="d0-rc-bars">
+<span class="d0-bar d0-b-lg"></span>
+<span class="d0-bar d0-b-sm"></span>
+<div class="d0-rc-sub">Partner (100% BE)</div>
+</div>
+</div>
+<div class="d0-rc-bot">
+<span class="notranslate" translate="no">NAT: BEL</span>
+</div>
+</div>
+<div class="d0-rep-card d0-rep-be-id">
+<div class="d0-rc-top">
+<div class="d0-eu-corner">
+<svg class="d0-eu-stars" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="none" r="14" stroke="#ffcc00" stroke-dasharray="2.2 5.1" stroke-width="2.2"></circle>
+</svg>
+<span class="d0-eu-code notranslate" translate="no">BE</span>
+</div>
+<div class="d0-rc-type">eID CARD</div>
+</div>
+<div class="d0-rc-mid">
+<div class="d0-rc-chip"></div>
+<div class="d0-rc-bars">
+<span class="d0-bar d0-b-lg"></span>
+<span class="d0-bar d0-b-sm"></span>
+<div class="d0-rc-sub">Aanvrager (3 landen)</div>
+</div>
+</div>
+<div class="d0-rc-bot">
+<span class="notranslate" translate="no">NAT: BEL</span>
+</div>
+</div>
+</div>
+<div class="d0-irony-pill">⚠️ 28-04-2008: Verbod dubbele nationaliteit opgeheven (IT + FR + BE = OK) • ❌ GEEN TERUGWERKENDE KRACHT</div>
+</div>
+</div>
+</div>
 <p>In 2014 verhuizen zij samen naar Zeeuws-Vlaanderen in Nederland. Europa telt dan 28 lidstaten. De fysieke grens is opgelost; je rijdt zonder remmen van België naar Nederland. Maar de administratieve grens is onzichtbaar opgetrokken. Daar begint de eerste wrijving. Hun Belgische rijbewijs is geldig in de hele Europese Unie, het Nederlandse ook. Toch moeten ze het Belgische inleveren. Nederland staat maar één geldig document per persoon toe.<sup>***</sup> Ze geven het af bij de gemeente en krijgen het nooit terug. Wat ze in de plaats krijgen, is een Nederlands document met exact dezelfde Europese geldigheid. Alleen het land van uitgifte is veranderd. Vanaf dat moment dragen ze de paradox in hun eigen portemonnee. Een Belgische identiteitskaart voor hun identiteit. Een Nederlands rijbewijs voor hun mobiliteit, dat in Nederland dient als wettig legitimatiebewijs. In België wordt datzelfde rijbewijs niet als identiteitsbewijs aanvaard; daar geldt uitsluitend de Belgische kaart. Twee documenten, twee landen, één mens. Hun leven verdeelt zich over twee staten: wonen in het ene, verzekerd zijn in het andere. In theorie horen ze zo bij beide landen en zou hun bestaan zich naadloos over de grens moeten plooien. In de praktijk is het administratieve systeem geprogrammeerd om telkens maar één land tegelijk te lezen. Zodra de systemen niet met elkaar spreken, word je onleesbaar.</p>
+<div class="d0-intermezzo">
+<div class="d0-im-head">
+<div class="d0-im-h-left">🧬 Menselijke Werkelijkheid (Geneste Cellen: Macro ➔ Micro)</div>
+<div class="d0-im-h-mid">Tijdlaag</div>
+<div class="d0-im-h-right">📄 Papieren Werkelijkheid (Administratief Hokje)</div>
+</div>
+<div class="d0-im-body">
+<div class="d0-dna-col">
+<div class="d0-cell-ring d0-ring-macro">
+<div class="d0-ring-hdr">
+<span class="d0-fb-chip" title="VN">
+<img alt="VN" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_un.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_the_United_Nations.svg';}" src="../assets/vlaggen/flag_un.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">VN</span></span>
+</span>
+<span class="d0-fb-chip" title="EU">
+<img alt="EU" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_eu.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Europe.svg';}" src="../assets/vlaggen/flag_eu.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">EU</span><span class="d0-fb-sub">28★</span></span>
+</span>
+<span class="d0-fb-chip" title="Benelux">
+<img alt="Benelux" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_benelux.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Benelux.svg';}" src="../assets/vlaggen/flag_benelux.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Benelux</span></span>
+</span>
+</div>
+<div class="d0-cell-ring d0-ring-state">
+<div class="d0-ring-hdr"><span class="d0-fb-chip" title="Koninkrijk der Nederlanden">
+<img alt="Koninkrijk der Nederlanden" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_netherlands.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_the_Netherlands.svg';}" src="../assets/vlaggen/flag_netherlands.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Koninkrijk der Nederlanden</span></span>
+</span></div>
+<div class="d0-cell-ring d0-ring-region">
+<div class="d0-ring-hdr"><span class="d0-fb-chip" title="Prov. Zeeland">
+<img alt="Prov. Zeeland" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_zeeland.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Zeeland.svg';}" src="../assets/vlaggen/flag_zeeland.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Prov. Zeeland</span></span>
+</span></div>
+<div class="d0-cell-ring d0-ring-prov">
+<div class="d0-ring-hdr">
+<span class="d0-fb-chip" title="Zeeuws-Vlaanderen">
+<img alt="Zeeuws-Vlaanderen" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_zeeuws_vlaanderen.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Zeeuws_Vlaanderen_vlag.svg';}" src="../assets/vlaggen/flag_zeeuws_vlaanderen.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Zeeuws-Vlaanderen</span></span>
+</span>
+<span class="d0-fb-chip" title="Gem. Hulst">
+<img alt="Gem. Hulst" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_hulst.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Hulst_vlag.svg';}" src="../assets/vlaggen/flag_hulst.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Gem. Hulst</span><span class="d0-fb-sub">Herindeling 2003</span></span>
+</span>
+<span class="d0-fb-chip" title="Graauw &amp; Langendam">
+<img alt="Graauw &amp; Langendam" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/arms_graauw.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Graauw_en_Langendam_wapen.svg';}" src="../assets/vlaggen/arms_graauw.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Graauw &amp; Langendam</span><span class="d0-fb-sub">Opgeheven 1970</span></span>
+</span>
+</div>
+<div class="d0-cell-ring d0-ring-core">
+<div class="d0-ring-hdr"><span class="d0-fb-chip" title="Kern Paal">
+<img alt="Kern Paal" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/arms_graauw.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Graauw_en_Langendam_wapen.svg';}" src="../assets/vlaggen/arms_graauw.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Kern Paal</span><span class="d0-fb-sub">Woonplaats gezin</span></span>
+</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d0-im-mid"><div class="d0-year-badge">2014<span>EU 28★</span></div></div>
+<div class="d0-paper-col">
+<div class="d0-cards-wrap">
+<div class="d0-rep-card d0-rep-be-rbw d0-card-dim d0-card-cross">
+<div class="d0-rc-top">
+<div class="d0-eu-corner">
+<svg class="d0-eu-stars" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="none" r="14" stroke="#ffcc00" stroke-dasharray="2.2 5.1" stroke-width="2.2"></circle>
+</svg>
+<span class="d0-eu-code notranslate" translate="no">BE</span>
+</div>
+<div class="d0-rc-type">RIJBEWIJS</div>
+</div>
+<div class="d0-rc-mid">
+<div class="d0-rc-chip"></div>
+<div class="d0-rc-bars">
+<span class="d0-bar d0-b-lg"></span>
+<span class="d0-bar d0-b-sm"></span>
+</div>
+</div>
+<div class="d0-rc-bot">
+<span>INGENOMEN 🗑️</span>
+</div>
+</div>
+</div>
+<div class="d0-law-pill">2 Tegenstrijdige Kaartjes in 1 Portemonnee:</div>
+<div class="d0-cards-wrap">
+<div class="d0-rep-card d0-rep-be-id">
+<div class="d0-rc-top">
+<div class="d0-eu-corner">
+<svg class="d0-eu-stars" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="none" r="14" stroke="#ffcc00" stroke-dasharray="2.2 5.1" stroke-width="2.2"></circle>
+</svg>
+<span class="d0-eu-code notranslate" translate="no">BE</span>
+</div>
+<div class="d0-rc-type">eID CARD</div>
+</div>
+<div class="d0-rc-mid">
+<div class="d0-rc-chip"></div>
+<div class="d0-rc-bars">
+<span class="d0-bar d0-b-lg"></span>
+<span class="d0-bar d0-b-sm"></span>
+<div class="d0-rc-sub">Geldig ID in BE</div>
+</div>
+</div>
+<div class="d0-rc-bot">
+<span class="notranslate" translate="no">NAT: BEL</span>
+</div>
+</div>
+<div class="d0-rep-card d0-rep-nl-rbw">
+<div class="d0-rc-top">
+<div class="d0-eu-corner">
+<svg class="d0-eu-stars" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="none" r="14" stroke="#ffcc00" stroke-dasharray="2.2 5.1" stroke-width="2.2"></circle>
+</svg>
+<span class="d0-eu-code notranslate" translate="no">NL</span>
+</div>
+<div class="d0-rc-type">RIJBEWIJS</div>
+</div>
+<div class="d0-rc-mid">
+<div class="d0-rc-chip"></div>
+<div class="d0-rc-bars">
+<span class="d0-bar d0-b-lg"></span>
+<span class="d0-bar d0-b-sm"></span>
+<div class="d0-rc-sub">3. Wilrijk | 4c. Hulst</div>
+</div>
+</div>
+<div class="d0-rc-bot">
+<span class="notranslate" translate="no">NAT: [ GEEN ]</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <p>In 2016 wordt hun zoon geboren. Een kind dat in zich draagt wat zijn ouders en grootouders hem hebben doorgegeven. De Vlaamse wortels van zijn moeder. De talen van zijn grootouders — niet als nationaliteit, maar als oorsprong, als klank, als bloed. En Zeeuws-Vlaams omdat hij er woont, de lucht inademt en er vrienden maakt. Vier werelden in één lichaam. Vier oorsprongen in één kind. Hij steekt elke dag de grens over. Niet voor werk, zoals zijn ouders, maar voor school. Hij woont in Nederland, maar leert lezen en schrijven in Vlaanderen. Op school leert hij de taal van zijn moeder, maar zijn bed staat in Hulst. En daar begint het onvermijdelijke. Voor de Vlamingen is hij een Nederlander, rijdend in een auto met een geel kenteken. Voor de Nederlanders is hij een Vlaming, herkenbaar aan zijn tongval. Op het speelplein steken de andere kinderen hem in het vakje 'Belg'. Niet omdat iemand hem dat gevraagd heeft. Niet omdat hij een keuze heeft gemaakt. Maar omdat de kinderen om hem heen al geleerd hebben dat er vakjes bestaan, en dat alles wat afwijkt, geclassificeerd moet worden. Drie mensen, drie dossiers, twee landen, één gezin.</p>
 <p>Uiteindelijk krijgt ook hij een plastieken kaartje dat hem moet vertellen wie hij is. Daarop staat opnieuw dat ene woord. <strong>BELG.</strong> De kleine Europese vlag in de hoek is het enige wat rest van het grotere ideaal. De rest is onzichtbaar gemaakt. Het systeem registreert één dimensie, terwijl het kind er vier draagt.</p>
+<div class="d0-intermezzo">
+<div class="d0-im-head">
+<div class="d0-im-h-left">🧬 Menselijke Werkelijkheid (Geneste Cellen: Macro ➔ Micro)</div>
+<div class="d0-im-h-mid">Tijdlaag</div>
+<div class="d0-im-h-right">📄 Papieren Werkelijkheid (Administratief Hokje)</div>
+</div>
+<div class="d0-im-body">
+<div class="d0-dna-col">
+<div class="d0-cell-ring d0-ring-macro">
+<div class="d0-ring-hdr">
+<span class="d0-fb-chip" title="VN">
+<img alt="VN" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_un.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_the_United_Nations.svg';}" src="../assets/vlaggen/flag_un.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">VN</span></span>
+</span>
+<span class="d0-fb-chip" title="EU">
+<img alt="EU" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_eu.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Europe.svg';}" src="../assets/vlaggen/flag_eu.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">EU</span><span class="d0-fb-sub">28★ ➔ 27★</span></span>
+</span>
+<span class="d0-fb-chip" title="Benelux">
+<img alt="Benelux" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_benelux.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Benelux.svg';}" src="../assets/vlaggen/flag_benelux.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Benelux</span></span>
+</span>
+<span class="d0-mut-tag">2016: Elzas ➔ Grand Est ➔ 2021: CeA</span>
+</div>
+<div class="d0-cell-split">
+<div class="d0-cell-ring d0-ring-state">
+<div class="d0-ring-hdr">
+<span class="d0-fb-chip" title="FR">
+<img alt="FR" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_france.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_France.svg';}" src="../assets/vlaggen/flag_france.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">FR</span></span>
+</span>
+<span class="d0-fb-chip" title="Île-de-Fr.">
+<img alt="Île-de-Fr." class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_ile_de_france.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Pavillon_royal_de_la_France.svg';}" src="../assets/vlaggen/flag_ile_de_france.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Île-de-Fr.</span></span>
+</span>
+<span class="d0-fb-chip" title="75">
+<img alt="75" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/blason_paris_seine.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Blason_paris_75.svg';}" src="../assets/vlaggen/blason_paris_seine.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">75</span></span>
+</span>
+<span class="d0-fb-chip" title="93">
+<img alt="93" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/blason_seine_st_denis.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Blason_d%C3%A9partement_fr_Seine-Saint-Denis.svg';}" src="../assets/vlaggen/blason_seine_st_denis.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">93</span></span>
+</span>
+<span class="d0-fb-chip" title="Bondy">
+<img alt="Bondy" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/blason_bondy.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Blason_bondy.svg';}" src="../assets/vlaggen/blason_bondy.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Bondy</span></span>
+</span>
+</div>
+<div class="d0-ring-hdr">
+<span class="d0-fb-chip" title="IT '40">
+<img alt="IT '40" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_italy_1940.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Italy_(1861-1946).svg';}" src="../assets/vlaggen/flag_italy_1940.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">IT '40</span></span>
+</span>
+<span class="d0-fb-chip" title="IT">
+<img alt="IT" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_italy.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Italy.svg';}" src="../assets/vlaggen/flag_italy.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">IT</span></span>
+</span>
+<span class="d0-fb-chip" title="Lombardije">
+<img alt="Lombardije" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_lombardy.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Lombardy.svg';}" src="../assets/vlaggen/flag_lombardy.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Lombardije</span></span>
+</span>
+<span class="d0-fb-chip" title="Bergamo">
+<img alt="Bergamo" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/stemma_bergamo_prov.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Provincia_di_Bergamo-Stemma.svg';}" src="../assets/vlaggen/stemma_bergamo_prov.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Bergamo</span></span>
+</span>
+<span class="d0-fb-chip" title="Vertova">
+<img alt="Vertova" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/stemma_vertova.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Vertova-Stemma.svg';}" src="../assets/vlaggen/stemma_vertova.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Vertova</span></span>
+</span>
+</div>
+<div class="d0-ring-hdr">
+<span class="d0-fb-chip" title="Elzas">
+<img alt="Elzas" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_alsace.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Alsace.svg';}" src="../assets/vlaggen/flag_alsace.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Elzas</span></span>
+</span>
+<span class="d0-fb-chip" title="Grand Est">
+<img alt="Grand Est" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_grand_est.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Grand_Est.svg';}" src="../assets/vlaggen/flag_grand_est.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Grand Est</span></span>
+</span>
+<span class="d0-fb-chip" title="67">
+<img alt="67" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/blason_bas_rhin.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Blason_d%C3%A9partement_fr_Bas-Rhin.svg';}" src="../assets/vlaggen/blason_bas_rhin.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">67</span></span>
+</span>
+<span class="d0-fb-chip" title="Sélestat">
+<img alt="Sélestat" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/blason_selestat.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Blason_ville_fr_S%C3%A9lestat_(Alsace).svg';}" src="../assets/vlaggen/blason_selestat.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Sélestat</span></span>
+</span>
+<span class="d0-fb-chip" title="68">
+<img alt="68" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/blason_haut_rhin.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Blason_d%C3%A9partement_fr_Haut-Rhin.svg';}" src="../assets/vlaggen/blason_haut_rhin.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">68</span></span>
+</span>
+<span class="d0-fb-chip" title="Hattstatt">
+<img alt="Hattstatt" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/blason_hattstatt.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Blason_Hattstatt.svg';}" src="../assets/vlaggen/blason_hattstatt.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Hattstatt</span></span>
+</span>
+<span class="d0-fb-chip" title="Colmar">
+<img alt="Colmar" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/blason_colmar.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Blason_ancien_Colmar_(Haut-Rhin).svg';}" src="../assets/vlaggen/blason_colmar.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Colmar</span></span>
+</span>
+</div>
+<div class="d0-ring-hdr">
+<span class="d0-fb-chip" title="West-Vl.">
+<img alt="West-Vl." class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_west_vlaanderen.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_West_Flanders.svg';}" src="../assets/vlaggen/flag_west_vlaanderen.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">West-Vl.</span></span>
+</span>
+<span class="d0-fb-chip" title="Jabbeke">
+<img alt="Jabbeke" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_jabbeke.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Jabbeke_vlag.svg';}" src="../assets/vlaggen/flag_jabbeke.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Jabbeke</span></span>
+</span>
+<span class="d0-fb-chip" title="Snellegem">
+<img alt="Snellegem" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/arms_snellegem.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Jabbeke_vlag.svg';}" src="../assets/vlaggen/arms_snellegem.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Snellegem</span></span>
+</span>
+<span class="d0-fb-chip" title="Lokeren">
+<img alt="Lokeren" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_lokeren.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Lokeren.svg';}" src="../assets/vlaggen/flag_lokeren.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Lokeren</span></span>
+</span>
+<span class="d0-fb-chip" title="Buggenhout">
+<img alt="Buggenhout" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_buggenhout.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Buggenhout_vlag.svg';}" src="../assets/vlaggen/flag_buggenhout.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Buggenhout</span></span>
+</span>
+<span class="d0-fb-chip" title="Temse">
+<img alt="Temse" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_temse.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Temse.svg';}" src="../assets/vlaggen/flag_temse.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Temse</span></span>
+</span>
+<span class="d0-fb-chip" title="Elversele">
+<img alt="Elversele" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/arms_temse.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Blason_ville_be_Temse_(2).svg';}" src="../assets/vlaggen/arms_temse.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Elversele</span></span>
+</span>
+</div>
+<div class="d0-ring-hdr">
+<span class="d0-fb-chip" title="Hoboken">
+<img alt="Hoboken" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/arms_hoboken.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Armoiries_d%27Ursel.svg';}" src="../assets/vlaggen/arms_hoboken.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Hoboken</span></span>
+</span>
+<span class="d0-fb-chip" title="Berchem">
+<img alt="Berchem" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_berchem.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Berchem,_Antwerp.svg';}" src="../assets/vlaggen/flag_berchem.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Berchem</span></span>
+</span>
+<span class="d0-fb-chip" title="Gent">
+<img alt="Gent" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_ghent.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Vlag_van_Gent.svg';}" src="../assets/vlaggen/flag_ghent.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Gent</span></span>
+</span>
+<span class="d0-fb-chip" title="Waasmunster">
+<img alt="Waasmunster" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_waasmunster.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Waasmunster.svg';}" src="../assets/vlaggen/flag_waasmunster.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Waasmunster</span></span>
+</span>
+</div>
+</div>
+<div class="d0-cell-ring d0-ring-core">
+<div class="d0-ring-hdr">
+<span class="d0-mut-tag">1. Geboorte (BE)</span>
+<span class="d0-fb-chip" title="BE">
+<img alt="BE" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_belgium.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Belgium.svg';}" src="../assets/vlaggen/flag_belgium.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">BE</span></span>
+</span>
+<span class="d0-fb-chip" title="VL">
+<img alt="VL" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_flanders.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Flanders.svg';}" src="../assets/vlaggen/flag_flanders.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">VL</span></span>
+</span>
+<span class="d0-fb-chip" title="Prov. Antw.">
+<img alt="Prov. Antw." class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_prov_antwerp.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Antwerp.svg';}" src="../assets/vlaggen/flag_prov_antwerp.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Prov. Antw.</span></span>
+</span>
+<span class="d0-fb-chip" title="Antwerpen">
+<img alt="Antwerpen" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_antwerp.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Antwerp.svg';}" src="../assets/vlaggen/flag_antwerp.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Antwerpen</span></span>
+</span>
+<span class="d0-fb-chip" title="Wilrijk">
+<img alt="Wilrijk" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/arms_wilrijk.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Wilrijk_CoatOfArms.svg';}" src="../assets/vlaggen/arms_wilrijk.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Wilrijk</span><span class="d0-fb-sub">12-12-2016</span></span>
+</span>
+</div>
+<div class="d0-ring-hdr">
+<span class="d0-mut-tag">2. Wonen (NL)</span>
+<span class="d0-fb-chip" title="NL">
+<img alt="NL" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_netherlands.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_the_Netherlands.svg';}" src="../assets/vlaggen/flag_netherlands.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">NL</span></span>
+</span>
+<span class="d0-fb-chip" title="Zeeland">
+<img alt="Zeeland" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_zeeland.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Zeeland.svg';}" src="../assets/vlaggen/flag_zeeland.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Zeeland</span></span>
+</span>
+<span class="d0-fb-chip" title="Z-Vl.">
+<img alt="Z-Vl." class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_zeeuws_vlaanderen.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Zeeuws_Vlaanderen_vlag.svg';}" src="../assets/vlaggen/flag_zeeuws_vlaanderen.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Z-Vl.</span></span>
+</span>
+<span class="d0-fb-chip" title="Hulst">
+<img alt="Hulst" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_hulst.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Hulst_vlag.svg';}" src="../assets/vlaggen/flag_hulst.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Hulst</span></span>
+</span>
+<span class="d0-fb-chip" title="Paal / Graauw">
+<img alt="Paal / Graauw" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/arms_graauw.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Graauw_en_Langendam_wapen.svg';}" src="../assets/vlaggen/arms_graauw.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Paal / Graauw</span></span>
+</span>
+</div>
+<div class="d0-ring-hdr">
+<span class="d0-mut-tag">3. School (BE)</span>
+<span class="d0-fb-chip" title="BE">
+<img alt="BE" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_belgium.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Belgium.svg';}" src="../assets/vlaggen/flag_belgium.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">BE</span></span>
+</span>
+<span class="d0-fb-chip" title="VL">
+<img alt="VL" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_flanders.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Flanders.svg';}" src="../assets/vlaggen/flag_flanders.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">VL</span></span>
+</span>
+<span class="d0-fb-chip" title="Oost-Vl.">
+<img alt="Oost-Vl." class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_oost_vlaanderen.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Oost-Vlaanderen.svg';}" src="../assets/vlaggen/flag_oost_vlaanderen.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Oost-Vl.</span></span>
+</span>
+<span class="d0-fb-chip" title="Sint-Niklaas">
+<img alt="Sint-Niklaas" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_sint_niklaas.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Sint-Niklaas.svg';}" src="../assets/vlaggen/flag_sint_niklaas.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Sint-Niklaas</span></span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d0-im-mid"><div class="d0-year-badge">2016<span>Synthese</span></div></div>
+<div class="d0-paper-col">
+<div class="d0-kids-clou d0-rep-be-id">
+<div class="d0-rc-top">
+<div class="d0-rc-type" style="text-align:left; font-size:7pt;">BELGIË • KIDS-ID</div>
+<div class="d0-eu-corner">
+<svg class="d0-eu-stars" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="none" r="14" stroke="#ffcc00" stroke-dasharray="2.2 5.1" stroke-width="2.2"></circle>
+</svg>
+<span class="d0-eu-code notranslate" translate="no">BE</span>
+</div>
+</div>
+<div class="d0-kids-grid">
+<div class="d0-photo-sil">
+<svg viewbox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg>
+</div>
+<div class="d0-kids-fields">
+<div class="d0-kf-row"><span>GEB:</span><span>12.12.2016 Wilrijk</span></div>
+<div class="d0-kf-row"><span>NL-WOON:</span><span>[ ONZICHTBAAR ]</span></div>
+<div class="d0-kf-row"><span>35+ CELLEN:</span><span>[ GEWIST ]</span></div>
+</div>
+</div>
+<div class="d0-rc-bot" style="background:rgba(255,255,255,0.72); padding:4px;">
+<div class="d0-nat-circle notranslate" translate="no">NAT: BEL</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <p>Zo werkt het algoritme van de staat. Het ziet geen gezin. Het ziet geen organisme dat over twee landen is gegroeid. Het ziet uitsluitend losse eenheden in losse vakjes in losse landen. Wie niet in het vakje past, valt tussen de regels door.</p>
-<p>Het is 2025. De Europese Unie telt 27 lidstaten, na de uittreding van het Verenigd Koninkrijk. De overheden zijn gedigitaliseerd, datastromen verbinden de hoofdsteden en de theorie belooft een frictieloze unie. En het kind uit 1981? Hij is inmiddels vierenveertig. Hij wordt ernstig ziek en belandt in de kliniek. De tol van de suikerziekte is onomkeerbaar: de amputatie van twee tenen en het verlies van zicht in één oog. De Belgische artsen oordelen helder: u mag niet meer rijden. Hij kan en wil dat ook niet meer. De Nederlandse artsen in zijn woonland kennen hem niet, en mógen hem door de strikte wetgeving rond dubbele inschrijvingen niet eens kennen. Hoewel het Nederlandse rijbewijs tot de volgende oogtest fysiek nog in zijn portemonnee zit — Nederland weet nog van niets, omdat de database domweg weigert de Belgische medische realiteit in te lezen — is zijn grensoverschrijdende mobiliteit feitelijk voorbij. Straks, wanneer dat document onvermijdelijk vervalt, wist het systeem de enige kaart uit die hem in Nederland nog een administratieve weerspiegeling gaf. Wat overblijft, is de Belgische identiteitskaart. Eén woord. <strong>BELG.</strong> De man die zijn hele leven over grenzen bewoog, die zijn Italiaanse en Franse identiteit vrijwillig opgaf om Belg te worden, maar de wereld van zijn vader en moeder nooit kon uitwissen, wordt aan het einde van zijn rit genadeloos teruggebracht tot één land. Het systeem heeft hem ingehaald. De cirkel is rond. Hij is weer uitsluitend Belg. En zijn zoon, die vier werelden in zich draagt, staat met exact datzelfde woord in de database. <strong>BELG.</strong> Niets meer. Een kleine Europese vlag in de hoek.</p>
+<p>Het is 2025. De Europese Unie telt 27 lidstaten, na de uittreding van het Verenigd Koninkrijk. De overheden zijn gedigitaliseerd, datastromen verbinden de hoofdsteden en de theorie belooft een frictieloze unie. En het kind uit 1981? Hij is inmiddels vierenveertig. Hij wordt ernstig ziek en belandt in de kliniek. De tol van de suikerziekte is onomkeerbaar: de amputatie van twee tenen en het verlies van zicht in één oog. De Belgische artsen oordelen helder: u bent medisch niet meer rijgeschikt en mag niet meer rijden. Hij kan en wil dat ook niet meer. Maar dan voltrekt zich een nieuwe administratieve spagaat. België verklaart hem rijongeschikt, maar kan zijn rijbewijs niet intrekken of opeisen — want dat Belgische rijbewijs heeft Nederland in 2014 ingenomen. Tegelijkertijd kan hij zijn Nederlandse rijbewijs in Nederland niet op medische gronden inleveren zonder dat Nederland eerst zijn medische ongeschiktheid erkent. En precies die medische realiteit weigeren de Nederlandse instanties te erkennen, omdat een formele erkenning van zijn fysieke toestand onvermijdelijk zou dwingen tot het toekennen van Nederlandse arbeidsongeschiktheidsrechten (WIA) en voorzieningen. Het gevolg is een volmaakte bureaucratische patstelling: feitelijk rijdt hij geen meter meer, maar op papier behoudt hij een geldig Nederlands rijbewijs.<sup>****</sup> In het land dat zijn medische toestand erkent, bezit hij geen rijbewijs dat kan worden ingetrokken; in het land dat zijn rijbewijs beheert, mag hij op papier nog altijd rijden omdat het systeem weigert zijn medische realiteit te erkennen. En zijn identiteit? Op zijn Belgische identiteitskaart staat nog altijd dat ene woord: <strong>BELG.</strong> De man die zijn hele leven over grenzen bewoog, die zijn Italiaanse en Franse identiteit vrijwillig opgaf om Belg te worden, maar de wereld van zijn vader en moeder nooit kon uitwissen, zit gevangen tussen een Belgische kaart die zijn woonland negeert en een Nederlands pasje dat zijn medische realiteit ontkent. En zijn zoon, die vier werelden in zich draagt, staat met exact datzelfde woord in de database. <strong>BELG.</strong> Niets meer. Een kleine Europese vlag in de hoek.</p>
 <p>Drie generaties. Drie identiteitskaarten. Eén woord. Het systeem reduceert iedereen tot een enkel datapunt. Zelfs degene die het probeerde te ontstijgen.</p>
-<p>Het is nu najaar 2026. Terwijl hij deze audit uittypt, valt er een traan op het toetsenbord. Niet uit zelfmedelijden, maar uit de pure, loden uitputting van een gevecht tegen de leegte. De bittere tragiek is dat Europa de fout inmiddels kent. In april 2026 bereikte de Europese wetgever in Brussel een politiek akkoord over de langverwachte herziening van de oude coördinatieregels; in juli 2026 werd de herziene tekst formeel aangenomen.<sup>****</sup> De weeffouten worden erkend, het bevoegdheidsvacuüm is benoemd. Maar de inkt van de politiek stroomt eindeloos veel trager dan het bloed van de burger. De systemen worden pas omstreeks 2030 daadwerkelijk aangepast. Tot die tijd is de grensarbeider van vlees en bloed de enige overgebleven schokdemper voor de falende systemen van de staat.</p>
+<div class="d0-intermezzo">
+<div class="d0-im-head">
+<div class="d0-im-h-left">🧬 Menselijke Werkelijkheid (Geneste Cellen: Macro ➔ Micro)</div>
+<div class="d0-im-h-mid">Tijdlaag</div>
+<div class="d0-im-h-right">📄 Papieren Werkelijkheid (Administratief Hokje)</div>
+</div>
+<div class="d0-im-body">
+<div class="d0-dna-col">
+<div class="d0-cell-ring d0-ring-macro">
+<div class="d0-ring-hdr">
+<span class="d0-fb-chip" title="VN">
+<img alt="VN" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_un.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_the_United_Nations.svg';}" src="../assets/vlaggen/flag_un.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">VN</span></span>
+</span>
+<span class="d0-fb-chip" title="EU">
+<img alt="EU" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_eu.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Europe.svg';}" src="../assets/vlaggen/flag_eu.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">EU</span><span class="d0-fb-sub">27★ (na Brexit)</span></span>
+</span>
+<span class="d0-fb-chip" title="Benelux">
+<img alt="Benelux" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_benelux.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Benelux.svg';}" src="../assets/vlaggen/flag_benelux.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Benelux</span></span>
+</span>
+</div>
+<div class="d0-cell-ring d0-ring-core">
+<div class="d0-ring-hdr">
+<span class="d0-mut-tag">Fysieke Gezinsrealiteit:</span>
+<span class="d0-fb-chip" title="Wonend in NL">
+<img alt="Wonend in NL" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_netherlands.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_the_Netherlands.svg';}" src="../assets/vlaggen/flag_netherlands.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Wonend in NL</span></span>
+</span>
+<span class="d0-fb-chip" title="Paal / Hulst">
+<img alt="Paal / Hulst" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/arms_graauw.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Graauw_en_Langendam_wapen.svg';}" src="../assets/vlaggen/arms_graauw.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Paal / Hulst</span></span>
+</span>
+<span class="d0-fb-chip" title="Verzekerd &amp; School in BE">
+<img alt="Verzekerd &amp; School in BE" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_belgium.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Belgium.svg';}" src="../assets/vlaggen/flag_belgium.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">Verzekerd &amp; School in BE</span></span>
+</span>
+<span class="d0-fb-chip" title="IT-Wortels">
+<img alt="IT-Wortels" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_italy.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Italy.svg';}" src="../assets/vlaggen/flag_italy.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">IT-Wortels</span></span>
+</span>
+<span class="d0-fb-chip" title="FR-Wortels">
+<img alt="FR-Wortels" class="d0-fb-img" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='assets_proef/flag_france.svg';}else{this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_France.svg';}" src="../assets/vlaggen/flag_france.svg"/>
+<span class="d0-fb-txt"><span class="d0-fb-lbl">FR-Wortels</span></span>
+</span>
+</div>
+</div>
+</div>
+</div>
+<div class="d0-im-mid"><div class="d0-year-badge">2025 – '26<span>EU 27★</span></div></div>
+<div class="d0-paper-col">
+<div class="d0-irony-pill">Bureaucratische Patstelling: BE verklaart rijongeschikt maar kan NL-pas niet intrekken • NL weigert medische erkenning (WIA) dus NL-pas blijft geldig</div>
+<div class="d0-cards-wrap">
+<div class="d0-rep-card d0-rep-nl-rbw">
+<div class="d0-rc-top">
+<div class="d0-eu-corner">
+<svg class="d0-eu-stars" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="none" r="14" stroke="#ffcc00" stroke-dasharray="2.2 5.1" stroke-width="2.2"></circle>
+</svg>
+<span class="d0-eu-code notranslate" translate="no">NL</span>
+</div>
+<div class="d0-rc-type">RIJBEWIJS</div>
+</div>
+<div class="d0-rc-mid">
+<div class="d0-rc-chip"></div>
+<div class="d0-rc-bars">
+<span class="d0-bar d0-b-lg"></span>
+<span class="d0-bar d0-b-sm"></span>
+<div class="d0-rc-sub">BE: verbod | NL: geldig</div>
+</div>
+</div>
+<div class="d0-rc-bot">
+<span>GELDIG OP PAPIER</span>
+</div>
+</div>
+<div class="d0-rep-card d0-rep-be-id">
+<div class="d0-rc-top">
+<div class="d0-eu-corner">
+<svg class="d0-eu-stars" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="none" r="14" stroke="#ffcc00" stroke-dasharray="2.2 5.1" stroke-width="2.2"></circle>
+</svg>
+<span class="d0-eu-code notranslate" translate="no">BE</span>
+</div>
+<div class="d0-rc-type">eID CARD</div>
+</div>
+<div class="d0-rc-mid">
+<div class="d0-rc-chip"></div>
+<div class="d0-rc-bars">
+<span class="d0-bar d0-b-lg"></span>
+<span class="d0-bar d0-b-sm"></span>
+<div class="d0-rc-sub">Aanvrager</div>
+</div>
+</div>
+<div class="d0-rc-bot">
+<span class="notranslate" translate="no">NAT: BEL</span>
+</div>
+</div>
+</div>
+<div class="d0-law-pill">En voor het hele gezin van 3 generaties telt slechts 1 nationaliteitshokje:</div>
+<div class="d0-cards-wrap">
+<div class="d0-rep-card d0-rep-be-id">
+<div class="d0-rc-top">
+<div class="d0-eu-corner">
+<svg class="d0-eu-stars" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="none" r="14" stroke="#ffcc00" stroke-dasharray="2.2 5.1" stroke-width="2.2"></circle>
+</svg>
+<span class="d0-eu-code notranslate" translate="no">BE</span>
+</div>
+<div class="d0-rc-type">eID CARD</div>
+</div>
+<div class="d0-rc-mid">
+<div class="d0-rc-chip"></div>
+<div class="d0-rc-bars">
+<span class="d0-bar d0-b-lg"></span>
+<span class="d0-bar d0-b-sm"></span>
+<div class="d0-rc-sub">Partner</div>
+</div>
+</div>
+<div class="d0-rc-bot">
+<span class="notranslate" translate="no">NAT: BEL</span>
+</div>
+</div>
+<div class="d0-rep-card d0-rep-be-id">
+<div class="d0-rc-top">
+<div class="d0-eu-corner">
+<svg class="d0-eu-stars" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="none" r="14" stroke="#ffcc00" stroke-dasharray="2.2 5.1" stroke-width="2.2"></circle>
+</svg>
+<span class="d0-eu-code notranslate" translate="no">BE</span>
+</div>
+<div class="d0-rc-type">KIDS-ID</div>
+</div>
+<div class="d0-rc-mid">
+<div class="d0-rc-chip"></div>
+<div class="d0-rc-bars">
+<span class="d0-bar d0-b-lg"></span>
+<span class="d0-bar d0-b-sm"></span>
+<div class="d0-rc-sub">Zoon</div>
+</div>
+</div>
+<div class="d0-rc-bot">
+<span class="notranslate" translate="no">NAT: BEL</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Het is nu najaar 2026. Terwijl hij deze audit uittypt, valt er een traan op het toetsenbord. Niet uit zelfmedelijden, maar uit de pure, loden uitputting van een gevecht tegen de leegte. De bittere tragiek is dat Europa de fout inmiddels kent. In april 2026 bereikte de Europese wetgever in Brussel een politiek akkoord over de langverwachte herziening van de oude coördinatieregels; in juli 2026 werd de herziene tekst formeel aangenomen.<sup>*****</sup> De weeffouten worden erkend, het bevoegdheidsvacuüm is benoemd. Maar de inkt van de politiek stroomt eindeloos veel trager dan het bloed van de burger. De systemen worden pas omstreeks 2030 daadwerkelijk aangepast. Tot die tijd is de grensarbeider van vlees en bloed de enige overgebleven schokdemper voor de falende systemen van de staat.</p>
 <p>En zelfs dán, in 2030, vormen die nieuwe regels slechts een technologische pleister op een veel diepere institutionele wonde. Zolang de natiestaten krampachtig vasthouden aan hun eigen gesloten loketten, blijft de grensarbeider in de kern de onbedoelde foutmelding van een half afgewerkt ontwerp.</p>
 <p>Dat is wat dit dossier onderzoekt. Niet de nationaliteit als juridisch statuut. Wel de oorsprong als menselijke werkelijkheid. En de vraag waarom een systeem dat zichzelf Europees noemt, de Europese werkelijkheid van zijn eigen burgers reduceert tot een eendimensionaal veld op een identiteitskaart.</p>
 <p>Het verhaal begint hier. De feiten staan in Document B.</p>
@@ -1233,7 +3146,362 @@ html[data-theme="dark"] select.pub-lang-select option {
 <p><strong>*</strong> Verordening (EEG) nr. 1408/71 van de Raad van 14 juni 1971 betreffende de toepassing van de socialezekerheidsstelsels op werknemers en zelfstandigen en hun gezinsleden die zich binnen de Gemeenschap verplaatsen. Deze verordening verving de oudere Verordeningen nr. 3 en nr. 4 uit 1958 en trad in werking op 1 oktober 1972.</p>
 <p><strong>**</strong> Met het Verdrag van Maastricht (getekend in 1992, in werking getreden eind 1993) werd het "Burgerschap van de Europese Unie" formeel ingevoerd. Elke persoon die de nationaliteit van een lidstaat bezit, is automatisch ook burger van de Unie, met het recht om vrij te reizen en te verblijven. Toch blijft de nationale administratieve uitvoering in de praktijk dominant over dit Europese basisrecht.</p>
 <p><strong>***</strong> Conform de Europese Rijbewijsrichtlijn (2006/126/EG) is er een geharmoniseerd Europees model, maar blijft het beheer strikt gekoppeld aan het territorialiteitsbeginsel van de lidstaat waar men de "normale verblijfplaats" heeft. Dit dwingt grensarbeiders om hun uitgevende land te veranderen na een verhuizing, ondanks de Europese status van het document.</p>
-<p><strong>****</strong> In april 2026 werd na jarenlange triloog-onderhandelingen een voorlopig politiek akkoord bereikt over het 'Labour Mobility Package' (herziening van Verordening 883/2004 en 987/2009); in juli 2026 volgde de formele aanname. De wetgever erkent hierin de institutionele leemtes voor grensarbeiders, maar door de benodigde IT-aanpassingen worden de structurele oplossingen pas tegen 2030 operationeel afdwingbaar.</p>
+<p><strong>****</strong> Deze grensoverschrijdende patstelling tussen medische rijongeschiktheid in het werk-/zorgland (België: UZ Gent, Oogartsen Sint-Niklaas, RIZIV) en het uitblijven van medische en arbeidsrechtelijke erkenning in het woonland (Nederland: UWV, CBR/RDW) vormt een rechtstreeks uitvloeisel van het bevoegdheidsvacuüm onder Verordening (EG) nr. 883/2004 en Richtlijn 2006/126/EG. Zie voor de onderliggende medische en administratieve bewijsstukken <a href="document-b.html#org-uzgent">Document B (UZ Gent, Oogartsen Sint-Niklaas &amp; UWV)</a>.</p>
+<p><strong>*****</strong> In april 2026 werd na jarenlange triloog-onderhandelingen een voorlopig politiek akkoord bereikt over het 'Labour Mobility Package' (herziening van Verordening 883/2004 en 987/2009); in juli 2026 volgde de formele aanname. De wetgever erkent hierin de institutionele leemtes voor grensarbeiders, maar door de benodigde IT-aanpassingen worden de structurele oplossingen pas tegen 2030 operationeel afdwingbaar.</p>
+</div>
+<div class="d0-paradoxen-sectie">
+<h3 id="de-logica-van-de-machine-twaalf-feitelijke-systeemparadoxen-uit-document-b">De Logica van de Machine — Twaalf feitelijke systeemparadoxen uit Document B</h3>
+<p class="lead">Twaalf empirische vignetten uit het reconstructiedossier die aantonen hoe geautomatiseerde administraties wetgeving, logica en menselijke lichamen breken om hun eigen binaire systeemconsistentie te beschermen.</p>
+<div class="d0-paradoxen-grid">
+<article class="d0-paradox-card">
+<header class="d0-px-hdr">
+<span class="d0-px-num notranslate" translate="no">01</span>
+<div>
+<h4 class="d0-px-title">De Papieren Cloud</h4>
+<span class="d0-px-sub">Sociale Verzekeringsbank (SVB) • 24 oktober 2026</span>
+</div>
+</header>
+<div class="d0-px-body">
+<div class="d0-px-block">
+<div class="d0-px-lbl">De Aanvraag</div>
+<div class="d0-px-txt">Een digitaal AVG-inzageverzoek om de elektronische logboeken en tijdstempels van het Europese EESSI-netwerk.</div>
+</div>
+<div class="d0-px-block d0-px-sys">
+<div class="d0-px-lbl">Het Systeem</div>
+<div class="d0-px-txt">"Logbestanden, transmissiestatus en datumstempels van de gerelateerde BUC's — deze informatie hebben wij niet tot onze beschikking."</div>
+</div>
+<div class="d0-px-block d0-px-real">
+<div class="d0-px-lbl">De Feitelijke Realiteit</div>
+<div class="d0-px-txt">Om te bewijzen dat de digitale logboeken niet bestaan, print de SVB 142 pagina's aan digitale EESSI-berichten uit op papier, zet er met de hand zwarte lakbalken op over de namen van de eigen gezinsleden, en laat het pakket per fysieke postbode aan de voordeur bezorgen.</div>
+</div>
+</div>
+<footer class="d0-px-ftr">
+<a class="d0-px-link" href="document-b.html#org-svb">
+<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
+<span>Doc B: SVB (24-10-2026, kenmerk VZ 6825169-0)</span>
+</a>
+</footer>
+</article>
+<article class="d0-paradox-card">
+<header class="d0-px-hdr">
+<span class="d0-px-num notranslate" translate="no">02</span>
+<div>
+<h4 class="d0-px-title">De Stroboscoop-suikerval</h4>
+<span class="d0-px-sub">UZ Gent &amp; Huisartsenpraktijk • 28 september 2026</span>
+</div>
+</header>
+<div class="d0-px-body">
+<div class="d0-px-block">
+<div class="d0-px-lbl">De Situatie</div>
+<div class="d0-px-txt">Tijdens oogheelkundige laserbehandelingen (felle lichtflitsen op een verwijde pupil met kunstlens) valt de patiënt driemaal achtereen flauw in de behandelstoel.</div>
+</div>
+<div class="d0-px-block d0-px-sys">
+<div class="d0-px-lbl">Het Systeem</div>
+<div class="d0-px-txt">Het ziekenhuis houdt het op een lage bloedsuiker en verwijst niet door naar een neuroloog.</div>
+</div>
+<div class="d0-px-block d0-px-real">
+<div class="d0-px-lbl">De Feitelijke Realiteit</div>
+<div class="d0-px-txt">De gekoppelde glucosesensor (Dexcom ONE+) registreert tijdens de ingreep 36 onafgebroken metingen tussen 111 en 137 mg/dL (gemiddeld 125,67 mg/dL, stabieler dan een gezonde volwassene) met een spontane adrenerge tegenregulatie van +21 mg/dL in tien minuten zonder suikerinname. De patiënt moet zelf via de huisarts een verwijsbrief voor Neurologie halen; wachttijd tot 13 april 2027 (zes maanden), waardoor alle oogbehandelingen een half jaar moeten worden opgeschort.</div>
+</div>
+</div>
+<footer class="d0-px-ftr">
+<a class="d0-px-link" href="document-b.html#org-uzgent">
+<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
+<span>Doc B: UZ Gent &amp; Huisarts (Mail #1a0eacca / #1a1326f2)</span>
+</a>
+</footer>
+</article>
+<article class="d0-paradox-card">
+<header class="d0-px-hdr">
+<span class="d0-px-num notranslate" translate="no">03</span>
+<div>
+<h4 class="d0-px-title">De Gevaarlijke Integriteit</h4>
+<span class="d0-px-sub">Christelijke Mutualiteit (CM) • 30 september 2026</span>
+</div>
+</header>
+<div class="d0-px-body">
+<div class="d0-px-block">
+<div class="d0-px-lbl">De Aanvraag</div>
+<div class="d0-px-txt">De burger vraagt via Artikel 15 AVG inzage in de toegangslogs van 20 mei 2026 om te controleren of de adviserend arts zijn medisch dossier heeft geopend vóór het weigeren van zijn erkenning.</div>
+</div>
+<div class="d0-px-block d0-px-sys">
+<div class="d0-px-lbl">Het Systeem</div>
+<div class="d0-px-txt">De Adjunct-DPO van de CM weigert inzage in de systeem- en toegangslogs omdat dit "een potentiële invloed kan hebben op de integriteit van ons informatiesysteem".</div>
+</div>
+<div class="d0-px-block d0-px-real">
+<div class="d0-px-lbl">De Feitelijke Realiteit</div>
+<div class="d0-px-txt">Een beveiligingslogboek dat wettelijk bestaat om de integriteit van medische gegevens te bewaken, mag niet worden ingezien door de patiënt omdat het lezen van het logboek het computersysteem zou kunnen aantasten.</div>
+</div>
+</div>
+<footer class="d0-px-ftr">
+<a class="d0-px-link" href="document-b.html#org-cmchristelijkemutualiteit">
+<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
+<span>Doc B: CM (30-09-2026, Mail #1a0f2a13)</span>
+</a>
+</footer>
+</article>
+<article class="d0-paradox-card">
+<header class="d0-px-hdr">
+<span class="d0-px-num notranslate" translate="no">04</span>
+<div>
+<h4 class="d0-px-title">De 30-Kilometer-Paradox</h4>
+<span class="d0-px-sub">Reizen door Zeeland • 18 mei 2026</span>
+</div>
+</header>
+<div class="d0-px-body">
+<div class="d0-px-block">
+<div class="d0-px-lbl">De Aanvraag</div>
+<div class="d0-px-txt">Een gehandicapte grensarbeider met geamputeerde tenen en blindheid aan één oog boekt een Wmo-regiotaxi vanuit Graauw naar Gent.</div>
+</div>
+<div class="d0-px-block d0-px-sys">
+<div class="d0-px-lbl">Het Systeem</div>
+<div class="d0-px-txt">De rit naar de verplichte medische keuring van de Belgische overheid (FOD Sociale Zekerheid) in Gent wordt geweigerd wegens de "30-kilometerzone".</div>
+</div>
+<div class="d0-px-block d0-px-real">
+<div class="d0-px-lbl">De Feitelijke Realiteit</div>
+<div class="d0-px-txt">Exact dezelfde afstand vanuit Graauw naar het Universitair Ziekenhuis in datzelfde Gent wordt door dezelfde centrale probleemloos gereden à € 19,65 per enkele reis. Een kilometer naar een ziekenhuisbed is administratief korter dan een kilometer naar een keuringsarts.</div>
+</div>
+</div>
+<footer class="d0-px-ftr">
+<a class="d0-px-link" href="document-b.html#org-reizendoorzeeland">
+<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
+<span>Doc B: Reizen door Zeeland (18-05-2026, Mail #19e3a632)</span>
+</a>
+</footer>
+</article>
+<article class="d0-paradox-card">
+<header class="d0-px-hdr">
+<span class="d0-px-num notranslate" translate="no">05</span>
+<div>
+<h4 class="d0-px-title">De Vrijwillige Weigering</h4>
+<span class="d0-px-sub">Oogartsen Sint-Niklaas • 19 maart 2026</span>
+</div>
+</header>
+<div class="d0-px-body">
+<div class="d0-px-block">
+<div class="d0-px-lbl">De Situatie</div>
+<div class="d0-px-txt">Door het stopzetten van inkomen en het weigeren van medisch grensvervoer door verzekeraar CZ kan de patiënt de niet-geconventioneerde ooginjecties en het vervoer niet meer betalen en moet hij het traject in november 2025 noodgedwongen staken.</div>
+</div>
+<div class="d0-px-block d0-px-sys">
+<div class="d0-px-lbl">Het Systeem</div>
+<div class="d0-px-txt">In het klinische eindrapport registreert de praktijk de gedwongen stopzetting als een "weigering van de patiënt".</div>
+</div>
+<div class="d0-px-block d0-px-real">
+<div class="d0-px-lbl">De Feitelijke Realiteit</div>
+<div class="d0-px-txt">Financiële en logistieke overmacht veroorzaakt door het systeem wordt administratief omgezet in een vrije patiëntkeuze — waarna verzekeraars datzelfde rapport gebruiken als argument om verdere dekking af te wijzen.</div>
+</div>
+</div>
+<footer class="d0-px-ftr">
+<a class="d0-px-link" href="document-b.html#org-oogartsensintniklaas">
+<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
+<span>Doc B: Oogartsen Sint-Niklaas (Mail #19a4ea38 / #19d050b8)</span>
+</a>
+</footer>
+</article>
+<article class="d0-paradox-card">
+<header class="d0-px-hdr">
+<span class="d0-px-num notranslate" translate="no">06</span>
+<div>
+<h4 class="d0-px-title">De Wachtende Zenders</h4>
+<span class="d0-px-sub">RVA (BE) &amp; UWV (NL) • September / Oktober 2026</span>
+</div>
+</header>
+<div class="d0-px-body">
+<div class="d0-px-block">
+<div class="d0-px-lbl">De Situatie</div>
+<div class="d0-px-txt">Achttien maanden lang wacht het Nederlandse UWV op Belgische gegevens, en wacht België op Nederland.</div>
+</div>
+<div class="d0-px-block d0-px-sys">
+<div class="d0-px-lbl">Het Systeem</div>
+<div class="d0-px-txt">RVA: "Elektronische uitwisseling gebeurt steeds op initiatief van de ontvangende partij (UWV)." • UWV: "Er zijn geen persoonsgegevens gedeeld met externe partijen."</div>
+</div>
+<div class="d0-px-block d0-px-real">
+<div class="d0-px-lbl">De Feitelijke Realiteit</div>
+<div class="d0-px-txt">Twee oprichtende EU-lidstaten staren achttien maanden naar een lege digitale snelweg, terwijl de zieke burger met 700 gram papier op het postkantoor de enige datakabel vormt.</div>
+</div>
+</div>
+<footer class="d0-px-ftr">
+<a class="d0-px-link" href="document-b.html#org-rva">
+<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
+<span>Doc B: RVA (#1a0ed170) &amp; UWV (Dossier 2026.10.0356)</span>
+</a>
+</footer>
+</article>
+<article class="d0-paradox-card">
+<header class="d0-px-hdr">
+<span class="d0-px-num notranslate" translate="no">07</span>
+<div>
+<h4 class="d0-px-title">Het 40-Minuten-Wonder</h4>
+<span class="d0-px-sub">Gemeente Hulst • 1 &amp; 2 oktober 2026</span>
+</div>
+</header>
+<div class="d0-px-body">
+<div class="d0-px-block">
+<div class="d0-px-lbl">De Situatie</div>
+<div class="d0-px-txt">De burger (al ruim een jaar bekend in het gemeentelijke Wmo- en bijstandsdossier, inclusief paspoortkopieën) wacht op zijn AVG-inzagebesluit.</div>
+</div>
+<div class="d0-px-block d0-px-sys">
+<div class="d0-px-lbl">Het Systeem</div>
+<div class="d0-px-txt">Op dag 29 van de wettelijke 30-dagentermijn schort de gemeente de beslistermijn op wegens "ontbrekende identiteitsverificatie".</div>
+</div>
+<div class="d0-px-block d0-px-real">
+<div class="d0-px-lbl">De Feitelijke Realiteit</div>
+<div class="d0-px-txt">De burger verifieert zijn identiteit 40 minuten later via DigiD. De volgende ochtend om 08:25 uur ligt een volledig uitgewerkt juridisch besluit met 47 pagina's aan BRP-overzichten klaar. De identiteitstwijfel diende enkel als formele pauzeknop.</div>
+</div>
+</div>
+<footer class="d0-px-ftr">
+<a class="d0-px-link" href="document-b.html#org-gemeentehulst">
+<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
+<span>Doc B: Gemeente Hulst (01/02-10-2026, Mail #1a0fbb78)</span>
+</a>
+</footer>
+</article>
+<article class="d0-paradox-card">
+<header class="d0-px-hdr">
+<span class="d0-px-num notranslate" translate="no">08</span>
+<div>
+<h4 class="d0-px-title">De Zelf-Opheffende Wet</h4>
+<span class="d0-px-sub">Parentia • 14 september 2026</span>
+</div>
+</header>
+<div class="d0-px-body">
+<div class="d0-px-block">
+<div class="d0-px-lbl">De Situatie</div>
+<div class="d0-px-txt">De burger dient op 1 september 2026 een formeel AVG-inzageverzoek (Art. 15) in voor zijn grensoverschrijdende EESSI-dossiers.</div>
+</div>
+<div class="d0-px-block d0-px-sys">
+<div class="d0-px-lbl">Het Systeem</div>
+<div class="d0-px-txt">Na een administratieve weigering van de sociale toeslag vraagt Parentia per e-mail of de burger wil bevestigen dat zijn AVG-inzageverzoek "als nietig mag worden beschouwd".</div>
+</div>
+<div class="d0-px-block d0-px-real">
+<div class="d0-px-lbl">De Feitelijke Realiteit</div>
+<div class="d0-px-txt">Nadat de burger weigert zijn eigen wettelijke inzagerecht nietig te verklaren, levert de afdeling Corporate Compliance twee weken later zonder problemen het volledige EESSI-archief af.</div>
+</div>
+</div>
+<footer class="d0-px-ftr">
+<a class="d0-px-link" href="document-b.html#org-parentia">
+<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
+<span>Doc B: Parentia (Mail #1a05c57e / #1a0f8151)</span>
+</a>
+</footer>
+</article>
+<article class="d0-paradox-card">
+<header class="d0-px-hdr">
+<span class="d0-px-num notranslate" translate="no">09</span>
+<div>
+<h4 class="d0-px-title">De Schoen van € 2.450 voor een 'Gezonde' Voet</h4>
+<span class="d0-px-sub">Christelijke Mutualiteit (CM) • Juni / Juli 2025</span>
+</div>
+</header>
+<div class="d0-px-body">
+<div class="d0-px-block">
+<div class="d0-px-lbl">De Situatie</div>
+<div class="d0-px-txt">Na de amputatie van twee tenen aan de rechtervoet vraagt de grensarbeider een ziekte-uitkering en een medisch invaliditeitsattest aan.</div>
+</div>
+<div class="d0-px-block d0-px-sys">
+<div class="d0-px-lbl">Het Systeem</div>
+<div class="d0-px-txt">De CM weigert het invaliditeitsattest voor de belastingdienst af te leveren omdat er geen financieel recht op een uitkering is, en stopt de registratie in de Kruispuntbank.</div>
+</div>
+<div class="d0-px-block d0-px-real">
+<div class="d0-px-lbl">De Feitelijke Realiteit</div>
+<div class="d0-px-txt">Diezelfde adviserend arts van de CM keurt gelijktijdig € 2.450,00 goed voor orthopedische maatschoenen wegens onomkeerbare amputaties. De voet is geamputeerd voor de schoenmaker, maar administratief gezond voor de fiscus.</div>
+</div>
+</div>
+<footer class="d0-px-ftr">
+<a class="d0-px-link" href="document-b.html#org-cmchristelijkemutualiteit">
+<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
+<span>Doc B: CM (Doc: AkkoordVoetklapper / Mail #19d43a49)</span>
+</a>
+</footer>
+</article>
+<article class="d0-paradox-card">
+<header class="d0-px-hdr">
+<span class="d0-px-num notranslate" translate="no">10</span>
+<div>
+<h4 class="d0-px-title">Het Magische Negende Punt &amp; De Mindcoach</h4>
+<span class="d0-px-sub">FOD Sociale Zekerheid &amp; FOD Financiën • Aug / Sept 2026</span>
+</div>
+</header>
+<div class="d0-px-body">
+<div class="d0-px-block">
+<div class="d0-px-lbl">De Situatie</div>
+<div class="d0-px-txt">De burger wordt fysiek gekeurd in Gent na teenamputaties, zware neuropathie, valrisico en blindheid aan het linkeroog (visus 0,02).</div>
+</div>
+<div class="d0-px-block d0-px-sys">
+<div class="d0-px-lbl">Het Systeem</div>
+<div class="d0-px-txt">FOD SZ vertaalt het valrisico en het visusverlies naar 0 extra punten, neemt een nooit gevolgde opleiding tot "mindcoach" op als voltooid beroep, en kent 8 punten toe. FOD Financiën weigert het fiscaal voordeel (eist minstens 9 punten).</div>
+</div>
+<div class="d0-px-block d0-px-real">
+<div class="d0-px-lbl">De Feitelijke Realiteit</div>
+<div class="d0-px-txt">Twee federale ministeries lezen hetzelfde medische dossier, maar door één punt verschil tussen twee schalen valt de burger fiscaal tussen wal en schip — totdat de eigen huisarts met een handmatig attest van &gt;66% invaliditeit via de BNI-aangifte de hele puntenblokkade omzeilt.</div>
+</div>
+</div>
+<footer class="d0-px-ftr">
+<a class="d0-px-link" href="document-b.html#org-fodsocialezekerheiddghan">
+<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
+<span>Doc B: FOD SZ &amp; FOD Financiën (Mail #1a0332ef)</span>
+</a>
+</footer>
+</article>
+<article class="d0-paradox-card">
+<header class="d0-px-hdr">
+<span class="d0-px-num notranslate" translate="no">11</span>
+<div>
+<h4 class="d0-px-title">Het Tabblad 'Multimedia'</h4>
+<span class="d0-px-sub">ZorgSaam Ziekenhuis • 15 april 2026</span>
+</div>
+</header>
+<div class="d0-px-body">
+<div class="d0-px-block">
+<div class="d0-px-lbl">De Situatie</div>
+<div class="d0-px-txt">Omdat er geen automatische gegevensuitwisseling tussen het Belgische en Nederlandse ziekenhuis bestaat, uploadt de patiënt handmatig 25 MB aan Belgische operatie- en amputatieverslagen in het Nederlandse portaal.</div>
+</div>
+<div class="d0-px-block d0-px-sys">
+<div class="d0-px-lbl">Het Systeem</div>
+<div class="d0-px-txt">In het centrale medische overzicht van ZorgSaam blijven alle actieve diagnosevelden leeg.</div>
+</div>
+<div class="d0-px-block d0-px-real">
+<div class="d0-px-lbl">De Feitelijke Realiteit</div>
+<div class="d0-px-txt">De ziekenhuissoftware weigert buitenlandse verslagen in de medische velden op te nemen en archiveert ze passief onder het tabblad 'Multimedia', waardoor de amputaties voor elke meekijkende Nederlandse arts onzichtbaar blijven.</div>
+</div>
+</div>
+<footer class="d0-px-ftr">
+<a class="d0-px-link" href="document-b.html#org-zorgsaam">
+<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
+<span>Doc B: ZorgSaam (Mail #19d49372 / #19d9085b)</span>
+</a>
+</footer>
+</article>
+<article class="d0-paradox-card">
+<header class="d0-px-hdr">
+<span class="d0-px-num notranslate" translate="no">12</span>
+<div>
+<h4 class="d0-px-title">Het Blanco Formulier uit Straatsburg</h4>
+<span class="d0-px-sub">Europees Hof voor de Rechten van de Mens (EHRM) • 18 juni 2026</span>
+</div>
+</header>
+<div class="d0-px-body">
+<div class="d0-px-block">
+<div class="d0-px-lbl">De Situatie</div>
+<div class="d0-px-txt">Na uitputting van de nationale en bemiddelende instanties verzendt de burger per verzekerde post een volledig gedocumenteerd Franstalig verzoekschrift met de integrale Tijdlijn-Matrix naar het Europees Hof voor de Rechten van de Mens tegen zowel België als Nederland.</div>
+</div>
+<div class="d0-px-block d0-px-sys">
+<div class="d0-px-lbl">Het Systeem</div>
+<div class="d0-px-txt">Het Hof verklaart de klacht niet-ontvankelijk wegens het niet uitputten van alle nationale rechtsgangen, reduceert het tweelandenconflict eenzijdig tot een zaak tegen België alleen, en stuurt als antwoord een blanco standaardformulier terug zonder begeleidende brief.</div>
+</div>
+<div class="d0-px-block d0-px-real">
+<div class="d0-px-lbl">De Feitelijke Realiteit</div>
+<div class="d0-px-txt">Om bij het mensenrechtenhof te mogen klagen dat twee staten je financieel droogleggen en elk rechtsmiddel blokkeren, moet je eerst met tienduizenden euro's die je niet hebt jarenlang in twee landen afzonderlijk procederen.</div>
+</div>
+</div>
+<footer class="d0-px-ftr">
+<a class="d0-px-link" href="document-b.html#org-ehrm">
+<svg viewbox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"></path></svg>
+<span>Doc B: EHRM (18-06-2026, Doc: BeslissingOntvankelijkheid)</span>
+</a>
+</footer>
+</article>
+</div>
 </div>
 <h2 id="waarom-dit-project">Waarom dit project</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p>Dit project documenteert wat er gebeurt wanneer iemand tussen twee nationale systemen valt. Eén casus, tot op het bot gedocumenteerd: een grensarbeider die in Nederland woont en in België werkte, en die door een samenloop van medische en administratieve omstandigheden vastloopt tussen twee uitvoeringsstelsels die weigeren elkaars gegevens te lezen.</p>
@@ -1468,7 +3736,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <footer class="pub-footer">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
 
-  Auteur: Eric Messa · Versie bijgewerkt: 30 oktober 2026, 10:05</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 30 oktober 2026, 23:43</p>
 <p><a href="home.html">← Terug naar overzicht</a> ·
 
      <a href="../index.html">[Web] Taalkeuze</a></p>
@@ -1478,6 +3746,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <img alt="" height="1" loading="eager" src="https://s05.flagcounter.com/count/xed2/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_18/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" width="1"/>
 <script async="" data-goatcounter="https://grensarbeid.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
 </div>
+<!-- Direct DOM Translation Engine (works on file://, http://, and https://) -->
 <!-- Direct DOM Translation Engine (works on file://, http://, and https://) -->
 <script class="notranslate" translate="no">
 (function() {
@@ -1677,15 +3946,19 @@ html[data-theme="dark"] select.pub-lang-select option {
   function initOrSync() {
     var isInt = window.location.search.indexOf('int=1') !== -1;
     var isHomeInt = location.pathname.indexOf('home_int.html') !== -1;
+    var autoLang = document.documentElement.getAttribute('data-auto-lang');
+    var hasAutoLang = autoLang && autoLang !== 'nl';
 
-    if (!isInt && !isHomeInt) {
+    if (!isInt && !isHomeInt && !hasAutoLang) {
       // 100% hard authentic Dutch mode!
       return;
     }
 
-    var target = bepaalDoeltaal();
+    var target = (hasAutoLang && !window.location.search.includes('lang=')) ? autoLang : bepaalDoeltaal();
     syncDropdown(target);
-    updatePageLinks(target);
+    if (isInt || isHomeInt) {
+      updatePageLinks(target);
+    }
 
     if (_currentLang !== target) {
       window.vertaalPaginaNaar(target).then(function() {
@@ -1695,242 +3968,9 @@ html[data-theme="dark"] select.pub-lang-select option {
       });
     } else {
       syncDropdown(target);
-      updatePageLinks(target);
-      if (window.location.search.indexOf('print=1') !== -1) {
-        setTimeout(function() { window.print(); }, 400);
+      if (isInt || isHomeInt) {
+        updatePageLinks(target);
       }
-    }
-  }
-
-  // Initial execution
-  initOrSync();
-
-  // Listen to pageshow (BFCache restore on back/forward) and popstate
-  window.addEventListener('pageshow', function() {
-    initOrSync();
-  });
-  window.addEventListener('popstate', function() {
-    initOrSync();
-  });
-})();
-</script><!-- Direct DOM Translation Engine (works on file://, http://, and https://) -->
-<script class="notranslate" translate="no">
-(function() {
-  var _origTexts = new Map();
-  var _isTranslating = false;
-  var _currentLang = 'nl';
-
-  function getTranslatableNodes() {
-    var nodes = [];
-    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-      acceptNode: function(node) {
-        if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
-        var p = node.parentElement;
-        while (p) {
-          if (p.classList && (p.classList.contains('notranslate') || p.id === 'bm-modal' || p.id === 'rechten-banner')) {
-            return NodeFilter.FILTER_REJECT;
-          }
-          var tag = p.tagName.toLowerCase();
-          if (tag === 'script' || tag === 'style' || tag === 'code' || tag === 'pre') {
-            return NodeFilter.FILTER_REJECT;
-          }
-          p = p.parentElement;
-        }
-        var text = node.nodeValue.replace(/\s+/g, ' ').trim();
-        if (text.length >= 2 && /[a-zA-ZÀ-ÿ]{2,}/.test(text)) {
-          return NodeFilter.FILTER_ACCEPT;
-        }
-        return NodeFilter.FILTER_REJECT;
-      }
-    });
-    while (walker.nextNode()) {
-      nodes.push(walker.currentNode);
-    }
-    return nodes;
-  }
-
-  function updatePageLinks(lang) {
-    var links = document.querySelectorAll('a[href]');
-    for (var i = 0; i < links.length; i++) {
-      var a = links[i];
-      var href = a.getAttribute('href');
-      if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('javascript:')) continue;
-      if (href.indexOf('document-') !== -1) {
-        var base = href.split('?')[0];
-        var isPrint = href.indexOf('print=1') !== -1;
-        a.setAttribute('href', base + '?int=1&lang=' + lang + (isPrint ? '&print=1' : ''));
-      } else if (href.indexOf('home_int.html') !== -1) {
-        var base = href.split('?')[0];
-        a.setAttribute('href', base + '?lang=' + lang);
-      }
-    }
-  }
-
-  function syncDropdown(lang) {
-    var sel = document.getElementById('int-lang-select');
-    if (sel && lang) {
-      sel.value = lang;
-    }
-  }
-
-  function bepaalDoeltaal() {
-    var urlParams = new URLSearchParams(window.location.search);
-    var target = urlParams.get('lang');
-    if (!target) {
-      try { target = sessionStorage.getItem('grensarbeid-int-lang'); } catch(e) {}
-    }
-    if (!target) {
-      var navLang = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
-      target = navLang.toLowerCase().split('-')[0];
-    }
-    return target || 'en';
-  }
-
-  function showStatusPill(msg, isSuccess) {
-    var pill = document.getElementById('trans-status-pill');
-    if (!pill) {
-      pill = document.createElement('div');
-      pill.id = 'trans-status-pill';
-      pill.className = 'notranslate';
-      pill.style.cssText = 'position:fixed;bottom:24px;left:24px;z-index:9999;padding:6px 14px;border-radius:20px;font-size:10pt;font-weight:600;font-family:sans-serif;box-shadow:0 4px 12px rgba(0,0,0,0.3);transition:opacity .3s;';
-      document.body.appendChild(pill);
-    }
-    pill.textContent = msg;
-    pill.style.background = isSuccess ? '#2e7d32' : '#003399';
-    pill.style.color = '#ffffff';
-    pill.style.opacity = '1';
-    pill.style.display = 'block';
-    if (isSuccess) {
-      setTimeout(function() {
-        pill.style.opacity = '0';
-        setTimeout(function(){ pill.style.display='none'; }, 300);
-      }, 2500);
-    }
-  }
-
-  window.vertaalPaginaNaar = function(lang) {
-    if (!lang) return Promise.resolve();
-    if (_isTranslating) return Promise.resolve();
-    _isTranslating = true;
-    _currentLang = lang;
-
-    updatePageLinks(lang);
-    syncDropdown(lang);
-
-    var nodes = getTranslatableNodes();
-    for (var i = 0; i < nodes.length; i++) {
-      var n = nodes[i];
-      if (!_origTexts.has(n)) {
-        _origTexts.set(n, n.nodeValue);
-      }
-    }
-
-    if (lang === 'nl') {
-      for (var i = 0; i < nodes.length; i++) {
-        var n = nodes[i];
-        if (_origTexts.has(n)) {
-          n.nodeValue = _origTexts.get(n);
-        }
-      }
-      _isTranslating = false;
-      showStatusPill('✓ Nederlands (Origineel)', true);
-      return Promise.resolve();
-    }
-
-    showStatusPill('⏳ Translating (' + lang.toUpperCase() + ')...', false);
-
-    var chunks = [];
-    var curNodes = [];
-    var curLen = 0;
-    for (var i = 0; i < nodes.length; i++) {
-      var n = nodes[i];
-      var orig = _origTexts.get(n).replace(/\s+/g, ' ').trim();
-      if (curLen + orig.length > 3000 && curNodes.length > 0) {
-        chunks.push(curNodes);
-        curNodes = [];
-        curLen = 0;
-      }
-      curNodes.push(n);
-      curLen += orig.length + 1;
-    }
-    if (curNodes.length > 0) chunks.push(curNodes);
-
-    var promises = chunks.map(function(chunk) {
-      var lines = chunk.map(function(n) {
-        return _origTexts.get(n).replace(/\s+/g, ' ').trim();
-      });
-      var q = lines.join('\n');
-      var url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=nl&tl=' + lang + '&dt=t';
-
-      return fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-        },
-        body: 'q=' + encodeURIComponent(q)
-      })
-      .then(function(resp) { return resp.json(); })
-      .then(function(data) {
-        if (!data || !data[0]) return;
-        var fullTrans = '';
-        for (var p = 0; p < data[0].length; p++) {
-          if (data[0][p][0]) fullTrans += data[0][p][0];
-        }
-        var transLines = fullTrans.split('\n');
-        for (var k = 0; k < chunk.length && k < transLines.length; k++) {
-          var node = chunk[k];
-          var orig = _origTexts.get(node);
-          var leadingSpace = orig.match(/^\s*/)[0];
-          var trailingSpace = orig.match(/\s*$/)[0];
-          node.nodeValue = leadingSpace + transLines[k] + trailingSpace;
-        }
-      })
-      .catch(function(err) {
-        console.warn('Translation error for chunk:', err);
-      });
-    });
-
-    return Promise.all(promises).then(function() {
-      _isTranslating = false;
-      showStatusPill('✓ Translated (' + lang.toUpperCase() + ')', true);
-    });
-  };
-
-  window.wisselTaal = function(lang) {
-    if (!lang) return;
-    try {
-      sessionStorage.setItem('grensarbeid-int-lang', lang);
-    } catch(e) {}
-
-    var curUrl = new URL(window.location.href);
-    curUrl.searchParams.set('lang', lang);
-    window.history.replaceState({}, '', curUrl.toString());
-
-    window.vertaalPaginaNaar(lang);
-  };
-
-  function initOrSync() {
-    var isInt = window.location.search.indexOf('int=1') !== -1;
-    var isHomeInt = location.pathname.indexOf('home_int.html') !== -1;
-
-    if (!isInt && !isHomeInt) {
-      // 100% hard authentic Dutch mode!
-      return;
-    }
-
-    var target = bepaalDoeltaal();
-    syncDropdown(target);
-    updatePageLinks(target);
-
-    if (_currentLang !== target) {
-      window.vertaalPaginaNaar(target).then(function() {
-        if (window.location.search.indexOf('print=1') !== -1) {
-          setTimeout(function() { window.print(); }, 400);
-        }
-      });
-    } else {
-      syncDropdown(target);
-      updatePageLinks(target);
       if (window.location.search.indexOf('print=1') !== -1) {
         setTimeout(function() { window.print(); }, 400);
       }

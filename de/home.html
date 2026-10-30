@@ -991,7 +991,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 
 <h1>GRENSARBEID.ORG — Systeem-Audit</h1>
 <p class="ondertitel">Grenzüberschreitendes Zuständigkeitsvakuum in der sozialen Sicherheit — ein quelloffenes Röntgenbild zweier nationaler Systeme</p>
-<p class="auteur">Autor: Eric Messa · Version aktualisiert: 30 oktober 2026, 10:05</p>
+<p class="auteur">Autor: Eric Messa · Version aktualisiert: 30 oktober 2026, 23:43</p>
 
 <div class="pub-ab-banner" style="margin: 16pt 0 24pt 0;">
   <strong>Hinweis zur Sprache und Übersetzung:</strong> Niederländisch (nl/) ist die einzige verbindliche Originalsprache dieses System-Audits. Die Übersetzungen dienen dazu, die dokumentierten grenzüberschreitenden Mechanismen europaweit zugänglich zu machen. Im Zweifelsfall oder bei rechtlichen Fragen ist ausschließlich der niederländische Originaltext maßgeblich.
@@ -1462,15 +1462,19 @@ html[data-theme="dark"] select.pub-lang-select option {
   function initOrSync() {
     var isInt = window.location.search.indexOf('int=1') !== -1;
     var isHomeInt = location.pathname.indexOf('home_int.html') !== -1;
+    var autoLang = document.documentElement.getAttribute('data-auto-lang');
+    var hasAutoLang = autoLang && autoLang !== 'nl';
 
-    if (!isInt && !isHomeInt) {
+    if (!isInt && !isHomeInt && !hasAutoLang) {
       // 100% hard authentic Dutch mode!
       return;
     }
 
-    var target = bepaalDoeltaal();
+    var target = (hasAutoLang && !window.location.search.includes('lang=')) ? autoLang : bepaalDoeltaal();
     syncDropdown(target);
-    updatePageLinks(target);
+    if (isInt || isHomeInt) {
+      updatePageLinks(target);
+    }
 
     if (_currentLang !== target) {
       window.vertaalPaginaNaar(target).then(function() {
@@ -1480,7 +1484,9 @@ html[data-theme="dark"] select.pub-lang-select option {
       });
     } else {
       syncDropdown(target);
-      updatePageLinks(target);
+      if (isInt || isHomeInt) {
+        updatePageLinks(target);
+      }
       if (window.location.search.indexOf('print=1') !== -1) {
         setTimeout(function() { window.print(); }, 400);
       }
