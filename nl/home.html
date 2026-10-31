@@ -586,8 +586,8 @@ html[data-theme="dark"] select.pub-lang-select option {
         position: static !important; /* Scrolls away naturally with the page — never blocks 50% of the mobile screen! */
         padding: 8px 14px !important;
         margin: -16pt -24pt 16pt -24pt !important;
-        background: #ffffff !important;
-        border-bottom: 1px solid #d5d0c5 !important;
+        background: #ffffff;
+        border-bottom: 1px solid #d5d0c5;
         display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
@@ -627,6 +627,25 @@ html[data-theme="dark"] select.pub-lang-select option {
         gap: 6px !important;
         flex-shrink: 0 !important;
         margin-left: 4px !important;
+    }
+    html[data-theme="dark"] .pub-nav {
+        background: #1e1e1e !important;
+        border-bottom: 1px solid #333333 !important;
+    }
+    html[data-theme="dark"] .pub-nav a {
+        background: #252525 !important;
+        border: 1px solid #3a3a3a !important;
+        color: #b0c8e8 !important;
+    }
+    html[data-theme="dark"] .pub-nav a.actief {
+        background: #4a6fa5 !important;
+        border-color: #7fb3ff !important;
+        color: #ffffff !important;
+    }
+    html[data-theme="dark"] .pub-nav a.home {
+        background: #252525 !important;
+        border-color: #4a4a4a !important;
+        color: #b0c8e8 !important;
     }
     .pub-contact-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 34px; max-width: 100%; box-sizing: border-box; }
     .d0-rep-card { width: 154px !important; min-width: 144px !important; }
@@ -788,12 +807,29 @@ html[data-theme="dark"] .contactblok a { color: #7fb3ff !important; }
 
 /* === Navigatie === */
 html[data-theme="dark"] .pub-nav {
-    background: #232323; border-bottom-color: #3a3a3a;
+    background: #1e1e1e !important;
+    border-bottom: 1px solid #333333 !important;
 }
-html[data-theme="dark"] .pub-nav a { color: #b0c8e8 !important; }
-html[data-theme="dark"] .pub-nav a:hover { background: #2a2a2a; border-color: #4a4a4a; }
-html[data-theme="dark"] .pub-nav a.actief { background: #4a6fa5; color: #ffffff !important; }
-html[data-theme="dark"] .pub-nav a.home { border-color: #4a4a4a; }
+html[data-theme="dark"] .pub-nav a {
+    color: #b0c8e8 !important;
+    background: #252525 !important;
+    border: 1px solid #3a3a3a !important;
+}
+html[data-theme="dark"] .pub-nav a:hover {
+    background: #333333 !important;
+    border-color: #555555 !important;
+    color: #ffffff !important;
+}
+html[data-theme="dark"] .pub-nav a.actief {
+    background: #4a6fa5 !important;
+    border-color: #7fb3ff !important;
+    color: #ffffff !important;
+}
+html[data-theme="dark"] .pub-nav a.home {
+    background: #252525 !important;
+    border-color: #4a4a4a !important;
+    color: #b0c8e8 !important;
+}
 html[data-theme="dark"] .pub-nav .titel-klein { color: #888 !important; }
 
 html[data-theme="dark"] .pub-toc {
@@ -1159,7 +1195,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 
 <h1>GRENSARBEID.ORG — Systeem-Audit</h1>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen</p>
-<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 31 oktober 2026, 17:28</p>
+<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 31 oktober 2026, 17:39</p>
 
 
 
