@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="nl" data-theme="dark" data-target-lang="nl" data-auto-lang="nl">
+<html lang="nl" data-theme="dark" class="notranslate" translate="no">
 <head>
 <meta charset="UTF-8">
+<meta name="google" content="notranslate">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Systeem-Audit — Overzicht</title>
 <meta name="description" content="Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen">
@@ -165,16 +166,47 @@ h5 {
     line-height: 1.45 !important;
     max-width: 920px;
 }
+
+/* === Discrete Document Download Links (Anti-Bloat Top Nav) === */
+.pub-discreet-dl {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f7f5f1;
+    border: 1px solid #d5d0c5;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 9.5pt;
+    color: #555555;
+    margin: 4pt 0 16pt 0;
+    font-family: Aptos, Calibri, sans-serif;
+}
+html[data-theme="dark"] .pub-discreet-dl {
+    background: #181b22;
+    border-color: #30363d;
+    color: #8b949e;
+}
+.pub-discreet-dl .pdd-label { font-weight: 700; color: #1a3c6e; }
+html[data-theme="dark"] .pub-discreet-dl .pdd-label { color: #58a6ff; }
+.pub-discreet-dl .pdd-link {
+    color: #1a3c6e;
+    text-decoration: none;
+    font-weight: 600;
+}
+html[data-theme="dark"] .pub-discreet-dl .pdd-link { color: #79c0ff; }
+.pub-discreet-dl .pdd-link:hover { text-decoration: underline; }
+.pub-discreet-dl .pdd-sep { color: #aaa; }
+
 .pub-nav {
     position: sticky; top: 0; z-index: 100;
     background: #ffffff; border-bottom: 2px solid #d5d0c5;
-    padding: 10px 24px; margin: -40pt -40pt 20pt -40pt;
+    padding: 10px 40pt; margin: -40pt -40pt 20pt -40pt;
     font-family: Aptos, Calibri, sans-serif;
     display: flex; justify-content: space-between; align-items: center;
     gap: 12px 16px; flex-wrap: wrap; box-sizing: border-box;
 }
 .pub-nav .links { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
-.pub-nav .pub-nav-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-left: auto; }
+.pub-nav .pub-nav-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-left: auto; flex-shrink: 0; }
 .pub-nav a {
     color: #1a3c6e; text-decoration: none; padding: 6px 12px;
     border-radius: 4px; font-size: 11pt; font-weight: 600;
@@ -530,7 +562,18 @@ html[data-theme="dark"] select.pub-lang-select option {
         padding: 16pt 24pt !important;
         padding-left: max(24pt, env(safe-area-inset-left)) !important;
         padding-right: max(20pt, env(safe-area-inset-right)) !important;
+        padding-bottom: 120px !important;
         font-size: 11pt !important;
+    }
+    .pub-top {
+        bottom: 16px !important; right: 16px !important;
+        width: 38px !important; height: 38px !important; font-size: 15pt !important;
+        opacity: 0.88;
+    }
+    .dm-toggle {
+        bottom: 62px !important; right: 16px !important;
+        width: 38px !important; height: 38px !important; font-size: 15pt !important;
+        opacity: 0.88;
     }
     p {
         margin-top: 0 !important;
@@ -540,15 +583,53 @@ html[data-theme="dark"] select.pub-lang-select option {
     }
     .entry { margin-bottom: 8pt !important; padding: 7pt 10pt !important; line-height: 1.4 !important; }
     .pub-nav {
-        padding: 8px 16px;
-        margin: -16pt -24pt 16pt -24pt;
-        gap: 8px;
+        position: static !important; /* Scrolls away naturally with the page — never blocks 50% of the mobile screen! */
+        padding: 8px 14px !important;
+        margin: -16pt -24pt 16pt -24pt !important;
+        background: #ffffff !important;
+        border-bottom: 1px solid #d5d0c5 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 6px !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        white-space: nowrap !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        box-sizing: border-box !important;
+        max-width: calc(100% + 48pt) !important;
     }
-    .pub-nav .links { gap: 6px; }
-    .pub-nav a { padding: 6px 10px; font-size: 10pt; min-height: 36px; display: inline-flex; align-items: center; box-sizing: border-box; }
-    .pub-nav .titel-klein { display: none; }
-    .pub-nav .nav-acties, .pub-nav .pub-nav-actions { width: 100%; justify-content: flex-end; margin-top: 4px; }
-    .pub-contact-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 38px; max-width: 100%; box-sizing: border-box; }
+    .pub-nav::-webkit-scrollbar { display: none !important; }
+    .pub-nav .links {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        gap: 6px !important;
+        width: auto !important;
+    }
+    .pub-nav a {
+        padding: 6px 11px !important;
+        font-size: 9.5pt !important;
+        min-height: 32px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        border-radius: 4px !important;
+        box-sizing: border-box !important;
+    }
+    .pub-nav .titel-klein { display: none !important; }
+    .pub-nav .pub-nav-actions {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        flex-shrink: 0 !important;
+        margin-left: 4px !important;
+    }
+    .pub-contact-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 34px; max-width: 100%; box-sizing: border-box; }
+    .d0-rep-card { width: 154px !important; min-width: 144px !important; }
     .pub-toc { padding: 10pt 14pt; }
     .pub-toc .niv3 { padding-left: 20pt; }
     .audit-bewijs { white-space: normal; flex-wrap: wrap; }
@@ -562,16 +643,17 @@ html[data-theme="dark"] select.pub-lang-select option {
     body {
         margin: 0 !important;
         padding: 14pt 20pt !important;
-        padding-left: max(22pt, env(safe-area-inset-left)) !important;
-        padding-right: max(18pt, env(safe-area-inset-right)) !important;
+        padding-left: max(24pt, env(safe-area-inset-left)) !important;
+        padding-right: max(20pt, env(safe-area-inset-right)) !important;
+        padding-bottom: 120px !important;
     }
     p {
         margin-bottom: 14pt !important;
         line-height: 1.65 !important;
         font-size: 10.5pt !important;
     }
-    .pub-nav { padding: 8px 12px; margin: -14pt -20pt 14pt -20pt; }
-    .pub-nav .links a { font-size: 9pt; padding: 5px 7px; }
+    .pub-nav { padding: 6px 10px !important; margin: -14pt -20pt 14pt -20pt !important; max-width: calc(100% + 40pt) !important; }
+    .pub-nav .links a { font-size: 9pt !important; padding: 5px 9px !important; min-height: 30px !important; }
     .pub-contact-btn { width: 100%; justify-content: center; }
     .audit-toolbar .at-pills { gap: 4px; }
     .audit-toolbar .at-pill { font-size: 8.5pt; padding: 4px 8px; min-height: 34px; }
@@ -1069,16 +1151,15 @@ html[data-theme="dark"] select.pub-lang-select option {
 <div class="wrap">
 
 <div class="kop-balk">
-  <a class="taalkeuze" href="../index.html">🌐 Taalkeuze / Other languages</a>
+  <a class="taalkeuze" href="../index.html" title="Terug naar het Startportaal">← Startportaal</a>
   <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-    <div class="pub-lang-switch langs notranslate" translate="no"><a href="../nl/home.html" class="pub-lang-btn notranslate actief" translate="no" onclick="wisselTaal('nl')">🇳🇱 NL</a> <a href="../en/home.html" class="pub-lang-btn notranslate" translate="no" onclick="wisselTaal('en')">🇬🇧 EN</a> <a href="../de/home.html" class="pub-lang-btn notranslate" translate="no" onclick="wisselTaal('de')">🇩🇪 DE</a> <a href="../fr/home.html" class="pub-lang-btn notranslate" translate="no" onclick="wisselTaal('fr')">🇫🇷 FR</a> <select id="eu-lang-select" class="pub-lang-select notranslate" translate="no" onchange="wisselTaal(this.value)"><option value="nl" selected>🇳🇱 NL (Origineel)</option><option value="en">🇬🇧 EN (English)</option><option value="de">🇩🇪 DE (Deutsch)</option><option value="fr">🇫🇷 FR (Français)</option><option value="it">🇮🇹 IT (Italiano)</option><option value="es">🇪🇸 ES (Español)</option><option value="pl">🇵🇱 PL (Polski)</option><option value="da">🇩🇰 DA (Dansk)</option><option value="sv">🇸🇪 SV (Svenska)</option><option value="pt">🇵🇹 PT (Português)</option><option value="ro">🇷🇴 RO (Română)</option></select></div>
-    <button type="button" class="pub-contact-btn notranslate" translate="no" onclick="openBronModal()">📄 Bronstuk opvragen / Contact</button>
+    <a href="../home_int.html" class="pub-lang-btn notranslate" translate="no" title="European &amp; International Portal (English, Français, Deutsch, +8)" style="font-weight:600; text-decoration:none;">🇪🇺 Europees Portaal / Other languages (EN · DE · FR · ...)</a>
   </div>
 </div>
 
 <h1>GRENSARBEID.ORG — Systeem-Audit</h1>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen</p>
-<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 31 oktober 2026, 06:56</p>
+<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 31 oktober 2026, 17:28</p>
 
 
 
@@ -1138,10 +1219,13 @@ html[data-theme="dark"] select.pub-lang-select option {
 </li>
 </ul>
 
-<div class="footer">
+<div class="footer notranslate" translate="no">
 <p>Openbaar materiaal. Wie eruit citeert, citeert Document B als bron van de feiten.</p>
-<p><button type="button" class="pub-contact-btn pub-contact-footer notranslate" translate="no" onclick="openBronModal()">📄 Bronstuk opvragen / Contact</button></p>
-<p><a href="../index.html">🌐 Taalkeuze / Other languages</a></p>
+<div style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
+  <button type="button" class="pub-print-btn notranslate" translate="no" onclick="window.print()" title="Print deze pagina of bewaar als PDF">🖨️ Print / Bewaar als PDF</button>
+  <button type="button" class="pub-contact-btn pub-contact-footer notranslate" translate="no" onclick="openBronModal()">📄 Bronstuk opvragen / Contact</button>
+</div>
+<p><a href="../index.html">← Startportaal</a> · <a href="../home_int.html">🇪🇺 Europees &amp; Internationaal Portaal</a></p>
 </div>
 
 </div>
@@ -1348,248 +1432,7 @@ html[data-theme="dark"] select.pub-lang-select option {
   };
 })();
 </script>
-<!-- Direct DOM Translation Engine (works on file://, http://, and https://) -->
-<script class="notranslate" translate="no">
-(function() {
-  var _origTexts = new Map();
-  var _isTranslating = false;
-  var _currentLang = 'nl';
 
-  function getTranslatableNodes() {
-    var nodes = [];
-    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-      acceptNode: function(node) {
-        if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
-        var p = node.parentElement;
-        while (p) {
-          if (p.classList && (p.classList.contains('notranslate') || p.id === 'bm-modal' || p.id === 'rechten-banner')) {
-            return NodeFilter.FILTER_REJECT;
-          }
-          var tag = p.tagName.toLowerCase();
-          if (tag === 'script' || tag === 'style' || tag === 'code' || tag === 'pre') {
-            return NodeFilter.FILTER_REJECT;
-          }
-          p = p.parentElement;
-        }
-        var text = node.nodeValue.replace(/\s+/g, ' ').trim();
-        if (text.length >= 2 && /[a-zA-ZÀ-ÿ]{2,}/.test(text)) {
-          return NodeFilter.FILTER_ACCEPT;
-        }
-        return NodeFilter.FILTER_REJECT;
-      }
-    });
-    while (walker.nextNode()) {
-      nodes.push(walker.currentNode);
-    }
-    return nodes;
-  }
-
-  function updatePageLinks(lang) {
-    var links = document.querySelectorAll('a[href]');
-    for (var i = 0; i < links.length; i++) {
-      var a = links[i];
-      var href = a.getAttribute('href');
-      if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('javascript:')) continue;
-      if (href.indexOf('document-') !== -1) {
-        var base = href.split('?')[0];
-        var isPrint = href.indexOf('print=1') !== -1;
-        a.setAttribute('href', base + '?int=1&lang=' + lang + (isPrint ? '&print=1' : ''));
-      } else if (href.indexOf('home_int.html') !== -1) {
-        var base = href.split('?')[0];
-        a.setAttribute('href', base + '?lang=' + lang);
-      }
-    }
-  }
-
-  function syncDropdown(lang) {
-    var sel = document.getElementById('int-lang-select');
-    if (sel && lang) {
-      sel.value = lang;
-    }
-  }
-
-  function bepaalDoeltaal() {
-    var urlParams = new URLSearchParams(window.location.search);
-    var target = urlParams.get('lang');
-    if (!target) {
-      try { target = sessionStorage.getItem('grensarbeid-int-lang'); } catch(e) {}
-    }
-    if (!target) {
-      var navLang = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
-      target = navLang.toLowerCase().split('-')[0];
-    }
-    return target || 'en';
-  }
-
-  function showStatusPill(msg, isSuccess) {
-    var pill = document.getElementById('trans-status-pill');
-    if (!pill) {
-      pill = document.createElement('div');
-      pill.id = 'trans-status-pill';
-      pill.className = 'notranslate';
-      pill.style.cssText = 'position:fixed;bottom:24px;left:24px;z-index:9999;padding:6px 14px;border-radius:20px;font-size:10pt;font-weight:600;font-family:sans-serif;box-shadow:0 4px 12px rgba(0,0,0,0.3);transition:opacity .3s;';
-      document.body.appendChild(pill);
-    }
-    pill.textContent = msg;
-    pill.style.background = isSuccess ? '#2e7d32' : '#003399';
-    pill.style.color = '#ffffff';
-    pill.style.opacity = '1';
-    pill.style.display = 'block';
-    if (isSuccess) {
-      setTimeout(function() {
-        pill.style.opacity = '0';
-        setTimeout(function(){ pill.style.display='none'; }, 300);
-      }, 2500);
-    }
-  }
-
-  window.vertaalPaginaNaar = function(lang) {
-    if (!lang) return Promise.resolve();
-    if (_isTranslating) return Promise.resolve();
-    _isTranslating = true;
-    _currentLang = lang;
-
-    updatePageLinks(lang);
-    syncDropdown(lang);
-
-    var nodes = getTranslatableNodes();
-    for (var i = 0; i < nodes.length; i++) {
-      var n = nodes[i];
-      if (!_origTexts.has(n)) {
-        _origTexts.set(n, n.nodeValue);
-      }
-    }
-
-    if (lang === 'nl') {
-      for (var i = 0; i < nodes.length; i++) {
-        var n = nodes[i];
-        if (_origTexts.has(n)) {
-          n.nodeValue = _origTexts.get(n);
-        }
-      }
-      _isTranslating = false;
-      showStatusPill('✓ Nederlands (Origineel)', true);
-      return Promise.resolve();
-    }
-
-    showStatusPill('⏳ Translating (' + lang.toUpperCase() + ')...', false);
-
-    var chunks = [];
-    var curNodes = [];
-    var curLen = 0;
-    for (var i = 0; i < nodes.length; i++) {
-      var n = nodes[i];
-      var orig = _origTexts.get(n).replace(/\s+/g, ' ').trim();
-      if (curLen + orig.length > 3000 && curNodes.length > 0) {
-        chunks.push(curNodes);
-        curNodes = [];
-        curLen = 0;
-      }
-      curNodes.push(n);
-      curLen += orig.length + 1;
-    }
-    if (curNodes.length > 0) chunks.push(curNodes);
-
-    var promises = chunks.map(function(chunk) {
-      var lines = chunk.map(function(n) {
-        return _origTexts.get(n).replace(/\s+/g, ' ').trim();
-      });
-      var q = lines.join('\n');
-      var url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=nl&tl=' + lang + '&dt=t';
-
-      return fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-        },
-        body: 'q=' + encodeURIComponent(q)
-      })
-      .then(function(resp) { return resp.json(); })
-      .then(function(data) {
-        if (!data || !data[0]) return;
-        var fullTrans = '';
-        for (var p = 0; p < data[0].length; p++) {
-          if (data[0][p][0]) fullTrans += data[0][p][0];
-        }
-        var transLines = fullTrans.split('\n');
-        for (var k = 0; k < chunk.length && k < transLines.length; k++) {
-          var node = chunk[k];
-          var orig = _origTexts.get(node);
-          var leadingSpace = orig.match(/^\s*/)[0];
-          var trailingSpace = orig.match(/\s*$/)[0];
-          node.nodeValue = leadingSpace + transLines[k] + trailingSpace;
-        }
-      })
-      .catch(function(err) {
-        console.warn('Translation error for chunk:', err);
-      });
-    });
-
-    return Promise.all(promises).then(function() {
-      _isTranslating = false;
-      showStatusPill('✓ Translated (' + lang.toUpperCase() + ')', true);
-    });
-  };
-
-  window.wisselTaal = function(lang) {
-    if (!lang) return;
-    try {
-      sessionStorage.setItem('grensarbeid-int-lang', lang);
-    } catch(e) {}
-
-    var curUrl = new URL(window.location.href);
-    curUrl.searchParams.set('lang', lang);
-    window.history.replaceState({}, '', curUrl.toString());
-
-    window.vertaalPaginaNaar(lang);
-  };
-
-  function initOrSync() {
-    var isInt = window.location.search.indexOf('int=1') !== -1;
-    var isHomeInt = location.pathname.indexOf('home_int.html') !== -1;
-    var autoLang = document.documentElement.getAttribute('data-auto-lang');
-    var hasAutoLang = autoLang && autoLang !== 'nl';
-
-    if (!isInt && !isHomeInt && !hasAutoLang) {
-      // 100% hard authentic Dutch mode!
-      return;
-    }
-
-    var target = (hasAutoLang && !window.location.search.includes('lang=')) ? autoLang : bepaalDoeltaal();
-    syncDropdown(target);
-    if (isInt || isHomeInt) {
-      updatePageLinks(target);
-    }
-
-    if (_currentLang !== target) {
-      window.vertaalPaginaNaar(target).then(function() {
-        if (window.location.search.indexOf('print=1') !== -1) {
-          setTimeout(function() { window.print(); }, 400);
-        }
-      });
-    } else {
-      syncDropdown(target);
-      if (isInt || isHomeInt) {
-        updatePageLinks(target);
-      }
-      if (window.location.search.indexOf('print=1') !== -1) {
-        setTimeout(function() { window.print(); }, 400);
-      }
-    }
-  }
-
-  // Initial execution
-  initOrSync();
-
-  // Listen to pageshow (BFCache restore on back/forward) and popstate
-  window.addEventListener('pageshow', function() {
-    initOrSync();
-  });
-  window.addEventListener('popstate', function() {
-    initOrSync();
-  });
-})();
-</script>
 
 <!-- Analytische sensor (verborgen landentracker, puur voor dossierbeheer) -->
 <div style="display:none;position:absolute;width:0;height:0;overflow:hidden;opacity:0;pointer-events:none;" aria-hidden="true">
