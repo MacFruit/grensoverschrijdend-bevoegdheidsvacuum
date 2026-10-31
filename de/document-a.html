@@ -19,13 +19,13 @@
 <style>
 @media screen { p.marker { display: none; } }
 p.marker { font-size: 1pt; margin: 0; padding: 0; line-height: 1pt; mso-line-height-rule: exactly; }
-body { font-family: Aptos, Calibri, sans-serif; font-size: 12pt; line-height: 1.15; margin: 40pt; }
+body { font-family: Aptos, Calibri, sans-serif; font-size: 12pt; line-height: 1.55; margin: 40pt; }
 h1 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 28pt; color: #7a3e9d; margin-top: 0; margin-bottom: 6pt; border-bottom: 3px solid #7a3e9d; padding-bottom: 6pt; }
 h2 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 20pt; color: #7a3e9d; margin-top: 0; margin-bottom: 5pt; border-bottom: 2px solid #7a3e9d; padding-bottom: 4pt; }
-h3 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 16pt; color: #7a3e9d; margin-top: 0; margin-bottom: 4pt; border-bottom: 1px solid #7a3e9d; padding-bottom: 3pt; }
+h3 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 16pt; color: #7a3e9d; margin-top: 0; margin-bottom: 4pt;  }
 h4 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 14pt; color: #7a3e9d; margin-top: 10pt; margin-bottom: 3pt; }
 h5 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 13pt; color: #333333; margin-top: 8pt; margin-bottom: 3pt; }
-p { margin: 0 0 6pt 0; text-align: left; }
+p { margin: 0 0 12pt 0; text-align: left; }
 p.subtitel { font-style: italic; font-size: 11pt; color: #555555; margin: -2pt 0 10pt 0; }
 hr { border: 0; border-top: 1px solid #ccc; margin: 15pt 0 10pt 0; }
 i { font-size: 10.5pt; color: #555555; }
@@ -476,6 +476,23 @@ html[data-theme="dark"] .d0-ring-core {
     gap: 5pt;
 }
 
+.d0-branch-banner {
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: #0d7377;
+    background: rgba(13, 115, 119, 0.10);
+    border-left: 3px solid #0d7377;
+    border-radius: 4px;
+    padding: 3pt 7pt;
+    margin-bottom: 2pt;
+    line-height: 1.3;
+}
+html[data-theme="dark"] .d0-branch-banner {
+    color: #5eead4;
+    background: rgba(20, 184, 166, 0.14);
+    border-left-color: #2dd4bf;
+}
+
 .d0-cell-split {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
@@ -580,7 +597,7 @@ html[data-theme="dark"] .d0-paper-col {
 }
 
 .d0-rep-card {
-    width: 158px;
+    width: 168px;
     max-width: 100%;
     height: auto;
     min-height: 94px;
@@ -658,15 +675,17 @@ html[data-theme="dark"] .d0-paper-col {
 
 .d0-rc-type {
     font-family: Aptos, Arial, sans-serif;
-    font-size: 6pt;
+    font-size: 5.6pt;
+    letter-spacing: -0.2px;
     font-weight: 800;
     text-transform: uppercase;
     text-align: right;
     line-height: 1.1;
     flex: 1;
     min-width: 0;
-    word-break: normal;
-    overflow-wrap: anywhere;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .d0-rc-mid {
     display: flex;
@@ -1058,6 +1077,51 @@ html[data-theme="dark"] .d0-px-link:hover {
 
 html { overflow-x: hidden; }
 body { margin: 0 !important; padding: 40pt !important; overflow-x: visible !important; box-sizing: border-box; }
+
+/* === Optimaal Leesgemak, Typografie & Witruimte (Anti-Bloktekst) === */
+p {
+    margin-top: 0 !important;
+    margin-bottom: 14pt !important;
+    line-height: 1.65 !important;
+    font-size: 11.5pt;
+    text-align: left !important;
+}
+
+/* Ergonomische leeskolom: regellengte max 860px (65-80 karakters) zodat ogen nooit verdwalen op brede schermen */
+p, .gebruikersaanwijzing, .intro-rechten, .actie, .afsluiting, .werkversie, .lead, .footnotes, .pub-toc, .contactblok {
+    max-width: 860px;
+}
+h1, h2, h3, h4, h5 {
+    max-width: 960px;
+}
+h2 {
+    margin-top: 36pt !important;
+    margin-bottom: 12pt !important;
+    line-height: 1.3 !important;
+}
+h3 {
+    margin-top: 26pt !important;
+    margin-bottom: 10pt !important;
+    line-height: 1.35 !important;
+}
+h4 {
+    margin-top: 20pt !important;
+    margin-bottom: 8pt !important;
+    line-height: 1.4 !important;
+}
+h5 {
+    margin-top: 16pt !important;
+    margin-bottom: 6pt !important;
+    line-height: 1.4 !important;
+}
+
+/* Duidelijke ademruimte tussen interactie-kaarten in Document B */
+.entry {
+    margin-bottom: 10pt !important;
+    padding: 8pt 12pt !important;
+    line-height: 1.45 !important;
+    max-width: 920px;
+}
 .pub-nav {
     position: sticky; top: 0; z-index: 100;
     background: #ffffff; border-bottom: 2px solid #d5d0c5;
@@ -1408,14 +1472,40 @@ html[data-theme="dark"] select.pub-lang-select option {
 .bm-btn-copy:hover { background: #e2ded5; }
 .bm-btn-copy.bm-copied { background: #2e7d32; color: #ffffff; border-color: #2e7d32; }
 
+@media (max-width: 1320px) {
+    .pub-nav { padding: 10px 20px; }
+    .pub-nav .pub-nav-actions {
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 6px;
+        margin-left: 0;
+    }
+}
 @media (max-width: 768px) {
-    body { margin: 0 !important; padding: 16pt 14pt !important; }
-    .pub-nav { padding: 8px 12px; margin: -16pt -14pt 16pt -14pt; gap: 8px; }
+    body {
+        margin: 0 !important;
+        padding: 16pt 24pt !important;
+        padding-left: max(24pt, env(safe-area-inset-left)) !important;
+        padding-right: max(20pt, env(safe-area-inset-right)) !important;
+        font-size: 11pt !important;
+    }
+    p {
+        margin-top: 0 !important;
+        margin-bottom: 14pt !important;
+        line-height: 1.65 !important;
+        font-size: 11pt !important;
+    }
+    .entry { margin-bottom: 8pt !important; padding: 7pt 10pt !important; line-height: 1.4 !important; }
+    .pub-nav {
+        padding: 8px 16px;
+        margin: -16pt -24pt 16pt -24pt;
+        gap: 8px;
+    }
     .pub-nav .links { gap: 6px; }
-    .pub-nav a { padding: 6px 10px; font-size: 10.5pt; min-height: 38px; display: inline-flex; align-items: center; box-sizing: border-box; }
+    .pub-nav a { padding: 6px 10px; font-size: 10pt; min-height: 36px; display: inline-flex; align-items: center; box-sizing: border-box; }
     .pub-nav .titel-klein { display: none; }
     .pub-nav .nav-acties, .pub-nav .pub-nav-actions { width: 100%; justify-content: flex-end; margin-top: 4px; }
-    .pub-contact-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 38px; }
+    .pub-contact-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 38px; max-width: 100%; box-sizing: border-box; }
     .pub-toc { padding: 10pt 14pt; }
     .pub-toc .niv3 { padding-left: 20pt; }
     .audit-bewijs { white-space: normal; flex-wrap: wrap; }
@@ -1426,9 +1516,19 @@ html[data-theme="dark"] select.pub-lang-select option {
     .bm-radio-groep { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
-    body { margin: 0 !important; padding: 12pt 10pt !important; }
-    .pub-nav { padding: 8px 10px; margin: -12pt -10pt 14pt -10pt; }
-    .pub-nav .links a { font-size: 9.5pt; padding: 5px 8px; }
+    body {
+        margin: 0 !important;
+        padding: 14pt 20pt !important;
+        padding-left: max(22pt, env(safe-area-inset-left)) !important;
+        padding-right: max(18pt, env(safe-area-inset-right)) !important;
+    }
+    p {
+        margin-bottom: 14pt !important;
+        line-height: 1.65 !important;
+        font-size: 10.5pt !important;
+    }
+    .pub-nav { padding: 8px 12px; margin: -14pt -20pt 14pt -20pt; }
+    .pub-nav .links a { font-size: 9pt; padding: 5px 7px; }
     .pub-contact-btn { width: 100%; justify-content: center; }
     .audit-toolbar .at-pills { gap: 4px; }
     .audit-toolbar .at-pill { font-size: 8.5pt; padding: 4px 8px; min-height: 34px; }
@@ -1963,7 +2063,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document A — De narratieve audit</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 31 oktober 2026, 00:20</p>
+<p class="meta-lijn">Versie bijgewerkt: 31 oktober 2026, 06:56</p>
 </div>
 <div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
 <li class="niv1"><a href="#systeem-audit">Systeem-Audit</a></li>
@@ -2768,7 +2868,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <footer class="pub-footer">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
 
-  Auteur: Eric Messa · Versie bijgewerkt: 31 oktober 2026, 00:36</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 31 oktober 2026, 06:56</p>
 <p><a href="home.html">← Terug naar overzicht</a> ·
 
      <a href="../index.html">[Web] Taalkeuze</a></p>

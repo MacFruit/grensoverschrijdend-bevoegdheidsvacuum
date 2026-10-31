@@ -19,13 +19,13 @@
 <style>
 @media screen { p.marker { display: none; } }
 p.marker { font-size: 1pt; margin: 0; padding: 0; line-height: 1pt; mso-line-height-rule: exactly; }
-body { font-family: Aptos, Calibri, sans-serif; font-size: 12pt; line-height: 1.5; margin: 40pt; }
+body { font-family: Aptos, Calibri, sans-serif; font-size: 12pt; line-height: 1.55; margin: 40pt; }
 h1 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 28pt; color: #8b1e1e; margin-top: 0; margin-bottom: 6pt; border-bottom: 3px solid #8b1e1e; padding-bottom: 6pt; }
 h2 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 20pt; color: #8b1e1e; margin-top: 0; margin-bottom: 5pt; border-bottom: 2px solid #8b1e1e; padding-bottom: 4pt; }
 h3 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 16pt; color: #8b1e1e; margin-top: 0; margin-bottom: 4pt;  }
 h4 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 14pt; color: #8b1e1e; margin-top: 10pt; margin-bottom: 3pt; }
 h5 { font-family: Aptos Display, Aptos, Calibri, sans-serif; font-size: 13pt; color: #333333; margin-top: 8pt; margin-bottom: 3pt; }
-p { margin: 0 0 8pt 0; text-align: left; }
+p { margin: 0 0 12pt 0; text-align: left; }
 p.subtitel { font-style: italic; font-size: 11pt; color: #555555; margin: -2pt 0 10pt 0; }
 hr { border: 0; border-top: 1px solid #ccc; margin: 15pt 0 10pt 0; }
 i { font-size: 10.5pt; color: #555555; }
@@ -597,7 +597,7 @@ html[data-theme="dark"] .d0-paper-col {
 }
 
 .d0-rep-card {
-    width: 158px;
+    width: 168px;
     max-width: 100%;
     height: auto;
     min-height: 94px;
@@ -675,15 +675,17 @@ html[data-theme="dark"] .d0-paper-col {
 
 .d0-rc-type {
     font-family: Aptos, Arial, sans-serif;
-    font-size: 6pt;
+    font-size: 5.6pt;
+    letter-spacing: -0.2px;
     font-weight: 800;
     text-transform: uppercase;
     text-align: right;
     line-height: 1.1;
     flex: 1;
     min-width: 0;
-    word-break: normal;
-    overflow-wrap: anywhere;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .d0-rc-mid {
     display: flex;
@@ -1075,6 +1077,51 @@ html[data-theme="dark"] .d0-px-link:hover {
 
 html { overflow-x: hidden; }
 body { margin: 0 !important; padding: 40pt !important; overflow-x: visible !important; box-sizing: border-box; }
+
+/* === Optimaal Leesgemak, Typografie & Witruimte (Anti-Bloktekst) === */
+p {
+    margin-top: 0 !important;
+    margin-bottom: 14pt !important;
+    line-height: 1.65 !important;
+    font-size: 11.5pt;
+    text-align: left !important;
+}
+
+/* Ergonomische leeskolom: regellengte max 860px (65-80 karakters) zodat ogen nooit verdwalen op brede schermen */
+p, .gebruikersaanwijzing, .intro-rechten, .actie, .afsluiting, .werkversie, .lead, .footnotes, .pub-toc, .contactblok {
+    max-width: 860px;
+}
+h1, h2, h3, h4, h5 {
+    max-width: 960px;
+}
+h2 {
+    margin-top: 36pt !important;
+    margin-bottom: 12pt !important;
+    line-height: 1.3 !important;
+}
+h3 {
+    margin-top: 26pt !important;
+    margin-bottom: 10pt !important;
+    line-height: 1.35 !important;
+}
+h4 {
+    margin-top: 20pt !important;
+    margin-bottom: 8pt !important;
+    line-height: 1.4 !important;
+}
+h5 {
+    margin-top: 16pt !important;
+    margin-bottom: 6pt !important;
+    line-height: 1.4 !important;
+}
+
+/* Duidelijke ademruimte tussen interactie-kaarten in Document B */
+.entry {
+    margin-bottom: 10pt !important;
+    padding: 8pt 12pt !important;
+    line-height: 1.45 !important;
+    max-width: 920px;
+}
 .pub-nav {
     position: sticky; top: 0; z-index: 100;
     background: #ffffff; border-bottom: 2px solid #d5d0c5;
@@ -1425,14 +1472,40 @@ html[data-theme="dark"] select.pub-lang-select option {
 .bm-btn-copy:hover { background: #e2ded5; }
 .bm-btn-copy.bm-copied { background: #2e7d32; color: #ffffff; border-color: #2e7d32; }
 
+@media (max-width: 1320px) {
+    .pub-nav { padding: 10px 20px; }
+    .pub-nav .pub-nav-actions {
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 6px;
+        margin-left: 0;
+    }
+}
 @media (max-width: 768px) {
-    body { margin: 0 !important; padding: 16pt 14pt !important; }
-    .pub-nav { padding: 8px 12px; margin: -16pt -14pt 16pt -14pt; gap: 8px; }
+    body {
+        margin: 0 !important;
+        padding: 16pt 24pt !important;
+        padding-left: max(24pt, env(safe-area-inset-left)) !important;
+        padding-right: max(20pt, env(safe-area-inset-right)) !important;
+        font-size: 11pt !important;
+    }
+    p {
+        margin-top: 0 !important;
+        margin-bottom: 14pt !important;
+        line-height: 1.65 !important;
+        font-size: 11pt !important;
+    }
+    .entry { margin-bottom: 8pt !important; padding: 7pt 10pt !important; line-height: 1.4 !important; }
+    .pub-nav {
+        padding: 8px 16px;
+        margin: -16pt -24pt 16pt -24pt;
+        gap: 8px;
+    }
     .pub-nav .links { gap: 6px; }
-    .pub-nav a { padding: 6px 10px; font-size: 10.5pt; min-height: 38px; display: inline-flex; align-items: center; box-sizing: border-box; }
+    .pub-nav a { padding: 6px 10px; font-size: 10pt; min-height: 36px; display: inline-flex; align-items: center; box-sizing: border-box; }
     .pub-nav .titel-klein { display: none; }
     .pub-nav .nav-acties, .pub-nav .pub-nav-actions { width: 100%; justify-content: flex-end; margin-top: 4px; }
-    .pub-contact-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 38px; }
+    .pub-contact-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 38px; max-width: 100%; box-sizing: border-box; }
     .pub-toc { padding: 10pt 14pt; }
     .pub-toc .niv3 { padding-left: 20pt; }
     .audit-bewijs { white-space: normal; flex-wrap: wrap; }
@@ -1443,9 +1516,19 @@ html[data-theme="dark"] select.pub-lang-select option {
     .bm-radio-groep { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
-    body { margin: 0 !important; padding: 12pt 10pt !important; }
-    .pub-nav { padding: 8px 10px; margin: -12pt -10pt 14pt -10pt; }
-    .pub-nav .links a { font-size: 9.5pt; padding: 5px 8px; }
+    body {
+        margin: 0 !important;
+        padding: 14pt 20pt !important;
+        padding-left: max(22pt, env(safe-area-inset-left)) !important;
+        padding-right: max(18pt, env(safe-area-inset-right)) !important;
+    }
+    p {
+        margin-bottom: 14pt !important;
+        line-height: 1.65 !important;
+        font-size: 10.5pt !important;
+    }
+    .pub-nav { padding: 8px 12px; margin: -14pt -20pt 14pt -20pt; }
+    .pub-nav .links a { font-size: 9pt; padding: 5px 7px; }
     .pub-contact-btn { width: 100%; justify-content: center; }
     .audit-toolbar .at-pills { gap: 4px; }
     .audit-toolbar .at-pill { font-size: 8.5pt; padding: 4px 8px; min-height: 34px; }
@@ -1980,7 +2063,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document 0 — Inleiding en leeswijzer</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 31 oktober 2026, 00:36</p>
+<p class="meta-lijn">Versie bijgewerkt: 31 oktober 2026, 06:56</p>
 </div>
 <div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
 <li class="niv1"><a href="#systeem-audit">Systeem-Audit</a></li>
@@ -2001,7 +2084,12 @@ html[data-theme="dark"] select.pub-lang-select option {
 </ul></div>
 <h2 id="een-europees-verhaal">Een Europees verhaal</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p>Dit dossier begint niet bij een grens. Het begint bij vlucht, werk en liefde.</p>
-<p>Voor de Tweede Wereldoorlog ontvlucht een Noord-Italiaanse familie haar geboortestreek in Lombardije en vestigt zich als migranten onder de rook van Parijs, in Bondy — toen nog gelegen in het oude Franse departement <em>Seine (75)</em> in <em>Île-de-France</em>, dat pas in 1968 zal worden opgeknipt tot <em>Seine-Saint-Denis (93)</em>. Daar wordt in 1940 de vader geboren, in een wereld waarin de Verenigde Naties (1945) en de Europese Economische Gemeenschap (1958) nog niet bestaan. Hoewel zijn wieg op Franse bodem staat, telt die geboortegrond op papier niet mee: door het bloedrecht (<em>ius sanguinis</em>) is hij voor de wet uitsluitend onderdaan van het toenmalige Koninkrijk Italië, dat in 1946 verandert in de Italiaanse Republiek. Na de oorlog keert het gezin terug naar de familiewortels in Vertova, een dorp in de bergvallei <em>Val Seriana</em> in de provincie Bergamo (Lombardije). Hij groeit er op en voelt zich Lombard, geen Italiaan. Aan de andere kant van de Alpen wordt in 1948 de moeder geboren in Sélestat (departement <em>Bas-Rhin, 67</em>) en groeit zij op in het wijndorp Hattstatt (departement <em>Haut-Rhin, 68</em>), onder de rood-witte vlag (<em>Rot un Wiss</em>) van de Elzas. Zij voelt zich Elzasser, niet Française of Duitse, maar draagt op papier de Franse identiteitskaart. Twee grensgevallen. Wanneer de jonge Lombard opnieuw de grens oversteekt om als arbeider in de Elzas te werken, raakt hij gewond en belandt hij in het ziekenhuis van Colmar. Daar verzorgt zij hem als verpleegster, en daar begint het. Ze trouwen. Wanneer het bedrijf waar hij werkt aan het begin van de jaren zeventig naar België verhuist, verhuizen zij mee. Niet voor avontuur, maar voor werk. De Europese Economische Gemeenschap telt op dat moment zes lidstaten.<sup>*</sup> Vrij verkeer van werknemers is een principe op papier; in de praktijk reist de arbeider met papieren formulieren, wisselkoersen en de hoop dat de stelsels elkaar zullen vinden. Ze vestigen zich in België.</p>
+<p>Voor de Tweede Wereldoorlog ontvlucht een Noord-Italiaanse familie haar geboortestreek in Lombardije en vestigt zich als migranten onder de rook van Parijs, in Bondy — toen nog gelegen in het oude Franse departement <em>Seine (75)</em> in <em>Île-de-France</em>, dat pas in 1968 zal worden opgeknipt tot <em>Seine-Saint-Denis (93)</em>.</p>
+<p>Daar wordt in 1940 de vader geboren, in een wereld waarin de Verenigde Naties (1945) en de Europese Economische Gemeenschap (1958) nog niet bestaan. Hoewel zijn wieg op Franse bodem staat, telt die geboortegrond op papier niet mee: door het bloedrecht (<em>ius sanguinis</em>) is hij voor de wet uitsluitend onderdaan van het toenmalige Koninkrijk Italië, dat in 1946 verandert in de Italiaanse Republiek.</p>
+<p>Na de oorlog keert het gezin terug naar de familiewortels in Vertova, een dorp in de bergvallei <em>Val Seriana</em> in de provincie Bergamo (Lombardije). Hij groeit er op en voelt zich Lombard, geen Italiaan.</p>
+<p>Aan de andere kant van de Alpen wordt in 1948 de moeder geboren in Sélestat (departement <em>Bas-Rhin, 67</em>) en groeit zij op in het wijndorp Hattstatt (departement <em>Haut-Rhin, 68</em>), onder de rood-witte vlag (<em>Rot un Wiss</em>) van de Elzas. Zij voelt zich Elzasser, niet Française of Duitse, maar draagt op papier de Franse identiteitskaart.</p>
+<p>Twee grensgevallen. Wanneer de jonge Lombard opnieuw de grens oversteekt om als arbeider in de Elzas te werken, raakt hij gewond en belandt hij in het ziekenhuis van Colmar. Daar verzorgt zij hem als verpleegster, en daar begint het. Ze trouwen.</p>
+<p>Wanneer het bedrijf waar hij werkt aan het begin van de jaren zeventig naar België verhuist, verhuizen zij mee. Niet voor avontuur, maar voor werk. De Europese Economische Gemeenschap telt op dat moment zes lidstaten.<sup>*</sup> Vrij verkeer van werknemers is een principe op papier; in de praktijk reist de arbeider met papieren formulieren, wisselkoersen en de hoop dat de stelsels elkaar zullen vinden. Ze vestigen zich in België.</p>
 <div class="d0-intermezzo">
 <div class="d0-im-head">
 <div class="d0-im-h-left">🧬 Menselijke Werkelijkheid (Geneste Cellen: Macro ➔ Micro)</div>
@@ -2191,7 +2279,12 @@ html[data-theme="dark"] select.pub-lang-select option {
 </div>
 </div>
 </div>
-<p>Daar wordt hun kind geboren. In Wilrijk, op 15 september 1981. Het is een ander Europa. Er zijn inmiddels tien lidstaten nadat Griekenland op 1 januari van dat jaar is toegetreden, al is de blauwe vlag met de twaalf sterren op dat moment nog enkel het symbool van de Raad van Europa en wordt zij pas in 1985 door de EEG overgenomen. Het Akkoord van Schengen bestaat nog niet; aan elke grens staan douaneposten en paspoortcontroles, en het Europees Monetair Stelsel van 1979 moet de nationale munten enigszins temmen. De theorie spreekt over Europese eenwording, maar de realiteit bestaat uit stempels en wachtrijen. Het kind groeit op in Hoboken, in een huis waar uitsluitend Frans wordt gesproken. Maar achter die ene taal liggen drie werelden: de Frans-Lombardische wereld van zijn vader, de Elzassische wereld van zijn moeder, en de Vlaamse wereld waarin hij opgroeit. Het kind draagt die werelden in zich, nog voor het kan lopen. Zelfs de bestuurlijke grenzen om hem heen muteren vrijwel direct: bij zijn geboorte in 1981 zijn Wilrijk en Hoboken nog zelfstandige gemeenten in de provincie Antwerpen; op 1 januari 1983 worden zij bij de grote gemeentefusie opgeslokt door de Stad Antwerpen en gedegradeerd tot districten, terwijl België zelf tussen 1980 en 1993 stap voor stap muteert naar een federale staat. Toch krijgt het kind dat in Wilrijk wordt geboren op papier geen Belgische nationaliteit. België weigert het geboorterecht: hij wordt geregistreerd als vreemdeling in zijn eigen geboorteland en krijgt een blauwe Belgische <em>EEG-verblijfskaart</em>. Door het patriarchale afstammingsrecht en het Verdrag van Straatsburg uit 1963 wordt daarop slechts één enkele nationaliteit ingevuld: die van zijn vader (<em>NAT: ITA</em>). Via de consulaten heeft hij daarnaast een Italiaans paspoort en een Franse consulaire identiteitskaart via zijn moeder, maar geen van beide geldt in België als een binnenlandse Belgische identiteitskaart.</p>
+<p>Daar wordt hun kind geboren. In Wilrijk, op 15 september 1981. Het is een ander Europa. Er zijn inmiddels tien lidstaten nadat Griekenland op 1 januari van dat jaar is toegetreden, al is de blauwe vlag met de twaalf sterren op dat moment nog enkel het symbool van de Raad van Europa en wordt zij pas in 1985 door de EEG overgenomen.</p>
+<p>Het Akkoord van Schengen bestaat nog niet; aan elke grens staan douaneposten en paspoortcontroles, en het Europees Monetair Stelsel van 1979 moet de nationale munten enigszins temmen. De theorie spreekt over Europese eenwording, maar de realiteit bestaat uit stempels en wachtrijen.</p>
+<p>Het kind groeit op in Hoboken, in een huis waar uitsluitend Frans wordt gesproken. Maar achter die ene taal liggen drie werelden: de Frans-Lombardische wereld van zijn vader, de Elzassische wereld van zijn moeder, en de Vlaamse wereld waarin hij opgroeit. Het kind draagt die werelden in zich, nog voor het kan lopen.</p>
+<p>Zelfs de bestuurlijke grenzen om hem heen muteren vrijwel direct: bij zijn geboorte in 1981 zijn Wilrijk en Hoboken nog zelfstandige gemeenten in de provincie Antwerpen; op 1 januari 1983 worden zij bij de grote gemeentefusie opgeslokt door de Stad Antwerpen en gedegradeerd tot districten, terwijl België zelf tussen 1980 en 1993 stap voor stap muteert naar een federale staat.</p>
+<p>Toch krijgt het kind dat in Wilrijk wordt geboren op papier geen Belgische nationaliteit. België weigert het geboorterecht: hij wordt geregistreerd als vreemdeling in zijn eigen geboorteland en krijgt een blauwe Belgische <em>EEG-verblijfskaart</em>.</p>
+<p>Door het patriarchale afstammingsrecht en het Verdrag van Straatsburg uit 1963 wordt daarop slechts één enkele nationaliteit ingevuld: die van zijn vader (<em>NAT: ITA</em>). Via de consulaten heeft hij daarnaast een Italiaans paspoort en een Franse consulaire identiteitskaart via zijn moeder, maar geen van beide geldt in België als een binnenlandse Belgische identiteitskaart.</p>
 <div class="d0-intermezzo">
 <div class="d0-im-head">
 <div class="d0-im-h-left">🧬 Menselijke Werkelijkheid (Geneste Cellen: Macro ➔ Micro)</div>
@@ -2335,7 +2428,10 @@ html[data-theme="dark"] select.pub-lang-select option {
 </div>
 </div>
 </div>
-<p>Op zijn achttiende, in 1999, verhuist hij alleen naar het Antwerpse district Berchem. De Europese Unie telt dan vijftien lidstaten. De euro is net ingevoerd voor girale betalingen, Schengen is opgenomen in het Europees recht en het "Europees Burgerschap" is inmiddels wettelijk verankerd.<sup>**</sup> De grenzen tussen België en Nederland zijn open, maar nationaliteit is onder het Verdrag van Straatsburg nog steeds een exclusief bezit. Hij kiest voor volledige integratie in het land waar hij is geboren en opgegroeid, en geeft zijn meervoudige papieren oorsprong op. Hij wil Belg zijn. Volkomen. Omdat de dubbele nationaliteit in die jaren nog wettelijk verboden is, betekent dat een harde knip: formeel afstand doen van zijn Italiaanse nationaliteit én afstand doen van zijn Franse nationaliteit. Alles wat hij van thuis heeft meegekregen aan papieren identiteit — van Bondy en Vertova tot Sélestat, Hattstatt en Colmar — moet administratief worden uitgewist om er één terug te krijgen die hij zelf heeft gekozen. Hij is de enige in zijn familie die deze keuze maakt. Zijn zussen behouden hun mix van oorsprongen. Hij niet. Hij kiest vrijwillig en met volle overtuiging voor integratie. Terwijl zijn menselijke kern ongewijzigd al die wortels blijft dragen, staat er vanaf dat moment nog maar één enkel woord op zijn groene Belgische identiteitskaart: <strong>BELG</strong>.</p>
+<p>Op zijn achttiende, in 1999, verhuist hij alleen naar het Antwerpse district Berchem. De Europese Unie telt dan vijftien lidstaten. De euro is net ingevoerd voor girale betalingen, Schengen is opgenomen in het Europees recht en het "Europees Burgerschap" is inmiddels wettelijk verankerd.<sup>**</sup></p>
+<p>De grenzen tussen België en Nederland zijn open, maar nationaliteit is onder het Verdrag van Straatsburg nog steeds een exclusief bezit. Hij kiest voor volledige integratie in het land waar hij is geboren en opgegroeid, en geeft zijn meervoudige papieren oorsprong op. Hij wil Belg zijn. Volkomen.</p>
+<p>Omdat de dubbele nationaliteit in die jaren nog wettelijk verboden is, betekent dat een harde knip: formeel afstand doen van zijn Italiaanse nationaliteit én afstand doen van zijn Franse nationaliteit. Alles wat hij van thuis heeft meegekregen aan papieren identiteit — van Bondy en Vertova tot Sélestat, Hattstatt en Colmar — moet administratief worden uitgewist om er één terug te krijgen die hij zelf heeft gekozen.</p>
+<p>Hij is de enige in zijn familie die deze keuze maakt. Zijn zussen behouden hun mix van oorsprongen. Hij niet. Hij kiest vrijwillig en met volle overtuiging voor integratie. Terwijl zijn menselijke kern ongewijzigd al die wortels blijft dragen, staat er vanaf dat moment nog maar één enkel woord op zijn groene Belgische identiteitskaart: <strong>BELG</strong>.</p>
 <div class="d0-intermezzo">
 <div class="d0-im-head">
 <div class="d0-im-h-left">🧬 Menselijke Werkelijkheid (Geneste Cellen: Macro ➔ Micro)</div>
@@ -2493,7 +2589,12 @@ html[data-theme="dark"] select.pub-lang-select option {
 </div>
 </div>
 </div>
-<p>Daarna verhuist hij naar Gent, in Oost-Vlaanderen. Daar leert hij zijn toekomstige partner kennen. Ze draagt exact hetzelfde woord op haar identiteitskaart: <strong>BELG</strong>. Maar achter datzelfde woord ligt bij haar een stamboom die zich volledig binnen de grenzen van België en Vlaanderen heeft afgespeeld: van haar familiewortels in het West-Vlaamse Snellegem (dat bij de gemeentefusie van 1977 opging in de gemeente Jabbeke) tot haar geboorte in het Oost-Vlaamse Lokeren en haar opgroeien in Buggenhout en Elversele (in 1977 gefuseerd met Temse). Ook in haar familiegeschiedenis zijn dorpen administratief samengevoegd tot grotere gemeenten, maar omdat al die mutaties binnen één en dezelfde lidstaat bleven, viel haar menselijke herkomst altijd naadloos samen met dat ene vakje op haar identiteitskaart; ware zij met een streekgenoot getrouwd, dan was die nationale logica nooit op de proef gesteld. Twee mensen, twee totaal verschillende familiegeschiedenissen, één administratieve nationaliteit. In 2007 trouwen ze in Sint-Niklaas, waarna ze in Waasmunster gaan wonen. De Unie telt inmiddels 27 lidstaten. En amper een jaar na hun huwelijk — op 28 april 2008 — volgt een wrange speling van het recht: België zegt het Verdrag van Straatsburg op en heft het verbod op meervoudige nationaliteit op. Wie voortaan Belg wordt, hoeft zijn Italiaanse of Franse nationaliteit niet langer op te geven. Maar de wet heeft geen terugwerkende kracht; de amputatie die hij in 1999 moest ondergaan om volwaardig burger te worden in zijn geboorteland, wordt nooit meer hersteld. Vier verhuizingen in België, vier keer een nieuw dossier, vier keer een nieuw loket: twee mensen die vanaf nu samen door de bureaucratie moeten.</p>
+<p>Daarna verhuist hij naar Gent, in Oost-Vlaanderen. Daar leert hij zijn toekomstige partner kennen. Ze draagt exact hetzelfde woord op haar identiteitskaart: <strong>BELG</strong>.</p>
+<p>Maar achter datzelfde woord ligt bij haar een stamboom die zich volledig binnen de grenzen van België en Vlaanderen heeft afgespeeld: van haar familiewortels in het West-Vlaamse Snellegem (dat bij de gemeentefusie van 1977 opging in de gemeente Jabbeke) tot haar geboorte in het Oost-Vlaamse Lokeren en haar opgroeien in Buggenhout en Elversele (in 1977 gefuseerd met Temse).</p>
+<p>Ook in haar familiegeschiedenis zijn dorpen administratief samengevoegd tot grotere gemeenten, maar omdat al die mutaties binnen één en dezelfde lidstaat bleven, viel haar menselijke herkomst altijd naadloos samen met dat ene vakje op haar identiteitskaart; ware zij met een streekgenoot getrouwd, dan was die nationale logica nooit op de proef gesteld.</p>
+<p>Twee mensen, twee totaal verschillende familiegeschiedenissen, één administratieve nationaliteit. In 2007 trouwen ze in Sint-Niklaas, waarna ze in Waasmunster gaan wonen. De Unie telt inmiddels 27 lidstaten.</p>
+<p>En amper een jaar na hun huwelijk — op 28 april 2008 — volgt een wrange speling van het recht: België zegt het Verdrag van Straatsburg op en heft het verbod op meervoudige nationaliteit op. Wie voortaan Belg wordt, hoeft zijn Italiaanse of Franse nationaliteit niet langer op te geven. Maar de wet heeft geen terugwerkende kracht; de amputatie die hij in 1999 moest ondergaan om volwaardig burger te worden in zijn geboorteland, wordt nooit meer hersteld.</p>
+<p>Vier verhuizingen in België, vier keer een nieuw dossier, vier keer een nieuw loket: twee mensen die vanaf nu samen door de bureaucratie moeten.</p>
 <div class="d0-intermezzo">
 <div class="d0-im-head">
 <div class="d0-im-h-left">🧬 Menselijke Werkelijkheid (Geneste Cellen: Macro ➔ Micro)</div>
@@ -2656,7 +2757,12 @@ html[data-theme="dark"] select.pub-lang-select option {
 </div>
 </div>
 </div>
-<p>In 2014 steken zij samen de grens over naar Zeeuws-Vlaanderen, in de Nederlandse provincie Zeeland. Ze vestigen zich in het kleine Scheldedorp Paal — historisch onderdeel van de zelfstandige gemeente Graauw en Langendam, die in 1970 werd opgeheven en sinds de gemeentelijke herindeling van 2003 onder de gemeente Hulst valt. Europa telt dan 28 lidstaten. De fysieke grens is opgelost; je rijdt zonder remmen van Waasmunster naar Paal. Maar de administratieve grens is onzichtbaar opgetrokken. Daar begint de eerste wrijving. Hun Belgische rijbewijs is geldig in de hele Europese Unie, het Nederlandse ook. Toch moeten ze het Belgische inleveren. Nederland staat maar één geldig document per persoon toe.<sup>***</sup> Ze geven het af bij de gemeente Hulst en krijgen het nooit terug. Wat ze in de plaats krijgen, is een Nederlands document met exact dezelfde Europese geldigheid. Alleen het land van uitgifte is veranderd. Vanaf dat moment dragen ze de paradox in hun eigen portemonnee. Een Belgische identiteitskaart voor hun identiteit. Een Nederlands rijbewijs voor hun mobiliteit, dat in Nederland dient als wettig legitimatiebewijs. In België wordt datzelfde rijbewijs niet als identiteitsbewijs aanvaard; daar geldt uitsluitend de Belgische kaart. Maar wie de elektronische chip van die Belgische eID uitleest, stuit op een nog vreemdere fictie: daarop staat niet hun werkelijke woonadres in Paal geregistreerd, maar het adres van de Belgische ambassade in Den Haag. Volgens hun Belgische kaart horen zij administratief bij de ambassade; volgens hun Nederlandse rijbewijs staat er hooguit waar het document is afgegeven in Nederland (Gemeente Hulst), maar ontbreekt elke vermelding dat zij Belg zijn. Twee documenten, twee landen, één mens. Hun leven verdeelt zich over twee staten: wonen in het ene, werken en verzekerd zijn in het andere. In theorie horen ze zo bij beide landen en zou hun bestaan zich naadloos over de grens moeten plooien. In de praktijk is het administratieve systeem geprogrammeerd om telkens maar één land tegelijk te lezen. Zodra de systemen niet met elkaar spreken, word je onleesbaar.</p>
+<p>In 2014 steken zij samen de grens over naar Zeeuws-Vlaanderen, in de Nederlandse provincie Zeeland. Ze vestigen zich in het kleine Scheldedorp Paal — historisch onderdeel van de zelfstandige gemeente Graauw en Langendam, die in 1970 werd opgeheven en sinds de gemeentelijke herindeling van 2003 onder de gemeente Hulst valt.</p>
+<p>Europa telt dan 28 lidstaten. De fysieke grens is opgelost; je rijdt zonder remmen van Waasmunster naar Paal. Maar de administratieve grens is onzichtbaar opgetrokken. Daar begint de eerste wrijving.</p>
+<p>Hun Belgische rijbewijs is geldig in de hele Europese Unie, het Nederlandse ook. Toch moeten ze het Belgische inleveren. Nederland staat maar één geldig document per persoon toe.<sup>***</sup> Ze geven het af bij de gemeente Hulst en krijgen het nooit terug. Wat ze in de plaats krijgen, is een Nederlands document met exact dezelfde Europese geldigheid. Alleen het land van uitgifte is veranderd.</p>
+<p>Vanaf dat moment dragen ze de paradox in hun eigen portemonnee. Een Belgische identiteitskaart voor hun identiteit. Een Nederlands rijbewijs voor hun mobiliteit, dat in Nederland dient als wettig legitimatiebewijs. In België wordt datzelfde rijbewijs niet als identiteitsbewijs aanvaard; daar geldt uitsluitend de Belgische kaart.</p>
+<p>Maar wie de elektronische chip van die Belgische eID uitleest, stuit op een nog vreemdere fictie: daarop staat niet hun werkelijke woonadres in Paal geregistreerd, maar het adres van de Belgische ambassade in Den Haag. Volgens hun Belgische kaart horen zij administratief bij de ambassade; volgens hun Nederlandse rijbewijs staat er hooguit waar het document is afgegeven in Nederland (Gemeente Hulst), maar ontbreekt elke vermelding dat zij Belg zijn.</p>
+<p>Twee documenten, twee landen, één mens. Hun leven verdeelt zich over twee staten: wonen in het ene, werken en verzekerd zijn in het andere. In theorie horen ze zo bij beide landen en zou hun bestaan zich naadloos over de grens moeten plooien. In de praktijk is het administratieve systeem geprogrammeerd om telkens maar één land tegelijk te lezen. Zodra de systemen niet met elkaar spreken, word je onleesbaar.</p>
 <div class="d0-intermezzo">
 <div class="d0-im-head">
 <div class="d0-im-h-left">🧬 Menselijke Werkelijkheid (Geneste Cellen: Macro ➔ Micro)</div>
@@ -2792,8 +2898,14 @@ html[data-theme="dark"] select.pub-lang-select option {
 </div>
 </div>
 </div>
-<p>Op 12 december 2016 wordt hun zoon geboren in Wilrijk (Antwerpen) — in exact hetzelfde district waar zijn vader vijfendertig jaar eerder ter wereld kwam. Een kind waarin meer dan vijfendertig Europese, regionale en lokale cellen samenkomen. Hij draagt de West- en Oost-Vlaamse wortels van zijn moeder (van Snellegem en Jabbeke tot Lokeren, Buggenhout en Elversele), de Frans-Lombardische en Elzassische wortels van zijn grootouders (van Bondy en Vertova tot Sélestat, Hattstatt en Colmar), zijn eigen Belgische geboortegrond in Wilrijk én het Zeeuws-Vlaamse polderland van Paal en Hulst waar zijn wieg staat, waar hij opgroeit en vrienden maakt. Terwijl het kind wordt geboren, muteren zelfs de bestuurlijke kaarten van Europa opnieuw: in datzelfde geboortejaar 2016 heft Parijs de Elzas van zijn grootmoeder op als zelfstandige regio om haar onder te brengen in de megaregio <em>Grand Est</em> (waarna Bas-Rhin en Haut-Rhin in 2021 weer samensmelten tot de <em>Collectivité européenne d'Alsace</em>). Vier werelden in één lichaam. Vier oorsprongen in één kind. Hij steekt elke dag de grens over. Niet voor werk, zoals zijn ouders en grootouders, maar voor school: hij woont in Paal (gemeente Hulst) in Nederland, maar leert lezen en schrijven in Sint-Niklaas, in Oost-Vlaanderen. Op school leert hij de taal van zijn moeder, maar zijn bed staat in Hulst. En daar begint het onvermijdelijke. Voor de Vlamingen is hij een Nederlander, rijdend in een auto met een geel kenteken. Voor de Nederlanders is hij een Vlaming, herkenbaar aan zijn tongval. Op het speelplein steken de andere kinderen hem in het vakje 'Belg'. Niet omdat iemand hem dat gevraagd heeft. Niet omdat hij een keuze heeft gemaakt. Maar omdat de kinderen om hem heen al geleerd hebben dat er vakjes bestaan, en dat alles wat afwijkt, geclassificeerd moet worden. Drie mensen, drie dossiers, twee landen, één gezin.</p>
-<p>Uiteindelijk krijgt ook hij een plastieken kaartje dat hem moet vertellen wie hij is: een Belgische <em>Kids-ID</em>. Daarop staat opnieuw dat ene woord. <strong>BELG.</strong> Meer dan vijfendertig menselijke en historische cellen zijn op papier gewist. En op de chip van die kaart staat niet het huis in Paal waar zijn bed staat, maar opnieuw het adres van de Belgische ambassade in Den Haag. De kleine Europese vlag in de hoek is het enige wat rest van het grotere ideaal. De rest is onzichtbaar gemaakt. Het systeem registreert één dimensie, terwijl het kind er vier draagt.</p>
+<p>Op 12 december 2016 wordt hun zoon geboren in Wilrijk (Antwerpen) — in exact hetzelfde district waar zijn vader vijfendertig jaar eerder ter wereld kwam. Een kind waarin meer dan vijfendertig Europese, regionale en lokale cellen samenkomen.</p>
+<p>Hij draagt de West- en Oost-Vlaamse wortels van zijn moeder (van Snellegem en Jabbeke tot Lokeren, Buggenhout en Elversele), de Frans-Lombardische en Elzassische wortels van zijn grootouders (van Bondy en Vertova tot Sélestat, Hattstatt en Colmar), zijn eigen Belgische geboortegrond in Wilrijk én het Zeeuws-Vlaamse polderland van Paal en Hulst waar zijn wieg staat, waar hij opgroeit en vrienden maakt.</p>
+<p>Terwijl het kind wordt geboren, muteren zelfs de bestuurlijke kaarten van Europa opnieuw: in datzelfde geboortejaar 2016 heft Parijs de Elzas van zijn grootmoeder op als zelfstandige regio om haar onder te brengen in de megaregio <em>Grand Est</em> (waarna Bas-Rhin en Haut-Rhin in 2021 weer samensmelten tot de <em>Collectivité européenne d'Alsace</em>). Vier werelden in één lichaam. Vier oorsprongen in één kind.</p>
+<p>Hij steekt elke dag de grens over. Niet voor werk, zoals zijn ouders en grootouders, maar voor school: hij woont in Paal (gemeente Hulst) in Nederland, maar leert lezen en schrijven in Sint-Niklaas, in Oost-Vlaanderen. Op school leert hij de taal van zijn moeder, maar zijn bed staat in Hulst.</p>
+<p>En daar begint het onvermijdelijke. Voor de Vlamingen is hij een Nederlander, rijdend in een auto met een geel kenteken. Voor de Nederlanders is hij een Vlaming, herkenbaar aan zijn tongval. Op het speelplein steken de andere kinderen hem in het vakje 'Belg'. Niet omdat iemand hem dat gevraagd heeft. Niet omdat hij een keuze heeft gemaakt. Maar omdat de kinderen om hem heen al geleerd hebben dat er vakjes bestaan, en dat alles wat afwijkt, geclassificeerd moet worden. Drie mensen, drie dossiers, twee landen, één gezin.</p>
+<p>Uiteindelijk krijgt ook hij een plastieken kaartje dat hem moet vertellen wie hij is: een Belgische <em>Kids-ID</em>. Daarop staat opnieuw dat ene woord: <strong>BELG</strong>. Meer dan vijfendertig menselijke en historische cellen zijn op papier gewist.</p>
+<p>En op de chip van die kaart staat niet het huis in Paal waar zijn bed staat, maar opnieuw het adres van de Belgische ambassade in Den Haag. De kleine Europese vlag in de hoek is het enige wat rest van het grotere ideaal. De rest is onzichtbaar gemaakt. Het systeem registreert één dimensie, terwijl het kind er vier draagt.</p>
+<p>Zo werkt het algoritme van de staat. Het ziet geen gezin. Het ziet geen organisme dat over meerdere landen is gegroeid. Het ziet uitsluitend losse eenheden in losse vakjes in losse landen. Wie niet in het vakje past, valt tussen de regels door.</p>
 <div class="d0-intermezzo">
 <div class="d0-im-head">
 <div class="d0-im-h-left">🧬 Menselijke Werkelijkheid (Geneste Cellen: Macro ➔ Micro)</div>
@@ -3047,8 +3159,15 @@ html[data-theme="dark"] select.pub-lang-select option {
 </div>
 </div>
 </div>
-<p>Zo werkt het algoritme van de staat. Het ziet geen gezin. Het ziet geen organisme dat over meerdere landen is gegroeid. Het ziet uitsluitend losse eenheden in losse vakjes in losse landen. Wie niet in het vakje past, valt tussen de regels door.</p>
-<p>Het is 2025. De Europese Unie telt 27 lidstaten, na de uittreding van het Verenigd Koninkrijk. De overheden zijn gedigitaliseerd, datastromen verbinden de hoofdsteden en de theorie belooft een frictieloze unie. En het kind uit 1981? Hij is inmiddels vierenveertig. Hij wordt ernstig ziek en belandt in de kliniek. De tol van de suikerziekte is onomkeerbaar: de amputatie van twee tenen en het verlies van zicht in één oog. De Belgische artsen oordelen helder: u bent medisch niet meer rijgeschikt en mag niet meer rijden. Hij kan en wil dat ook niet meer. Maar dan voltrekt zich een nieuwe administratieve spagaat. België verklaart hem rijongeschikt, maar kan zijn rijbewijs niet intrekken of opeisen — want dat Belgische rijbewijs heeft Nederland in 2014 ingenomen. Tegelijkertijd kan hij zijn Nederlandse rijbewijs in Nederland niet op medische gronden inleveren zonder dat Nederland eerst zijn medische ongeschiktheid erkent. En precies die medische realiteit weigeren de Nederlandse instanties te erkennen, omdat een formele erkenning van zijn fysieke toestand onvermijdelijk zou dwingen tot het toekennen van Nederlandse arbeidsongeschiktheidsrechten (WIA) en voorzieningen. Het gevolg is een volmaakte bureaucratische patstelling: feitelijk rijdt hij geen meter meer, maar op papier behoudt hij een geldig Nederlands rijbewijs.<sup>****</sup> In het land dat zijn medische toestand erkent, bezit hij geen rijbewijs dat kan worden ingetrokken; in het land dat zijn rijbewijs beheert, mag hij op papier nog altijd rijden omdat het systeem weigert zijn medische realiteit te erkennen. En zijn identiteit? Op zijn Belgische identiteitskaart staat nog altijd dat ene woord: <strong>BELG.</strong> De man die zijn hele leven over grenzen bewoog, die zijn Italiaanse en Franse identiteit vrijwillig opgaf om Belg te worden, maar de wereld van zijn vader en moeder nooit kon uitwissen, zit gevangen tussen twee onvolledige stukjes plastic: een Belgische eID waarvan de chip beweert dat zijn adres de Belgische ambassade is in plaats van zijn werkelijke woning in Paal, en een Nederlands rijbewijs waarop hooguit zijn Nederlandse gemeente van afgifte (Hulst) staat maar geen enkele nationaliteit. En zijn zoon, die vier werelden in zich draagt, staat met exact datzelfde woord en datzelfde ambassade-adres in de database. <strong>BELG.</strong> Niets meer. Een kleine Europese vlag in de hoek.</p>
+<p>Het is 2025. De Europese Unie telt 27 lidstaten, na de uittreding van het Verenigd Koninkrijk. De overheden zijn gedigitaliseerd, datastromen verbinden de hoofdsteden en de theorie belooft een frictieloze unie.</p>
+<p>En het kind uit 1981? Hij is inmiddels vierenveertig. Hij wordt ernstig ziek en belandt in de kliniek. De tol van de suikerziekte is onomkeerbaar: de amputatie van twee tenen en het verlies van zicht in één oog.</p>
+<p>De Belgische artsen oordelen helder: u bent medisch niet meer rijgeschikt en mag niet meer rijden. Hij kan en wil dat ook niet meer. Maar dan voltrekt zich een nieuwe administratieve spagaat.</p>
+<p>België verklaart hem rijongeschikt, maar kan zijn rijbewijs niet intrekken of opeisen — want dat Belgische rijbewijs heeft Nederland in 2014 ingenomen. Tegelijkertijd kan hij zijn Nederlandse rijbewijs in Nederland niet op medische gronden inleveren zonder dat Nederland eerst zijn medische ongeschiktheid erkent.</p>
+<p>En precies die medische realiteit weigeren de Nederlandse instanties te erkennen, omdat een formele erkenning van zijn fysieke toestand onvermijdelijk zou dwingen tot het toekennen van Nederlandse arbeidsongeschiktheidsrechten (WIA) en voorzieningen. Het gevolg is een volmaakte bureaucratische patstelling: feitelijk rijdt hij geen meter meer, maar op papier behoudt hij een geldig Nederlands rijbewijs.<sup>****</sup></p>
+<p>In het land dat zijn medische toestand erkent, bezit hij geen rijbewijs dat kan worden ingetrokken; in het land dat zijn rijbewijs beheert, mag hij op papier nog altijd rijden omdat het systeem weigert zijn medische realiteit te erkennen.</p>
+<p>En zijn identiteit? Op zijn Belgische identiteitskaart staat nog altijd dat ene woord: <strong>BELG</strong>.</p>
+<p>De man die zijn hele leven over grenzen bewoog, die zijn Italiaanse en Franse identiteit vrijwillig opgaf om Belg te worden, maar de wereld van zijn vader en moeder nooit kon uitwissen, zit gevangen tussen twee onvolledige stukjes plastic: een Belgische eID waarvan de chip beweert dat zijn adres de Belgische ambassade is in plaats van zijn werkelijke woning in Paal, en een Nederlands rijbewijs waarop hooguit zijn Nederlandse gemeente van afgifte (Hulst) staat maar geen enkele nationaliteit.</p>
+<p>En zijn zoon, die vier werelden in zich draagt, staat met exact datzelfde woord en datzelfde ambassade-adres in de database. <strong>BELG.</strong> Niets meer. Een kleine Europese vlag in de hoek.</p>
 <p>Drie generaties. Drie identiteitskaarten. Eén woord. Het systeem reduceert iedereen tot een enkel datapunt. Zelfs degene die het probeerde te ontstijgen.</p>
 <div class="d0-intermezzo">
 <div class="d0-im-head">
@@ -3200,7 +3319,9 @@ html[data-theme="dark"] select.pub-lang-select option {
 </div>
 </div>
 </div>
-<p>Het is nu najaar 2026. Terwijl hij deze audit uittypt, valt er een traan op het toetsenbord. Niet uit zelfmedelijden, maar uit de pure, loden uitputting van een gevecht tegen de leegte. De bittere tragiek is dat Europa de fout inmiddels kent. In april 2026 bereikte de Europese wetgever in Brussel een politiek akkoord over de langverwachte herziening van de oude coördinatieregels; in juli 2026 werd de herziene tekst formeel aangenomen.<sup>*****</sup> De weeffouten worden erkend, het bevoegdheidsvacuüm is benoemd. Maar de inkt van de politiek stroomt eindeloos veel trager dan het bloed van de burger. De systemen worden pas omstreeks 2030 daadwerkelijk aangepast. Tot die tijd is de grensarbeider van vlees en bloed de enige overgebleven schokdemper voor de falende systemen van de staat.</p>
+<p>Het is nu najaar 2026. Terwijl hij deze audit uittypt, valt er een traan op het toetsenbord. Niet uit zelfmedelijden, maar uit de pure, loden uitputting van een gevecht tegen de leegte.</p>
+<p>De bittere tragiek is dat Europa de fout inmiddels kent. In april 2026 bereikte de Europese wetgever in Brussel een politiek akkoord over de langverwachte herziening van de oude coördinatieregels; in juli 2026 werd de herziene tekst formeel aangenomen.<sup>*****</sup> De weeffouten worden erkend, het bevoegdheidsvacuüm is benoemd.</p>
+<p>Maar de inkt van de politiek stroomt eindeloos veel trager dan het bloed van de burger. De systemen worden pas omstreeks 2030 daadwerkelijk aangepast. Tot die tijd is de grensarbeider van vlees en bloed de enige overgebleven schokdemper voor de falende systemen van de staat.</p>
 <p>En zelfs dán, in 2030, vormen die nieuwe regels slechts een technologische pleister op een veel diepere institutionele wonde. Zolang de natiestaten krampachtig vasthouden aan hun eigen gesloten loketten, blijft de grensarbeider in de kern de onbedoelde foutmelding van een half afgewerkt ontwerp.</p>
 <p>Dat is wat dit dossier onderzoekt. Niet de nationaliteit als juridisch statuut. Wel de oorsprong als menselijke werkelijkheid. En de vraag waarom een systeem dat zichzelf Europees noemt, de Europese werkelijkheid van zijn eigen burgers reduceert tot een eendimensionaal veld op een identiteitskaart.</p>
 <p>Het verhaal begint hier. De feiten staan in Document B.</p>
@@ -3445,7 +3566,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <footer class="pub-footer">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
 
-  Auteur: Eric Messa · Versie bijgewerkt: 31 oktober 2026, 00:36</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 31 oktober 2026, 06:56</p>
 <p><a href="home.html">← Terug naar overzicht</a> ·
 
      <a href="../index.html">[Web] Taalkeuze</a></p>
