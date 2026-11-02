@@ -1,7 +1,7 @@
 # GRENSARBEID.ORG — Systeem-Audit
 ## Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid
 
-> **Geen adviesloket en geen pleister op een vastgelopen formulier.** Deze site toont aan de hand van één volledig gedocumenteerd dossier (62 instanties, meer dan 680 handelingen) hoe de Belgische en Nederlandse systemen achter de schermen werkelijk op elkaar inwerken — waar ze blokkeren, waarom brieven elkaar tegenspreken, en welke hefbomen wél werken.
+> **Geen adviesloket en geen pleister op een vastgelopen formulier.** Deze site toont aan de hand van één volledig gedocumenteerd dossier (62 instanties, meer dan 700 handelingen) hoe de Belgische en Nederlandse systemen achter de schermen werkelijk op elkaar inwerken — waar ze blokkeren, waarom brieven elkaar tegenspreken, en welke hefbomen wél werken.
 
 *Status: Live op [grensarbeid.org](https://grensarbeid.org/) · Peildatum: 2 november 2026*
 
@@ -10,12 +10,12 @@
 ### Kerncijfers van het dossier
 
 - **62 betrokken organisaties** (België, Nederland, Membraan/Grensoverschrijdend, Europese Unie)
-- **687 geregistreerde interacties** in Document B (vanaf 10-03-2025 tot heden)
+- **708 geregistreerde interacties** in Document B (vanaf 10-03-2025 tot heden)
 - **93% primair bron-gekoppeld**: voorzien van verifieerbare primaire bewijsreferenties (`data-gmail-id` Message-ID's en `data-file-path` archiefstukken)
 - **12 grote visuele architectuurplaten** in Document C: visuele beeldschema's van de fricties en datastromen
 - **7 logisch opbouwende synthese-delen** in Document D: inclusief 3 visuele intermezzo-schema's, Deel VI (De AVG-stresstest van 16 instanties, de 5 meest flagrante systeemparadoxen en het EESSI-spook van 2030) en Deel VII (De persoonlijke slotverklaring)
 - **17 sociale rechten** geanalyseerd en gevolgd op actuele uitvoeringsstatus in Document E (waaronder het scherpe onderscheid tussen de Nederlandse kinderbijslag bij de SVB op € 0,00 en het feitelijk uitbetaalde Kindgebonden Budget via de Belastingdienst/Dienst Toeslagen)
-- **95 neurale audiotracks (AI-stem Arnaud)** met ingebouwde luister-verder navigatie en een centrale afspeellijst (Playlist) onderaan elk verhalend document, inclusief meertalige Web Speech ondersteuning voor tabellen en schema's
+- **134 neurale audiotracks (inclusief meertalige audiosporen voor Document D in NL, EN, FR, DE) (AI-stem Arnaud)** met ingebouwde luister-verder navigatie en een centrale afspeellijst (Playlist) onderaan elk verhalend document, inclusief meertalige Web Speech ondersteuning voor tabellen en schema's
 
 ---
 
