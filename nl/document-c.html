@@ -2221,7 +2221,12 @@ html[data-theme="dark"] select.pub-lang-select option {
     border-radius: 3px;
     transition: width 0.1s linear;
 }
-.aab-controls { flex-shrink: 0; }
+.aab-controls {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
 .aab-speed-btn {
     background: #ffffff;
     border: 1px solid #dcd7cc;
@@ -2234,7 +2239,322 @@ html[data-theme="dark"] select.pub-lang-select option {
 }
 .aab-speed-btn:hover { background: #e8e4db; }
 
-/* Dark-mode styling voor de audiospeler */
+.aab-next-btn {
+    background: #1a3c6e;
+    border: 1px solid #1a3c6e;
+    border-radius: 4px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 8.8pt;
+    padding: 4px 10px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    transition: background .15s ease, transform .12s ease;
+}
+.aab-next-btn:hover {
+    background: #2a5298;
+    border-color: #2a5298;
+    transform: translateY(-1px);
+}
+
+/* === Vermelding bovenaan document: Luistermodus / Audio-Playlist === */
+.audit-playlist-topbanner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+    max-width: 860px;
+    margin: 14pt 0 22pt 0;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: #eef3f9;
+    border: 1px solid #c5d4e8;
+    border-left: 4px solid #1a3c6e;
+    font-family: Aptos, Calibri, sans-serif;
+    box-sizing: border-box;
+}
+.apt-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 1;
+    min-width: 240px;
+}
+.apt-icon {
+    font-size: 16pt;
+    line-height: 1.1;
+    flex-shrink: 0;
+}
+.apt-text {
+    font-size: 9.8pt;
+    line-height: 1.45;
+    color: #2c3e50;
+}
+.apt-text strong { color: #1a3c6e; }
+.apt-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+.apt-btn {
+    font-size: 9.2pt;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    transition: all .15s ease;
+    font-family: inherit;
+}
+.apt-btn-play {
+    background: #1a3c6e;
+    color: #ffffff !important;
+    border: 1px solid #1a3c6e;
+}
+.apt-btn-play:hover { background: #2a5298; }
+.apt-btn-jump {
+    background: #ffffff;
+    color: #1a3c6e !important;
+    border: 1px solid #b5c7de;
+}
+.apt-btn-jump:hover { background: #e3ecf8; }
+
+/* === Audio-Playlist Sectie onderaan document (#audit-audio-playlist) === */
+.audit-playlist-sectie {
+    max-width: 860px;
+    margin: 38pt 0 24pt 0;
+    padding: 20px 22px;
+    border-radius: 10px;
+    background: #f4f1ea;
+    border: 1px solid #d5d0c5;
+    border-top: 4px solid #1a3c6e;
+    font-family: Aptos, Calibri, sans-serif;
+    box-sizing: border-box;
+}
+.aps-header { margin-bottom: 14px; }
+.aps-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+}
+.aps-badge {
+    display: inline-block;
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: #1a3c6e;
+    color: #ffffff;
+}
+.audit-playlist-sectie h2 {
+    margin: 4pt 0 6pt 0 !important;
+    font-size: 15pt !important;
+    border: none !important;
+    padding: 0 !important;
+    color: #1a3c6e;
+}
+.aps-desc {
+    font-size: 10pt !important;
+    line-height: 1.5 !important;
+    color: #4a4a4a;
+    margin-bottom: 12pt !important;
+}
+.aps-master-player {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    background: #ffffff;
+    border: 1px solid #dcd7cc;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.aps-mp-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+.aps-mp-play {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #1a3c6e;
+    color: #ffffff;
+    font-size: 14pt;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .15s, background .15s;
+}
+.aps-mp-play:hover { background: #2a5298; transform: scale(1.05); }
+.aps-mp-play.aps-playing { background: #8b1e1e; }
+.aps-mp-prev, .aps-mp-next {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid #d5d0c5;
+    background: #f8f6f2;
+    color: #1a3c6e;
+    font-size: 10.5pt;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .15s;
+}
+.aps-mp-prev:hover, .aps-mp-next:hover { background: #e8e4db; }
+.aps-mp-info {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.aps-mp-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 8.8pt;
+    font-weight: 700;
+    color: #1a3c6e;
+}
+.aps-mp-time {
+    font-family: Consolas, monospace;
+    font-weight: 500;
+    color: #666666;
+}
+.aps-mp-trackname {
+    font-size: 10pt;
+    font-weight: 600;
+    color: #222222;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.aps-mp-progress-wrap {
+    width: 100%;
+    height: 7px;
+    background: #e0dbce;
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.aps-mp-progress-bar { width: 100%; height: 100%; }
+.aps-mp-progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #1a3c6e;
+    border-radius: 4px;
+    transition: width 0.1s linear;
+}
+.aps-mp-extra {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+.aps-autoplay-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 9pt;
+    font-weight: 600;
+    color: #333333;
+    cursor: pointer;
+    user-select: none;
+}
+.aps-autoplay-toggle input { cursor: pointer; accent-color: #1a3c6e; }
+.aps-tracklist {
+    max-height: 420px;
+    overflow-y: auto;
+    border: 1px solid #dcd7cc;
+    border-radius: 6px;
+    background: #faf8f5;
+}
+.aps-track {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-bottom: 1px solid #eae6dd;
+    cursor: pointer;
+    transition: background .12s;
+    font-size: 9.8pt;
+    color: #222222;
+}
+.aps-track:last-child { border-bottom: none; }
+.aps-track:hover { background: #eef2f7; }
+.aps-track.aps-active {
+    background: #e3ecf8;
+    font-weight: 600;
+    border-left: 3px solid #1a3c6e;
+}
+.aps-t-num {
+    font-family: Consolas, monospace;
+    font-size: 8.8pt;
+    color: #777777;
+    min-width: 24px;
+}
+.aps-t-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #e8e4db;
+    color: #1a3c6e;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8.5pt;
+    flex-shrink: 0;
+}
+.aps-track.aps-active .aps-t-icon {
+    background: #1a3c6e;
+    color: #ffffff;
+}
+.aps-track-title {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.aps-track-jump {
+    font-size: 8.5pt;
+    color: #555555;
+    text-decoration: none !important;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #d5d0c5;
+    background: #ffffff;
+    flex-shrink: 0;
+}
+.aps-track-jump:hover {
+    color: #1a3c6e;
+    border-color: #1a3c6e;
+    background: #eef3f9;
+}
+
+/* Dark-mode styling voor de audiospeler, topbanner en playlist */
 html[data-theme="dark"] .audit-audio-bar {
     background: #23272e !important;
     border-color: #363b45 !important;
@@ -2257,10 +2577,113 @@ html[data-theme="dark"] .aab-speed-btn {
     color: #7fb3ff !important;
 }
 html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
+html[data-theme="dark"] .aab-next-btn {
+    background: #2b4c7e !important;
+    border-color: #4a6fa5 !important;
+    color: #e8f0fe !important;
+}
+html[data-theme="dark"] .aab-next-btn:hover {
+    background: #3b639e !important;
+    color: #ffffff !important;
+}
+html[data-theme="dark"] .audit-playlist-topbanner {
+    background: #1c232d !important;
+    border-color: #2f3b4c !important;
+    border-left-color: #58a6ff !important;
+}
+html[data-theme="dark"] .apt-text { color: #d0d8e4 !important; }
+html[data-theme="dark"] .apt-text strong { color: #79c0ff !important; }
+html[data-theme="dark"] .apt-btn-play {
+    background: #3867a6 !important;
+    border-color: #58a6ff !important;
+    color: #ffffff !important;
+}
+html[data-theme="dark"] .apt-btn-play:hover { background: #4a7ec2 !important; }
+html[data-theme="dark"] .apt-btn-jump {
+    background: #262c36 !important;
+    border-color: #444c56 !important;
+    color: #79c0ff !important;
+}
+html[data-theme="dark"] .apt-btn-jump:hover { background: #303846 !important; }
+html[data-theme="dark"] .audit-playlist-sectie {
+    background: #1b1f26 !important;
+    border-color: #323842 !important;
+    border-top-color: #58a6ff !important;
+}
+html[data-theme="dark"] .aps-badge {
+    background: #2b4c7e !important;
+    color: #cae0ff !important;
+}
+html[data-theme="dark"] .audit-playlist-sectie h2 { color: #79c0ff !important; }
+html[data-theme="dark"] .aps-desc { color: #a9b4c4 !important; }
+html[data-theme="dark"] .aps-master-player {
+    background: #232832 !important;
+    border-color: #363d4a !important;
+}
+html[data-theme="dark"] .aps-mp-play { background: #4a6fa5 !important; }
+html[data-theme="dark"] .aps-mp-play.aps-playing { background: #d32f2f !important; }
+html[data-theme="dark"] .aps-mp-prev,
+html[data-theme="dark"] .aps-mp-next {
+    background: #2d333b !important;
+    border-color: #444c56 !important;
+    color: #b0c8e8 !important;
+}
+html[data-theme="dark"] .aps-mp-prev:hover,
+html[data-theme="dark"] .aps-mp-next:hover { background: #373e47 !important; }
+html[data-theme="dark"] .aps-mp-meta { color: #79c0ff !important; }
+html[data-theme="dark"] .aps-mp-time { color: #9aa5b8 !important; }
+html[data-theme="dark"] .aps-mp-trackname { color: #e6edf3 !important; }
+html[data-theme="dark"] .aps-mp-progress-wrap { background: #323842 !important; }
+html[data-theme="dark"] .aps-mp-progress-fill { background: #58a6ff !important; }
+html[data-theme="dark"] .aps-autoplay-toggle { color: #c9d1d9 !important; }
+html[data-theme="dark"] .aps-autoplay-toggle input { accent-color: #58a6ff; }
+html[data-theme="dark"] .aps-tracklist {
+    background: #15181e !important;
+    border-color: #2d333b !important;
+}
+html[data-theme="dark"] .aps-track {
+    border-bottom-color: #222730 !important;
+    color: #c9d1d9 !important;
+}
+html[data-theme="dark"] .aps-track:hover { background: #20252d !important; }
+html[data-theme="dark"] .aps-track.aps-active {
+    background: #1e2a3a !important;
+    color: #ffffff !important;
+    border-left-color: #58a6ff !important;
+}
+html[data-theme="dark"] .aps-t-num { color: #8b949e !important; }
+html[data-theme="dark"] .aps-t-icon {
+    background: #2d333b !important;
+    color: #79c0ff !important;
+}
+html[data-theme="dark"] .aps-track.aps-active .aps-t-icon {
+    background: #4a6fa5 !important;
+    color: #ffffff !important;
+}
+html[data-theme="dark"] .aps-track-jump {
+    background: #21262d !important;
+    border-color: #363b42 !important;
+    color: #8b949e !important;
+}
+html[data-theme="dark"] .aps-track-jump:hover {
+    color: #79c0ff !important;
+    border-color: #58a6ff !important;
+}
 
-/* Verberg de audiospeler bij het printen of PDF-genereren */
+@media (max-width: 600px) {
+    .audit-audio-bar { flex-wrap: wrap; gap: 8px; padding: 8px 10px; }
+    .aab-controls { width: 100%; justify-content: flex-end; border-top: 1px solid rgba(128,128,128,0.18); padding-top: 6px; }
+    .aps-master-player { flex-direction: column; align-items: stretch; gap: 10px; }
+    .aps-mp-controls { justify-content: center; }
+    .aps-mp-extra { justify-content: space-between; }
+}
+
+/* Verberg de audiospeler en playlist bij het printen of PDF-genereren */
 @media print {
-    .audit-audio-bar { display: none !important; }
+    .audit-audio-bar,
+    .audit-playlist-topbanner,
+    .audit-playlist-sectie,
+    .toc-playlist-item { display: none !important; }
 }
 </style>
 <meta content="notranslate" name="google"/><script>
@@ -2291,7 +2714,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document C — De visuele architectuur</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 1 november 2026, 08:10</p>
+<p class="meta-lijn">Versie bijgewerkt: 2 november 2026, 10:32</p>
 </div>
 
 <div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
@@ -3198,7 +3621,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 <button aria-label="Venster sluiten" class="bm-modal-sluit" onclick="sluitBronModal()" type="button">×</button>
 </div>
 <div class="bm-intro">
-      Alle 694 interacties in deze audit zijn gebaseerd op objectieve brondocumenten (originele e-mails met Message-ID's, formele besluiten, brieven en medische verslagen). Om privacy en AVG-rechten van betrokkenen te waarborgen zijn persoonsgegevens in publieke bestanden afgeschermd. Geauthenticeerde onderzoekers, journalisten, toezichthouders en lotgenoten kunnen volledige, ongecensureerde brondossiers opvragen ter verificatie.
+      Alle 704 interacties in deze audit zijn gebaseerd op objectieve brondocumenten (originele e-mails met Message-ID's, formele besluiten, brieven en medische verslagen). Om privacy en AVG-rechten van betrokkenen te waarborgen zijn persoonsgegevens in publieke bestanden afgeschermd. Geauthenticeerde onderzoekers, journalisten, toezichthouders en lotgenoten kunnen volledige, ongecensureerde brondossiers opvragen ter verificatie.
     </div>
 <form id="bm-form" onsubmit="event.preventDefault();stuurEmail();">
 <div class="bm-groep">
@@ -3389,7 +3812,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 1 november 2026, 08:10</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 2 november 2026, 10:32</p>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-print-btn notranslate" onclick="window.print()" title="Print deze pagina of bewaar als PDF" translate="no" type="button">🖨️ Print / Bewaar als PDF</button>
 <button class="pub-contact-btn pub-contact-footer notranslate" onclick="openBronModal('Footer contact')" translate="no" type="button">📄 Bronstuk opvragen / Contact</button>
@@ -3657,13 +4080,17 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 })();
 </script><script class="notranslate" translate="no">
 // ==========================================================================
-// AUDIT AUDIO PLAYER ENGINE — HTML5 Audio + Live DOM SpeechSynthesis Fallback
+// AUDIT AUDIO PLAYER ENGINE — HTML5 Audio + "Luister verder" + Playlist
 // ==========================================================================
 (function() {
+  var allBars = [];
   var currentBar = null;
+  var currentTrackIdx = 0;
   var currentSynthTimer = null;
   var synthDurationEst = 0;
   var synthStartTime = 0;
+  var speeds = [1.0, 1.25, 1.5];
+  var globalSpeedIdx = 0;
 
   function formatTime(secs) {
     if (isNaN(secs) || secs < 0) return "0:00";
@@ -3685,7 +4112,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
     var curr = bar.nextElementSibling;
     while (curr) {
       var tag = curr.tagName ? curr.tagName.toLowerCase() : '';
-      if (tag === 'h1' || tag === 'h2' || tag === 'h3' || tag === 'footer' || (curr.classList && (curr.classList.contains('pub-toc') || curr.classList.contains('audit-audio-bar')))) {
+      if (tag === 'h1' || tag === 'h2' || tag === 'h3' || tag === 'footer' || tag === 'section' || (curr.classList && (curr.classList.contains('pub-toc') || curr.classList.contains('audit-audio-bar') || curr.classList.contains('audit-playlist-sectie')))) {
         break;
       }
       if (!curr.classList || (!curr.classList.contains('notranslate') && !curr.classList.contains('d0-intermezzo') && !curr.classList.contains('audit-bewijs') && !curr.classList.contains('footnotes') && tag !== 'table' && tag !== 'svg' && tag !== 'button')) {
@@ -3706,8 +4133,63 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
     return combined;
   }
 
+  function updateMasterPlaylistUI(isPlaying, curTime, totTime, pct) {
+    var mpPlay = document.getElementById('aps-play-btn');
+    var mpStatus = document.getElementById('aps-mp-status');
+    var mpTime = document.getElementById('aps-mp-time');
+    var mpTrackname = document.getElementById('aps-mp-trackname');
+    var mpFill = document.getElementById('aps-mp-progress-fill');
+
+    if (mpPlay) {
+      if (isPlaying) {
+        mpPlay.classList.add('aps-playing');
+        var pI = mpPlay.querySelector('.aps-icon-play');
+        var paI = mpPlay.querySelector('.aps-icon-pause');
+        if (pI) pI.style.display = 'none';
+        if (paI) paI.style.display = 'inline';
+      } else {
+        mpPlay.classList.remove('aps-playing');
+        var pI2 = mpPlay.querySelector('.aps-icon-play');
+        var paI2 = mpPlay.querySelector('.aps-icon-pause');
+        if (pI2) pI2.style.display = 'inline';
+        if (paI2) paI2.style.display = 'none';
+      }
+    }
+
+    if (allBars.length > 0 && currentTrackIdx >= 0 && currentTrackIdx < allBars.length) {
+      var activeBar = allBars[currentTrackIdx];
+      var trackTitle = activeBar.getAttribute('data-clean-heading') || (activeBar.querySelector('.aab-title') ? activeBar.querySelector('.aab-title').textContent : ('Onderdeel ' + (currentTrackIdx + 1)));
+      if (mpStatus) {
+        mpStatus.textContent = (isPlaying ? "🔊 Nu aan het afspelen" : "⏸ Gepauzeerd") + " (" + (currentTrackIdx + 1) + " / " + allBars.length + ")";
+      }
+      if (mpTrackname) {
+        mpTrackname.textContent = (currentTrackIdx + 1) + ". " + trackTitle;
+      }
+    }
+
+    if (typeof pct === 'number' && mpFill) {
+      mpFill.style.width = Math.max(0, Math.min(100, pct)) + "%";
+    }
+    if (typeof curTime === 'number' && typeof totTime === 'number' && mpTime) {
+      mpTime.textContent = formatTime(curTime) + " / " + formatTime(totTime);
+    }
+
+    var trackRows = document.querySelectorAll('.aps-track');
+    trackRows.forEach(function(row) {
+      var rIdx = parseInt(row.getAttribute('data-track-idx') || '-1', 10);
+      var iconEl = row.querySelector('.aps-t-icon');
+      if (rIdx === currentTrackIdx) {
+        row.classList.add('aps-active');
+        if (iconEl) iconEl.textContent = isPlaying ? '❚❚' : '▶';
+      } else {
+        row.classList.remove('aps-active');
+        if (iconEl) iconEl.textContent = '▶';
+      }
+    });
+  }
+
   function stopAllAudio() {
-    document.querySelectorAll('.audit-audio-bar').forEach(function(bar) {
+    allBars.forEach(function(bar) {
       var audio = bar.querySelector('.aab-audio-el');
       if (audio && !audio.paused) {
         audio.pause();
@@ -3728,36 +4210,94 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
       clearInterval(currentSynthTimer);
       currentSynthTimer = null;
     }
+    updateMasterPlaylistUI(false);
   }
 
-  function initAudioBar(bar) {
+  function applyGlobalSpeed(spd) {
+    allBars.forEach(function(bar) {
+      var audio = bar.querySelector('.aab-audio-el');
+      var speedBtn = bar.querySelector('.aab-speed-btn');
+      if (audio) audio.playbackRate = spd;
+      if (speedBtn) speedBtn.textContent = spd + "x";
+    });
+    var mpSpeed = document.getElementById('aps-speed-btn');
+    if (mpSpeed) mpSpeed.textContent = spd + "x";
+  }
+
+  function handleTrackEnded(idx) {
+    var autoChk = document.getElementById('aps-autoplay-chk');
+    var shouldAutoContinue = autoChk ? autoChk.checked : true;
+    if (shouldAutoContinue && idx + 1 < allBars.length) {
+      playTrackByIndex(idx + 1, false);
+    } else {
+      updateMasterPlaylistUI(false, 0, 0, 0);
+    }
+  }
+
+  function playTrackByIndex(idx, scrollToBar) {
+    if (idx < 0 || idx >= allBars.length) return;
+    currentTrackIdx = idx;
+    var targetBar = allBars[idx];
+
+    if (scrollToBar) {
+      var prev = targetBar.previousElementSibling;
+      var scrollEl = (prev && (/^H[1-4]$/.test(prev.tagName) || prev.classList.contains('recht-kop-wrapper'))) ? prev : targetBar;
+      scrollEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    var trackRow = document.querySelector('.aps-track[data-track-idx="' + idx + '"]');
+    var trackList = document.getElementById('aps-tracklist');
+    if (trackRow && trackList) {
+      var topPos = trackRow.offsetTop - trackList.offsetTop;
+      trackList.scrollTo({ top: Math.max(0, topPos - 60), behavior: 'smooth' });
+    }
+
+    if (targetBar && targetBar._startPlayback) {
+      targetBar._startPlayback();
+    }
+  }
+
+  function initAudioBar(bar, idx) {
     var playBtn = bar.querySelector('.aab-play-btn');
     var speedBtn = bar.querySelector('.aab-speed-btn');
+    var nextBtn = bar.querySelector('.aab-next-btn');
     var progressWrap = bar.querySelector('.aab-progress-wrap');
     var progressFill = bar.querySelector('.aab-progress-fill');
     var timeEl = bar.querySelector('.aab-time');
     var audio = bar.querySelector('.aab-audio-el');
     var cleanText = bar.getAttribute('data-clean-text') || '';
     var baseAudioSrc = bar.getAttribute('data-audio-src') || '';
-    var speeds = [1.0, 1.25, 1.5];
-    var speedIdx = 0;
-
-    function setSpeed(spd) {
-      if (audio) audio.playbackRate = spd;
-      if (speedBtn) speedBtn.textContent = spd + "x";
-    }
 
     if (speedBtn) {
       speedBtn.addEventListener('click', function(e) {
         e.stopPropagation();
-        speedIdx = (speedIdx + 1) % speeds.length;
-        setSpeed(speeds[speedIdx]);
+        globalSpeedIdx = (globalSpeedIdx + 1) % speeds.length;
+        applyGlobalSpeed(speeds[globalSpeedIdx]);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var nextIdxAttr = nextBtn.getAttribute('data-next-idx');
+        if (nextIdxAttr === 'playlist') {
+          var pl = document.getElementById('audit-audio-playlist');
+          if (pl) pl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          var nextIdx = parseInt(nextIdxAttr, 10);
+          if (!isNaN(nextIdx) && nextIdx < allBars.length) {
+            playTrackByIndex(nextIdx, true);
+          }
+        }
       });
     }
 
     if (audio) {
       audio.addEventListener('loadedmetadata', function() {
         if (timeEl) timeEl.textContent = "0:00 / " + formatTime(audio.duration);
+        if (currentTrackIdx === idx) {
+          updateMasterPlaylistUI(!audio.paused, audio.currentTime, audio.duration, 0);
+        }
       });
 
       audio.addEventListener('timeupdate', function() {
@@ -3765,6 +4305,9 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
           var pct = (audio.currentTime / audio.duration) * 100;
           if (progressFill) progressFill.style.width = pct + "%";
           if (timeEl) timeEl.textContent = formatTime(audio.currentTime) + " / " + formatTime(audio.duration);
+          if (currentTrackIdx === idx) {
+            updateMasterPlaylistUI(!audio.paused, audio.currentTime, audio.duration, pct);
+          }
         }
       });
 
@@ -3778,6 +4321,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
         }
         if (progressFill) progressFill.style.width = "0%";
         if (timeEl) timeEl.textContent = "0:00 / " + formatTime(audio.duration);
+        handleTrackEnded(idx);
       });
     }
 
@@ -3794,108 +4338,207 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
     function syncAudioSrcForLang(lang) {
       if (!audio || !baseAudioSrc) return;
       if (lang === 'nl') {
-        audio.src = baseAudioSrc;
+        if (audio.getAttribute('src') !== baseAudioSrc) audio.src = baseAudioSrc;
         return;
       }
       if (lang === 'en' || lang === 'de' || lang === 'fr') {
         var targetSrc = baseAudioSrc.replace('_nl_', '_' + lang + '_');
-        audio.src = targetSrc;
+        if (audio.getAttribute('src') !== targetSrc) audio.src = targetSrc;
       }
     }
 
     bar._updateLanguage = syncAudioSrcForLang;
 
+    function startPlayback() {
+      var lang = getActiveLanguage();
+      syncAudioSrcForLang(lang);
+      var isTranslatedFallback = (lang !== 'nl' && lang !== 'en' && lang !== 'de' && lang !== 'fr') || !audio || !audio.src;
+
+      stopAllAudio();
+      currentBar = bar;
+      currentTrackIdx = idx;
+
+      if (isTranslatedFallback && window.speechSynthesis) {
+        if (playBtn) {
+          playBtn.classList.add('aab-playing');
+          var pIcon = playBtn.querySelector('.aab-icon-play');
+          var paIcon = playBtn.querySelector('.aab-icon-pause');
+          if (pIcon) pIcon.style.display = 'none';
+          if (paIcon) paIcon.style.display = 'inline';
+        }
+
+        var textToSpeak = cleanText;
+        if (lang !== 'nl') {
+          var liveText = getSectionLiveText(bar);
+          if (liveText && liveText.length > 20) {
+            textToSpeak = liveText;
+          }
+        }
+
+        var utter = new SpeechSynthesisUtterance(textToSpeak);
+        utter.lang = lang;
+        utter.rate = speeds[globalSpeedIdx];
+
+        var wordCount = textToSpeak.split(/\s+/).length;
+        synthDurationEst = (wordCount / 130) * 60 / speeds[globalSpeedIdx];
+        synthStartTime = Date.now();
+        updateMasterPlaylistUI(true, 0, synthDurationEst, 0);
+
+        currentSynthTimer = setInterval(function() {
+          var elapsed = (Date.now() - synthStartTime) / 1000;
+          if (elapsed > synthDurationEst) elapsed = synthDurationEst;
+          var pct = (elapsed / synthDurationEst) * 100;
+          if (progressFill) progressFill.style.width = pct + "%";
+          if (timeEl) timeEl.textContent = formatTime(elapsed) + " / " + formatTime(synthDurationEst);
+          updateMasterPlaylistUI(true, elapsed, synthDurationEst, pct);
+        }, 250);
+
+        utter.onend = function() {
+          stopAllAudio();
+          if (progressFill) progressFill.style.width = "0%";
+          if (timeEl) timeEl.textContent = "0:00 / " + formatTime(synthDurationEst);
+          handleTrackEnded(idx);
+        };
+        utter.onerror = function() {
+          stopAllAudio();
+        };
+
+        window.speechSynthesis.speak(utter);
+      } else if (audio) {
+        if (playBtn) {
+          playBtn.classList.add('aab-playing');
+          var pIcon2 = playBtn.querySelector('.aab-icon-play');
+          var paIcon2 = playBtn.querySelector('.aab-icon-pause');
+          if (pIcon2) pIcon2.style.display = 'none';
+          if (paIcon2) paIcon2.style.display = 'inline';
+        }
+        audio.playbackRate = speeds[globalSpeedIdx];
+        updateMasterPlaylistUI(true, audio.currentTime || 0, audio.duration || 0, 0);
+
+        audio.play().catch(function(err) {
+          console.warn("[AUDIO INFO] Neuraal bestand niet direct beschikbaar, omschakelen naar browser stem:", err);
+          if (window.speechSynthesis) {
+            var liveText = getSectionLiveText(bar);
+            var fallbackText = (liveText && liveText.length > 20) ? liveText : cleanText;
+            var utter = new SpeechSynthesisUtterance(fallbackText);
+            utter.lang = lang;
+            utter.rate = speeds[globalSpeedIdx];
+            utter.onend = function() { stopAllAudio(); handleTrackEnded(idx); };
+            utter.onerror = function() { stopAllAudio(); };
+            window.speechSynthesis.speak(utter);
+          } else {
+            stopAllAudio();
+          }
+        });
+      }
+    }
+
+    bar._startPlayback = startPlayback;
+
     if (playBtn) {
       playBtn.addEventListener('click', function() {
         var isPlaying = playBtn.classList.contains('aab-playing');
-        var lang = getActiveLanguage();
-        syncAudioSrcForLang(lang);
-
-        var isTranslatedFallback = (lang !== 'nl' && lang !== 'en' && lang !== 'de' && lang !== 'fr') || !audio || !audio.src;
-
         if (isPlaying) {
           stopAllAudio();
         } else {
-          stopAllAudio();
-          currentBar = bar;
-
-          if (isTranslatedFallback && window.speechSynthesis) {
-            playBtn.classList.add('aab-playing');
-            var pIcon = playBtn.querySelector('.aab-icon-play');
-            var paIcon = playBtn.querySelector('.aab-icon-pause');
-            if (pIcon) pIcon.style.display = 'none';
-            if (paIcon) paIcon.style.display = 'inline';
-
-            var textToSpeak = cleanText;
-            if (lang !== 'nl') {
-              var liveText = getSectionLiveText(bar);
-              if (liveText && liveText.length > 20) {
-                textToSpeak = liveText;
-              }
-            }
-
-            var utter = new SpeechSynthesisUtterance(textToSpeak);
-            utter.lang = lang;
-            utter.rate = speeds[speedIdx];
-
-            var wordCount = textToSpeak.split(/\s+/).length;
-            synthDurationEst = (wordCount / 130) * 60 / speeds[speedIdx];
-            synthStartTime = Date.now();
-
-            currentSynthTimer = setInterval(function() {
-              var elapsed = (Date.now() - synthStartTime) / 1000;
-              if (elapsed > synthDurationEst) elapsed = synthDurationEst;
-              var pct = (elapsed / synthDurationEst) * 100;
-              if (progressFill) progressFill.style.width = pct + "%";
-              if (timeEl) timeEl.textContent = formatTime(elapsed) + " / " + formatTime(synthDurationEst);
-            }, 250);
-
-            utter.onend = function() {
-              stopAllAudio();
-              if (progressFill) progressFill.style.width = "0%";
-              if (timeEl) timeEl.textContent = "0:00 / " + formatTime(synthDurationEst);
-            };
-            utter.onerror = function() {
-              stopAllAudio();
-            };
-
-            window.speechSynthesis.speak(utter);
-          } else if (audio) {
-            playBtn.classList.add('aab-playing');
-            var pIcon = playBtn.querySelector('.aab-icon-play');
-            var paIcon = playBtn.querySelector('.aab-icon-pause');
-            if (pIcon) pIcon.style.display = 'none';
-            if (paIcon) paIcon.style.display = 'inline';
-
-            audio.play().catch(function(err) {
-              console.warn("[AUDIO INFO] Neuraal bestand niet direct beschikbaar, omschakelen naar browser stem:", err);
-              if (window.speechSynthesis) {
-                var liveText = getSectionLiveText(bar);
-                var fallbackText = (liveText && liveText.length > 20) ? liveText : cleanText;
-                var utter = new SpeechSynthesisUtterance(fallbackText);
-                utter.lang = lang;
-                utter.rate = speeds[speedIdx];
-                utter.onend = function() { stopAllAudio(); };
-                utter.onerror = function() { stopAllAudio(); };
-                window.speechSynthesis.speak(utter);
-              } else {
-                stopAllAudio();
-              }
-            });
-          }
+          startPlayback();
         }
       });
     }
   }
 
+  function initPlaylistControls() {
+    var mpPlay = document.getElementById('aps-play-btn');
+    var mpPrev = document.getElementById('aps-prev-btn');
+    var mpNext = document.getElementById('aps-next-btn');
+    var mpSpeed = document.getElementById('aps-speed-btn');
+    var mpProgress = document.getElementById('aps-mp-progress-wrap');
+    var topPlayAll = document.getElementById('apt-play-all-btn');
+
+    if (topPlayAll) {
+      topPlayAll.addEventListener('click', function() {
+        var pl = document.getElementById('audit-audio-playlist');
+        if (pl) pl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        playTrackByIndex(0, false);
+      });
+    }
+
+    if (mpPlay) {
+      mpPlay.addEventListener('click', function() {
+        var isPlaying = mpPlay.classList.contains('aps-playing');
+        if (isPlaying) {
+          stopAllAudio();
+        } else {
+          playTrackByIndex(currentTrackIdx || 0, false);
+        }
+      });
+    }
+
+    if (mpPrev) {
+      mpPrev.addEventListener('click', function() {
+        var prevIdx = currentTrackIdx > 0 ? currentTrackIdx - 1 : 0;
+        playTrackByIndex(prevIdx, false);
+      });
+    }
+
+    if (mpNext) {
+      mpNext.addEventListener('click', function() {
+        if (currentTrackIdx + 1 < allBars.length) {
+          playTrackByIndex(currentTrackIdx + 1, false);
+        }
+      });
+    }
+
+    if (mpSpeed) {
+      mpSpeed.addEventListener('click', function() {
+        globalSpeedIdx = (globalSpeedIdx + 1) % speeds.length;
+        applyGlobalSpeed(speeds[globalSpeedIdx]);
+      });
+    }
+
+    if (mpProgress) {
+      mpProgress.addEventListener('click', function(e) {
+        if (currentTrackIdx >= 0 && currentTrackIdx < allBars.length) {
+          var bar = allBars[currentTrackIdx];
+          var audio = bar ? bar.querySelector('.aab-audio-el') : null;
+          if (audio && audio.duration) {
+            var rect = mpProgress.getBoundingClientRect();
+            var pos = (e.clientX - rect.left) / rect.width;
+            audio.currentTime = pos * audio.duration;
+          }
+        }
+      });
+    }
+
+    document.querySelectorAll('.aps-track').forEach(function(row) {
+      row.addEventListener('click', function(e) {
+        if (e.target && e.target.closest('.aps-track-jump')) {
+          return;
+        }
+        var idx = parseInt(row.getAttribute('data-track-idx') || '0', 10);
+        var mpPlayBtn = document.getElementById('aps-play-btn');
+        var isCurrentlyPlayingThis = (currentTrackIdx === idx) && mpPlayBtn && mpPlayBtn.classList.contains('aps-playing');
+        if (isCurrentlyPlayingThis) {
+          stopAllAudio();
+        } else {
+          playTrackByIndex(idx, false);
+        }
+      });
+    });
+  }
+
   window.updateAudioLanguage = function(lang) {
-    document.querySelectorAll('.audit-audio-bar').forEach(function(bar) {
+    allBars.forEach(function(bar) {
       if (bar._updateLanguage) bar._updateLanguage(lang);
     });
   };
 
   document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.audit-audio-bar').forEach(initAudioBar);
+    allBars = Array.prototype.slice.call(document.querySelectorAll('.audit-audio-bar'));
+    allBars.forEach(function(bar, idx) {
+      initAudioBar(bar, idx);
+    });
+    initPlaylistControls();
   });
 })();
 

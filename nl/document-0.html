@@ -2221,7 +2221,12 @@ html[data-theme="dark"] select.pub-lang-select option {
     border-radius: 3px;
     transition: width 0.1s linear;
 }
-.aab-controls { flex-shrink: 0; }
+.aab-controls {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
 .aab-speed-btn {
     background: #ffffff;
     border: 1px solid #dcd7cc;
@@ -2234,7 +2239,322 @@ html[data-theme="dark"] select.pub-lang-select option {
 }
 .aab-speed-btn:hover { background: #e8e4db; }
 
-/* Dark-mode styling voor de audiospeler */
+.aab-next-btn {
+    background: #1a3c6e;
+    border: 1px solid #1a3c6e;
+    border-radius: 4px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 8.8pt;
+    padding: 4px 10px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    transition: background .15s ease, transform .12s ease;
+}
+.aab-next-btn:hover {
+    background: #2a5298;
+    border-color: #2a5298;
+    transform: translateY(-1px);
+}
+
+/* === Vermelding bovenaan document: Luistermodus / Audio-Playlist === */
+.audit-playlist-topbanner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+    max-width: 860px;
+    margin: 14pt 0 22pt 0;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: #eef3f9;
+    border: 1px solid #c5d4e8;
+    border-left: 4px solid #1a3c6e;
+    font-family: Aptos, Calibri, sans-serif;
+    box-sizing: border-box;
+}
+.apt-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 1;
+    min-width: 240px;
+}
+.apt-icon {
+    font-size: 16pt;
+    line-height: 1.1;
+    flex-shrink: 0;
+}
+.apt-text {
+    font-size: 9.8pt;
+    line-height: 1.45;
+    color: #2c3e50;
+}
+.apt-text strong { color: #1a3c6e; }
+.apt-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+.apt-btn {
+    font-size: 9.2pt;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    transition: all .15s ease;
+    font-family: inherit;
+}
+.apt-btn-play {
+    background: #1a3c6e;
+    color: #ffffff !important;
+    border: 1px solid #1a3c6e;
+}
+.apt-btn-play:hover { background: #2a5298; }
+.apt-btn-jump {
+    background: #ffffff;
+    color: #1a3c6e !important;
+    border: 1px solid #b5c7de;
+}
+.apt-btn-jump:hover { background: #e3ecf8; }
+
+/* === Audio-Playlist Sectie onderaan document (#audit-audio-playlist) === */
+.audit-playlist-sectie {
+    max-width: 860px;
+    margin: 38pt 0 24pt 0;
+    padding: 20px 22px;
+    border-radius: 10px;
+    background: #f4f1ea;
+    border: 1px solid #d5d0c5;
+    border-top: 4px solid #1a3c6e;
+    font-family: Aptos, Calibri, sans-serif;
+    box-sizing: border-box;
+}
+.aps-header { margin-bottom: 14px; }
+.aps-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+}
+.aps-badge {
+    display: inline-block;
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: #1a3c6e;
+    color: #ffffff;
+}
+.audit-playlist-sectie h2 {
+    margin: 4pt 0 6pt 0 !important;
+    font-size: 15pt !important;
+    border: none !important;
+    padding: 0 !important;
+    color: #1a3c6e;
+}
+.aps-desc {
+    font-size: 10pt !important;
+    line-height: 1.5 !important;
+    color: #4a4a4a;
+    margin-bottom: 12pt !important;
+}
+.aps-master-player {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    background: #ffffff;
+    border: 1px solid #dcd7cc;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.aps-mp-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+.aps-mp-play {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #1a3c6e;
+    color: #ffffff;
+    font-size: 14pt;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .15s, background .15s;
+}
+.aps-mp-play:hover { background: #2a5298; transform: scale(1.05); }
+.aps-mp-play.aps-playing { background: #8b1e1e; }
+.aps-mp-prev, .aps-mp-next {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid #d5d0c5;
+    background: #f8f6f2;
+    color: #1a3c6e;
+    font-size: 10.5pt;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .15s;
+}
+.aps-mp-prev:hover, .aps-mp-next:hover { background: #e8e4db; }
+.aps-mp-info {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.aps-mp-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 8.8pt;
+    font-weight: 700;
+    color: #1a3c6e;
+}
+.aps-mp-time {
+    font-family: Consolas, monospace;
+    font-weight: 500;
+    color: #666666;
+}
+.aps-mp-trackname {
+    font-size: 10pt;
+    font-weight: 600;
+    color: #222222;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.aps-mp-progress-wrap {
+    width: 100%;
+    height: 7px;
+    background: #e0dbce;
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.aps-mp-progress-bar { width: 100%; height: 100%; }
+.aps-mp-progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #1a3c6e;
+    border-radius: 4px;
+    transition: width 0.1s linear;
+}
+.aps-mp-extra {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+.aps-autoplay-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 9pt;
+    font-weight: 600;
+    color: #333333;
+    cursor: pointer;
+    user-select: none;
+}
+.aps-autoplay-toggle input { cursor: pointer; accent-color: #1a3c6e; }
+.aps-tracklist {
+    max-height: 420px;
+    overflow-y: auto;
+    border: 1px solid #dcd7cc;
+    border-radius: 6px;
+    background: #faf8f5;
+}
+.aps-track {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-bottom: 1px solid #eae6dd;
+    cursor: pointer;
+    transition: background .12s;
+    font-size: 9.8pt;
+    color: #222222;
+}
+.aps-track:last-child { border-bottom: none; }
+.aps-track:hover { background: #eef2f7; }
+.aps-track.aps-active {
+    background: #e3ecf8;
+    font-weight: 600;
+    border-left: 3px solid #1a3c6e;
+}
+.aps-t-num {
+    font-family: Consolas, monospace;
+    font-size: 8.8pt;
+    color: #777777;
+    min-width: 24px;
+}
+.aps-t-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #e8e4db;
+    color: #1a3c6e;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8.5pt;
+    flex-shrink: 0;
+}
+.aps-track.aps-active .aps-t-icon {
+    background: #1a3c6e;
+    color: #ffffff;
+}
+.aps-track-title {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.aps-track-jump {
+    font-size: 8.5pt;
+    color: #555555;
+    text-decoration: none !important;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #d5d0c5;
+    background: #ffffff;
+    flex-shrink: 0;
+}
+.aps-track-jump:hover {
+    color: #1a3c6e;
+    border-color: #1a3c6e;
+    background: #eef3f9;
+}
+
+/* Dark-mode styling voor de audiospeler, topbanner en playlist */
 html[data-theme="dark"] .audit-audio-bar {
     background: #23272e !important;
     border-color: #363b45 !important;
@@ -2257,10 +2577,113 @@ html[data-theme="dark"] .aab-speed-btn {
     color: #7fb3ff !important;
 }
 html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
+html[data-theme="dark"] .aab-next-btn {
+    background: #2b4c7e !important;
+    border-color: #4a6fa5 !important;
+    color: #e8f0fe !important;
+}
+html[data-theme="dark"] .aab-next-btn:hover {
+    background: #3b639e !important;
+    color: #ffffff !important;
+}
+html[data-theme="dark"] .audit-playlist-topbanner {
+    background: #1c232d !important;
+    border-color: #2f3b4c !important;
+    border-left-color: #58a6ff !important;
+}
+html[data-theme="dark"] .apt-text { color: #d0d8e4 !important; }
+html[data-theme="dark"] .apt-text strong { color: #79c0ff !important; }
+html[data-theme="dark"] .apt-btn-play {
+    background: #3867a6 !important;
+    border-color: #58a6ff !important;
+    color: #ffffff !important;
+}
+html[data-theme="dark"] .apt-btn-play:hover { background: #4a7ec2 !important; }
+html[data-theme="dark"] .apt-btn-jump {
+    background: #262c36 !important;
+    border-color: #444c56 !important;
+    color: #79c0ff !important;
+}
+html[data-theme="dark"] .apt-btn-jump:hover { background: #303846 !important; }
+html[data-theme="dark"] .audit-playlist-sectie {
+    background: #1b1f26 !important;
+    border-color: #323842 !important;
+    border-top-color: #58a6ff !important;
+}
+html[data-theme="dark"] .aps-badge {
+    background: #2b4c7e !important;
+    color: #cae0ff !important;
+}
+html[data-theme="dark"] .audit-playlist-sectie h2 { color: #79c0ff !important; }
+html[data-theme="dark"] .aps-desc { color: #a9b4c4 !important; }
+html[data-theme="dark"] .aps-master-player {
+    background: #232832 !important;
+    border-color: #363d4a !important;
+}
+html[data-theme="dark"] .aps-mp-play { background: #4a6fa5 !important; }
+html[data-theme="dark"] .aps-mp-play.aps-playing { background: #d32f2f !important; }
+html[data-theme="dark"] .aps-mp-prev,
+html[data-theme="dark"] .aps-mp-next {
+    background: #2d333b !important;
+    border-color: #444c56 !important;
+    color: #b0c8e8 !important;
+}
+html[data-theme="dark"] .aps-mp-prev:hover,
+html[data-theme="dark"] .aps-mp-next:hover { background: #373e47 !important; }
+html[data-theme="dark"] .aps-mp-meta { color: #79c0ff !important; }
+html[data-theme="dark"] .aps-mp-time { color: #9aa5b8 !important; }
+html[data-theme="dark"] .aps-mp-trackname { color: #e6edf3 !important; }
+html[data-theme="dark"] .aps-mp-progress-wrap { background: #323842 !important; }
+html[data-theme="dark"] .aps-mp-progress-fill { background: #58a6ff !important; }
+html[data-theme="dark"] .aps-autoplay-toggle { color: #c9d1d9 !important; }
+html[data-theme="dark"] .aps-autoplay-toggle input { accent-color: #58a6ff; }
+html[data-theme="dark"] .aps-tracklist {
+    background: #15181e !important;
+    border-color: #2d333b !important;
+}
+html[data-theme="dark"] .aps-track {
+    border-bottom-color: #222730 !important;
+    color: #c9d1d9 !important;
+}
+html[data-theme="dark"] .aps-track:hover { background: #20252d !important; }
+html[data-theme="dark"] .aps-track.aps-active {
+    background: #1e2a3a !important;
+    color: #ffffff !important;
+    border-left-color: #58a6ff !important;
+}
+html[data-theme="dark"] .aps-t-num { color: #8b949e !important; }
+html[data-theme="dark"] .aps-t-icon {
+    background: #2d333b !important;
+    color: #79c0ff !important;
+}
+html[data-theme="dark"] .aps-track.aps-active .aps-t-icon {
+    background: #4a6fa5 !important;
+    color: #ffffff !important;
+}
+html[data-theme="dark"] .aps-track-jump {
+    background: #21262d !important;
+    border-color: #363b42 !important;
+    color: #8b949e !important;
+}
+html[data-theme="dark"] .aps-track-jump:hover {
+    color: #79c0ff !important;
+    border-color: #58a6ff !important;
+}
 
-/* Verberg de audiospeler bij het printen of PDF-genereren */
+@media (max-width: 600px) {
+    .audit-audio-bar { flex-wrap: wrap; gap: 8px; padding: 8px 10px; }
+    .aab-controls { width: 100%; justify-content: flex-end; border-top: 1px solid rgba(128,128,128,0.18); padding-top: 6px; }
+    .aps-master-player { flex-direction: column; align-items: stretch; gap: 10px; }
+    .aps-mp-controls { justify-content: center; }
+    .aps-mp-extra { justify-content: space-between; }
+}
+
+/* Verberg de audiospeler en playlist bij het printen of PDF-genereren */
 @media print {
-    .audit-audio-bar { display: none !important; }
+    .audit-audio-bar,
+    .audit-playlist-topbanner,
+    .audit-playlist-sectie,
+    .toc-playlist-item { display: none !important; }
 }
 </style>
 <meta content="notranslate" name="google"/><script>
@@ -2291,7 +2714,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document 0 — Inleiding en leeswijzer</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 1 november 2026, 08:10</p>
+<p class="meta-lijn">Versie bijgewerkt: 2 november 2026, 10:32</p>
 </div>
 
 <div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
@@ -2309,9 +2732,21 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 <li class="niv2"><a href="#hoe-je-ze-gebruikt">Hoe je ze gebruikt</a></li>
 <li class="niv2"><a href="#voor-wie">Voor wie</a></li>
 <li class="niv2"><a href="#bron-en-verificatie">Bron en verificatie</a></li>
-</ul></div>
+<li class="niv1 toc-playlist-item"><a href="#audit-audio-playlist">🎧 Audio-Playlist — Alles achter elkaar beluisteren (7 onderdelen)</a></li></ul></div><div class="audit-playlist-topbanner notranslate" translate="no">
+<div class="apt-info">
+<span class="apt-icon">🎧</span>
+<div class="apt-text">
+<strong>Alleen luisteren zonder te lezen?</strong><br/>
+      Dit document bevat <strong>7 ingesproken audio-onderdelen</strong>. Gebruik bij elk onderdeel de knop <em>‘⏭ Luister verder’</em> om direct naar het volgende geluidsfragment te springen, of open onderaan de <strong>Audio-Playlist</strong> om alles automatisch achter elkaar te beluisteren.
+    </div>
+</div>
+<div class="apt-actions">
+<button class="apt-btn apt-btn-play" id="apt-play-all-btn" title="Start direct met het achter elkaar afspelen van alle 7 audiobestanden" type="button">▶ Direct alles afspelen</button>
+<a class="apt-btn apt-btn-jump" href="#audit-audio-playlist" title="Spring naar de volledige Audio-Playlist onderaan dit document">↓ Naar Audio-Playlist (7)</a>
+</div>
+</div>
 
-<h2 id="een-europees-verhaal">Een Europees verhaal</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="doc0_eeneuropeesverhaal" data-audio-src="../assets/audio/doc0_eeneuropeesverhaal_nl_e7cc2d62.mp3" data-clean-text="Een Europees verhaal. Dit dossier begint niet bij een grens. Het begint bij vlucht, werk en liefde. . Voor de Tweede Wereldoorlog ontvlucht een Noord Italiaanse familie haar geboortestreek in Lombardije en vestigt zich als migranten onder de rook van Parijs, in Bondy, toen nog gelegen in het oude Franse departement Seine, 75, in Île de France, dat pas in 1968 zal worden opgeknipt tot Seine Saint Denis, 93. . Daar wordt in 1940 de vader geboren, in een wereld waarin de Verenigde Naties, 1945, en de Europese Economische Gemeenschap, 1958, nog niet bestaan. Hoewel zijn wieg op Franse bodem staat, telt die geboortegrond op papier niet mee: door het bloedrecht, ius sanguinis, is hij voor de wet uitsluitend onderdaan van het toenmalige Koninkrijk Italië, dat in 1946 verandert in de Italiaanse Republiek. . Na de oorlog keert het gezin terug naar de familiewortels in Vertova, een dorp in de bergvallei Val Seriana in de provincie Bergamo, Lombardije. Hij groeit er op en voelt zich Lombard, geen Italiaan. . Aan de andere kant van de Alpen wordt in 1948 de moeder geboren in Sélestat, departement Bas Rhin, 67, en groeit zij op in het wijndorp Hattstatt, departement Haut Rhin, 68, onder de rood witte vlag, Rot un Wiss, van de Elzas. Zij voelt zich Elzasser, niet Française of Duitse, maar draagt op papier de Franse identiteitskaart. . Twee grensgevallen. Wanneer de jonge Lombard opnieuw de grens oversteekt om als arbeider in de Elzas te werken, raakt hij gewond en belandt hij in het ziekenhuis van Colmar. Daar verzorgt zij hem als verpleegster, en daar begint het. Ze trouwen. . Wanneer het bedrijf waar hij werkt aan het begin van de jaren zeventig naar België verhuist, verhuizen zij mee. Niet voor avontuur, maar voor werk. De Europese Economische Gemeenschap telt op dat moment zes lidstaten. Vrij verkeer van werknemers is een principe op papier; in de praktijk reist de arbeider met papieren formulieren, wisselkoersen en de hoop dat de stelsels elkaar zullen vinden. Ze vestigen zich in België. . Daar wordt hun kind geboren. In Wilrijk, op 15 september 1981. Het is een ander Europa. Er zijn inmiddels tien lidstaten nadat Griekenland op 1 januari van dat jaar is toegetreden, al is de blauwe vlag met de twaalf sterren op dat moment nog enkel het symbool van de Raad van Europa en wordt zij pas in 1985 door de E E G overgenomen. . Het Akkoord van Schengen bestaat nog niet; aan elke grens staan douaneposten en paspoortcontroles, en het Europees Monetair Stelsel van 1979 moet de nationale munten enigszins temmen. De theorie spreekt over Europese eenwording, maar de realiteit bestaat uit stempels en wachtrijen. . Het kind groeit op in Hoboken, in een huis waar uitsluitend Frans wordt gesproken. Maar achter die ene taal liggen drie werelden: de Frans Lombardische wereld van zijn vader, de Elzassische wereld van zijn moeder, en de Vlaamse wereld waarin hij opgroeit. Het kind draagt die werelden in zich, nog voor het kan lopen. . Zelfs de bestuurlijke grenzen om hem heen muteren vrijwel direct: bij zijn geboorte in 1981 zijn Wilrijk en Hoboken nog zelfstandige gemeenten in de provincie Antwerpen; op 1 januari 1983 worden zij bij de grote gemeentefusie opgeslokt door de Stad Antwerpen en gedegradeerd tot districten, terwijl België zelf tussen 1980 en 1993 stap voor stap muteert naar een federale staat. . Toch krijgt het kind dat in Wilrijk wordt geboren op papier geen Belgische nationaliteit. België weigert het geboorterecht: hij wordt geregistreerd als vreemdeling in zijn eigen geboorteland en krijgt een blauwe Belgische E E G verblijfskaart. . Door het patriarchale afstammingsrecht en het Verdrag van Straatsburg uit 1963 wordt daarop slechts één enkele nationaliteit ingevuld: die van zijn vader, NAT: ITA. Via de consulaten heeft hij daarnaast een Italiaans paspoort en een Franse consulaire identiteitskaart via zijn moeder, maar geen van beide geldt in België als een binnenlandse Belgische identiteitskaart. . Op zijn achttiende, in 1999, verhuist hij alleen naar het Antwerpse district Berchem. De Europese Unie telt dan vijftien lidstaten. De euro is net ingevoerd voor girale betalingen, Schengen is opgenomen in het Europees recht en het Europees Burgerschap is inmiddels wettelijk verankerd. . De grenzen tussen België en Nederland zijn open, maar nationaliteit is onder het Verdrag van Straatsburg nog steeds een exclusief bezit. Hij kiest voor volledige integratie in het land waar hij is geboren en opgegroeid, en geeft zijn meervoudige papieren oorsprong op. Hij wil Belg zijn. Volkomen. . Omdat de dubbele nationaliteit in die jaren nog wettelijk verboden is, betekent dat een harde knip: formeel afstand doen van zijn Italiaanse nationaliteit én afstand doen van zijn Franse nationaliteit. Alles wat hij van thuis heeft meegekregen aan papieren identiteit, van Bondy en Vertova tot Sélestat, Hattstatt en Colmar, moet administratief worden uitgewist om er één terug te krijgen die hij zelf heeft gekozen. . Hij is de enige in zijn familie die deze keuze maakt. Zijn zussen behouden hun mix van oorsprongen. Hij niet. Hij kiest vrijwillig en met volle overtuiging voor integratie. Terwijl zijn menselijke kern ongewijzigd al die wortels blijft dragen, staat er vanaf dat moment nog maar één enkel woord op zijn groene Belgische identiteitskaart: BELG. . Daarna verhuist hij naar Gent, in Oost Vlaanderen. Daar leert hij zijn toekomstige partner kennen. Ze draagt exact hetzelfde woord op haar identiteitskaart: BELG. . Maar achter datzelfde woord ligt bij haar een stamboom die zich volledig binnen de grenzen van België en Vlaanderen heeft afgespeeld: van haar familiewortels in het West Vlaamse Snellegem, dat bij de gemeentefusie van 1977 opging in de gemeente Jabbeke, tot haar geboorte in het Oost Vlaamse Lokeren en haar opgroeien in Buggenhout en Elversele, in 1977 gefuseerd met Temse. . Ook in haar familiegeschiedenis zijn dorpen administratief samengevoegd tot grotere gemeenten, maar omdat al die mutaties binnen één en dezelfde lidstaat bleven, viel haar menselijke herkomst altijd naadloos samen met dat ene vakje op haar identiteitskaart; ware zij met een streekgenoot getrouwd, dan was die nationale logica nooit op de proef gesteld. . Twee mensen, twee totaal verschillende familiegeschiedenissen, één administratieve nationaliteit. In 2007 trouwen ze in Sint Niklaas, waarna ze in Waasmunster gaan wonen. De Unie telt inmiddels 27 lidstaten. . En amper een jaar na hun huwelijk, op 28 april 2008, volgt een wrange speling van het recht: België zegt het Verdrag van Straatsburg op en heft het verbod op meervoudige nationaliteit op. Wie voortaan Belg wordt, hoeft zijn Italiaanse of Franse nationaliteit niet langer op te geven. Maar de wet heeft geen terugwerkende kracht; de amputatie die hij in 1999 moest ondergaan om volwaardig burger te worden in zijn geboorteland, wordt nooit meer hersteld. . Vier verhuizingen in België, vier keer een nieuw dossier, vier keer een nieuw loket: twee mensen die vanaf nu samen door de bureaucratie moeten. . In 2014 steken zij samen de grens over naar Zeeuws Vlaanderen, in de Nederlandse provincie Zeeland. Ze vestigen zich in het kleine Scheldedorp Paal, historisch onderdeel van de zelfstandige gemeente Graauw en Langendam, die in 1970 werd opgeheven en sinds de gemeentelijke herindeling van 2003 onder de gemeente Hulst valt. . Europa telt dan 28 lidstaten. De fysieke grens is opgelost; je rijdt zonder remmen van Waasmunster naar Paal. Maar de administratieve grens is onzichtbaar opgetrokken. Daar begint de eerste wrijving. . Hun Belgische rijbewijs is geldig in de hele Europese Unie, het Nederlandse ook. Toch moeten ze het Belgische inleveren. Nederland staat maar één geldig document per persoon toe. Ze geven het af bij de gemeente Hulst en krijgen het nooit terug. Wat ze in de plaats krijgen, is een Nederlands document met exact dezelfde Europese geldigheid. Alleen het land van uitgifte is veranderd. . Vanaf dat moment dragen ze de paradox in hun eigen portemonnee. Een Belgische identiteitskaart voor hun identiteit. Een Nederlands rijbewijs voor hun mobiliteit, dat in Nederland dient als wettig legitimatiebewijs. In België wordt datzelfde rijbewijs niet als identiteitsbewijs aanvaard; daar geldt uitsluitend de Belgische kaart. . Maar wie de elektronische chip van die Belgische E I D uitleest, stuit op een nog vreemdere fictie: daarop staat niet hun werkelijke woonadres in Paal geregistreerd, maar het adres van de Belgische ambassade in Den Haag. Volgens hun Belgische kaart horen zij administratief bij de ambassade; volgens hun Nederlandse rijbewijs staat er hooguit waar het document is afgegeven in Nederland, Gemeente Hulst, maar ontbreekt elke vermelding dat zij Belg zijn. . Twee documenten, twee landen, één mens. Hun leven verdeelt zich over twee staten: wonen in het ene, werken en verzekerd zijn in het andere. In theorie horen ze zo bij beide landen en zou hun bestaan zich naadloos over de grens moeten plooien. In de praktijk is het administratieve systeem geprogrammeerd om telkens maar één land tegelijk te lezen. Zodra de systemen niet met elkaar spreken, word je onleesbaar. . Op 12 december 2016 wordt hun zoon geboren in Wilrijk, Antwerpen, in exact hetzelfde district waar zijn vader vijfendertig jaar eerder ter wereld kwam. Een kind waarin meer dan vijfendertig Europese, regionale en lokale cellen samenkomen. . Hij draagt de West en Oost Vlaamse wortels van zijn moeder, van Snellegem en Jabbeke tot Lokeren, Buggenhout en Elversele, de Frans Lombardische en Elzassische wortels van zijn grootouders, van Bondy en Vertova tot Sélestat, Hattstatt en Colmar, zijn eigen Belgische geboortegrond in Wilrijk én het Zeeuws Vlaamse polderland van Paal en Hulst waar zijn wieg staat, waar hij opgroeit en vrienden maakt. . Terwijl het kind wordt geboren, muteren zelfs de bestuurlijke kaarten van Europa opnieuw: in datzelfde geboortejaar 2016 heft Parijs de Elzas van zijn grootmoeder op als zelfstandige regio om haar onder te brengen in de megaregio Grand Est, waarna Bas Rhin en Haut Rhin in 2021 weer samensmelten tot de Collectivité européenne d Alsace. Vier werelden in één lichaam. Vier oorsprongen in één kind. . Hij steekt elke dag de grens over. Niet voor werk, zoals zijn ouders en grootouders, maar voor school: hij woont in Paal, gemeente Hulst, in Nederland, maar leert lezen en schrijven in Sint Niklaas, in Oost Vlaanderen. Op school leert hij de taal van zijn moeder, maar zijn bed staat in Hulst. . En daar begint het onvermijdelijke. Voor de Vlamingen is hij een Nederlander, rijdend in een auto met een geel kenteken. Voor de Nederlanders is hij een Vlaming, herkenbaar aan zijn tongval. Op het speelplein steken de andere kinderen hem in het vakje Belg. Niet omdat iemand hem dat gevraagd heeft. Niet omdat hij een keuze heeft gemaakt. Maar omdat de kinderen om hem heen al geleerd hebben dat er vakjes bestaan, en dat alles wat afwijkt, geclassificeerd moet worden. Drie mensen, drie dossiers, twee landen, één gezin. . Uiteindelijk krijgt ook hij een plastieken kaartje dat hem moet vertellen wie hij is: een Belgische Kids ID. Daarop staat opnieuw dat ene woord: BELG. Meer dan vijfendertig menselijke en historische cellen zijn op papier gewist. . En op de chip van die kaart staat niet het huis in Paal waar zijn bed staat, maar opnieuw het adres van de Belgische ambassade in Den Haag. De kleine Europese vlag in de hoek is het enige wat rest van het grotere ideaal. De rest is onzichtbaar gemaakt. Het systeem registreert één dimensie, terwijl het kind er vier draagt. . Zo werkt het algoritme van de staat. Het ziet geen gezin. Het ziet geen organisme dat over meerdere landen is gegroeid. Het ziet uitsluitend losse eenheden in losse vakjes in losse landen. Wie niet in het vakje past, valt tussen de regels door. . Het is 2025. De Europese Unie telt 27 lidstaten, na de uittreding van het Verenigd Koninkrijk. De overheden zijn gedigitaliseerd, datastromen verbinden de hoofdsteden en de theorie belooft een frictieloze unie. . En het kind uit 1981? Hij is inmiddels vierenveertig. Hij wordt ernstig ziek en belandt in de kliniek. De tol van de suikerziekte is onomkeerbaar: de amputatie van twee tenen en het verlies van zicht in één oog. . De Belgische artsen oordelen helder: u bent medisch niet meer rijgeschikt en mag niet meer rijden. Hij kan en wil dat ook niet meer. Maar dan voltrekt zich een nieuwe administratieve spagaat. . België verklaart hem rijongeschikt, maar kan zijn rijbewijs niet intrekken of opeisen, want dat Belgische rijbewijs heeft Nederland in 2014 ingenomen. Tegelijkertijd kan hij zijn Nederlandse rijbewijs in Nederland niet op medische gronden inleveren zonder dat Nederland eerst zijn medische ongeschiktheid erkent. . En precies die medische realiteit weigeren de Nederlandse instanties te erkennen, omdat een formele erkenning van zijn fysieke toestand onvermijdelijk zou dwingen tot het toekennen van Nederlandse arbeidsongeschiktheidsrechten, W I A, en voorzieningen. Het gevolg is een volmaakte bureaucratische patstelling: feitelijk rijdt hij geen meter meer, maar op papier behoudt hij een geldig Nederlands rijbewijs. . In het land dat zijn medische toestand erkent, bezit hij geen rijbewijs dat kan worden ingetrokken; in het land dat zijn rijbewijs beheert, mag hij op papier nog altijd rijden omdat het systeem weigert zijn medische realiteit te erkennen. . En zijn identiteit? Op zijn Belgische identiteitskaart staat nog altijd dat ene woord: BELG. . De man die zijn hele leven over grenzen bewoog, die zijn Italiaanse en Franse identiteit vrijwillig opgaf om Belg te worden, maar de wereld van zijn vader en moeder nooit kon uitwissen, zit gevangen tussen twee onvolledige stukjes plastic: een Belgische E I D waarvan de chip beweert dat zijn adres de Belgische ambassade is in plaats van zijn werkelijke woning in Paal, en een Nederlands rijbewijs waarop hooguit zijn Nederlandse gemeente van afgifte, Hulst, staat maar geen enkele nationaliteit. . En zijn zoon, die vier werelden in zich draagt, staat met exact datzelfde woord en datzelfde ambassade adres in de database. BELG. Niets meer. Een kleine Europese vlag in de hoek. . Drie generaties. Drie identiteitskaarten. Eén woord. Het systeem reduceert iedereen tot een enkel datapunt. Zelfs degene die het probeerde te ontstijgen. . Het is nu najaar 2026. Terwijl hij deze audit uittypt, valt er een traan op het toetsenbord. Niet uit zelfmedelijden, maar uit de pure, loden uitputting van een gevecht tegen de leegte. . De bittere tragiek is dat Europa de fout inmiddels kent. In april 2026 bereikte de Europese wetgever in Brussel een politiek akkoord over de langverwachte herziening van de oude coördinatieregels; in juli 2026 werd de herziene tekst formeel aangenomen. De weeffouten worden erkend, het bevoegdheidsvacuüm is benoemd. . Maar de inkt van de politiek stroomt eindeloos veel trager dan het bloed van de burger. De systemen worden pas omstreeks 2030 daadwerkelijk aangepast. Tot die tijd is de grensarbeider van vlees en bloed de enige overgebleven schokdemper voor de falende systemen van de staat. . En zelfs dán, in 2030, vormen die nieuwe regels slechts een technologische pleister op een veel diepere institutionele wonde. Zolang de natiestaten krampachtig vasthouden aan hun eigen gesloten loketten, blijft de grensarbeider in de kern de onbedoelde foutmelding van een half afgewerkt ontwerp. . Dat is wat dit dossier onderzoekt. Niet de nationaliteit als juridisch statuut. Wel de oorsprong als menselijke werkelijkheid. En de vraag waarom een systeem dat zichzelf Europees noemt, de Europese werkelijkheid van zijn eigen burgers reduceert tot een eendimensionaal veld op een identiteitskaart. . Het verhaal begint hier. De feiten staan in Document B. ." translate="no">
+<h2 id="een-europees-verhaal">Een Europees verhaal</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="doc0_eeneuropeesverhaal" data-audio-src="../assets/audio/doc0_eeneuropeesverhaal_nl_e7cc2d62.mp3" data-clean-heading="Een Europees verhaal" data-clean-text="Een Europees verhaal. Dit dossier begint niet bij een grens. Het begint bij vlucht, werk en liefde. . Voor de Tweede Wereldoorlog ontvlucht een Noord Italiaanse familie haar geboortestreek in Lombardije en vestigt zich als migranten onder de rook van Parijs, in Bondy, toen nog gelegen in het oude Franse departement Seine, 75, in Île de France, dat pas in 1968 zal worden opgeknipt tot Seine Saint Denis, 93. . Daar wordt in 1940 de vader geboren, in een wereld waarin de Verenigde Naties, 1945, en de Europese Economische Gemeenschap, 1958, nog niet bestaan. Hoewel zijn wieg op Franse bodem staat, telt die geboortegrond op papier niet mee: door het bloedrecht, ius sanguinis, is hij voor de wet uitsluitend onderdaan van het toenmalige Koninkrijk Italië, dat in 1946 verandert in de Italiaanse Republiek. . Na de oorlog keert het gezin terug naar de familiewortels in Vertova, een dorp in de bergvallei Val Seriana in de provincie Bergamo, Lombardije. Hij groeit er op en voelt zich Lombard, geen Italiaan. . Aan de andere kant van de Alpen wordt in 1948 de moeder geboren in Sélestat, departement Bas Rhin, 67, en groeit zij op in het wijndorp Hattstatt, departement Haut Rhin, 68, onder de rood witte vlag, Rot un Wiss, van de Elzas. Zij voelt zich Elzasser, niet Française of Duitse, maar draagt op papier de Franse identiteitskaart. . Twee grensgevallen. Wanneer de jonge Lombard opnieuw de grens oversteekt om als arbeider in de Elzas te werken, raakt hij gewond en belandt hij in het ziekenhuis van Colmar. Daar verzorgt zij hem als verpleegster, en daar begint het. Ze trouwen. . Wanneer het bedrijf waar hij werkt aan het begin van de jaren zeventig naar België verhuist, verhuizen zij mee. Niet voor avontuur, maar voor werk. De Europese Economische Gemeenschap telt op dat moment zes lidstaten. Vrij verkeer van werknemers is een principe op papier; in de praktijk reist de arbeider met papieren formulieren, wisselkoersen en de hoop dat de stelsels elkaar zullen vinden. Ze vestigen zich in België. . Daar wordt hun kind geboren. In Wilrijk, op 15 september 1981. Het is een ander Europa. Er zijn inmiddels tien lidstaten nadat Griekenland op 1 januari van dat jaar is toegetreden, al is de blauwe vlag met de twaalf sterren op dat moment nog enkel het symbool van de Raad van Europa en wordt zij pas in 1985 door de E E G overgenomen. . Het Akkoord van Schengen bestaat nog niet; aan elke grens staan douaneposten en paspoortcontroles, en het Europees Monetair Stelsel van 1979 moet de nationale munten enigszins temmen. De theorie spreekt over Europese eenwording, maar de realiteit bestaat uit stempels en wachtrijen. . Het kind groeit op in Hoboken, in een huis waar uitsluitend Frans wordt gesproken. Maar achter die ene taal liggen drie werelden: de Frans Lombardische wereld van zijn vader, de Elzassische wereld van zijn moeder, en de Vlaamse wereld waarin hij opgroeit. Het kind draagt die werelden in zich, nog voor het kan lopen. . Zelfs de bestuurlijke grenzen om hem heen muteren vrijwel direct: bij zijn geboorte in 1981 zijn Wilrijk en Hoboken nog zelfstandige gemeenten in de provincie Antwerpen; op 1 januari 1983 worden zij bij de grote gemeentefusie opgeslokt door de Stad Antwerpen en gedegradeerd tot districten, terwijl België zelf tussen 1980 en 1993 stap voor stap muteert naar een federale staat. . Toch krijgt het kind dat in Wilrijk wordt geboren op papier geen Belgische nationaliteit. België weigert het geboorterecht: hij wordt geregistreerd als vreemdeling in zijn eigen geboorteland en krijgt een blauwe Belgische E E G verblijfskaart. . Door het patriarchale afstammingsrecht en het Verdrag van Straatsburg uit 1963 wordt daarop slechts één enkele nationaliteit ingevuld: die van zijn vader, NAT: ITA. Via de consulaten heeft hij daarnaast een Italiaans paspoort en een Franse consulaire identiteitskaart via zijn moeder, maar geen van beide geldt in België als een binnenlandse Belgische identiteitskaart. . Op zijn achttiende, in 1999, verhuist hij alleen naar het Antwerpse district Berchem. De Europese Unie telt dan vijftien lidstaten. De euro is net ingevoerd voor girale betalingen, Schengen is opgenomen in het Europees recht en het Europees Burgerschap is inmiddels wettelijk verankerd. . De grenzen tussen België en Nederland zijn open, maar nationaliteit is onder het Verdrag van Straatsburg nog steeds een exclusief bezit. Hij kiest voor volledige integratie in het land waar hij is geboren en opgegroeid, en geeft zijn meervoudige papieren oorsprong op. Hij wil Belg zijn. Volkomen. . Omdat de dubbele nationaliteit in die jaren nog wettelijk verboden is, betekent dat een harde knip: formeel afstand doen van zijn Italiaanse nationaliteit én afstand doen van zijn Franse nationaliteit. Alles wat hij van thuis heeft meegekregen aan papieren identiteit, van Bondy en Vertova tot Sélestat, Hattstatt en Colmar, moet administratief worden uitgewist om er één terug te krijgen die hij zelf heeft gekozen. . Hij is de enige in zijn familie die deze keuze maakt. Zijn zussen behouden hun mix van oorsprongen. Hij niet. Hij kiest vrijwillig en met volle overtuiging voor integratie. Terwijl zijn menselijke kern ongewijzigd al die wortels blijft dragen, staat er vanaf dat moment nog maar één enkel woord op zijn groene Belgische identiteitskaart: BELG. . Daarna verhuist hij naar Gent, in Oost Vlaanderen. Daar leert hij zijn toekomstige partner kennen. Ze draagt exact hetzelfde woord op haar identiteitskaart: BELG. . Maar achter datzelfde woord ligt bij haar een stamboom die zich volledig binnen de grenzen van België en Vlaanderen heeft afgespeeld: van haar familiewortels in het West Vlaamse Snellegem, dat bij de gemeentefusie van 1977 opging in de gemeente Jabbeke, tot haar geboorte in het Oost Vlaamse Lokeren en haar opgroeien in Buggenhout en Elversele, in 1977 gefuseerd met Temse. . Ook in haar familiegeschiedenis zijn dorpen administratief samengevoegd tot grotere gemeenten, maar omdat al die mutaties binnen één en dezelfde lidstaat bleven, viel haar menselijke herkomst altijd naadloos samen met dat ene vakje op haar identiteitskaart; ware zij met een streekgenoot getrouwd, dan was die nationale logica nooit op de proef gesteld. . Twee mensen, twee totaal verschillende familiegeschiedenissen, één administratieve nationaliteit. In 2007 trouwen ze in Sint Niklaas, waarna ze in Waasmunster gaan wonen. De Unie telt inmiddels 27 lidstaten. . En amper een jaar na hun huwelijk, op 28 april 2008, volgt een wrange speling van het recht: België zegt het Verdrag van Straatsburg op en heft het verbod op meervoudige nationaliteit op. Wie voortaan Belg wordt, hoeft zijn Italiaanse of Franse nationaliteit niet langer op te geven. Maar de wet heeft geen terugwerkende kracht; de amputatie die hij in 1999 moest ondergaan om volwaardig burger te worden in zijn geboorteland, wordt nooit meer hersteld. . Vier verhuizingen in België, vier keer een nieuw dossier, vier keer een nieuw loket: twee mensen die vanaf nu samen door de bureaucratie moeten. . In 2014 steken zij samen de grens over naar Zeeuws Vlaanderen, in de Nederlandse provincie Zeeland. Ze vestigen zich in het kleine Scheldedorp Paal, historisch onderdeel van de zelfstandige gemeente Graauw en Langendam, die in 1970 werd opgeheven en sinds de gemeentelijke herindeling van 2003 onder de gemeente Hulst valt. . Europa telt dan 28 lidstaten. De fysieke grens is opgelost; je rijdt zonder remmen van Waasmunster naar Paal. Maar de administratieve grens is onzichtbaar opgetrokken. Daar begint de eerste wrijving. . Hun Belgische rijbewijs is geldig in de hele Europese Unie, het Nederlandse ook. Toch moeten ze het Belgische inleveren. Nederland staat maar één geldig document per persoon toe. Ze geven het af bij de gemeente Hulst en krijgen het nooit terug. Wat ze in de plaats krijgen, is een Nederlands document met exact dezelfde Europese geldigheid. Alleen het land van uitgifte is veranderd. . Vanaf dat moment dragen ze de paradox in hun eigen portemonnee. Een Belgische identiteitskaart voor hun identiteit. Een Nederlands rijbewijs voor hun mobiliteit, dat in Nederland dient als wettig legitimatiebewijs. In België wordt datzelfde rijbewijs niet als identiteitsbewijs aanvaard; daar geldt uitsluitend de Belgische kaart. . Maar wie de elektronische chip van die Belgische E I D uitleest, stuit op een nog vreemdere fictie: daarop staat niet hun werkelijke woonadres in Paal geregistreerd, maar het adres van de Belgische ambassade in Den Haag. Volgens hun Belgische kaart horen zij administratief bij de ambassade; volgens hun Nederlandse rijbewijs staat er hooguit waar het document is afgegeven in Nederland, Gemeente Hulst, maar ontbreekt elke vermelding dat zij Belg zijn. . Twee documenten, twee landen, één mens. Hun leven verdeelt zich over twee staten: wonen in het ene, werken en verzekerd zijn in het andere. In theorie horen ze zo bij beide landen en zou hun bestaan zich naadloos over de grens moeten plooien. In de praktijk is het administratieve systeem geprogrammeerd om telkens maar één land tegelijk te lezen. Zodra de systemen niet met elkaar spreken, word je onleesbaar. . Op 12 december 2016 wordt hun zoon geboren in Wilrijk, Antwerpen, in exact hetzelfde district waar zijn vader vijfendertig jaar eerder ter wereld kwam. Een kind waarin meer dan vijfendertig Europese, regionale en lokale cellen samenkomen. . Hij draagt de West en Oost Vlaamse wortels van zijn moeder, van Snellegem en Jabbeke tot Lokeren, Buggenhout en Elversele, de Frans Lombardische en Elzassische wortels van zijn grootouders, van Bondy en Vertova tot Sélestat, Hattstatt en Colmar, zijn eigen Belgische geboortegrond in Wilrijk én het Zeeuws Vlaamse polderland van Paal en Hulst waar zijn wieg staat, waar hij opgroeit en vrienden maakt. . Terwijl het kind wordt geboren, muteren zelfs de bestuurlijke kaarten van Europa opnieuw: in datzelfde geboortejaar 2016 heft Parijs de Elzas van zijn grootmoeder op als zelfstandige regio om haar onder te brengen in de megaregio Grand Est, waarna Bas Rhin en Haut Rhin in 2021 weer samensmelten tot de Collectivité européenne d Alsace. Vier werelden in één lichaam. Vier oorsprongen in één kind. . Hij steekt elke dag de grens over. Niet voor werk, zoals zijn ouders en grootouders, maar voor school: hij woont in Paal, gemeente Hulst, in Nederland, maar leert lezen en schrijven in Sint Niklaas, in Oost Vlaanderen. Op school leert hij de taal van zijn moeder, maar zijn bed staat in Hulst. . En daar begint het onvermijdelijke. Voor de Vlamingen is hij een Nederlander, rijdend in een auto met een geel kenteken. Voor de Nederlanders is hij een Vlaming, herkenbaar aan zijn tongval. Op het speelplein steken de andere kinderen hem in het vakje Belg. Niet omdat iemand hem dat gevraagd heeft. Niet omdat hij een keuze heeft gemaakt. Maar omdat de kinderen om hem heen al geleerd hebben dat er vakjes bestaan, en dat alles wat afwijkt, geclassificeerd moet worden. Drie mensen, drie dossiers, twee landen, één gezin. . Uiteindelijk krijgt ook hij een plastieken kaartje dat hem moet vertellen wie hij is: een Belgische Kids ID. Daarop staat opnieuw dat ene woord: BELG. Meer dan vijfendertig menselijke en historische cellen zijn op papier gewist. . En op de chip van die kaart staat niet het huis in Paal waar zijn bed staat, maar opnieuw het adres van de Belgische ambassade in Den Haag. De kleine Europese vlag in de hoek is het enige wat rest van het grotere ideaal. De rest is onzichtbaar gemaakt. Het systeem registreert één dimensie, terwijl het kind er vier draagt. . Zo werkt het algoritme van de staat. Het ziet geen gezin. Het ziet geen organisme dat over meerdere landen is gegroeid. Het ziet uitsluitend losse eenheden in losse vakjes in losse landen. Wie niet in het vakje past, valt tussen de regels door. . Het is 2025. De Europese Unie telt 27 lidstaten, na de uittreding van het Verenigd Koninkrijk. De overheden zijn gedigitaliseerd, datastromen verbinden de hoofdsteden en de theorie belooft een frictieloze unie. . En het kind uit 1981? Hij is inmiddels vierenveertig. Hij wordt ernstig ziek en belandt in de kliniek. De tol van de suikerziekte is onomkeerbaar: de amputatie van twee tenen en het verlies van zicht in één oog. . De Belgische artsen oordelen helder: u bent medisch niet meer rijgeschikt en mag niet meer rijden. Hij kan en wil dat ook niet meer. Maar dan voltrekt zich een nieuwe administratieve spagaat. . België verklaart hem rijongeschikt, maar kan zijn rijbewijs niet intrekken of opeisen, want dat Belgische rijbewijs heeft Nederland in 2014 ingenomen. Tegelijkertijd kan hij zijn Nederlandse rijbewijs in Nederland niet op medische gronden inleveren zonder dat Nederland eerst zijn medische ongeschiktheid erkent. . En precies die medische realiteit weigeren de Nederlandse instanties te erkennen, omdat een formele erkenning van zijn fysieke toestand onvermijdelijk zou dwingen tot het toekennen van Nederlandse arbeidsongeschiktheidsrechten, W I A, en voorzieningen. Het gevolg is een volmaakte bureaucratische patstelling: feitelijk rijdt hij geen meter meer, maar op papier behoudt hij een geldig Nederlands rijbewijs. . In het land dat zijn medische toestand erkent, bezit hij geen rijbewijs dat kan worden ingetrokken; in het land dat zijn rijbewijs beheert, mag hij op papier nog altijd rijden omdat het systeem weigert zijn medische realiteit te erkennen. . En zijn identiteit? Op zijn Belgische identiteitskaart staat nog altijd dat ene woord: BELG. . De man die zijn hele leven over grenzen bewoog, die zijn Italiaanse en Franse identiteit vrijwillig opgaf om Belg te worden, maar de wereld van zijn vader en moeder nooit kon uitwissen, zit gevangen tussen twee onvolledige stukjes plastic: een Belgische E I D waarvan de chip beweert dat zijn adres de Belgische ambassade is in plaats van zijn werkelijke woning in Paal, en een Nederlands rijbewijs waarop hooguit zijn Nederlandse gemeente van afgifte, Hulst, staat maar geen enkele nationaliteit. . En zijn zoon, die vier werelden in zich draagt, staat met exact datzelfde woord en datzelfde ambassade adres in de database. BELG. Niets meer. Een kleine Europese vlag in de hoek. . Drie generaties. Drie identiteitskaarten. Eén woord. Het systeem reduceert iedereen tot een enkel datapunt. Zelfs degene die het probeerde te ontstijgen. . Het is nu najaar 2026. Terwijl hij deze audit uittypt, valt er een traan op het toetsenbord. Niet uit zelfmedelijden, maar uit de pure, loden uitputting van een gevecht tegen de leegte. . De bittere tragiek is dat Europa de fout inmiddels kent. In april 2026 bereikte de Europese wetgever in Brussel een politiek akkoord over de langverwachte herziening van de oude coördinatieregels; in juli 2026 werd de herziene tekst formeel aangenomen. De weeffouten worden erkend, het bevoegdheidsvacuüm is benoemd. . Maar de inkt van de politiek stroomt eindeloos veel trager dan het bloed van de burger. De systemen worden pas omstreeks 2030 daadwerkelijk aangepast. Tot die tijd is de grensarbeider van vlees en bloed de enige overgebleven schokdemper voor de falende systemen van de staat. . En zelfs dán, in 2030, vormen die nieuwe regels slechts een technologische pleister op een veel diepere institutionele wonde. Zolang de natiestaten krampachtig vasthouden aan hun eigen gesloten loketten, blijft de grensarbeider in de kern de onbedoelde foutmelding van een half afgewerkt ontwerp. . Dat is wat dit dossier onderzoekt. Niet de nationaliteit als juridisch statuut. Wel de oorsprong als menselijke werkelijkheid. En de vraag waarom een systeem dat zichzelf Europees noemt, de Europese werkelijkheid van zijn eigen burgers reduceert tot een eendimensionaal veld op een identiteitskaart. . Het verhaal begint hier. De feiten staan in Document B. ." data-track-index="0" id="aab-doc0_eeneuropeesverhaal" translate="no">
 <button aria-label="Beluister tekst" class="aab-play-btn" title="Beluister passage (AI-stem)" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -2330,7 +2765,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 </div>
 <div class="aab-controls">
 <button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
-</div>
+<button class="aab-next-btn" data-next-idx="1" data-next-target="#aab-doc0_waaromditproject" title="Spring direct naar het volgende audiogedeelte (2/7) en luister verder" type="button">⏭ Luister verder</button></div>
 <audio class="aab-audio-el" preload="none" src="../assets/audio/doc0_eeneuropeesverhaal_nl_e7cc2d62.mp3"></audio>
 </div>
 <p>Dit dossier begint niet bij een grens. Het begint bij vlucht, werk en liefde.</p>
@@ -3584,7 +4019,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 <p><strong>*****</strong> In april 2026 werd na jarenlange triloog-onderhandelingen een voorlopig politiek akkoord bereikt over het 'Labour Mobility Package' (herziening van Verordening 883/2004 en 987/2009); in juli 2026 volgde de formele aanname. De wetgever erkent hierin de institutionele leemtes voor grensarbeiders, maar door de benodigde IT-aanpassingen worden de structurele oplossingen pas tegen 2030 operationeel afdwingbaar.</p>
 </div>
 
-<h2 id="waarom-dit-project">Waarom dit project</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="doc0_waaromditproject" data-audio-src="../assets/audio/doc0_waaromditproject_nl_48967365.mp3" data-clean-text="Waarom dit project. Dit project documenteert wat er gebeurt wanneer iemand tussen twee nationale systemen valt. Eén casus, tot op het bot gedocumenteerd: een grensarbeider die in Nederland woont en in België werkte, en die door een samenloop van medische en administratieve omstandigheden vastloopt tussen twee uitvoeringsstelsels die weigeren elkaars gegevens te lezen. . Het is geen pleidooi en geen aanklacht. Het is een empirische audit. De vraag die eraan ten grondslag ligt is simpel: hoe kan het dat een burger die in twee landen tegelijk bestaat, door beide landen administratief onzichtbaar wordt gemaakt?. Het antwoord ligt niet bij één instantie, en ook niet bij één fout. Het ligt in de architectuur van het systeem zelf. De nationale uitvoeringssystemen zijn gebouwd op een binaire logica die geen ruimte laat voor een burger die tegelijk in twee systemen zit. Wie niet in het ene vakje past, past ook niet in het andere. En een derde vakje bestaat niet. ." translate="no">
+<h2 id="waarom-dit-project">Waarom dit project</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="doc0_waaromditproject" data-audio-src="../assets/audio/doc0_waaromditproject_nl_48967365.mp3" data-clean-heading="Waarom dit project" data-clean-text="Waarom dit project. Dit project documenteert wat er gebeurt wanneer iemand tussen twee nationale systemen valt. Eén casus, tot op het bot gedocumenteerd: een grensarbeider die in Nederland woont en in België werkte, en die door een samenloop van medische en administratieve omstandigheden vastloopt tussen twee uitvoeringsstelsels die weigeren elkaars gegevens te lezen. . Het is geen pleidooi en geen aanklacht. Het is een empirische audit. De vraag die eraan ten grondslag ligt is simpel: hoe kan het dat een burger die in twee landen tegelijk bestaat, door beide landen administratief onzichtbaar wordt gemaakt?. Het antwoord ligt niet bij één instantie, en ook niet bij één fout. Het ligt in de architectuur van het systeem zelf. De nationale uitvoeringssystemen zijn gebouwd op een binaire logica die geen ruimte laat voor een burger die tegelijk in twee systemen zit. Wie niet in het ene vakje past, past ook niet in het andere. En een derde vakje bestaat niet. ." data-track-index="1" id="aab-doc0_waaromditproject" translate="no">
 <button aria-label="Beluister tekst" class="aab-play-btn" title="Beluister passage (AI-stem)" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -3603,13 +4038,13 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 </div>
 <div class="aab-controls">
 <button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
-</div>
+<button class="aab-next-btn" data-next-idx="2" data-next-target="#aab-doc0_watditprojectnietis" title="Spring direct naar het volgende audiogedeelte (3/7) en luister verder" type="button">⏭ Luister verder</button></div>
 <audio class="aab-audio-el" preload="none" src="../assets/audio/doc0_waaromditproject_nl_48967365.mp3"></audio>
 </div>
 <p>Dit project documenteert wat er gebeurt wanneer iemand tussen twee nationale systemen valt. Eén casus, tot op het bot gedocumenteerd: een grensarbeider die in Nederland woont en in België werkte, en die door een samenloop van medische en administratieve omstandigheden vastloopt tussen twee uitvoeringsstelsels die weigeren elkaars gegevens te lezen.</p>
 <p>Het is geen pleidooi en geen aanklacht. Het is een empirische audit. De vraag die eraan ten grondslag ligt is simpel: hoe kan het dat een burger die in twee landen tegelijk bestaat, door beide landen administratief onzichtbaar wordt gemaakt?</p>
 <p>Het antwoord ligt niet bij één instantie, en ook niet bij één fout. Het ligt in de architectuur van het systeem zelf. De nationale uitvoeringssystemen zijn gebouwd op een binaire logica die geen ruimte laat voor een burger die tegelijk in twee systemen zit. Wie niet in het ene vakje past, past ook niet in het andere. En een derde vakje bestaat niet.</p>
-<h2 id="wat-dit-project-niet-is">Wat dit project niet is</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="doc0_watditprojectnietis" data-audio-src="../assets/audio/doc0_watditprojectnietis_nl_17dd9a94.mp3" data-clean-text="Wat dit project niet is. Geen klacht. Geen aanklacht tegen personen. Geen persoonlijk verhaal. De documenten beschrijven een systeem, niet de mensen die erin werken. De meeste mensen die in dit dossier opduiken doen hun werk binnen de regels die hun zijn gegeven. Het probleem is niet dat ze kwaadwillig zijn. Het probleem is dat het systeem geen ruimte heeft voor wie niet in het standaardprofiel past. ." translate="no">
+<h2 id="wat-dit-project-niet-is">Wat dit project niet is</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="doc0_watditprojectnietis" data-audio-src="../assets/audio/doc0_watditprojectnietis_nl_17dd9a94.mp3" data-clean-heading="Wat dit project niet is" data-clean-text="Wat dit project niet is. Geen klacht. Geen aanklacht tegen personen. Geen persoonlijk verhaal. De documenten beschrijven een systeem, niet de mensen die erin werken. De meeste mensen die in dit dossier opduiken doen hun werk binnen de regels die hun zijn gegeven. Het probleem is niet dat ze kwaadwillig zijn. Het probleem is dat het systeem geen ruimte heeft voor wie niet in het standaardprofiel past. ." data-track-index="2" id="aab-doc0_watditprojectnietis" translate="no">
 <button aria-label="Beluister tekst" class="aab-play-btn" title="Beluister passage (AI-stem)" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -3628,11 +4063,11 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 </div>
 <div class="aab-controls">
 <button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
-</div>
+<button class="aab-next-btn" data-next-idx="3" data-next-target="#aab-doc0_devijfdocumenten" title="Spring direct naar het volgende audiogedeelte (4/7) en luister verder" type="button">⏭ Luister verder</button></div>
 <audio class="aab-audio-el" preload="none" src="../assets/audio/doc0_watditprojectnietis_nl_17dd9a94.mp3"></audio>
 </div>
 <p>Geen klacht. Geen aanklacht tegen personen. Geen persoonlijk verhaal. De documenten beschrijven een systeem, niet de mensen die erin werken. De meeste mensen die in dit dossier opduiken doen hun werk binnen de regels die hun zijn gegeven. Het probleem is niet dat ze kwaadwillig zijn. Het probleem is dat het systeem geen ruimte heeft voor wie niet in het standaardprofiel past.</p>
-<h2 id="de-zes-documenten">De zes documenten</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="doc0_devijfdocumenten" data-audio-src="../assets/audio/doc0_devijfdocumenten_nl_aecc07a6.mp3" data-clean-text="De zes documenten. Elk document is zelfstandig leesbaar. Elk belicht hetzelfde materiaal vanuit een andere hoek, van de macro architectuur van Europese verdragen tot de micro uitvoering aan het loket. . Document 0, De inleiding en leeswijzer. Schetst het uitgangspunt, de kaders en de opbouw van de audit. Voor wie wil weten vanuit welke feitelijke positie dit dossier vertrekt en hoe de verschillende lagen op elkaar ingrijpen. . Document A, De narratieve audit. Vertelt het verhaal van de organisaties die samen het systeem vormen. Wat ze doen, volgens welke logica ze werken, waar hun mandaat eindigt en hoe een beslissing doorwerkt op de volgende schakel. Voor wie het geheel wil begrijpen zonder direct de onderliggende data te doorlopen. . Document B, De data matrix. Bevat alle feiten in chronologische volgorde per organisatie: datums, referentienummers, correspondentie, beslissingen en primaire bronkoppelingen. De forensische bewijslaag waarop alle andere documenten zijn gebouwd. Voor wie wil verifiëren wat er precies is gebeurd. . Document C, De visuele architectuur. Toont de structuren, netwerken en datastromen die aan het vastlopen ten grondslag liggen. Brengt de systeemdynamiek tussen België, Nederland en de Europese Unie in beeld: waar de knooppunten zitten, hoe terugkoppelingen werken en hoe het bovenliggende verdrag zich spiegelt in de uitvoering beneden aan het loket. Voor wie wil zien waarom de feiten tot deze uitkomst leiden. . Document D, De synthese. Brengt de patronen samen die uit het materiaal naar voren komen. Hoe de twee werkelijkheden, de fysieke en de administratieve, uit elkaar groeien, welke mechanismen steeds terugkeren en welke structurele sleutels het verschil maken tussen stilstand en oplossing. Voor wie de optelsom wil. . Document E, Het rechtenoverzicht. Toetst per sociaal recht wat de wet belooft, waarom het bij een grensarbeider vastloopt in een Catch 22 of gesloten deur, welke alternatieve route er bestaat en wat het in de praktijk oplevert of nog laat aanslepen. Voor wie per recht de concrete status en uitwerking wil overzien. ." translate="no">
+<h2 id="de-zes-documenten">De zes documenten</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="doc0_devijfdocumenten" data-audio-src="../assets/audio/doc0_devijfdocumenten_nl_aecc07a6.mp3" data-clean-heading="De zes documenten" data-clean-text="De zes documenten. Elk document is zelfstandig leesbaar. Elk belicht hetzelfde materiaal vanuit een andere hoek, van de macro architectuur van Europese verdragen tot de micro uitvoering aan het loket. . Document 0, De inleiding en leeswijzer. Schetst het uitgangspunt, de kaders en de opbouw van de audit. Voor wie wil weten vanuit welke feitelijke positie dit dossier vertrekt en hoe de verschillende lagen op elkaar ingrijpen. . Document A, De narratieve audit. Vertelt het verhaal van de organisaties die samen het systeem vormen. Wat ze doen, volgens welke logica ze werken, waar hun mandaat eindigt en hoe een beslissing doorwerkt op de volgende schakel. Voor wie het geheel wil begrijpen zonder direct de onderliggende data te doorlopen. . Document B, De data matrix. Bevat alle feiten in chronologische volgorde per organisatie: datums, referentienummers, correspondentie, beslissingen en primaire bronkoppelingen. De forensische bewijslaag waarop alle andere documenten zijn gebouwd. Voor wie wil verifiëren wat er precies is gebeurd. . Document C, De visuele architectuur. Toont de structuren, netwerken en datastromen die aan het vastlopen ten grondslag liggen. Brengt de systeemdynamiek tussen België, Nederland en de Europese Unie in beeld: waar de knooppunten zitten, hoe terugkoppelingen werken en hoe het bovenliggende verdrag zich spiegelt in de uitvoering beneden aan het loket. Voor wie wil zien waarom de feiten tot deze uitkomst leiden. . Document D, De synthese. Brengt de patronen samen die uit het materiaal naar voren komen. Hoe de twee werkelijkheden, de fysieke en de administratieve, uit elkaar groeien, welke mechanismen steeds terugkeren en welke structurele sleutels het verschil maken tussen stilstand en oplossing. Voor wie de optelsom wil. . Document E, Het rechtenoverzicht. Toetst per sociaal recht wat de wet belooft, waarom het bij een grensarbeider vastloopt in een Catch 22 of gesloten deur, welke alternatieve route er bestaat en wat het in de praktijk oplevert of nog laat aanslepen. Voor wie per recht de concrete status en uitwerking wil overzien. ." data-track-index="3" id="aab-doc0_devijfdocumenten" translate="no">
 <button aria-label="Beluister tekst" class="aab-play-btn" title="Beluister passage (AI-stem)" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -3651,7 +4086,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 </div>
 <div class="aab-controls">
 <button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
-</div>
+<button class="aab-next-btn" data-next-idx="4" data-next-target="#aab-doc0_hoejezegebruikt" title="Spring direct naar het volgende audiogedeelte (5/7) en luister verder" type="button">⏭ Luister verder</button></div>
 <audio class="aab-audio-el" preload="none" src="../assets/audio/doc0_devijfdocumenten_nl_aecc07a6.mp3"></audio>
 </div>
 <p>Elk document is zelfstandig leesbaar. Elk belicht hetzelfde materiaal vanuit een andere hoek — van de macro-architectuur van Europese verdragen tot de micro-uitvoering aan het loket.</p>
@@ -3667,7 +4102,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 <p>Brengt de patronen samen die uit het materiaal naar voren komen. Hoe de twee werkelijkheden — de fysieke en de administratieve — uit elkaar groeien, welke mechanismen steeds terugkeren en welke structurele sleutels het verschil maken tussen stilstand en oplossing. Voor wie de optelsom wil.</p>
 <h3 id="document-e-het-rechtenoverzicht">Document E — Het rechtenoverzicht</h3>
 <p>Toetst per sociaal recht wat de wet belooft, waarom het bij een grensarbeider vastloopt in een Catch-22 of gesloten deur, welke alternatieve route er bestaat en wat het in de praktijk oplevert of nog laat aanslepen. Voor wie per recht de concrete status en uitwerking wil overzien.</p>
-<h2 id="hoe-je-ze-gebruikt">Hoe je ze gebruikt</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="doc0_hoejezegebruikt" data-audio-src="../assets/audio/doc0_hoejezegebruikt_nl_716eca53.mp3" data-clean-text="Hoe je ze gebruikt. Begin waar je begint. Elk document staat op zichzelf. . Wie alleen het verhaal per organisatie wil: Document A. Wie de feiten en bewijsstukken wil: Document B. Wie het visuele systeemoverzicht wil: Document C. Wie de overkoepelende synthese wil: Document D. Wie per sociaal recht wil zien waar het vastloopt, wat er nog loopt en welke route overblijft: Document E. . Wie alles in samenhang wil lezen, begint bij Document 0, gaat dan naar Document A voor de organisaties, naar Document B voor de onderliggende feiten, naar Document C voor de systeemarchitectuur, naar Document D voor de synthese, en sluit af met Document E voor het actuele rechtenoverzicht. ." translate="no">
+<h2 id="hoe-je-ze-gebruikt">Hoe je ze gebruikt</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="doc0_hoejezegebruikt" data-audio-src="../assets/audio/doc0_hoejezegebruikt_nl_716eca53.mp3" data-clean-heading="Hoe je ze gebruikt" data-clean-text="Hoe je ze gebruikt. Begin waar je begint. Elk document staat op zichzelf. . Wie alleen het verhaal per organisatie wil: Document A. Wie de feiten en bewijsstukken wil: Document B. Wie het visuele systeemoverzicht wil: Document C. Wie de overkoepelende synthese wil: Document D. Wie per sociaal recht wil zien waar het vastloopt, wat er nog loopt en welke route overblijft: Document E. . Wie alles in samenhang wil lezen, begint bij Document 0, gaat dan naar Document A voor de organisaties, naar Document B voor de onderliggende feiten, naar Document C voor de systeemarchitectuur, naar Document D voor de synthese, en sluit af met Document E voor het actuele rechtenoverzicht. ." data-track-index="4" id="aab-doc0_hoejezegebruikt" translate="no">
 <button aria-label="Beluister tekst" class="aab-play-btn" title="Beluister passage (AI-stem)" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -3686,13 +4121,13 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 </div>
 <div class="aab-controls">
 <button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
-</div>
+<button class="aab-next-btn" data-next-idx="5" data-next-target="#aab-doc0_voorwie" title="Spring direct naar het volgende audiogedeelte (6/7) en luister verder" type="button">⏭ Luister verder</button></div>
 <audio class="aab-audio-el" preload="none" src="../assets/audio/doc0_hoejezegebruikt_nl_716eca53.mp3"></audio>
 </div>
 <p>Begin waar je begint. Elk document staat op zichzelf.</p>
 <p>Wie alleen het verhaal per organisatie wil: Document A. Wie de feiten en bewijsstukken wil: Document B. Wie het visuele systeemoverzicht wil: Document C. Wie de overkoepelende synthese wil: Document D. Wie per sociaal recht wil zien waar het vastloopt, wat er nog loopt en welke route overblijft: Document E.</p>
 <p>Wie alles in samenhang wil lezen, begint bij Document 0, gaat dan naar Document A voor de organisaties, naar Document B voor de onderliggende feiten, naar Document C voor de systeemarchitectuur, naar Document D voor de synthese, en sluit af met Document E voor het actuele rechtenoverzicht.</p>
-<h2 id="voor-wie">Voor wie</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="doc0_voorwie" data-audio-src="../assets/audio/doc0_voorwie_nl_94de83c1.mp3" data-clean-text="Voor wie. Voor iedereen die wil begrijpen hoe een modern verzorgingsstelsel vastloopt op zijn eigen grenzen. Beleidsmakers, juristen, academici, journalisten, uitvoeringsambtenaren, en de grensarbeiders die hetzelfde meemaken. . Het materiaal is openbaar en vrij te gebruiken. Wie eruit citeert, citeert Document B als de bron van de feiten. ." translate="no">
+<h2 id="voor-wie">Voor wie</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="doc0_voorwie" data-audio-src="../assets/audio/doc0_voorwie_nl_94de83c1.mp3" data-clean-heading="Voor wie" data-clean-text="Voor wie. Voor iedereen die wil begrijpen hoe een modern verzorgingsstelsel vastloopt op zijn eigen grenzen. Beleidsmakers, juristen, academici, journalisten, uitvoeringsambtenaren, en de grensarbeiders die hetzelfde meemaken. . Het materiaal is openbaar en vrij te gebruiken. Wie eruit citeert, citeert Document B als de bron van de feiten. ." data-track-index="5" id="aab-doc0_voorwie" translate="no">
 <button aria-label="Beluister tekst" class="aab-play-btn" title="Beluister passage (AI-stem)" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -3711,12 +4146,12 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 </div>
 <div class="aab-controls">
 <button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
-</div>
+<button class="aab-next-btn" data-next-idx="6" data-next-target="#aab-doc0_bronenverificatie" title="Spring direct naar het volgende audiogedeelte (7/7) en luister verder" type="button">⏭ Luister verder</button></div>
 <audio class="aab-audio-el" preload="none" src="../assets/audio/doc0_voorwie_nl_94de83c1.mp3"></audio>
 </div>
 <p>Voor iedereen die wil begrijpen hoe een modern verzorgingsstelsel vastloopt op zijn eigen grenzen. Beleidsmakers, juristen, academici, journalisten, uitvoeringsambtenaren, en de grensarbeiders die hetzelfde meemaken.</p>
 <p>Het materiaal is openbaar en vrij te gebruiken. Wie eruit citeert, citeert Document B als de bron van de feiten.</p>
-<h2 id="bron-en-verificatie">Bron en verificatie</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="doc0_bronenverificatie" data-audio-src="../assets/audio/doc0_bronenverificatie_nl_1173be1b.mp3" data-clean-text="Bron en verificatie. Alle vastleggingen in dit project zijn gebaseerd op originele correspondentie, medische verslagen, referentienummers en logbestanden. Waar iets niet verifieerbaar is, wordt dat expliciet vermeld. Waar iets onduidelijk blijft, wordt dat als onduidelijk opgeschreven en niet als vermoeden gepresenteerd. . De feiten zijn vastgelegd in Document B. De andere documenten zijn daarop gebaseerd en volgen dezelfde bron. . Wie de onderliggende bewijsstukken wil inzien, de volledige correspondentie wil raadplegen, of een beroep wil doen op het bronmateriaal, kan contact opnemen via systeemaudit@gmail. com. . ." translate="no">
+<h2 id="bron-en-verificatie">Bron en verificatie</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="doc0_bronenverificatie" data-audio-src="../assets/audio/doc0_bronenverificatie_nl_1173be1b.mp3" data-clean-heading="Bron en verificatie" data-clean-text="Bron en verificatie. Alle vastleggingen in dit project zijn gebaseerd op originele correspondentie, medische verslagen, referentienummers en logbestanden. Waar iets niet verifieerbaar is, wordt dat expliciet vermeld. Waar iets onduidelijk blijft, wordt dat als onduidelijk opgeschreven en niet als vermoeden gepresenteerd. . De feiten zijn vastgelegd in Document B. De andere documenten zijn daarop gebaseerd en volgen dezelfde bron. . Wie de onderliggende bewijsstukken wil inzien, de volledige correspondentie wil raadplegen, of een beroep wil doen op het bronmateriaal, kan contact opnemen via systeemaudit@gmail. com. . ." data-track-index="6" id="aab-doc0_bronenverificatie" translate="no">
 <button aria-label="Beluister tekst" class="aab-play-btn" title="Beluister passage (AI-stem)" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -3735,7 +4170,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 </div>
 <div class="aab-controls">
 <button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
-</div>
+<button class="aab-next-btn aab-to-playlist-btn" data-next-idx="playlist" data-next-target="#audit-audio-playlist" title="Ga naar de volledige Audio-Playlist onderaan dit document" type="button">🎧 Playlist</button></div>
 <audio class="aab-audio-el" preload="none" src="../assets/audio/doc0_bronenverificatie_nl_1173be1b.mp3"></audio>
 </div>
 <p>Alle vastleggingen in dit project zijn gebaseerd op originele correspondentie, medische verslagen, referentienummers en logbestanden. Waar iets niet verifieerbaar is, wordt dat expliciet vermeld. Waar iets onduidelijk blijft, wordt dat als onduidelijk opgeschreven en niet als vermoeden gepresenteerd.</p>
@@ -3743,7 +4178,54 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 <div class="contactblok">
 <p>Wie de onderliggende bewijsstukken wil inzien, de volledige correspondentie wil raadplegen, of een beroep wil doen op het bronmateriaal, kan contact opnemen via <a href="mailto:systeemaudit@gmail.com">systeemaudit@gmail.com</a>.</p>
 </div>
-<a class="pub-top" href="#top" title="Naar boven">↑</a><!-- Forensisch Bronopvragings- en Contactvenster (Modal) -->
+<a class="pub-top" href="#top" title="Naar boven">↑</a><section aria-label="Volledige Audio-Playlist" class="audit-playlist-sectie notranslate" id="audit-audio-playlist" translate="no">
+<div class="aps-header">
+<div class="aps-title-row">
+<span class="aps-badge">🎧 LUISTERMODUS ZONDER LEZEN</span>
+<a class="pub-naar-boven" href="#top">↑ naar boven</a>
+</div>
+<h2>Audio-Playlist — Volledig document achter elkaar beluisteren (7 onderdelen)</h2>
+<p class="aps-desc">Voor wie dit document liever volledig beluistert zonder door de tekst te hoeven scrollen. Druk op <strong>▶</strong> in de hoofdspeler om alle 7 onderdelen automatisch na elkaar te laten voorlezen, of tik op een specifiek onderdeel in de onderstaande lijst.</p>
+</div>
+<div class="aps-master-player" id="aps-master-player">
+<div class="aps-mp-controls">
+<button aria-label="Vorig onderdeel" class="aps-mp-prev" id="aps-prev-btn" title="Vorig onderdeel" type="button">⏮</button>
+<button aria-label="Afspelen of pauzeren" class="aps-mp-play" id="aps-play-btn" title="Alles achter elkaar afspelen / Pauzeren" type="button">
+<span class="aps-icon-play">▶</span>
+<span class="aps-icon-pause" style="display:none;">❚❚</span>
+</button>
+<button aria-label="Volgend onderdeel" class="aps-mp-next" id="aps-next-btn" title="Volgend onderdeel" type="button">⏭</button>
+</div>
+<div class="aps-mp-info">
+<div class="aps-mp-meta">
+<span class="aps-mp-status" id="aps-mp-status">Klaar om af te spelen (1 / 7)</span>
+<span class="aps-mp-time" id="aps-mp-time">0:00 / --:--</span>
+</div>
+<div class="aps-mp-trackname" id="aps-mp-trackname">1. Een Europees verhaal</div>
+<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="aps-mp-progress-wrap" id="aps-mp-progress-wrap" role="progressbar">
+<div class="aps-mp-progress-bar">
+<div class="aps-mp-progress-fill" id="aps-mp-progress-fill"></div>
+</div>
+</div>
+</div>
+<div class="aps-mp-extra">
+<label class="aps-autoplay-toggle" title="Speel automatisch het volgende onderdeel af zodra een opname klaar is">
+<input checked="checked" id="aps-autoplay-chk" type="checkbox"/>
+<span>Auto-vervolg</span>
+</label>
+<button class="aab-speed-btn" id="aps-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
+</div>
+</div>
+<div class="aps-tracklist" id="aps-tracklist">
+<div class="aps-track" data-audio-id="doc0_eeneuropeesverhaal" data-track-idx="0"> <span class="aps-t-num">01</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Een Europees verhaal</span> <a class="aps-track-jump" href="#een-europees-verhaal" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="doc0_waaromditproject" data-track-idx="1"> <span class="aps-t-num">02</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Waarom dit project</span> <a class="aps-track-jump" href="#waarom-dit-project" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="doc0_watditprojectnietis" data-track-idx="2"> <span class="aps-t-num">03</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Wat dit project niet is</span> <a class="aps-track-jump" href="#wat-dit-project-niet-is" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="doc0_devijfdocumenten" data-track-idx="3"> <span class="aps-t-num">04</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">De zes documenten</span> <a class="aps-track-jump" href="#de-zes-documenten" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="doc0_hoejezegebruikt" data-track-idx="4"> <span class="aps-t-num">05</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Hoe je ze gebruikt</span> <a class="aps-track-jump" href="#hoe-je-ze-gebruikt" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="doc0_voorwie" data-track-idx="5"> <span class="aps-t-num">06</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Voor wie</span> <a class="aps-track-jump" href="#voor-wie" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="doc0_bronenverificatie" data-track-idx="6"> <span class="aps-t-num">07</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Bron en verificatie</span> <a class="aps-track-jump" href="#bron-en-verificatie" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+</div>
+</section><!-- Forensisch Bronopvragings- en Contactvenster (Modal) -->
 <div class="bm-modal-overlay" id="bm-modal" onclick="if(event.target===this)sluitBronModal()">
 <div aria-labelledby="bm-modal-titel" aria-modal="true" class="bm-modal-dialog" role="dialog">
 <div class="bm-modal-kop">
@@ -3751,7 +4233,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 <button aria-label="Venster sluiten" class="bm-modal-sluit" onclick="sluitBronModal()" type="button">×</button>
 </div>
 <div class="bm-intro">
-      Alle 694 interacties in deze audit zijn gebaseerd op objectieve brondocumenten (originele e-mails met Message-ID's, formele besluiten, brieven en medische verslagen). Om privacy en AVG-rechten van betrokkenen te waarborgen zijn persoonsgegevens in publieke bestanden afgeschermd. Geauthenticeerde onderzoekers, journalisten, toezichthouders en lotgenoten kunnen volledige, ongecensureerde brondossiers opvragen ter verificatie.
+      Alle 704 interacties in deze audit zijn gebaseerd op objectieve brondocumenten (originele e-mails met Message-ID's, formele besluiten, brieven en medische verslagen). Om privacy en AVG-rechten van betrokkenen te waarborgen zijn persoonsgegevens in publieke bestanden afgeschermd. Geauthenticeerde onderzoekers, journalisten, toezichthouders en lotgenoten kunnen volledige, ongecensureerde brondossiers opvragen ter verificatie.
     </div>
 <form id="bm-form" onsubmit="event.preventDefault();stuurEmail();">
 <div class="bm-groep">
@@ -3942,7 +4424,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 1 november 2026, 08:10</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 2 november 2026, 10:32</p>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-print-btn notranslate" onclick="window.print()" title="Print deze pagina of bewaar als PDF" translate="no" type="button">🖨️ Print / Bewaar als PDF</button>
 <button class="pub-contact-btn pub-contact-footer notranslate" onclick="openBronModal('Footer contact')" translate="no" type="button">📄 Bronstuk opvragen / Contact</button>
@@ -4210,13 +4692,17 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 })();
 </script><script class="notranslate" translate="no">
 // ==========================================================================
-// AUDIT AUDIO PLAYER ENGINE — HTML5 Audio + Live DOM SpeechSynthesis Fallback
+// AUDIT AUDIO PLAYER ENGINE — HTML5 Audio + "Luister verder" + Playlist
 // ==========================================================================
 (function() {
+  var allBars = [];
   var currentBar = null;
+  var currentTrackIdx = 0;
   var currentSynthTimer = null;
   var synthDurationEst = 0;
   var synthStartTime = 0;
+  var speeds = [1.0, 1.25, 1.5];
+  var globalSpeedIdx = 0;
 
   function formatTime(secs) {
     if (isNaN(secs) || secs < 0) return "0:00";
@@ -4238,7 +4724,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
     var curr = bar.nextElementSibling;
     while (curr) {
       var tag = curr.tagName ? curr.tagName.toLowerCase() : '';
-      if (tag === 'h1' || tag === 'h2' || tag === 'h3' || tag === 'footer' || (curr.classList && (curr.classList.contains('pub-toc') || curr.classList.contains('audit-audio-bar')))) {
+      if (tag === 'h1' || tag === 'h2' || tag === 'h3' || tag === 'footer' || tag === 'section' || (curr.classList && (curr.classList.contains('pub-toc') || curr.classList.contains('audit-audio-bar') || curr.classList.contains('audit-playlist-sectie')))) {
         break;
       }
       if (!curr.classList || (!curr.classList.contains('notranslate') && !curr.classList.contains('d0-intermezzo') && !curr.classList.contains('audit-bewijs') && !curr.classList.contains('footnotes') && tag !== 'table' && tag !== 'svg' && tag !== 'button')) {
@@ -4259,8 +4745,63 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
     return combined;
   }
 
+  function updateMasterPlaylistUI(isPlaying, curTime, totTime, pct) {
+    var mpPlay = document.getElementById('aps-play-btn');
+    var mpStatus = document.getElementById('aps-mp-status');
+    var mpTime = document.getElementById('aps-mp-time');
+    var mpTrackname = document.getElementById('aps-mp-trackname');
+    var mpFill = document.getElementById('aps-mp-progress-fill');
+
+    if (mpPlay) {
+      if (isPlaying) {
+        mpPlay.classList.add('aps-playing');
+        var pI = mpPlay.querySelector('.aps-icon-play');
+        var paI = mpPlay.querySelector('.aps-icon-pause');
+        if (pI) pI.style.display = 'none';
+        if (paI) paI.style.display = 'inline';
+      } else {
+        mpPlay.classList.remove('aps-playing');
+        var pI2 = mpPlay.querySelector('.aps-icon-play');
+        var paI2 = mpPlay.querySelector('.aps-icon-pause');
+        if (pI2) pI2.style.display = 'inline';
+        if (paI2) paI2.style.display = 'none';
+      }
+    }
+
+    if (allBars.length > 0 && currentTrackIdx >= 0 && currentTrackIdx < allBars.length) {
+      var activeBar = allBars[currentTrackIdx];
+      var trackTitle = activeBar.getAttribute('data-clean-heading') || (activeBar.querySelector('.aab-title') ? activeBar.querySelector('.aab-title').textContent : ('Onderdeel ' + (currentTrackIdx + 1)));
+      if (mpStatus) {
+        mpStatus.textContent = (isPlaying ? "🔊 Nu aan het afspelen" : "⏸ Gepauzeerd") + " (" + (currentTrackIdx + 1) + " / " + allBars.length + ")";
+      }
+      if (mpTrackname) {
+        mpTrackname.textContent = (currentTrackIdx + 1) + ". " + trackTitle;
+      }
+    }
+
+    if (typeof pct === 'number' && mpFill) {
+      mpFill.style.width = Math.max(0, Math.min(100, pct)) + "%";
+    }
+    if (typeof curTime === 'number' && typeof totTime === 'number' && mpTime) {
+      mpTime.textContent = formatTime(curTime) + " / " + formatTime(totTime);
+    }
+
+    var trackRows = document.querySelectorAll('.aps-track');
+    trackRows.forEach(function(row) {
+      var rIdx = parseInt(row.getAttribute('data-track-idx') || '-1', 10);
+      var iconEl = row.querySelector('.aps-t-icon');
+      if (rIdx === currentTrackIdx) {
+        row.classList.add('aps-active');
+        if (iconEl) iconEl.textContent = isPlaying ? '❚❚' : '▶';
+      } else {
+        row.classList.remove('aps-active');
+        if (iconEl) iconEl.textContent = '▶';
+      }
+    });
+  }
+
   function stopAllAudio() {
-    document.querySelectorAll('.audit-audio-bar').forEach(function(bar) {
+    allBars.forEach(function(bar) {
       var audio = bar.querySelector('.aab-audio-el');
       if (audio && !audio.paused) {
         audio.pause();
@@ -4281,36 +4822,94 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
       clearInterval(currentSynthTimer);
       currentSynthTimer = null;
     }
+    updateMasterPlaylistUI(false);
   }
 
-  function initAudioBar(bar) {
+  function applyGlobalSpeed(spd) {
+    allBars.forEach(function(bar) {
+      var audio = bar.querySelector('.aab-audio-el');
+      var speedBtn = bar.querySelector('.aab-speed-btn');
+      if (audio) audio.playbackRate = spd;
+      if (speedBtn) speedBtn.textContent = spd + "x";
+    });
+    var mpSpeed = document.getElementById('aps-speed-btn');
+    if (mpSpeed) mpSpeed.textContent = spd + "x";
+  }
+
+  function handleTrackEnded(idx) {
+    var autoChk = document.getElementById('aps-autoplay-chk');
+    var shouldAutoContinue = autoChk ? autoChk.checked : true;
+    if (shouldAutoContinue && idx + 1 < allBars.length) {
+      playTrackByIndex(idx + 1, false);
+    } else {
+      updateMasterPlaylistUI(false, 0, 0, 0);
+    }
+  }
+
+  function playTrackByIndex(idx, scrollToBar) {
+    if (idx < 0 || idx >= allBars.length) return;
+    currentTrackIdx = idx;
+    var targetBar = allBars[idx];
+
+    if (scrollToBar) {
+      var prev = targetBar.previousElementSibling;
+      var scrollEl = (prev && (/^H[1-4]$/.test(prev.tagName) || prev.classList.contains('recht-kop-wrapper'))) ? prev : targetBar;
+      scrollEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    var trackRow = document.querySelector('.aps-track[data-track-idx="' + idx + '"]');
+    var trackList = document.getElementById('aps-tracklist');
+    if (trackRow && trackList) {
+      var topPos = trackRow.offsetTop - trackList.offsetTop;
+      trackList.scrollTo({ top: Math.max(0, topPos - 60), behavior: 'smooth' });
+    }
+
+    if (targetBar && targetBar._startPlayback) {
+      targetBar._startPlayback();
+    }
+  }
+
+  function initAudioBar(bar, idx) {
     var playBtn = bar.querySelector('.aab-play-btn');
     var speedBtn = bar.querySelector('.aab-speed-btn');
+    var nextBtn = bar.querySelector('.aab-next-btn');
     var progressWrap = bar.querySelector('.aab-progress-wrap');
     var progressFill = bar.querySelector('.aab-progress-fill');
     var timeEl = bar.querySelector('.aab-time');
     var audio = bar.querySelector('.aab-audio-el');
     var cleanText = bar.getAttribute('data-clean-text') || '';
     var baseAudioSrc = bar.getAttribute('data-audio-src') || '';
-    var speeds = [1.0, 1.25, 1.5];
-    var speedIdx = 0;
-
-    function setSpeed(spd) {
-      if (audio) audio.playbackRate = spd;
-      if (speedBtn) speedBtn.textContent = spd + "x";
-    }
 
     if (speedBtn) {
       speedBtn.addEventListener('click', function(e) {
         e.stopPropagation();
-        speedIdx = (speedIdx + 1) % speeds.length;
-        setSpeed(speeds[speedIdx]);
+        globalSpeedIdx = (globalSpeedIdx + 1) % speeds.length;
+        applyGlobalSpeed(speeds[globalSpeedIdx]);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var nextIdxAttr = nextBtn.getAttribute('data-next-idx');
+        if (nextIdxAttr === 'playlist') {
+          var pl = document.getElementById('audit-audio-playlist');
+          if (pl) pl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          var nextIdx = parseInt(nextIdxAttr, 10);
+          if (!isNaN(nextIdx) && nextIdx < allBars.length) {
+            playTrackByIndex(nextIdx, true);
+          }
+        }
       });
     }
 
     if (audio) {
       audio.addEventListener('loadedmetadata', function() {
         if (timeEl) timeEl.textContent = "0:00 / " + formatTime(audio.duration);
+        if (currentTrackIdx === idx) {
+          updateMasterPlaylistUI(!audio.paused, audio.currentTime, audio.duration, 0);
+        }
       });
 
       audio.addEventListener('timeupdate', function() {
@@ -4318,6 +4917,9 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
           var pct = (audio.currentTime / audio.duration) * 100;
           if (progressFill) progressFill.style.width = pct + "%";
           if (timeEl) timeEl.textContent = formatTime(audio.currentTime) + " / " + formatTime(audio.duration);
+          if (currentTrackIdx === idx) {
+            updateMasterPlaylistUI(!audio.paused, audio.currentTime, audio.duration, pct);
+          }
         }
       });
 
@@ -4331,6 +4933,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
         }
         if (progressFill) progressFill.style.width = "0%";
         if (timeEl) timeEl.textContent = "0:00 / " + formatTime(audio.duration);
+        handleTrackEnded(idx);
       });
     }
 
@@ -4347,108 +4950,207 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
     function syncAudioSrcForLang(lang) {
       if (!audio || !baseAudioSrc) return;
       if (lang === 'nl') {
-        audio.src = baseAudioSrc;
+        if (audio.getAttribute('src') !== baseAudioSrc) audio.src = baseAudioSrc;
         return;
       }
       if (lang === 'en' || lang === 'de' || lang === 'fr') {
         var targetSrc = baseAudioSrc.replace('_nl_', '_' + lang + '_');
-        audio.src = targetSrc;
+        if (audio.getAttribute('src') !== targetSrc) audio.src = targetSrc;
       }
     }
 
     bar._updateLanguage = syncAudioSrcForLang;
 
+    function startPlayback() {
+      var lang = getActiveLanguage();
+      syncAudioSrcForLang(lang);
+      var isTranslatedFallback = (lang !== 'nl' && lang !== 'en' && lang !== 'de' && lang !== 'fr') || !audio || !audio.src;
+
+      stopAllAudio();
+      currentBar = bar;
+      currentTrackIdx = idx;
+
+      if (isTranslatedFallback && window.speechSynthesis) {
+        if (playBtn) {
+          playBtn.classList.add('aab-playing');
+          var pIcon = playBtn.querySelector('.aab-icon-play');
+          var paIcon = playBtn.querySelector('.aab-icon-pause');
+          if (pIcon) pIcon.style.display = 'none';
+          if (paIcon) paIcon.style.display = 'inline';
+        }
+
+        var textToSpeak = cleanText;
+        if (lang !== 'nl') {
+          var liveText = getSectionLiveText(bar);
+          if (liveText && liveText.length > 20) {
+            textToSpeak = liveText;
+          }
+        }
+
+        var utter = new SpeechSynthesisUtterance(textToSpeak);
+        utter.lang = lang;
+        utter.rate = speeds[globalSpeedIdx];
+
+        var wordCount = textToSpeak.split(/\s+/).length;
+        synthDurationEst = (wordCount / 130) * 60 / speeds[globalSpeedIdx];
+        synthStartTime = Date.now();
+        updateMasterPlaylistUI(true, 0, synthDurationEst, 0);
+
+        currentSynthTimer = setInterval(function() {
+          var elapsed = (Date.now() - synthStartTime) / 1000;
+          if (elapsed > synthDurationEst) elapsed = synthDurationEst;
+          var pct = (elapsed / synthDurationEst) * 100;
+          if (progressFill) progressFill.style.width = pct + "%";
+          if (timeEl) timeEl.textContent = formatTime(elapsed) + " / " + formatTime(synthDurationEst);
+          updateMasterPlaylistUI(true, elapsed, synthDurationEst, pct);
+        }, 250);
+
+        utter.onend = function() {
+          stopAllAudio();
+          if (progressFill) progressFill.style.width = "0%";
+          if (timeEl) timeEl.textContent = "0:00 / " + formatTime(synthDurationEst);
+          handleTrackEnded(idx);
+        };
+        utter.onerror = function() {
+          stopAllAudio();
+        };
+
+        window.speechSynthesis.speak(utter);
+      } else if (audio) {
+        if (playBtn) {
+          playBtn.classList.add('aab-playing');
+          var pIcon2 = playBtn.querySelector('.aab-icon-play');
+          var paIcon2 = playBtn.querySelector('.aab-icon-pause');
+          if (pIcon2) pIcon2.style.display = 'none';
+          if (paIcon2) paIcon2.style.display = 'inline';
+        }
+        audio.playbackRate = speeds[globalSpeedIdx];
+        updateMasterPlaylistUI(true, audio.currentTime || 0, audio.duration || 0, 0);
+
+        audio.play().catch(function(err) {
+          console.warn("[AUDIO INFO] Neuraal bestand niet direct beschikbaar, omschakelen naar browser stem:", err);
+          if (window.speechSynthesis) {
+            var liveText = getSectionLiveText(bar);
+            var fallbackText = (liveText && liveText.length > 20) ? liveText : cleanText;
+            var utter = new SpeechSynthesisUtterance(fallbackText);
+            utter.lang = lang;
+            utter.rate = speeds[globalSpeedIdx];
+            utter.onend = function() { stopAllAudio(); handleTrackEnded(idx); };
+            utter.onerror = function() { stopAllAudio(); };
+            window.speechSynthesis.speak(utter);
+          } else {
+            stopAllAudio();
+          }
+        });
+      }
+    }
+
+    bar._startPlayback = startPlayback;
+
     if (playBtn) {
       playBtn.addEventListener('click', function() {
         var isPlaying = playBtn.classList.contains('aab-playing');
-        var lang = getActiveLanguage();
-        syncAudioSrcForLang(lang);
-
-        var isTranslatedFallback = (lang !== 'nl' && lang !== 'en' && lang !== 'de' && lang !== 'fr') || !audio || !audio.src;
-
         if (isPlaying) {
           stopAllAudio();
         } else {
-          stopAllAudio();
-          currentBar = bar;
-
-          if (isTranslatedFallback && window.speechSynthesis) {
-            playBtn.classList.add('aab-playing');
-            var pIcon = playBtn.querySelector('.aab-icon-play');
-            var paIcon = playBtn.querySelector('.aab-icon-pause');
-            if (pIcon) pIcon.style.display = 'none';
-            if (paIcon) paIcon.style.display = 'inline';
-
-            var textToSpeak = cleanText;
-            if (lang !== 'nl') {
-              var liveText = getSectionLiveText(bar);
-              if (liveText && liveText.length > 20) {
-                textToSpeak = liveText;
-              }
-            }
-
-            var utter = new SpeechSynthesisUtterance(textToSpeak);
-            utter.lang = lang;
-            utter.rate = speeds[speedIdx];
-
-            var wordCount = textToSpeak.split(/\s+/).length;
-            synthDurationEst = (wordCount / 130) * 60 / speeds[speedIdx];
-            synthStartTime = Date.now();
-
-            currentSynthTimer = setInterval(function() {
-              var elapsed = (Date.now() - synthStartTime) / 1000;
-              if (elapsed > synthDurationEst) elapsed = synthDurationEst;
-              var pct = (elapsed / synthDurationEst) * 100;
-              if (progressFill) progressFill.style.width = pct + "%";
-              if (timeEl) timeEl.textContent = formatTime(elapsed) + " / " + formatTime(synthDurationEst);
-            }, 250);
-
-            utter.onend = function() {
-              stopAllAudio();
-              if (progressFill) progressFill.style.width = "0%";
-              if (timeEl) timeEl.textContent = "0:00 / " + formatTime(synthDurationEst);
-            };
-            utter.onerror = function() {
-              stopAllAudio();
-            };
-
-            window.speechSynthesis.speak(utter);
-          } else if (audio) {
-            playBtn.classList.add('aab-playing');
-            var pIcon = playBtn.querySelector('.aab-icon-play');
-            var paIcon = playBtn.querySelector('.aab-icon-pause');
-            if (pIcon) pIcon.style.display = 'none';
-            if (paIcon) paIcon.style.display = 'inline';
-
-            audio.play().catch(function(err) {
-              console.warn("[AUDIO INFO] Neuraal bestand niet direct beschikbaar, omschakelen naar browser stem:", err);
-              if (window.speechSynthesis) {
-                var liveText = getSectionLiveText(bar);
-                var fallbackText = (liveText && liveText.length > 20) ? liveText : cleanText;
-                var utter = new SpeechSynthesisUtterance(fallbackText);
-                utter.lang = lang;
-                utter.rate = speeds[speedIdx];
-                utter.onend = function() { stopAllAudio(); };
-                utter.onerror = function() { stopAllAudio(); };
-                window.speechSynthesis.speak(utter);
-              } else {
-                stopAllAudio();
-              }
-            });
-          }
+          startPlayback();
         }
       });
     }
   }
 
+  function initPlaylistControls() {
+    var mpPlay = document.getElementById('aps-play-btn');
+    var mpPrev = document.getElementById('aps-prev-btn');
+    var mpNext = document.getElementById('aps-next-btn');
+    var mpSpeed = document.getElementById('aps-speed-btn');
+    var mpProgress = document.getElementById('aps-mp-progress-wrap');
+    var topPlayAll = document.getElementById('apt-play-all-btn');
+
+    if (topPlayAll) {
+      topPlayAll.addEventListener('click', function() {
+        var pl = document.getElementById('audit-audio-playlist');
+        if (pl) pl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        playTrackByIndex(0, false);
+      });
+    }
+
+    if (mpPlay) {
+      mpPlay.addEventListener('click', function() {
+        var isPlaying = mpPlay.classList.contains('aps-playing');
+        if (isPlaying) {
+          stopAllAudio();
+        } else {
+          playTrackByIndex(currentTrackIdx || 0, false);
+        }
+      });
+    }
+
+    if (mpPrev) {
+      mpPrev.addEventListener('click', function() {
+        var prevIdx = currentTrackIdx > 0 ? currentTrackIdx - 1 : 0;
+        playTrackByIndex(prevIdx, false);
+      });
+    }
+
+    if (mpNext) {
+      mpNext.addEventListener('click', function() {
+        if (currentTrackIdx + 1 < allBars.length) {
+          playTrackByIndex(currentTrackIdx + 1, false);
+        }
+      });
+    }
+
+    if (mpSpeed) {
+      mpSpeed.addEventListener('click', function() {
+        globalSpeedIdx = (globalSpeedIdx + 1) % speeds.length;
+        applyGlobalSpeed(speeds[globalSpeedIdx]);
+      });
+    }
+
+    if (mpProgress) {
+      mpProgress.addEventListener('click', function(e) {
+        if (currentTrackIdx >= 0 && currentTrackIdx < allBars.length) {
+          var bar = allBars[currentTrackIdx];
+          var audio = bar ? bar.querySelector('.aab-audio-el') : null;
+          if (audio && audio.duration) {
+            var rect = mpProgress.getBoundingClientRect();
+            var pos = (e.clientX - rect.left) / rect.width;
+            audio.currentTime = pos * audio.duration;
+          }
+        }
+      });
+    }
+
+    document.querySelectorAll('.aps-track').forEach(function(row) {
+      row.addEventListener('click', function(e) {
+        if (e.target && e.target.closest('.aps-track-jump')) {
+          return;
+        }
+        var idx = parseInt(row.getAttribute('data-track-idx') || '0', 10);
+        var mpPlayBtn = document.getElementById('aps-play-btn');
+        var isCurrentlyPlayingThis = (currentTrackIdx === idx) && mpPlayBtn && mpPlayBtn.classList.contains('aps-playing');
+        if (isCurrentlyPlayingThis) {
+          stopAllAudio();
+        } else {
+          playTrackByIndex(idx, false);
+        }
+      });
+    });
+  }
+
   window.updateAudioLanguage = function(lang) {
-    document.querySelectorAll('.audit-audio-bar').forEach(function(bar) {
+    allBars.forEach(function(bar) {
       if (bar._updateLanguage) bar._updateLanguage(lang);
     });
   };
 
   document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.audit-audio-bar').forEach(initAudioBar);
+    allBars = Array.prototype.slice.call(document.querySelectorAll('.audit-audio-bar'));
+    allBars.forEach(function(bar, idx) {
+      initAudioBar(bar, idx);
+    });
+    initPlaylistControls();
   });
 })();
 

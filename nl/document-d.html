@@ -2221,7 +2221,12 @@ html[data-theme="dark"] select.pub-lang-select option {
     border-radius: 3px;
     transition: width 0.1s linear;
 }
-.aab-controls { flex-shrink: 0; }
+.aab-controls {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
 .aab-speed-btn {
     background: #ffffff;
     border: 1px solid #dcd7cc;
@@ -2234,7 +2239,322 @@ html[data-theme="dark"] select.pub-lang-select option {
 }
 .aab-speed-btn:hover { background: #e8e4db; }
 
-/* Dark-mode styling voor de audiospeler */
+.aab-next-btn {
+    background: #1a3c6e;
+    border: 1px solid #1a3c6e;
+    border-radius: 4px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 8.8pt;
+    padding: 4px 10px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    transition: background .15s ease, transform .12s ease;
+}
+.aab-next-btn:hover {
+    background: #2a5298;
+    border-color: #2a5298;
+    transform: translateY(-1px);
+}
+
+/* === Vermelding bovenaan document: Luistermodus / Audio-Playlist === */
+.audit-playlist-topbanner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+    max-width: 860px;
+    margin: 14pt 0 22pt 0;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: #eef3f9;
+    border: 1px solid #c5d4e8;
+    border-left: 4px solid #1a3c6e;
+    font-family: Aptos, Calibri, sans-serif;
+    box-sizing: border-box;
+}
+.apt-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 1;
+    min-width: 240px;
+}
+.apt-icon {
+    font-size: 16pt;
+    line-height: 1.1;
+    flex-shrink: 0;
+}
+.apt-text {
+    font-size: 9.8pt;
+    line-height: 1.45;
+    color: #2c3e50;
+}
+.apt-text strong { color: #1a3c6e; }
+.apt-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+.apt-btn {
+    font-size: 9.2pt;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    transition: all .15s ease;
+    font-family: inherit;
+}
+.apt-btn-play {
+    background: #1a3c6e;
+    color: #ffffff !important;
+    border: 1px solid #1a3c6e;
+}
+.apt-btn-play:hover { background: #2a5298; }
+.apt-btn-jump {
+    background: #ffffff;
+    color: #1a3c6e !important;
+    border: 1px solid #b5c7de;
+}
+.apt-btn-jump:hover { background: #e3ecf8; }
+
+/* === Audio-Playlist Sectie onderaan document (#audit-audio-playlist) === */
+.audit-playlist-sectie {
+    max-width: 860px;
+    margin: 38pt 0 24pt 0;
+    padding: 20px 22px;
+    border-radius: 10px;
+    background: #f4f1ea;
+    border: 1px solid #d5d0c5;
+    border-top: 4px solid #1a3c6e;
+    font-family: Aptos, Calibri, sans-serif;
+    box-sizing: border-box;
+}
+.aps-header { margin-bottom: 14px; }
+.aps-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+}
+.aps-badge {
+    display: inline-block;
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: #1a3c6e;
+    color: #ffffff;
+}
+.audit-playlist-sectie h2 {
+    margin: 4pt 0 6pt 0 !important;
+    font-size: 15pt !important;
+    border: none !important;
+    padding: 0 !important;
+    color: #1a3c6e;
+}
+.aps-desc {
+    font-size: 10pt !important;
+    line-height: 1.5 !important;
+    color: #4a4a4a;
+    margin-bottom: 12pt !important;
+}
+.aps-master-player {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    background: #ffffff;
+    border: 1px solid #dcd7cc;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.aps-mp-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+.aps-mp-play {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: #1a3c6e;
+    color: #ffffff;
+    font-size: 14pt;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .15s, background .15s;
+}
+.aps-mp-play:hover { background: #2a5298; transform: scale(1.05); }
+.aps-mp-play.aps-playing { background: #8b1e1e; }
+.aps-mp-prev, .aps-mp-next {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid #d5d0c5;
+    background: #f8f6f2;
+    color: #1a3c6e;
+    font-size: 10.5pt;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .15s;
+}
+.aps-mp-prev:hover, .aps-mp-next:hover { background: #e8e4db; }
+.aps-mp-info {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.aps-mp-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 8.8pt;
+    font-weight: 700;
+    color: #1a3c6e;
+}
+.aps-mp-time {
+    font-family: Consolas, monospace;
+    font-weight: 500;
+    color: #666666;
+}
+.aps-mp-trackname {
+    font-size: 10pt;
+    font-weight: 600;
+    color: #222222;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.aps-mp-progress-wrap {
+    width: 100%;
+    height: 7px;
+    background: #e0dbce;
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.aps-mp-progress-bar { width: 100%; height: 100%; }
+.aps-mp-progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #1a3c6e;
+    border-radius: 4px;
+    transition: width 0.1s linear;
+}
+.aps-mp-extra {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+.aps-autoplay-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 9pt;
+    font-weight: 600;
+    color: #333333;
+    cursor: pointer;
+    user-select: none;
+}
+.aps-autoplay-toggle input { cursor: pointer; accent-color: #1a3c6e; }
+.aps-tracklist {
+    max-height: 420px;
+    overflow-y: auto;
+    border: 1px solid #dcd7cc;
+    border-radius: 6px;
+    background: #faf8f5;
+}
+.aps-track {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-bottom: 1px solid #eae6dd;
+    cursor: pointer;
+    transition: background .12s;
+    font-size: 9.8pt;
+    color: #222222;
+}
+.aps-track:last-child { border-bottom: none; }
+.aps-track:hover { background: #eef2f7; }
+.aps-track.aps-active {
+    background: #e3ecf8;
+    font-weight: 600;
+    border-left: 3px solid #1a3c6e;
+}
+.aps-t-num {
+    font-family: Consolas, monospace;
+    font-size: 8.8pt;
+    color: #777777;
+    min-width: 24px;
+}
+.aps-t-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #e8e4db;
+    color: #1a3c6e;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8.5pt;
+    flex-shrink: 0;
+}
+.aps-track.aps-active .aps-t-icon {
+    background: #1a3c6e;
+    color: #ffffff;
+}
+.aps-track-title {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.aps-track-jump {
+    font-size: 8.5pt;
+    color: #555555;
+    text-decoration: none !important;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #d5d0c5;
+    background: #ffffff;
+    flex-shrink: 0;
+}
+.aps-track-jump:hover {
+    color: #1a3c6e;
+    border-color: #1a3c6e;
+    background: #eef3f9;
+}
+
+/* Dark-mode styling voor de audiospeler, topbanner en playlist */
 html[data-theme="dark"] .audit-audio-bar {
     background: #23272e !important;
     border-color: #363b45 !important;
@@ -2257,10 +2577,113 @@ html[data-theme="dark"] .aab-speed-btn {
     color: #7fb3ff !important;
 }
 html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
+html[data-theme="dark"] .aab-next-btn {
+    background: #2b4c7e !important;
+    border-color: #4a6fa5 !important;
+    color: #e8f0fe !important;
+}
+html[data-theme="dark"] .aab-next-btn:hover {
+    background: #3b639e !important;
+    color: #ffffff !important;
+}
+html[data-theme="dark"] .audit-playlist-topbanner {
+    background: #1c232d !important;
+    border-color: #2f3b4c !important;
+    border-left-color: #58a6ff !important;
+}
+html[data-theme="dark"] .apt-text { color: #d0d8e4 !important; }
+html[data-theme="dark"] .apt-text strong { color: #79c0ff !important; }
+html[data-theme="dark"] .apt-btn-play {
+    background: #3867a6 !important;
+    border-color: #58a6ff !important;
+    color: #ffffff !important;
+}
+html[data-theme="dark"] .apt-btn-play:hover { background: #4a7ec2 !important; }
+html[data-theme="dark"] .apt-btn-jump {
+    background: #262c36 !important;
+    border-color: #444c56 !important;
+    color: #79c0ff !important;
+}
+html[data-theme="dark"] .apt-btn-jump:hover { background: #303846 !important; }
+html[data-theme="dark"] .audit-playlist-sectie {
+    background: #1b1f26 !important;
+    border-color: #323842 !important;
+    border-top-color: #58a6ff !important;
+}
+html[data-theme="dark"] .aps-badge {
+    background: #2b4c7e !important;
+    color: #cae0ff !important;
+}
+html[data-theme="dark"] .audit-playlist-sectie h2 { color: #79c0ff !important; }
+html[data-theme="dark"] .aps-desc { color: #a9b4c4 !important; }
+html[data-theme="dark"] .aps-master-player {
+    background: #232832 !important;
+    border-color: #363d4a !important;
+}
+html[data-theme="dark"] .aps-mp-play { background: #4a6fa5 !important; }
+html[data-theme="dark"] .aps-mp-play.aps-playing { background: #d32f2f !important; }
+html[data-theme="dark"] .aps-mp-prev,
+html[data-theme="dark"] .aps-mp-next {
+    background: #2d333b !important;
+    border-color: #444c56 !important;
+    color: #b0c8e8 !important;
+}
+html[data-theme="dark"] .aps-mp-prev:hover,
+html[data-theme="dark"] .aps-mp-next:hover { background: #373e47 !important; }
+html[data-theme="dark"] .aps-mp-meta { color: #79c0ff !important; }
+html[data-theme="dark"] .aps-mp-time { color: #9aa5b8 !important; }
+html[data-theme="dark"] .aps-mp-trackname { color: #e6edf3 !important; }
+html[data-theme="dark"] .aps-mp-progress-wrap { background: #323842 !important; }
+html[data-theme="dark"] .aps-mp-progress-fill { background: #58a6ff !important; }
+html[data-theme="dark"] .aps-autoplay-toggle { color: #c9d1d9 !important; }
+html[data-theme="dark"] .aps-autoplay-toggle input { accent-color: #58a6ff; }
+html[data-theme="dark"] .aps-tracklist {
+    background: #15181e !important;
+    border-color: #2d333b !important;
+}
+html[data-theme="dark"] .aps-track {
+    border-bottom-color: #222730 !important;
+    color: #c9d1d9 !important;
+}
+html[data-theme="dark"] .aps-track:hover { background: #20252d !important; }
+html[data-theme="dark"] .aps-track.aps-active {
+    background: #1e2a3a !important;
+    color: #ffffff !important;
+    border-left-color: #58a6ff !important;
+}
+html[data-theme="dark"] .aps-t-num { color: #8b949e !important; }
+html[data-theme="dark"] .aps-t-icon {
+    background: #2d333b !important;
+    color: #79c0ff !important;
+}
+html[data-theme="dark"] .aps-track.aps-active .aps-t-icon {
+    background: #4a6fa5 !important;
+    color: #ffffff !important;
+}
+html[data-theme="dark"] .aps-track-jump {
+    background: #21262d !important;
+    border-color: #363b42 !important;
+    color: #8b949e !important;
+}
+html[data-theme="dark"] .aps-track-jump:hover {
+    color: #79c0ff !important;
+    border-color: #58a6ff !important;
+}
 
-/* Verberg de audiospeler bij het printen of PDF-genereren */
+@media (max-width: 600px) {
+    .audit-audio-bar { flex-wrap: wrap; gap: 8px; padding: 8px 10px; }
+    .aab-controls { width: 100%; justify-content: flex-end; border-top: 1px solid rgba(128,128,128,0.18); padding-top: 6px; }
+    .aps-master-player { flex-direction: column; align-items: stretch; gap: 10px; }
+    .aps-mp-controls { justify-content: center; }
+    .aps-mp-extra { justify-content: space-between; }
+}
+
+/* Verberg de audiospeler en playlist bij het printen of PDF-genereren */
 @media print {
-    .audit-audio-bar { display: none !important; }
+    .audit-audio-bar,
+    .audit-playlist-topbanner,
+    .audit-playlist-sectie,
+    .toc-playlist-item { display: none !important; }
 }
 </style>
 <meta content="notranslate" name="google"/><script>
@@ -2291,7 +2714,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document D — De synthese</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 1 november 2026, 08:10</p>
+<p class="meta-lijn">Versie bijgewerkt: 2 november 2026, 10:32</p>
 </div>
 
 <div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
@@ -2304,13 +2727,25 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 <li class="niv2"><a href="#deel-v-de-uitweg-drie-infrastructurele-bouwstenen">Deel V — De uitweg: drie infrastructurele bouwstenen</a></li>
 <li class="niv2"><a href="#deel-vi-de-avg-stresstest-en-het-eessi-spook-van-2030">Deel VI — De AVG-stresstest en het EESSI-spook van 2030</a></li>
 <li class="niv2"><a href="#deel-vii-persoonlijke-slotverklaring">Deel VII — Persoonlijke slotverklaring</a></li>
-</ul></div>
+<li class="niv1 toc-playlist-item"><a href="#audit-audio-playlist">🎧 Audio-Playlist — Alles achter elkaar beluisteren (7 onderdelen)</a></li></ul></div><div class="audit-playlist-topbanner notranslate" translate="no">
+<div class="apt-info">
+<span class="apt-icon">🎧</span>
+<div class="apt-text">
+<strong>Alleen luisteren zonder te lezen?</strong><br/>
+      Dit document bevat <strong>7 ingesproken audio-onderdelen</strong>. Gebruik bij elk onderdeel de knop <em>‘⏭ Luister verder’</em> om direct naar het volgende geluidsfragment te springen, of open onderaan de <strong>Audio-Playlist</strong> om alles automatisch achter elkaar te beluisteren.
+    </div>
+</div>
+<div class="apt-actions">
+<button class="apt-btn apt-btn-play" id="apt-play-all-btn" title="Start direct met het achter elkaar afspelen van alle 7 audiobestanden" type="button">▶ Direct alles afspelen</button>
+<a class="apt-btn apt-btn-jump" href="#audit-audio-playlist" title="Spring naar de volledige Audio-Playlist onderaan dit document">↓ Naar Audio-Playlist (7)</a>
+</div>
+</div>
 
 <div class="gebruikersaanwijzing">
 <p>Dit is Document D — De synthese van het Systeem-Audit-project. Het brengt de patronen samen die uit de 62 geauditeerde organisaties en ruim 690 geregistreerde interacties naar voren komen: de systeemwetten achter de blokkade, de Europese schaal, de uitkomsten van de forensische AVG-stresstest en de drie concrete bouwstenen voor hervorming.</p>
 <p>Lees het als de overkoepelende conclusie van het dossier, niet als een samenvatting.</p>
 </div>
-<h2 id="deel-i-de-diagnose-het-ontwerp-van-uitsluiting">Deel I — De diagnose: het ontwerp van uitsluiting</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="docD_deel1" data-audio-src="../assets/audio/docD_deel1_nl_b8f964cd.mp3" data-clean-text="Deel I, De diagnose: het ontwerp van uitsluiting. Het sociale zekerheidsstelsel tussen België en Nederland is niet kapot. Het functioneert exact zoals het is geprogrammeerd. De nationale uitvoeringsarchitectuur is gebouwd op de impliciete vooronderstelling dat een burger binnen één enkele natiestaat woont, werkt, belasting betaalt en zorg ontvangt. Zodra een burger gebruikmaakt van het Europese grondrecht op vrij verkeer en zijn bestaan over twee lidstaten verdeelt, voldoet hij aan de voorwaarden van beide landen tezamen, maar aan het standaardprofiel van geen van beide afzonderlijk. Het systeem behandelt die grensoverschrijdende realiteit niet als een legitieme situatie die om coördinatie vraagt, maar als een invoerfout die met een afwijzing moet worden afgesloten. . Deze structurele uitsluiting komt voort uit een fundamentele botsing tussen twee onverenigbare tijd en waarnemingsschalen: de fysieke werkelijkheid van het menselijk lichaam en de administratieve werkelijkheid van het papieren dossier. Een acute infectie, een teenamputatie of een netvliesbloeding kent geen opschortende werking; weefselverlies voltrekt zich in uren en dagen. De administratieve keten daarentegen opereert in bezwaartermijnen van dertig dagen, referteperiodes van twaalf maanden, wachttijden van 180 dagen of 104 weken en vertragende verdagingen. Tussen het ziekenhuisbed en het uitkeringsloket bevindt zich een institutioneel vacuüm waarin de klok van de overheid stilstaat terwijl de fysiologische en financiële schade doorloopt. . Wie nooit een landsgrens of gewestgrens oversteekt om te werken, merkt niet dat deze deuren gesloten zijn. Voor de sedentaire burger die zijn gehele leven binnen één nationale jurisdictie doorbrengt, werkt het stelsel vrijwel onzichtbaar. Dat bewijst niet dat de Europese sociale ruimte functioneert; het bewijst slechts dat de nationale systemen uitsluitend zijn geoptimaliseerd voor een enkelvoudig binnenlands profiel. Zelfs het publieke begrip van Europa is vertroebeld door een verwarring van categorieën: het feit dat men zonder paspoortcontrole over het asfalt van het Schengengebied rijdt en met dezelfde euro betaalt, wekt de illusie van één gedeelde rechtsruimte, terwijl men achter de schermen bij het oversteken van de grens een volstrekt gesloten administratief stelsel binnenstapt. ." translate="no">
+<h2 id="deel-i-de-diagnose-het-ontwerp-van-uitsluiting">Deel I — De diagnose: het ontwerp van uitsluiting</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="docD_deel1" data-audio-src="../assets/audio/docD_deel1_nl_b8f964cd.mp3" data-clean-heading="Deel I — De diagnose: het ontwerp van uitsluiting" data-clean-text="Deel I, De diagnose: het ontwerp van uitsluiting. Het sociale zekerheidsstelsel tussen België en Nederland is niet kapot. Het functioneert exact zoals het is geprogrammeerd. De nationale uitvoeringsarchitectuur is gebouwd op de impliciete vooronderstelling dat een burger binnen één enkele natiestaat woont, werkt, belasting betaalt en zorg ontvangt. Zodra een burger gebruikmaakt van het Europese grondrecht op vrij verkeer en zijn bestaan over twee lidstaten verdeelt, voldoet hij aan de voorwaarden van beide landen tezamen, maar aan het standaardprofiel van geen van beide afzonderlijk. Het systeem behandelt die grensoverschrijdende realiteit niet als een legitieme situatie die om coördinatie vraagt, maar als een invoerfout die met een afwijzing moet worden afgesloten. . Deze structurele uitsluiting komt voort uit een fundamentele botsing tussen twee onverenigbare tijd en waarnemingsschalen: de fysieke werkelijkheid van het menselijk lichaam en de administratieve werkelijkheid van het papieren dossier. Een acute infectie, een teenamputatie of een netvliesbloeding kent geen opschortende werking; weefselverlies voltrekt zich in uren en dagen. De administratieve keten daarentegen opereert in bezwaartermijnen van dertig dagen, referteperiodes van twaalf maanden, wachttijden van 180 dagen of 104 weken en vertragende verdagingen. Tussen het ziekenhuisbed en het uitkeringsloket bevindt zich een institutioneel vacuüm waarin de klok van de overheid stilstaat terwijl de fysiologische en financiële schade doorloopt. . Wie nooit een landsgrens of gewestgrens oversteekt om te werken, merkt niet dat deze deuren gesloten zijn. Voor de sedentaire burger die zijn gehele leven binnen één nationale jurisdictie doorbrengt, werkt het stelsel vrijwel onzichtbaar. Dat bewijst niet dat de Europese sociale ruimte functioneert; het bewijst slechts dat de nationale systemen uitsluitend zijn geoptimaliseerd voor een enkelvoudig binnenlands profiel. Zelfs het publieke begrip van Europa is vertroebeld door een verwarring van categorieën: het feit dat men zonder paspoortcontrole over het asfalt van het Schengengebied rijdt en met dezelfde euro betaalt, wekt de illusie van één gedeelde rechtsruimte, terwijl men achter de schermen bij het oversteken van de grens een volstrekt gesloten administratief stelsel binnenstapt. ." data-track-index="0" id="aab-docD_deel1" translate="no">
 <button aria-label="Beluister tekst" class="aab-play-btn" title="Beluister passage (AI-stem)" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -2329,7 +2764,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 </div>
 <div class="aab-controls">
 <button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
-</div>
+<button class="aab-next-btn" data-next-idx="1" data-next-target="#aab-docD_deel2" title="Spring direct naar het volgende audiogedeelte (2/7) en luister verder" type="button">⏭ Luister verder</button></div>
 <audio class="aab-audio-el" preload="none" src="../assets/audio/docD_deel1_nl_b8f964cd.mp3"></audio>
 </div>
 <p>Het sociale zekerheidsstelsel tussen België en Nederland is niet kapot. Het functioneert exact zoals het is geprogrammeerd. De nationale uitvoeringsarchitectuur is gebouwd op de impliciete vooronderstelling dat een burger binnen één enkele natiestaat woont, werkt, belasting betaalt en zorg ontvangt. Zodra een burger gebruikmaakt van het Europese grondrecht op vrij verkeer en zijn bestaan over twee lidstaten verdeelt, voldoet hij aan de voorwaarden van beide landen tezamen, maar aan het standaardprofiel van geen van beide afzonderlijk. Het systeem behandelt die grensoverschrijdende realiteit niet als een legitieme situatie die om coördinatie vraagt, maar als een invoerfout die met een afwijzing moet worden afgesloten.</p>
@@ -2364,7 +2799,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 </div>
 <p>Wie nooit een landsgrens of gewestgrens oversteekt om te werken, merkt niet dat deze deuren gesloten zijn. Voor de sedentaire burger die zijn gehele leven binnen één nationale jurisdictie doorbrengt, werkt het stelsel vrijwel onzichtbaar. Dat bewijst niet dat de Europese sociale ruimte functioneert; het bewijst slechts dat de nationale systemen uitsluitend zijn geoptimaliseerd voor een enkelvoudig binnenlands profiel. Zelfs het publieke begrip van Europa is vertroebeld door een verwarring van categorieën: het feit dat men zonder paspoortcontrole over het asfalt van het Schengengebied rijdt en met dezelfde euro betaalt, wekt de illusie van één gedeelde rechtsruimte, terwijl men achter de schermen bij het oversteken van de grens een volstrekt gesloten administratief stelsel binnenstapt.</p>
 
-<h2 id="deel-ii-de-anatomie-van-de-vastloper">Deel II — De anatomie van de vastloper: vijf knopen en vier lagen</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="docD_deel2" data-audio-src="../assets/audio/docD_deel2_nl_fe854da3.mp3" data-clean-text="Deel II, De anatomie van de vastloper: vijf knopen en vier lagen. Wanneer een grensarbeider door ernstige ziekte uitvalt, loopt zijn dossier niet vast door één incidentele menselijke fout, maar door een kettingreactie van vijf structurele knopen die elkaar in stand houden:. De bronvervuiling in gedeelde registers: De instantie die als eerste een onjuiste of onvolledige status vastlegt, zoals het stopzetten van een ziekteregistratie in de Belgische Kruispuntbank, K S Z, of het weglaten van een verdragspolis in het Nederlandse verzekerdenregister, RIV, vergiftigt automatisch alle vervolgschakels. Belastingdiensten, kinderbijslagfondsen en gemeenten lezen die centrale databank blindelings uit, terwijl geen enkele afnemende instantie het mandaat heeft om de bronhouder tot correctie te dwingen. . Het onleverbare bewijs, Catch 22, : Het ontvangende systeem eist een specifiek nationaal formulier of medisch onderzoek dat in het andere land niet bestaat, zoals een Nederlands perimetrie onderzoek dat in het Belgische academische behandelprotocol niet standaard wordt uitgevoerd, of een privaat C4 ontslagbewijs voor een vastbenoemde ambtenaar. De burger moet een sleutel inleveren die door geen enkel loket wordt verstrekt. . De verschuivende drempel: Zodra de burger er met hulp van artsen in slaagt het gevraagde bewijsstuk toch aan te leveren, verplaatst de weigerende instantie het criterium. Waar eerst een medisch attest ontbrak, vormt na levering van dat attest plotseling de woonplaats, een verstreken termijn of het ontbreken van een voorafgaande buitenlandse beslissing de nieuwe blokkade. . De gesloten zelfcontrole: De instantie die de blokkade moet onderzoeken of opheffen, is dezelfde instantie die het besluit heeft genomen. Om een geschil voor te leggen aan een hogere medische raad, zoals de GRI bij het R I Z I V, schrijft de procedure voor dat het ziekenfonds zelf de aanvraag moet indienen, exact de partij die weigert het dossier door te sturen. . Het spookinkomen: Geautomatiseerde toeslag en bijstandssystemen rekenen bij het wegvallen van arbeid niet met het werkelijke gezinsinkomen van vandaag, nul euro aan vervangingsinkomen, maar met het historische inkomen van twee jaar geleden of met een theoretisch verdienvermogen. De overheid veroorzaakt eerst zelf de inkomensval door uitkeringen te blokkeren en wijst vervolgens sociale vangnetten af omdat het gezin op papier niet arm zou zijn. . Waarom grijpt geen enkel controlemechanisme in wanneer deze vijf knopen een gezin financieel klemzetten? Omdat het bestuurlijke apparaat is opgebouwd uit vier opeenvolgende lagen die elk vanuit een eigen, intern rationele logica naar elkaar wijzen:. De uitvoerende laag, ziekenfondsen, U W V, CAK, fiscus, past uitsluitend het eigen nationale beslisschema toe. Wat buiten de invoervelden van de software valt, wordt niet herkend als een leemte in de regelgeving, maar afgewezen als een onvolledige aanvraag. . De toezichthoudende laag, R I Z I V, CDZ, ZIN, UNIA, Arbeidsauditoraat, hanteert de reflex van de smalste bevoegdheidsinterpretatie. Elke toezichthouder kwalificeert een structurele schending van het Unierecht als een individueel geschil en verwijst de burger terug naar de uitvoerder of de rechtbank. Zelfbeperking is voor een toezichthouder altijd veiliger dan ingrijpen. . De democratische en bemiddelende laag, parlementscommissies, politieke partijen, ombudsmannen, SOLVIT, beweegt op een meerjarige beleidshorizon of beschikt uitsluitend over niet bindende overredingskracht. Ombudsmannen staken hun onderzoek zodra er een formele bezwaarprocedure loopt, SOLVIT sluit het dossier zodra een nationale instantie weigert mee te werken, en parlementaire commissies parkeren acute noodsituaties als achtergrondinformatie voor toekomstige debatten. . De symbolische en internationale laag, de Koningshuizen en de Verenigde Naties, vormt het grondwettelijke eindpunt: het staatshoofd kan een verzoekschrift enkel terugsturen naar dezelfde verantwoordelijke minister die eerder al niet ingreep, en internationale mensenrechtenverdragen missen directe afdwingbaarheid aan het lokale loket. . Aan het einde van deze keten resteert uitsluitend de gang naar de nationale rechter, een traject dat jaren duurt, duizenden euro s kost en door het wegvallen van het inkomen voor de getroffen burger financieel onbereikbaar is gemaakt. . De drie systeemwetten achter de blokkade. Gezien vanuit de systeemdynamica en de biocybernetica van Frederic Vester gehoorzaamt deze institutionele verlamming aan drie ijzeren systeemwetten:." translate="no">
+<h2 id="deel-ii-de-anatomie-van-de-vastloper">Deel II — De anatomie van de vastloper: vijf knopen en vier lagen</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="docD_deel2" data-audio-src="../assets/audio/docD_deel2_nl_fe854da3.mp3" data-clean-heading="Deel II — De anatomie van de vastloper: vijf knopen en vier lagen" data-clean-text="Deel II, De anatomie van de vastloper: vijf knopen en vier lagen. Wanneer een grensarbeider door ernstige ziekte uitvalt, loopt zijn dossier niet vast door één incidentele menselijke fout, maar door een kettingreactie van vijf structurele knopen die elkaar in stand houden:. De bronvervuiling in gedeelde registers: De instantie die als eerste een onjuiste of onvolledige status vastlegt, zoals het stopzetten van een ziekteregistratie in de Belgische Kruispuntbank, K S Z, of het weglaten van een verdragspolis in het Nederlandse verzekerdenregister, RIV, vergiftigt automatisch alle vervolgschakels. Belastingdiensten, kinderbijslagfondsen en gemeenten lezen die centrale databank blindelings uit, terwijl geen enkele afnemende instantie het mandaat heeft om de bronhouder tot correctie te dwingen. . Het onleverbare bewijs, Catch 22, : Het ontvangende systeem eist een specifiek nationaal formulier of medisch onderzoek dat in het andere land niet bestaat, zoals een Nederlands perimetrie onderzoek dat in het Belgische academische behandelprotocol niet standaard wordt uitgevoerd, of een privaat C4 ontslagbewijs voor een vastbenoemde ambtenaar. De burger moet een sleutel inleveren die door geen enkel loket wordt verstrekt. . De verschuivende drempel: Zodra de burger er met hulp van artsen in slaagt het gevraagde bewijsstuk toch aan te leveren, verplaatst de weigerende instantie het criterium. Waar eerst een medisch attest ontbrak, vormt na levering van dat attest plotseling de woonplaats, een verstreken termijn of het ontbreken van een voorafgaande buitenlandse beslissing de nieuwe blokkade. . De gesloten zelfcontrole: De instantie die de blokkade moet onderzoeken of opheffen, is dezelfde instantie die het besluit heeft genomen. Om een geschil voor te leggen aan een hogere medische raad, zoals de GRI bij het R I Z I V, schrijft de procedure voor dat het ziekenfonds zelf de aanvraag moet indienen, exact de partij die weigert het dossier door te sturen. . Het spookinkomen: Geautomatiseerde toeslag en bijstandssystemen rekenen bij het wegvallen van arbeid niet met het werkelijke gezinsinkomen van vandaag, nul euro aan vervangingsinkomen, maar met het historische inkomen van twee jaar geleden of met een theoretisch verdienvermogen. De overheid veroorzaakt eerst zelf de inkomensval door uitkeringen te blokkeren en wijst vervolgens sociale vangnetten af omdat het gezin op papier niet arm zou zijn. . Waarom grijpt geen enkel controlemechanisme in wanneer deze vijf knopen een gezin financieel klemzetten? Omdat het bestuurlijke apparaat is opgebouwd uit vier opeenvolgende lagen die elk vanuit een eigen, intern rationele logica naar elkaar wijzen:. De uitvoerende laag, ziekenfondsen, U W V, CAK, fiscus, past uitsluitend het eigen nationale beslisschema toe. Wat buiten de invoervelden van de software valt, wordt niet herkend als een leemte in de regelgeving, maar afgewezen als een onvolledige aanvraag. . De toezichthoudende laag, R I Z I V, CDZ, ZIN, UNIA, Arbeidsauditoraat, hanteert de reflex van de smalste bevoegdheidsinterpretatie. Elke toezichthouder kwalificeert een structurele schending van het Unierecht als een individueel geschil en verwijst de burger terug naar de uitvoerder of de rechtbank. Zelfbeperking is voor een toezichthouder altijd veiliger dan ingrijpen. . De democratische en bemiddelende laag, parlementscommissies, politieke partijen, ombudsmannen, SOLVIT, beweegt op een meerjarige beleidshorizon of beschikt uitsluitend over niet bindende overredingskracht. Ombudsmannen staken hun onderzoek zodra er een formele bezwaarprocedure loopt, SOLVIT sluit het dossier zodra een nationale instantie weigert mee te werken, en parlementaire commissies parkeren acute noodsituaties als achtergrondinformatie voor toekomstige debatten. . De symbolische en internationale laag, de Koningshuizen en de Verenigde Naties, vormt het grondwettelijke eindpunt: het staatshoofd kan een verzoekschrift enkel terugsturen naar dezelfde verantwoordelijke minister die eerder al niet ingreep, en internationale mensenrechtenverdragen missen directe afdwingbaarheid aan het lokale loket. . Aan het einde van deze keten resteert uitsluitend de gang naar de nationale rechter, een traject dat jaren duurt, duizenden euro s kost en door het wegvallen van het inkomen voor de getroffen burger financieel onbereikbaar is gemaakt. . De drie systeemwetten achter de blokkade. Gezien vanuit de systeemdynamica en de biocybernetica van Frederic Vester gehoorzaamt deze institutionele verlamming aan drie ijzeren systeemwetten:." data-track-index="1" id="aab-docD_deel2" translate="no">
 <button aria-label="Beluister tekst" class="aab-play-btn" title="Beluister passage (AI-stem)" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -2383,7 +2818,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 </div>
 <div class="aab-controls">
 <button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
-</div>
+<button class="aab-next-btn" data-next-idx="2" data-next-target="#aab-docD_deel3" title="Spring direct naar het volgende audiogedeelte (3/7) en luister verder" type="button">⏭ Luister verder</button></div>
 <audio class="aab-audio-el" preload="none" src="../assets/audio/docD_deel2_nl_fe854da3.mp3"></audio>
 </div>
 <p>Wanneer een grensarbeider door ernstige ziekte uitvalt, loopt zijn dossier niet vast door één incidentele menselijke fout, maar door een kettingreactie van vijf structurele knopen die elkaar in stand houden:</p>
@@ -2433,7 +2868,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 </div>
 </div>
 
-<h2 id="deel-iii-de-europese-paradox-open-wegen-gesloten-databanken">Deel III — De Europese paradox: open wegen, gesloten databanken</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="docD_deel3" data-audio-src="../assets/audio/docD_deel3_nl_c5ce1a34.mp3" data-clean-text="Deel III, De Europese paradox: open wegen, gesloten databanken. De wortel van dit bevoegdheidsvacuüm ligt in de historische asymmetrie van de Europese eenwording. Tussen de ondertekening van de Benelux douane unie in 1944 en het Akkoord van Schengen in 1985 hebben de lidstaten veertig jaar besteed aan het slechten van de fysieke slagbomen. De grensposten zijn ontmanteld; arbeid, goederen en kapitaal steken dagelijks zonder vertraging de grens over. Maar terwijl de fysieke ruimte volledig werd opengesteld, zijn de achterliggende sociale, medische en fiscale informatiesystemen strikt nationaal gebleven. De snelweg is Europees; het loket is negentiende eeuws nationaal. . De schaal waarop deze weeffout burgers raakt, is aanzienlijk:. Binnen de Europese Unie werken circa 1, 5 miljoen grensarbeiders, waarvan ruim 40. 000 pendelaars dagelijks de grens tussen België en Nederland oversteken. . Grensoverschrijdende sociale zekerheid en zorg vormen jaar na jaar de grootste categorie klachten binnen het Europese SOLVIT netwerk, structureel meer dan 40 procent van alle dossiers. . In deze ene geauditeerde casus raakten in achttien maanden tijd niet minder dan 62 afzonderlijke instanties betrokken en waren meer dan 690 gedocumenteerde interacties nodig om elementaire basisrechten te claimen. . De Europese basisverordening, Verordening, EG, nummer 883 of 2004 en toepassingsverordening nummer 987 of 2009, bevat op papier weliswaar de juiste rechtsprincipes, zoals de verplichte samentelling van tijdvakken, artikel 6, en de door het Hof van Justitie afgedwongen bescherming tegen een bevoegdheidsvacuüm, arrest Vester, C 134 of 18, maar mist een operationele sanctie of automatische noodrem. Wanneer een uitvoeringsinstantie weigert het elektronische uitwisselingsnetwerk E E S S I te gebruiken of een buitenlands tijdvak in te lezen, treedt er geen automatische voorlopige betaling in werking. . Ook de langverwachte politieke herziening van Verordening 883 of 2004, waarover de Europese instellingen in april en juli 2026 na ruim tien jaar onderhandelen een akkoord bereikten, biedt op de korte termijn geen redding. Door de benodigde IT aanpassingen wordt het pakket pas rond 2030 of 2031 operationeel: een wetgevingscyclus van veertien jaar voor een systeemupdate. Bovendien digitaliseert de aangekondigde European Social Security Pass, ESSPASS, enkel de verificatie aan de voordeur, de digitale portemonnee van de burger, zonder aan de achterdeur een automatische synchronisatie tussen de nationale databanken af te dwingen. Terwijl de Europese Commissie tegen 2040 zes miljard euro aan macro economische besparingen voorspelt, wentelt het systeem de micro economische kosten in de tussenliggende jaren volledig af op het huishouden van de grensarbeider, via opgelopen bancaire roodstanden, ingetrokken kredietfaciliteiten en incassotrajecten bij nutsvoorzieningen. ." translate="no">
+<h2 id="deel-iii-de-europese-paradox-open-wegen-gesloten-databanken">Deel III — De Europese paradox: open wegen, gesloten databanken</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="docD_deel3" data-audio-src="../assets/audio/docD_deel3_nl_c5ce1a34.mp3" data-clean-heading="Deel III — De Europese paradox: open wegen, gesloten databanken" data-clean-text="Deel III, De Europese paradox: open wegen, gesloten databanken. De wortel van dit bevoegdheidsvacuüm ligt in de historische asymmetrie van de Europese eenwording. Tussen de ondertekening van de Benelux douane unie in 1944 en het Akkoord van Schengen in 1985 hebben de lidstaten veertig jaar besteed aan het slechten van de fysieke slagbomen. De grensposten zijn ontmanteld; arbeid, goederen en kapitaal steken dagelijks zonder vertraging de grens over. Maar terwijl de fysieke ruimte volledig werd opengesteld, zijn de achterliggende sociale, medische en fiscale informatiesystemen strikt nationaal gebleven. De snelweg is Europees; het loket is negentiende eeuws nationaal. . De schaal waarop deze weeffout burgers raakt, is aanzienlijk:. Binnen de Europese Unie werken circa 1, 5 miljoen grensarbeiders, waarvan ruim 40. 000 pendelaars dagelijks de grens tussen België en Nederland oversteken. . Grensoverschrijdende sociale zekerheid en zorg vormen jaar na jaar de grootste categorie klachten binnen het Europese SOLVIT netwerk, structureel meer dan 40 procent van alle dossiers. . In deze ene geauditeerde casus raakten in achttien maanden tijd niet minder dan 62 afzonderlijke instanties betrokken en waren meer dan 690 gedocumenteerde interacties nodig om elementaire basisrechten te claimen. . De Europese basisverordening, Verordening, EG, nummer 883 of 2004 en toepassingsverordening nummer 987 of 2009, bevat op papier weliswaar de juiste rechtsprincipes, zoals de verplichte samentelling van tijdvakken, artikel 6, en de door het Hof van Justitie afgedwongen bescherming tegen een bevoegdheidsvacuüm, arrest Vester, C 134 of 18, maar mist een operationele sanctie of automatische noodrem. Wanneer een uitvoeringsinstantie weigert het elektronische uitwisselingsnetwerk E E S S I te gebruiken of een buitenlands tijdvak in te lezen, treedt er geen automatische voorlopige betaling in werking. . Ook de langverwachte politieke herziening van Verordening 883 of 2004, waarover de Europese instellingen in april en juli 2026 na ruim tien jaar onderhandelen een akkoord bereikten, biedt op de korte termijn geen redding. Door de benodigde IT aanpassingen wordt het pakket pas rond 2030 of 2031 operationeel: een wetgevingscyclus van veertien jaar voor een systeemupdate. Bovendien digitaliseert de aangekondigde European Social Security Pass, ESSPASS, enkel de verificatie aan de voordeur, de digitale portemonnee van de burger, zonder aan de achterdeur een automatische synchronisatie tussen de nationale databanken af te dwingen. Terwijl de Europese Commissie tegen 2040 zes miljard euro aan macro economische besparingen voorspelt, wentelt het systeem de micro economische kosten in de tussenliggende jaren volledig af op het huishouden van de grensarbeider, via opgelopen bancaire roodstanden, ingetrokken kredietfaciliteiten en incassotrajecten bij nutsvoorzieningen. ." data-track-index="2" id="aab-docD_deel3" translate="no">
 <button aria-label="Beluister tekst" class="aab-play-btn" title="Beluister passage (AI-stem)" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -2452,7 +2887,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 </div>
 <div class="aab-controls">
 <button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
-</div>
+<button class="aab-next-btn" data-next-idx="3" data-next-target="#aab-docD_deel4" title="Spring direct naar het volgende audiogedeelte (4/7) en luister verder" type="button">⏭ Luister verder</button></div>
 <audio class="aab-audio-el" preload="none" src="../assets/audio/docD_deel3_nl_c5ce1a34.mp3"></audio>
 </div>
 <p>De wortel van dit bevoegdheidsvacuüm ligt in de historische asymmetrie van de Europese eenwording. Tussen de ondertekening van de Benelux-douane-unie in 1944 en het Akkoord van Schengen in 1985 hebben de lidstaten veertig jaar besteed aan het slechten van de fysieke slagbomen. De grensposten zijn ontmanteld; arbeid, goederen en kapitaal steken dagelijks zonder vertraging de grens over. Maar terwijl de fysieke ruimte volledig werd opengesteld, zijn de achterliggende sociale, medische en fiscale informatiesystemen strikt nationaal gebleven. De snelweg is Europees; het loket is negentiende-eeuws nationaal.</p>
@@ -2465,7 +2900,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 <p>De Europese basisverordening (Verordening (EG) nr. 883/2004 en toepassingsverordening nr. 987/2009) bevat op papier weliswaar de juiste rechtsprincipes — zoals de verplichte samentelling van tijdvakken (artikel 6) en de door het Hof van Justitie afgedwongen bescherming tegen een bevoegdheidsvacuüm (arrest-<em>Vester</em>, C-134/18) — maar mist een operationele sanctie of automatische noodrem. Wanneer een uitvoeringsinstantie weigert het elektronische uitwisselingsnetwerk EESSI te gebruiken of een buitenlands tijdvak in te lezen, treedt er geen automatische voorlopige betaling in werking.</p>
 <p>Ook de langverwachte politieke herziening van Verordening 883/2004, waarover de Europese instellingen in april en juli 2026 na ruim tien jaar onderhandelen een akkoord bereikten, biedt op de korte termijn geen redding. Door de benodigde IT-aanpassingen wordt het pakket pas rond <strong>2030 of 2031</strong> operationeel: een wetgevingscyclus van veertien jaar voor een systeemupdate. Bovendien digitaliseert de aangekondigde <em>European Social Security Pass</em> (ESSPASS) enkel de verificatie aan de voordeur (de digitale portemonnee van de burger), zonder aan de achterdeur een automatische synchronisatie tussen de nationale databanken af te dwingen. Terwijl de Europese Commissie tegen 2040 zes miljard euro aan macro-economische besparingen voorspelt, wentelt het systeem de micro-economische kosten in de tussenliggende jaren volledig af op het huishouden van de grensarbeider — via opgelopen bancaire roodstanden, ingetrokken kredietfaciliteiten en incassotrajecten bij nutsvoorzieningen.</p>
 
-<h2 id="deel-iv-het-europese-patroon-vier-grensregios-dezelfde-weeffout">Deel IV — Het Europese patroon: vier grensregio's, dezelfde weeffout</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="docD_deel4" data-audio-src="../assets/audio/docD_deel4_nl_607b3415.mp3" data-clean-text="Deel IV, Het Europese patroon: vier grensregio s, dezelfde weeffout. Dat deze vastloper geen specifiek Belgisch Nederlands incident is, maar een systeemfout in de Europese coördinatie architectuur, blijkt uit een vergelijking met vier andere grote Europese grensregio s:. Luxemburg, België / Frankrijk / Duitsland, : In de regio met de hoogste concentratie grensarbeiders van de Unie lopen de fiscale drempels voor thuiswerken, bilaterale belastingverdragen, en de sociale zekerheidsdrempels voor telewerk, E U verordening, structureel uiteen. Werknemers die tussen beide drempels in vallen, belanden in een juridisch niemandsland waarin twee staten tegelijk aanspraak maken op heffing of waarin sociale dekking verschuift, wat enkel met tijdelijke bilaterale noodakkoorden kon worden bezworen. . De Øresundregio, Denemarken / Zweden, : Duizenden pendelaars die in Denemarken werken en in Zweden wonen, betalen sociale premies in het werkland maar vallen bij werkloosheid of uitval terug op het woonland. Omdat Deense werkgeversverklaringen niet geautomatiseerd aansluiten op de invoervereisten van de Zweedse werkloosheidskassen, A kasser, wachten getroffen burgers maandenlang zonder inkomen terwijl het gezamenlijke grenscomité geen doorzettingsmacht heeft over de nationale loketten. . De Frans Zwitserse grensboog, Genève / Bazel, : Voor honderdduizenden Franse frontaliers veroorzaakt de botsing tussen fiscale en sociale drempels bij hybride werken een directe strijdigheid met het verbod op dubbele aansluiting. De administratieve bewijslast is via complexe transitieakkoorden en dagelijkse rapportageplichten verschoven naar de werkgevers, zonder dat de onderliggende systemen zijn geharmoniseerd. . De Oostenrijks Oost Europese detacheringscorridor: Waar de grensarbeider te goeder trouw wordt vermalen door niet communicerende systemen, maken malafide constructies in de detacheringscorridor juist misbruik van exact dezelfde silo s. Omdat het Hof van Justitie heeft bepaald dat een ontvangende lidstaat een frauduleus A1 verzekeringscertificaat niet eenzijdig mag negeren zonder een formele dialoogprocedure met het afgevende land, vertragen schijnconstructies de handhaving maandenlang, terwijl de gedetacheerde werknemer feitelijk onbeschermd achterblijft. . In alle vier de Europese corridors luidt de conclusie hetzelfde: zolang nationale databanken als gesloten eilanden opereren, produceert de grens voor de burger rechtsonzekerheid en voor het systeem handhavingsblindheid. ." translate="no">
+<h2 id="deel-iv-het-europese-patroon-vier-grensregios-dezelfde-weeffout">Deel IV — Het Europese patroon: vier grensregio's, dezelfde weeffout</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="docD_deel4" data-audio-src="../assets/audio/docD_deel4_nl_607b3415.mp3" data-clean-heading="Deel IV — Het Europese patroon: vier grensregio's, dezelfde weeffout" data-clean-text="Deel IV, Het Europese patroon: vier grensregio s, dezelfde weeffout. Dat deze vastloper geen specifiek Belgisch Nederlands incident is, maar een systeemfout in de Europese coördinatie architectuur, blijkt uit een vergelijking met vier andere grote Europese grensregio s:. Luxemburg, België / Frankrijk / Duitsland, : In de regio met de hoogste concentratie grensarbeiders van de Unie lopen de fiscale drempels voor thuiswerken, bilaterale belastingverdragen, en de sociale zekerheidsdrempels voor telewerk, E U verordening, structureel uiteen. Werknemers die tussen beide drempels in vallen, belanden in een juridisch niemandsland waarin twee staten tegelijk aanspraak maken op heffing of waarin sociale dekking verschuift, wat enkel met tijdelijke bilaterale noodakkoorden kon worden bezworen. . De Øresundregio, Denemarken / Zweden, : Duizenden pendelaars die in Denemarken werken en in Zweden wonen, betalen sociale premies in het werkland maar vallen bij werkloosheid of uitval terug op het woonland. Omdat Deense werkgeversverklaringen niet geautomatiseerd aansluiten op de invoervereisten van de Zweedse werkloosheidskassen, A kasser, wachten getroffen burgers maandenlang zonder inkomen terwijl het gezamenlijke grenscomité geen doorzettingsmacht heeft over de nationale loketten. . De Frans Zwitserse grensboog, Genève / Bazel, : Voor honderdduizenden Franse frontaliers veroorzaakt de botsing tussen fiscale en sociale drempels bij hybride werken een directe strijdigheid met het verbod op dubbele aansluiting. De administratieve bewijslast is via complexe transitieakkoorden en dagelijkse rapportageplichten verschoven naar de werkgevers, zonder dat de onderliggende systemen zijn geharmoniseerd. . De Oostenrijks Oost Europese detacheringscorridor: Waar de grensarbeider te goeder trouw wordt vermalen door niet communicerende systemen, maken malafide constructies in de detacheringscorridor juist misbruik van exact dezelfde silo s. Omdat het Hof van Justitie heeft bepaald dat een ontvangende lidstaat een frauduleus A1 verzekeringscertificaat niet eenzijdig mag negeren zonder een formele dialoogprocedure met het afgevende land, vertragen schijnconstructies de handhaving maandenlang, terwijl de gedetacheerde werknemer feitelijk onbeschermd achterblijft. . In alle vier de Europese corridors luidt de conclusie hetzelfde: zolang nationale databanken als gesloten eilanden opereren, produceert de grens voor de burger rechtsonzekerheid en voor het systeem handhavingsblindheid. ." data-track-index="3" id="aab-docD_deel4" translate="no">
 <button aria-label="Beluister tekst" class="aab-play-btn" title="Beluister passage (AI-stem)" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -2484,7 +2919,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 </div>
 <div class="aab-controls">
 <button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
-</div>
+<button class="aab-next-btn" data-next-idx="4" data-next-target="#aab-docD_deel5" title="Spring direct naar het volgende audiogedeelte (5/7) en luister verder" type="button">⏭ Luister verder</button></div>
 <audio class="aab-audio-el" preload="none" src="../assets/audio/docD_deel4_nl_607b3415.mp3"></audio>
 </div>
 <p>Dat deze vastloper geen specifiek Belgisch-Nederlands incident is, maar een systeemfout in de Europese coördinatie-architectuur, blijkt uit een vergelijking met vier andere grote Europese grensregio's:</p>
@@ -2496,7 +2931,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 </ul>
 <p>In alle vier de Europese corridors luidt de conclusie hetzelfde: zolang nationale databanken als gesloten eilanden opereren, produceert de grens voor de burger rechtsonzekerheid en voor het systeem handhavingsblindheid.</p>
 
-<h2 id="deel-v-de-uitweg-drie-infrastructurele-bouwstenen">Deel V — De uitweg: drie infrastructurele bouwstenen</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="docD_deel5" data-audio-src="../assets/audio/docD_deel5_nl_0e7ce711.mp3" data-clean-text="Deel V, De uitweg: drie infrastructurele bouwstenen. Een zieke of gehandicapte grensarbeider beschikt in theorie over twee wegen om financieel te overleven: de uitkeringsroute, een maandelijkse arbeidsongeschiktheidsuitkering, en de fiscale autonomieroute, belastingvrijstellingen, toeslagen en kostenvergoedingen op basis van erkende beperking. Hoewel de fiscale route de staatskas aanzienlijk minder kost en de burger zelfstandig houdt, hebben lidstaten er een perverse financiële prikkel tegen: voor re integratie en uitkeringsprogramma s kunnen landen Europese co financiering uit het Europees Sociaal Fonds Plus, ESF+, aanvragen, terwijl fiscale vrijstellingen volledig ten laste van de eigen nationale begroting komen. . In dit dossier bleek de kracht van de fiscale autonomieroute in de praktijk: terwijl de geautomatiseerde overheidsketens, de 8 versus 9 puntendrempel bij D G HAN en de RIV blokkade bij het CAK, potdicht bleven, wist een handmatige bypass via een rechtstreeks medisch attest van de huisarts bij de Belgische BNI belastingaangifte wél een berekend fiscaal voordeel van 2669 euro, 97 te activeren. De burger hoort echter geen handmatige sluiproutes nodig te hebben om zijn wettelijke rechten te verzilveren. Terwijl een individuele rechtszaak na twee tot drie jaar procederen slechts één enkel dossier oplost, verandert een structurele aanpassing van de uitvoeringsarchitectuur het stelsel voor alle 1, 5 miljoen Europese grensarbeiders tegelijk. . Die structurele hervorming vereist drie concrete infrastructurele bouwstenen die elkaars werking sluitend maken:." translate="no">
+<h2 id="deel-v-de-uitweg-drie-infrastructurele-bouwstenen">Deel V — De uitweg: drie infrastructurele bouwstenen</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="docD_deel5" data-audio-src="../assets/audio/docD_deel5_nl_0e7ce711.mp3" data-clean-heading="Deel V — De uitweg: drie infrastructurele bouwstenen" data-clean-text="Deel V, De uitweg: drie infrastructurele bouwstenen. Een zieke of gehandicapte grensarbeider beschikt in theorie over twee wegen om financieel te overleven: de uitkeringsroute, een maandelijkse arbeidsongeschiktheidsuitkering, en de fiscale autonomieroute, belastingvrijstellingen, toeslagen en kostenvergoedingen op basis van erkende beperking. Hoewel de fiscale route de staatskas aanzienlijk minder kost en de burger zelfstandig houdt, hebben lidstaten er een perverse financiële prikkel tegen: voor re integratie en uitkeringsprogramma s kunnen landen Europese co financiering uit het Europees Sociaal Fonds Plus, ESF+, aanvragen, terwijl fiscale vrijstellingen volledig ten laste van de eigen nationale begroting komen. . In dit dossier bleek de kracht van de fiscale autonomieroute in de praktijk: terwijl de geautomatiseerde overheidsketens, de 8 versus 9 puntendrempel bij D G HAN en de RIV blokkade bij het CAK, potdicht bleven, wist een handmatige bypass via een rechtstreeks medisch attest van de huisarts bij de Belgische BNI belastingaangifte wél een berekend fiscaal voordeel van 2669 euro, 97 te activeren. De burger hoort echter geen handmatige sluiproutes nodig te hebben om zijn wettelijke rechten te verzilveren. Terwijl een individuele rechtszaak na twee tot drie jaar procederen slechts één enkel dossier oplost, verandert een structurele aanpassing van de uitvoeringsarchitectuur het stelsel voor alle 1, 5 miljoen Europese grensarbeiders tegelijk. . Die structurele hervorming vereist drie concrete infrastructurele bouwstenen die elkaars werking sluitend maken:." data-track-index="4" id="aab-docD_deel5" translate="no">
 <button aria-label="Beluister tekst" class="aab-play-btn" title="Beluister passage (AI-stem)" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -2515,7 +2950,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 </div>
 <div class="aab-controls">
 <button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
-</div>
+<button class="aab-next-btn" data-next-idx="5" data-next-target="#aab-docD_deel6" title="Spring direct naar het volgende audiogedeelte (6/7) en luister verder" type="button">⏭ Luister verder</button></div>
 <audio class="aab-audio-el" preload="none" src="../assets/audio/docD_deel5_nl_0e7ce711.mp3"></audio>
 </div>
 <p>Een zieke of gehandicapte grensarbeider beschikt in theorie over twee wegen om financieel te overleven: de <strong>uitkeringsroute</strong> (een maandelijkse arbeidsongeschiktheidsuitkering) en de <strong>fiscale autonomieroute</strong> (belastingvrijstellingen, toeslagen en kostenvergoedingen op basis van erkende beperking). Hoewel de fiscale route de staatskas aanzienlijk minder kost en de burger zelfstandig houdt, hebben lidstaten er een perverse financiële prikkel tegen: voor re-integratie en uitkeringsprogramma's kunnen landen Europese co-financiering uit het Europees Sociaal Fonds Plus (ESF+) aanvragen, terwijl fiscale vrijstellingen volledig ten laste van de eigen nationale begroting komen.</p>
@@ -2550,7 +2985,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 </div>
 </div>
 
-<h2 id="deel-vi-de-avg-stresstest-en-het-eessi-spook-van-2030">Deel VI — De AVG-stresstest en het EESSI-spook van 2030</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="docD_deel6" data-audio-src="../assets/audio/docD_deel6_nl_d1936b89.mp3" data-clean-text="Deel VI, De A V G stresstest en het E E S S I spook van 2030. De wet die niet voor iedereen hetzelfde leest: hoe zestien instanties reageren wanneer de burger om de logboeken vraagt. . 1. Inleiding, Van passief slachtoffer naar actieve systeemauditor, De gecoördineerde operatie van september 2026. Op 1 en 2 september 2026 voltrok zich een kantelpunt in dit dossier. Na achttien maanden van ambtelijke cirkelredeneringen, waarin Belgische en Nederlandse instanties elkaar onophoudelijk de zwartepiet toespeelden en beweerden dat zij moesten wachten op gegevens uit het buurland, besloten de aanvrager en zijn partner het initiatief definitief over te nemen. Het passief afwachten van niet nagekomen toezeggingen werd vervangen door een gecoördineerde forensische stresstest van het gehele grensoverschrijdende overheidsapparaat. Bij zestien betrokken overheids, uitvoerings en toezichtsinstanties in België en Nederland werden gelijktijdig formele inzageverzoeken ingediend op grond van artikel 15 van de Algemene Verordening Gegevensbescherming, A V G / GDPR. . Het doel van deze grootschalige audit was niet het opvragen van reeds bekende besluitbrieven of dossierstukken die allang in de fysieke ordners zaten. Het verzoek richtte zich specifiek op de internationale achterkamer van de overheid: de technische audit trails, de communicatielogboeken en de transmissiestatus van het Europese E E S S I netwerk, Electronic Exchange of Social Security Information. Welke Structured Electronic Documents, SED s, en bijbehorende Business Use Cases, B U C, waren er tussen 11 april 2025 en september 2026 feitelijk verzonden en ontvangen? Welke geautomatiseerde gegevensstromen liepen er via de Europese DAC richtlijn voor fiscale gegevens en tussen de bevolkingsregisters, het Belgische Rijksregister en de Nederlandse Basisregistratie Personen, ? En bovenal: spraken de systemen de waarheid wanneer ambtenaren stelden dat de vertraging aan de overkant van de grens lag?. Deze stresstest staat in een directe en urgente historische context. In juli 2026 bereikten de Europese ministers een akkoord over de herziening van de Europese coördinatieverordeningen, Verordening 883 of 2004 en 987 of 2009, met een voorziene inwerkingtreding rond 2030 of 2031. De Europese Commissie houdt burgers en parlementen voor dat de toekomstige European Social Security Pass, ESSPASS, alle fricties zal wegnemen door een naadloze, digitale snelweg te creëren. . De resultaten van deze A V G audit leggen echter een ontluisterende waarheid bloot: het spook van 2030 maskeert een hedendaags executief faillissement. De digitale kabels en servers tussen België en Nederland liggen er immers al jaren. Het probleem van de grensarbeider is geen gebrek aan technologie, maar het structurele verzuim van nationale instanties om op de verzendknop te drukken, gevolgd door een krampachtige reflex om de logboeken hermetisch af te sluiten zodra de burger om het bewijs van die stilstand vraagt. . 2. Patroon 1, Het medische controlespoor versus het bestuurlijke verantwoordingsspoor, Vitaz en Gemeente Waasmunster. Dat technische complexiteit of privacybescherming niet de werkelijke redenen zijn voor administratieve vertraging, wordt onomstotelijk bewezen door twee instanties die buiten het institutionele conflictspeelveld stonden: algemeen ziekenhuis Vitaz in Sint Niklaas en de voormalige Belgische woongemeente Waasmunster. . Toen de aanvrager op 7 maart 2026, na zijn overstap naar de gespecialiseerde diabetische voetkliniek van het UZ Gent, bij de ombudsdienst van Vitaz een A V G verzoek indiende om zijn volledige klinische dossier op te vragen, voltrok de gegevensverstrekking zich voorbeeldig. Zonder formulierdwang, zonder legitimatie obstakels en zonder administratieve vertraging ontving de aanvrager binnen drie dagen, op 10 maart 2026, een beveiligde digitale downloadlink. Het volledige medische dossier, inclusief operatieverslagen van de amputaties, specialistische rapporten van oogheelkunde en nefrologie, anesthesieverslagen en laboratoriumwaarden, werd direct en transparant overhandigd. Ziekenhuis Vitaz had niets te verbergen: haar gegevens weerspiegelden immers de zuivere, fysieke realiteit van het geteisterde lichaam. . Hetzelfde patroon tekende zich af bij de Gemeente Waasmunster. Op het verzoek van 1 september 2026 om de historische bevolkings en uitschrijvingslogs uit 2014 te verstrekken, antwoordde de gemeente op 1 oktober 2026 met een helder en openhartig bestuursbesluit. De gemeente legde transparant uit dat de technische servertransmissies na twaalf jaar volgens de wettelijke bewaartermijnen waren vernietigd, maar bevestigde direct dat de uitschrijving wegens emigratie naar Nederland destijds correct in het Rijksregister was doorgevoerd en nog altijd ongewijzigd zichtbaar was. . Het contrast met het sociale zekerheidsspoor is fundamenteel en veelzeggend. Waar de waarheid de instantie niet kan belasten omdat zij louter een medische of historische werkelijkheid registreert, werkt de A V G vlekkeloos, digitaal en snel. Maar op het moment dat een A V G verzoek raakt aan de beleidsmatige en financiële verantwoordelijkheid van uitkeringsinstanties, waar logbestanden zwart op wit moeten aantonen wie heeft stilgezeten, wie termijnen heeft overschreden of wie Europese verordeningen heeft genegeerd, verandert dezelfde overheid in een gesloten bastion dat alle registers opentrekt om inzage te verhinderen. . 3. Patroon 2, De analoge slotgracht en de verdwijntruc, U W V, S V B, F O D IBZ, Parentia of Partena en Gemeente Hulst. Zodra de gecoördineerde A V G verzoeken op 1 en 2 september 2026 de bureaus van de sociale zekerheids en belastinginstanties bereikten, trad bij vijf afzonderlijke organisaties een identiek verdedigingsmechanisme in werking: het opwerpen van kunstmatige, analoge drempels om de burger te ontmoedigen en de wettelijke beslistermijn van artikel 12 lid 3 A V G te traineren, in flagrante strijd met artikel 12 lid 2 A V G en de bindende EDPB richtsnoeren 01 of 2022 inzake de uitoefening van het inzagerecht. . U W V, Nederland, De analoge postzegel voor digitale serverlogs: Hoewel de aanvrager zijn verzoek via het officiële webportaal MijnUWV indiende, ingelogd met zijn persoonlijke DigiD op het hoogste betrouwbaarheidsniveau, weigerde het U W V het digitale verzoek in behandeling te nemen. De uitvoeringsinstantie eiste dat de aanvrager voor het opvragen van elektronische E E S S I serverlogs een papieren brief met een postzegel van 1 euro en 40 cent en een fysieke fotokopie van zijn identiteitsbewijs naar een postbus in Almere stuurde. Een instantie die miljarden euro s aan digitalisering besteedt, dwingt een slechtziende burger met amputaties terug naar de postkoets om digitale transmissiedata te maskeren. . Sociale Verzekeringsbank, S V B, Nederland, De formulierdwang: Toen de partner van de aanvrager op 1 september 2026 per e mail een formeel A V G verzoek indiende bij de directie van de S V B, weigerde de S V B op 4 september 2026 om dit rechtsgeldige verzoek te registreren. In plaats van het verzoek door te geleiden naar de Functionaris voor Gegevensbescherming, eiste de S V B dat de burger verplicht een specifiek online formulier met voorgeprogrammeerde keuzemenu s invulde. Pas wanneer de burger zich in het ambtelijke keurslijf perste, mocht de wettelijke termijnklok beginnen te lopen. . F O D Binnenlandse Zaken, België, De dichte firewall: Toen de aanvrager op 2 oktober 2026 de federale Functionaris voor Gegevensbescherming van Binnenlandse Zaken in gebreke wilde stellen wegens het overschrijden van de wettelijke maandtermijn, stuitten de e mails aan zowel dpo@ibz. fgov. be als dpo@ibz. be op een harde serverfout: 550 5. 4. 1 Access denied. De officiële mailbox van de federale privacytoezichthouder bleek voor externe burgers hermetisch afgegrendeld door een overheidsfirewall. De ingebrekestelling kon pas na intensief speurwerk via een generiek webformulier naar binnen worden geforceerd. . Parentia / Partena, België, De administratieve verdwijntruc en het verzet: Het Vlaamse kinderbijslagfonds Parentia koos aanvankelijk voor een opmerkelijke methode. Op 14 september 2026 stuurde een dossierbehandelaar van het lokale kantoor Parentia Hasselt een e mail naar de partner van de aanvrager: Kan je bevestigen dat wij uw e mail van 01 of 09/2026, waarin om het bezorgen van bewijsstukken werd verzocht, als nietig mogen beschouwen gezien de lopende behandeling van het onderzoek naar de sociale toeslag? Een formeel verzoek onder Europees grondrecht werd botweg weggezet als een administratieve rimpel die men hoopte te laten verdwijnen. . Nadat de aanvrager op 15 september met scherpe juridische argumenten protesteerde en eiste het A V G verzoek los van de materiële klacht te behandelen, greep de koepelorganisatie in: op 17 september bevestigde Parentia dat het verzoek rechtsgeldig was. Partena Corporate Compliance, ref. 12609 00112, leverde op 1 oktober 2026 wél een met het INSZ beveiligd digitaal archief met de E E S S I uitwisseling, SED s F001 en F002, tussen Parentia en de Nederlandse S V B. Daarmee werd de grensoverschrijdende uitwisseling bevestigd, al bleef de achterliggende K S Z en inkomensblokkade van het lokale kantoor in stand. . Gemeente Hulst, Nederland, Het bureaucratische theaterstuk: Het dieptepunt van deze vertragingstactieken vond plaats bij de Gemeente Hulst. Hoewel de gemeente de aanvrager al meer dan een jaar intensief kende via lopende Wmo aanvragen, bezwaarprocedures rond de gehandicaptenparkeerkaart en bijzondere bijstand, en zij al lang beschikte over geverifieerde kopieën van zijn paspoort, stuurde de gemeente op 1 oktober 2026, exact op dag 29 van de 30 dagentermijn, een aangetekend opschortingsbesluit, kenmerk 1086452. . De gemeente beweerde plotseling dat zij de identiteit van de aanvrager formeel nog niet voldoende kon vaststellen. De immobiele en slechtziende burger kreeg drie onmogelijke opties voorgeschoteld: fysiek verschijnen aan de publieksbalie, met zijn paspoort voor een Microsoft Teams webcam gaan zitten, of opnieuw inloggen met DigiD via een specifieke gemeentelink. . De aanvrager koos voor de laatste optie en logde exact 40 minuten later in met DigiD, zaaknummer 1101271. Daarmee viel het ambtelijke masker direct af: de volgende ochtend, op 2 oktober om 08:25 uur, verzond de gemeente via vijf haperende SmartLockr wachtwoordmails een omvangrijk besluit van 47 pagina s. Het besluit lag al die tijd kant en klaar op de plank; de identiteitsverificatie werd louter als procedurele vertragingsvalstrik ingezet. . 4. Patroon 3, De papieren rookbom, de zwarte stift en de paniek achter de stropdas, C M en S V B. Waar overheden niet langer konden ontkennen dat zij gegevens moesten verstrekken, gebruikten zij de vorm van de verstrekking als wapen om de inhoudelijke realiteit te verhullen. Twee dossiers springen eruit als schoolvoorbeelden van institutionele obstructie: de Christelijke Mutualiteit in België en de Sociale Verzekeringsbank in Nederland. . De Christelijke Mutualiteit, C M, DPO Office / Adjunct DPO, : Na het initiële verzoek van 1 september en een formele aangetekende ingebrekestelling op 19 of 21 september, Track en Trace RF000501165NL, waarin specifiek werd gevraagd naar de E E S S I transmissielogs, de betekenis van de geheimzinnige sjablooncode BD BR100 MFN of AB2001, 11. 03. 0012, 000002 20 mei 2026 Conform 810915 199 48 v4, de grondslag voor de 100 procent afwijzing in plaats van de statutaire 10 procent sanctieregel, en de exacte tijdstempels waarop de adviserend arts op 20 mei 2026 de UZ Gent verslagen had geraadpleegd, reageerde het ziekenfonds op 29 september met een klassieke papieren rookbom. De C M dumpte een ongestructureerd PDF bestand van 294 pagina s, Recht van inzage CM. pdf, over de schutting, overigens zonder wachtwoord, dat pas laat op de avond na herhaald aandringen werd nagezonden. . Tussen deze honderden pagina s leverde de C M echter onbedoeld het ultieme bewijs van haar eigen systeemfalen. In de bijlage 20250622 S072. pdf werd zichtbaar dat na de geautomatiseerde DIMONA indiensttreding van de aanvrager op 10 maart 2025, het ziekenfonds het dossier ruim drie maanden op de plank had laten liggen. Terwijl de computersystemen van de C M op 21 mei en 5 juni 2025 automatische weigeringen wegens geen hoedanigheid als gerechtigde uitbraakten, werd het verplichte Europese S072 signaal, bewijs van zorgverzekering, pas op 22 juni 2025 naar Nederland verstuurd. . Toen de aanvrager het DPO Office op 29 september met deze feiten en de onafhankelijke controle van toezichthouder R I Z I V confronteerde, sloeg bij Adjunct DPO Yannick Van Leeuwen op 30 september de paniek toe. In een verhit antwoord plaatste hij de woorden eis en vraag denigrerend tussen aanhalingstekens en formuleerde hij vier stellingen die juridisch volstrekt onhoudbaar zijn onder de A V G en het arrest Pankki S, HvJ E U C 579 of 21, :. Hij beweerde dat het ontbreken van verplichte E E S S I berichten per definitie geen persoonsgegeven kan zijn;. Hij stelde dat in geautomatiseerde stuurcodes waarin het rijksregisternummer van de burger is verwerkt, alleen het nummer zelf een persoonsgegeven is en de rest van de programmacode niet;. Hij weigerde de toegangslogs van de adviserend arts op 20 mei 2026 te verstrekken omdat dit een potentiële invloed kan hebben op de integriteit van ons informatiesysteem ;. En voor de rectificatie van de foutieve arbeidsongeschiktheidsstatus in de Kruispuntbank, artikel 16 A V G, wees het DPO Office elke verantwoordelijkheid af en verwees het de burger doodleuk terug naar de lokale balie die hem al achttien maanden negeerde. . De Sociale Verzekeringsbank, S V B, Bureaucratische schizofrenie en 142 pagina s gelakt papier, : De S V B vertoonde in dit audit traject een fascinerende gespleten persoonlijkheid. Aan de materiële kant was de S V B de enige instantie in Nederland die haar wettelijke zorgplicht serieus nam: toen de gezinsbijslagaanvraag op naam van de werkende moeder op 31 maart 2026 dreigde vast te lopen, adviseerde de S V B eigener beweging om de aanvraag op naam van de niet werkende vader te stellen, kende zij op 20 april 2026 met terugwerkende kracht de aanvullende kinderbijslag toe, 685 euro en 82 cent, en deblokkeerde zij zo het Kindgebonden Budget. Maar zodra dezelfde burger via de A V G vroeg om de digitale logboeken van het E E S S I netwerk, schoot dezelfde S V B in een krampachtige defensieve reflex. . Op 24 oktober 2026, besluit verzonden per post op 27 oktober, kenmerk VZ 6825169 0, leverde de S V B een pakket af dat symbool staat voor de bureaucratische waanzin: 142 afgedrukte pagina s aan elektronische SED berichten per fysieke postbode. Pagina na pagina was onleesbaar gemaakt met dikke zwarte lakbalken over de namen, geboortedata en identificatienummers van de eigen echtgenote, het eigen kind en behandelende artsen, onder het absurde voorwendsel van de bescherming van de privacy van derden. . De S V B motiveerde haar weigeringen met de openhartige bekentenis dat gegevens worden achtergehouden als dit de belangen van de S V B schaadt of als dit de controle en het toezicht door de S V B belemmert. En op pagina 1 trok de S V B definitief de stekker uit de Europese digitale illusie met de historische bekentenis: 2. logbestanden, transmissiestatus en datumstempels van de gerelateerde B U C deze informatie hebben wij niet tot onze beschikking. De overheid levert de wagons op papier, maar het logboek van de locomotief is spoorloos. . 5. Patroon 4, Het Pontius Pilatus effect en de onbedoelde kroongetuigen, R I Z I V, RVA, F O D SZ, SFPD, CZ, F O D IBZ, R v I G en U W V. Waar individuele instanties weigerden verantwoordelijkheid te nemen, leverden zij door hun collectieve ontkenningen gezamenlijk het sluitende bewijs van de institutionele stilstand. De reacties van de overige zeven instanties vormen het forensische fundament van deze audit:. R I Z I V, 29 september 2026, De toezichthouder die de stilstand bevestigt: De Functionaris voor Gegevensbescherming van het Rijksinstituut voor Ziekte en Invaliditeitsverzekering, R I Z I V, voerde een onafhankelijke audit uit op het Belgische nationale E E S S I knooppunt. Zijn schriftelijke bevinding was vernietigend: in de afgelopen zes maanden was er onder het INSZ van de aanvrager slechts één enkele E E S S I uitwisseling geregistreerd, het gezinsbijslagverkeer tussen Parentia en de S V B, en exact nul elektronische berichten tussen de C M en CZ of het U W V. Het ziekenfonds had in zes maanden tijd geen enkel digitaal signaal over de ziekte of invaliditeit naar Nederland gestuurd. Toen de aanvrager dezelfde dag vroeg hoe het R I Z I V als toezichthouder ging optreden tegen dit plichtsverzuim onder artikel 76 van Verordening 883 of 2004, viel het R I Z I V prompt stil en werd er niet meer geantwoord. . RVA, 29 september 2026, Wij zijn enkel zender : DPO Martin Senechal van de Rijksdienst voor Arbeidsvoorziening, RVA, bevestigde per officieel besluit dat er met het Nederlandse U W V geen enkele gegevensuitwisseling via E E S S I heeft plaatsgevonden en dat de RVA geen enkele informatievraag van het U W V heeft ontvangen. De RVA benadrukte dat zij op jaarbasis honderdduizenden attesten via E E S S I verstuurt, maar stelde dat zij op grond van de privacywetgeving nooit uit eigen beweging gegevens naar Nederland mag sturen zolang het U W V geen formele koppeling legt tussen het Belgische INSZ en het Nederlandse BSN. De RVA waste haar handen in onschuld: het U W V vraagt niets, dus zendt Brussel niets. . F O D Sociale Zekerheid, DG Personen met een Handicap, 30 september en 12 oktober 2026, : DPO John Van Damme zorgde voor een dubbele ontmaskering. Op 30 september leverde hij aanvankelijk slechts de door de burger zelf ingezonden documenten, met de verbijsterende mededeling dat de Belgische federale dienst voor gehandicapten helemaal geen gebruikmaakt van het Europese E E S S I systeem, gezien het geringe aantal aanvragen uit de EER zone, een federale overheidsdienst die weigert aan te sluiten op de Europese digitale infrastructuur. . Na een scherpe ingebrekestelling met verwijzing naar het Pankki S arrest leverde de DPO op 12 oktober alsnog de diepe milliseconde systeemlogs van het MyHandicap portaal. Daaruit bleek dat de aanvrager bij zijn drie digitale hulpaanvragen, 26 juli, 30 september en 4 oktober 2025, telkens binnen 0, 1 seconde volautomatisch door de Kruispuntbank koppeling werd buitengegooid met foutcode 5124;NNATSTR : Persoon heeft geen domicilieadres in België. De computer discrimineerde op woonplaats nog vóór een menselijke ambtenaar het dossier had gezien. . Federale Pensioendienst, SFPD, 2 oktober 2026, : Pas 31 minuten nadat een formele ingebrekestelling met gekwalificeerde Belgische E I D handtekening werd binnengeschoten, reageerde DPO Ivo Tuytens. Zijn conclusie was even kort als veelzeggend: in de systemen van de pensioendienst bevindt zich geen enkel E E S S I gegeven. De burger moest zijn loopbaangegevens zelf maar opzoeken op het portaal mypension. be : Mijns inziens zou U best eerst contact opnemen met het buitenlands organisme of er wel iets wordt verstuurd naar de SFPD. . Zorgverzekeraar CZ, 6 oktober 2026, : Manager Klantenservice L. Bruitsman ontkende in een formeel schrijven iedere analoge drempel, Wij herkennen ons niet in deze beschrijving, en weigerde categorisch om inzage te geven in de voorbereiding op de herziene Verordening 883 of 2004, Uiteraard mag u ervan uitgaan dat CZ uitvoering geeft aan de op haar rustende wettelijke verplichtingen. Bovendien weigerde CZ om afschriften van het S072 berichtenverkeer te verstrekken en verwees zij de burger door naar het CAK, terwijl CZ als verdragspolisuitvoerder zélf de exclusieve partij is die de S072 formulieren met de Belgische C M uitwisselt. . F O D Binnenlandse Zaken, 7 oktober 2026, en R v I G Nederland, 15 oktober 2026, : De bevolkingsregisters legden de ultieme systeemfout bloot. F O D IBZ leverde op 7 oktober een voorbeeldig en gedetailleerd Excel logboek, 2026 115 logs. xlsx, van alle externe bevragingen op het Belgische Rijksregister. Hieruit werd zichtbaar dat de Kruispuntbank van de Sociale Zekerheid, K S Z, fungeert als een ondoorzichtige proxy: individuele fondsen bevragen het Rijksregister onder de vlag van de K S Z, waardoor niet te herleiden is wie welke mutatie heeft verricht. . Samen met het formele besluit van de Rijksdienst voor Identiteitsgegevens, R v I G, kenmerk c26092182, en het BRP dossier van Hulst werd het structurele vacuüm bewezen: bij een grensoverschrijdende verhuizing bestaat er nul geautomatiseerde gegevenskoppeling tussen het Belgische Rijksregister en de Nederlandse BRP. Terwijl binnen Nederland 23 instanties, waaronder de Belastingdienst, het CJIB, het BKR en gerechtsdeurwaarders via de SNG, volautomatisch op het BSN zijn aangesloten om de burger te volgen en te beboeten, stopt de gegevensuitwisseling voor sociale bescherming exact bij de grenspaal. . Het U W V, besluit 21 oktober 2026, ontvangen 27 oktober 2026, kenmerk 2026. 10. 0356, De kroongetuige tegen zichzelf: Waar het U W V na de formele ingebrekestelling van 2 oktober 2026 de ontvangstdatum van het verzoek van 1 september eigenmachtig verplaatste naar 16 september en de beslistermijn eenzijdig verdaagde tot 11 november 2026, liet de instantie haar eigen cliffhanger vervroegd ontploffen. Per fysieke brief van 21 oktober 2026, ondertekend namens de Raad van Bestuur door de manager Klantencontact, wees het U W V het inzageverzoek in de elektronische E E S S I en logbestanden formeel af met twee vernietigende bekentenissen: De gegevens die u wilt inzien zijn niet aanwezig. Hierdoor kunnen wij u de gegevens niet aanleveren én Er zijn geen persoonsgegevens gedeeld met externe partijen. . Hiermee is van beide zijden van de grens, R I Z I V en RVA in België, U W V in Nederland, zwart op wit bewezen dat het Europese E E S S I netwerk gedurende achttien maanden niet is gebruikt en dat de zieke burger de enige datakabel tussen beide lidstaten was, met 700 gram papieren dossiers per post en handmatige uploads van U1 formulieren. . Dit besluit ontmaskert tevens de W I A afwijzing van 8 juli 2026, zaak A27812030 01, waarin het U W V weigerde het Vester arrest toe te passen onder het mom dat het wachtte op België, terwijl het zelf nooit enig contact had gezocht. Bovendien wordt ook de eerdere stelling van het Bureau voor Belgische Zaken, BBZ of S V B, van 1 en 8 mei 2026, dat er sprake zou zijn van onderlinge gegevensuitwisseling tussen U W V en R I Z I V, door het U W V zelf keihard gelogenstraft. . 6. Overzichtstabel van de zestien aangeschreven instanties, Stand 27 oktober 2026. Onderstaande tabel toont de integrale stand van zaken van de gecoördineerde A V G inzageoperatie per 27 oktober 2026. De zestien instanties zijn gerangschikt naar land en categorie. . 7. De filosofische kern en de Cliffhanger van november 2026. De uitkomsten van deze gecoördineerde A V G stresstest overstijgen de individuele dossiers. Zij leggen de diepere rechtsfilosofische asymmetrie van de moderne bureaucratische staat bloot. Waarom mag een overheidsorgaan een dwingende Europese verordening, of het nu gaat om de coördinatieregels van Verordening 883 of 2004, de termijnen van artikel 12 A V G, of de bindende rechtspraak van het Hof van Justitie in het arrest Pankki S, C 579 of 21, straffeloos reduceren tot een vrijblijvende inspanningsverplichting vol administratieve uitvluchten, niet beschikbaar, bedreigt integriteit systeem, geen persoonsgegeven, ? Terwijl diezelfde overheid de burger bij één gemist vinkje, één niet aangevinkt veld of één dag termijnoverschrijding volautomatisch en genadeloos financieel liquideert?. De wet is in theorie geschreven als een schild om de burger te beschermen tegen de almacht van het staatsapparaat. In de uitvoeringspraktijk van de grensoverschrijdende sociale zekerheid is de wet echter door legers van interne juristen en privacy functionarissen omgevormd tot een zwaard: een instrumenteel pantser dat uitsluitend wordt gehanteerd om het apparaat te beschermen tegen de transparantie en controle door de burger. Men verschuilt zich achter de A V G om niet te hoeven verantwoorden waarom een doodzieke grensarbeider achttien maanden zonder inkomen en zorgvervoer is achtergelaten. . De Cliffhanger, De ontknoping in november 2026: Terwijl vijftien van de zestien aangeschreven instanties hun kaarten inmiddels noodgedwongen op tafel hebben gelegd, waarbij het U W V zijn eigen cliffhanger van 11 november vervroegd liet ontploffen met de formele bekentenis dat er nul gegevens met externe partijen zijn gedeeld en dat er geen loggegevens aanwezig zijn, spitsen de laatste uitvluchten zich toe op de twee fiscale bastions die de deur nog altijd krampachtig gesloten houden:. De Belastingdienst en Dienst Toeslagen hebben het verzoek van 2 september om openbaarmaking van de internationale DAC stromen en de RIV blokkade op 22 oktober eenzijdig verdaagd tot 30 november 2026, kenmerk 3199. 60. 602. T. 25. 0. 0013. . Aan Belgische zijde heeft F O D Financiën na haar excuusmail wegens interne miscommunicatie van 2 oktober 2026 tot op heden volledige radiostilte bewaard en haar inhoudelijke logboeken nog altijd niet geleverd. . Dit hoofdstuk is daarmee geen afgesloten geschiedenis, maar een lopende forensische reconstructie. Eind november 2026, wanneer de verdagingstermijn van de Belastingdienst onherroepelijk is verstreken en de radiostilte van F O D Financiën juridisch is verzegeld, valt het doek over de laatste uitvluchten. Met de dan complete dataset van alle zestien instanties wordt dit dossier integraal neergelegd bij de Gegevensbeschermingsautoriteit, GBA, in Brussel en de Autoriteit Persoonsgegevens, AP, in Den Haag, als het ultieme bewijs van een haperende Unie waarin instanties elkaars gegevens weigeren in te lezen terwijl het gezin op het breukvlak bezwijkt. . 8. De Logica van de Machine, Vijf flagrante systeemparadoxen uit Document B. Wie de onderliggende bewijsstukken en correspondentie in Document B, De data matrix, doorloopt, stuit doorheen de 62 geauditeerde dossiers op tientallen vergelijkbare kortsluitingen die direct in het oog springen. Onderstaande vijf voorbeelden vormen slechts een greep uit de meest sprekende vignetten waarin geautomatiseerde administraties wetgeving, logica en de menselijke realiteit op hun kop zetten om hun eigen systeemconsistentie te beschermen. . 01 De Papieren Cloud. Sociale Verzekeringsbank, S V B, 24 oktober 2026. . De Aanvraag. Een digitaal A V G inzageverzoek om de elektronische logboeken en tijdstempels van het Europese E E S S I netwerk. . . Het Systeem. Logbestanden, transmissiestatus en datumstempels van de gerelateerde B U C, deze informatie hebben wij niet tot onze beschikking. . . De Feitelijke Realiteit. Om te bewijzen dat de digitale logboeken niet bestaan, print de S V B 142 pagina s aan digitale E E S S I berichten uit op papier, zet er met de hand zwarte lakbalken op over de namen van de eigen gezinsleden, en laat het pakket per fysieke postbode aan de voordeur bezorgen. . . . . 02 De Gevaarlijke Integriteit. Christelijke Mutualiteit, C M, 30 september 2026. . De Aanvraag. De burger vraagt via Artikel 15 A V G inzage in de toegangslogs van 20 mei 2026 om te controleren of de adviserend arts zijn medisch dossier heeft geopend vóór het weigeren van zijn erkenning. . . Het Systeem. De Adjunct DPO van de C M weigert inzage in de systeem en toegangslogs omdat dit een potentiële invloed kan hebben op de integriteit van ons informatiesysteem. . . De Feitelijke Realiteit. Een beveiligingslogboek dat wettelijk bestaat om de integriteit van medische gegevens te bewaken, mag niet worden ingezien door de patiënt omdat het lezen van het logboek het computersysteem zou kunnen aantasten. . . . . 03 De Schoen van 2450 euro voor een Gezonde Voet. Christelijke Mutualiteit, C M, Juni / Juli 2025. . De Situatie. Na de amputatie van twee tenen aan de rechtervoet vraagt de grensarbeider een ziekte uitkering en een medisch invaliditeitsattest aan. . . Het Systeem. De C M weigert het invaliditeitsattest voor de belastingdienst af te leveren omdat er geen financieel recht op een uitkering is, en stopt de registratie in de Kruispuntbank. . . De Feitelijke Realiteit. Diezelfde adviserend arts van de C M keurt gelijktijdig 2450 euro, 00 goed voor orthopedische maatschoenen wegens onomkeerbare amputaties. De voet is geamputeerd voor de schoenmaker, maar administratief gezond voor de fiscus. . . . . 04 De 30 Kilometer Paradox. Reizen door Zeeland 18 mei 2026. . De Aanvraag. Een gehandicapte grensarbeider met geamputeerde tenen en blindheid aan één oog boekt een Wmo regiotaxi vanuit Graauw naar Gent. . . Het Systeem. De rit naar de verplichte medische keuring van de Belgische overheid, F O D Sociale Zekerheid, in Gent wordt geweigerd wegens de 30 kilometerzone. . . De Feitelijke Realiteit. Exact dezelfde afstand vanuit Graauw naar het Universitair Ziekenhuis in datzelfde Gent wordt door dezelfde centrale probleemloos gereden à 19 euro en 65 cent per enkele reis. Een kilometer naar een ziekenhuisbed is administratief korter dan een kilometer naar een keuringsarts. . . . . 05 De Wachtende Zenders. RVA, BE, en U W V, NL, September / Oktober 2026. . De Situatie. Achttien maanden lang wacht het Nederlandse U W V op Belgische gegevens, en wacht België op Nederland. . . Het Systeem. RVA: Elektronische uitwisseling gebeurt steeds op initiatief van de ontvangende partij, U W V. U W V: Er zijn geen persoonsgegevens gedeeld met externe partijen. . . De Feitelijke Realiteit. Twee oprichtende E U lidstaten staren achttien maanden naar een lege digitale snelweg, terwijl de zieke burger met 700 gram papier op het postkantoor de enige datakabel vormt. . . . . . ." translate="no">
+<h2 id="deel-vi-de-avg-stresstest-en-het-eessi-spook-van-2030">Deel VI — De AVG-stresstest en het EESSI-spook van 2030</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="docD_deel6" data-audio-src="../assets/audio/docD_deel6_nl_d1936b89.mp3" data-clean-heading="Deel VI — De AVG-stresstest en het EESSI-spook van 2030" data-clean-text="Deel VI, De A V G stresstest en het E E S S I spook van 2030. De wet die niet voor iedereen hetzelfde leest: hoe zestien instanties reageren wanneer de burger om de logboeken vraagt. . 1. Inleiding, Van passief slachtoffer naar actieve systeemauditor, De gecoördineerde operatie van september 2026. Op 1 en 2 september 2026 voltrok zich een kantelpunt in dit dossier. Na achttien maanden van ambtelijke cirkelredeneringen, waarin Belgische en Nederlandse instanties elkaar onophoudelijk de zwartepiet toespeelden en beweerden dat zij moesten wachten op gegevens uit het buurland, besloten de aanvrager en zijn partner het initiatief definitief over te nemen. Het passief afwachten van niet nagekomen toezeggingen werd vervangen door een gecoördineerde forensische stresstest van het gehele grensoverschrijdende overheidsapparaat. Bij zestien betrokken overheids, uitvoerings en toezichtsinstanties in België en Nederland werden gelijktijdig formele inzageverzoeken ingediend op grond van artikel 15 van de Algemene Verordening Gegevensbescherming, A V G / GDPR. . Het doel van deze grootschalige audit was niet het opvragen van reeds bekende besluitbrieven of dossierstukken die allang in de fysieke ordners zaten. Het verzoek richtte zich specifiek op de internationale achterkamer van de overheid: de technische audit trails, de communicatielogboeken en de transmissiestatus van het Europese E E S S I netwerk, Electronic Exchange of Social Security Information. Welke Structured Electronic Documents, SED s, en bijbehorende Business Use Cases, B U C, waren er tussen 11 april 2025 en september 2026 feitelijk verzonden en ontvangen? Welke geautomatiseerde gegevensstromen liepen er via de Europese DAC richtlijn voor fiscale gegevens en tussen de bevolkingsregisters, het Belgische Rijksregister en de Nederlandse Basisregistratie Personen, ? En bovenal: spraken de systemen de waarheid wanneer ambtenaren stelden dat de vertraging aan de overkant van de grens lag?. Deze stresstest staat in een directe en urgente historische context. In juli 2026 bereikten de Europese ministers een akkoord over de herziening van de Europese coördinatieverordeningen, Verordening 883 of 2004 en 987 of 2009, met een voorziene inwerkingtreding rond 2030 of 2031. De Europese Commissie houdt burgers en parlementen voor dat de toekomstige European Social Security Pass, ESSPASS, alle fricties zal wegnemen door een naadloze, digitale snelweg te creëren. . De resultaten van deze A V G audit leggen echter een ontluisterende waarheid bloot: het spook van 2030 maskeert een hedendaags executief faillissement. De digitale kabels en servers tussen België en Nederland liggen er immers al jaren. Het probleem van de grensarbeider is geen gebrek aan technologie, maar het structurele verzuim van nationale instanties om op de verzendknop te drukken, gevolgd door een krampachtige reflex om de logboeken hermetisch af te sluiten zodra de burger om het bewijs van die stilstand vraagt. . 2. Patroon 1, Het medische controlespoor versus het bestuurlijke verantwoordingsspoor, Vitaz en Gemeente Waasmunster. Dat technische complexiteit of privacybescherming niet de werkelijke redenen zijn voor administratieve vertraging, wordt onomstotelijk bewezen door twee instanties die buiten het institutionele conflictspeelveld stonden: algemeen ziekenhuis Vitaz in Sint Niklaas en de voormalige Belgische woongemeente Waasmunster. . Toen de aanvrager op 7 maart 2026, na zijn overstap naar de gespecialiseerde diabetische voetkliniek van het UZ Gent, bij de ombudsdienst van Vitaz een A V G verzoek indiende om zijn volledige klinische dossier op te vragen, voltrok de gegevensverstrekking zich voorbeeldig. Zonder formulierdwang, zonder legitimatie obstakels en zonder administratieve vertraging ontving de aanvrager binnen drie dagen, op 10 maart 2026, een beveiligde digitale downloadlink. Het volledige medische dossier, inclusief operatieverslagen van de amputaties, specialistische rapporten van oogheelkunde en nefrologie, anesthesieverslagen en laboratoriumwaarden, werd direct en transparant overhandigd. Ziekenhuis Vitaz had niets te verbergen: haar gegevens weerspiegelden immers de zuivere, fysieke realiteit van het geteisterde lichaam. . Hetzelfde patroon tekende zich af bij de Gemeente Waasmunster. Op het verzoek van 1 september 2026 om de historische bevolkings en uitschrijvingslogs uit 2014 te verstrekken, antwoordde de gemeente op 1 oktober 2026 met een helder en openhartig bestuursbesluit. De gemeente legde transparant uit dat de technische servertransmissies na twaalf jaar volgens de wettelijke bewaartermijnen waren vernietigd, maar bevestigde direct dat de uitschrijving wegens emigratie naar Nederland destijds correct in het Rijksregister was doorgevoerd en nog altijd ongewijzigd zichtbaar was. . Het contrast met het sociale zekerheidsspoor is fundamenteel en veelzeggend. Waar de waarheid de instantie niet kan belasten omdat zij louter een medische of historische werkelijkheid registreert, werkt de A V G vlekkeloos, digitaal en snel. Maar op het moment dat een A V G verzoek raakt aan de beleidsmatige en financiële verantwoordelijkheid van uitkeringsinstanties, waar logbestanden zwart op wit moeten aantonen wie heeft stilgezeten, wie termijnen heeft overschreden of wie Europese verordeningen heeft genegeerd, verandert dezelfde overheid in een gesloten bastion dat alle registers opentrekt om inzage te verhinderen. . 3. Patroon 2, De analoge slotgracht en de verdwijntruc, U W V, S V B, F O D IBZ, Parentia of Partena en Gemeente Hulst. Zodra de gecoördineerde A V G verzoeken op 1 en 2 september 2026 de bureaus van de sociale zekerheids en belastinginstanties bereikten, trad bij vijf afzonderlijke organisaties een identiek verdedigingsmechanisme in werking: het opwerpen van kunstmatige, analoge drempels om de burger te ontmoedigen en de wettelijke beslistermijn van artikel 12 lid 3 A V G te traineren, in flagrante strijd met artikel 12 lid 2 A V G en de bindende EDPB richtsnoeren 01 of 2022 inzake de uitoefening van het inzagerecht. . U W V, Nederland, De analoge postzegel voor digitale serverlogs: Hoewel de aanvrager zijn verzoek via het officiële webportaal MijnUWV indiende, ingelogd met zijn persoonlijke DigiD op het hoogste betrouwbaarheidsniveau, weigerde het U W V het digitale verzoek in behandeling te nemen. De uitvoeringsinstantie eiste dat de aanvrager voor het opvragen van elektronische E E S S I serverlogs een papieren brief met een postzegel van 1 euro en 40 cent en een fysieke fotokopie van zijn identiteitsbewijs naar een postbus in Almere stuurde. Een instantie die miljarden euro s aan digitalisering besteedt, dwingt een slechtziende burger met amputaties terug naar de postkoets om digitale transmissiedata te maskeren. . Sociale Verzekeringsbank, S V B, Nederland, De formulierdwang: Toen de partner van de aanvrager op 1 september 2026 per e mail een formeel A V G verzoek indiende bij de directie van de S V B, weigerde de S V B op 4 september 2026 om dit rechtsgeldige verzoek te registreren. In plaats van het verzoek door te geleiden naar de Functionaris voor Gegevensbescherming, eiste de S V B dat de burger verplicht een specifiek online formulier met voorgeprogrammeerde keuzemenu s invulde. Pas wanneer de burger zich in het ambtelijke keurslijf perste, mocht de wettelijke termijnklok beginnen te lopen. . F O D Binnenlandse Zaken, België, De dichte firewall: Toen de aanvrager op 2 oktober 2026 de federale Functionaris voor Gegevensbescherming van Binnenlandse Zaken in gebreke wilde stellen wegens het overschrijden van de wettelijke maandtermijn, stuitten de e mails aan zowel dpo@ibz. fgov. be als dpo@ibz. be op een harde serverfout: 550 5. 4. 1 Access denied. De officiële mailbox van de federale privacytoezichthouder bleek voor externe burgers hermetisch afgegrendeld door een overheidsfirewall. De ingebrekestelling kon pas na intensief speurwerk via een generiek webformulier naar binnen worden geforceerd. . Parentia / Partena, België, De administratieve verdwijntruc en het verzet: Het Vlaamse kinderbijslagfonds Parentia koos aanvankelijk voor een opmerkelijke methode. Op 14 september 2026 stuurde een dossierbehandelaar van het lokale kantoor Parentia Hasselt een e mail naar de partner van de aanvrager: Kan je bevestigen dat wij uw e mail van 01 of 09/2026, waarin om het bezorgen van bewijsstukken werd verzocht, als nietig mogen beschouwen gezien de lopende behandeling van het onderzoek naar de sociale toeslag? Een formeel verzoek onder Europees grondrecht werd botweg weggezet als een administratieve rimpel die men hoopte te laten verdwijnen. . Nadat de aanvrager op 15 september met scherpe juridische argumenten protesteerde en eiste het A V G verzoek los van de materiële klacht te behandelen, greep de koepelorganisatie in: op 17 september bevestigde Parentia dat het verzoek rechtsgeldig was. Partena Corporate Compliance, ref. 12609 00112, leverde op 1 oktober 2026 wél een met het INSZ beveiligd digitaal archief met de E E S S I uitwisseling, SED s F001 en F002, tussen Parentia en de Nederlandse S V B. Daarmee werd de grensoverschrijdende uitwisseling bevestigd, al bleef de achterliggende K S Z en inkomensblokkade van het lokale kantoor in stand. . Gemeente Hulst, Nederland, Het bureaucratische theaterstuk: Het dieptepunt van deze vertragingstactieken vond plaats bij de Gemeente Hulst. Hoewel de gemeente de aanvrager al meer dan een jaar intensief kende via lopende Wmo aanvragen, bezwaarprocedures rond de gehandicaptenparkeerkaart en bijzondere bijstand, en zij al lang beschikte over geverifieerde kopieën van zijn paspoort, stuurde de gemeente op 1 oktober 2026, exact op dag 29 van de 30 dagentermijn, een aangetekend opschortingsbesluit, kenmerk 1086452. . De gemeente beweerde plotseling dat zij de identiteit van de aanvrager formeel nog niet voldoende kon vaststellen. De immobiele en slechtziende burger kreeg drie onmogelijke opties voorgeschoteld: fysiek verschijnen aan de publieksbalie, met zijn paspoort voor een Microsoft Teams webcam gaan zitten, of opnieuw inloggen met DigiD via een specifieke gemeentelink. . De aanvrager koos voor de laatste optie en logde exact 40 minuten later in met DigiD, zaaknummer 1101271. Daarmee viel het ambtelijke masker direct af: de volgende ochtend, op 2 oktober om 08:25 uur, verzond de gemeente via vijf haperende SmartLockr wachtwoordmails een omvangrijk besluit van 47 pagina s. Het besluit lag al die tijd kant en klaar op de plank; de identiteitsverificatie werd louter als procedurele vertragingsvalstrik ingezet. . 4. Patroon 3, De papieren rookbom, de zwarte stift en de paniek achter de stropdas, C M en S V B. Waar overheden niet langer konden ontkennen dat zij gegevens moesten verstrekken, gebruikten zij de vorm van de verstrekking als wapen om de inhoudelijke realiteit te verhullen. Twee dossiers springen eruit als schoolvoorbeelden van institutionele obstructie: de Christelijke Mutualiteit in België en de Sociale Verzekeringsbank in Nederland. . De Christelijke Mutualiteit, C M, DPO Office / Adjunct DPO, : Na het initiële verzoek van 1 september en een formele aangetekende ingebrekestelling op 19 of 21 september, Track en Trace RF000501165NL, waarin specifiek werd gevraagd naar de E E S S I transmissielogs, de betekenis van de geheimzinnige sjablooncode BD BR100 MFN of AB2001, 11. 03. 0012, 000002 20 mei 2026 Conform 810915 199 48 v4, de grondslag voor de 100 procent afwijzing in plaats van de statutaire 10 procent sanctieregel, en de exacte tijdstempels waarop de adviserend arts op 20 mei 2026 de UZ Gent verslagen had geraadpleegd, reageerde het ziekenfonds op 29 september met een klassieke papieren rookbom. De C M dumpte een ongestructureerd PDF bestand van 294 pagina s, Recht van inzage CM. pdf, over de schutting, overigens zonder wachtwoord, dat pas laat op de avond na herhaald aandringen werd nagezonden. . Tussen deze honderden pagina s leverde de C M echter onbedoeld het ultieme bewijs van haar eigen systeemfalen. In de bijlage 20250622 S072. pdf werd zichtbaar dat na de geautomatiseerde DIMONA indiensttreding van de aanvrager op 10 maart 2025, het ziekenfonds het dossier ruim drie maanden op de plank had laten liggen. Terwijl de computersystemen van de C M op 21 mei en 5 juni 2025 automatische weigeringen wegens geen hoedanigheid als gerechtigde uitbraakten, werd het verplichte Europese S072 signaal, bewijs van zorgverzekering, pas op 22 juni 2025 naar Nederland verstuurd. . Toen de aanvrager het DPO Office op 29 september met deze feiten en de onafhankelijke controle van toezichthouder R I Z I V confronteerde, sloeg bij Adjunct DPO Yannick Van Leeuwen op 30 september de paniek toe. In een verhit antwoord plaatste hij de woorden eis en vraag denigrerend tussen aanhalingstekens en formuleerde hij vier stellingen die juridisch volstrekt onhoudbaar zijn onder de A V G en het arrest Pankki S, HvJ E U C 579 of 21, :. Hij beweerde dat het ontbreken van verplichte E E S S I berichten per definitie geen persoonsgegeven kan zijn;. Hij stelde dat in geautomatiseerde stuurcodes waarin het rijksregisternummer van de burger is verwerkt, alleen het nummer zelf een persoonsgegeven is en de rest van de programmacode niet;. Hij weigerde de toegangslogs van de adviserend arts op 20 mei 2026 te verstrekken omdat dit een potentiële invloed kan hebben op de integriteit van ons informatiesysteem ;. En voor de rectificatie van de foutieve arbeidsongeschiktheidsstatus in de Kruispuntbank, artikel 16 A V G, wees het DPO Office elke verantwoordelijkheid af en verwees het de burger doodleuk terug naar de lokale balie die hem al achttien maanden negeerde. . De Sociale Verzekeringsbank, S V B, Bureaucratische schizofrenie en 142 pagina s gelakt papier, : De S V B vertoonde in dit audit traject een fascinerende gespleten persoonlijkheid. Aan de materiële kant was de S V B de enige instantie in Nederland die haar wettelijke zorgplicht serieus nam: toen de gezinsbijslagaanvraag op naam van de werkende moeder op 31 maart 2026 dreigde vast te lopen, adviseerde de S V B eigener beweging om de aanvraag op naam van de niet werkende vader te stellen, kende zij op 20 april 2026 met terugwerkende kracht de aanvullende kinderbijslag toe, 685 euro en 82 cent, en deblokkeerde zij zo het Kindgebonden Budget. Maar zodra dezelfde burger via de A V G vroeg om de digitale logboeken van het E E S S I netwerk, schoot dezelfde S V B in een krampachtige defensieve reflex. . Op 24 oktober 2026, besluit verzonden per post op 27 oktober, kenmerk VZ 6825169 0, leverde de S V B een pakket af dat symbool staat voor de bureaucratische waanzin: 142 afgedrukte pagina s aan elektronische SED berichten per fysieke postbode. Pagina na pagina was onleesbaar gemaakt met dikke zwarte lakbalken over de namen, geboortedata en identificatienummers van de eigen echtgenote, het eigen kind en behandelende artsen, onder het absurde voorwendsel van de bescherming van de privacy van derden. . De S V B motiveerde haar weigeringen met de openhartige bekentenis dat gegevens worden achtergehouden als dit de belangen van de S V B schaadt of als dit de controle en het toezicht door de S V B belemmert. En op pagina 1 trok de S V B definitief de stekker uit de Europese digitale illusie met de historische bekentenis: 2. logbestanden, transmissiestatus en datumstempels van de gerelateerde B U C deze informatie hebben wij niet tot onze beschikking. De overheid levert de wagons op papier, maar het logboek van de locomotief is spoorloos. . 5. Patroon 4, Het Pontius Pilatus effect en de onbedoelde kroongetuigen, R I Z I V, RVA, F O D SZ, SFPD, CZ, F O D IBZ, R v I G en U W V. Waar individuele instanties weigerden verantwoordelijkheid te nemen, leverden zij door hun collectieve ontkenningen gezamenlijk het sluitende bewijs van de institutionele stilstand. De reacties van de overige zeven instanties vormen het forensische fundament van deze audit:. R I Z I V, 29 september 2026, De toezichthouder die de stilstand bevestigt: De Functionaris voor Gegevensbescherming van het Rijksinstituut voor Ziekte en Invaliditeitsverzekering, R I Z I V, voerde een onafhankelijke audit uit op het Belgische nationale E E S S I knooppunt. Zijn schriftelijke bevinding was vernietigend: in de afgelopen zes maanden was er onder het INSZ van de aanvrager slechts één enkele E E S S I uitwisseling geregistreerd, het gezinsbijslagverkeer tussen Parentia en de S V B, en exact nul elektronische berichten tussen de C M en CZ of het U W V. Het ziekenfonds had in zes maanden tijd geen enkel digitaal signaal over de ziekte of invaliditeit naar Nederland gestuurd. Toen de aanvrager dezelfde dag vroeg hoe het R I Z I V als toezichthouder ging optreden tegen dit plichtsverzuim onder artikel 76 van Verordening 883 of 2004, viel het R I Z I V prompt stil en werd er niet meer geantwoord. . RVA, 29 september 2026, Wij zijn enkel zender : DPO Martin Senechal van de Rijksdienst voor Arbeidsvoorziening, RVA, bevestigde per officieel besluit dat er met het Nederlandse U W V geen enkele gegevensuitwisseling via E E S S I heeft plaatsgevonden en dat de RVA geen enkele informatievraag van het U W V heeft ontvangen. De RVA benadrukte dat zij op jaarbasis honderdduizenden attesten via E E S S I verstuurt, maar stelde dat zij op grond van de privacywetgeving nooit uit eigen beweging gegevens naar Nederland mag sturen zolang het U W V geen formele koppeling legt tussen het Belgische INSZ en het Nederlandse BSN. De RVA waste haar handen in onschuld: het U W V vraagt niets, dus zendt Brussel niets. . F O D Sociale Zekerheid, DG Personen met een Handicap, 30 september en 12 oktober 2026, : DPO John Van Damme zorgde voor een dubbele ontmaskering. Op 30 september leverde hij aanvankelijk slechts de door de burger zelf ingezonden documenten, met de verbijsterende mededeling dat de Belgische federale dienst voor gehandicapten helemaal geen gebruikmaakt van het Europese E E S S I systeem, gezien het geringe aantal aanvragen uit de EER zone, een federale overheidsdienst die weigert aan te sluiten op de Europese digitale infrastructuur. . Na een scherpe ingebrekestelling met verwijzing naar het Pankki S arrest leverde de DPO op 12 oktober alsnog de diepe milliseconde systeemlogs van het MyHandicap portaal. Daaruit bleek dat de aanvrager bij zijn drie digitale hulpaanvragen, 26 juli, 30 september en 4 oktober 2025, telkens binnen 0, 1 seconde volautomatisch door de Kruispuntbank koppeling werd buitengegooid met foutcode 5124;NNATSTR : Persoon heeft geen domicilieadres in België. De computer discrimineerde op woonplaats nog vóór een menselijke ambtenaar het dossier had gezien. . Federale Pensioendienst, SFPD, 2 oktober 2026, : Pas 31 minuten nadat een formele ingebrekestelling met gekwalificeerde Belgische E I D handtekening werd binnengeschoten, reageerde DPO Ivo Tuytens. Zijn conclusie was even kort als veelzeggend: in de systemen van de pensioendienst bevindt zich geen enkel E E S S I gegeven. De burger moest zijn loopbaangegevens zelf maar opzoeken op het portaal mypension. be : Mijns inziens zou U best eerst contact opnemen met het buitenlands organisme of er wel iets wordt verstuurd naar de SFPD. . Zorgverzekeraar CZ, 6 oktober 2026, : Manager Klantenservice L. Bruitsman ontkende in een formeel schrijven iedere analoge drempel, Wij herkennen ons niet in deze beschrijving, en weigerde categorisch om inzage te geven in de voorbereiding op de herziene Verordening 883 of 2004, Uiteraard mag u ervan uitgaan dat CZ uitvoering geeft aan de op haar rustende wettelijke verplichtingen. Bovendien weigerde CZ om afschriften van het S072 berichtenverkeer te verstrekken en verwees zij de burger door naar het CAK, terwijl CZ als verdragspolisuitvoerder zélf de exclusieve partij is die de S072 formulieren met de Belgische C M uitwisselt. . F O D Binnenlandse Zaken, 7 oktober 2026, en R v I G Nederland, 15 oktober 2026, : De bevolkingsregisters legden de ultieme systeemfout bloot. F O D IBZ leverde op 7 oktober een voorbeeldig en gedetailleerd Excel logboek, 2026 115 logs. xlsx, van alle externe bevragingen op het Belgische Rijksregister. Hieruit werd zichtbaar dat de Kruispuntbank van de Sociale Zekerheid, K S Z, fungeert als een ondoorzichtige proxy: individuele fondsen bevragen het Rijksregister onder de vlag van de K S Z, waardoor niet te herleiden is wie welke mutatie heeft verricht. . Samen met het formele besluit van de Rijksdienst voor Identiteitsgegevens, R v I G, kenmerk c26092182, en het BRP dossier van Hulst werd het structurele vacuüm bewezen: bij een grensoverschrijdende verhuizing bestaat er nul geautomatiseerde gegevenskoppeling tussen het Belgische Rijksregister en de Nederlandse BRP. Terwijl binnen Nederland 23 instanties, waaronder de Belastingdienst, het CJIB, het BKR en gerechtsdeurwaarders via de SNG, volautomatisch op het BSN zijn aangesloten om de burger te volgen en te beboeten, stopt de gegevensuitwisseling voor sociale bescherming exact bij de grenspaal. . Het U W V, besluit 21 oktober 2026, ontvangen 27 oktober 2026, kenmerk 2026. 10. 0356, De kroongetuige tegen zichzelf: Waar het U W V na de formele ingebrekestelling van 2 oktober 2026 de ontvangstdatum van het verzoek van 1 september eigenmachtig verplaatste naar 16 september en de beslistermijn eenzijdig verdaagde tot 11 november 2026, liet de instantie haar eigen cliffhanger vervroegd ontploffen. Per fysieke brief van 21 oktober 2026, ondertekend namens de Raad van Bestuur door de manager Klantencontact, wees het U W V het inzageverzoek in de elektronische E E S S I en logbestanden formeel af met twee vernietigende bekentenissen: De gegevens die u wilt inzien zijn niet aanwezig. Hierdoor kunnen wij u de gegevens niet aanleveren én Er zijn geen persoonsgegevens gedeeld met externe partijen. . Hiermee is van beide zijden van de grens, R I Z I V en RVA in België, U W V in Nederland, zwart op wit bewezen dat het Europese E E S S I netwerk gedurende achttien maanden niet is gebruikt en dat de zieke burger de enige datakabel tussen beide lidstaten was, met 700 gram papieren dossiers per post en handmatige uploads van U1 formulieren. . Dit besluit ontmaskert tevens de W I A afwijzing van 8 juli 2026, zaak A27812030 01, waarin het U W V weigerde het Vester arrest toe te passen onder het mom dat het wachtte op België, terwijl het zelf nooit enig contact had gezocht. Bovendien wordt ook de eerdere stelling van het Bureau voor Belgische Zaken, BBZ of S V B, van 1 en 8 mei 2026, dat er sprake zou zijn van onderlinge gegevensuitwisseling tussen U W V en R I Z I V, door het U W V zelf keihard gelogenstraft. . 6. Overzichtstabel van de zestien aangeschreven instanties, Stand 27 oktober 2026. Onderstaande tabel toont de integrale stand van zaken van de gecoördineerde A V G inzageoperatie per 27 oktober 2026. De zestien instanties zijn gerangschikt naar land en categorie. . 7. De filosofische kern en de Cliffhanger van november 2026. De uitkomsten van deze gecoördineerde A V G stresstest overstijgen de individuele dossiers. Zij leggen de diepere rechtsfilosofische asymmetrie van de moderne bureaucratische staat bloot. Waarom mag een overheidsorgaan een dwingende Europese verordening, of het nu gaat om de coördinatieregels van Verordening 883 of 2004, de termijnen van artikel 12 A V G, of de bindende rechtspraak van het Hof van Justitie in het arrest Pankki S, C 579 of 21, straffeloos reduceren tot een vrijblijvende inspanningsverplichting vol administratieve uitvluchten, niet beschikbaar, bedreigt integriteit systeem, geen persoonsgegeven, ? Terwijl diezelfde overheid de burger bij één gemist vinkje, één niet aangevinkt veld of één dag termijnoverschrijding volautomatisch en genadeloos financieel liquideert?. De wet is in theorie geschreven als een schild om de burger te beschermen tegen de almacht van het staatsapparaat. In de uitvoeringspraktijk van de grensoverschrijdende sociale zekerheid is de wet echter door legers van interne juristen en privacy functionarissen omgevormd tot een zwaard: een instrumenteel pantser dat uitsluitend wordt gehanteerd om het apparaat te beschermen tegen de transparantie en controle door de burger. Men verschuilt zich achter de A V G om niet te hoeven verantwoorden waarom een doodzieke grensarbeider achttien maanden zonder inkomen en zorgvervoer is achtergelaten. . De Cliffhanger, De ontknoping in november 2026: Terwijl vijftien van de zestien aangeschreven instanties hun kaarten inmiddels noodgedwongen op tafel hebben gelegd, waarbij het U W V zijn eigen cliffhanger van 11 november vervroegd liet ontploffen met de formele bekentenis dat er nul gegevens met externe partijen zijn gedeeld en dat er geen loggegevens aanwezig zijn, spitsen de laatste uitvluchten zich toe op de twee fiscale bastions die de deur nog altijd krampachtig gesloten houden:. De Belastingdienst en Dienst Toeslagen hebben het verzoek van 2 september om openbaarmaking van de internationale DAC stromen en de RIV blokkade op 22 oktober eenzijdig verdaagd tot 30 november 2026, kenmerk 3199. 60. 602. T. 25. 0. 0013. . Aan Belgische zijde heeft F O D Financiën na haar excuusmail wegens interne miscommunicatie van 2 oktober 2026 tot op heden volledige radiostilte bewaard en haar inhoudelijke logboeken nog altijd niet geleverd. . Dit hoofdstuk is daarmee geen afgesloten geschiedenis, maar een lopende forensische reconstructie. Eind november 2026, wanneer de verdagingstermijn van de Belastingdienst onherroepelijk is verstreken en de radiostilte van F O D Financiën juridisch is verzegeld, valt het doek over de laatste uitvluchten. Met de dan complete dataset van alle zestien instanties wordt dit dossier integraal neergelegd bij de Gegevensbeschermingsautoriteit, GBA, in Brussel en de Autoriteit Persoonsgegevens, AP, in Den Haag, als het ultieme bewijs van een haperende Unie waarin instanties elkaars gegevens weigeren in te lezen terwijl het gezin op het breukvlak bezwijkt. . 8. De Logica van de Machine, Vijf flagrante systeemparadoxen uit Document B. Wie de onderliggende bewijsstukken en correspondentie in Document B, De data matrix, doorloopt, stuit doorheen de 62 geauditeerde dossiers op tientallen vergelijkbare kortsluitingen die direct in het oog springen. Onderstaande vijf voorbeelden vormen slechts een greep uit de meest sprekende vignetten waarin geautomatiseerde administraties wetgeving, logica en de menselijke realiteit op hun kop zetten om hun eigen systeemconsistentie te beschermen. . 01 De Papieren Cloud. Sociale Verzekeringsbank, S V B, 24 oktober 2026. . De Aanvraag. Een digitaal A V G inzageverzoek om de elektronische logboeken en tijdstempels van het Europese E E S S I netwerk. . . Het Systeem. Logbestanden, transmissiestatus en datumstempels van de gerelateerde B U C, deze informatie hebben wij niet tot onze beschikking. . . De Feitelijke Realiteit. Om te bewijzen dat de digitale logboeken niet bestaan, print de S V B 142 pagina s aan digitale E E S S I berichten uit op papier, zet er met de hand zwarte lakbalken op over de namen van de eigen gezinsleden, en laat het pakket per fysieke postbode aan de voordeur bezorgen. . . . . 02 De Gevaarlijke Integriteit. Christelijke Mutualiteit, C M, 30 september 2026. . De Aanvraag. De burger vraagt via Artikel 15 A V G inzage in de toegangslogs van 20 mei 2026 om te controleren of de adviserend arts zijn medisch dossier heeft geopend vóór het weigeren van zijn erkenning. . . Het Systeem. De Adjunct DPO van de C M weigert inzage in de systeem en toegangslogs omdat dit een potentiële invloed kan hebben op de integriteit van ons informatiesysteem. . . De Feitelijke Realiteit. Een beveiligingslogboek dat wettelijk bestaat om de integriteit van medische gegevens te bewaken, mag niet worden ingezien door de patiënt omdat het lezen van het logboek het computersysteem zou kunnen aantasten. . . . . 03 De Schoen van 2450 euro voor een Gezonde Voet. Christelijke Mutualiteit, C M, Juni / Juli 2025. . De Situatie. Na de amputatie van twee tenen aan de rechtervoet vraagt de grensarbeider een ziekte uitkering en een medisch invaliditeitsattest aan. . . Het Systeem. De C M weigert het invaliditeitsattest voor de belastingdienst af te leveren omdat er geen financieel recht op een uitkering is, en stopt de registratie in de Kruispuntbank. . . De Feitelijke Realiteit. Diezelfde adviserend arts van de C M keurt gelijktijdig 2450 euro, 00 goed voor orthopedische maatschoenen wegens onomkeerbare amputaties. De voet is geamputeerd voor de schoenmaker, maar administratief gezond voor de fiscus. . . . . 04 De 30 Kilometer Paradox. Reizen door Zeeland 18 mei 2026. . De Aanvraag. Een gehandicapte grensarbeider met geamputeerde tenen en blindheid aan één oog boekt een Wmo regiotaxi vanuit Graauw naar Gent. . . Het Systeem. De rit naar de verplichte medische keuring van de Belgische overheid, F O D Sociale Zekerheid, in Gent wordt geweigerd wegens de 30 kilometerzone. . . De Feitelijke Realiteit. Exact dezelfde afstand vanuit Graauw naar het Universitair Ziekenhuis in datzelfde Gent wordt door dezelfde centrale probleemloos gereden à 19 euro en 65 cent per enkele reis. Een kilometer naar een ziekenhuisbed is administratief korter dan een kilometer naar een keuringsarts. . . . . 05 De Wachtende Zenders. RVA, BE, en U W V, NL, September / Oktober 2026. . De Situatie. Achttien maanden lang wacht het Nederlandse U W V op Belgische gegevens, en wacht België op Nederland. . . Het Systeem. RVA: Elektronische uitwisseling gebeurt steeds op initiatief van de ontvangende partij, U W V. U W V: Er zijn geen persoonsgegevens gedeeld met externe partijen. . . De Feitelijke Realiteit. Twee oprichtende E U lidstaten staren achttien maanden naar een lege digitale snelweg, terwijl de zieke burger met 700 gram papier op het postkantoor de enige datakabel vormt. . . . . . ." data-track-index="5" id="aab-docD_deel6" translate="no">
 <button aria-label="Beluister tekst" class="aab-play-btn" title="Beluister passage (AI-stem)" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -2569,7 +3004,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 </div>
 <div class="aab-controls">
 <button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
-</div>
+<button class="aab-next-btn" data-next-idx="6" data-next-target="#aab-docD_deel7" title="Spring direct naar het volgende audiogedeelte (7/7) en luister verder" type="button">⏭ Luister verder</button></div>
 <audio class="aab-audio-el" preload="none" src="../assets/audio/docD_deel6_nl_d1936b89.mp3"></audio>
 </div>
 <p class="subtitel">De wet die niet voor iedereen hetzelfde leest: hoe zestien instanties reageren wanneer de burger om de logboeken vraagt.</p><div class="pub-discreet-dl notranslate" translate="no"><span class="pdd-label">Downloads:</span> <a class="pdd-link" href="pdf/document-d.pdf" title="Download vaste PDF-lay-out van Document D">📄 PDF-versie</a> <span class="pdd-sep">·</span> <a class="pdd-link" href="docx/document-d.docx" title="Download bewerkbare Word-versie van Document D">📝 Word-versie (.docx)</a></div>
@@ -2891,7 +3326,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 </div>
 </div>
 
-<h2 id="deel-vii-persoonlijke-slotverklaring">Deel VII — Persoonlijke slotverklaring</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="docD_deel7" data-audio-src="../assets/audio/docD_deel7_nl_f0e43df0.mp3" data-clean-text="Deel VII, Persoonlijke slotverklaring. Een zwaar medisch hersteltraject is in de kern onverenigbaar met het gelijktijdig voeren van een meervoudige procedure tegen twee staten. Dat een burger na amputaties en ernstig visusverlies zelf deze bewijslast moet opbouwen om zijn bestaan tussen twee nationale registers te verdedigen, legt de werkelijke prioritering van het uitvoeringsstelsel bloot. De meeste mensen staken deze strijd voortijdig, simpelweg omdat de menselijke energie eerder opraakt dan het papier van de administratie. . Wat begon als de noodzaak om een individuele blokkade op te lossen, werd door het chronologisch vastleggen van elke brief, elke foutcode en elke afwijzing zichtbaar als een koude systeemarchitectuur. De onderzochte instellingen handelen niet vanuit persoonlijke kwaadwilligheid, maar vanuit gesloten beslisbomen die blind zijn voor de materiële gevolgen buiten het eigen loket. Zolang de maatschappelijke werkelijkheid zich over grenzen beweegt terwijl de administratieve norm statisch binnen de natiestaat blijft opgesloten, creëert het systeem zijn eigen uitvallers. . Als burger met Frans Italiaanse wortels, geboren in België en wonend in Nederland, was de Europese ruimte voor mij nooit een abstract verdrag, maar de dagelijkse werkelijkheid. Deze audit legt vast waar die ruimte ophoudt te bestaan zodra het lichaam uitvalt. Het dossier dient als verifieerbare bron voor iedereen die in hetzelfde grensvacuüm belandt, en als empirische blauwdruk voor degenen die de macht en de plicht hebben om het ontwerp te herzien. . De norm beweegt niet. Ik wel. ." translate="no">
+<h2 id="deel-vii-persoonlijke-slotverklaring">Deel VII — Persoonlijke slotverklaring</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar notranslate" data-audio-id="docD_deel7" data-audio-src="../assets/audio/docD_deel7_nl_f0e43df0.mp3" data-clean-heading="Deel VII — Persoonlijke slotverklaring" data-clean-text="Deel VII, Persoonlijke slotverklaring. Een zwaar medisch hersteltraject is in de kern onverenigbaar met het gelijktijdig voeren van een meervoudige procedure tegen twee staten. Dat een burger na amputaties en ernstig visusverlies zelf deze bewijslast moet opbouwen om zijn bestaan tussen twee nationale registers te verdedigen, legt de werkelijke prioritering van het uitvoeringsstelsel bloot. De meeste mensen staken deze strijd voortijdig, simpelweg omdat de menselijke energie eerder opraakt dan het papier van de administratie. . Wat begon als de noodzaak om een individuele blokkade op te lossen, werd door het chronologisch vastleggen van elke brief, elke foutcode en elke afwijzing zichtbaar als een koude systeemarchitectuur. De onderzochte instellingen handelen niet vanuit persoonlijke kwaadwilligheid, maar vanuit gesloten beslisbomen die blind zijn voor de materiële gevolgen buiten het eigen loket. Zolang de maatschappelijke werkelijkheid zich over grenzen beweegt terwijl de administratieve norm statisch binnen de natiestaat blijft opgesloten, creëert het systeem zijn eigen uitvallers. . Als burger met Frans Italiaanse wortels, geboren in België en wonend in Nederland, was de Europese ruimte voor mij nooit een abstract verdrag, maar de dagelijkse werkelijkheid. Deze audit legt vast waar die ruimte ophoudt te bestaan zodra het lichaam uitvalt. Het dossier dient als verifieerbare bron voor iedereen die in hetzelfde grensvacuüm belandt, en als empirische blauwdruk voor degenen die de macht en de plicht hebben om het ontwerp te herzien. . De norm beweegt niet. Ik wel. ." data-track-index="6" id="aab-docD_deel7" translate="no">
 <button aria-label="Beluister tekst" class="aab-play-btn" title="Beluister passage (AI-stem)" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -2910,14 +3345,61 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 </div>
 <div class="aab-controls">
 <button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
-</div>
+<button class="aab-next-btn aab-to-playlist-btn" data-next-idx="playlist" data-next-target="#audit-audio-playlist" title="Ga naar de volledige Audio-Playlist onderaan dit document" type="button">🎧 Playlist</button></div>
 <audio class="aab-audio-el" preload="none" src="../assets/audio/docD_deel7_nl_f0e43df0.mp3"></audio>
 </div>
 <p>Een zwaar medisch hersteltraject is in de kern onverenigbaar met het gelijktijdig voeren van een meervoudige procedure tegen twee staten. Dat een burger na amputaties en ernstig visusverlies zelf deze bewijslast moet opbouwen om zijn bestaan tussen twee nationale registers te verdedigen, legt de werkelijke prioritering van het uitvoeringsstelsel bloot. De meeste mensen staken deze strijd voortijdig, simpelweg omdat de menselijke energie eerder opraakt dan het papier van de administratie.</p>
 <p>Wat begon als de noodzaak om een individuele blokkade op te lossen, werd door het chronologisch vastleggen van elke brief, elke foutcode en elke afwijzing zichtbaar als een koude systeemarchitectuur. De onderzochte instellingen handelen niet vanuit persoonlijke kwaadwilligheid, maar vanuit gesloten beslisbomen die blind zijn voor de materiële gevolgen buiten het eigen loket. Zolang de maatschappelijke werkelijkheid zich over grenzen beweegt terwijl de administratieve norm statisch binnen de natiestaat blijft opgesloten, creëert het systeem zijn eigen uitvallers.</p>
 <p>Als burger met Frans-Italiaanse wortels, geboren in België en wonend in Nederland, was de Europese ruimte voor mij nooit een abstract verdrag, maar de dagelijkse werkelijkheid. Deze audit legt vast waar die ruimte ophoudt te bestaan zodra het lichaam uitvalt. Het dossier dient als verifieerbare bron voor iedereen die in hetzelfde grensvacuüm belandt, en als empirische blauwdruk voor degenen die de macht en de plicht hebben om het ontwerp te herzien.</p>
 <p>De norm beweegt niet. Ik wel.</p>
-<a class="pub-top" href="#top" title="Naar boven">↑</a><!-- Forensisch Bronopvragings- en Contactvenster (Modal) -->
+<a class="pub-top" href="#top" title="Naar boven">↑</a><section aria-label="Volledige Audio-Playlist" class="audit-playlist-sectie notranslate" id="audit-audio-playlist" translate="no">
+<div class="aps-header">
+<div class="aps-title-row">
+<span class="aps-badge">🎧 LUISTERMODUS ZONDER LEZEN</span>
+<a class="pub-naar-boven" href="#top">↑ naar boven</a>
+</div>
+<h2>Audio-Playlist — Volledig document achter elkaar beluisteren (7 onderdelen)</h2>
+<p class="aps-desc">Voor wie dit document liever volledig beluistert zonder door de tekst te hoeven scrollen. Druk op <strong>▶</strong> in de hoofdspeler om alle 7 onderdelen automatisch na elkaar te laten voorlezen, of tik op een specifiek onderdeel in de onderstaande lijst.</p>
+</div>
+<div class="aps-master-player" id="aps-master-player">
+<div class="aps-mp-controls">
+<button aria-label="Vorig onderdeel" class="aps-mp-prev" id="aps-prev-btn" title="Vorig onderdeel" type="button">⏮</button>
+<button aria-label="Afspelen of pauzeren" class="aps-mp-play" id="aps-play-btn" title="Alles achter elkaar afspelen / Pauzeren" type="button">
+<span class="aps-icon-play">▶</span>
+<span class="aps-icon-pause" style="display:none;">❚❚</span>
+</button>
+<button aria-label="Volgend onderdeel" class="aps-mp-next" id="aps-next-btn" title="Volgend onderdeel" type="button">⏭</button>
+</div>
+<div class="aps-mp-info">
+<div class="aps-mp-meta">
+<span class="aps-mp-status" id="aps-mp-status">Klaar om af te spelen (1 / 7)</span>
+<span class="aps-mp-time" id="aps-mp-time">0:00 / --:--</span>
+</div>
+<div class="aps-mp-trackname" id="aps-mp-trackname">1. Deel I — De diagnose: het ontwerp van uitsluiting</div>
+<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="aps-mp-progress-wrap" id="aps-mp-progress-wrap" role="progressbar">
+<div class="aps-mp-progress-bar">
+<div class="aps-mp-progress-fill" id="aps-mp-progress-fill"></div>
+</div>
+</div>
+</div>
+<div class="aps-mp-extra">
+<label class="aps-autoplay-toggle" title="Speel automatisch het volgende onderdeel af zodra een opname klaar is">
+<input checked="checked" id="aps-autoplay-chk" type="checkbox"/>
+<span>Auto-vervolg</span>
+</label>
+<button class="aab-speed-btn" id="aps-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
+</div>
+</div>
+<div class="aps-tracklist" id="aps-tracklist">
+<div class="aps-track" data-audio-id="docD_deel1" data-track-idx="0"> <span class="aps-t-num">01</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Deel I — De diagnose: het ontwerp van uitsluiting</span> <a class="aps-track-jump" href="#deel-i-de-diagnose-het-ontwerp-van-uitsluiting" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="docD_deel2" data-track-idx="1"> <span class="aps-t-num">02</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Deel II — De anatomie van de vastloper: vijf knopen en vier lagen</span> <a class="aps-track-jump" href="#deel-ii-de-anatomie-van-de-vastloper" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="docD_deel3" data-track-idx="2"> <span class="aps-t-num">03</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Deel III — De Europese paradox: open wegen, gesloten databanken</span> <a class="aps-track-jump" href="#deel-iii-de-europese-paradox-open-wegen-gesloten-databanken" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="docD_deel4" data-track-idx="3"> <span class="aps-t-num">04</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Deel IV — Het Europese patroon: vier grensregio's, dezelfde weeffout</span> <a class="aps-track-jump" href="#deel-iv-het-europese-patroon-vier-grensregios-dezelfde-weeffout" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="docD_deel5" data-track-idx="4"> <span class="aps-t-num">05</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Deel V — De uitweg: drie infrastructurele bouwstenen</span> <a class="aps-track-jump" href="#deel-v-de-uitweg-drie-infrastructurele-bouwstenen" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="docD_deel6" data-track-idx="5"> <span class="aps-t-num">06</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Deel VI — De AVG-stresstest en het EESSI-spook van 2030</span> <a class="aps-track-jump" href="#deel-vi-de-avg-stresstest-en-het-eessi-spook-van-2030" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="docD_deel7" data-track-idx="6"> <span class="aps-t-num">07</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Deel VII — Persoonlijke slotverklaring</span> <a class="aps-track-jump" href="#deel-vii-persoonlijke-slotverklaring" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+</div>
+</section><!-- Forensisch Bronopvragings- en Contactvenster (Modal) -->
 <div class="bm-modal-overlay" id="bm-modal" onclick="if(event.target===this)sluitBronModal()">
 <div aria-labelledby="bm-modal-titel" aria-modal="true" class="bm-modal-dialog" role="dialog">
 <div class="bm-modal-kop">
@@ -2925,7 +3407,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 <button aria-label="Venster sluiten" class="bm-modal-sluit" onclick="sluitBronModal()" type="button">×</button>
 </div>
 <div class="bm-intro">
-      Alle 694 interacties in deze audit zijn gebaseerd op objectieve brondocumenten (originele e-mails met Message-ID's, formele besluiten, brieven en medische verslagen). Om privacy en AVG-rechten van betrokkenen te waarborgen zijn persoonsgegevens in publieke bestanden afgeschermd. Geauthenticeerde onderzoekers, journalisten, toezichthouders en lotgenoten kunnen volledige, ongecensureerde brondossiers opvragen ter verificatie.
+      Alle 704 interacties in deze audit zijn gebaseerd op objectieve brondocumenten (originele e-mails met Message-ID's, formele besluiten, brieven en medische verslagen). Om privacy en AVG-rechten van betrokkenen te waarborgen zijn persoonsgegevens in publieke bestanden afgeschermd. Geauthenticeerde onderzoekers, journalisten, toezichthouders en lotgenoten kunnen volledige, ongecensureerde brondossiers opvragen ter verificatie.
     </div>
 <form id="bm-form" onsubmit="event.preventDefault();stuurEmail();">
 <div class="bm-groep">
@@ -3116,7 +3598,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 1 november 2026, 08:10</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 2 november 2026, 10:32</p>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-print-btn notranslate" onclick="window.print()" title="Print deze pagina of bewaar als PDF" translate="no" type="button">🖨️ Print / Bewaar als PDF</button>
 <button class="pub-contact-btn pub-contact-footer notranslate" onclick="openBronModal('Footer contact')" translate="no" type="button">📄 Bronstuk opvragen / Contact</button>
@@ -3384,13 +3866,17 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
 })();
 </script><script class="notranslate" translate="no">
 // ==========================================================================
-// AUDIT AUDIO PLAYER ENGINE — HTML5 Audio + Live DOM SpeechSynthesis Fallback
+// AUDIT AUDIO PLAYER ENGINE — HTML5 Audio + "Luister verder" + Playlist
 // ==========================================================================
 (function() {
+  var allBars = [];
   var currentBar = null;
+  var currentTrackIdx = 0;
   var currentSynthTimer = null;
   var synthDurationEst = 0;
   var synthStartTime = 0;
+  var speeds = [1.0, 1.25, 1.5];
+  var globalSpeedIdx = 0;
 
   function formatTime(secs) {
     if (isNaN(secs) || secs < 0) return "0:00";
@@ -3412,7 +3898,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
     var curr = bar.nextElementSibling;
     while (curr) {
       var tag = curr.tagName ? curr.tagName.toLowerCase() : '';
-      if (tag === 'h1' || tag === 'h2' || tag === 'h3' || tag === 'footer' || (curr.classList && (curr.classList.contains('pub-toc') || curr.classList.contains('audit-audio-bar')))) {
+      if (tag === 'h1' || tag === 'h2' || tag === 'h3' || tag === 'footer' || tag === 'section' || (curr.classList && (curr.classList.contains('pub-toc') || curr.classList.contains('audit-audio-bar') || curr.classList.contains('audit-playlist-sectie')))) {
         break;
       }
       if (!curr.classList || (!curr.classList.contains('notranslate') && !curr.classList.contains('d0-intermezzo') && !curr.classList.contains('audit-bewijs') && !curr.classList.contains('footnotes') && tag !== 'table' && tag !== 'svg' && tag !== 'button')) {
@@ -3433,8 +3919,63 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
     return combined;
   }
 
+  function updateMasterPlaylistUI(isPlaying, curTime, totTime, pct) {
+    var mpPlay = document.getElementById('aps-play-btn');
+    var mpStatus = document.getElementById('aps-mp-status');
+    var mpTime = document.getElementById('aps-mp-time');
+    var mpTrackname = document.getElementById('aps-mp-trackname');
+    var mpFill = document.getElementById('aps-mp-progress-fill');
+
+    if (mpPlay) {
+      if (isPlaying) {
+        mpPlay.classList.add('aps-playing');
+        var pI = mpPlay.querySelector('.aps-icon-play');
+        var paI = mpPlay.querySelector('.aps-icon-pause');
+        if (pI) pI.style.display = 'none';
+        if (paI) paI.style.display = 'inline';
+      } else {
+        mpPlay.classList.remove('aps-playing');
+        var pI2 = mpPlay.querySelector('.aps-icon-play');
+        var paI2 = mpPlay.querySelector('.aps-icon-pause');
+        if (pI2) pI2.style.display = 'inline';
+        if (paI2) paI2.style.display = 'none';
+      }
+    }
+
+    if (allBars.length > 0 && currentTrackIdx >= 0 && currentTrackIdx < allBars.length) {
+      var activeBar = allBars[currentTrackIdx];
+      var trackTitle = activeBar.getAttribute('data-clean-heading') || (activeBar.querySelector('.aab-title') ? activeBar.querySelector('.aab-title').textContent : ('Onderdeel ' + (currentTrackIdx + 1)));
+      if (mpStatus) {
+        mpStatus.textContent = (isPlaying ? "🔊 Nu aan het afspelen" : "⏸ Gepauzeerd") + " (" + (currentTrackIdx + 1) + " / " + allBars.length + ")";
+      }
+      if (mpTrackname) {
+        mpTrackname.textContent = (currentTrackIdx + 1) + ". " + trackTitle;
+      }
+    }
+
+    if (typeof pct === 'number' && mpFill) {
+      mpFill.style.width = Math.max(0, Math.min(100, pct)) + "%";
+    }
+    if (typeof curTime === 'number' && typeof totTime === 'number' && mpTime) {
+      mpTime.textContent = formatTime(curTime) + " / " + formatTime(totTime);
+    }
+
+    var trackRows = document.querySelectorAll('.aps-track');
+    trackRows.forEach(function(row) {
+      var rIdx = parseInt(row.getAttribute('data-track-idx') || '-1', 10);
+      var iconEl = row.querySelector('.aps-t-icon');
+      if (rIdx === currentTrackIdx) {
+        row.classList.add('aps-active');
+        if (iconEl) iconEl.textContent = isPlaying ? '❚❚' : '▶';
+      } else {
+        row.classList.remove('aps-active');
+        if (iconEl) iconEl.textContent = '▶';
+      }
+    });
+  }
+
   function stopAllAudio() {
-    document.querySelectorAll('.audit-audio-bar').forEach(function(bar) {
+    allBars.forEach(function(bar) {
       var audio = bar.querySelector('.aab-audio-el');
       if (audio && !audio.paused) {
         audio.pause();
@@ -3455,36 +3996,94 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
       clearInterval(currentSynthTimer);
       currentSynthTimer = null;
     }
+    updateMasterPlaylistUI(false);
   }
 
-  function initAudioBar(bar) {
+  function applyGlobalSpeed(spd) {
+    allBars.forEach(function(bar) {
+      var audio = bar.querySelector('.aab-audio-el');
+      var speedBtn = bar.querySelector('.aab-speed-btn');
+      if (audio) audio.playbackRate = spd;
+      if (speedBtn) speedBtn.textContent = spd + "x";
+    });
+    var mpSpeed = document.getElementById('aps-speed-btn');
+    if (mpSpeed) mpSpeed.textContent = spd + "x";
+  }
+
+  function handleTrackEnded(idx) {
+    var autoChk = document.getElementById('aps-autoplay-chk');
+    var shouldAutoContinue = autoChk ? autoChk.checked : true;
+    if (shouldAutoContinue && idx + 1 < allBars.length) {
+      playTrackByIndex(idx + 1, false);
+    } else {
+      updateMasterPlaylistUI(false, 0, 0, 0);
+    }
+  }
+
+  function playTrackByIndex(idx, scrollToBar) {
+    if (idx < 0 || idx >= allBars.length) return;
+    currentTrackIdx = idx;
+    var targetBar = allBars[idx];
+
+    if (scrollToBar) {
+      var prev = targetBar.previousElementSibling;
+      var scrollEl = (prev && (/^H[1-4]$/.test(prev.tagName) || prev.classList.contains('recht-kop-wrapper'))) ? prev : targetBar;
+      scrollEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    var trackRow = document.querySelector('.aps-track[data-track-idx="' + idx + '"]');
+    var trackList = document.getElementById('aps-tracklist');
+    if (trackRow && trackList) {
+      var topPos = trackRow.offsetTop - trackList.offsetTop;
+      trackList.scrollTo({ top: Math.max(0, topPos - 60), behavior: 'smooth' });
+    }
+
+    if (targetBar && targetBar._startPlayback) {
+      targetBar._startPlayback();
+    }
+  }
+
+  function initAudioBar(bar, idx) {
     var playBtn = bar.querySelector('.aab-play-btn');
     var speedBtn = bar.querySelector('.aab-speed-btn');
+    var nextBtn = bar.querySelector('.aab-next-btn');
     var progressWrap = bar.querySelector('.aab-progress-wrap');
     var progressFill = bar.querySelector('.aab-progress-fill');
     var timeEl = bar.querySelector('.aab-time');
     var audio = bar.querySelector('.aab-audio-el');
     var cleanText = bar.getAttribute('data-clean-text') || '';
     var baseAudioSrc = bar.getAttribute('data-audio-src') || '';
-    var speeds = [1.0, 1.25, 1.5];
-    var speedIdx = 0;
-
-    function setSpeed(spd) {
-      if (audio) audio.playbackRate = spd;
-      if (speedBtn) speedBtn.textContent = spd + "x";
-    }
 
     if (speedBtn) {
       speedBtn.addEventListener('click', function(e) {
         e.stopPropagation();
-        speedIdx = (speedIdx + 1) % speeds.length;
-        setSpeed(speeds[speedIdx]);
+        globalSpeedIdx = (globalSpeedIdx + 1) % speeds.length;
+        applyGlobalSpeed(speeds[globalSpeedIdx]);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var nextIdxAttr = nextBtn.getAttribute('data-next-idx');
+        if (nextIdxAttr === 'playlist') {
+          var pl = document.getElementById('audit-audio-playlist');
+          if (pl) pl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          var nextIdx = parseInt(nextIdxAttr, 10);
+          if (!isNaN(nextIdx) && nextIdx < allBars.length) {
+            playTrackByIndex(nextIdx, true);
+          }
+        }
       });
     }
 
     if (audio) {
       audio.addEventListener('loadedmetadata', function() {
         if (timeEl) timeEl.textContent = "0:00 / " + formatTime(audio.duration);
+        if (currentTrackIdx === idx) {
+          updateMasterPlaylistUI(!audio.paused, audio.currentTime, audio.duration, 0);
+        }
       });
 
       audio.addEventListener('timeupdate', function() {
@@ -3492,6 +4091,9 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
           var pct = (audio.currentTime / audio.duration) * 100;
           if (progressFill) progressFill.style.width = pct + "%";
           if (timeEl) timeEl.textContent = formatTime(audio.currentTime) + " / " + formatTime(audio.duration);
+          if (currentTrackIdx === idx) {
+            updateMasterPlaylistUI(!audio.paused, audio.currentTime, audio.duration, pct);
+          }
         }
       });
 
@@ -3505,6 +4107,7 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
         }
         if (progressFill) progressFill.style.width = "0%";
         if (timeEl) timeEl.textContent = "0:00 / " + formatTime(audio.duration);
+        handleTrackEnded(idx);
       });
     }
 
@@ -3521,108 +4124,207 @@ html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
     function syncAudioSrcForLang(lang) {
       if (!audio || !baseAudioSrc) return;
       if (lang === 'nl') {
-        audio.src = baseAudioSrc;
+        if (audio.getAttribute('src') !== baseAudioSrc) audio.src = baseAudioSrc;
         return;
       }
       if (lang === 'en' || lang === 'de' || lang === 'fr') {
         var targetSrc = baseAudioSrc.replace('_nl_', '_' + lang + '_');
-        audio.src = targetSrc;
+        if (audio.getAttribute('src') !== targetSrc) audio.src = targetSrc;
       }
     }
 
     bar._updateLanguage = syncAudioSrcForLang;
 
+    function startPlayback() {
+      var lang = getActiveLanguage();
+      syncAudioSrcForLang(lang);
+      var isTranslatedFallback = (lang !== 'nl' && lang !== 'en' && lang !== 'de' && lang !== 'fr') || !audio || !audio.src;
+
+      stopAllAudio();
+      currentBar = bar;
+      currentTrackIdx = idx;
+
+      if (isTranslatedFallback && window.speechSynthesis) {
+        if (playBtn) {
+          playBtn.classList.add('aab-playing');
+          var pIcon = playBtn.querySelector('.aab-icon-play');
+          var paIcon = playBtn.querySelector('.aab-icon-pause');
+          if (pIcon) pIcon.style.display = 'none';
+          if (paIcon) paIcon.style.display = 'inline';
+        }
+
+        var textToSpeak = cleanText;
+        if (lang !== 'nl') {
+          var liveText = getSectionLiveText(bar);
+          if (liveText && liveText.length > 20) {
+            textToSpeak = liveText;
+          }
+        }
+
+        var utter = new SpeechSynthesisUtterance(textToSpeak);
+        utter.lang = lang;
+        utter.rate = speeds[globalSpeedIdx];
+
+        var wordCount = textToSpeak.split(/\s+/).length;
+        synthDurationEst = (wordCount / 130) * 60 / speeds[globalSpeedIdx];
+        synthStartTime = Date.now();
+        updateMasterPlaylistUI(true, 0, synthDurationEst, 0);
+
+        currentSynthTimer = setInterval(function() {
+          var elapsed = (Date.now() - synthStartTime) / 1000;
+          if (elapsed > synthDurationEst) elapsed = synthDurationEst;
+          var pct = (elapsed / synthDurationEst) * 100;
+          if (progressFill) progressFill.style.width = pct + "%";
+          if (timeEl) timeEl.textContent = formatTime(elapsed) + " / " + formatTime(synthDurationEst);
+          updateMasterPlaylistUI(true, elapsed, synthDurationEst, pct);
+        }, 250);
+
+        utter.onend = function() {
+          stopAllAudio();
+          if (progressFill) progressFill.style.width = "0%";
+          if (timeEl) timeEl.textContent = "0:00 / " + formatTime(synthDurationEst);
+          handleTrackEnded(idx);
+        };
+        utter.onerror = function() {
+          stopAllAudio();
+        };
+
+        window.speechSynthesis.speak(utter);
+      } else if (audio) {
+        if (playBtn) {
+          playBtn.classList.add('aab-playing');
+          var pIcon2 = playBtn.querySelector('.aab-icon-play');
+          var paIcon2 = playBtn.querySelector('.aab-icon-pause');
+          if (pIcon2) pIcon2.style.display = 'none';
+          if (paIcon2) paIcon2.style.display = 'inline';
+        }
+        audio.playbackRate = speeds[globalSpeedIdx];
+        updateMasterPlaylistUI(true, audio.currentTime || 0, audio.duration || 0, 0);
+
+        audio.play().catch(function(err) {
+          console.warn("[AUDIO INFO] Neuraal bestand niet direct beschikbaar, omschakelen naar browser stem:", err);
+          if (window.speechSynthesis) {
+            var liveText = getSectionLiveText(bar);
+            var fallbackText = (liveText && liveText.length > 20) ? liveText : cleanText;
+            var utter = new SpeechSynthesisUtterance(fallbackText);
+            utter.lang = lang;
+            utter.rate = speeds[globalSpeedIdx];
+            utter.onend = function() { stopAllAudio(); handleTrackEnded(idx); };
+            utter.onerror = function() { stopAllAudio(); };
+            window.speechSynthesis.speak(utter);
+          } else {
+            stopAllAudio();
+          }
+        });
+      }
+    }
+
+    bar._startPlayback = startPlayback;
+
     if (playBtn) {
       playBtn.addEventListener('click', function() {
         var isPlaying = playBtn.classList.contains('aab-playing');
-        var lang = getActiveLanguage();
-        syncAudioSrcForLang(lang);
-
-        var isTranslatedFallback = (lang !== 'nl' && lang !== 'en' && lang !== 'de' && lang !== 'fr') || !audio || !audio.src;
-
         if (isPlaying) {
           stopAllAudio();
         } else {
-          stopAllAudio();
-          currentBar = bar;
-
-          if (isTranslatedFallback && window.speechSynthesis) {
-            playBtn.classList.add('aab-playing');
-            var pIcon = playBtn.querySelector('.aab-icon-play');
-            var paIcon = playBtn.querySelector('.aab-icon-pause');
-            if (pIcon) pIcon.style.display = 'none';
-            if (paIcon) paIcon.style.display = 'inline';
-
-            var textToSpeak = cleanText;
-            if (lang !== 'nl') {
-              var liveText = getSectionLiveText(bar);
-              if (liveText && liveText.length > 20) {
-                textToSpeak = liveText;
-              }
-            }
-
-            var utter = new SpeechSynthesisUtterance(textToSpeak);
-            utter.lang = lang;
-            utter.rate = speeds[speedIdx];
-
-            var wordCount = textToSpeak.split(/\s+/).length;
-            synthDurationEst = (wordCount / 130) * 60 / speeds[speedIdx];
-            synthStartTime = Date.now();
-
-            currentSynthTimer = setInterval(function() {
-              var elapsed = (Date.now() - synthStartTime) / 1000;
-              if (elapsed > synthDurationEst) elapsed = synthDurationEst;
-              var pct = (elapsed / synthDurationEst) * 100;
-              if (progressFill) progressFill.style.width = pct + "%";
-              if (timeEl) timeEl.textContent = formatTime(elapsed) + " / " + formatTime(synthDurationEst);
-            }, 250);
-
-            utter.onend = function() {
-              stopAllAudio();
-              if (progressFill) progressFill.style.width = "0%";
-              if (timeEl) timeEl.textContent = "0:00 / " + formatTime(synthDurationEst);
-            };
-            utter.onerror = function() {
-              stopAllAudio();
-            };
-
-            window.speechSynthesis.speak(utter);
-          } else if (audio) {
-            playBtn.classList.add('aab-playing');
-            var pIcon = playBtn.querySelector('.aab-icon-play');
-            var paIcon = playBtn.querySelector('.aab-icon-pause');
-            if (pIcon) pIcon.style.display = 'none';
-            if (paIcon) paIcon.style.display = 'inline';
-
-            audio.play().catch(function(err) {
-              console.warn("[AUDIO INFO] Neuraal bestand niet direct beschikbaar, omschakelen naar browser stem:", err);
-              if (window.speechSynthesis) {
-                var liveText = getSectionLiveText(bar);
-                var fallbackText = (liveText && liveText.length > 20) ? liveText : cleanText;
-                var utter = new SpeechSynthesisUtterance(fallbackText);
-                utter.lang = lang;
-                utter.rate = speeds[speedIdx];
-                utter.onend = function() { stopAllAudio(); };
-                utter.onerror = function() { stopAllAudio(); };
-                window.speechSynthesis.speak(utter);
-              } else {
-                stopAllAudio();
-              }
-            });
-          }
+          startPlayback();
         }
       });
     }
   }
 
+  function initPlaylistControls() {
+    var mpPlay = document.getElementById('aps-play-btn');
+    var mpPrev = document.getElementById('aps-prev-btn');
+    var mpNext = document.getElementById('aps-next-btn');
+    var mpSpeed = document.getElementById('aps-speed-btn');
+    var mpProgress = document.getElementById('aps-mp-progress-wrap');
+    var topPlayAll = document.getElementById('apt-play-all-btn');
+
+    if (topPlayAll) {
+      topPlayAll.addEventListener('click', function() {
+        var pl = document.getElementById('audit-audio-playlist');
+        if (pl) pl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        playTrackByIndex(0, false);
+      });
+    }
+
+    if (mpPlay) {
+      mpPlay.addEventListener('click', function() {
+        var isPlaying = mpPlay.classList.contains('aps-playing');
+        if (isPlaying) {
+          stopAllAudio();
+        } else {
+          playTrackByIndex(currentTrackIdx || 0, false);
+        }
+      });
+    }
+
+    if (mpPrev) {
+      mpPrev.addEventListener('click', function() {
+        var prevIdx = currentTrackIdx > 0 ? currentTrackIdx - 1 : 0;
+        playTrackByIndex(prevIdx, false);
+      });
+    }
+
+    if (mpNext) {
+      mpNext.addEventListener('click', function() {
+        if (currentTrackIdx + 1 < allBars.length) {
+          playTrackByIndex(currentTrackIdx + 1, false);
+        }
+      });
+    }
+
+    if (mpSpeed) {
+      mpSpeed.addEventListener('click', function() {
+        globalSpeedIdx = (globalSpeedIdx + 1) % speeds.length;
+        applyGlobalSpeed(speeds[globalSpeedIdx]);
+      });
+    }
+
+    if (mpProgress) {
+      mpProgress.addEventListener('click', function(e) {
+        if (currentTrackIdx >= 0 && currentTrackIdx < allBars.length) {
+          var bar = allBars[currentTrackIdx];
+          var audio = bar ? bar.querySelector('.aab-audio-el') : null;
+          if (audio && audio.duration) {
+            var rect = mpProgress.getBoundingClientRect();
+            var pos = (e.clientX - rect.left) / rect.width;
+            audio.currentTime = pos * audio.duration;
+          }
+        }
+      });
+    }
+
+    document.querySelectorAll('.aps-track').forEach(function(row) {
+      row.addEventListener('click', function(e) {
+        if (e.target && e.target.closest('.aps-track-jump')) {
+          return;
+        }
+        var idx = parseInt(row.getAttribute('data-track-idx') || '0', 10);
+        var mpPlayBtn = document.getElementById('aps-play-btn');
+        var isCurrentlyPlayingThis = (currentTrackIdx === idx) && mpPlayBtn && mpPlayBtn.classList.contains('aps-playing');
+        if (isCurrentlyPlayingThis) {
+          stopAllAudio();
+        } else {
+          playTrackByIndex(idx, false);
+        }
+      });
+    });
+  }
+
   window.updateAudioLanguage = function(lang) {
-    document.querySelectorAll('.audit-audio-bar').forEach(function(bar) {
+    allBars.forEach(function(bar) {
       if (bar._updateLanguage) bar._updateLanguage(lang);
     });
   };
 
   document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.audit-audio-bar').forEach(initAudioBar);
+    allBars = Array.prototype.slice.call(document.querySelectorAll('.audit-audio-bar'));
+    allBars.forEach(function(bar, idx) {
+      initAudioBar(bar, idx);
+    });
+    initPlaylistControls();
   });
 })();
 
