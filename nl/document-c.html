@@ -2714,7 +2714,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document C — De visuele architectuur</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 2 november 2026, 12:21</p>
+<p class="meta-lijn">Versie bijgewerkt: 2 november 2026, 12:44</p>
 </div>
 
 <div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
@@ -3621,7 +3621,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <button aria-label="Venster sluiten" class="bm-modal-sluit" onclick="sluitBronModal()" type="button">×</button>
 </div>
 <div class="bm-intro">
-      Alle 704 interacties in deze audit zijn gebaseerd op objectieve brondocumenten (originele e-mails met Message-ID's, formele besluiten, brieven en medische verslagen). Om privacy en AVG-rechten van betrokkenen te waarborgen zijn persoonsgegevens in publieke bestanden afgeschermd. Geauthenticeerde onderzoekers, journalisten, toezichthouders en lotgenoten kunnen volledige, ongecensureerde brondossiers opvragen ter verificatie.
+      Alle 706 interacties in deze audit zijn gebaseerd op objectieve brondocumenten (originele e-mails met Message-ID's, formele besluiten, brieven en medische verslagen). Om privacy en AVG-rechten van betrokkenen te waarborgen zijn persoonsgegevens in publieke bestanden afgeschermd. Geauthenticeerde onderzoekers, journalisten, toezichthouders en lotgenoten kunnen volledige, ongecensureerde brondossiers opvragen ter verificatie.
     </div>
 <form id="bm-form" onsubmit="event.preventDefault();stuurEmail();">
 <div class="bm-groep">
@@ -3812,7 +3812,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 2 november 2026, 12:21</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 2 november 2026, 12:44</p>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-print-btn notranslate" onclick="window.print()" title="Print deze pagina of bewaar als PDF" translate="no" type="button">🖨️ Print / Bewaar als PDF</button>
 <button class="pub-contact-btn pub-contact-footer notranslate" onclick="openBronModal('Footer contact')" translate="no" type="button">📄 Bronstuk opvragen / Contact</button>
@@ -4115,8 +4115,30 @@ html[data-theme="dark"] .aps-track-jump:hover {
       if (tag === 'h1' || tag === 'h2' || tag === 'h3' || tag === 'footer' || tag === 'section' || (curr.classList && (curr.classList.contains('pub-toc') || curr.classList.contains('audit-audio-bar') || curr.classList.contains('audit-playlist-sectie')))) {
         break;
       }
-      if (!curr.classList || (!curr.classList.contains('notranslate') && !curr.classList.contains('d0-intermezzo') && !curr.classList.contains('audit-bewijs') && !curr.classList.contains('footnotes') && tag !== 'table' && tag !== 'svg' && tag !== 'button')) {
-        var t = curr.innerText || curr.textContent || '';
+      if (tag === 'table') {
+        var ths = [];
+        curr.querySelectorAll('thead th').forEach(function(th) {
+          var hTxt = (th.innerText || th.textContent || '').replace(/\s+/g, ' ').trim();
+          if (hTxt) ths.push(hTxt);
+        });
+        curr.querySelectorAll('tbody tr').forEach(function(tr) {
+          var cells = [];
+          tr.querySelectorAll('td, th').forEach(function(td, cIdx) {
+            var cTxt = (td.innerText || td.textContent || '').replace(/\s+/g, ' ').trim();
+            if (cTxt) {
+              if (ths[cIdx] && cIdx > 0) {
+                cells.push(ths[cIdx] + ': ' + cTxt);
+              } else {
+                cells.push(cTxt);
+              }
+            }
+          });
+          if (cells.length > 0) texts.push(cells.join('. '));
+        });
+      } else if (!curr.classList || (!curr.classList.contains('notranslate') && !curr.classList.contains('audit-bewijs') && !curr.classList.contains('footnotes') && tag !== 'svg' && tag !== 'button')) {
+        var clone = curr.cloneNode(true);
+        clone.querySelectorAll('svg, .notranslate, .audit-bewijs, .footnotes, sup, button').forEach(function(el) { el.remove(); });
+        var t = clone.innerText || clone.textContent || '';
         t = t.replace(/\s+/g, ' ').trim();
         if (t) texts.push(t);
       }

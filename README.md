@@ -3,18 +3,19 @@
 
 > **Geen adviesloket en geen pleister op een vastgelopen formulier.** Deze site toont aan de hand van één volledig gedocumenteerd dossier (62 instanties, meer dan 680 handelingen) hoe de Belgische en Nederlandse systemen achter de schermen werkelijk op elkaar inwerken — waar ze blokkeren, waarom brieven elkaar tegenspreken, en welke hefbomen wél werken.
 
-*Status: Live op [grensarbeid.org](https://grensarbeid.org/) · Peildatum: 28 oktober 2026*
+*Status: Live op [grensarbeid.org](https://grensarbeid.org/) · Peildatum: 2 november 2026*
 
 ---
 
 ### Kerncijfers van het dossier
 
 - **62 betrokken organisaties** (België, Nederland, Membraan/Grensoverschrijdend, Europese Unie)
-- **682 geregistreerde interacties** in Document B (vanaf 10-03-2025 tot heden)
-- **93% primair bron-gekoppeld (633 interacties)**: voorzien van verifieerbare primaire bewijsreferenties (`data-gmail-id` Message-ID's en `data-file-path` archiefstukken)
+- **687 geregistreerde interacties** in Document B (vanaf 10-03-2025 tot heden)
+- **93% primair bron-gekoppeld**: voorzien van verifieerbare primaire bewijsreferenties (`data-gmail-id` Message-ID's en `data-file-path` archiefstukken)
 - **12 grote visuele architectuurplaten** in Document C: visuele beeldschema's van de fricties en datastromen
-- **13 synthetische hoofdstukken** in Document D: incl. Deel XII (De AVG-stresstest en het EESSI-spook van 2030) en Deel XIII (De persoonlijke slotverklaring)
-- **17 sociale rechten** geanalyseerd en gevolgd op actuele uitvoeringsstatus in Document E
+- **7 logisch opbouwende synthese-delen** in Document D: inclusief 3 visuele intermezzo-schema's, Deel VI (De AVG-stresstest van 16 instanties, de 5 meest flagrante systeemparadoxen en het EESSI-spook van 2030) en Deel VII (De persoonlijke slotverklaring)
+- **17 sociale rechten** geanalyseerd en gevolgd op actuele uitvoeringsstatus in Document E (waaronder het scherpe onderscheid tussen de Nederlandse kinderbijslag bij de SVB op € 0,00 en het feitelijk uitbetaalde Kindgebonden Budget via de Belastingdienst/Dienst Toeslagen)
+- **95 neurale audiotracks (AI-stem Arnaud)** met ingebouwde luister-verder navigatie en een centrale afspeellijst (Playlist) onderaan elk verhalend document, inclusief meertalige Web Speech ondersteuning voor tabellen en schema's
 
 ---
 
@@ -22,12 +23,12 @@
 
 | Document | Titel | Inhoud |
 |---|---|---|
-| **0** | Inleiding en leeswijzer | Biografisch essay over drie generaties grensarbeid, plus leesroutes |
-| **A** | De narratieve audit | Het verhaal per organisatie, in doorlopende tekst (met directe kruisverwijzing naar Document B) |
+| **0** | Inleiding en leeswijzer | Biografisch essay over drie generaties grensarbeid, plus leesroutes (met neurale audio & playlist) |
+| **A** | De narratieve audit | Het verhaal per organisatie, in doorlopende tekst (met 62 neurale audiotracks, playlist en kruisverwijzing naar Document B) |
 | **B** | De data-matrix | Alle feiten: datums, referentienummers, correspondentie, tijdlijnen en interactieve bewijs-badges |
 | **C** | De visuele architectuur | 12 visuele beeldschema's en datastromen — het bevoegdheidsvacuüm in één oogopslag |
-| **D** | De synthese | 13 delen: patronen, paradoxen, de AVG-stresstest (Deel XII) en slotverklaring (Deel XIII) |
-| **E** | Het rechtenoverzicht | Per recht: wat het is, wie het krijgt, waar het vastloopt, actuele status en financiële impact |
+| **D** | De synthese | 7 opbouwende delen: patronen, systeemwetten, Europees patroon, uitweg, de AVG-stresstest & 5 paradoxen (Deel VI) en slotverklaring (Deel VII) — volledig beluisterbaar inclusief tabellen |
+| **E** | Het rechtenoverzicht | Per recht: wat het is, wie het krijgt, waar het vastloopt, actuele status en financiële impact (met 18 neurale audiotracks & playlist) |
 
 ---
 
