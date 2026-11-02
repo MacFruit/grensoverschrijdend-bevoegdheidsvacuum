@@ -2714,7 +2714,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document C — De visuele architectuur</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 2 november 2026, 18:13</p>
+<p class="meta-lijn">Versie bijgewerkt: 2 november 2026, 23:12</p>
 </div>
 
 <div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
@@ -2739,7 +2739,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </ul></div>
 
 <h1 id="i-de-mens-en-de-grens">I. De mens en de grens</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
-<h3 id="twee-cellen-die-weigeren-samen-te-werken">Twee cellen die weigeren samen te werken</h3><div class="audit-audio-bar notranslate" data-audio-id="docC_inleiding" data-audio-src="../assets/audio/docC_inleiding_nl_9a6ea6af.mp3" data-clean-text="Twee cellen die weigeren samen te werken. Twee buurlanden binnen één Europese Unie sluiten hun deuren hermetisch voor elkaar. Het gezin zit precies in de knel tussen twee starre systemen. . Wat de brief op de mat zegt: U geniet als E U burger van vrij verkeer en bent in beide lidstaten beschermd. . Wat er achter de muur echt gebeurt: Zodra je in Nederland woont en in België werkt, sluiten beide systemen de deuren. . . Wat de brief op de mat zegt: Onze overheidsdiensten wisselen gegevens digitaal uit via Europese netwerken. . Wat er achter de muur echt gebeurt: Alleen belastingheffing stroomt automatisch; het medisch en sociaal dossier bestaat voor de buren niet. . . Wat de brief op de mat zegt: U kunt zich wenden tot het bevoegde orgaan in uw woonland. . Wat er achter de muur echt gebeurt: Beide landen wijzen permanent naar elkaar; de burger is de enige kabel tussen twee muren. . ." translate="no">
+<h3 id="twee-cellen-die-weigeren-samen-te-werken">Twee cellen die weigeren samen te werken</h3><div class="audit-audio-bar notranslate" data-audio-id="docC_inleiding" data-audio-src="../assets/audio/docC_inleiding_nl_9a6ea6af.mp3" data-audio-src-de="../assets/audio/docC_inleiding_de_51688113.mp3" data-audio-src-en="../assets/audio/docC_inleiding_en_de00e7d8.mp3" data-audio-src-fr="../assets/audio/docC_inleiding_fr_f3776035.mp3" data-clean-text="Twee cellen die weigeren samen te werken. Twee buurlanden binnen één Europese Unie sluiten hun deuren hermetisch voor elkaar. Het gezin zit precies in de knel tussen twee starre systemen. . Wat de brief op de mat zegt: U geniet als E U burger van vrij verkeer en bent in beide lidstaten beschermd. . Wat er achter de muur echt gebeurt: Zodra je in Nederland woont en in België werkt, sluiten beide systemen de deuren. . . Wat de brief op de mat zegt: Onze overheidsdiensten wisselen gegevens digitaal uit via Europese netwerken. . Wat er achter de muur echt gebeurt: Alleen belastingheffing stroomt automatisch; het medisch en sociaal dossier bestaat voor de buren niet. . . Wat de brief op de mat zegt: U kunt zich wenden tot het bevoegde orgaan in uw woonland. . Wat er achter de muur echt gebeurt: Beide landen wijzen permanent naar elkaar; de burger is de enige kabel tussen twee muren. . ." translate="no">
 <button aria-label="Beluister tekst" class="aab-play-btn" title="Beluister passage (AI-stem)" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -3812,7 +3812,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 2 november 2026, 18:13</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 2 november 2026, 23:12</p>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-print-btn notranslate" onclick="window.print()" title="Print deze pagina of bewaar als PDF" translate="no" type="button">🖨️ Print / Bewaar als PDF</button>
 <button class="pub-contact-btn pub-contact-footer notranslate" onclick="openBronModal('Footer contact')" translate="no" type="button">📄 Bronstuk opvragen / Contact</button>
@@ -3826,7 +3826,776 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <img alt="" height="1" loading="eager" src="https://s05.flagcounter.com/count/xed2/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_18/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" width="1"/>
 <script async="" data-goatcounter="https://grensarbeid.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
 </div>
-<!-- Direct DOM Translation Engine (works on file://, http://, and https://) -->
+<script class="notranslate" translate="no">
+// ==========================================================================
+// AUDIT AUDIO PLAYER ENGINE — HTML5 Audio + "Luister verder" + Playlist
+// ==========================================================================
+(function() {
+  var allBars = [];
+  var currentBar = null;
+  var currentTrackIdx = 0;
+  var currentSynthTimer = null;
+  var synthDurationEst = 0;
+  var synthStartTime = 0;
+  var synthCancelled = false;
+  var speeds = [1.0, 1.25, 1.5];
+  var globalSpeedIdx = 0;
+
+  var AUDIO_UI_I18N = {
+    nl: {
+      badge: "🎧 BELUISTER",
+      next: "⏭ Luister verder",
+      playlistBtn: "🎧 Playlist",
+      topStrong: "Alleen luisteren zonder te lezen?",
+      topBody1: "Dit document bevat ",
+      topBody2: " ingesproken audio-onderdelen",
+      topBody3: ". Gebruik bij elk onderdeel de knop ‘⏭ Luister verder’ om direct naar het volgende geluidsfragment te springen, of open onderaan de Audio-Playlist om alles automatisch achter elkaar te beluisteren.",
+      topPlayAll: "▶ Direct alles afspelen",
+      topJump: "↓ Naar Audio-Playlist",
+      apsBadge: "🎧 LUISTERMODUS ZONDER LEZEN",
+      apsTitle1: "Audio-Playlist — Volledig document achter elkaar beluisteren (",
+      apsTitle2: " onderdelen)",
+      apsDesc1: "Voor wie dit document liever volledig beluistert zonder door de tekst te hoeven scrollen. Druk op ▶ in de hoofdspeler om alle ",
+      apsDesc2: " onderdelen automatisch na elkaar te laten voorlezen, of tik op een specifiek onderdeel in de onderstaande lijst.",
+      statusReady: "Klaar om af te spelen",
+      statusPlaying: "🔊 Nu aan het afspelen",
+      statusPaused: "⏸ Gepauzeerd",
+      autoContinue: "Auto-vervolg",
+      jumpText: "↑ tekst",
+      topLink: "↑ naar boven"
+    },
+    en: {
+      badge: "🎧 LISTEN",
+      next: "⏭ Listen next",
+      playlistBtn: "🎧 Playlist",
+      topStrong: "Prefer listening without reading?",
+      topBody1: "This document contains ",
+      topBody2: " narrated audio sections",
+      topBody3: ". Use the ‘⏭ Listen next’ button on any section to jump directly to the next audio track, or open the Audio Playlist at the bottom to listen to everything continuously.",
+      topPlayAll: "▶ Play all now",
+      topJump: "↓ To Audio Playlist",
+      apsBadge: "🎧 HANDS-FREE LISTENING MODE",
+      apsTitle1: "Audio Playlist — Listen to the full document continuously (",
+      apsTitle2: " sections)",
+      apsDesc1: "For those who prefer listening to the entire document without scrolling through the text. Press ▶ in the master player to play all ",
+      apsDesc2: " sections automatically one after another, or tap a specific section in the list below.",
+      statusReady: "Ready to play",
+      statusPlaying: "🔊 Now playing",
+      statusPaused: "⏸ Paused",
+      autoContinue: "Auto-continue",
+      jumpText: "↑ text",
+      topLink: "↑ top"
+    },
+    de: {
+      badge: "🎧 ANHÖREN",
+      next: "⏭ Weiterhören",
+      playlistBtn: "🎧 Playlist",
+      topStrong: "Lieber nur zuhören statt lesen?",
+      topBody1: "Dieses Dokument enthält ",
+      topBody2: " eingesprochene Audio-Abschnitte",
+      topBody3: ". Nutzen Sie bei jedem Abschnitt die Schaltfläche ‚⏭ Weiterhören‘, um direkt zum nächsten Audiofragment zu springen, oder öffnen Sie unten die Audio-Playlist, um alles automatisch nacheinander anzuhören.",
+      topPlayAll: "▶ Alles direkt abspielen",
+      topJump: "↓ Zur Audio-Playlist",
+      apsBadge: "🎧 HÖRMODUS OHNE LESEN",
+      apsTitle1: "Audio-Playlist — Gesamtes Dokument nacheinander anhören (",
+      apsTitle2: " Abschnitte)",
+      apsDesc1: "Für alle, die dieses Dokument lieber vollständig anhören möchten, ohne durch den Text zu scrollen. Drücken Sie auf ▶ im Hauptplayer, um alle ",
+      apsDesc2: " Abschnitte automatisch nacheinander vorlesen zu lassen, oder tippen Sie unten auf einen bestimmten Abschnitt.",
+      statusReady: "Bereit zur Wiedergabe",
+      statusPlaying: "🔊 Wird abgespielt",
+      statusPaused: "⏸ Pausiert",
+      autoContinue: "Auto-Folge",
+      jumpText: "↑ Text",
+      topLink: "↑ nach oben"
+    },
+    fr: {
+      badge: "🎧 ÉCOUTER",
+      next: "⏭ Écouter la suite",
+      playlistBtn: "🎧 Playlist",
+      topStrong: "Écouter sans lire ?",
+      topBody1: "Ce document contient ",
+      topBody2: " sections audio narrées",
+      topBody3: ". Utilisez le bouton « ⏭ Écouter la suite » sur chaque section pour passer directement à l'extrait suivant, ou ouvrez la Playlist Audio en bas de page pour tout écouter automatiquement à la suite.",
+      topPlayAll: "▶ Tout écouter maintenant",
+      topJump: "↓ Vers la Playlist Audio",
+      apsBadge: "🎧 MODE ÉCOUTE SANS LECTURE",
+      apsTitle1: "Playlist Audio — Écouter le document complet en continu (",
+      apsTitle2: " sections)",
+      apsDesc1: "Pour ceux qui préfèrent écouter l'intégralité de ce document sans faire défiler le texte. Appuyez sur ▶ dans le lecteur principal pour lire automatiquement les ",
+      apsDesc2: " sections à la suite, ou sélectionnez une section précise dans la liste ci-dessous.",
+      statusReady: "Prêt à écouter",
+      statusPlaying: "🔊 Lecture en cours",
+      statusPaused: "⏸ En pause",
+      autoContinue: "Lecture auto",
+      jumpText: "↑ texte",
+      topLink: "↑ haut"
+    }
+  };
+
+  function getUiDict(lang) {
+    var l = (lang || 'nl').toLowerCase().split('-')[0];
+    if (AUDIO_UI_I18N[l]) return AUDIO_UI_I18N[l];
+    return AUDIO_UI_I18N['en'];
+  }
+
+  function translateTitleLabel(origTitle, lang) {
+    var l = (lang || 'nl').toLowerCase().split('-')[0];
+    if (l === 'nl') return origTitle;
+    var t = origTitle;
+    if (l === 'fr') {
+      t = t.replace(/^Beluister hoofdstuk:/i, 'Écouter le chapitre :')
+           .replace(/^Beluister audit:/i, "Écouter l'audit :")
+           .replace(/^Beluister inleiding:/i, "Écouter l'introduction :")
+           .replace(/^Beluister recht:/i, 'Écouter le droit :')
+           .replace(/^Beluister Deel\b/i, 'Écouter la Partie')
+           .replace(/\(AI-stem Arnaud\)/gi, '(Voix IA Henri)');
+    } else if (l === 'de') {
+      t = t.replace(/^Beluister hoofdstuk:/i, 'Kapitel anhören:')
+           .replace(/^Beluister audit:/i, 'Audit anhören:')
+           .replace(/^Beluister inleiding:/i, 'Einleitung anhören:')
+           .replace(/^Beluister recht:/i, 'Recht anhören:')
+           .replace(/^Beluister Deel\b/i, 'Teil anhören')
+           .replace(/\(AI-stem Arnaud\)/gi, '(KI-Stimme Conrad)');
+    } else {
+      var voiceLabel = (l === 'en') ? '(AI voice Ryan)' : '(AI voice)';
+      t = t.replace(/^Beluister hoofdstuk:/i, 'Listen to chapter:')
+           .replace(/^Beluister audit:/i, 'Listen to audit:')
+           .replace(/^Beluister inleiding:/i, 'Listen to introduction:')
+           .replace(/^Beluister recht:/i, 'Listen to right:')
+           .replace(/^Beluister Deel\b/i, 'Listen to Part')
+           .replace(/\(AI-stem Arnaud\)/gi, voiceLabel);
+    }
+    return t;
+  }
+
+  function formatTime(secs) {
+    if (isNaN(secs) || secs < 0) return "0:00";
+    var m = Math.floor(secs / 60);
+    var s = Math.floor(secs % 60);
+    return m + ":" + (s < 10 ? "0" : "") + s;
+  }
+
+  function getActiveLanguage() {
+    var htmlLang = document.documentElement.getAttribute('lang') || document.documentElement.lang;
+    if (htmlLang && htmlLang.trim()) return htmlLang.trim().toLowerCase();
+    var combo = document.querySelector('.goog-te-combo');
+    if (combo && combo.value) return combo.value.toLowerCase();
+    return 'nl';
+  }
+
+  function getSectionLiveText(bar) {
+    var texts = [];
+    var curr = bar.nextElementSibling;
+    while (curr) {
+      var tag = curr.tagName ? curr.tagName.toLowerCase() : '';
+      if (tag === 'h1' || tag === 'h2' || tag === 'h3' || tag === 'footer' || tag === 'section' || (curr.classList && (curr.classList.contains('recht-kop-wrapper') || curr.classList.contains('pub-toc') || curr.classList.contains('audit-audio-bar') || curr.classList.contains('audit-playlist-sectie')))) {
+        break;
+      }
+      if (tag === 'table') {
+        var ths = [];
+        curr.querySelectorAll('thead th').forEach(function(th) {
+          var hTxt = (th.innerText || th.textContent || '').replace(/\s+/g, ' ').trim();
+          if (hTxt) ths.push(hTxt);
+        });
+        curr.querySelectorAll('tbody tr').forEach(function(tr) {
+          var cells = [];
+          tr.querySelectorAll('td, th').forEach(function(td, cIdx) {
+            var cTxt = (td.innerText || td.textContent || '').replace(/\s+/g, ' ').trim();
+            if (cTxt) {
+              if (ths[cIdx] && cIdx > 0) {
+                cells.push(ths[cIdx] + ': ' + cTxt);
+              } else {
+                cells.push(cTxt);
+              }
+            }
+          });
+          if (cells.length > 0) texts.push(cells.join('. '));
+        });
+      } else if (!curr.classList || (!curr.classList.contains('notranslate') && !curr.classList.contains('audit-bewijs') && !curr.classList.contains('footnotes') && tag !== 'svg' && tag !== 'button')) {
+        var clone = curr.cloneNode(true);
+        clone.querySelectorAll('svg, .notranslate, .audit-bewijs, .footnotes, sup, button').forEach(function(el) { el.remove(); });
+        var t = clone.innerText || clone.textContent || '';
+        t = t.replace(/\s+/g, ' ').trim();
+        if (t) texts.push(t);
+      }
+      curr = curr.nextElementSibling;
+    }
+    var combined = texts.join('. ');
+    combined = combined.replace(/https?:\/\/\S+/g, ' ')
+                       .replace(/www\.\S+/g, ' ')
+                       .replace(/\[(?:Mail|Brief|Besluit|Doc|Dossier|Notitie|Bijlage|Ref|ID|Bewijs)\b[^\]]*\]/gi, ' ')
+                       .replace(/\[\s*#?\d+[^\]]*\]/g, ' ')
+                       .replace(/[\*•→↔↑↓✕✖✓✔#\[\]{}~_\\|^=★⏱️🧬📄❌⚠️🎧▶❚]/g, ' ')
+                       .replace(/\s+/g, ' ')
+                       .trim();
+    return combined;
+  }
+
+  function splitTextIntoSpeechChunks(text, maxLen) {
+    maxLen = maxLen || 220;
+    var rawSentences = text.split(/(?<=[.!?])\s+/);
+    var chunks = [];
+    var current = "";
+    for (var i = 0; i < rawSentences.length; i++) {
+      var s = rawSentences[i].trim();
+      if (!s) continue;
+      if (s.length > maxLen) {
+        if (current) {
+          chunks.push(current.trim());
+          current = "";
+        }
+        var subParts = s.split(/(?<=[,;:])\s+/);
+        var subCur = "";
+        for (var j = 0; j < subParts.length; j++) {
+          var sp = subParts[j];
+          if ((subCur + " " + sp).trim().length > maxLen) {
+            if (subCur) chunks.push(subCur.trim());
+            subCur = sp;
+          } else {
+            subCur = (subCur ? subCur + " " : "") + sp;
+          }
+        }
+        if (subCur) chunks.push(subCur.trim());
+      } else if ((current + " " + s).trim().length > maxLen) {
+        if (current) chunks.push(current.trim());
+        current = s;
+      } else {
+        current = (current ? current + " " : "") + s;
+      }
+    }
+    if (current.trim()) chunks.push(current.trim());
+    return chunks.length > 0 ? chunks : [text];
+  }
+
+  function speakTextChunked(textToSpeak, lang, rate, onAllEnded, onErr) {
+    if (!window.speechSynthesis) {
+      if (onErr) onErr();
+      return;
+    }
+    synthCancelled = false;
+    window.speechSynthesis.cancel();
+    var chunks = splitTextIntoSpeechChunks(textToSpeak, 220);
+    var cIdx = 0;
+
+    function speakNext() {
+      if (synthCancelled) return;
+      if (cIdx >= chunks.length) {
+        if (onAllEnded) onAllEnded();
+        return;
+      }
+      var utter = new SpeechSynthesisUtterance(chunks[cIdx]);
+      utter.lang = lang;
+      utter.rate = rate;
+      utter.onend = function() {
+        if (synthCancelled) return;
+        cIdx++;
+        speakNext();
+      };
+      utter.onerror = function(e) {
+        if (synthCancelled) return;
+        if (e && (e.error === 'interrupted' || e.error === 'canceled')) return;
+        cIdx++;
+        if (cIdx < chunks.length) {
+          speakNext();
+        } else if (onErr) {
+          onErr();
+        }
+      };
+      window.speechSynthesis.speak(utter);
+    }
+
+    speakNext();
+  }
+
+  function updateMasterPlaylistUI(isPlaying, curTime, totTime, pct) {
+    var dict = getUiDict(getActiveLanguage());
+    var mpPlay = document.getElementById('aps-play-btn');
+    var mpStatus = document.getElementById('aps-mp-status');
+    var mpTime = document.getElementById('aps-mp-time');
+    var mpTrackname = document.getElementById('aps-mp-trackname');
+    var mpFill = document.getElementById('aps-mp-progress-fill');
+
+    if (mpPlay) {
+      if (isPlaying) {
+        mpPlay.classList.add('aps-playing');
+        var pI = mpPlay.querySelector('.aps-icon-play');
+        var paI = mpPlay.querySelector('.aps-icon-pause');
+        if (pI) pI.style.display = 'none';
+        if (paI) paI.style.display = 'inline';
+      } else {
+        mpPlay.classList.remove('aps-playing');
+        var pI2 = mpPlay.querySelector('.aps-icon-play');
+        var paI2 = mpPlay.querySelector('.aps-icon-pause');
+        if (pI2) pI2.style.display = 'inline';
+        if (paI2) paI2.style.display = 'none';
+      }
+    }
+
+    if (allBars.length > 0 && currentTrackIdx >= 0 && currentTrackIdx < allBars.length) {
+      var activeBar = allBars[currentTrackIdx];
+      var trackTitle = activeBar.getAttribute('data-clean-heading') || (activeBar.querySelector('.aab-title') ? activeBar.querySelector('.aab-title').textContent : (' #' + (currentTrackIdx + 1)));
+      if (mpStatus) {
+        mpStatus.textContent = (isPlaying ? dict.statusPlaying : dict.statusPaused) + " (" + (currentTrackIdx + 1) + " / " + allBars.length + ")";
+      }
+      if (mpTrackname) {
+        mpTrackname.textContent = (currentTrackIdx + 1) + ". " + trackTitle;
+      }
+    }
+
+    if (typeof pct === 'number' && mpFill) {
+      mpFill.style.width = Math.max(0, Math.min(100, pct)) + "%";
+    }
+    if (typeof curTime === 'number' && typeof totTime === 'number' && mpTime) {
+      mpTime.textContent = formatTime(curTime) + " / " + formatTime(totTime);
+    }
+
+    var trackRows = document.querySelectorAll('.aps-track');
+    trackRows.forEach(function(row) {
+      var rIdx = parseInt(row.getAttribute('data-track-idx') || '-1', 10);
+      var iconEl = row.querySelector('.aps-t-icon');
+      if (rIdx === currentTrackIdx) {
+        row.classList.add('aps-active');
+        if (iconEl) iconEl.textContent = isPlaying ? '❚❚' : '▶';
+      } else {
+        row.classList.remove('aps-active');
+        if (iconEl) iconEl.textContent = '▶';
+      }
+    });
+  }
+
+  function stopAllAudio() {
+    synthCancelled = true;
+    allBars.forEach(function(bar) {
+      var audio = bar.querySelector('.aab-audio-el');
+      if (audio && !audio.paused) {
+        audio.pause();
+      }
+      var playBtn = bar.querySelector('.aab-play-btn');
+      if (playBtn) {
+        playBtn.classList.remove('aab-playing');
+        var pIcon = playBtn.querySelector('.aab-icon-play');
+        var paIcon = playBtn.querySelector('.aab-icon-pause');
+        if (pIcon) pIcon.style.display = 'inline';
+        if (paIcon) paIcon.style.display = 'none';
+      }
+    });
+    if (window.speechSynthesis) {
+      window.speechSynthesis.cancel();
+    }
+    if (currentSynthTimer) {
+      clearInterval(currentSynthTimer);
+      currentSynthTimer = null;
+    }
+    updateMasterPlaylistUI(false);
+  }
+
+  function applyGlobalSpeed(spd) {
+    allBars.forEach(function(bar) {
+      var audio = bar.querySelector('.aab-audio-el');
+      var speedBtn = bar.querySelector('.aab-speed-btn');
+      if (audio) audio.playbackRate = spd;
+      if (speedBtn) speedBtn.textContent = spd + "x";
+    });
+    var mpSpeed = document.getElementById('aps-speed-btn');
+    if (mpSpeed) mpSpeed.textContent = spd + "x";
+  }
+
+  function handleTrackEnded(idx) {
+    var autoChk = document.getElementById('aps-autoplay-chk');
+    var shouldAutoContinue = autoChk ? autoChk.checked : true;
+    if (shouldAutoContinue && idx + 1 < allBars.length) {
+      playTrackByIndex(idx + 1, false);
+    } else {
+      updateMasterPlaylistUI(false, 0, 0, 0);
+    }
+  }
+
+  function playTrackByIndex(idx, scrollToBar) {
+    if (idx < 0 || idx >= allBars.length) return;
+    currentTrackIdx = idx;
+    var targetBar = allBars[idx];
+
+    if (scrollToBar) {
+      var prev = targetBar.previousElementSibling;
+      var scrollEl = (prev && (/^H[1-4]$/.test(prev.tagName) || prev.classList.contains('recht-kop-wrapper'))) ? prev : targetBar;
+      scrollEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    var trackRow = document.querySelector('.aps-track[data-track-idx="' + idx + '"]');
+    var trackList = document.getElementById('aps-tracklist');
+    if (trackRow && trackList) {
+      var topPos = trackRow.offsetTop - trackList.offsetTop;
+      trackList.scrollTo({ top: Math.max(0, topPos - 60), behavior: 'smooth' });
+    }
+
+    if (targetBar && targetBar._startPlayback) {
+      targetBar._startPlayback();
+    }
+  }
+
+  function initAudioBar(bar, idx) {
+    if (bar._initialized) return;
+    bar._initialized = true;
+
+    var playBtn = bar.querySelector('.aab-play-btn');
+    var speedBtn = bar.querySelector('.aab-speed-btn');
+    var nextBtn = bar.querySelector('.aab-next-btn');
+    var progressWrap = bar.querySelector('.aab-progress-wrap');
+    var progressFill = bar.querySelector('.aab-progress-fill');
+    var timeEl = bar.querySelector('.aab-time');
+    var titleEl = bar.querySelector('.aab-title');
+    var audio = bar.querySelector('.aab-audio-el');
+    var cleanText = bar.getAttribute('data-clean-text') || '';
+    var baseAudioSrc = bar.getAttribute('data-audio-src') || '';
+
+    if (titleEl && !bar.getAttribute('data-orig-title')) {
+      bar.setAttribute('data-orig-title', titleEl.textContent);
+    }
+
+    if (speedBtn) {
+      speedBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        globalSpeedIdx = (globalSpeedIdx + 1) % speeds.length;
+        applyGlobalSpeed(speeds[globalSpeedIdx]);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var nextIdxAttr = nextBtn.getAttribute('data-next-idx');
+        if (nextIdxAttr === 'playlist') {
+          var pl = document.getElementById('audit-audio-playlist');
+          if (pl) pl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          var nextIdx = parseInt(nextIdxAttr, 10);
+          if (!isNaN(nextIdx) && nextIdx < allBars.length) {
+            playTrackByIndex(nextIdx, true);
+          }
+        }
+      });
+    }
+
+    if (audio) {
+      audio.addEventListener('loadedmetadata', function() {
+        if (timeEl) timeEl.textContent = "0:00 / " + formatTime(audio.duration);
+        if (currentTrackIdx === idx) {
+          updateMasterPlaylistUI(!audio.paused, audio.currentTime, audio.duration, 0);
+        }
+      });
+
+      audio.addEventListener('timeupdate', function() {
+        if (audio.duration) {
+          var pct = (audio.currentTime / audio.duration) * 100;
+          if (progressFill) progressFill.style.width = pct + "%";
+          if (timeEl) timeEl.textContent = formatTime(audio.currentTime) + " / " + formatTime(audio.duration);
+          if (currentTrackIdx === idx) {
+            updateMasterPlaylistUI(!audio.paused, audio.currentTime, audio.duration, pct);
+          }
+        }
+      });
+
+      audio.addEventListener('ended', function() {
+        if (playBtn) {
+          playBtn.classList.remove('aab-playing');
+          var pIcon = playBtn.querySelector('.aab-icon-play');
+          var paIcon = playBtn.querySelector('.aab-icon-pause');
+          if (pIcon) pIcon.style.display = 'inline';
+          if (paIcon) paIcon.style.display = 'none';
+        }
+        if (progressFill) progressFill.style.width = "0%";
+        if (timeEl) timeEl.textContent = "0:00 / " + formatTime(audio.duration);
+        handleTrackEnded(idx);
+      });
+    }
+
+    if (progressWrap && audio) {
+      progressWrap.addEventListener('click', function(e) {
+        if (audio.duration) {
+          var rect = progressWrap.getBoundingClientRect();
+          var pos = (e.clientX - rect.left) / rect.width;
+          audio.currentTime = pos * audio.duration;
+        }
+      });
+    }
+
+    function syncAudioSrcForLang(lang) {
+      if (!audio || !baseAudioSrc) return;
+      var shortLang = (lang || 'nl').toLowerCase().split('-')[0];
+      if (shortLang === 'nl') {
+        if (audio.getAttribute('src') !== baseAudioSrc) {
+          audio.src = baseAudioSrc;
+          audio.load();
+        }
+        return;
+      }
+      var attrSrc = bar.getAttribute('data-audio-src-' + shortLang);
+      if (attrSrc) {
+        if (audio.getAttribute('src') !== attrSrc) {
+          audio.src = attrSrc;
+          audio.load();
+        }
+      }
+    }
+
+    bar._updateLanguage = syncAudioSrcForLang;
+
+    function startPlayback() {
+      var lang = getActiveLanguage();
+      var shortLang = (lang || 'nl').toLowerCase().split('-')[0];
+      syncAudioSrcForLang(shortLang);
+      var hasAudioFile = (shortLang === 'nl') || !!bar.getAttribute('data-audio-src-' + shortLang);
+      var isTranslatedFallback = !hasAudioFile;
+
+      stopAllAudio();
+      currentBar = bar;
+      currentTrackIdx = idx;
+
+      if (isTranslatedFallback && window.speechSynthesis) {
+        if (playBtn) {
+          playBtn.classList.add('aab-playing');
+          var pIcon = playBtn.querySelector('.aab-icon-play');
+          var paIcon = playBtn.querySelector('.aab-icon-pause');
+          if (pIcon) pIcon.style.display = 'none';
+          if (paIcon) paIcon.style.display = 'inline';
+        }
+
+        var textToSpeak = cleanText;
+        if (shortLang !== 'nl') {
+          var liveText = getSectionLiveText(bar);
+          if (liveText && liveText.length > 20) {
+            textToSpeak = liveText;
+          }
+        }
+
+        var wordCount = textToSpeak.split(/\s+/).length;
+        synthDurationEst = Math.max(5, (wordCount / 130) * 60 / speeds[globalSpeedIdx]);
+        synthStartTime = Date.now();
+        updateMasterPlaylistUI(true, 0, synthDurationEst, 0);
+
+        currentSynthTimer = setInterval(function() {
+          var elapsed = (Date.now() - synthStartTime) / 1000;
+          if (elapsed > synthDurationEst) elapsed = synthDurationEst;
+          var pct = (elapsed / synthDurationEst) * 100;
+          if (progressFill) progressFill.style.width = pct + "%";
+          if (timeEl) timeEl.textContent = formatTime(elapsed) + " / " + formatTime(synthDurationEst);
+          updateMasterPlaylistUI(true, elapsed, synthDurationEst, pct);
+        }, 250);
+
+        speakTextChunked(textToSpeak, lang, speeds[globalSpeedIdx], function() {
+          stopAllAudio();
+          if (progressFill) progressFill.style.width = "0%";
+          if (timeEl) timeEl.textContent = "0:00 / " + formatTime(synthDurationEst);
+          handleTrackEnded(idx);
+        }, function() {
+          stopAllAudio();
+        });
+      } else if (audio) {
+        if (playBtn) {
+          playBtn.classList.add('aab-playing');
+          var pIcon2 = playBtn.querySelector('.aab-icon-play');
+          var paIcon2 = playBtn.querySelector('.aab-icon-pause');
+          if (pIcon2) pIcon2.style.display = 'none';
+          if (paIcon2) paIcon2.style.display = 'inline';
+        }
+        audio.playbackRate = speeds[globalSpeedIdx];
+        updateMasterPlaylistUI(true, audio.currentTime || 0, audio.duration || 0, 0);
+
+        audio.play().catch(function(err) {
+          console.warn("[AUDIO INFO] Neuraal bestand niet direct beschikbaar, omschakelen naar browser stem:", err);
+          if (window.speechSynthesis) {
+            var liveText = getSectionLiveText(bar);
+            var fallbackText = (liveText && liveText.length > 20) ? liveText : cleanText;
+            speakTextChunked(fallbackText, lang, speeds[globalSpeedIdx], function() {
+              stopAllAudio();
+              handleTrackEnded(idx);
+            }, function() {
+              stopAllAudio();
+            });
+          } else {
+            stopAllAudio();
+          }
+        });
+      }
+    }
+
+    bar._startPlayback = startPlayback;
+
+    if (playBtn) {
+      playBtn.addEventListener('click', function() {
+        var isPlaying = playBtn.classList.contains('aab-playing');
+        if (isPlaying) {
+          stopAllAudio();
+        } else {
+          startPlayback();
+        }
+      });
+    }
+  }
+
+  var playlistControlsInitialized = false;
+  function initPlaylistControls() {
+    if (playlistControlsInitialized) return;
+    playlistControlsInitialized = true;
+
+    var mpPlay = document.getElementById('aps-play-btn');
+    var mpPrev = document.getElementById('aps-prev-btn');
+    var mpNext = document.getElementById('aps-next-btn');
+    var mpSpeed = document.getElementById('aps-speed-btn');
+    var mpProgress = document.getElementById('aps-mp-progress-wrap');
+    var topPlayAll = document.getElementById('apt-play-all-btn');
+
+    if (topPlayAll) {
+      topPlayAll.addEventListener('click', function() {
+        var pl = document.getElementById('audit-audio-playlist');
+        if (pl) pl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        playTrackByIndex(0, false);
+      });
+    }
+
+    if (mpPlay) {
+      mpPlay.addEventListener('click', function() {
+        var isPlaying = mpPlay.classList.contains('aps-playing');
+        if (isPlaying) {
+          stopAllAudio();
+        } else {
+          playTrackByIndex(currentTrackIdx || 0, false);
+        }
+      });
+    }
+
+    if (mpPrev) {
+      mpPrev.addEventListener('click', function() {
+        var prevIdx = currentTrackIdx > 0 ? currentTrackIdx - 1 : 0;
+        playTrackByIndex(prevIdx, false);
+      });
+    }
+
+    if (mpNext) {
+      mpNext.addEventListener('click', function() {
+        if (currentTrackIdx + 1 < allBars.length) {
+          playTrackByIndex(currentTrackIdx + 1, false);
+        }
+      });
+    }
+
+    if (mpSpeed) {
+      mpSpeed.addEventListener('click', function() {
+        globalSpeedIdx = (globalSpeedIdx + 1) % speeds.length;
+        applyGlobalSpeed(speeds[globalSpeedIdx]);
+      });
+    }
+
+    if (mpProgress) {
+      mpProgress.addEventListener('click', function(e) {
+        if (currentTrackIdx >= 0 && currentTrackIdx < allBars.length) {
+          var bar = allBars[currentTrackIdx];
+          var audio = bar ? bar.querySelector('.aab-audio-el') : null;
+          if (audio && audio.duration) {
+            var rect = mpProgress.getBoundingClientRect();
+            var pos = (e.clientX - rect.left) / rect.width;
+            audio.currentTime = pos * audio.duration;
+          }
+        }
+      });
+    }
+
+    document.querySelectorAll('.aps-track').forEach(function(row) {
+      row.addEventListener('click', function(e) {
+        if (e.target && e.target.closest('.aps-track-jump')) {
+          return;
+        }
+        var idx = parseInt(row.getAttribute('data-track-idx') || '0', 10);
+        var mpPlayBtn = document.getElementById('aps-play-btn');
+        var isCurrentlyPlayingThis = (currentTrackIdx === idx) && mpPlayBtn && mpPlayBtn.classList.contains('aps-playing');
+        if (isCurrentlyPlayingThis) {
+          stopAllAudio();
+        } else {
+          playTrackByIndex(idx, false);
+        }
+      });
+    });
+  }
+
+  function ensureInitialized() {
+    if (allBars.length === 0) {
+      allBars = Array.prototype.slice.call(document.querySelectorAll('.audit-audio-bar'));
+      allBars.forEach(function(bar, idx) {
+        initAudioBar(bar, idx);
+      });
+      initPlaylistControls();
+    }
+  }
+
+  window.updateAudioLanguage = function(lang) {
+    ensureInitialized();
+    var dict = getUiDict(lang);
+    var nTotal = allBars.length;
+
+    allBars.forEach(function(bar) {
+      if (bar._updateLanguage) bar._updateLanguage(lang);
+      var badge = bar.querySelector('.aab-badge');
+      if (badge) badge.textContent = dict.badge;
+      var nextBtn = bar.querySelector('.aab-next-btn');
+      if (nextBtn) {
+        if (nextBtn.getAttribute('data-next-idx') === 'playlist') {
+          nextBtn.textContent = dict.playlistBtn;
+        } else {
+          nextBtn.textContent = dict.next;
+        }
+      }
+      var titleEl = bar.querySelector('.aab-title');
+      var origTitle = bar.getAttribute('data-orig-title');
+      if (titleEl && origTitle) {
+        titleEl.textContent = translateTitleLabel(origTitle, lang);
+      }
+    });
+
+    var topBanner = document.querySelector('.audit-playlist-topbanner');
+    if (topBanner && nTotal > 0) {
+      var aptText = topBanner.querySelector('.apt-text');
+      if (aptText) {
+        aptText.innerHTML = '<strong>' + dict.topStrong + '</strong><br/>' +
+          dict.topBody1 + '<strong>' + nTotal + dict.topBody2 + '</strong>' + dict.topBody3;
+      }
+      var playAllBtn = document.getElementById('apt-play-all-btn');
+      if (playAllBtn) playAllBtn.textContent = dict.topPlayAll;
+      var jumpBtn = topBanner.querySelector('.apt-btn-jump');
+      if (jumpBtn) jumpBtn.textContent = dict.topJump + ' (' + nTotal + ')';
+    }
+
+    var plSec = document.getElementById('audit-audio-playlist');
+    if (plSec && nTotal > 0) {
+      var apsBadge = plSec.querySelector('.aps-badge');
+      if (apsBadge) apsBadge.textContent = dict.apsBadge;
+      var apsTopLink = plSec.querySelector('.pub-naar-boven');
+      if (apsTopLink) apsTopLink.textContent = dict.topLink;
+      var apsH2 = plSec.querySelector('.aps-header h2');
+      if (apsH2) apsH2.textContent = dict.apsTitle1 + nTotal + dict.apsTitle2;
+      var apsDesc = plSec.querySelector('.aps-desc');
+      if (apsDesc) apsDesc.textContent = dict.apsDesc1 + nTotal + dict.apsDesc2;
+      var autoSpan = plSec.querySelector('.aps-autoplay-toggle span');
+      if (autoSpan) autoSpan.textContent = dict.autoContinue;
+      plSec.querySelectorAll('.aps-track-jump').forEach(function(jmp) {
+        jmp.textContent = dict.jumpText;
+      });
+      var mpStatus = document.getElementById('aps-mp-status');
+      var mpPlay = document.getElementById('aps-play-btn');
+      var isPl = mpPlay && mpPlay.classList.contains('aps-playing');
+      if (mpStatus) {
+        mpStatus.textContent = (isPl ? dict.statusPlaying : dict.statusReady) + " (" + ((currentTrackIdx || 0) + 1) + " / " + nTotal + ")";
+      }
+    }
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', ensureInitialized);
+  } else {
+    ensureInitialized();
+  }
+})();
+
+</script><!-- Direct DOM Translation Engine (works on file://, http://, and https://) -->
 <script class="notranslate" translate="no">
 (function() {
   var _origTexts = new Map();
@@ -3868,13 +4637,14 @@ html[data-theme="dark"] .aps-track-jump:hover {
       var a = links[i];
       var href = a.getAttribute('href');
       if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('javascript:')) continue;
+      var hashPart = href.indexOf('#') !== -1 ? href.substring(href.indexOf('#')) : '';
+      var withoutHash = href.split('#')[0];
+      var base = withoutHash.split('?')[0];
       if (href.indexOf('document-') !== -1) {
-        var base = href.split('?')[0];
-        var isPrint = href.indexOf('print=1') !== -1;
-        a.setAttribute('href', base + '?int=1&lang=' + lang + (isPrint ? '&print=1' : ''));
+        var isPrint = withoutHash.indexOf('print=1') !== -1;
+        a.setAttribute('href', base + '?int=1&lang=' + lang + (isPrint ? '&print=1' : '') + hashPart);
       } else if (href.indexOf('home_int.html') !== -1) {
-        var base = href.split('?')[0];
-        a.setAttribute('href', base + '?lang=' + lang);
+        a.setAttribute('href', base + '?lang=' + lang + hashPart);
       }
     }
   }
@@ -4078,497 +4848,5 @@ html[data-theme="dark"] .aps-track-jump:hover {
     initOrSync();
   });
 })();
-</script><script class="notranslate" translate="no">
-// ==========================================================================
-// AUDIT AUDIO PLAYER ENGINE — HTML5 Audio + "Luister verder" + Playlist
-// ==========================================================================
-(function() {
-  var allBars = [];
-  var currentBar = null;
-  var currentTrackIdx = 0;
-  var currentSynthTimer = null;
-  var synthDurationEst = 0;
-  var synthStartTime = 0;
-  var speeds = [1.0, 1.25, 1.5];
-  var globalSpeedIdx = 0;
-
-  function formatTime(secs) {
-    if (isNaN(secs) || secs < 0) return "0:00";
-    var m = Math.floor(secs / 60);
-    var s = Math.floor(secs % 60);
-    return m + ":" + (s < 10 ? "0" : "") + s;
-  }
-
-  function getActiveLanguage() {
-    var htmlLang = document.documentElement.getAttribute('lang') || document.documentElement.lang;
-    if (htmlLang && htmlLang.trim()) return htmlLang.trim().toLowerCase();
-    var combo = document.querySelector('.goog-te-combo');
-    if (combo && combo.value) return combo.value.toLowerCase();
-    return 'nl';
-  }
-
-  function getSectionLiveText(bar) {
-    var texts = [];
-    var curr = bar.nextElementSibling;
-    while (curr) {
-      var tag = curr.tagName ? curr.tagName.toLowerCase() : '';
-      if (tag === 'h1' || tag === 'h2' || tag === 'h3' || tag === 'footer' || tag === 'section' || (curr.classList && (curr.classList.contains('pub-toc') || curr.classList.contains('audit-audio-bar') || curr.classList.contains('audit-playlist-sectie')))) {
-        break;
-      }
-      if (tag === 'table') {
-        var ths = [];
-        curr.querySelectorAll('thead th').forEach(function(th) {
-          var hTxt = (th.innerText || th.textContent || '').replace(/\s+/g, ' ').trim();
-          if (hTxt) ths.push(hTxt);
-        });
-        curr.querySelectorAll('tbody tr').forEach(function(tr) {
-          var cells = [];
-          tr.querySelectorAll('td, th').forEach(function(td, cIdx) {
-            var cTxt = (td.innerText || td.textContent || '').replace(/\s+/g, ' ').trim();
-            if (cTxt) {
-              if (ths[cIdx] && cIdx > 0) {
-                cells.push(ths[cIdx] + ': ' + cTxt);
-              } else {
-                cells.push(cTxt);
-              }
-            }
-          });
-          if (cells.length > 0) texts.push(cells.join('. '));
-        });
-      } else if (!curr.classList || (!curr.classList.contains('notranslate') && !curr.classList.contains('audit-bewijs') && !curr.classList.contains('footnotes') && tag !== 'svg' && tag !== 'button')) {
-        var clone = curr.cloneNode(true);
-        clone.querySelectorAll('svg, .notranslate, .audit-bewijs, .footnotes, sup, button').forEach(function(el) { el.remove(); });
-        var t = clone.innerText || clone.textContent || '';
-        t = t.replace(/\s+/g, ' ').trim();
-        if (t) texts.push(t);
-      }
-      curr = curr.nextElementSibling;
-    }
-    var combined = texts.join('. ');
-    combined = combined.replace(/https?:\/\/\S+/g, ' ')
-                       .replace(/www\.\S+/g, ' ')
-                       .replace(/\[(?:Mail|Brief|Besluit|Doc|Dossier|Notitie|Bijlage|Ref|ID|Bewijs)\b[^\]]*\]/gi, ' ')
-                       .replace(/\[\s*#?\d+[^\]]*\]/g, ' ')
-                       .replace(/[\*•→↔↑↓✕✖✓✔#\[\]{}~_\\|^=★⏱️🧬📄❌⚠️🎧▶❚]/g, ' ')
-                       .replace(/\s+/g, ' ')
-                       .trim();
-    return combined;
-  }
-
-  function updateMasterPlaylistUI(isPlaying, curTime, totTime, pct) {
-    var mpPlay = document.getElementById('aps-play-btn');
-    var mpStatus = document.getElementById('aps-mp-status');
-    var mpTime = document.getElementById('aps-mp-time');
-    var mpTrackname = document.getElementById('aps-mp-trackname');
-    var mpFill = document.getElementById('aps-mp-progress-fill');
-
-    if (mpPlay) {
-      if (isPlaying) {
-        mpPlay.classList.add('aps-playing');
-        var pI = mpPlay.querySelector('.aps-icon-play');
-        var paI = mpPlay.querySelector('.aps-icon-pause');
-        if (pI) pI.style.display = 'none';
-        if (paI) paI.style.display = 'inline';
-      } else {
-        mpPlay.classList.remove('aps-playing');
-        var pI2 = mpPlay.querySelector('.aps-icon-play');
-        var paI2 = mpPlay.querySelector('.aps-icon-pause');
-        if (pI2) pI2.style.display = 'inline';
-        if (paI2) paI2.style.display = 'none';
-      }
-    }
-
-    if (allBars.length > 0 && currentTrackIdx >= 0 && currentTrackIdx < allBars.length) {
-      var activeBar = allBars[currentTrackIdx];
-      var trackTitle = activeBar.getAttribute('data-clean-heading') || (activeBar.querySelector('.aab-title') ? activeBar.querySelector('.aab-title').textContent : ('Onderdeel ' + (currentTrackIdx + 1)));
-      if (mpStatus) {
-        mpStatus.textContent = (isPlaying ? "🔊 Nu aan het afspelen" : "⏸ Gepauzeerd") + " (" + (currentTrackIdx + 1) + " / " + allBars.length + ")";
-      }
-      if (mpTrackname) {
-        mpTrackname.textContent = (currentTrackIdx + 1) + ". " + trackTitle;
-      }
-    }
-
-    if (typeof pct === 'number' && mpFill) {
-      mpFill.style.width = Math.max(0, Math.min(100, pct)) + "%";
-    }
-    if (typeof curTime === 'number' && typeof totTime === 'number' && mpTime) {
-      mpTime.textContent = formatTime(curTime) + " / " + formatTime(totTime);
-    }
-
-    var trackRows = document.querySelectorAll('.aps-track');
-    trackRows.forEach(function(row) {
-      var rIdx = parseInt(row.getAttribute('data-track-idx') || '-1', 10);
-      var iconEl = row.querySelector('.aps-t-icon');
-      if (rIdx === currentTrackIdx) {
-        row.classList.add('aps-active');
-        if (iconEl) iconEl.textContent = isPlaying ? '❚❚' : '▶';
-      } else {
-        row.classList.remove('aps-active');
-        if (iconEl) iconEl.textContent = '▶';
-      }
-    });
-  }
-
-  function stopAllAudio() {
-    allBars.forEach(function(bar) {
-      var audio = bar.querySelector('.aab-audio-el');
-      if (audio && !audio.paused) {
-        audio.pause();
-      }
-      var playBtn = bar.querySelector('.aab-play-btn');
-      if (playBtn) {
-        playBtn.classList.remove('aab-playing');
-        var pIcon = playBtn.querySelector('.aab-icon-play');
-        var paIcon = playBtn.querySelector('.aab-icon-pause');
-        if (pIcon) pIcon.style.display = 'inline';
-        if (paIcon) paIcon.style.display = 'none';
-      }
-    });
-    if (window.speechSynthesis && window.speechSynthesis.speaking) {
-      window.speechSynthesis.cancel();
-    }
-    if (currentSynthTimer) {
-      clearInterval(currentSynthTimer);
-      currentSynthTimer = null;
-    }
-    updateMasterPlaylistUI(false);
-  }
-
-  function applyGlobalSpeed(spd) {
-    allBars.forEach(function(bar) {
-      var audio = bar.querySelector('.aab-audio-el');
-      var speedBtn = bar.querySelector('.aab-speed-btn');
-      if (audio) audio.playbackRate = spd;
-      if (speedBtn) speedBtn.textContent = spd + "x";
-    });
-    var mpSpeed = document.getElementById('aps-speed-btn');
-    if (mpSpeed) mpSpeed.textContent = spd + "x";
-  }
-
-  function handleTrackEnded(idx) {
-    var autoChk = document.getElementById('aps-autoplay-chk');
-    var shouldAutoContinue = autoChk ? autoChk.checked : true;
-    if (shouldAutoContinue && idx + 1 < allBars.length) {
-      playTrackByIndex(idx + 1, false);
-    } else {
-      updateMasterPlaylistUI(false, 0, 0, 0);
-    }
-  }
-
-  function playTrackByIndex(idx, scrollToBar) {
-    if (idx < 0 || idx >= allBars.length) return;
-    currentTrackIdx = idx;
-    var targetBar = allBars[idx];
-
-    if (scrollToBar) {
-      var prev = targetBar.previousElementSibling;
-      var scrollEl = (prev && (/^H[1-4]$/.test(prev.tagName) || prev.classList.contains('recht-kop-wrapper'))) ? prev : targetBar;
-      scrollEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    var trackRow = document.querySelector('.aps-track[data-track-idx="' + idx + '"]');
-    var trackList = document.getElementById('aps-tracklist');
-    if (trackRow && trackList) {
-      var topPos = trackRow.offsetTop - trackList.offsetTop;
-      trackList.scrollTo({ top: Math.max(0, topPos - 60), behavior: 'smooth' });
-    }
-
-    if (targetBar && targetBar._startPlayback) {
-      targetBar._startPlayback();
-    }
-  }
-
-  function initAudioBar(bar, idx) {
-    var playBtn = bar.querySelector('.aab-play-btn');
-    var speedBtn = bar.querySelector('.aab-speed-btn');
-    var nextBtn = bar.querySelector('.aab-next-btn');
-    var progressWrap = bar.querySelector('.aab-progress-wrap');
-    var progressFill = bar.querySelector('.aab-progress-fill');
-    var timeEl = bar.querySelector('.aab-time');
-    var audio = bar.querySelector('.aab-audio-el');
-    var cleanText = bar.getAttribute('data-clean-text') || '';
-    var baseAudioSrc = bar.getAttribute('data-audio-src') || '';
-
-    if (speedBtn) {
-      speedBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        globalSpeedIdx = (globalSpeedIdx + 1) % speeds.length;
-        applyGlobalSpeed(speeds[globalSpeedIdx]);
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        var nextIdxAttr = nextBtn.getAttribute('data-next-idx');
-        if (nextIdxAttr === 'playlist') {
-          var pl = document.getElementById('audit-audio-playlist');
-          if (pl) pl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else {
-          var nextIdx = parseInt(nextIdxAttr, 10);
-          if (!isNaN(nextIdx) && nextIdx < allBars.length) {
-            playTrackByIndex(nextIdx, true);
-          }
-        }
-      });
-    }
-
-    if (audio) {
-      audio.addEventListener('loadedmetadata', function() {
-        if (timeEl) timeEl.textContent = "0:00 / " + formatTime(audio.duration);
-        if (currentTrackIdx === idx) {
-          updateMasterPlaylistUI(!audio.paused, audio.currentTime, audio.duration, 0);
-        }
-      });
-
-      audio.addEventListener('timeupdate', function() {
-        if (audio.duration) {
-          var pct = (audio.currentTime / audio.duration) * 100;
-          if (progressFill) progressFill.style.width = pct + "%";
-          if (timeEl) timeEl.textContent = formatTime(audio.currentTime) + " / " + formatTime(audio.duration);
-          if (currentTrackIdx === idx) {
-            updateMasterPlaylistUI(!audio.paused, audio.currentTime, audio.duration, pct);
-          }
-        }
-      });
-
-      audio.addEventListener('ended', function() {
-        if (playBtn) {
-          playBtn.classList.remove('aab-playing');
-          var pIcon = playBtn.querySelector('.aab-icon-play');
-          var paIcon = playBtn.querySelector('.aab-icon-pause');
-          if (pIcon) pIcon.style.display = 'inline';
-          if (paIcon) paIcon.style.display = 'none';
-        }
-        if (progressFill) progressFill.style.width = "0%";
-        if (timeEl) timeEl.textContent = "0:00 / " + formatTime(audio.duration);
-        handleTrackEnded(idx);
-      });
-    }
-
-    if (progressWrap && audio) {
-      progressWrap.addEventListener('click', function(e) {
-        if (audio.duration) {
-          var rect = progressWrap.getBoundingClientRect();
-          var pos = (e.clientX - rect.left) / rect.width;
-          audio.currentTime = pos * audio.duration;
-        }
-      });
-    }
-
-    function syncAudioSrcForLang(lang) {
-      if (!audio || !baseAudioSrc) return;
-      if (lang === 'nl') {
-        if (audio.getAttribute('src') !== baseAudioSrc) audio.src = baseAudioSrc;
-        return;
-      }
-      var attrSrc = bar.getAttribute('data-audio-src-' + lang);
-      if (attrSrc) {
-        if (audio.getAttribute('src') !== attrSrc) audio.src = attrSrc;
-        return;
-      }
-      if (lang === 'en' || lang === 'de' || lang === 'fr') {
-        var targetSrc = baseAudioSrc.replace('_nl_', '_' + lang + '_');
-        if (audio.getAttribute('src') !== targetSrc) audio.src = targetSrc;
-      }
-    }
-
-    bar._updateLanguage = syncAudioSrcForLang;
-
-    function startPlayback() {
-      var lang = getActiveLanguage();
-      syncAudioSrcForLang(lang);
-      var hasAudioFile = (lang === 'nl') || !!bar.getAttribute('data-audio-src-' + lang);
-      var isTranslatedFallback = !hasAudioFile && (lang !== 'nl' && lang !== 'en' && lang !== 'de' && lang !== 'fr');
-
-      stopAllAudio();
-      currentBar = bar;
-      currentTrackIdx = idx;
-
-      if (isTranslatedFallback && window.speechSynthesis) {
-        if (playBtn) {
-          playBtn.classList.add('aab-playing');
-          var pIcon = playBtn.querySelector('.aab-icon-play');
-          var paIcon = playBtn.querySelector('.aab-icon-pause');
-          if (pIcon) pIcon.style.display = 'none';
-          if (paIcon) paIcon.style.display = 'inline';
-        }
-
-        var textToSpeak = cleanText;
-        if (lang !== 'nl') {
-          var liveText = getSectionLiveText(bar);
-          if (liveText && liveText.length > 20) {
-            textToSpeak = liveText;
-          }
-        }
-
-        var utter = new SpeechSynthesisUtterance(textToSpeak);
-        utter.lang = lang;
-        utter.rate = speeds[globalSpeedIdx];
-
-        var wordCount = textToSpeak.split(/\s+/).length;
-        synthDurationEst = (wordCount / 130) * 60 / speeds[globalSpeedIdx];
-        synthStartTime = Date.now();
-        updateMasterPlaylistUI(true, 0, synthDurationEst, 0);
-
-        currentSynthTimer = setInterval(function() {
-          var elapsed = (Date.now() - synthStartTime) / 1000;
-          if (elapsed > synthDurationEst) elapsed = synthDurationEst;
-          var pct = (elapsed / synthDurationEst) * 100;
-          if (progressFill) progressFill.style.width = pct + "%";
-          if (timeEl) timeEl.textContent = formatTime(elapsed) + " / " + formatTime(synthDurationEst);
-          updateMasterPlaylistUI(true, elapsed, synthDurationEst, pct);
-        }, 250);
-
-        utter.onend = function() {
-          stopAllAudio();
-          if (progressFill) progressFill.style.width = "0%";
-          if (timeEl) timeEl.textContent = "0:00 / " + formatTime(synthDurationEst);
-          handleTrackEnded(idx);
-        };
-        utter.onerror = function() {
-          stopAllAudio();
-        };
-
-        window.speechSynthesis.speak(utter);
-      } else if (audio) {
-        if (playBtn) {
-          playBtn.classList.add('aab-playing');
-          var pIcon2 = playBtn.querySelector('.aab-icon-play');
-          var paIcon2 = playBtn.querySelector('.aab-icon-pause');
-          if (pIcon2) pIcon2.style.display = 'none';
-          if (paIcon2) paIcon2.style.display = 'inline';
-        }
-        audio.playbackRate = speeds[globalSpeedIdx];
-        updateMasterPlaylistUI(true, audio.currentTime || 0, audio.duration || 0, 0);
-
-        audio.play().catch(function(err) {
-          console.warn("[AUDIO INFO] Neuraal bestand niet direct beschikbaar, omschakelen naar browser stem:", err);
-          if (window.speechSynthesis) {
-            var liveText = getSectionLiveText(bar);
-            var fallbackText = (liveText && liveText.length > 20) ? liveText : cleanText;
-            var utter = new SpeechSynthesisUtterance(fallbackText);
-            utter.lang = lang;
-            utter.rate = speeds[globalSpeedIdx];
-            utter.onend = function() { stopAllAudio(); handleTrackEnded(idx); };
-            utter.onerror = function() { stopAllAudio(); };
-            window.speechSynthesis.speak(utter);
-          } else {
-            stopAllAudio();
-          }
-        });
-      }
-    }
-
-    bar._startPlayback = startPlayback;
-
-    if (playBtn) {
-      playBtn.addEventListener('click', function() {
-        var isPlaying = playBtn.classList.contains('aab-playing');
-        if (isPlaying) {
-          stopAllAudio();
-        } else {
-          startPlayback();
-        }
-      });
-    }
-  }
-
-  function initPlaylistControls() {
-    var mpPlay = document.getElementById('aps-play-btn');
-    var mpPrev = document.getElementById('aps-prev-btn');
-    var mpNext = document.getElementById('aps-next-btn');
-    var mpSpeed = document.getElementById('aps-speed-btn');
-    var mpProgress = document.getElementById('aps-mp-progress-wrap');
-    var topPlayAll = document.getElementById('apt-play-all-btn');
-
-    if (topPlayAll) {
-      topPlayAll.addEventListener('click', function() {
-        var pl = document.getElementById('audit-audio-playlist');
-        if (pl) pl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        playTrackByIndex(0, false);
-      });
-    }
-
-    if (mpPlay) {
-      mpPlay.addEventListener('click', function() {
-        var isPlaying = mpPlay.classList.contains('aps-playing');
-        if (isPlaying) {
-          stopAllAudio();
-        } else {
-          playTrackByIndex(currentTrackIdx || 0, false);
-        }
-      });
-    }
-
-    if (mpPrev) {
-      mpPrev.addEventListener('click', function() {
-        var prevIdx = currentTrackIdx > 0 ? currentTrackIdx - 1 : 0;
-        playTrackByIndex(prevIdx, false);
-      });
-    }
-
-    if (mpNext) {
-      mpNext.addEventListener('click', function() {
-        if (currentTrackIdx + 1 < allBars.length) {
-          playTrackByIndex(currentTrackIdx + 1, false);
-        }
-      });
-    }
-
-    if (mpSpeed) {
-      mpSpeed.addEventListener('click', function() {
-        globalSpeedIdx = (globalSpeedIdx + 1) % speeds.length;
-        applyGlobalSpeed(speeds[globalSpeedIdx]);
-      });
-    }
-
-    if (mpProgress) {
-      mpProgress.addEventListener('click', function(e) {
-        if (currentTrackIdx >= 0 && currentTrackIdx < allBars.length) {
-          var bar = allBars[currentTrackIdx];
-          var audio = bar ? bar.querySelector('.aab-audio-el') : null;
-          if (audio && audio.duration) {
-            var rect = mpProgress.getBoundingClientRect();
-            var pos = (e.clientX - rect.left) / rect.width;
-            audio.currentTime = pos * audio.duration;
-          }
-        }
-      });
-    }
-
-    document.querySelectorAll('.aps-track').forEach(function(row) {
-      row.addEventListener('click', function(e) {
-        if (e.target && e.target.closest('.aps-track-jump')) {
-          return;
-        }
-        var idx = parseInt(row.getAttribute('data-track-idx') || '0', 10);
-        var mpPlayBtn = document.getElementById('aps-play-btn');
-        var isCurrentlyPlayingThis = (currentTrackIdx === idx) && mpPlayBtn && mpPlayBtn.classList.contains('aps-playing');
-        if (isCurrentlyPlayingThis) {
-          stopAllAudio();
-        } else {
-          playTrackByIndex(idx, false);
-        }
-      });
-    });
-  }
-
-  window.updateAudioLanguage = function(lang) {
-    allBars.forEach(function(bar) {
-      if (bar._updateLanguage) bar._updateLanguage(lang);
-    });
-  };
-
-  document.addEventListener('DOMContentLoaded', function() {
-    allBars = Array.prototype.slice.call(document.querySelectorAll('.audit-audio-bar'));
-    allBars.forEach(function(bar, idx) {
-      initAudioBar(bar, idx);
-    });
-    initPlaylistControls();
-  });
-})();
-
 </script></body>
 </html>
