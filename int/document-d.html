@@ -9,9 +9,9 @@
 <meta content="De synthese — patronen, paradoxen en bouwstenen voor hervorming | Systeem-Audit" property="og:title"/>
 <meta content="Het patroon achter het falen, de rol van de Europese Unie, en drie bouwstenen voor hervorming. De conclusies uit de Systeem-Audit." property="og:description"/>
 <meta content="article" property="og:type"/>
-<meta content="https://grensarbeid.org/nl/document-d.html" property="og:url"/>
+<meta content="https://grensarbeid.org/int/document-d.html" property="og:url"/>
 <meta content="https://grensarbeid.org/assets/kaart_eu.png" property="og:image"/>
-<link href="https://grensarbeid.org/nl/document-d.html" rel="canonical"/>
+<link href="https://grensarbeid.org/int/document-d.html" rel="canonical"/>
 <link href="/favicon.ico" rel="icon" type="image/x-icon"/>
 <link href="/assets/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="/assets/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
@@ -3231,2167 +3231,8 @@ html[data-theme="dark"] .aps-track-jump:hover {
 
 }
 
-
-
-html { overflow-x: hidden; }
-body { margin: 0 !important; padding: 40pt !important; overflow-x: visible !important; box-sizing: border-box; }
-
-/* === Optimaal Leesgemak, Typografie & Witruimte (Anti-Bloktekst) === */
-p {
-    margin-top: 0 !important;
-    margin-bottom: 14pt !important;
-    line-height: 1.65 !important;
-    font-size: 11.5pt;
-    text-align: left !important;
-}
-
-/* Ergonomische leeskolom: regellengte max 860px (65-80 karakters) zodat ogen nooit verdwalen op brede schermen */
-p, .gebruikersaanwijzing, .intro-rechten, .actie, .afsluiting, .werkversie, .lead, .footnotes, .pub-toc, .contactblok {
-    max-width: 860px;
-}
-h1, h2, h3, h4, h5 {
-    max-width: 960px;
-}
-h2 {
-    margin-top: 36pt !important;
-    margin-bottom: 12pt !important;
-    line-height: 1.3 !important;
-}
-h3 {
-    margin-top: 26pt !important;
-    margin-bottom: 10pt !important;
-    line-height: 1.35 !important;
-}
-h4 {
-    margin-top: 20pt !important;
-    margin-bottom: 8pt !important;
-    line-height: 1.4 !important;
-}
-h5 {
-    margin-top: 16pt !important;
-    margin-bottom: 6pt !important;
-    line-height: 1.4 !important;
-}
-
-/* Duidelijke ademruimte tussen interactie-kaarten in Document B */
-.entry {
-    margin-bottom: 10pt !important;
-    padding: 8pt 12pt !important;
-    line-height: 1.45 !important;
-    max-width: 920px;
-}
-
-/* === Discrete Document Download Links (Anti-Bloat Top Nav) === */
-.pub-discreet-dl {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #f7f5f1;
-    border: 1px solid #d5d0c5;
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-size: 9.5pt;
-    color: #555555;
-    margin: 4pt 0 16pt 0;
-    font-family: Aptos, Calibri, sans-serif;
-}
-html[data-theme="dark"] .pub-discreet-dl {
-    background: #181b22;
-    border-color: #30363d;
-    color: #8b949e;
-}
-.pub-discreet-dl .pdd-label { font-weight: 700; color: #1a3c6e; }
-html[data-theme="dark"] .pub-discreet-dl .pdd-label { color: #58a6ff; }
-.pub-discreet-dl .pdd-link {
-    color: #1a3c6e;
-    text-decoration: none;
-    font-weight: 600;
-}
-html[data-theme="dark"] .pub-discreet-dl .pdd-link { color: #79c0ff; }
-.pub-discreet-dl .pdd-link:hover { text-decoration: underline; }
-.pub-discreet-dl .pdd-sep { color: #aaa; }
-
-.pub-nav {
-    position: sticky; top: 0; z-index: 100;
-    background: #ffffff; border-bottom: 2px solid #d5d0c5;
-    padding: 10px 40pt; margin: -40pt -40pt 20pt -40pt;
-    font-family: Aptos, Calibri, sans-serif;
-    display: flex; justify-content: space-between; align-items: center;
-    gap: 12px 16px; flex-wrap: wrap; box-sizing: border-box;
-}
-.pub-nav .links { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
-.pub-nav .pub-nav-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-left: auto; flex-shrink: 0; }
-.pub-nav a {
-    color: #1a3c6e; text-decoration: none; padding: 6px 12px;
-    border-radius: 4px; font-size: 11pt; font-weight: 600;
-    border: 1px solid transparent;
-}
-.pub-nav a:hover { background: #eef2f7; border-color: #d5d0c5; }
-.pub-nav a.actief { background: #1a3c6e; color: #ffffff; }
-.pub-nav a.home { border: 1px solid #d5d0c5; }
-.pub-nav .titel-klein { font-size: 10pt; color: #666; font-style: italic; }
-.pub-top {
-    position: fixed; bottom: 24px; right: 24px; z-index: 200;
-    background: #1a3c6e; color: #fff; border: none;
-    width: 44px; height: 44px; border-radius: 50%;
-    cursor: pointer; font-size: 18pt; line-height: 1;
-    box-shadow: 0 2px 8px rgba(0,0,0,.25);
-    text-decoration: none; display: flex; align-items: center; justify-content: center;
-    transition: transform .15s;
-}
-.pub-top:hover { transform: scale(1.1); background: #12294d; }
-.pub-toc {
-    background: #f7f5f1; border-left: 4px solid #1a3c6e;
-    padding: 14pt 18pt; margin: 20pt 0 30pt;
-    border-radius: 4px;
-}
-.pub-toc h2 { margin-top: 0 !important; border-bottom: none !important; font-size: 16pt !important; }
-.pub-toc ul { list-style: none; padding-left: 0; margin: 0; }
-.pub-toc li { margin: 3pt 0; }
-.pub-toc a { color: #1a3c6e; text-decoration: none; font-size: 11pt; }
-.pub-toc a:hover { text-decoration: underline; }
-.pub-toc .niv1 { font-weight: 700; margin-top: 8pt; }
-.pub-toc .niv2 { padding-left: 18pt; }
-.pub-toc .niv3 { padding-left: 36pt; font-size: 10pt; color: #555; }
-.audit-toolbar {
-    background: #ffffff; border: 1px solid #d5d0c5; border-left: 5px solid #1a3c6e;
-    border-radius: 6px; padding: 14pt 18pt; margin: 16pt 0 28pt;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.04); font-family: Aptos, Calibri, sans-serif;
-}
-.audit-toolbar .at-stats {
-    display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
-    font-size: 10.5pt; color: #333; margin-bottom: 10pt; padding-bottom: 8pt;
-    border-bottom: 1px solid #ece8df;
-}
-.audit-toolbar .at-sep { color: #b5afa2; }
-.audit-toolbar .at-verified { color: #1b5e20; }
-.audit-toolbar .at-live-count {
-    margin-left: auto; font-family: Consolas, monospace; font-size: 9.5pt;
-    background: #f0eee9; padding: 2px 8px; border-radius: 12px; color: #444;
-}
-.audit-toolbar .at-controls {
-    display: grid; grid-template-columns: 1fr 280px; gap: 10px; margin-bottom: 10pt;
-}
-.audit-toolbar .at-search, .audit-toolbar .at-select {
-    font-family: inherit; font-size: 10.5pt; padding: 7px 11px;
-    border: 1px solid #ccc6b8; border-radius: 4px; background: #faf8f5; color: #111;
-}
-.audit-toolbar .at-search:focus, .audit-toolbar .at-select:focus {
-    outline: none; border-color: #1a3c6e; background: #fff;
-}
-.audit-toolbar .at-pills { display: flex; flex-wrap: wrap; gap: 6px; }
-.audit-toolbar .at-pill {
-    font-family: inherit; font-size: 9.5pt; font-weight: 600;
-    padding: 5px 11px; border-radius: 16px; border: 1px solid #d5d0c5;
-    background: #f7f5f1; color: #333; cursor: pointer; transition: all .15s;
-}
-.audit-toolbar .at-pill:hover { border-color: #1a3c6e; background: #eef2f7; }
-.audit-toolbar .at-pill.actief {
-    background: #1a3c6e; color: #ffffff; border-color: #1a3c6e;
-}
-.audit-org-bar {
-    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
-    gap: 8px; margin: 2pt 0 10pt; padding: 4pt 8pt;
-    background: #f7f5f1; border-radius: 4px; font-size: 9.5pt;
-}
-.audit-org-stat { color: #555; font-family: Consolas, monospace; font-size: 9pt; }
-.audit-crosslink {
-    display: inline-block; color: #1a3c6e; font-weight: 600;
-    text-decoration: none; font-size: 9.5pt;
-}
-.audit-crosslink:hover { text-decoration: underline; }
-@media (max-width: 700px) {
-    .audit-toolbar .at-controls { grid-template-columns: 1fr; }
-    .audit-toolbar .at-live-count { margin-left: 0; }
-}
-.pub-footer {
-    margin-top: 60pt; padding-top: 20pt; border-top: 1px solid #d5d0c5;
-    font-size: 10pt; color: #666; text-align: center;
-}
-.pub-footer a { color: #1a3c6e; }
-.pub-naar-boven {
-    display: block; text-align: right; margin-top: 10pt;
-    font-size: 10pt; color: #888; text-decoration: none;
-}
-.pub-naar-boven:hover { color: #1a3c6e; text-decoration: underline; }
-
-.dm-toggle {
-    position: fixed; bottom: 80px; right: 24px; z-index: 200;
-    background: #ffffff; color: #1a3c6e; border: 1px solid #d5d0c5;
-    width: 44px; height: 44px; border-radius: 50%;
-    cursor: pointer; font-size: 18pt; line-height: 1; padding: 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,.25);
-    display: flex; align-items: center; justify-content: center;
-    transition: transform .15s, background .15s, border-color .15s;
-    font-family: Aptos, Calibri, sans-serif;
-}
-.dm-toggle:hover { transform: scale(1.1); background: #eef2f7; border-color: #1a3c6e; }
-.dm-toggle .dm-icon-lm { display: none; }
-html[data-theme="dark"] .dm-toggle .dm-icon-dm { display: none; }
-html[data-theme="dark"] .dm-toggle .dm-icon-lm { display: inline; }
-
-
-.pub-nav .nav-acties { display: flex; align-items: center; gap: 10px; margin-left: auto; }
-.pub-contact-btn {
-    background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
-    padding: 5px 12px; border-radius: 4px; font-size: 10pt; font-weight: 600;
-    cursor: pointer; font-family: inherit; transition: all .15s;
-    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
-}
-.pub-contact-btn:hover { background: #1a3c6e; color: #ffffff; border-color: #1a3c6e; }
-.pub-contact-footer { margin: 10pt 0 4pt; font-size: 10.5pt; padding: 7px 16px; }
-
-/* Forensische bewijs-badge interactief */
-.audit-bewijs { cursor: pointer; transition: border-color .15s, background .15s, box-shadow .15s; }
-.audit-bewijs:hover {
-    border-color: #1a3c6e; background: #e6edf7;
-    box-shadow: 0 1px 4px rgba(26,60,110,0.18);
-}
-
-.pub-print-btn {
-    background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
-    padding: 5px 12px; border-radius: 4px; font-size: 10pt; font-weight: 600;
-    cursor: pointer; font-family: inherit; transition: all .15s;
-    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
-}
-.pub-print-btn:hover { background: #1a3c6e; color: #ffffff; border-color: #1a3c6e; }
-html[data-theme="dark"] .pub-print-btn {
-    background: #232323; color: #b0c8e8; border-color: #4a4a4a;
-}
-html[data-theme="dark"] .pub-print-btn:hover {
-    background: #2a2a2a; border-color: #7fb3ff; color: #ffffff;
-}
-@media (max-width: 768px) {
-    .pub-print-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 38px; }
-}
-
-.pub-lang-select, #int-lang-select {
-    font-family: inherit; font-size: 10pt; font-weight: 600;
-    padding: 4px 8px; border: 1px solid #d5d0c5; border-radius: 4px;
-    background-color: #ffffff; color: #1a3c6e; cursor: pointer;
-    color-scheme: light;
-}
-.pub-lang-select option, #int-lang-select option {
-    background-color: #ffffff; color: #1a3c6e;
-    color-scheme: light;
-}
-html[data-theme="dark"] .pub-lang-select,
-html[data-theme="dark"] #int-lang-select,
-html[data-theme="dark"] select.pub-lang-select {
-    background-color: #232323 !important;
-    background: #232323 !important;
-    border-color: #4a4a4a !important;
-    color: #e0e0e0 !important;
-    color-scheme: dark !important;
-}
-html[data-theme="dark"] .pub-lang-select option,
-html[data-theme="dark"] #int-lang-select option,
-html[data-theme="dark"] select.pub-lang-select option {
-    background-color: #232323 !important;
-    background: #232323 !important;
-    color: #e0e0e0 !important;
-    color-scheme: dark !important;
-}
-
-/* === Professionele A4 Print / Opslaan als PDF Stylesheet === */
-@media print {
-    html, html[data-theme="dark"], body, html[data-theme="dark"] body {
-        background: #ffffff !important;
-        color: #000000 !important;
-        margin: 12mm !important;
-        padding: 0 !important;
-        font-size: 10.5pt !important;
-    }
-    .pub-nav, .pub-top, .dm-toggle, .audit-toolbar, .audit-crosslink,
-    .audit-audio-bar, .pub-discreet-dl,
-    .pub-naar-boven, .bm-modal-overlay, .skiptranslate,
-    .goog-te-banner-frame, #goog-gt-tt {
-        display: none !important;
-    }
-    /* Houd de vertaaldisclaimer bovenaan de PDF zichtbaar! */
-    .pub-ab-banner {
-        display: block !important;
-        background: #fdf6e3 !important;
-        color: #000000 !important;
-        border: 1px solid #d4a017 !important;
-        border-left: 4pt solid #d4a017 !important;
-        padding: 8pt 12pt !important;
-        margin-bottom: 14pt !important;
-    }
-    h1, h2, h3, h4, h5, h6 {
-        color: #1a3c6e !important;
-        page-break-after: avoid !important;
-    }
-    table, tr, .figure, .entry, .actor {
-        page-break-inside: avoid !important;
-    }
-    table th {
-        background: #1a3c6e !important;
-        color: #ffffff !important;
-    }
-    table td {
-        background: #ffffff !important;
-        color: #000000 !important;
-        border-color: #cccccc !important;
-    }
-    /* Schakel de dark-mode invert op SVG's en plaatjes uit tijdens printen! */
-    .figure, html[data-theme="dark"] .figure {
-        background: #ffffff !important;
-        border-color: #cccccc !important;
-    }
-    .figure svg, html[data-theme="dark"] .figure svg,
-    .figure img, html[data-theme="dark"] .figure img {
-        filter: none !important;
-    }
-    .entry-in, html[data-theme="dark"] .entry-in {
-        background: #f0f4f9 !important;
-        color: #000000 !important;
-        border-left: 3pt solid #1a3c6e !important;
-    }
-    .entry-uit, html[data-theme="dark"] .entry-uit {
-        background: #faf0f2 !important;
-        color: #000000 !important;
-        border-right: 3pt solid #8b1e1e !important;
-    }
-    .datum, .titel, .opvolging, .oorsprong {
-        color: #000000 !important;
-    }
-    /* Herstel Inhoudsopgave (TOC) naar helder wit papier zonder zwart blok! */
-    .pub-toc, html[data-theme="dark"] .pub-toc {
-        background: #ffffff !important;
-        color: #000000 !important;
-        border: 1px solid #d5d0c5 !important;
-        border-left: 4px solid #1a3c6e !important;
-        page-break-inside: avoid !important;
-        box-shadow: none !important;
-    }
-    .pub-toc h2, html[data-theme="dark"] .pub-toc h2 {
-        color: #1a3c6e !important;
-    }
-    .pub-toc a, html[data-theme="dark"] .pub-toc a {
-        color: #1a3c6e !important;
-        text-decoration: none !important;
-    }
-    .pub-toc .niv1, html[data-theme="dark"] .pub-toc .niv1,
-    .pub-toc .niv2, html[data-theme="dark"] .pub-toc .niv2 {
-        color: #000000 !important;
-    }
-    .pub-toc .niv3, html[data-theme="dark"] .pub-toc .niv3 {
-        color: #555555 !important;
-    }
-    .pub-toc ul {
-        background: transparent !important;
-    }
-
-}
-
-/* Forensisch Bronopvragings- en Contactvenster (Modal) */
-.bm-modal-overlay {
-    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.65); z-index: 1000;
-    display: none; align-items: center; justify-content: center;
-    padding: 20px; backdrop-filter: blur(2px);
-}
-.bm-modal-overlay.bm-open { display: flex; }
-.bm-modal-dialog {
-    background: #ffffff; color: #222222; border-radius: 8px;
-    max-width: 680px; width: 100%; max-height: 90vh; overflow-y: auto;
-    padding: 24px 28px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-    border: 1px solid #d5d0c5; font-family: Aptos, Calibri, sans-serif;
-    position: relative; box-sizing: border-box; text-align: left;
-}
-.bm-modal-kop {
-    display: flex; justify-content: space-between; align-items: flex-start;
-    border-bottom: 2px solid #1a3c6e; padding-bottom: 12px; margin-bottom: 16px;
-}
-.bm-modal-kop h3 {
-    margin: 0; font-size: 16pt; color: #1a3c6e; border: none; padding: 0;
-}
-.bm-modal-sluit {
-    background: none; border: none; font-size: 22pt; line-height: 1;
-    color: #888; cursor: pointer; padding: 0 4px;
-}
-.bm-modal-sluit:hover { color: #c62828; }
-.bm-intro {
-    font-size: 10pt; line-height: 1.5; color: #555555; background: #f7f5f1;
-    padding: 10px 14px; border-left: 3px solid #1a3c6e; border-radius: 3px;
-    margin-bottom: 18px;
-}
-.bm-groep { margin-bottom: 14px; }
-.bm-groep label.bm-label {
-    display: block; font-weight: 700; font-size: 10.5pt; color: #1a3c6e; margin-bottom: 5px;
-}
-.bm-input, .bm-textarea {
-    width: 100%; box-sizing: border-box; padding: 8px 12px;
-    border: 1px solid #ccc; border-radius: 4px; font-family: inherit;
-    font-size: 10.5pt; background: #faf8f5; color: #222;
-}
-.bm-input:focus, .bm-textarea:focus {
-    border-color: #1a3c6e; background: #fff; outline: none;
-}
-.bm-textarea { min-height: 90px; resize: vertical; }
-.bm-radio-groep {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px;
-}
-@media (max-width: 580px) {
-    .bm-radio-groep { grid-template-columns: 1fr; }
-}
-.bm-radio-optie {
-    display: flex; align-items: flex-start; gap: 8px; background: #f9f8f6;
-    border: 1px solid #e2ddd5; padding: 8px 10px; border-radius: 4px;
-    font-size: 9.5pt; cursor: pointer;
-}
-.bm-radio-optie:hover { border-color: #1a3c6e; background: #f0f4f9; }
-.bm-radio-optie input { margin-top: 2px; }
-.bm-check-groep {
-    display: flex; align-items: flex-start; gap: 8px; font-size: 9.5pt;
-    color: #444; margin: 14px 0 18px;
-}
-.bm-knoppen { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
-.bm-btn-mail {
-    background: #1a3c6e; color: #ffffff; border: 1px solid #1a3c6e;
-    padding: 8px 16px; border-radius: 4px; font-size: 10.5pt; font-weight: 700;
-    cursor: pointer; transition: background .15s;
-}
-.bm-btn-mail:hover { background: #122b50; }
-.bm-btn-copy {
-    background: #f0eee9; color: #333; border: 1px solid #d5d0c5;
-    padding: 8px 14px; border-radius: 4px; font-size: 10.5pt; font-weight: 600;
-    cursor: pointer; transition: all .15s;
-}
-.bm-btn-copy:hover { background: #e2ded5; }
-.bm-btn-copy.bm-copied { background: #2e7d32; color: #ffffff; border-color: #2e7d32; }
-
-@media (max-width: 1320px) {
-    .pub-nav { padding: 10px 20px; }
-    .pub-nav .pub-nav-actions {
-        width: 100%;
-        justify-content: flex-end;
-        margin-top: 6px;
-        margin-left: 0;
-    }
-}
-@media (max-width: 768px) {
-    body {
-        margin: 0 !important;
-        padding: 16pt 24pt !important;
-        padding-left: max(24pt, env(safe-area-inset-left)) !important;
-        padding-right: max(20pt, env(safe-area-inset-right)) !important;
-        padding-bottom: 120px !important;
-        font-size: 11pt !important;
-    }
-    .pub-top {
-        bottom: 16px !important; right: 16px !important;
-        width: 38px !important; height: 38px !important; font-size: 15pt !important;
-        opacity: 0.88;
-    }
-    .dm-toggle {
-        bottom: 62px !important; right: 16px !important;
-        width: 38px !important; height: 38px !important; font-size: 15pt !important;
-        opacity: 0.88;
-    }
-    p {
-        margin-top: 0 !important;
-        margin-bottom: 14pt !important;
-        line-height: 1.65 !important;
-        font-size: 11pt !important;
-    }
-    .entry { margin-bottom: 8pt !important; padding: 7pt 10pt !important; line-height: 1.4 !important; }
-    .pub-nav {
-        position: static !important; /* Scrolls away naturally with the page — never blocks 50% of the mobile screen! */
-        padding: 8px 14px !important;
-        margin: -16pt -24pt 16pt -24pt !important;
-        background: #ffffff;
-        border-bottom: 1px solid #d5d0c5;
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        justify-content: flex-start !important;
-        gap: 6px !important;
-        overflow-x: auto !important;
-        overflow-y: hidden !important;
-        white-space: nowrap !important;
-        -webkit-overflow-scrolling: touch !important;
-        scrollbar-width: none !important;
-        box-sizing: border-box !important;
-        max-width: calc(100% + 48pt) !important;
-    }
-    .pub-nav::-webkit-scrollbar { display: none !important; }
-    .pub-nav .links {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        align-items: center !important;
-        gap: 6px !important;
-        width: auto !important;
-    }
-    .pub-nav a {
-        padding: 6px 11px !important;
-        font-size: 9.5pt !important;
-        min-height: 32px !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        white-space: nowrap !important;
-        flex-shrink: 0 !important;
-        border-radius: 4px !important;
-        box-sizing: border-box !important;
-    }
-    .pub-nav .titel-klein { display: none !important; }
-    .pub-nav .pub-nav-actions {
-        display: flex !important;
-        align-items: center !important;
-        gap: 6px !important;
-        flex-shrink: 0 !important;
-        margin-left: 4px !important;
-    }
-    html[data-theme="dark"] .pub-nav {
-        background: #1e1e1e !important;
-        border-bottom: 1px solid #333333 !important;
-    }
-    html[data-theme="dark"] .pub-nav a {
-        background: #252525 !important;
-        border: 1px solid #3a3a3a !important;
-        color: #b0c8e8 !important;
-    }
-    html[data-theme="dark"] .pub-nav a.actief {
-        background: #4a6fa5 !important;
-        border-color: #7fb3ff !important;
-        color: #ffffff !important;
-    }
-    html[data-theme="dark"] .pub-nav a.home {
-        background: #252525 !important;
-        border-color: #4a4a4a !important;
-        color: #b0c8e8 !important;
-    }
-    .pub-contact-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 34px; max-width: 100%; box-sizing: border-box; }
-    .d0-rep-card { width: 154px !important; min-width: 144px !important; }
-    .pub-toc { padding: 10pt 14pt; }
-    .pub-toc .niv3 { padding-left: 20pt; }
-    .audit-bewijs { white-space: normal; flex-wrap: wrap; }
-    .bm-modal-dialog { padding: 18px 16px; width: 95%; max-height: 94vh; }
-    .bm-modal-kop h3 { font-size: 14pt; }
-    .bm-intro { font-size: 9.5pt; padding: 8px 10px; }
-    .bm-input, .bm-textarea { font-size: 16px; } /* Prevents iOS auto-zoom */
-    .bm-radio-groep { grid-template-columns: 1fr; }
-}
-@media (max-width: 480px) {
-    body {
-        margin: 0 !important;
-        padding: 14pt 20pt !important;
-        padding-left: max(24pt, env(safe-area-inset-left)) !important;
-        padding-right: max(20pt, env(safe-area-inset-right)) !important;
-        padding-bottom: 120px !important;
-    }
-    p {
-        margin-bottom: 14pt !important;
-        line-height: 1.65 !important;
-        font-size: 10.5pt !important;
-    }
-    .pub-nav { padding: 6px 10px !important; margin: -14pt -20pt 14pt -20pt !important; max-width: calc(100% + 40pt) !important; }
-    .pub-nav .links a { font-size: 9pt !important; padding: 5px 9px !important; min-height: 30px !important; }
-    .pub-contact-btn { width: 100%; justify-content: center; }
-    .audit-toolbar .at-pills { gap: 4px; }
-    .audit-toolbar .at-pill { font-size: 8.5pt; padding: 4px 8px; min-height: 34px; }
-}
-
-
-html[data-theme="dark"] { color-scheme: dark; }
-
-html[data-theme="dark"] body {
-    background: #1a1a1a;
-    color: #e0e0e0;
-}
-
-/* === v9.3 — headings + grijs-fix === */
-html[data-theme="dark"] h1,
-html[data-theme="dark"] h2,
-html[data-theme="dark"] h3,
-html[data-theme="dark"] h4,
-html[data-theme="dark"] h6 {
-    color: #7fb3ff !important;
-    border-color: #4a6fa5 !important;
-}
-html[data-theme="dark"] h5 {
-    color: #a8c5e8 !important;
-}
-
-html[data-theme="dark"] p.subtitel { color: #a8a8a8 !important; }
-html[data-theme="dark"] p.lead     { color: #b8b8b8 !important; }
-html[data-theme="dark"] p.tijd     { color: #a8a8a8 !important; }
-html[data-theme="dark"] .netwerk   { color: #b8b8b8 !important; }
-html[data-theme="dark"] .meta      { color: #c8c8c8 !important; }
-html[data-theme="dark"] .meta strong { color: #7fb3ff !important; }
-html[data-theme="dark"] .datum     { color: #f0f0f0 !important; }
-html[data-theme="dark"] .titel     { color: #e8e8e8 !important; }
-html[data-theme="dark"] .opvolging { color: #a8a8a8 !important; }
-html[data-theme="dark"] .oorsprong { color: #a8a8a8 !important; }
-html[data-theme="dark"] .caption   { color: #a8a8a8 !important; border-top-color: #3a3a3a !important; }
-
-html[data-theme="dark"] .richting-ontvangen { color: #7fb3ff !important; }
-html[data-theme="dark"] .richting-verzonden { color: #ff8a8a !important; }
-
-html[data-theme="dark"] .entry.technisch {
-    background: #232323;
-    border-left-color: #4a4a4a;
-    color: #a8a8a8;
-}
-html[data-theme="dark"] .entry.technisch .datum { color: #909090 !important; }
-html[data-theme="dark"] .entry.technisch .titel { color: #b0b0b0 !important; }
-html[data-theme="dark"] .entry.technisch .opvolging { color: #808080 !important; }
-html[data-theme="dark"] .entry.technisch .richting-ontvangen { color: #8fa8c8 !important; }
-html[data-theme="dark"] .entry.technisch .richting-verzonden { color: #c89090 !important; }
-html[data-theme="dark"] .entry.praktisch {
-    background: #1e1e1e; border-left-color: #2e2e2e; color: #808080;
-}
-html[data-theme="dark"] .entry.praktisch .datum { color: #707070 !important; }
-html[data-theme="dark"] .entry.praktisch .titel { color: #858585 !important; }
-html[data-theme="dark"] .entry.praktisch .opvolging { color: #707070 !important; }
-html[data-theme="dark"] .entry.praktisch .richting-ontvangen { color: #6a80a0 !important; }
-html[data-theme="dark"] .entry.praktisch .richting-verzonden { color: #a07070 !important; }
-
-html[data-theme="dark"] .technisch-notice {
-    background: #232323; color: #a8a8a8 !important; border-left-color: #4a4a4a;
-}
-
-/* === Voetnoten — waren te donker === */
-html[data-theme="dark"] .footnotes,
-html[data-theme="dark"] .footnotes p {
-    color: #b0b0b0 !important;
-}
-html[data-theme="dark"] .footnotes strong {
-    color: #7fb3ff !important;
-}
-
-html[data-theme="dark"] hr { border-top-color: #3a3a3a; }
-html[data-theme="dark"] .titelblad h1 { color: #7fb3ff !important; }
-html[data-theme="dark"] .titelblad .ondertitel { color: #c8c8c8 !important; }
-html[data-theme="dark"] .titelblad .documentaanduiding { color: #7fb3ff !important; }
-html[data-theme="dark"] .titelblad .auteur,
-html[data-theme="dark"] .titelblad .meta-lijn { color: #a8a8a8 !important; }
-html[data-theme="dark"] .gebruikersaanwijzing p { color: #c8c8c8 !important; }
-html[data-theme="dark"] table th { background: #2e4a72; border-color: #2e4a72; }
-html[data-theme="dark"] table td {
-    background: #232323; border-color: #3a3a3a; color: #d0d0d0;
-}
-html[data-theme="dark"] tr:nth-child(even) td { background: #2a2a2a; }
-html[data-theme="dark"] .figure { background: #232323; border-color: #3a3a3a; }
-html[data-theme="dark"] .figure svg { background: transparent; }
-html[data-theme="dark"] .intro-rechten {
-    background: #232323; color: #b8b8b8; border-left-color: #4a6fa5;
-}
-html[data-theme="dark"] .actie { background: #2a2440; color: #d0d0d0; }
-html[data-theme="dark"] .afsluiting { background: #2a2440; color: #d0d0d0; }
-html[data-theme="dark"] .werkversie { background: #332c14; color: #d0c090; }
-html[data-theme="dark"] .noot { color: #a8a8a8 !important; border-top-color: #3a3a3a; }
-html[data-theme="dark"] a { color: #7fb3ff; }
-
-/* === Actor-blokken (Document C) === */
-html[data-theme="dark"] .actor { border-bottom-color: #3a3a3a; }
-html[data-theme="dark"] .actor-naam { color: #e0e0e0 !important; }
-html[data-theme="dark"] .actor-rol  { color: #7fb3ff !important; }
-
-/* === Sectie-banners (Document C) === */
-html[data-theme="dark"] .banner-be {
-    background: #2a1c1c; border-left-color: #ff8a8a;
-}
-html[data-theme="dark"] .banner-be strong { color: #ff8a8a !important; }
-html[data-theme="dark"] .banner-nl {
-    background: #1c2129; border-left-color: #7fb3ff;
-}
-html[data-theme="dark"] .banner-nl strong { color: #7fb3ff !important; }
-html[data-theme="dark"] .banner-eu {
-    background: #1c2628; border-left-color: #5fc8cc;
-}
-html[data-theme="dark"] .banner-eu strong { color: #5fc8cc !important; }
-
-/* === Inline badges === */
-html[data-theme="dark"] .badge-be  { color: #ff8a8a !important; }
-html[data-theme="dark"] .badge-nl  { color: #7fb3ff !important; }
-html[data-theme="dark"] .badge-mem { color: #ffb380 !important; }
-html[data-theme="dark"] .badge-eu  { color: #5fc8cc !important; }
-
-/* === Sectorkoppen (Document E) === */
-html[data-theme="dark"] .sector-titel { color: #7fb3ff !important; }
-html[data-theme="dark"] .recht-kop-wrapper { border-bottom-color: #4a6fa5; }
-html[data-theme="dark"] .legend-row { color: #c0c0c0; }
-
-/* === Contactblok === */
-html[data-theme="dark"] .contactblok {
-    background: #232323; border-left-color: #4a6fa5;
-}
-html[data-theme="dark"] .contactblok a { color: #7fb3ff !important; }
-
-/* === Navigatie === */
-html[data-theme="dark"] .pub-nav {
-    background: #1e1e1e !important;
-    border-bottom: 1px solid #333333 !important;
-}
-html[data-theme="dark"] .pub-nav a {
-    color: #b0c8e8 !important;
-    background: #252525 !important;
-    border: 1px solid #3a3a3a !important;
-}
-html[data-theme="dark"] .pub-nav a:hover {
-    background: #333333 !important;
-    border-color: #555555 !important;
-    color: #ffffff !important;
-}
-html[data-theme="dark"] .pub-nav a.actief {
-    background: #4a6fa5 !important;
-    border-color: #7fb3ff !important;
-    color: #ffffff !important;
-}
-html[data-theme="dark"] .pub-nav a.home {
-    background: #252525 !important;
-    border-color: #4a4a4a !important;
-    color: #b0c8e8 !important;
-}
-html[data-theme="dark"] .pub-nav .titel-klein { color: #888 !important; }
-
-html[data-theme="dark"] .pub-toc {
-    background: #232323; border-left-color: #4a6fa5;
-}
-html[data-theme="dark"] .pub-toc a { color: #b0c8e8 !important; }
-html[data-theme="dark"] .pub-toc .niv3 { color: #888 !important; }
-html[data-theme="dark"] .audit-toolbar {
-    background: #232323; border-color: #3a3a3a; border-left-color: #7fb3ff;
-}
-html[data-theme="dark"] .audit-toolbar .at-stats {
-    color: #d0d0d0; border-bottom-color: #3a3a3a;
-}
-html[data-theme="dark"] .audit-toolbar .at-verified { color: #81c784; }
-html[data-theme="dark"] .audit-toolbar .at-live-count {
-    background: #1a1a1a; color: #b0c8e8;
-}
-html[data-theme="dark"] .audit-toolbar .at-search,
-html[data-theme="dark"] .audit-toolbar .at-select {
-    background: #1a1a1a; border-color: #4a4a4a; color: #e8e8e8;
-}
-html[data-theme="dark"] .audit-toolbar .at-pill {
-    background: #1a1a1a; border-color: #4a4a4a; color: #c8c8c8;
-}
-html[data-theme="dark"] .audit-toolbar .at-pill.actief {
-    background: #4a6fa5; border-color: #7fb3ff; color: #ffffff;
-}
-html[data-theme="dark"] .audit-org-bar {
-    background: #232323;
-}
-html[data-theme="dark"] .audit-org-stat { color: #a8a8a8; }
-html[data-theme="dark"] .audit-crosslink { color: #7fb3ff !important; }
-html[data-theme="dark"] .audit-bewijs {
-    background: #262930; border-color: #3e4452; color: #a8b5c8;
-}
-html[data-theme="dark"] .entry { background-color: #24272c; }
-html[data-theme="dark"] .entry-in {
-    background-color: #1e2633 !important;
-    border-left-color: #4a88d9 !important;
-}
-html[data-theme="dark"] .entry-in .datum { color: #7fb3ff !important; }
-html[data-theme="dark"] .entry-uit {
-    background-color: #332024 !important;
-    border-right-color: #d9534f !important;
-}
-html[data-theme="dark"] .entry-uit .datum { color: #ff8a8a !important; }
-html[data-theme="dark"] .entry.technisch, html[data-theme="dark"] .entry.praktisch {
-    background-color: transparent !important;
-    border-top-color: #444 !important;
-    border-bottom-color: #444 !important;
-    color: #999 !important;
-}
-html[data-theme="dark"] .entry.technisch .datum, html[data-theme="dark"] .entry.praktisch .datum { color: #888 !important; }
-html[data-theme="dark"] .entry.technisch .titel, html[data-theme="dark"] .entry.praktisch .titel { color: #aaa !important; }
-
-html[data-theme="dark"] .pub-footer {
-    border-top-color: #3a3a3a; color: #888;
-}
-html[data-theme="dark"] .pub-footer a { color: #b0c8e8 !important; }
-html[data-theme="dark"] .pub-naar-boven { color: #888 !important; }
-html[data-theme="dark"] .pub-naar-boven:hover { color: #b0c8e8 !important; }
-html[data-theme="dark"] .dm-toggle {
-    background: #232323; border-color: #4a4a4a; color: #e0e0e0;
-}
-html[data-theme="dark"] .dm-toggle:hover {
-    background: #2a2a2a; border-color: #7fb3ff;
-}
-
-/* === SVG dark-mode === */
-html[data-theme="dark"] .figure svg {
-    filter: invert(0.88) hue-rotate(180deg);
-}
-html[data-theme="dark"] .figure {
-    background: #1e1e1e;
-}
-html[data-theme="dark"] .figure img {
-    filter: invert(0.88) hue-rotate(180deg);
-}
-
-/* === v9.4 — intro-rij accenten === */
-html[data-theme="dark"] .intro-rij[lang="nl"] {
-    --accent: #ff9147 !important;
-    --accent-soft: #3a2814 !important;
-}
-html[data-theme="dark"] .intro-rij[lang="en"] {
-    --accent: #7fb3ff !important;
-    --accent-soft: #1c2940 !important;
-}
-html[data-theme="dark"] .intro-rij[lang="de"] {
-    --accent: #ff8080 !important;
-    --accent-soft: #3a1c1c !important;
-}
-html[data-theme="dark"] .intro-rij[lang="fr"] {
-    --accent: #7fb3ff !important;
-    --accent-soft: #1c2940 !important;
-}
-
-/* Subtiel wit randje voor extra leesbaarheid */
-html[data-theme="dark"] .intro-rij h3 { color: #7fb3ff !important; }
-
-html[data-theme="dark"] .pub-contact-btn {
-    background: #232323; color: #b0c8e8; border-color: #4a4a4a;
-}
-html[data-theme="dark"] .pub-contact-btn:hover {
-    background: #2a2a2a; border-color: #7fb3ff; color: #ffffff;
-}
-html[data-theme="dark"] .audit-bewijs:hover {
-    border-color: #7fb3ff !important; background: #2f3642 !important;
-    box-shadow: 0 1px 6px rgba(127,179,255,0.25);
-}
-html[data-theme="dark"] .bm-modal-dialog {
-    background: #202226; color: #e0e0e0; border-color: #3a3f48;
-}
-html[data-theme="dark"] .bm-modal-kop { border-bottom-color: #4a6fa5; }
-html[data-theme="dark"] .bm-modal-kop h3 { color: #7fb3ff !important; }
-html[data-theme="dark"] .bm-intro {
-    background: #282c34; border-left-color: #7fb3ff; color: #b8b8b8;
-}
-html[data-theme="dark"] .bm-groep label.bm-label { color: #7fb3ff !important; }
-html[data-theme="dark"] .bm-input,
-html[data-theme="dark"] .bm-textarea {
-    background: #181a1f; border-color: #3e4450; color: #e8e8e8;
-}
-html[data-theme="dark"] .bm-input:focus,
-html[data-theme="dark"] .bm-textarea:focus {
-    border-color: #7fb3ff; background: #1f2229;
-}
-html[data-theme="dark"] .bm-radio-optie {
-    background: #262930; border-color: #3e4450; color: #d0d0d0;
-}
-html[data-theme="dark"] .bm-radio-optie:hover {
-    background: #2f3440; border-color: #7fb3ff;
-}
-html[data-theme="dark"] .bm-check-groep { color: #b0b0b0; }
-html[data-theme="dark"] .bm-btn-mail {
-    background: #4a6fa5; border-color: #4a6fa5; color: #ffffff;
-}
-html[data-theme="dark"] .bm-btn-mail:hover { background: #395782; }
-html[data-theme="dark"] .bm-btn-copy {
-    background: #2a2e36; border-color: #404754; color: #e0e0e0;
-}
-html[data-theme="dark"] .bm-btn-copy:hover {
-    background: #353b47; border-color: #7fb3ff;
-}
-
-html[data-theme="dark"] .intro-rij a.goto {
-    text-shadow: 0 0 1px rgba(255,255,255,0.25),
-                 0 0 3px rgba(255,255,255,0.10);
-}
-
-
-/* Forensisch Bronopvragings- en Contactvenster (Modal) */
-.pub-contact-btn {
-    background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
-    padding: 5px 12px; border-radius: 4px; font-size: 10pt; font-weight: 600;
-    cursor: pointer; font-family: inherit; transition: all .15s;
-    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
-}
-.pub-contact-btn:hover { background: #1a3c6e; color: #ffffff; border-color: #1a3c6e; }
-.pub-contact-footer { margin: 10pt 0 4pt; font-size: 10.5pt; padding: 7px 16px; }
-
-.audit-bewijs { cursor: pointer; transition: border-color .15s, background .15s, box-shadow .15s; }
-.audit-bewijs:hover {
-    border-color: #1a3c6e; background: #e6edf7;
-    box-shadow: 0 1px 4px rgba(26,60,110,0.18);
-}
-
-.bm-modal-overlay {
-    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.65); z-index: 1000;
-    display: none; align-items: center; justify-content: center;
-    padding: 20px; backdrop-filter: blur(2px);
-}
-.bm-modal-overlay.bm-open { display: flex; }
-.bm-modal-dialog {
-    background: #ffffff; color: #222222; border-radius: 8px;
-    max-width: 680px; width: 100%; max-height: 90vh; overflow-y: auto;
-    padding: 24px 28px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-    border: 1px solid #d5d0c5; font-family: Aptos, Calibri, sans-serif;
-    position: relative; box-sizing: border-box; text-align: left;
-}
-.bm-modal-kop {
-    display: flex; justify-content: space-between; align-items: flex-start;
-    border-bottom: 2px solid #1a3c6e; padding-bottom: 12px; margin-bottom: 16px;
-}
-.bm-modal-kop h3 {
-    margin: 0; font-size: 16pt; color: #1a3c6e; border: none; padding: 0;
-}
-.bm-modal-sluit {
-    background: none; border: none; font-size: 22pt; line-height: 1;
-    color: #888; cursor: pointer; padding: 0 4px;
-}
-.bm-modal-sluit:hover { color: #c62828; }
-.bm-intro {
-    font-size: 10pt; line-height: 1.5; color: #555555; background: #f7f5f1;
-    padding: 10px 14px; border-left: 3px solid #1a3c6e; border-radius: 3px;
-    margin-bottom: 18px;
-}
-.bm-groep { margin-bottom: 14px; }
-.bm-groep label.bm-label {
-    display: block; font-weight: 700; font-size: 10.5pt; color: #1a3c6e; margin-bottom: 5px;
-}
-.bm-input, .bm-textarea {
-    width: 100%; box-sizing: border-box; padding: 8px 12px;
-    border: 1px solid #ccc; border-radius: 4px; font-family: inherit;
-    font-size: 10.5pt; background: #faf8f5; color: #222;
-}
-.bm-input:focus, .bm-textarea:focus {
-    border-color: #1a3c6e; background: #fff; outline: none;
-}
-.bm-textarea { min-height: 90px; resize: vertical; }
-.bm-radio-groep {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px;
-}
-@media (max-width: 580px) {
-    .bm-radio-groep { grid-template-columns: 1fr; }
-}
-.bm-radio-optie {
-    display: flex; align-items: flex-start; gap: 8px; background: #f9f8f6;
-    border: 1px solid #e2ddd5; padding: 8px 10px; border-radius: 4px;
-    font-size: 9.5pt; cursor: pointer;
-}
-.bm-radio-optie:hover { border-color: #1a3c6e; background: #f0f4f9; }
-.bm-radio-optie input { margin-top: 2px; }
-.bm-check-groep {
-    display: flex; align-items: flex-start; gap: 8px; font-size: 9.5pt;
-    color: #444; margin: 14px 0 18px;
-}
-.bm-knoppen { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
-.bm-btn-mail {
-    background: #1a3c6e; color: #ffffff; border: 1px solid #1a3c6e;
-    padding: 8px 16px; border-radius: 4px; font-size: 10.5pt; font-weight: 700;
-    cursor: pointer; transition: background .15s;
-}
-.bm-btn-mail:hover { background: #122b50; }
-.bm-btn-copy {
-    background: #f0eee9; color: #333; border: 1px solid #d5d0c5;
-    padding: 8px 14px; border-radius: 4px; font-size: 10.5pt; font-weight: 600;
-    cursor: pointer; transition: all .15s;
-}
-.bm-btn-copy:hover { background: #e2ded5; }
-.bm-btn-copy.bm-copied { background: #2e7d32; color: #ffffff; border-color: #2e7d32; }
-
-@media (max-width: 768px) {
-    .pub-contact-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 38px; }
-    .bm-modal-dialog { padding: 18px 16px; width: 95%; max-height: 94vh; }
-    .bm-modal-kop h3 { font-size: 14pt; }
-    .bm-intro { font-size: 9.5pt; padding: 8px 10px; }
-    .bm-input, .bm-textarea { font-size: 16px; }
-    .bm-radio-groep { grid-template-columns: 1fr; }
-}
-
-/* Modal Dark-Mode */
-html[data-theme="dark"] .pub-contact-btn {
-    background: #232323; color: #b0c8e8; border-color: #4a4a4a;
-}
-html[data-theme="dark"] .pub-contact-btn:hover {
-    background: #2a2a2a; border-color: #7fb3ff; color: #ffffff;
-}
-html[data-theme="dark"] .audit-bewijs:hover {
-    border-color: #7fb3ff !important; background: #2f3642 !important;
-    box-shadow: 0 1px 6px rgba(127,179,255,0.25);
-}
-html[data-theme="dark"] .bm-modal-dialog {
-    background: #202226; color: #e0e0e0; border-color: #3a3f48;
-}
-html[data-theme="dark"] .bm-modal-kop { border-bottom-color: #4a6fa5; }
-html[data-theme="dark"] .bm-modal-kop h3 { color: #7fb3ff !important; }
-html[data-theme="dark"] .bm-intro {
-    background: #282c34; border-left-color: #7fb3ff; color: #b8b8b8;
-}
-html[data-theme="dark"] .bm-groep label.bm-label { color: #7fb3ff !important; }
-html[data-theme="dark"] .bm-input,
-html[data-theme="dark"] .bm-textarea {
-    background: #181a1f; border-color: #3e4450; color: #e8e8e8;
-}
-html[data-theme="dark"] .bm-input:focus,
-html[data-theme="dark"] .bm-textarea:focus {
-    border-color: #7fb3ff; background: #1f2229;
-}
-html[data-theme="dark"] .bm-radio-optie {
-    background: #262930; border-color: #3e4450; color: #d0d0d0;
-}
-html[data-theme="dark"] .bm-radio-optie:hover {
-    background: #2f3440; border-color: #7fb3ff;
-}
-html[data-theme="dark"] .bm-check-groep { color: #b0b0b0; }
-html[data-theme="dark"] .bm-btn-mail {
-    background: #4a6fa5; border-color: #4a6fa5; color: #ffffff;
-}
-html[data-theme="dark"] .bm-btn-mail:hover { background: #395782; }
-html[data-theme="dark"] .bm-btn-copy {
-    background: #2a2e36; border-color: #404754; color: #e0e0e0;
-}
-html[data-theme="dark"] .bm-btn-copy:hover {
-    background: #353b47; border-color: #7fb3ff;
-}
-
-/* Taal-kiezer styling in navigatie */
-.pub-lang-switch {
-    display: inline-flex; align-items: center; gap: 4px;
-    background: #eef2f7; padding: 2px 4px; border-radius: 4px;
-    border: 1px solid #d5d0c5;
-}
-.pub-lang-btn {
-    text-decoration: none; font-size: 9.5pt; font-weight: 600;
-    color: #1a3c6e; padding: 3px 7px; border-radius: 3px;
-    transition: background .15s, color .15s;
-}
-.pub-lang-btn:hover { background: #dce6f2; }
-.pub-lang-btn.actief { background: #1a3c6e; color: #ffffff !important; }
-
-html[data-theme="dark"] .pub-lang-switch { background: #1f2229; border-color: #3e4450; }
-html[data-theme="dark"] .pub-lang-btn { color: #b0c8e8; }
-html[data-theme="dark"] .pub-lang-btn:hover { background: #2a3342; }
-html[data-theme="dark"] .pub-lang-btn.actief { background: #4a6fa5; color: #ffffff !important; }
-
-/* Google Translate Widget & Frame Styling */
-.goog-te-banner-frame, .skiptranslate iframe, #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
-body { top: 0px !important; position: static !important; }
-.goog-text-highlight { background: transparent !important; box-shadow: none !important; }
-font[style] { background: transparent !important; box-shadow: none !important; }
-
-.pub-lang-select, #int-lang-select {
-    font-family: inherit; font-size: 10pt; font-weight: 600;
-    padding: 4px 8px; border: 1px solid #d5d0c5; border-radius: 4px;
-    background-color: #ffffff; color: #1a3c6e; cursor: pointer;
-    color-scheme: light;
-}
-.pub-lang-select option, #int-lang-select option {
-    background-color: #ffffff; color: #1a3c6e;
-    color-scheme: light;
-}
-html[data-theme="dark"] .pub-lang-select,
-html[data-theme="dark"] #int-lang-select,
-html[data-theme="dark"] select.pub-lang-select {
-    background-color: #232323 !important;
-    background: #232323 !important;
-    border-color: #4a4a4a !important;
-    color: #e0e0e0 !important;
-    color-scheme: dark !important;
-}
-html[data-theme="dark"] .pub-lang-select option,
-html[data-theme="dark"] #int-lang-select option,
-html[data-theme="dark"] select.pub-lang-select option {
-    background-color: #232323 !important;
-    background: #232323 !important;
-    color: #e0e0e0 !important;
-    color-scheme: dark !important;
-}
-
-/* === Audit Neurale Audiospeler (.audit-audio-bar) === */
-
-.audit-audio-bar {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    background: #f4f1ea;
-
-    border: 1px solid #dcd7cc;
-
-    border-left: 4px solid #1a3c6e;
-
-    border-radius: 6px;
-
-    padding: 8px 14px;
-
-    margin: 12pt 0 16pt 0;
-
-    font-family: Aptos, Calibri, sans-serif;
-
-    box-sizing: border-box;
-
-    width: 100%;
-
-}
-
-.aab-play-btn {
-
-    background: #1a3c6e;
-
-    color: #ffffff;
-
-    border: none;
-
-    border-radius: 50%;
-
-    width: 36px;
-
-    height: 36px;
-
-    cursor: pointer;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 13pt;
-
-    flex-shrink: 0;
-
-    transition: transform .15s ease, background-color .15s ease;
-
-}
-
-.aab-play-btn:hover { background: #2a5298; transform: scale(1.05); }
-
-.aab-play-btn.aab-playing { background: #8b1e1e; }
-
-.aab-info {
-
-    flex: 1;
-
-    min-width: 0;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 4px;
-
-}
-
-.aab-meta {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    flex-wrap: wrap;
-
-    font-size: 9.5pt;
-
-    line-height: 1.2;
-
-}
-
-.aab-badge {
-
-    font-weight: 700;
-
-    letter-spacing: 0.5px;
-
-    color: #1a3c6e;
-
-    font-size: 8.5pt;
-
-}
-
-.aab-title {
-
-    color: #333333;
-
-    font-weight: 500;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
-
-    white-space: nowrap;
-
-}
-
-.aab-time {
-
-    margin-left: auto;
-
-    color: #666666;
-
-    font-family: Consolas, monospace;
-
-    font-size: 9pt;
-
-}
-
-.aab-progress-wrap {
-
-    width: 100%;
-
-    height: 6px;
-
-    background: #e0dbce;
-
-    border-radius: 3px;
-
-    cursor: pointer;
-
-    overflow: hidden;
-
-}
-
-.aab-progress-bar { width: 100%; height: 100%; }
-
-.aab-progress-fill {
-
-    width: 0%;
-
-    height: 100%;
-
-    background: #1a3c6e;
-
-    border-radius: 3px;
-
-    transition: width 0.1s linear;
-
-}
-
-.aab-controls {
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 6px;
-
-}
-
-.aab-speed-btn {
-
-    background: #ffffff;
-
-    border: 1px solid #dcd7cc;
-
-    border-radius: 4px;
-
-    color: #1a3c6e;
-
-    font-weight: 600;
-
-    font-size: 9pt;
-
-    padding: 3px 8px;
-
-    cursor: pointer;
-
-}
-
-.aab-speed-btn:hover { background: #e8e4db; }
-
-
-
-.aab-next-btn {
-
-    background: #1a3c6e;
-
-    border: 1px solid #1a3c6e;
-
-    border-radius: 4px;
-
-    color: #ffffff;
-
-    font-weight: 600;
-
-    font-size: 8.8pt;
-
-    padding: 4px 10px;
-
-    cursor: pointer;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 4px;
-
-    white-space: nowrap;
-
-    transition: background .15s ease, transform .12s ease;
-
-}
-
-.aab-next-btn:hover {
-
-    background: #2a5298;
-
-    border-color: #2a5298;
-
-    transform: translateY(-1px);
-
-}
-
-
-
-/* === Vermelding bovenaan document: Luistermodus / Audio-Playlist === */
-
-.audit-playlist-topbanner {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 14px;
-
-    flex-wrap: wrap;
-
-    max-width: 860px;
-
-    margin: 14pt 0 22pt 0;
-
-    padding: 12px 16px;
-
-    border-radius: 8px;
-
-    background: #eef3f9;
-
-    border: 1px solid #c5d4e8;
-
-    border-left: 4px solid #1a3c6e;
-
-    font-family: Aptos, Calibri, sans-serif;
-
-    box-sizing: border-box;
-
-}
-
-.apt-info {
-
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 10px;
-
-    flex: 1;
-
-    min-width: 240px;
-
-}
-
-.apt-icon {
-
-    font-size: 16pt;
-
-    line-height: 1.1;
-
-    flex-shrink: 0;
-
-}
-
-.apt-text {
-
-    font-size: 9.8pt;
-
-    line-height: 1.45;
-
-    color: #2c3e50;
-
-}
-
-.apt-text strong { color: #1a3c6e; }
-
-.apt-actions {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    flex-wrap: wrap;
-
-    flex-shrink: 0;
-
-}
-
-.apt-btn {
-
-    font-size: 9.2pt;
-
-    font-weight: 600;
-
-    padding: 6px 12px;
-
-    border-radius: 5px;
-
-    cursor: pointer;
-
-    text-decoration: none !important;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 5px;
-
-    white-space: nowrap;
-
-    transition: all .15s ease;
-
-    font-family: inherit;
-
-}
-
-.apt-btn-play {
-
-    background: #1a3c6e;
-
-    color: #ffffff !important;
-
-    border: 1px solid #1a3c6e;
-
-}
-
-.apt-btn-play:hover { background: #2a5298; }
-
-.apt-btn-jump {
-
-    background: #ffffff;
-
-    color: #1a3c6e !important;
-
-    border: 1px solid #b5c7de;
-
-}
-
-.apt-btn-jump:hover { background: #e3ecf8; }
-
-
-
-/* === Audio-Playlist Sectie onderaan document (#audit-audio-playlist) === */
-
-.audit-playlist-sectie {
-
-    max-width: 860px;
-
-    margin: 38pt 0 24pt 0;
-
-    padding: 20px 22px;
-
-    border-radius: 10px;
-
-    background: #f4f1ea;
-
-    border: 1px solid #d5d0c5;
-
-    border-top: 4px solid #1a3c6e;
-
-    font-family: Aptos, Calibri, sans-serif;
-
-    box-sizing: border-box;
-
-}
-
-.aps-header { margin-bottom: 14px; }
-
-.aps-title-row {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 10px;
-
-    flex-wrap: wrap;
-
-    margin-bottom: 6px;
-
-}
-
-.aps-badge {
-
-    display: inline-block;
-
-    font-size: 8pt;
-
-    font-weight: 700;
-
-    letter-spacing: 0.6px;
-
-    text-transform: uppercase;
-
-    padding: 3px 8px;
-
-    border-radius: 4px;
-
-    background: #1a3c6e;
-
-    color: #ffffff;
-
-}
-
-.audit-playlist-sectie h2 {
-
-    margin: 4pt 0 6pt 0 !important;
-
-    font-size: 15pt !important;
-
-    border: none !important;
-
-    padding: 0 !important;
-
-    color: #1a3c6e;
-
-}
-
-.aps-desc {
-
-    font-size: 10pt !important;
-
-    line-height: 1.5 !important;
-
-    color: #4a4a4a;
-
-    margin-bottom: 12pt !important;
-
-}
-
-.aps-master-player {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 14px;
-
-    flex-wrap: wrap;
-
-    padding: 12px 16px;
-
-    border-radius: 8px;
-
-    margin-bottom: 14px;
-
-    background: #ffffff;
-
-    border: 1px solid #dcd7cc;
-
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-
-}
-
-.aps-mp-controls {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    flex-shrink: 0;
-
-}
-
-.aps-mp-play {
-
-    width: 44px;
-
-    height: 44px;
-
-    border-radius: 50%;
-
-    border: none;
-
-    background: #1a3c6e;
-
-    color: #ffffff;
-
-    font-size: 14pt;
-
-    cursor: pointer;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    transition: transform .15s, background .15s;
-
-}
-
-.aps-mp-play:hover { background: #2a5298; transform: scale(1.05); }
-
-.aps-mp-play.aps-playing { background: #8b1e1e; }
-
-.aps-mp-prev, .aps-mp-next {
-
-    width: 34px;
-
-    height: 34px;
-
-    border-radius: 50%;
-
-    border: 1px solid #d5d0c5;
-
-    background: #f8f6f2;
-
-    color: #1a3c6e;
-
-    font-size: 10.5pt;
-
-    cursor: pointer;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    transition: background .15s;
-
-}
-
-.aps-mp-prev:hover, .aps-mp-next:hover { background: #e8e4db; }
-
-.aps-mp-info {
-
-    flex: 1;
-
-    min-width: 200px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 4px;
-
-}
-
-.aps-mp-meta {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    font-size: 8.8pt;
-
-    font-weight: 700;
-
-    color: #1a3c6e;
-
-}
-
-.aps-mp-time {
-
-    font-family: Consolas, monospace;
-
-    font-weight: 500;
-
-    color: #666666;
-
-}
-
-.aps-mp-trackname {
-
-    font-size: 10pt;
-
-    font-weight: 600;
-
-    color: #222222;
-
-    white-space: nowrap;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
-
-}
-
-.aps-mp-progress-wrap {
-
-    width: 100%;
-
-    height: 7px;
-
-    background: #e0dbce;
-
-    border-radius: 4px;
-
-    cursor: pointer;
-
-    overflow: hidden;
-
-}
-
-.aps-mp-progress-bar { width: 100%; height: 100%; }
-
-.aps-mp-progress-fill {
-
-    width: 0%;
-
-    height: 100%;
-
-    background: #1a3c6e;
-
-    border-radius: 4px;
-
-    transition: width 0.1s linear;
-
-}
-
-.aps-mp-extra {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    flex-shrink: 0;
-
-}
-
-.aps-autoplay-toggle {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 5px;
-
-    font-size: 9pt;
-
-    font-weight: 600;
-
-    color: #333333;
-
-    cursor: pointer;
-
-    user-select: none;
-
-}
-
-.aps-autoplay-toggle input { cursor: pointer; accent-color: #1a3c6e; }
-
-.aps-tracklist {
-
-    max-height: 420px;
-
-    overflow-y: auto;
-
-    border: 1px solid #dcd7cc;
-
-    border-radius: 6px;
-
-    background: #faf8f5;
-
-}
-
-.aps-track {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding: 8px 12px;
-
-    border-bottom: 1px solid #eae6dd;
-
-    cursor: pointer;
-
-    transition: background .12s;
-
-    font-size: 9.8pt;
-
-    color: #222222;
-
-}
-
-.aps-track:last-child { border-bottom: none; }
-
-.aps-track:hover { background: #eef2f7; }
-
-.aps-track.aps-active {
-
-    background: #e3ecf8;
-
-    font-weight: 600;
-
-    border-left: 3px solid #1a3c6e;
-
-}
-
-.aps-t-num {
-
-    font-family: Consolas, monospace;
-
-    font-size: 8.8pt;
-
-    color: #777777;
-
-    min-width: 24px;
-
-}
-
-.aps-t-icon {
-
-    width: 24px;
-
-    height: 24px;
-
-    border-radius: 50%;
-
-    background: #e8e4db;
-
-    color: #1a3c6e;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 8.5pt;
-
-    flex-shrink: 0;
-
-}
-
-.aps-track.aps-active .aps-t-icon {
-
-    background: #1a3c6e;
-
-    color: #ffffff;
-
-}
-
-.aps-track-title {
-
-    flex: 1;
-
-    min-width: 0;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
-
-    white-space: nowrap;
-
-}
-
-.aps-track-jump {
-
-    font-size: 8.5pt;
-
-    color: #555555;
-
-    text-decoration: none !important;
-
-    padding: 2px 8px;
-
-    border-radius: 4px;
-
-    border: 1px solid #d5d0c5;
-
-    background: #ffffff;
-
-    flex-shrink: 0;
-
-}
-
-.aps-track-jump:hover {
-
-    color: #1a3c6e;
-
-    border-color: #1a3c6e;
-
-    background: #eef3f9;
-
-}
-
-
-
-/* Dark-mode styling voor de audiospeler, topbanner en playlist */
-
-html[data-theme="dark"] .audit-audio-bar {
-
-    background: #23272e !important;
-
-    border-color: #363b45 !important;
-
-    border-left-color: #7fb3ff !important;
-
-}
-
-html[data-theme="dark"] .aab-play-btn {
-
-    background: #4a6fa5 !important;
-
-    color: #ffffff !important;
-
-}
-
-html[data-theme="dark"] .aab-play-btn:hover { background: #5c85c2 !important; }
-
-html[data-theme="dark"] .aab-play-btn.aab-playing { background: #d32f2f !important; }
-
-html[data-theme="dark"] .aab-badge { color: #7fb3ff !important; }
-
-html[data-theme="dark"] .aab-title { color: #e0e4ec !important; }
-
-html[data-theme="dark"] .aab-time { color: #9aa5b8 !important; }
-
-html[data-theme="dark"] .aab-progress-wrap { background: #323842 !important; }
-
-html[data-theme="dark"] .aab-progress-fill { background: #7fb3ff !important; }
-
-html[data-theme="dark"] .aab-speed-btn {
-
-    background: #2d333b !important;
-
-    border-color: #444c56 !important;
-
-    color: #7fb3ff !important;
-
-}
-
-html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
-
-html[data-theme="dark"] .aab-next-btn {
-
-    background: #2b4c7e !important;
-
-    border-color: #4a6fa5 !important;
-
-    color: #e8f0fe !important;
-
-}
-
-html[data-theme="dark"] .aab-next-btn:hover {
-
-    background: #3b639e !important;
-
-    color: #ffffff !important;
-
-}
-
-html[data-theme="dark"] .audit-playlist-topbanner {
-
-    background: #1c232d !important;
-
-    border-color: #2f3b4c !important;
-
-    border-left-color: #58a6ff !important;
-
-}
-
-html[data-theme="dark"] .apt-text { color: #d0d8e4 !important; }
-
-html[data-theme="dark"] .apt-text strong { color: #79c0ff !important; }
-
-html[data-theme="dark"] .apt-btn-play {
-
-    background: #3867a6 !important;
-
-    border-color: #58a6ff !important;
-
-    color: #ffffff !important;
-
-}
-
-html[data-theme="dark"] .apt-btn-play:hover { background: #4a7ec2 !important; }
-
-html[data-theme="dark"] .apt-btn-jump {
-
-    background: #262c36 !important;
-
-    border-color: #444c56 !important;
-
-    color: #79c0ff !important;
-
-}
-
-html[data-theme="dark"] .apt-btn-jump:hover { background: #303846 !important; }
-
-html[data-theme="dark"] .audit-playlist-sectie {
-
-    background: #1b1f26 !important;
-
-    border-color: #323842 !important;
-
-    border-top-color: #58a6ff !important;
-
-}
-
-html[data-theme="dark"] .aps-badge {
-
-    background: #2b4c7e !important;
-
-    color: #cae0ff !important;
-
-}
-
-html[data-theme="dark"] .audit-playlist-sectie h2 { color: #79c0ff !important; }
-
-html[data-theme="dark"] .aps-desc { color: #a9b4c4 !important; }
-
-html[data-theme="dark"] .aps-master-player {
-
-    background: #232832 !important;
-
-    border-color: #363d4a !important;
-
-}
-
-html[data-theme="dark"] .aps-mp-play { background: #4a6fa5 !important; }
-
-html[data-theme="dark"] .aps-mp-play.aps-playing { background: #d32f2f !important; }
-
-html[data-theme="dark"] .aps-mp-prev,
-
-html[data-theme="dark"] .aps-mp-next {
-
-    background: #2d333b !important;
-
-    border-color: #444c56 !important;
-
-    color: #b0c8e8 !important;
-
-}
-
-html[data-theme="dark"] .aps-mp-prev:hover,
-
-html[data-theme="dark"] .aps-mp-next:hover { background: #373e47 !important; }
-
-html[data-theme="dark"] .aps-mp-meta { color: #79c0ff !important; }
-
-html[data-theme="dark"] .aps-mp-time { color: #9aa5b8 !important; }
-
-html[data-theme="dark"] .aps-mp-trackname { color: #e6edf3 !important; }
-
-html[data-theme="dark"] .aps-mp-progress-wrap { background: #323842 !important; }
-
-html[data-theme="dark"] .aps-mp-progress-fill { background: #58a6ff !important; }
-
-html[data-theme="dark"] .aps-autoplay-toggle { color: #c9d1d9 !important; }
-
-html[data-theme="dark"] .aps-autoplay-toggle input { accent-color: #58a6ff; }
-
-html[data-theme="dark"] .aps-tracklist {
-
-    background: #15181e !important;
-
-    border-color: #2d333b !important;
-
-}
-
-html[data-theme="dark"] .aps-track {
-
-    border-bottom-color: #222730 !important;
-
-    color: #c9d1d9 !important;
-
-}
-
-html[data-theme="dark"] .aps-track:hover { background: #20252d !important; }
-
-html[data-theme="dark"] .aps-track.aps-active {
-
-    background: #1e2a3a !important;
-
-    color: #ffffff !important;
-
-    border-left-color: #58a6ff !important;
-
-}
-
-html[data-theme="dark"] .aps-t-num { color: #8b949e !important; }
-
-html[data-theme="dark"] .aps-t-icon {
-
-    background: #2d333b !important;
-
-    color: #79c0ff !important;
-
-}
-
-html[data-theme="dark"] .aps-track.aps-active .aps-t-icon {
-
-    background: #4a6fa5 !important;
-
-    color: #ffffff !important;
-
-}
-
-html[data-theme="dark"] .aps-track-jump {
-
-    background: #21262d !important;
-
-    border-color: #363b42 !important;
-
-    color: #8b949e !important;
-
-}
-
-html[data-theme="dark"] .aps-track-jump:hover {
-
-    color: #79c0ff !important;
-
-    border-color: #58a6ff !important;
-
-}
-
-
-
-@media (max-width: 600px) {
-
-    .audit-audio-bar { flex-wrap: wrap; gap: 8px; padding: 8px 10px; }
-
-    .aab-controls { width: 100%; justify-content: flex-end; border-top: 1px solid rgba(128,128,128,0.18); padding-top: 6px; }
-
-    .aps-master-player { flex-direction: column; align-items: stretch; gap: 10px; }
-
-    .aps-mp-controls { justify-content: center; }
-
-    .aps-mp-extra { justify-content: space-between; }
-
-}
-
-
-
-/* Verberg de audiospeler en playlist bij het printen of PDF-genereren */
-
-@media print {
-
-    .audit-audio-bar,
-
-    .audit-playlist-topbanner,
-
-    .audit-playlist-sectie,
-
-    .toc-playlist-item { display: none !important; }
-
-}
-
 </style>
 <meta content="notranslate" name="google"/><script>
-(function(){try{var t=localStorage.getItem('systeem-audit-thema');if(t!=='dark'&&t!=='light'){t='dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
-</script><script>
 (function(){try{var t=localStorage.getItem('systeem-audit-thema');if(t!=='dark'&&t!=='light'){t='dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
 </script></head>
 <body><a id="top"></a>
@@ -5401,16 +3242,16 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <select autocomplete="off" class="pub-lang-select notranslate" id="int-lang-select" onchange="wisselTaal(this.value)" translate="no"><option selected="" value="en">🇬🇧 EN (English)</option><option value="de">🇩🇪 DE (Deutsch)</option><option value="fr">🇫🇷 FR (Français)</option><option value="it">🇮🇹 IT (Italiano)</option><option value="es">🇪🇸 ES (Español)</option><option value="pl">🇵🇱 PL (Polski)</option><option value="da">🇩🇰 DA (Dansk)</option><option value="sv">🈀🇪 SV (Svenska)</option><option value="pt">🇵🇹 PT (Português)</option><option value="ro">🇷🇴 RO (Română)</option></select>
 </div>
 </nav>
-<a id="top"></a>
+
 
 <div class="titelblad">
-<h1 id="systeem-audit">Systeem-Audit</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h1 id="systeem-audit">Systeem-Audit</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document D — De synthese</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 3 november 2026, 14:26</p>
+<p class="meta-lijn">Versie bijgewerkt: 3 november 2026, 14:57</p>
 </div>
-<div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
+<div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
 <li class="niv1"><a href="#systeem-audit">Systeem-Audit</a></li>
 <li class="niv2"><a href="#deel-i-de-diagnose-het-ontwerp-van-uitsluiting">Deel I — De diagnose: het ontwerp van uitsluiting</a></li>
 <li class="niv2"><a href="#deel-ii-de-anatomie-van-de-vastloper">Deel II — De anatomie van de vastloper: vijf vallen en vier muren</a></li>
@@ -5420,7 +3261,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <li class="niv2"><a href="#deel-v-de-uitweg-drie-infrastructurele-bouwstenen">Deel V — De uitweg: drie concrete bouwstenen voor hervorming</a></li>
 <li class="niv2"><a href="#deel-vi-de-avg-stresstest-en-het-eessi-spook-van-2030">Deel VI — De AVG-proef op de som en de belofte van 2030</a></li>
 <li class="niv2"><a href="#deel-vii-persoonlijke-slotverklaring">Deel VII — Persoonlijke slotverklaring</a></li>
-<li class="niv1 toc-playlist-item"><a href="#audit-audio-playlist">🎧 Audio-Playlist — Alles achter elkaar beluisteren (7 onderdelen)</a></li></ul></div><div class="audit-playlist-topbanner notranslate" translate="no">
+<li class="niv1 toc-playlist-item"><a href="#audit-audio-playlist">🎧 Audio-Playlist — Alles achter elkaar beluisteren (7 onderdelen)</a></li></ul></div><div class="audit-playlist-topbanner">
 <div class="apt-info">
 <span class="apt-icon">🎧</span>
 <div class="apt-text">
@@ -5439,7 +3280,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p>Dit is Document D — De synthese van het Systeem-Audit-project. Het brengt de patronen samen die uit de 62 geauditeerde organisaties en 708 geregistreerde interacties naar voren komen: de systeemwetten achter de blokkade, de Europese schaal, de uitkomsten van de forensische AVG-stresstest en de drie concrete bouwstenen voor hervorming.</p>
 <p>Lees het als de overkoepelende conclusie van het dossier, niet als een samenvatting.</p>
 </div>
-<h2 id="deel-i-de-diagnose-het-ontwerp-van-uitsluiting">Deel I — De diagnose: het ontwerp van uitsluiting</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docD_deel1" data-audio-src="../assets/audio/docD_deel1_nl_c91b3d79.mp3" data-clean-heading="Deel I — De diagnose: het ontwerp van uitsluiting" data-clean-text="Deel I, De diagnose: het ontwerp van uitsluiting. Het sociale zekerheidsstelsel tussen België en Nederland is niet kapot. Het werkt precies zoals het is ontworpen. De nationale systemen zijn gebouwd op het idee dat een mens zijn hele leven binnen één land woont, werkt, belasting betaalt en naar de dokter gaat. Zodra iemand gebruikmaakt van het Europese recht op vrij verkeer en zijn leven over de grens heen opbouwt, voldoet hij aan de regels van beide landen samen, maar past hij in geen van beide landen nog in het standaardhokje. De computer van de overheid ziet dat leven over de grens niet als een gewone situatie die geregeld moet worden, maar als een foutmelding die met een afwijzing wordt afgesloten. . Die uitsluiting ontstaat door een harde botsing tussen twee totaal verschillende klokken: de klok van een echt mensenlichaam en de klok van het papieren loket. Een zware ontsteking, het verliezen van twee tenen of een bloeding in het oog wacht niet op een stempel; schade aan een lichaam gebeurt in uren en dagen. De administratie rekent daarentegen in bezwaartermijnen van dertig dagen, terugkijkperiodes van een jaar, wachttijden van een halfjaar tot twee jaar en eindeloos uitstel. Tussen het ziekenhuisbed en het uitkeringsloket gaapt een leegte waarin de overheid de tijd stilzet, terwijl de lichamelijke schade en de vaste rekeningen thuis elke dag gewoon doorlopen. . Het schema hieronder laat het contrast zien tussen de menselijke werkelijkheid en de papieren werkelijkheid. Aan de kant van het lichaam en het gezin telt alles op: het verlies van twee tenen en het zicht aan één oog kennen geen pauzeknop, eenentwintig jaar onafgebroken werken en premies betalen in België en Nederland vormen één doorlopende loopbaan, en de vaste lasten voor energie, water en zorg lopen elke maand door. Aan de kant van het loket wordt die werkelijkheid teruggebracht tot een simpele ja of nee. België zegt als werkland: u woont niet in België en u mist honderdtachtig wachttijddagen. Nederland zegt als woonland: u was op de eerste ziektedag in België verzekerd, dus u telt in ons register niet mee. Het resultaat is nul in beide landen. . Wie zijn hele leven in hetzelfde land blijft wonen en werken, merkt nooit dat deze deuren op slot zitten. Voor een burger die nooit een grens oversteekt om te werken, loopt alles bijna vanzelf. Dat bewijst niet dat Europa op sociaal vlak goed werkt; het laat alleen zien dat de nationale computers puur zijn gebouwd voor mensen die binnen één land blijven. Omdat we zonder paspoortcontrole over de grens rijden en overal met dezelfde euro betalen, denken we dat Europa één geheel is. Pas wanneer je als grensarbeider ernstig ziek wordt, ontdek je dat achter het open asfalt twee potdichte administratieve muren staan. ." data-track-index="0" id="aab-docD_deel1">
+<h2 id="deel-i-de-diagnose-het-ontwerp-van-uitsluiting">Deel I — De diagnose: het ontwerp van uitsluiting</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docD_deel1" data-audio-src="../assets/audio/docD_deel1_nl_c91b3d79.mp3" data-clean-heading="Deel I — De diagnose: het ontwerp van uitsluiting" data-clean-text="Deel I, De diagnose: het ontwerp van uitsluiting. Het sociale zekerheidsstelsel tussen België en Nederland is niet kapot. Het werkt precies zoals het is ontworpen. De nationale systemen zijn gebouwd op het idee dat een mens zijn hele leven binnen één land woont, werkt, belasting betaalt en naar de dokter gaat. Zodra iemand gebruikmaakt van het Europese recht op vrij verkeer en zijn leven over de grens heen opbouwt, voldoet hij aan de regels van beide landen samen, maar past hij in geen van beide landen nog in het standaardhokje. De computer van de overheid ziet dat leven over de grens niet als een gewone situatie die geregeld moet worden, maar als een foutmelding die met een afwijzing wordt afgesloten. . Die uitsluiting ontstaat door een harde botsing tussen twee totaal verschillende klokken: de klok van een echt mensenlichaam en de klok van het papieren loket. Een zware ontsteking, het verliezen van twee tenen of een bloeding in het oog wacht niet op een stempel; schade aan een lichaam gebeurt in uren en dagen. De administratie rekent daarentegen in bezwaartermijnen van dertig dagen, terugkijkperiodes van een jaar, wachttijden van een halfjaar tot twee jaar en eindeloos uitstel. Tussen het ziekenhuisbed en het uitkeringsloket gaapt een leegte waarin de overheid de tijd stilzet, terwijl de lichamelijke schade en de vaste rekeningen thuis elke dag gewoon doorlopen. . Het schema hieronder laat het contrast zien tussen de menselijke werkelijkheid en de papieren werkelijkheid. Aan de kant van het lichaam en het gezin telt alles op: het verlies van twee tenen en het zicht aan één oog kennen geen pauzeknop, eenentwintig jaar onafgebroken werken en premies betalen in België en Nederland vormen één doorlopende loopbaan, en de vaste lasten voor energie, water en zorg lopen elke maand door. Aan de kant van het loket wordt die werkelijkheid teruggebracht tot een simpele ja of nee. België zegt als werkland: u woont niet in België en u mist honderdtachtig wachttijddagen. Nederland zegt als woonland: u was op de eerste ziektedag in België verzekerd, dus u telt in ons register niet mee. Het resultaat is nul in beide landen. . Wie zijn hele leven in hetzelfde land blijft wonen en werken, merkt nooit dat deze deuren op slot zitten. Voor een burger die nooit een grens oversteekt om te werken, loopt alles bijna vanzelf. Dat bewijst niet dat Europa op sociaal vlak goed werkt; het laat alleen zien dat de nationale computers puur zijn gebouwd voor mensen die binnen één land blijven. Omdat we zonder paspoortcontrole over de grens rijden en overal met dezelfde euro betalen, denken we dat Europa één geheel is. Pas wanneer je als grensarbeider ernstig ziek wordt, ontdek je dat achter het open asfalt twee potdichte administratieve muren staan. ." data-track-index="0" id="aab-docD_deel1">
 <button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -5492,7 +3333,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </div>
 </div>
 <p>Wie zijn hele leven in hetzelfde land blijft wonen en werken, merkt nooit dat deze deuren op slot zitten. Voor een burger die nooit een grens oversteekt om te werken, loopt alles bijna vanzelf. Dat bewijst niet dat Europa op sociaal vlak goed werkt; het laat alleen zien dat de nationale computers puur zijn gebouwd voor mensen die binnen één land blijven. Omdat we zonder paspoortcontrole over de grens rijden en overal met dezelfde euro betalen, denken we dat Europa één geheel is. Pas wanneer je als grensarbeider ernstig ziek wordt, ontdek je dat achter het open asfalt twee potdichte administratieve muren staan.</p>
-<h2 id="deel-ii-de-anatomie-van-de-vastloper">Deel II — De anatomie van de vastloper: vijf vallen en vier muren</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docD_deel2" data-audio-src="../assets/audio/docD_deel2_nl_0dabefec.mp3" data-clean-heading="Deel II — De anatomie van de vastloper: vijf vallen en vier muren" data-clean-text="Deel II, De anatomie van de vastloper: vijf vallen en vier muren. Wanneer een grensarbeider door ernstige ziekte uitvalt, loopt zijn dossier niet vast door één toevallige fout van één ambtenaar. Het loopt vast door een kettingreactie van vijf vastgeroeste vallen die elkaar in stand houden:. Eén foute registratie aan de bron vergiftigt de hele keten: De eerste instantie die een verkeerde code in het centrale systeem zet, zoals het ziekenfonds dat de ziekteregistratie in de Belgische Kruispuntbank stopzet, of het Nederlandse register waarin de verplichte grensarbeiderspolis ontbreekt, blokkeert automatisch alle andere diensten. Belastingdiensten, kinderbijslagfondsen en gemeenten nemen dat centrale scherm blindelings over, en niemand voelt zich geroepen om de oorspronkelijke fout te herstellen. . Het vragen om onmogelijke bewijzen, Catch 22, : Een instantie eist een specifiek nationaal formulier of onderzoek dat aan de andere kant van de grens helemaal niet wordt gebruikt, zoals een specifiek Nederlands gezichtsveldonderzoek dat het Belgische academische ziekenhuis niet uitvoert, of een ontslagformulier uit de privésector voor een vastbenoemde leerkracht. De burger moet een sleutel inleveren die nergens bestaat. . Steeds een nieuwe drempel zodra je aan de vorige voldoet: Zodra het de burger met hulp van artsen lukt om het gevraagde bewijsstuk tóch op tafel te leggen, verzint het loket een nieuwe reden om te weigeren. Eerst ontbrak er zogenaamd een doktersverslag; zodra dat verslag er ligt, is plotseling de woonplaats, een verstreken termijn of het wachten op het buurland het nieuwe excuus. . De slager die zijn eigen vlees keurt: De dienst die een fout moet onderzoeken of oplossen, is dezelfde dienst die de fout heeft gemaakt. Om een medisch geschil in België voor te leggen aan de hogere medische raad van het Riziv, zegt de regel dat het ziekenfonds die aanvraag zelf moet indienen, precies het ziekenfonds dat weigert het dossier door te sturen. . Rekenen met inkomen dat er niet meer is: Toeslagen en bijstandssystemen kijken bij plotselinge ziekte niet naar wat een gezin vandaag echt op de bankrekening ontvangt, nul euro uitkering, maar naar het oude loon van twee jaar geleden of naar een verzonnen bedrag dat iemand in theorie nog zou kunnen verdienen. De overheid stopt eerst zelf het inkomen, en weigert daarna elke hulp omdat het gezin op papier nog rijk genoeg zou zijn. . Waarom grijpt niemand in wanneer deze vijf vallen een gezin financieel wurgen? Omdat het overheidsapparaat is opgebouwd uit vier lagen die allemaal naar elkaar wijzen:. De uitvoerende loketten, ziekenfondsen, U W V, CAK, belastingdiensten, vullen alleen hun eigen schermpjes in. Past jouw situatie niet in het keuzemenu van hun software, dan krijg je een afwijzing. . De toezichthouders, Riziv, CDZ, Zorginstituut Nederland, Unia, Arbeidsauditoraat, houden hun bevoegdheid zo klein mogelijk. Elke toezichthouder noemt een fundamentele fout in het systeem een individueel geschil en stuurt de burger terug naar het loket of naar de rechter. Wegkijken is voor een toezichthouder altijd veiliger dan ingrijpen. . De politiek en de ombudsmannen, parlementscommissies, politieke partijen, ombudsdiensten, Solvit, werken op de lange termijn of mogen geen bindende bevelen geven. Ombudsmannen stoppen zodra er een bezwaarschrift loopt, Solvit sluit het dossier zodra een nationale dienst nee blijft zeggen, en parlementaire commissies leggen een acute noodkreet op de stapel als achtergrondinformatie voor een volgend jaar. . De hoogste symbolische en internationale instellingen, de Koningshuizen en de Verenigde Naties, vormen het eindstation: de Koning kan een brief alleen doorsturen naar dezelfde minister die al eerder niets deed, en internationale mensenrechtenverdragen dwingen een lokaal loket niet om morgen een rekening te betalen. . Helemaal onderaan blijft dan alleen de stap naar de rechtbank over, een weg die jaren duurt, duizenden euro s kost en onbetaalbaar is geworden voor iemand wiens inkomen net door datzelfde systeem op nul is gezet. . De drie patronen achter de blokkade. Als je van een afstand naar dit doolhof kijkt, zie je drie vaste patronen die verklaren waarom het systeem zo hardnekkig vastloopt:. Het overzicht hieronder vat de drie patronen samen. Ten eerste: wat men hoog in Brussel niet goed regelt, namelijk vrij verkeer zonder verplichte koppeling van computers, loopt beneden aan het loket direct vast. Ten tweede: een grensarbeider leeft in twee landen tegelijk, dus en en, maar de software van de overheid kent alleen of of. Wie in allebei de landen een stukje van zijn leven heeft, valt tussen twee stoelen en krijgt twee keer nul. Ten derde: omdat alle diensten elkaars gegevens overnemen, werkt één foute code bij het ziekenfonds of in het verzekerdenregister door als een kettingreactie bij de belastingdienst, de kinderbijslag, de gemeente, de bank en het energiebedrijf. Omdat de computers weigeren met elkaar te praten, moet de zieke burger uiteindelijk zelf met zevenhonderd gram papier naar het postkantoor om voor datakabel te spelen. ." data-track-index="1" id="aab-docD_deel2">
+<h2 id="deel-ii-de-anatomie-van-de-vastloper">Deel II — De anatomie van de vastloper: vijf vallen en vier muren</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docD_deel2" data-audio-src="../assets/audio/docD_deel2_nl_0dabefec.mp3" data-clean-heading="Deel II — De anatomie van de vastloper: vijf vallen en vier muren" data-clean-text="Deel II, De anatomie van de vastloper: vijf vallen en vier muren. Wanneer een grensarbeider door ernstige ziekte uitvalt, loopt zijn dossier niet vast door één toevallige fout van één ambtenaar. Het loopt vast door een kettingreactie van vijf vastgeroeste vallen die elkaar in stand houden:. Eén foute registratie aan de bron vergiftigt de hele keten: De eerste instantie die een verkeerde code in het centrale systeem zet, zoals het ziekenfonds dat de ziekteregistratie in de Belgische Kruispuntbank stopzet, of het Nederlandse register waarin de verplichte grensarbeiderspolis ontbreekt, blokkeert automatisch alle andere diensten. Belastingdiensten, kinderbijslagfondsen en gemeenten nemen dat centrale scherm blindelings over, en niemand voelt zich geroepen om de oorspronkelijke fout te herstellen. . Het vragen om onmogelijke bewijzen, Catch 22, : Een instantie eist een specifiek nationaal formulier of onderzoek dat aan de andere kant van de grens helemaal niet wordt gebruikt, zoals een specifiek Nederlands gezichtsveldonderzoek dat het Belgische academische ziekenhuis niet uitvoert, of een ontslagformulier uit de privésector voor een vastbenoemde leerkracht. De burger moet een sleutel inleveren die nergens bestaat. . Steeds een nieuwe drempel zodra je aan de vorige voldoet: Zodra het de burger met hulp van artsen lukt om het gevraagde bewijsstuk tóch op tafel te leggen, verzint het loket een nieuwe reden om te weigeren. Eerst ontbrak er zogenaamd een doktersverslag; zodra dat verslag er ligt, is plotseling de woonplaats, een verstreken termijn of het wachten op het buurland het nieuwe excuus. . De slager die zijn eigen vlees keurt: De dienst die een fout moet onderzoeken of oplossen, is dezelfde dienst die de fout heeft gemaakt. Om een medisch geschil in België voor te leggen aan de hogere medische raad van het Riziv, zegt de regel dat het ziekenfonds die aanvraag zelf moet indienen, precies het ziekenfonds dat weigert het dossier door te sturen. . Rekenen met inkomen dat er niet meer is: Toeslagen en bijstandssystemen kijken bij plotselinge ziekte niet naar wat een gezin vandaag echt op de bankrekening ontvangt, nul euro uitkering, maar naar het oude loon van twee jaar geleden of naar een verzonnen bedrag dat iemand in theorie nog zou kunnen verdienen. De overheid stopt eerst zelf het inkomen, en weigert daarna elke hulp omdat het gezin op papier nog rijk genoeg zou zijn. . Waarom grijpt niemand in wanneer deze vijf vallen een gezin financieel wurgen? Omdat het overheidsapparaat is opgebouwd uit vier lagen die allemaal naar elkaar wijzen:. De uitvoerende loketten, ziekenfondsen, U W V, CAK, belastingdiensten, vullen alleen hun eigen schermpjes in. Past jouw situatie niet in het keuzemenu van hun software, dan krijg je een afwijzing. . De toezichthouders, Riziv, CDZ, Zorginstituut Nederland, Unia, Arbeidsauditoraat, houden hun bevoegdheid zo klein mogelijk. Elke toezichthouder noemt een fundamentele fout in het systeem een individueel geschil en stuurt de burger terug naar het loket of naar de rechter. Wegkijken is voor een toezichthouder altijd veiliger dan ingrijpen. . De politiek en de ombudsmannen, parlementscommissies, politieke partijen, ombudsdiensten, Solvit, werken op de lange termijn of mogen geen bindende bevelen geven. Ombudsmannen stoppen zodra er een bezwaarschrift loopt, Solvit sluit het dossier zodra een nationale dienst nee blijft zeggen, en parlementaire commissies leggen een acute noodkreet op de stapel als achtergrondinformatie voor een volgend jaar. . De hoogste symbolische en internationale instellingen, de Koningshuizen en de Verenigde Naties, vormen het eindstation: de Koning kan een brief alleen doorsturen naar dezelfde minister die al eerder niets deed, en internationale mensenrechtenverdragen dwingen een lokaal loket niet om morgen een rekening te betalen. . Helemaal onderaan blijft dan alleen de stap naar de rechtbank over, een weg die jaren duurt, duizenden euro s kost en onbetaalbaar is geworden voor iemand wiens inkomen net door datzelfde systeem op nul is gezet. . De drie patronen achter de blokkade. Als je van een afstand naar dit doolhof kijkt, zie je drie vaste patronen die verklaren waarom het systeem zo hardnekkig vastloopt:. Het overzicht hieronder vat de drie patronen samen. Ten eerste: wat men hoog in Brussel niet goed regelt, namelijk vrij verkeer zonder verplichte koppeling van computers, loopt beneden aan het loket direct vast. Ten tweede: een grensarbeider leeft in twee landen tegelijk, dus en en, maar de software van de overheid kent alleen of of. Wie in allebei de landen een stukje van zijn leven heeft, valt tussen twee stoelen en krijgt twee keer nul. Ten derde: omdat alle diensten elkaars gegevens overnemen, werkt één foute code bij het ziekenfonds of in het verzekerdenregister door als een kettingreactie bij de belastingdienst, de kinderbijslag, de gemeente, de bank en het energiebedrijf. Omdat de computers weigeren met elkaar te praten, moet de zieke burger uiteindelijk zelf met zevenhonderd gram papier naar het postkantoor om voor datakabel te spelen. ." data-track-index="1" id="aab-docD_deel2">
 <button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -5560,7 +3401,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </div>
 </div>
 </div>
-<h2 id="deel-iii-de-europese-paradox-open-wegen-gesloten-databanken">Deel III — De Europese paradox: open wegen, gesloten databanken</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docD_deel3" data-audio-src="../assets/audio/docD_deel3_nl_ca534a81.mp3" data-clean-heading="Deel III — De Europese paradox: open wegen, gesloten databanken" data-clean-text="Deel III, De Europese paradox: open wegen, gesloten databanken. De oorzaak van dit niemandsland ligt in de manier waarop Europa is opgebouwd. Tussen het eerste Benelux akkoord in 1944 en het Verdrag van Schengen in 1985 hebben de landen veertig jaar gewerkt aan het weghalen van de fysieke slagbomen. De grensposten zijn verdwenen; werknemers, vrachtwagens en geld steken elke dag moeiteloos de grens over. Maar terwijl de wegen volledig werden opengezet, hield elk land zijn eigen sociale verzekeringen, ziekenhuizen en belastingcomputers achter slot en grendel. De snelweg is Europees, maar het loket denkt nog steeds in de negentiende eeuw. . Hoeveel mensen hierdoor geraakt worden, blijkt uit de cijfers:. In de Europese Unie werken ongeveer 1, 5 miljoen grensarbeiders, waarvan ruim 40000 mensen elke dag de grens tussen België en Nederland oversteken. . Problemen met sociale zekerheid en zorg over de grens vormen jaar na jaar de allergrootste groep klachten bij het Europese bemiddelingsnetwerk Solvit, structureel meer dan 40 procent van alle zaken. . In dit ene onderzochte gezinsdossier raakten in achttien maanden tijd maar liefst 62 verschillende organisaties betrokken en waren meer dan 690 vastgelegde brieven, e mails en telefoontjes nodig om de meest elementaire basisrechten aan te tonen. . De Europese regels, Verordening 883 of 2004 en het Vester arrest van het Europees Hof van Justitie, zijn op papier duidelijk genoeg: gewerkte jaren in verschillende E U landen moeten altijd bij elkaar worden opgeteld en twee landen mogen een zieke grensarbeider nooit samen met lege handen achterlaten. Maar er staat geen straf op als een loket die regels negeert, en er is geen automatische noodrem. Wanneer een uitvoeringsdienst weigert het Europese digitale netwerk, Essie, te gebruiken of buitenlandse werkjaren niet inleest, is er geen enkele knop die automatisch een voorlopig vervangingsinkomen uitbetaalt. . Ook de langverwachte aanpassing van die Europese regels, waarover de Europese politiek in de zomer van 2026 na ruim tien jaar vergaderen eindelijk een akkoord sloot, helpt niemand die vandaag in de knel zit. Omdat alle nationale computers nog moeten worden aangepast, gaat dat nieuwe pakket pas rond 2030 of 2031 echt werken: veertien jaar wachten op een software update. Bovendien regelt de aangekondigde Europese Sociale Zekerheidspas, Esspass, alleen een digitaal pasje op de telefoon van de burger aan de voordeur, maar dwingt het de nationale databanken aan de achterkant nog steeds niet om automatisch met elkaar te synchroniseren. Terwijl Brussel berekent dat deze digitalisering de lidstaten tegen 2040 zes miljard euro gaat besparen, betaalt het gezin van de zieke grensarbeider in de tussentijd de rekening, met een leeggetrokken bankrekening, ingetrokken kredieten en incassobrieven voor stroom en water. ." data-track-index="2" id="aab-docD_deel3">
+<h2 id="deel-iii-de-europese-paradox-open-wegen-gesloten-databanken">Deel III — De Europese paradox: open wegen, gesloten databanken</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docD_deel3" data-audio-src="../assets/audio/docD_deel3_nl_ca534a81.mp3" data-clean-heading="Deel III — De Europese paradox: open wegen, gesloten databanken" data-clean-text="Deel III, De Europese paradox: open wegen, gesloten databanken. De oorzaak van dit niemandsland ligt in de manier waarop Europa is opgebouwd. Tussen het eerste Benelux akkoord in 1944 en het Verdrag van Schengen in 1985 hebben de landen veertig jaar gewerkt aan het weghalen van de fysieke slagbomen. De grensposten zijn verdwenen; werknemers, vrachtwagens en geld steken elke dag moeiteloos de grens over. Maar terwijl de wegen volledig werden opengezet, hield elk land zijn eigen sociale verzekeringen, ziekenhuizen en belastingcomputers achter slot en grendel. De snelweg is Europees, maar het loket denkt nog steeds in de negentiende eeuw. . Hoeveel mensen hierdoor geraakt worden, blijkt uit de cijfers:. In de Europese Unie werken ongeveer 1, 5 miljoen grensarbeiders, waarvan ruim 40000 mensen elke dag de grens tussen België en Nederland oversteken. . Problemen met sociale zekerheid en zorg over de grens vormen jaar na jaar de allergrootste groep klachten bij het Europese bemiddelingsnetwerk Solvit, structureel meer dan 40 procent van alle zaken. . In dit ene onderzochte gezinsdossier raakten in achttien maanden tijd maar liefst 62 verschillende organisaties betrokken en waren meer dan 690 vastgelegde brieven, e mails en telefoontjes nodig om de meest elementaire basisrechten aan te tonen. . De Europese regels, Verordening 883 of 2004 en het Vester arrest van het Europees Hof van Justitie, zijn op papier duidelijk genoeg: gewerkte jaren in verschillende E U landen moeten altijd bij elkaar worden opgeteld en twee landen mogen een zieke grensarbeider nooit samen met lege handen achterlaten. Maar er staat geen straf op als een loket die regels negeert, en er is geen automatische noodrem. Wanneer een uitvoeringsdienst weigert het Europese digitale netwerk, Essie, te gebruiken of buitenlandse werkjaren niet inleest, is er geen enkele knop die automatisch een voorlopig vervangingsinkomen uitbetaalt. . Ook de langverwachte aanpassing van die Europese regels, waarover de Europese politiek in de zomer van 2026 na ruim tien jaar vergaderen eindelijk een akkoord sloot, helpt niemand die vandaag in de knel zit. Omdat alle nationale computers nog moeten worden aangepast, gaat dat nieuwe pakket pas rond 2030 of 2031 echt werken: veertien jaar wachten op een software update. Bovendien regelt de aangekondigde Europese Sociale Zekerheidspas, Esspass, alleen een digitaal pasje op de telefoon van de burger aan de voordeur, maar dwingt het de nationale databanken aan de achterkant nog steeds niet om automatisch met elkaar te synchroniseren. Terwijl Brussel berekent dat deze digitalisering de lidstaten tegen 2040 zes miljard euro gaat besparen, betaalt het gezin van de zieke grensarbeider in de tussentijd de rekening, met een leeggetrokken bankrekening, ingetrokken kredieten en incassobrieven voor stroom en water. ." data-track-index="2" id="aab-docD_deel3">
 <button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -5591,7 +3432,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </ul>
 <p>De Europese regels (Verordening 883/2004 en het <em>Vester</em>-arrest van het Europees Hof van Justitie) zijn op papier duidelijk genoeg: gewerkte jaren in verschillende EU-landen moeten altijd bij elkaar worden opgeteld en twee landen mogen een zieke grensarbeider nooit samen met lege handen achterlaten. Maar er staat geen straf op als een loket die regels negeert, en er is geen automatische noodrem. Wanneer een uitvoeringsdienst weigert het Europese digitale netwerk (EESSI) te gebruiken of buitenlandse werkjaren niet inleest, is er geen enkele knop die automatisch een voorlopig vervangingsinkomen uitbetaalt.</p>
 <p>Ook de langverwachte aanpassing van die Europese regels, waarover de Europese politiek in de zomer van 2026 na ruim tien jaar vergaderen eindelijk een akkoord sloot, helpt niemand die vandaag in de knel zit. Omdat alle nationale computers nog moeten worden aangepast, gaat dat nieuwe pakket pas rond <strong>2030 of 2031</strong> echt werken: veertien jaar wachten op een software-update. Bovendien regelt de aangekondigde <em>Europese Sociale Zekerheidspas</em> (ESSPASS) alleen een digitaal pasje op de telefoon van de burger aan de voordeur, maar dwingt het de nationale databanken aan de achterkant nog steeds niet om automatisch met elkaar te synchroniseren. Terwijl Brussel berekent dat deze digitalisering de lidstaten tegen 2040 zes miljard euro gaat besparen, betaalt het gezin van de zieke grensarbeider in de tussentijd de rekening — met een leeggetrokken bankrekening, ingetrokken kredieten en incassobrieven voor stroom en water.</p>
-<h2 id="deel-iv-het-europese-patroon-vier-grensregios-dezelfde-weeffout">Deel IV — Het Europese patroon: vier grensregio's, dezelfde weeffout</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docD_deel4" data-audio-src="../assets/audio/docD_deel4_nl_7d1b9273.mp3" data-clean-heading="Deel IV — Het Europese patroon: vier grensregio's, dezelfde weeffout" data-clean-text="Deel IV, Het Europese patroon: vier grensregio s, dezelfde weeffout. Dat deze blokkade geen toevallige pech is tussen België en Nederland alleen, blijkt zodra je kijkt naar vier andere grote grensstreken in Europa:. Luxemburg, grens met België, Frankrijk en Duitsland, : In de regio met de meeste grensarbeiders van Europa spreken de belastingregels en de sociale zekerheidsregels elkaar tegen zodra iemand een paar dagen van thuis uit werkt. Wie net over een drempel van het aantal thuiswerkdagen gaat, belandt in een grijs gebied waarin twee landen tegelijk belasting opeisen of waarin de sociale verzekering plotseling naar het andere land verschuift. . De Sont regio, Denemarken en Zweden, : Duizenden mensen die in Zweden wonen en via de brug in Denemarken werken, betalen hun sociale premies in Denemarken maar vallen bij werkloosheid of uitval terug op een Zweeds loket. Omdat de Deense werkgeverspapieren niet passen in het computersysteem van de Zweedse uitkeringskassen, zitten getroffen gezinnen maandenlang zonder inkomen terwijl het regionale grensloket geen macht heeft om uitbetaling af te dwingen. . De Frans Zwitserse grens, Genève en Bazel, : Voor honderdduizenden Franse grensarbeiders botsen de regels van beide landen zodra werk en woonplaats elkaar kruisen. In plaats van dat de twee overheden hun computers op elkaar aansluiten, leggen ze de hele bewijslast en dagelijkse registratie bij de werkgevers en werknemers neer. . De route tussen Oostenrijk en Oost Europa: Waar een eerlijke grensarbeider klemraakt doordat de computers niet met elkaar spreken, maken schimmige detacheringsbureaus juist misbruik van precies diezelfde gesloten systemen. Omdat een ontvangend land een buitenlands verzekeringsbewijs, A1 formulier, niet zelf mag ongeldig verklaren zonder een maandenlange papieren overlegprocedure met het andere land, glippen malafide constructies overal tussendoor terwijl de zieke werknemer onbeschermd achterblijft. . Overal in Europa is de les dezelfde: zolang nationale databanken als afgesloten eilanden naast elkaar blijven bestaan, straft de grens de eerlijke werknemer en verlamt ze het toezicht. ." data-track-index="3" id="aab-docD_deel4">
+<h2 id="deel-iv-het-europese-patroon-vier-grensregios-dezelfde-weeffout">Deel IV — Het Europese patroon: vier grensregio's, dezelfde weeffout</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docD_deel4" data-audio-src="../assets/audio/docD_deel4_nl_7d1b9273.mp3" data-clean-heading="Deel IV — Het Europese patroon: vier grensregio's, dezelfde weeffout" data-clean-text="Deel IV, Het Europese patroon: vier grensregio s, dezelfde weeffout. Dat deze blokkade geen toevallige pech is tussen België en Nederland alleen, blijkt zodra je kijkt naar vier andere grote grensstreken in Europa:. Luxemburg, grens met België, Frankrijk en Duitsland, : In de regio met de meeste grensarbeiders van Europa spreken de belastingregels en de sociale zekerheidsregels elkaar tegen zodra iemand een paar dagen van thuis uit werkt. Wie net over een drempel van het aantal thuiswerkdagen gaat, belandt in een grijs gebied waarin twee landen tegelijk belasting opeisen of waarin de sociale verzekering plotseling naar het andere land verschuift. . De Sont regio, Denemarken en Zweden, : Duizenden mensen die in Zweden wonen en via de brug in Denemarken werken, betalen hun sociale premies in Denemarken maar vallen bij werkloosheid of uitval terug op een Zweeds loket. Omdat de Deense werkgeverspapieren niet passen in het computersysteem van de Zweedse uitkeringskassen, zitten getroffen gezinnen maandenlang zonder inkomen terwijl het regionale grensloket geen macht heeft om uitbetaling af te dwingen. . De Frans Zwitserse grens, Genève en Bazel, : Voor honderdduizenden Franse grensarbeiders botsen de regels van beide landen zodra werk en woonplaats elkaar kruisen. In plaats van dat de twee overheden hun computers op elkaar aansluiten, leggen ze de hele bewijslast en dagelijkse registratie bij de werkgevers en werknemers neer. . De route tussen Oostenrijk en Oost Europa: Waar een eerlijke grensarbeider klemraakt doordat de computers niet met elkaar spreken, maken schimmige detacheringsbureaus juist misbruik van precies diezelfde gesloten systemen. Omdat een ontvangend land een buitenlands verzekeringsbewijs, A1 formulier, niet zelf mag ongeldig verklaren zonder een maandenlange papieren overlegprocedure met het andere land, glippen malafide constructies overal tussendoor terwijl de zieke werknemer onbeschermd achterblijft. . Overal in Europa is de les dezelfde: zolang nationale databanken als afgesloten eilanden naast elkaar blijven bestaan, straft de grens de eerlijke werknemer en verlamt ze het toezicht. ." data-track-index="3" id="aab-docD_deel4">
 <button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -5621,7 +3462,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <li><strong>De route tussen Oostenrijk en Oost-Europa:</strong> Waar een eerlijke grensarbeider klemraakt doordat de computers niet met elkaar spreken, maken schimmige detacheringsbureaus juist misbruik van precies diezelfde gesloten systemen. Omdat een ontvangend land een buitenlands verzekeringsbewijs (A1-formulier) niet zelf mag ongeldig verklaren zonder een maandenlange papieren overlegprocedure met het andere land, glippen malafide constructies overal tussendoor terwijl de zieke werknemer onbeschermd achterblijft.</li>
 </ul>
 <p>Overal in Europa is de les dezelfde: zolang nationale databanken als afgesloten eilanden naast elkaar blijven bestaan, straft de grens de eerlijke werknemer en verlamt ze het toezicht.</p>
-<h2 id="deel-v-de-uitweg-drie-infrastructurele-bouwstenen">Deel V — De uitweg: drie concrete bouwstenen voor hervorming</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docD_deel5" data-audio-src="../assets/audio/docD_deel5_nl_d3d0073d.mp3" data-clean-heading="Deel V — De uitweg: drie concrete bouwstenen voor hervorming" data-clean-text="Deel V, De uitweg: drie concrete bouwstenen voor hervorming. Wanneer een grensarbeider ernstig ziek of blijvend gehandicapt raakt, zijn er in feite twee manieren waarop de overheid kan zorgen dat een gezin overleeft: via een maandelijkse uitkering of via belastingvrijstellingen en gerichte toeslagen, zodat het overblijvende gezinsinkomen niet door belastingen en zorgkosten wordt opgegeten. Hoewel die tweede, fiscale weg de overheid veel minder geld kost en mensen hun zelfstandigheid laat behouden, werken veel lidstaten die route tegen. De reden is simpel: voor uitkerings en re integratieprojecten kunnen landen subsidie aanvragen bij Europese fondsen, terwijl een belastingvrijstelling rechtstreeks uit de eigen nationale schatkist moet worden betaald. . Toch bewees dit dossier in de praktijk hoe krachtig die fiscale route is: terwijl alle geautomatiseerde loketten, de blokkade van 8 tegenover 9 punten bij de Belgische gehandicaptendienst en het ontbreken van de verdragspolis in het Nederlandse register, potdicht bleven zitten, lukte het via een rechtstreeks medisch attest van de eigen huisarts bij de Belgische belastingaangifte voor niet inwoners wél om een belastingvoordeel van 2669 euro en 97 cent vrij te maken. Maar een burger hoort geen verborgen achterdeurtjes nodig te hebben om zijn recht te krijgen. Een rechtszaak bij de rechtbank helpt na jaren procederen hooguit één persoon; het aanpassen van de koppeling tussen de systemen lost het probleem in één klap op voor alle 1, 5 miljoen Europese grensarbeiders. . Daarvoor zijn drie eenvoudige, werkbare bouwstenen nodig die samen het lek dichten:. Het schema hieronder zet de drie bouwstenen op een rij. Bouwsteen één: koppel de systemen automatisch op het moment dat iemand verhuist. Zodra een burger zich uitschrijft in het ene land en inschrijft bij de gemeente in het buurland, moet die inschrijving automatisch de gewerkte jaren, de verzekeringsopbouw en de gezinssamenstelling digitaal meenemen. Bouwsteen twee: voer één Europees medisch bewijs in op basis van de bestaande standaard van de Wereldgezondheidsorganisatie. Daarin staat niet de medische kwaal centraal, maar heel praktisch wat iemand lichamelijk nog wel en niet kan, zoals lopen of zien. Elk land koppelt zijn eigen puntensysteem met een vaste tabel aan die score, zodat één medische keuring aan beide kanten van de grens direct geldig is. Bouwsteen drie: laat die twee gegevens samen automatisch de juiste belastingvrijstellingen, het werkelijke gezinsinkomen van vandaag voor de toeslagen en de gehandicaptenrechten aanzetten. Dat voorkomt tegelijk elke vorm van misbruik, want als beide landen dezelfde gecontroleerde doktersverklaring en hetzelfde dossier zien, kan niemand dubbel aanvragen en kan geen enkele overheid nog doen alsof de burger niet bestaat. ." data-track-index="4" id="aab-docD_deel5">
+<h2 id="deel-v-de-uitweg-drie-infrastructurele-bouwstenen">Deel V — De uitweg: drie concrete bouwstenen voor hervorming</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docD_deel5" data-audio-src="../assets/audio/docD_deel5_nl_d3d0073d.mp3" data-clean-heading="Deel V — De uitweg: drie concrete bouwstenen voor hervorming" data-clean-text="Deel V, De uitweg: drie concrete bouwstenen voor hervorming. Wanneer een grensarbeider ernstig ziek of blijvend gehandicapt raakt, zijn er in feite twee manieren waarop de overheid kan zorgen dat een gezin overleeft: via een maandelijkse uitkering of via belastingvrijstellingen en gerichte toeslagen, zodat het overblijvende gezinsinkomen niet door belastingen en zorgkosten wordt opgegeten. Hoewel die tweede, fiscale weg de overheid veel minder geld kost en mensen hun zelfstandigheid laat behouden, werken veel lidstaten die route tegen. De reden is simpel: voor uitkerings en re integratieprojecten kunnen landen subsidie aanvragen bij Europese fondsen, terwijl een belastingvrijstelling rechtstreeks uit de eigen nationale schatkist moet worden betaald. . Toch bewees dit dossier in de praktijk hoe krachtig die fiscale route is: terwijl alle geautomatiseerde loketten, de blokkade van 8 tegenover 9 punten bij de Belgische gehandicaptendienst en het ontbreken van de verdragspolis in het Nederlandse register, potdicht bleven zitten, lukte het via een rechtstreeks medisch attest van de eigen huisarts bij de Belgische belastingaangifte voor niet inwoners wél om een belastingvoordeel van 2669 euro en 97 cent vrij te maken. Maar een burger hoort geen verborgen achterdeurtjes nodig te hebben om zijn recht te krijgen. Een rechtszaak bij de rechtbank helpt na jaren procederen hooguit één persoon; het aanpassen van de koppeling tussen de systemen lost het probleem in één klap op voor alle 1, 5 miljoen Europese grensarbeiders. . Daarvoor zijn drie eenvoudige, werkbare bouwstenen nodig die samen het lek dichten:. Het schema hieronder zet de drie bouwstenen op een rij. Bouwsteen één: koppel de systemen automatisch op het moment dat iemand verhuist. Zodra een burger zich uitschrijft in het ene land en inschrijft bij de gemeente in het buurland, moet die inschrijving automatisch de gewerkte jaren, de verzekeringsopbouw en de gezinssamenstelling digitaal meenemen. Bouwsteen twee: voer één Europees medisch bewijs in op basis van de bestaande standaard van de Wereldgezondheidsorganisatie. Daarin staat niet de medische kwaal centraal, maar heel praktisch wat iemand lichamelijk nog wel en niet kan, zoals lopen of zien. Elk land koppelt zijn eigen puntensysteem met een vaste tabel aan die score, zodat één medische keuring aan beide kanten van de grens direct geldig is. Bouwsteen drie: laat die twee gegevens samen automatisch de juiste belastingvrijstellingen, het werkelijke gezinsinkomen van vandaag voor de toeslagen en de gehandicaptenrechten aanzetten. Dat voorkomt tegelijk elke vorm van misbruik, want als beide landen dezelfde gecontroleerde doktersverklaring en hetzelfde dossier zien, kan niemand dubbel aanvragen en kan geen enkele overheid nog doen alsof de burger niet bestaat. ." data-track-index="4" id="aab-docD_deel5">
 <button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -5674,7 +3515,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </div>
 </div>
 </div>
-<h2 id="deel-vi-de-avg-stresstest-en-het-eessi-spook-van-2030">Deel VI — De AVG-proef op de som en de belofte van 2030</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docD_deel6" data-audio-src="../assets/audio/docD_deel6_nl_978df302.mp3" data-clean-heading="Deel VI — De AVG-proef op de som en de belofte van 2030" data-clean-text="Deel VI, De A V G proef op de som en de belofte van 2030. De wet die niet voor iedereen hetzelfde geldt: hoe zestien instanties reageren wanneer de burger vraagt om de logboeken te openen. . 1. Van afwachten naar zelf controleren, september 2026. Op 1 en 2 september 2026 kantelde dit dossier. Na achttien maanden waarin Belgische en Nederlandse diensten elkaar onafgebroken de schuld gaven en beweerden dat ze moesten wachten op cijfers of formulieren uit het buurland, besloten de aanvrager en zijn partner om zelf onder de motorkap van de overheid te kijken. Bij zestien betrokken instanties in België en Nederland dienden zij tegelijkertijd een formeel inzageverzoek in op grond van artikel 15 van de Europese privacywet, A V G. . Het doel was niet om nog eens een kopie te krijgen van de brieven die al thuis in de kast lagen. De vraag ging heel specifiek over de digitale achterkamer van de overheid: de computerlogboeken en verzendbewijzen van het Europese uitwisselingsnetwerk Essie. Welke elektronische berichten waren er tussen de eerste ziektedag op 11 april 2025 en september 2026 nu écht over de grens verstuurd en ontvangen? Welke gegevens liepen er automatisch tussen de belastingdiensten en tussen de bevolkingsregisters van België en Nederland? En vooral: spraken de loketten de waarheid toen zij zeiden dat de vertraging aan de andere kant van de grens lag?. Die proef op de som legt een pijnlijke waarheid bloot over de Europese plannen voor 2030. Terwijl Brussel belooft dat nieuwe digitale passen over een paar jaar alle grensproblemen zullen oplossen, blijkt uit deze zestien inzageverzoeken dat de digitale lijnen tussen België en Nederland er allang liggen. Het probleem is niet dat de techniek ontbreekt; het probleem is dat nationale diensten verzuimen op de verzendknop te drukken, en vervolgens alles in het werk stellen om hun logboeken dicht te houden zodra de burger om het bewijs van dat stilzitten vraagt. . 2. Groep 1, Waar men niets te verbergen heeft, werkt de wet binnen drie dagen, Vitaz en Gemeente Waasmunster. Dat privacyregels of technische systemen geen enkel obstakel hoeven te zijn, bewezen twee instanties die financieel niets te verliezen hadden bij de waarheid: het regionale ziekenhuis Vitaz in Sint Niklaas en de voormalige woongemeente Waasmunster. . Toen de aanvrager op 7 maart 2026 bij ziekenhuis Vitaz om zijn volledige medische dossier vroeg voor zijn overstap naar het UZ Gent, kreeg hij zonder één drempel binnen drie dagen, op 10 maart 2026, een beveiligde downloadlink met al zijn operatieverslagen, foto s, oogmetingen en bloedwaarden. En toen hij op 1 september 2026 bij zijn oude Belgische gemeente Waasmunster vroeg naar de registratie van zijn verhuizing naar Nederland in 2014, stuurde de gemeente op 1 oktober een helder en eerlijk besluit: de oude technische serverbestanden waren na twaalf jaar volgens de archiefwet gewist, maar de uitschrijving naar Nederland stond nog altijd keurig en ongewijzigd in het Rijksregister. Waar een organisatie gewoon feiten registreert en geen eigen fouten hoeft toe te dekken, werkt de wet snel, digitaal en zonder uitvluchten. . 3. Groep 2, De papieren slotgracht en de verdwijntruc, U W V, S V B, Federale Overheidsdienst Binnenlandse Zaken, Parentia en Gemeente Hulst. Zodra precies hetzelfde verzoek op 1 en 2 september 2026 binnenkwam bij de uitkerings, toeslagen en gemeenteloketten, gebeurde er iets heel anders. Vijf organisaties wierpen direct kunstmatige obstakels op om tijd te rekken en de burger te ontmoedigen:. U W V, Nederland, Een postzegel van 1 euro en 40 cent voor digitale computerlogs: Hoewel de aanvrager zijn verzoek indiende via MijnUWV, veilig ingelogd met zijn eigen DigiD, weigerde het U W V het digitale bericht te behandelen. Om digitale logboeken op te vragen, moest de slechtziende en geamputeerde burger eerst een papieren brief met een postzegel van 1 euro en 40 cent en een papieren kopie van zijn identiteitskaart naar een postbus in Almere sturen. . Sociale Verzekeringsbank, S V B, Nederland, Formulierdwang: Toen de partner van de aanvrager op 1 september per e mail haar wettelijke inzagerecht uitoefende, weigerde de S V B op 4 september de e mail in behandeling te nemen. De wettelijke klok mocht volgens de S V B pas gaan lopen wanneer zij hun eigen voorgeprogrammeerde webformulier met vaste keuzehokjes invulde. . Federale Overheidsdienst Binnenlandse Zaken, België, Een geblokkeerde mailbox: Toen de aanvrager op 2 oktober een herinnering wilde sturen aan de privacytoezichthouder van het Belgische ministerie van Binnenlandse Zaken omdat de wettelijke maand voorbij was, ketsten de e mails naar de officiële adressen terug met een harde blokkade van de overheidsserver. Het bericht kon pas via een omweg in een algemeen webformulier naar binnen worden geduwd. . Kinderbijslagfonds Parentia / Partena, België, De poging om het verzoek nietig te laten verklaren: Op 14 september 2026 stuurde een medewerker van het lokale kantoor van Parentia in Hasselt een e mail aan de partner met de vraag of zij wilde bevestigen dat haar inzageverzoek van 1 september als nietig mag worden beschouwd omdat de gewone aanvraag nog liep. Pas nadat de aanvrager op 15 september fel protesteerde tegen het wegpoetsen van een wettelijk recht, greep de hoofddienst in Brussel in en leverde op 1 oktober 2026 alsnog het digitale archief met de Europese berichten tussen Parentia en de Nederlandse S V B. . Gemeente Hulst, Nederland, Het 40 minuten theaterstuk op dag 29: Hoewel de gemeente Hulst de aanvrager al ruim een jaar kende uit zijn Wmo en bijstandsdossier en zijn paspoort al lang in bezit had, stuurde de gemeente op 1 oktober 2026, precies op dag 29 van de maximale 30 dagen, een aangetekende brief dat de klok werd stilgezet omdat zij zijn identiteit nog niet voldoende kon vaststellen. De aanvrager moest naar het gemeentehuis komen, voor een camera gaan zitten of opnieuw met DigiD inloggen. Hij logde 40 minuten later in met DigiD. De volgende ochtend om 08:25 uur stuurde de gemeente direct een kant en klaar besluit van 47 pagina s. Het hele pakket lag dus allang klaar; de plotselinge twijfel aan zijn identiteit diende alleen als pauzeknop. . 4. Groep 3, De papieren rookbom, de zwarte stift en de paniek bij de juristen, C M en S V B. Bij twee organisaties die midden in het vuur zaten, de Christelijke Mutualiteit in België en de Sociale Verzekeringsbank in Nederland, werd de manier van aanleveren zelf gebruikt om de waarheid onleesbaar te maken:. De Christelijke Mutualiteit, C M, België, 294 pagina s zonder wachtwoord en een gevaarlijk logboek: Na een aangetekende ingebrekestelling stuurde de C M op 29 september 2026 een ongesorteerd PDF bestand van 294 pagina s, eerst zonder wachtwoord, dat pas laat op de avond na aandringen werd nagezonden. Tussen die honderden pagina s zat per ongeluk het bewijs dat de C M de inschrijving van de aanvrager uit maart 2025 ruim drie maanden had laten liggen en pas op 22 juni 2025 het verplichte Europese verzekeringsbewijs, S072, naar Nederland had gestuurd. Toen de aanvrager op 30 september vroeg naar de ontbrekende verzendlogs en wilde zien of de keuringsarts van de C M op 20 mei 2026 zijn ziekenhuisverslagen überhaupt had geopend vóór zijn afwijzing, weigerde de adjunct privacyfunctionaris dat met vier onhoudbare beweringen: niet verstuurde berichten zouden geen persoonsgegevens zijn, van een computerregel met een rijksregisternummer zou alleen het nummer zelf mogen worden ingezien, het rechtzetten van de foute status in de Kruispuntbank was niet zijn taak, én het laten zien van het logboek van de keuringsarts werd geweigerd omdat dat de integriteit van het informatiesysteem zou kunnen aantasten. . De Sociale Verzekeringsbank, S V B, Nederland, 142 pagina s papier met zwarte lakbalken: Waar de S V B in april 2026 bij het toekennen van de aanvullende kinderbijslag als enige Nederlandse dienst meedacht met het gezin, schoot haar juridische afdeling bij het inzageverzoek volledig in de verdediging. Eind oktober 2026 liet de S V B per postbode een pakket van 142 uitgeprinte pagina s bezorgen. Op tientallen pagina s waren de namen en geboortedata van de eigen echtgenote en het eigen kind met dikke zwarte balken weggelakt vanwege de privacy van derden. En op pagina 1 gaf de S V B zwart op wit toe dat zij de digitale verzendlogboeken en tijdstempels van het Europese netwerk niet tot haar beschikking heeft. . 5. Groep 4, Het afschuiven van de schuld en de onbedoelde kroongetuigen, Riziv, RVA, Federale Overheidsdienst Sociale Zekerheid, Pensioendienst, CZ, Bevolkingsregisters en U W V. Het sluitstuk van het onderzoek kwam van de zeven overige instanties. Doordat ieder van hen probeerde aan te tonen dat het niet aan hén lag, bewezen zij samen zwart op wit dat de Europese gegevensuitwisseling achttien maanden lang volledig had stilgestaan:. Toezichthouder Riziv, België, 29 september 2026, : De privacyfunctionaris van het Riziv controleerde het centrale Belgische knooppunt en bevestigde schriftelijk dat er in een halfjaar tijd nul elektronische berichten waren verstuurd tussen het ziekenfonds, C M, en Nederland, CZ of U W V, alleen het kinderbijslagfonds had berichten uitgewisseld. Maar toen de aanvrager vroeg hoe het Riziv als toezichthouder ging ingrijpen tegen het stilzitten van de C M, zweeg het Riziv in alle talen. . Werkloosheidsdienst RVA, België, 29 september 2026, : De RVA bevestigde officieel dat er nul digitale uitwisseling met het Nederlandse U W V was geweest, maar wees met de vinger naar Nederland: volgens de RVA mag België pas gegevens sturen als het U W V daarom vraagt, en het U W V had nooit iets gevraagd. . Federale Overheidsdienst Sociale Zekerheid, Dienst Handicap, België, 30 september en 12 oktober 2026, : Deze federale dienst gaf op 30 september schriftelijk toe dat zij helemaal niet is aangesloten op het Europese Essie netwerk omdat er volgens haar te weinig aanvragen uit andere Europese landen zijn. En op 12 oktober leverde zij de computerlogs waaruit bleek dat het portaal MyHandicap de aanvrager in 2025 driemaal binnen een tiende van een seconde automatisch buitenwierp met een foutcode omdat zijn woonadres in Nederland lag. . Federale Pensioendienst, België, 2 oktober 2026, : Reageerde precies 31 minuten na een digitaal ondertekende ingebrekestelling met de melding dat er in haar systeem geen enkel Europees uitwisselingsbestand te vinden was en dat de burger zelf maar bij het buitenland moest navragen of er ooit iets was verstuurd. . Zorgverzekeraar CZ, Nederland, 6 oktober 2026, : Weigerde inzage te geven in het digitale berichtenverkeer, S072, met de Belgische C M en verwees de burger door naar het CAK, terwijl CZ als uitvoerder van de grensarbeiderspolis juist zélf de partij is die deze berichten met België uitwisselt. . De Bevolkingsregisters, Federale Overheidsdienst Binnenlandse Zaken in België op 7 oktober en Rijksdienst voor Identiteitsgegevens in Nederland op 15 oktober 2026, : Bewezen samen dat er tussen het Belgische Rijksregister en de Nederlandse gemeentelijke basisregistratie, Basisregistratie Personen, nul automatische koppeling bestaat wanneer een burger verhuist. Terwijl binnen Nederland 23 organisaties, van de Belastingdienst tot gerechtsdeurwaarders, automatisch elke verhuizing op het burgerservicenummer meekrijgen, stopt de digitale draad abrupt bij de grenspaal. . Het U W V als kroongetuige tegen zichzelf, Nederland, besluit van 21 oktober 2026, : Na eerst de datum van het verzoek te hebben verschoven en uitstel te hebben geëist tot november, stuurde het U W V op 21 oktober 2026 een brief namens de Raad van Bestuur waarin het twee vernietigende feiten toegaf: De gegevens die u wilt inzien zijn niet aanwezig én Er zijn geen persoonsgegevens gedeeld met externe partijen. Daarmee gaf het U W V zelf toe dat het achttien maanden lang geen enkel gegeven bij België had opgevraagd, terwijl het de W I A aanvraag in juli 2026 nog had afgewezen met het excuus dat het op België wachtte. . 6. Overzichtstabel van de zestien aangeschreven instanties, Stand eind oktober 2026. De tabel hieronder vat samen hoe elk van de zestien aangeschreven organisaties in België en Nederland heeft gereageerd op het verzoek om de logboeken te openen. . Samenvatting van de tabel met de zestien onderzochte instanties. Slechts twee instanties, namelijk ziekenhuis Vitaz en de gemeente Waasmunster, leverden direct en zonder obstakels een eerlijk en compleet dossier. Drie Belgische diensten, te weten Binnenlandse Zaken, de RVA en de Federale Dienst voor Personen met een Handicap, leverden na aanvankelijke drempels of ingebrekestellingen alsnog de logboeken waaruit bleek dat er geen automatische koppeling met Nederland was of dat de burger binnen een tiende van een seconde op zijn postcode werd geblokkeerd. Kinderbijslagfonds Parentia leverde de Europese berichten pas nadat het lokale kantoor eerst had geprobeerd het verzoek nietig te laten verklaren. De overige tien instanties lieten ernstige steken vallen: toezichthouder Riziv bewees dat het ziekenfonds nul berichten naar Nederland had gestuurd maar zweeg over handhaving; de Belgische Pensioendienst had geen enkele Europese data; het ziekenfonds C M en de Nederlandse S V B stuurden honderden pagina s papier maar weigerden de echte systeem en artsenlogboeken; de gemeente Hulst hield het besluit negenentwintig dagen vast met een verzonnen identiteitscontrole; zorgverzekeraar CZ schoof de vraag af op het CAK; en het Nederlandse U W V bekende zwart op wit dat het in achttien maanden tijd nul gegevens met België had uitgewisseld. Alleen de twee belastingdiensten in Nederland en België houden hun logboeken eind oktober 2026 nog achter. . 7. Het meten met twee maten en de ontknoping in november 2026. De uitkomsten van deze zestien inzageverzoeken laten zien hoe scheef de verhouding tussen burger en overheid is getrokken. Waarom mag een overheidsinstantie dwingende Europese wetten, wettelijke beslistermijnen van dertig dagen en uitspraken van het hoogste Europese gerechtshof straffeloos naast zich neerleggen met smoesjes als niet beschikbaar of slecht voor ons computersysteem, terwijl diezelfde overheid een zieke burger bij één gemist vinkje of één dag vertraging direct en voor honderd procent financieel straft?. De privacywet is geschreven als een schild om de burger te beschermen tegen de macht van de staat. Maar in de praktijk gebruiken legers van interne juristen diezelfde wet als een pantser om hun eigen organisatie af te schermen tegen controle door de burger. Men verschuilt zich achter de privacywet om niet te hoeven laten zien waarom een gezin anderhalf jaar zonder inkomen en zorgvervoer in de kou heeft gestaan. . De ontknoping in november 2026: Nu veertien van de zestien organisaties hun kaarten op tafel hebben moeten leggen, met het besluit van het U W V van 21 oktober 2026 als het definitieve bewijs dat er achttien maanden lang geen enkel bestand tussen Nederland en België is uitgewisseld, blijven alleen de twee belastingdiensten nog over:. In Nederland hebben de Belastingdienst en Dienst Toeslagen het verzoek om de internationale gegevensstromen en de blokkade in het verzekerdenregister vrij te geven, eenzijdig uitgesteld tot 30 november 2026. . In België heeft de Federale Overheidsdienst Financiën na een korte excuusmail op 2 oktober 2026 nog altijd geen enkel logboek geleverd. . Eind november 2026, zodra ook die laatste termijn is verstreken, wordt het volledige bewijsdossier van alle zestien instanties neergelegd bij de Gegevensbeschermingsautoriteit, GBA, in Brussel en de Autoriteit Persoonsgegevens, AP, in Den Haag. . 8. De Logica van de Machine, Vijf sprekende tegenstrijdigheden uit Document B. Wie door de honderden brieven en e mails in Document B, De data matrix, bladert, komt overal dezelfde soort kortsluitingen tegen. De vijf voorbeelden hieronder laten zien hoe geautomatiseerde loketten logica en gezond verstand op hun kop zetten om hun eigen regels kloppend te houden. . 01 De Papieren Cloud. Sociale Verzekeringsbank, S V B, 24 oktober 2026. . De Aanvraag. Een digitaal verzoek om de elektronische verzendlogboeken en tijdstempels van het Europese uitwisselingsnetwerk. . . Het Systeem. Logbestanden, verzendstatus en datumstempels van de Europese berichten, deze informatie hebben wij niet tot onze beschikking. . . De Feitelijke Realiteit. Om te bewijzen dat de digitale logboeken niet bestaan, print de S V B 142 pagina s aan digitale berichten uit op papier, zet er met de hand zwarte lakbalken op over de namen van de eigen gezinsleden, en laat het pakket per postbode aan de voordeur bezorgen. . . . . 02 De Gevaarlijke Integriteit. Christelijke Mutualiteit, C M, 30 september 2026. . De Aanvraag. De burger vraagt inzage in de toegangslogs van 20 mei 2026 om te controleren of de adviserend arts zijn medisch dossier wel heeft geopend vóór het weigeren van zijn erkenning. . . Het Systeem. De privacyfunctionaris van de C M weigert inzage in de toegangslogs omdat dit een potentiële invloed kan hebben op de integriteit van ons informatiesysteem. . . De Feitelijke Realiteit. Een beveiligingslogboek dat wettelijk bestaat om te controleren of er eerlijk met medische gegevens wordt omgegaan, mag niet worden ingezien door de patiënt omdat het lezen van het logboek het computersysteem zou kunnen beschadigen. . . . . 03 De Schoen van 2450 euro voor een Gezonde Voet. Christelijke Mutualiteit, C M, Juni / Juli 2025. . De Situatie. Na de amputatie van twee tenen aan de rechtervoet vraagt de grensarbeider een ziekte uitkering en een medisch invaliditeitsattest aan. . . Het Systeem. De C M weigert het invaliditeitsattest voor de belastingdienst af te leveren omdat er geen recht op een uitkering zou zijn, en stopt de ziekteregistratie in de Kruispuntbank. . . De Feitelijke Realiteit. Diezelfde adviserend arts van de C M keurt tegelijkertijd 2450 euro goed voor orthopedische maatschoenen wegens blijvende amputaties. De voet is geamputeerd voor de schoenmaker, maar gezond verklaard voor de belastingdienst. . . . . 04 De 30 Kilometer Paradox. Reizen door Zeeland 18 mei 2026. . De Aanvraag. Een gehandicapte grensarbeider met geamputeerde tenen en blindheid aan één oog boekt een Wmo regiotaxi vanuit Graauw naar Gent. . . Het Systeem. De rit naar de verplichte medische keuring van de Belgische overheid, Federale Overheidsdienst Sociale Zekerheid, in Gent wordt geweigerd vanwege de 30 kilometerzone. . . De Feitelijke Realiteit. Precies dezelfde afstand vanuit Graauw naar het Universitair Ziekenhuis in datzelfde Gent wordt door dezelfde centrale probleemloos gereden voor 19 euro en 65 cent per enkele reis. Een kilometer naar een ziekenhuisbed is op papier korter dan een kilometer naar een keuringsarts. . . . . 05 De Wachtende Zenders. RVA, BE, en U W V, NL, September / Oktober 2026. . De Situatie. Achttien maanden lang wacht het Nederlandse U W V op Belgische gegevens, en wacht België op Nederland. . . Het Systeem. RVA: Elektronische uitwisseling gebeurt steeds op initiatief van de ontvangende partij, U W V. U W V: Er zijn geen persoonsgegevens gedeeld met externe partijen. . . De Feitelijke Realiteit. Twee buurlanden staren achttien maanden naar een lege digitale snelweg, terwijl de zieke burger met 700 gram papier op het postkantoor de enige verbinding vormt. . . . . . ." data-track-index="5" id="aab-docD_deel6">
+<h2 id="deel-vi-de-avg-stresstest-en-het-eessi-spook-van-2030">Deel VI — De AVG-proef op de som en de belofte van 2030</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docD_deel6" data-audio-src="../assets/audio/docD_deel6_nl_978df302.mp3" data-clean-heading="Deel VI — De AVG-proef op de som en de belofte van 2030" data-clean-text="Deel VI, De A V G proef op de som en de belofte van 2030. De wet die niet voor iedereen hetzelfde geldt: hoe zestien instanties reageren wanneer de burger vraagt om de logboeken te openen. . 1. Van afwachten naar zelf controleren, september 2026. Op 1 en 2 september 2026 kantelde dit dossier. Na achttien maanden waarin Belgische en Nederlandse diensten elkaar onafgebroken de schuld gaven en beweerden dat ze moesten wachten op cijfers of formulieren uit het buurland, besloten de aanvrager en zijn partner om zelf onder de motorkap van de overheid te kijken. Bij zestien betrokken instanties in België en Nederland dienden zij tegelijkertijd een formeel inzageverzoek in op grond van artikel 15 van de Europese privacywet, A V G. . Het doel was niet om nog eens een kopie te krijgen van de brieven die al thuis in de kast lagen. De vraag ging heel specifiek over de digitale achterkamer van de overheid: de computerlogboeken en verzendbewijzen van het Europese uitwisselingsnetwerk Essie. Welke elektronische berichten waren er tussen de eerste ziektedag op 11 april 2025 en september 2026 nu écht over de grens verstuurd en ontvangen? Welke gegevens liepen er automatisch tussen de belastingdiensten en tussen de bevolkingsregisters van België en Nederland? En vooral: spraken de loketten de waarheid toen zij zeiden dat de vertraging aan de andere kant van de grens lag?. Die proef op de som legt een pijnlijke waarheid bloot over de Europese plannen voor 2030. Terwijl Brussel belooft dat nieuwe digitale passen over een paar jaar alle grensproblemen zullen oplossen, blijkt uit deze zestien inzageverzoeken dat de digitale lijnen tussen België en Nederland er allang liggen. Het probleem is niet dat de techniek ontbreekt; het probleem is dat nationale diensten verzuimen op de verzendknop te drukken, en vervolgens alles in het werk stellen om hun logboeken dicht te houden zodra de burger om het bewijs van dat stilzitten vraagt. . 2. Groep 1, Waar men niets te verbergen heeft, werkt de wet binnen drie dagen, Vitaz en Gemeente Waasmunster. Dat privacyregels of technische systemen geen enkel obstakel hoeven te zijn, bewezen twee instanties die financieel niets te verliezen hadden bij de waarheid: het regionale ziekenhuis Vitaz in Sint Niklaas en de voormalige woongemeente Waasmunster. . Toen de aanvrager op 7 maart 2026 bij ziekenhuis Vitaz om zijn volledige medische dossier vroeg voor zijn overstap naar het UZ Gent, kreeg hij zonder één drempel binnen drie dagen, op 10 maart 2026, een beveiligde downloadlink met al zijn operatieverslagen, foto s, oogmetingen en bloedwaarden. En toen hij op 1 september 2026 bij zijn oude Belgische gemeente Waasmunster vroeg naar de registratie van zijn verhuizing naar Nederland in 2014, stuurde de gemeente op 1 oktober een helder en eerlijk besluit: de oude technische serverbestanden waren na twaalf jaar volgens de archiefwet gewist, maar de uitschrijving naar Nederland stond nog altijd keurig en ongewijzigd in het Rijksregister. Waar een organisatie gewoon feiten registreert en geen eigen fouten hoeft toe te dekken, werkt de wet snel, digitaal en zonder uitvluchten. . 3. Groep 2, De papieren slotgracht en de verdwijntruc, U W V, S V B, Federale Overheidsdienst Binnenlandse Zaken, Parentia en Gemeente Hulst. Zodra precies hetzelfde verzoek op 1 en 2 september 2026 binnenkwam bij de uitkerings, toeslagen en gemeenteloketten, gebeurde er iets heel anders. Vijf organisaties wierpen direct kunstmatige obstakels op om tijd te rekken en de burger te ontmoedigen:. U W V, Nederland, Een postzegel van 1 euro en 40 cent voor digitale computerlogs: Hoewel de aanvrager zijn verzoek indiende via MijnUWV, veilig ingelogd met zijn eigen DigiD, weigerde het U W V het digitale bericht te behandelen. Om digitale logboeken op te vragen, moest de slechtziende en geamputeerde burger eerst een papieren brief met een postzegel van 1 euro en 40 cent en een papieren kopie van zijn identiteitskaart naar een postbus in Almere sturen. . Sociale Verzekeringsbank, S V B, Nederland, Formulierdwang: Toen de partner van de aanvrager op 1 september per e mail haar wettelijke inzagerecht uitoefende, weigerde de S V B op 4 september de e mail in behandeling te nemen. De wettelijke klok mocht volgens de S V B pas gaan lopen wanneer zij hun eigen voorgeprogrammeerde webformulier met vaste keuzehokjes invulde. . Federale Overheidsdienst Binnenlandse Zaken, België, Een geblokkeerde mailbox: Toen de aanvrager op 2 oktober een herinnering wilde sturen aan de privacytoezichthouder van het Belgische ministerie van Binnenlandse Zaken omdat de wettelijke maand voorbij was, ketsten de e mails naar de officiële adressen terug met een harde blokkade van de overheidsserver. Het bericht kon pas via een omweg in een algemeen webformulier naar binnen worden geduwd. . Kinderbijslagfonds Parentia / Partena, België, De poging om het verzoek nietig te laten verklaren: Op 14 september 2026 stuurde een medewerker van het lokale kantoor van Parentia in Hasselt een e mail aan de partner met de vraag of zij wilde bevestigen dat haar inzageverzoek van 1 september als nietig mag worden beschouwd omdat de gewone aanvraag nog liep. Pas nadat de aanvrager op 15 september fel protesteerde tegen het wegpoetsen van een wettelijk recht, greep de hoofddienst in Brussel in en leverde op 1 oktober 2026 alsnog het digitale archief met de Europese berichten tussen Parentia en de Nederlandse S V B. . Gemeente Hulst, Nederland, Het 40 minuten theaterstuk op dag 29: Hoewel de gemeente Hulst de aanvrager al ruim een jaar kende uit zijn Wmo en bijstandsdossier en zijn paspoort al lang in bezit had, stuurde de gemeente op 1 oktober 2026, precies op dag 29 van de maximale 30 dagen, een aangetekende brief dat de klok werd stilgezet omdat zij zijn identiteit nog niet voldoende kon vaststellen. De aanvrager moest naar het gemeentehuis komen, voor een camera gaan zitten of opnieuw met DigiD inloggen. Hij logde 40 minuten later in met DigiD. De volgende ochtend om 08:25 uur stuurde de gemeente direct een kant en klaar besluit van 47 pagina s. Het hele pakket lag dus allang klaar; de plotselinge twijfel aan zijn identiteit diende alleen als pauzeknop. . 4. Groep 3, De papieren rookbom, de zwarte stift en de paniek bij de juristen, C M en S V B. Bij twee organisaties die midden in het vuur zaten, de Christelijke Mutualiteit in België en de Sociale Verzekeringsbank in Nederland, werd de manier van aanleveren zelf gebruikt om de waarheid onleesbaar te maken:. De Christelijke Mutualiteit, C M, België, 294 pagina s zonder wachtwoord en een gevaarlijk logboek: Na een aangetekende ingebrekestelling stuurde de C M op 29 september 2026 een ongesorteerd PDF bestand van 294 pagina s, eerst zonder wachtwoord, dat pas laat op de avond na aandringen werd nagezonden. Tussen die honderden pagina s zat per ongeluk het bewijs dat de C M de inschrijving van de aanvrager uit maart 2025 ruim drie maanden had laten liggen en pas op 22 juni 2025 het verplichte Europese verzekeringsbewijs, S072, naar Nederland had gestuurd. Toen de aanvrager op 30 september vroeg naar de ontbrekende verzendlogs en wilde zien of de keuringsarts van de C M op 20 mei 2026 zijn ziekenhuisverslagen überhaupt had geopend vóór zijn afwijzing, weigerde de adjunct privacyfunctionaris dat met vier onhoudbare beweringen: niet verstuurde berichten zouden geen persoonsgegevens zijn, van een computerregel met een rijksregisternummer zou alleen het nummer zelf mogen worden ingezien, het rechtzetten van de foute status in de Kruispuntbank was niet zijn taak, én het laten zien van het logboek van de keuringsarts werd geweigerd omdat dat de integriteit van het informatiesysteem zou kunnen aantasten. . De Sociale Verzekeringsbank, S V B, Nederland, 142 pagina s papier met zwarte lakbalken: Waar de S V B in april 2026 bij het toekennen van de aanvullende kinderbijslag als enige Nederlandse dienst meedacht met het gezin, schoot haar juridische afdeling bij het inzageverzoek volledig in de verdediging. Eind oktober 2026 liet de S V B per postbode een pakket van 142 uitgeprinte pagina s bezorgen. Op tientallen pagina s waren de namen en geboortedata van de eigen echtgenote en het eigen kind met dikke zwarte balken weggelakt vanwege de privacy van derden. En op pagina 1 gaf de S V B zwart op wit toe dat zij de digitale verzendlogboeken en tijdstempels van het Europese netwerk niet tot haar beschikking heeft. . 5. Groep 4, Het afschuiven van de schuld en de onbedoelde kroongetuigen, Riziv, RVA, Federale Overheidsdienst Sociale Zekerheid, Pensioendienst, CZ, Bevolkingsregisters en U W V. Het sluitstuk van het onderzoek kwam van de zeven overige instanties. Doordat ieder van hen probeerde aan te tonen dat het niet aan hén lag, bewezen zij samen zwart op wit dat de Europese gegevensuitwisseling achttien maanden lang volledig had stilgestaan:. Toezichthouder Riziv, België, 29 september 2026, : De privacyfunctionaris van het Riziv controleerde het centrale Belgische knooppunt en bevestigde schriftelijk dat er in een halfjaar tijd nul elektronische berichten waren verstuurd tussen het ziekenfonds, C M, en Nederland, CZ of U W V, alleen het kinderbijslagfonds had berichten uitgewisseld. Maar toen de aanvrager vroeg hoe het Riziv als toezichthouder ging ingrijpen tegen het stilzitten van de C M, zweeg het Riziv in alle talen. . Werkloosheidsdienst RVA, België, 29 september 2026, : De RVA bevestigde officieel dat er nul digitale uitwisseling met het Nederlandse U W V was geweest, maar wees met de vinger naar Nederland: volgens de RVA mag België pas gegevens sturen als het U W V daarom vraagt, en het U W V had nooit iets gevraagd. . Federale Overheidsdienst Sociale Zekerheid, Dienst Handicap, België, 30 september en 12 oktober 2026, : Deze federale dienst gaf op 30 september schriftelijk toe dat zij helemaal niet is aangesloten op het Europese Essie netwerk omdat er volgens haar te weinig aanvragen uit andere Europese landen zijn. En op 12 oktober leverde zij de computerlogs waaruit bleek dat het portaal MyHandicap de aanvrager in 2025 driemaal binnen een tiende van een seconde automatisch buitenwierp met een foutcode omdat zijn woonadres in Nederland lag. . Federale Pensioendienst, België, 2 oktober 2026, : Reageerde precies 31 minuten na een digitaal ondertekende ingebrekestelling met de melding dat er in haar systeem geen enkel Europees uitwisselingsbestand te vinden was en dat de burger zelf maar bij het buitenland moest navragen of er ooit iets was verstuurd. . Zorgverzekeraar CZ, Nederland, 6 oktober 2026, : Weigerde inzage te geven in het digitale berichtenverkeer, S072, met de Belgische C M en verwees de burger door naar het CAK, terwijl CZ als uitvoerder van de grensarbeiderspolis juist zélf de partij is die deze berichten met België uitwisselt. . De Bevolkingsregisters, Federale Overheidsdienst Binnenlandse Zaken in België op 7 oktober en Rijksdienst voor Identiteitsgegevens in Nederland op 15 oktober 2026, : Bewezen samen dat er tussen het Belgische Rijksregister en de Nederlandse gemeentelijke basisregistratie, Basisregistratie Personen, nul automatische koppeling bestaat wanneer een burger verhuist. Terwijl binnen Nederland 23 organisaties, van de Belastingdienst tot gerechtsdeurwaarders, automatisch elke verhuizing op het burgerservicenummer meekrijgen, stopt de digitale draad abrupt bij de grenspaal. . Het U W V als kroongetuige tegen zichzelf, Nederland, besluit van 21 oktober 2026, : Na eerst de datum van het verzoek te hebben verschoven en uitstel te hebben geëist tot november, stuurde het U W V op 21 oktober 2026 een brief namens de Raad van Bestuur waarin het twee vernietigende feiten toegaf: De gegevens die u wilt inzien zijn niet aanwezig én Er zijn geen persoonsgegevens gedeeld met externe partijen. Daarmee gaf het U W V zelf toe dat het achttien maanden lang geen enkel gegeven bij België had opgevraagd, terwijl het de W I A aanvraag in juli 2026 nog had afgewezen met het excuus dat het op België wachtte. . 6. Overzichtstabel van de zestien aangeschreven instanties, Stand eind oktober 2026. De tabel hieronder vat samen hoe elk van de zestien aangeschreven organisaties in België en Nederland heeft gereageerd op het verzoek om de logboeken te openen. . Samenvatting van de tabel met de zestien onderzochte instanties. Slechts twee instanties, namelijk ziekenhuis Vitaz en de gemeente Waasmunster, leverden direct en zonder obstakels een eerlijk en compleet dossier. Drie Belgische diensten, te weten Binnenlandse Zaken, de RVA en de Federale Dienst voor Personen met een Handicap, leverden na aanvankelijke drempels of ingebrekestellingen alsnog de logboeken waaruit bleek dat er geen automatische koppeling met Nederland was of dat de burger binnen een tiende van een seconde op zijn postcode werd geblokkeerd. Kinderbijslagfonds Parentia leverde de Europese berichten pas nadat het lokale kantoor eerst had geprobeerd het verzoek nietig te laten verklaren. De overige tien instanties lieten ernstige steken vallen: toezichthouder Riziv bewees dat het ziekenfonds nul berichten naar Nederland had gestuurd maar zweeg over handhaving; de Belgische Pensioendienst had geen enkele Europese data; het ziekenfonds C M en de Nederlandse S V B stuurden honderden pagina s papier maar weigerden de echte systeem en artsenlogboeken; de gemeente Hulst hield het besluit negenentwintig dagen vast met een verzonnen identiteitscontrole; zorgverzekeraar CZ schoof de vraag af op het CAK; en het Nederlandse U W V bekende zwart op wit dat het in achttien maanden tijd nul gegevens met België had uitgewisseld. Alleen de twee belastingdiensten in Nederland en België houden hun logboeken eind oktober 2026 nog achter. . 7. Het meten met twee maten en de ontknoping in november 2026. De uitkomsten van deze zestien inzageverzoeken laten zien hoe scheef de verhouding tussen burger en overheid is getrokken. Waarom mag een overheidsinstantie dwingende Europese wetten, wettelijke beslistermijnen van dertig dagen en uitspraken van het hoogste Europese gerechtshof straffeloos naast zich neerleggen met smoesjes als niet beschikbaar of slecht voor ons computersysteem, terwijl diezelfde overheid een zieke burger bij één gemist vinkje of één dag vertraging direct en voor honderd procent financieel straft?. De privacywet is geschreven als een schild om de burger te beschermen tegen de macht van de staat. Maar in de praktijk gebruiken legers van interne juristen diezelfde wet als een pantser om hun eigen organisatie af te schermen tegen controle door de burger. Men verschuilt zich achter de privacywet om niet te hoeven laten zien waarom een gezin anderhalf jaar zonder inkomen en zorgvervoer in de kou heeft gestaan. . De ontknoping in november 2026: Nu veertien van de zestien organisaties hun kaarten op tafel hebben moeten leggen, met het besluit van het U W V van 21 oktober 2026 als het definitieve bewijs dat er achttien maanden lang geen enkel bestand tussen Nederland en België is uitgewisseld, blijven alleen de twee belastingdiensten nog over:. In Nederland hebben de Belastingdienst en Dienst Toeslagen het verzoek om de internationale gegevensstromen en de blokkade in het verzekerdenregister vrij te geven, eenzijdig uitgesteld tot 30 november 2026. . In België heeft de Federale Overheidsdienst Financiën na een korte excuusmail op 2 oktober 2026 nog altijd geen enkel logboek geleverd. . Eind november 2026, zodra ook die laatste termijn is verstreken, wordt het volledige bewijsdossier van alle zestien instanties neergelegd bij de Gegevensbeschermingsautoriteit, GBA, in Brussel en de Autoriteit Persoonsgegevens, AP, in Den Haag. . 8. De Logica van de Machine, Vijf sprekende tegenstrijdigheden uit Document B. Wie door de honderden brieven en e mails in Document B, De data matrix, bladert, komt overal dezelfde soort kortsluitingen tegen. De vijf voorbeelden hieronder laten zien hoe geautomatiseerde loketten logica en gezond verstand op hun kop zetten om hun eigen regels kloppend te houden. . 01 De Papieren Cloud. Sociale Verzekeringsbank, S V B, 24 oktober 2026. . De Aanvraag. Een digitaal verzoek om de elektronische verzendlogboeken en tijdstempels van het Europese uitwisselingsnetwerk. . . Het Systeem. Logbestanden, verzendstatus en datumstempels van de Europese berichten, deze informatie hebben wij niet tot onze beschikking. . . De Feitelijke Realiteit. Om te bewijzen dat de digitale logboeken niet bestaan, print de S V B 142 pagina s aan digitale berichten uit op papier, zet er met de hand zwarte lakbalken op over de namen van de eigen gezinsleden, en laat het pakket per postbode aan de voordeur bezorgen. . . . . 02 De Gevaarlijke Integriteit. Christelijke Mutualiteit, C M, 30 september 2026. . De Aanvraag. De burger vraagt inzage in de toegangslogs van 20 mei 2026 om te controleren of de adviserend arts zijn medisch dossier wel heeft geopend vóór het weigeren van zijn erkenning. . . Het Systeem. De privacyfunctionaris van de C M weigert inzage in de toegangslogs omdat dit een potentiële invloed kan hebben op de integriteit van ons informatiesysteem. . . De Feitelijke Realiteit. Een beveiligingslogboek dat wettelijk bestaat om te controleren of er eerlijk met medische gegevens wordt omgegaan, mag niet worden ingezien door de patiënt omdat het lezen van het logboek het computersysteem zou kunnen beschadigen. . . . . 03 De Schoen van 2450 euro voor een Gezonde Voet. Christelijke Mutualiteit, C M, Juni / Juli 2025. . De Situatie. Na de amputatie van twee tenen aan de rechtervoet vraagt de grensarbeider een ziekte uitkering en een medisch invaliditeitsattest aan. . . Het Systeem. De C M weigert het invaliditeitsattest voor de belastingdienst af te leveren omdat er geen recht op een uitkering zou zijn, en stopt de ziekteregistratie in de Kruispuntbank. . . De Feitelijke Realiteit. Diezelfde adviserend arts van de C M keurt tegelijkertijd 2450 euro goed voor orthopedische maatschoenen wegens blijvende amputaties. De voet is geamputeerd voor de schoenmaker, maar gezond verklaard voor de belastingdienst. . . . . 04 De 30 Kilometer Paradox. Reizen door Zeeland 18 mei 2026. . De Aanvraag. Een gehandicapte grensarbeider met geamputeerde tenen en blindheid aan één oog boekt een Wmo regiotaxi vanuit Graauw naar Gent. . . Het Systeem. De rit naar de verplichte medische keuring van de Belgische overheid, Federale Overheidsdienst Sociale Zekerheid, in Gent wordt geweigerd vanwege de 30 kilometerzone. . . De Feitelijke Realiteit. Precies dezelfde afstand vanuit Graauw naar het Universitair Ziekenhuis in datzelfde Gent wordt door dezelfde centrale probleemloos gereden voor 19 euro en 65 cent per enkele reis. Een kilometer naar een ziekenhuisbed is op papier korter dan een kilometer naar een keuringsarts. . . . . 05 De Wachtende Zenders. RVA, BE, en U W V, NL, September / Oktober 2026. . De Situatie. Achttien maanden lang wacht het Nederlandse U W V op Belgische gegevens, en wacht België op Nederland. . . Het Systeem. RVA: Elektronische uitwisseling gebeurt steeds op initiatief van de ontvangende partij, U W V. U W V: Er zijn geen persoonsgegevens gedeeld met externe partijen. . . De Feitelijke Realiteit. Twee buurlanden staren achttien maanden naar een lege digitale snelweg, terwijl de zieke burger met 700 gram papier op het postkantoor de enige verbinding vormt. . . . . . ." data-track-index="5" id="aab-docD_deel6">
 <button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -6011,7 +3852,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p>*8* UWV, formeel AVG-besluit d.d. 21 oktober 2026, ontvangen 27 oktober 2026 (kenmerk 2026.10.0356) in samenhang met WIA-afwijzing d.d. 8 juli 2026 (zaak A27812030-01).</p>
 <p>*9* Belastingdienst / Dienst Toeslagen, verdagingsbrief d.d. 22 oktober 2026 (kenmerk 3199.60.602.T.25.0.0013).</p>
 </div>
-<h2 id="deel-vii-persoonlijke-slotverklaring">Deel VII — Persoonlijke slotverklaring</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docD_deel7" data-audio-src="../assets/audio/docD_deel7_nl_1cc93fa2.mp3" data-clean-heading="Deel VII — Persoonlijke slotverklaring" data-clean-text="Deel VII, Persoonlijke slotverklaring. Revalideren van zware operaties gaat eigenlijk niet samen met het voeren van een eindeloos papieren gevecht tegen twee landen tegelijk. Dat iemand na het verliezen van twee tenen en het zicht aan één oog zelf dit hele bewijsdossier moet opbouwen om zijn bestaan tussen twee nationale computers te verdedigen, laat zien waar de prioriteit van het systeem werkelijk ligt. De meeste mensen geven deze strijd onderweg op, niet omdat ze geen gelijk hebben, maar omdat de kracht van een mens nu eenmaal eerder opraakt dan het papier van de overheid. . Wat begon als een poging om een eigen blokkade op te lossen, groeide door het vastleggen van elke brief, elke foutmelding en elke afwijzing uit tot een röntgenfoto van hoe onze overheden werken. De ambtenaren en artsen in dit dossier handelen zelden uit persoonlijke kwade wil; zij volgen beslisbomen op een scherm die blind zijn voor wat hun weigering aanricht buiten hun eigen kantoor. Zolang mensen over grenzen heen wonen en werken terwijl de computers van de staat binnen hun eigen landsgrens opgesloten blijven, maakt het systeem zijn eigen slachtoffers. . Als zoon van een Italiaanse vader en een Franse moeder, geboren in België en wonend in Nederland, was Europa voor mij nooit een papieren verdrag, maar mijn gewone dagelijkse leven. Deze audit laat precies zien waar dat Europa ophoudt te bestaan zodra je lichaam uitvalt. Dit dossier ligt hier als controleerbaar bewijs voor iedereen die in hetzelfde grensgebied vastloopt, en als een concrete handleiding voor wie de macht en de plicht heeft om deze weeffout te herstellen. . De norm beweegt niet. Ik wel. ." data-track-index="6" id="aab-docD_deel7">
+<h2 id="deel-vii-persoonlijke-slotverklaring">Deel VII — Persoonlijke slotverklaring</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docD_deel7" data-audio-src="../assets/audio/docD_deel7_nl_1cc93fa2.mp3" data-clean-heading="Deel VII — Persoonlijke slotverklaring" data-clean-text="Deel VII, Persoonlijke slotverklaring. Revalideren van zware operaties gaat eigenlijk niet samen met het voeren van een eindeloos papieren gevecht tegen twee landen tegelijk. Dat iemand na het verliezen van twee tenen en het zicht aan één oog zelf dit hele bewijsdossier moet opbouwen om zijn bestaan tussen twee nationale computers te verdedigen, laat zien waar de prioriteit van het systeem werkelijk ligt. De meeste mensen geven deze strijd onderweg op, niet omdat ze geen gelijk hebben, maar omdat de kracht van een mens nu eenmaal eerder opraakt dan het papier van de overheid. . Wat begon als een poging om een eigen blokkade op te lossen, groeide door het vastleggen van elke brief, elke foutmelding en elke afwijzing uit tot een röntgenfoto van hoe onze overheden werken. De ambtenaren en artsen in dit dossier handelen zelden uit persoonlijke kwade wil; zij volgen beslisbomen op een scherm die blind zijn voor wat hun weigering aanricht buiten hun eigen kantoor. Zolang mensen over grenzen heen wonen en werken terwijl de computers van de staat binnen hun eigen landsgrens opgesloten blijven, maakt het systeem zijn eigen slachtoffers. . Als zoon van een Italiaanse vader en een Franse moeder, geboren in België en wonend in Nederland, was Europa voor mij nooit een papieren verdrag, maar mijn gewone dagelijkse leven. Deze audit laat precies zien waar dat Europa ophoudt te bestaan zodra je lichaam uitvalt. Dit dossier ligt hier als controleerbaar bewijs voor iedereen die in hetzelfde grensgebied vastloopt, en als een concrete handleiding voor wie de macht en de plicht heeft om deze weeffout te herstellen. . De norm beweegt niet. Ik wel. ." data-track-index="6" id="aab-docD_deel7">
 <button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -6037,220 +3878,14 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p>Wat begon als een poging om een eigen blokkade op te lossen, groeide door het vastleggen van elke brief, elke foutmelding en elke afwijzing uit tot een röntgenfoto van hoe onze overheden werken. De ambtenaren en artsen in dit dossier handelen zelden uit persoonlijke kwade wil; zij volgen beslisbomen op een scherm die blind zijn voor wat hun weigering aanricht buiten hun eigen kantoor. Zolang mensen over grenzen heen wonen en werken terwijl de computers van de staat binnen hun eigen landsgrens opgesloten blijven, maakt het systeem zijn eigen slachtoffers.</p>
 <p>Als zoon van een Italiaanse vader en een Franse moeder, geboren in België en wonend in Nederland, was Europa voor mij nooit een papieren verdrag, maar mijn gewone dagelijkse leven. Deze audit laat precies zien waar dat Europa ophoudt te bestaan zodra je lichaam uitvalt. Dit dossier ligt hier als controleerbaar bewijs voor iedereen die in hetzelfde grensgebied vastloopt — en als een concrete handleiding voor wie de macht en de plicht heeft om deze weeffout te herstellen.</p>
 <p>De norm beweegt niet. Ik wel.</p>
-<a class="pub-top" href="#top" title="Naar boven">↑</a><!-- Forensisch Bronopvragings- en Contactvenster (Modal) -->
-<div class="bm-modal-overlay" id="bm-modal" onclick="if(event.target===this)sluitBronModal()">
-<div aria-labelledby="bm-modal-titel" aria-modal="true" class="bm-modal-dialog" role="dialog">
-<div class="bm-modal-kop">
-<h3 id="bm-modal-titel">📄 Bronstuk opvragen / Contact</h3>
-<button aria-label="Venster sluiten" class="bm-modal-sluit" onclick="sluitBronModal()" type="button">×</button>
-</div>
-<div class="bm-intro">
-      Alle 708 interacties in deze audit zijn gebaseerd op objectieve brondocumenten (originele e-mails met Message-ID's, formele besluiten, brieven en medische verslagen). Om privacy en AVG-rechten van betrokkenen te waarborgen zijn persoonsgegevens in publieke bestanden afgeschermd. Geauthenticeerde onderzoekers, journalisten, toezichthouders en lotgenoten kunnen volledige, ongecensureerde brondossiers opvragen ter verificatie.
-    </div>
-<form id="bm-form" onsubmit="event.preventDefault();stuurEmail();">
-<div class="bm-groep">
-<label class="bm-label" for="bm-onderwerp">Onderwerp / Gevraagd bronstuk of referentie:</label>
-<input class="bm-input" id="bm-onderwerp" placeholder="Bijv. Bronopvraag: CZ Zorgverzekering - 06-10-2026 - Weigering S072" type="text"/>
-</div>
-<div class="bm-groep">
-<label class="bm-label">Uw hoedanigheid / perspectief:</label>
-<div class="bm-radio-groep">
-<label class="bm-radio-optie">
-<input checked="" name="bm-perspectief" type="radio" value="Lotgenoot / Grensarbeider"/>
-<span><strong>Lotgenoot / Grensarbeider</strong><br/><small style="color:#666">Ervaring delen, herkenning, vergelijkbare situatie</small></span>
-</label>
-<label class="bm-radio-optie">
-<input name="bm-perspectief" type="radio" value="Wetenschap / Beleidsonderzoek"/>
-<span><strong>Wetenschap / Beleid</strong><br/><small style="color:#666">Academisch onderzoek, beleidsevaluatie, EESSI/ESSPASS</small></span>
-</label>
-<label class="bm-radio-optie">
-<input name="bm-perspectief" type="radio" value="Journalistiek / Media"/>
-<span><strong>Journalistiek / Media</strong><br/><small style="color:#666">Feitelijke verificatie, achtergrondgesprek, publicatie</small></span>
-</label>
-<label class="bm-radio-optie">
-<input name="bm-perspectief" type="radio" value="Juridisch / Toezichthouder"/>
-<span><strong>Juridisch / Toezichthouder</strong><br/><small style="color:#666">Handhaving, AVG/GDPR, rechtbank, ombudsman</small></span>
-</label>
-</div>
-</div>
-<div class="bm-groep">
-<label class="bm-label" for="bm-vraag">Uw toelichting, vraag of verificatiedoel:</label>
-<textarea class="bm-textarea" id="bm-vraag" placeholder="Beschrijf kort uw onderzoeksvraag, hoedanigheid of situatie..."></textarea>
-</div>
-<div class="bm-check-groep">
-<input checked="" id="bm-akkoord" type="checkbox"/>
-<label for="bm-akkoord">Ik begrijp dat opgevraagde bronstukken uitsluitend voor verificatie, waarheidsvinding of belangenbehartiging worden verstrekt conform de privacywetgeving.</label>
-</div>
-<div class="bm-knoppen">
-<button class="bm-btn-copy" id="bm-copy-btn" onclick="kopieerAanvraag()" type="button">📋 Kopieer aanvraagtekst + e-mailadres</button>
-<button class="bm-btn-mail" type="submit">Open in e-mailprogramma →</button>
-</div>
-</form>
-</div>
-</div>
-<script>
-(function() {
-  window.openBronModal = function(onderwerp) {
-    var modal = document.getElementById('bm-modal');
-    if (!modal) return;
-    var inp = document.getElementById('bm-onderwerp');
-    if (inp) {
-      inp.value = onderwerp || 'Algemeen contact / Vraag over de Systeem-Audit';
-    }
-    modal.classList.add('bm-open');
-    if (inp) inp.focus();
-  };
+<!-- Forensisch Bronopvragings- en Contactvenster (Modal) -->
 
-  window.sluitBronModal = function() {
-    var modal = document.getElementById('bm-modal');
-    if (modal) modal.classList.remove('bm-open');
-  };
 
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') sluitBronModal();
-  });
 
-  // Event delegation voor klik op .audit-bewijs
-  document.addEventListener('click', function(e) {
-    var badge = e.target.closest ? e.target.closest('.audit-bewijs') : null;
-    if (!badge) return;
-    e.preventDefault();
 
-    var entry = badge.closest ? badge.closest('.entry') : null;
-    var orgNaam = '';
-    var datum = '';
-    var titel = '';
-
-    if (entry) {
-      var dEl = entry.querySelector('.datum');
-      if (dEl) datum = dEl.innerText.trim();
-      var tEl = entry.querySelector('.titel, .entry-titel');
-      if (tEl) titel = tEl.innerText.trim();
-      
-      // Zoek dichtstbijzijnde voorgaande h3
-      var allH3 = document.querySelectorAll('h3');
-      for (var i = allH3.length - 1; i >= 0; i--) {
-        if (allH3[i].compareDocumentPosition(badge) & Node.DOCUMENT_POSITION_FOLLOWING) {
-          orgNaam = allH3[i].innerText.trim();
-          break;
-        }
-      }
-    }
-
-    var cleanOrg = orgNaam.replace(/\s+/g, ' ').replace(/^[\d\.\s]+/, '').trim();
-    var parts = [];
-    if (cleanOrg) parts.push(cleanOrg);
-    if (datum) parts.push(datum);
-    if (titel) parts.push(titel.replace(/\s+/g, ' '));
-    else if (badge.innerText) parts.push(badge.innerText.trim());
-
-    var onderwerp = 'Bronopvraag: ' + parts.join(' - ');
-    openBronModal(onderwerp);
-  });
-
-  function genereerEmailTekst() {
-    var onderwerp = (document.getElementById('bm-onderwerp').value || '').trim();
-    var perspectiefEl = document.querySelector('input[name="bm-perspectief"]:checked');
-    var perspectief = perspectiefEl ? perspectiefEl.value : 'Niet opgegeven';
-    var toelichting = (document.getElementById('bm-vraag').value || '').trim();
-    var akkoord = document.getElementById('bm-akkoord').checked ? 'Ja' : 'Nee';
-
-    var tekst = "Geachte heer Messa / Systeem-Audit,\n\n" +
-      "Betreft: " + onderwerp + "\n" +
-      "Perspectief: " + perspectief + "\n\n" +
-      "Toelichting / Onderzoeksvraag:\n" +
-      (toelichting || "[Geen extra toelichting ingevoerd]") + "\n\n" +
-      "Akkoord met verificatievoorwaarden: " + akkoord + "\n\n" +
-      "---\nVerzonden via het bronopvragingsvenster van grensarbeid.org";
-    return { onderwerp: onderwerp, tekst: tekst };
-  }
-
-  window.stuurEmail = function() {
-    var data = genereerEmailTekst();
-    var mailto = "mailto:systeemaudit@gmail.com" +
-      "?subject=" + encodeURIComponent(data.onderwerp) +
-      "&body=" + encodeURIComponent(data.tekst);
-    window.location.href = mailto;
-  };
-
-  window.kopieerAanvraag = function() {
-    var data = genereerEmailTekst();
-    var klembordTekst = "Aan: systeemaudit@gmail.com\n" +
-      "Onderwerp: " + data.onderwerp + "\n\n" +
-      data.tekst;
-
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(klembordTekst).then(function() {
-        toonKopieerBevestiging();
-      }).catch(function() {
-        fallbackKopieer(klembordTekst);
-      });
-    } else {
-      fallbackKopieer(klembordTekst);
-    }
-  };
-
-  function fallbackKopieer(tekst) {
-    var ta = document.createElement('textarea');
-    ta.value = tekst;
-    ta.style.position = 'fixed';
-    ta.style.left = '-9999px';
-    document.body.appendChild(ta);
-    ta.focus();
-    ta.select();
-    try {
-      document.execCommand('copy');
-      toonKopieerBevestiging();
-    } catch(e) {
-      alert('Kopiëren mislukt. U kunt handmatig mailen naar systeemaudit@gmail.com');
-    }
-    document.body.removeChild(ta);
-  }
-
-  function toonKopieerBevestiging() {
-    var btn = document.getElementById('bm-copy-btn');
-    if (!btn) return;
-    var orig = btn.innerText;
-    btn.innerText = '✓ Gekopieerd naar klembord!';
-    btn.classList.add('bm-copied');
-    setTimeout(function() {
-      btn.innerText = orig;
-      btn.classList.remove('bm-copied');
-    }, 2500);
-  }
-})();
-</script><button aria-label="Schakel donkere/lichte modus" class="dm-toggle" onclick="dm_toggle()" title="Schakel donkere/lichte modus" type="button">
-<span class="dm-icon-dm">🌙</span>
-<span class="dm-icon-lm">☀️</span>
-</button>
-<script>
-(function(){
-  function s(k,v){try{localStorage.setItem(k,v);}catch(e){}}
-  window.dm_toggle=function(){
-    var r=document.documentElement;
-    var n=r.getAttribute('data-theme')==='dark'?'light':'dark';
-    r.setAttribute('data-theme',n);
-    s('systeem-audit-thema',n);
-  };
-})();
-</script>
-<footer class="pub-footer notranslate" translate="no">
-<p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 3 november 2026, 14:26</p>
-<div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
-<button class="pub-print-btn notranslate" onclick="window.print()" title="Print deze pagina of bewaar als PDF" translate="no" type="button">🖨️ Print / Bewaar als PDF</button>
-<button class="pub-contact-btn pub-contact-footer notranslate" onclick="openBronModal('Footer contact')" translate="no" type="button">📄 Bronstuk opvragen / Contact</button>
-</div>
-<p><a href="home.html">← Terug naar overzicht</a> ·
-     <a href="../home_int.html">🇪🇺 Europees portaal</a> ·
-     <a href="../index.html">Startportaal</a></p>
-</footer>
 <!-- Analytische sensor (verborgen landentracker, puur voor dossierbeheer) -->
-<div aria-hidden="true" style="display:none;position:absolute;width:0;height:0;overflow:hidden;opacity:0;pointer-events:none;">
-<img alt="" height="1" loading="eager" src="https://s05.flagcounter.com/count/xed2/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_18/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" width="1"/>
-<script async="" data-goatcounter="https://grensarbeid.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
-</div>
-<a class="pub-top" href="#top" title="Naar boven">↑</a><section aria-label="Volledige Audio-Playlist" class="audit-playlist-sectie notranslate" id="audit-audio-playlist" translate="no">
+
+<a class="pub-top" href="#top" title="Naar boven">↑</a><section aria-label="Volledige Audio-Playlist" class="audit-playlist-sectie" id="audit-audio-playlist">
 <div class="aps-header">
 <div class="aps-title-row">
 <span class="aps-badge">🎧 LUISTERMODUS ZONDER LEZEN</span>
@@ -6497,7 +4132,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 3 november 2026, 14:26</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 3 november 2026, 14:57</p>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-print-btn notranslate" onclick="window.print()" title="Print deze pagina of bewaar als PDF" translate="no" type="button">🖨️ Print / Bewaar als PDF</button>
 <button class="pub-contact-btn pub-contact-footer notranslate" onclick="openBronModal('Footer contact')" translate="no" type="button">📄 Bronstuk opvragen / Contact</button>
@@ -6677,14 +4312,23 @@ html[data-theme="dark"] .aps-track-jump:hover {
     }
   }
 
+  function updateMasterProgress(pct, curSec, totSec, isEst) {
+    var mpFill = document.getElementById('aps-mp-progress-fill');
+    if (mpFill) mpFill.style.width = pct + '%';
+    var mpTime = document.getElementById('aps-mp-time');
+    if (mpTime) mpTime.innerText = formatTime(curSec) + ' / ' + (isEst ? '~' : '') + formatTime(totSec);
+  }
+
   function updatePlaylistUI(bar, playing) {
     var pSection = document.getElementById('audit-audio-playlist');
     if (!pSection) return;
     var aid = bar ? bar.getAttribute('data-audio-id') : null;
     var rows = pSection.querySelectorAll('.aps-track');
+    var activeIdx = bar ? allBars.indexOf(bar) : -1;
     for (var i = 0; i < rows.length; i++) {
       var r = rows[i];
       if (aid && r.getAttribute('data-audio-id') === aid) {
+        r.classList.add('aps-active');
         if (playing) {
           r.classList.add('aps-playing');
           r.classList.remove('aps-paused');
@@ -6693,8 +4337,24 @@ html[data-theme="dark"] .aps-track-jump:hover {
           r.classList.add('aps-paused');
         }
       } else {
-        r.classList.remove('aps-playing', 'aps-paused');
+        r.classList.remove('aps-active', 'aps-playing', 'aps-paused');
       }
+    }
+    var mpPlay = document.getElementById('aps-play-btn');
+    if (mpPlay) {
+      var pI = mpPlay.querySelector('.aps-icon-play');
+      var paI = mpPlay.querySelector('.aps-icon-pause');
+      if (pI) pI.style.display = playing ? 'none' : 'inline-block';
+      if (paI) paI.style.display = playing ? 'inline-block' : 'none';
+      if (playing) mpPlay.classList.add('aps-playing');
+      else mpPlay.classList.remove('aps-playing');
+    }
+    if (bar && activeIdx !== -1) {
+      var mpName = document.getElementById('aps-mp-trackname');
+      var rowTitle = rows[activeIdx] ? rows[activeIdx].querySelector('.aps-track-title') : null;
+      if (mpName && rowTitle) mpName.innerText = (activeIdx + 1) + '. ' + rowTitle.innerText.trim();
+      var mpStatus = document.getElementById('aps-mp-status');
+      if (mpStatus) mpStatus.innerText = (playing ? '▶ ' : '❚❚ ') + '(' + (activeIdx + 1) + ' / ' + allBars.length + ')';
     }
   }
 
@@ -6727,6 +4387,11 @@ html[data-theme="dark"] .aps-track-jump:hover {
   }
 
   function playNextTrack(fromBar) {
+    var autoChk = document.getElementById('aps-autoplay-chk');
+    if (autoChk && !autoChk.checked) {
+      stopAllAudio();
+      return;
+    }
     var idx = allBars.indexOf(fromBar);
     if (idx !== -1 && idx < allBars.length - 1) {
       var nextBar = allBars[idx + 1];
@@ -6780,6 +4445,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
       if (timeEl) {
         timeEl.innerText = formatTime(estSec) + ' / ~' + formatTime(liveEstDuration);
       }
+      updateMasterProgress(pct, estSec, liveEstDuration, true);
     }, 250);
 
     playLiveChunk(0);
@@ -6912,6 +4578,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
       if (timeEl) {
         timeEl.innerText = formatTime(audioEl.currentTime) + ' / ' + formatTime(audioEl.duration);
       }
+      updateMasterProgress(pct, audioEl.currentTime, audioEl.duration, false);
     };
 
     audioEl.play().catch(function(err) {
@@ -7088,6 +4755,56 @@ html[data-theme="dark"] .aps-track-jump:hover {
       };
     }
 
+    var mpPlayBtn = document.getElementById('aps-play-btn');
+    if (mpPlayBtn) {
+      mpPlayBtn.onclick = function() {
+        var target = currentBar || allBars[0];
+        if (target) playBar(target);
+      };
+    }
+    var mpPrevBtn = document.getElementById('aps-prev-btn');
+    if (mpPrevBtn) {
+      mpPrevBtn.onclick = function() {
+        var idx = currentBar ? allBars.indexOf(currentBar) : 0;
+        var prevIdx = Math.max(0, idx - 1);
+        if (allBars[prevIdx]) playBar(allBars[prevIdx]);
+      };
+    }
+    var mpNextBtn = document.getElementById('aps-next-btn');
+    if (mpNextBtn) {
+      mpNextBtn.onclick = function() {
+        var idx = currentBar ? allBars.indexOf(currentBar) : -1;
+        var nextIdx = (idx + 1 < allBars.length) ? idx + 1 : 0;
+        if (allBars[nextIdx]) playBar(allBars[nextIdx]);
+      };
+    }
+    var mpSpeedBtn = document.getElementById('aps-speed-btn');
+    if (mpSpeedBtn) {
+      mpSpeedBtn.onclick = function(e) {
+        e.stopPropagation();
+        globalSpeedIdx = (globalSpeedIdx + 1) % speeds.length;
+        var sp = speeds[globalSpeedIdx];
+        var allSpBtns = document.querySelectorAll('.aab-speed-btn');
+        for (var s = 0; s < allSpBtns.length; s++) allSpBtns[s].innerText = sp + 'x';
+        if (currentAudio) currentAudio.playbackRate = sp;
+        if (currentLiveAudio) currentLiveAudio.playbackRate = sp;
+      };
+    }
+    var mpProgWrap = document.getElementById('aps-mp-progress-wrap');
+    if (mpProgWrap) {
+      mpProgWrap.onclick = function(e) {
+        var bar = currentBar || allBars[0];
+        if (!bar) return;
+        var rect = mpProgWrap.getBoundingClientRect();
+        var pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+        if (isIntPortal) {
+          seekLive(bar, pct);
+        } else if (currentAudio && currentBar === bar && currentAudio.duration) {
+          currentAudio.currentTime = pct * currentAudio.duration;
+        }
+      };
+    }
+
     var playlistRows = document.querySelectorAll('.aps-track');
     for (var r = 0; r < playlistRows.length; r++) {
       (function(row) {
@@ -7123,7 +4840,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <script class="notranslate" translate="no">
 (function() {
   var _origTexts = new Map();
-  var _isTranslating = false;
+  var _transJobId = 0;
   var _currentLang = 'nl';
 
   function getTranslatableNodes() {
@@ -7185,7 +4902,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
     var urlParams = new URLSearchParams(window.location.search);
     var target = urlParams.get('lang');
     if (!target) {
-      try { target = sessionStorage.getItem('grensarbeid-int-lang'); } catch(e) {}
+      try { target = sessionStorage.getItem('grensarbeid-int-lang') || localStorage.getItem('grensarbeid-int-lang'); } catch(e) {}
     }
     var supported = ['en','de','fr','it','es','pl','da','sv','pt','ro'];
     if (!target || supported.indexOf(target) === -1) {
@@ -7219,8 +4936,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 
   window.vertaalPaginaNaar = function(lang) {
     if (!lang) return Promise.resolve();
-    if (_isTranslating) return Promise.resolve();
-    _isTranslating = true;
+    var myJob = ++_transJobId;
     _currentLang = lang;
 
     document.documentElement.lang = lang;
@@ -7286,6 +5002,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
       })
       .then(function(resp) { return resp.json(); })
       .then(function(data) {
+        if (myJob !== _transJobId) return;
         if (!data || !data[0]) return;
         var fullTrans = '';
         for (var p = 0; p < data[0].length; p++) {
@@ -7306,8 +5023,9 @@ html[data-theme="dark"] .aps-track-jump:hover {
     });
 
     return Promise.all(promises).then(function() {
-      _isTranslating = false;
-      showStatusPill('✓ Translated (' + lang.toUpperCase() + ')', true);
+      if (myJob === _transJobId) {
+        showStatusPill('✓ Translated (' + lang.toUpperCase() + ')', true);
+      }
     });
   };
 
@@ -7315,7 +5033,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
   window.wisselTaal = function(lang) {
     if (!lang) return;
     try {
-      sessionStorage.setItem('grensarbeid-int-lang', lang);
+      sessionStorage.setItem('grensarbeid-int-lang', lang); localStorage.setItem('grensarbeid-int-lang', lang);
     } catch(e) {}
 
     var curUrl = new URL(window.location.href);

@@ -1200,7 +1200,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 
 <h1>GRENSARBEID.ORG — Systeem-Audit</h1>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen</p>
-<p class="auteur">Auteur: Eric Messa &bull; Versie bijgewerkt: 3 november 2026, 14:26</p>
+<p class="auteur">Auteur: Eric Messa &bull; Versie bijgewerkt: 3 november 2026, 14:57</p>
 
 <div class="pub-ab-banner" style="margin: 16pt 0 24pt 0;">
   <strong>Language &amp; Translation Notice:</strong> Dutch (nl/) is the sole authentic source language of this System-Audit. The automated translations of the overview, documents, visual architecture, synthesis and rights matrix are provided to make the documented cross-border mechanisms accessible across Europe. In case of any ambiguity or legal interpretation, the original Dutch text and source files prevail.
@@ -1478,7 +1478,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <script class="notranslate" translate="no">
 (function() {
   var _origTexts = new Map();
-  var _isTranslating = false;
+  var _transJobId = 0;
   var _currentLang = 'nl';
 
   function getTranslatableNodes() {
@@ -1540,7 +1540,7 @@ html[data-theme="dark"] select.pub-lang-select option {
     var urlParams = new URLSearchParams(window.location.search);
     var target = urlParams.get('lang');
     if (!target) {
-      try { target = sessionStorage.getItem('grensarbeid-int-lang'); } catch(e) {}
+      try { target = sessionStorage.getItem('grensarbeid-int-lang') || localStorage.getItem('grensarbeid-int-lang'); } catch(e) {}
     }
     var supported = ['en','de','fr','it','es','pl','da','sv','pt','ro'];
     if (!target || supported.indexOf(target) === -1) {
@@ -1574,8 +1574,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 
   window.vertaalPaginaNaar = function(lang) {
     if (!lang) return Promise.resolve();
-    if (_isTranslating) return Promise.resolve();
-    _isTranslating = true;
+    var myJob = ++_transJobId;
     _currentLang = lang;
 
     document.documentElement.lang = lang;
@@ -1641,6 +1640,7 @@ html[data-theme="dark"] select.pub-lang-select option {
       })
       .then(function(resp) { return resp.json(); })
       .then(function(data) {
+        if (myJob !== _transJobId) return;
         if (!data || !data[0]) return;
         var fullTrans = '';
         for (var p = 0; p < data[0].length; p++) {
@@ -1661,8 +1661,9 @@ html[data-theme="dark"] select.pub-lang-select option {
     });
 
     return Promise.all(promises).then(function() {
-      _isTranslating = false;
-      showStatusPill('✓ Translated (' + lang.toUpperCase() + ')', true);
+      if (myJob === _transJobId) {
+        showStatusPill('✓ Translated (' + lang.toUpperCase() + ')', true);
+      }
     });
   };
 
@@ -1670,7 +1671,7 @@ html[data-theme="dark"] select.pub-lang-select option {
   window.wisselTaal = function(lang) {
     if (!lang) return;
     try {
-      sessionStorage.setItem('grensarbeid-int-lang', lang);
+      sessionStorage.setItem('grensarbeid-int-lang', lang); localStorage.setItem('grensarbeid-int-lang', lang);
     } catch(e) {}
 
     var curUrl = new URL(window.location.href);

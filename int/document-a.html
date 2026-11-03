@@ -9,9 +9,9 @@
 <meta content="De narratieve audit — verhalen per organisatie | Systeem-Audit" property="og:title"/>
 <meta content="Wat CM, UWV, CZ, CAK, FOD SZ en 57 andere organisaties doen, hoe het misloopt, en wat het gevolg is. Voor wie het geheel wil begrijpen zonder de onderliggende data te doorlopen." property="og:description"/>
 <meta content="article" property="og:type"/>
-<meta content="https://grensarbeid.org/nl/document-a.html" property="og:url"/>
+<meta content="https://grensarbeid.org/int/document-a.html" property="og:url"/>
 <meta content="https://grensarbeid.org/assets/kaart_eu.png" property="og:image"/>
-<link href="https://grensarbeid.org/nl/document-a.html" rel="canonical"/>
+<link href="https://grensarbeid.org/int/document-a.html" rel="canonical"/>
 <link href="/favicon.ico" rel="icon" type="image/x-icon"/>
 <link href="/assets/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="/assets/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
@@ -3231,2167 +3231,8 @@ html[data-theme="dark"] .aps-track-jump:hover {
 
 }
 
-
-
-html { overflow-x: hidden; }
-body { margin: 0 !important; padding: 40pt !important; overflow-x: visible !important; box-sizing: border-box; }
-
-/* === Optimaal Leesgemak, Typografie & Witruimte (Anti-Bloktekst) === */
-p {
-    margin-top: 0 !important;
-    margin-bottom: 14pt !important;
-    line-height: 1.65 !important;
-    font-size: 11.5pt;
-    text-align: left !important;
-}
-
-/* Ergonomische leeskolom: regellengte max 860px (65-80 karakters) zodat ogen nooit verdwalen op brede schermen */
-p, .gebruikersaanwijzing, .intro-rechten, .actie, .afsluiting, .werkversie, .lead, .footnotes, .pub-toc, .contactblok {
-    max-width: 860px;
-}
-h1, h2, h3, h4, h5 {
-    max-width: 960px;
-}
-h2 {
-    margin-top: 36pt !important;
-    margin-bottom: 12pt !important;
-    line-height: 1.3 !important;
-}
-h3 {
-    margin-top: 26pt !important;
-    margin-bottom: 10pt !important;
-    line-height: 1.35 !important;
-}
-h4 {
-    margin-top: 20pt !important;
-    margin-bottom: 8pt !important;
-    line-height: 1.4 !important;
-}
-h5 {
-    margin-top: 16pt !important;
-    margin-bottom: 6pt !important;
-    line-height: 1.4 !important;
-}
-
-/* Duidelijke ademruimte tussen interactie-kaarten in Document B */
-.entry {
-    margin-bottom: 10pt !important;
-    padding: 8pt 12pt !important;
-    line-height: 1.45 !important;
-    max-width: 920px;
-}
-
-/* === Discrete Document Download Links (Anti-Bloat Top Nav) === */
-.pub-discreet-dl {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #f7f5f1;
-    border: 1px solid #d5d0c5;
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-size: 9.5pt;
-    color: #555555;
-    margin: 4pt 0 16pt 0;
-    font-family: Aptos, Calibri, sans-serif;
-}
-html[data-theme="dark"] .pub-discreet-dl {
-    background: #181b22;
-    border-color: #30363d;
-    color: #8b949e;
-}
-.pub-discreet-dl .pdd-label { font-weight: 700; color: #1a3c6e; }
-html[data-theme="dark"] .pub-discreet-dl .pdd-label { color: #58a6ff; }
-.pub-discreet-dl .pdd-link {
-    color: #1a3c6e;
-    text-decoration: none;
-    font-weight: 600;
-}
-html[data-theme="dark"] .pub-discreet-dl .pdd-link { color: #79c0ff; }
-.pub-discreet-dl .pdd-link:hover { text-decoration: underline; }
-.pub-discreet-dl .pdd-sep { color: #aaa; }
-
-.pub-nav {
-    position: sticky; top: 0; z-index: 100;
-    background: #ffffff; border-bottom: 2px solid #d5d0c5;
-    padding: 10px 40pt; margin: -40pt -40pt 20pt -40pt;
-    font-family: Aptos, Calibri, sans-serif;
-    display: flex; justify-content: space-between; align-items: center;
-    gap: 12px 16px; flex-wrap: wrap; box-sizing: border-box;
-}
-.pub-nav .links { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
-.pub-nav .pub-nav-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-left: auto; flex-shrink: 0; }
-.pub-nav a {
-    color: #1a3c6e; text-decoration: none; padding: 6px 12px;
-    border-radius: 4px; font-size: 11pt; font-weight: 600;
-    border: 1px solid transparent;
-}
-.pub-nav a:hover { background: #eef2f7; border-color: #d5d0c5; }
-.pub-nav a.actief { background: #1a3c6e; color: #ffffff; }
-.pub-nav a.home { border: 1px solid #d5d0c5; }
-.pub-nav .titel-klein { font-size: 10pt; color: #666; font-style: italic; }
-.pub-top {
-    position: fixed; bottom: 24px; right: 24px; z-index: 200;
-    background: #1a3c6e; color: #fff; border: none;
-    width: 44px; height: 44px; border-radius: 50%;
-    cursor: pointer; font-size: 18pt; line-height: 1;
-    box-shadow: 0 2px 8px rgba(0,0,0,.25);
-    text-decoration: none; display: flex; align-items: center; justify-content: center;
-    transition: transform .15s;
-}
-.pub-top:hover { transform: scale(1.1); background: #12294d; }
-.pub-toc {
-    background: #f7f5f1; border-left: 4px solid #1a3c6e;
-    padding: 14pt 18pt; margin: 20pt 0 30pt;
-    border-radius: 4px;
-}
-.pub-toc h2 { margin-top: 0 !important; border-bottom: none !important; font-size: 16pt !important; }
-.pub-toc ul { list-style: none; padding-left: 0; margin: 0; }
-.pub-toc li { margin: 3pt 0; }
-.pub-toc a { color: #1a3c6e; text-decoration: none; font-size: 11pt; }
-.pub-toc a:hover { text-decoration: underline; }
-.pub-toc .niv1 { font-weight: 700; margin-top: 8pt; }
-.pub-toc .niv2 { padding-left: 18pt; }
-.pub-toc .niv3 { padding-left: 36pt; font-size: 10pt; color: #555; }
-.audit-toolbar {
-    background: #ffffff; border: 1px solid #d5d0c5; border-left: 5px solid #1a3c6e;
-    border-radius: 6px; padding: 14pt 18pt; margin: 16pt 0 28pt;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.04); font-family: Aptos, Calibri, sans-serif;
-}
-.audit-toolbar .at-stats {
-    display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
-    font-size: 10.5pt; color: #333; margin-bottom: 10pt; padding-bottom: 8pt;
-    border-bottom: 1px solid #ece8df;
-}
-.audit-toolbar .at-sep { color: #b5afa2; }
-.audit-toolbar .at-verified { color: #1b5e20; }
-.audit-toolbar .at-live-count {
-    margin-left: auto; font-family: Consolas, monospace; font-size: 9.5pt;
-    background: #f0eee9; padding: 2px 8px; border-radius: 12px; color: #444;
-}
-.audit-toolbar .at-controls {
-    display: grid; grid-template-columns: 1fr 280px; gap: 10px; margin-bottom: 10pt;
-}
-.audit-toolbar .at-search, .audit-toolbar .at-select {
-    font-family: inherit; font-size: 10.5pt; padding: 7px 11px;
-    border: 1px solid #ccc6b8; border-radius: 4px; background: #faf8f5; color: #111;
-}
-.audit-toolbar .at-search:focus, .audit-toolbar .at-select:focus {
-    outline: none; border-color: #1a3c6e; background: #fff;
-}
-.audit-toolbar .at-pills { display: flex; flex-wrap: wrap; gap: 6px; }
-.audit-toolbar .at-pill {
-    font-family: inherit; font-size: 9.5pt; font-weight: 600;
-    padding: 5px 11px; border-radius: 16px; border: 1px solid #d5d0c5;
-    background: #f7f5f1; color: #333; cursor: pointer; transition: all .15s;
-}
-.audit-toolbar .at-pill:hover { border-color: #1a3c6e; background: #eef2f7; }
-.audit-toolbar .at-pill.actief {
-    background: #1a3c6e; color: #ffffff; border-color: #1a3c6e;
-}
-.audit-org-bar {
-    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
-    gap: 8px; margin: 2pt 0 10pt; padding: 4pt 8pt;
-    background: #f7f5f1; border-radius: 4px; font-size: 9.5pt;
-}
-.audit-org-stat { color: #555; font-family: Consolas, monospace; font-size: 9pt; }
-.audit-crosslink {
-    display: inline-block; color: #1a3c6e; font-weight: 600;
-    text-decoration: none; font-size: 9.5pt;
-}
-.audit-crosslink:hover { text-decoration: underline; }
-@media (max-width: 700px) {
-    .audit-toolbar .at-controls { grid-template-columns: 1fr; }
-    .audit-toolbar .at-live-count { margin-left: 0; }
-}
-.pub-footer {
-    margin-top: 60pt; padding-top: 20pt; border-top: 1px solid #d5d0c5;
-    font-size: 10pt; color: #666; text-align: center;
-}
-.pub-footer a { color: #1a3c6e; }
-.pub-naar-boven {
-    display: block; text-align: right; margin-top: 10pt;
-    font-size: 10pt; color: #888; text-decoration: none;
-}
-.pub-naar-boven:hover { color: #1a3c6e; text-decoration: underline; }
-
-.dm-toggle {
-    position: fixed; bottom: 80px; right: 24px; z-index: 200;
-    background: #ffffff; color: #1a3c6e; border: 1px solid #d5d0c5;
-    width: 44px; height: 44px; border-radius: 50%;
-    cursor: pointer; font-size: 18pt; line-height: 1; padding: 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,.25);
-    display: flex; align-items: center; justify-content: center;
-    transition: transform .15s, background .15s, border-color .15s;
-    font-family: Aptos, Calibri, sans-serif;
-}
-.dm-toggle:hover { transform: scale(1.1); background: #eef2f7; border-color: #1a3c6e; }
-.dm-toggle .dm-icon-lm { display: none; }
-html[data-theme="dark"] .dm-toggle .dm-icon-dm { display: none; }
-html[data-theme="dark"] .dm-toggle .dm-icon-lm { display: inline; }
-
-
-.pub-nav .nav-acties { display: flex; align-items: center; gap: 10px; margin-left: auto; }
-.pub-contact-btn {
-    background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
-    padding: 5px 12px; border-radius: 4px; font-size: 10pt; font-weight: 600;
-    cursor: pointer; font-family: inherit; transition: all .15s;
-    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
-}
-.pub-contact-btn:hover { background: #1a3c6e; color: #ffffff; border-color: #1a3c6e; }
-.pub-contact-footer { margin: 10pt 0 4pt; font-size: 10.5pt; padding: 7px 16px; }
-
-/* Forensische bewijs-badge interactief */
-.audit-bewijs { cursor: pointer; transition: border-color .15s, background .15s, box-shadow .15s; }
-.audit-bewijs:hover {
-    border-color: #1a3c6e; background: #e6edf7;
-    box-shadow: 0 1px 4px rgba(26,60,110,0.18);
-}
-
-.pub-print-btn {
-    background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
-    padding: 5px 12px; border-radius: 4px; font-size: 10pt; font-weight: 600;
-    cursor: pointer; font-family: inherit; transition: all .15s;
-    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
-}
-.pub-print-btn:hover { background: #1a3c6e; color: #ffffff; border-color: #1a3c6e; }
-html[data-theme="dark"] .pub-print-btn {
-    background: #232323; color: #b0c8e8; border-color: #4a4a4a;
-}
-html[data-theme="dark"] .pub-print-btn:hover {
-    background: #2a2a2a; border-color: #7fb3ff; color: #ffffff;
-}
-@media (max-width: 768px) {
-    .pub-print-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 38px; }
-}
-
-.pub-lang-select, #int-lang-select {
-    font-family: inherit; font-size: 10pt; font-weight: 600;
-    padding: 4px 8px; border: 1px solid #d5d0c5; border-radius: 4px;
-    background-color: #ffffff; color: #1a3c6e; cursor: pointer;
-    color-scheme: light;
-}
-.pub-lang-select option, #int-lang-select option {
-    background-color: #ffffff; color: #1a3c6e;
-    color-scheme: light;
-}
-html[data-theme="dark"] .pub-lang-select,
-html[data-theme="dark"] #int-lang-select,
-html[data-theme="dark"] select.pub-lang-select {
-    background-color: #232323 !important;
-    background: #232323 !important;
-    border-color: #4a4a4a !important;
-    color: #e0e0e0 !important;
-    color-scheme: dark !important;
-}
-html[data-theme="dark"] .pub-lang-select option,
-html[data-theme="dark"] #int-lang-select option,
-html[data-theme="dark"] select.pub-lang-select option {
-    background-color: #232323 !important;
-    background: #232323 !important;
-    color: #e0e0e0 !important;
-    color-scheme: dark !important;
-}
-
-/* === Professionele A4 Print / Opslaan als PDF Stylesheet === */
-@media print {
-    html, html[data-theme="dark"], body, html[data-theme="dark"] body {
-        background: #ffffff !important;
-        color: #000000 !important;
-        margin: 12mm !important;
-        padding: 0 !important;
-        font-size: 10.5pt !important;
-    }
-    .pub-nav, .pub-top, .dm-toggle, .audit-toolbar, .audit-crosslink,
-    .audit-audio-bar, .pub-discreet-dl,
-    .pub-naar-boven, .bm-modal-overlay, .skiptranslate,
-    .goog-te-banner-frame, #goog-gt-tt {
-        display: none !important;
-    }
-    /* Houd de vertaaldisclaimer bovenaan de PDF zichtbaar! */
-    .pub-ab-banner {
-        display: block !important;
-        background: #fdf6e3 !important;
-        color: #000000 !important;
-        border: 1px solid #d4a017 !important;
-        border-left: 4pt solid #d4a017 !important;
-        padding: 8pt 12pt !important;
-        margin-bottom: 14pt !important;
-    }
-    h1, h2, h3, h4, h5, h6 {
-        color: #1a3c6e !important;
-        page-break-after: avoid !important;
-    }
-    table, tr, .figure, .entry, .actor {
-        page-break-inside: avoid !important;
-    }
-    table th {
-        background: #1a3c6e !important;
-        color: #ffffff !important;
-    }
-    table td {
-        background: #ffffff !important;
-        color: #000000 !important;
-        border-color: #cccccc !important;
-    }
-    /* Schakel de dark-mode invert op SVG's en plaatjes uit tijdens printen! */
-    .figure, html[data-theme="dark"] .figure {
-        background: #ffffff !important;
-        border-color: #cccccc !important;
-    }
-    .figure svg, html[data-theme="dark"] .figure svg,
-    .figure img, html[data-theme="dark"] .figure img {
-        filter: none !important;
-    }
-    .entry-in, html[data-theme="dark"] .entry-in {
-        background: #f0f4f9 !important;
-        color: #000000 !important;
-        border-left: 3pt solid #1a3c6e !important;
-    }
-    .entry-uit, html[data-theme="dark"] .entry-uit {
-        background: #faf0f2 !important;
-        color: #000000 !important;
-        border-right: 3pt solid #8b1e1e !important;
-    }
-    .datum, .titel, .opvolging, .oorsprong {
-        color: #000000 !important;
-    }
-    /* Herstel Inhoudsopgave (TOC) naar helder wit papier zonder zwart blok! */
-    .pub-toc, html[data-theme="dark"] .pub-toc {
-        background: #ffffff !important;
-        color: #000000 !important;
-        border: 1px solid #d5d0c5 !important;
-        border-left: 4px solid #1a3c6e !important;
-        page-break-inside: avoid !important;
-        box-shadow: none !important;
-    }
-    .pub-toc h2, html[data-theme="dark"] .pub-toc h2 {
-        color: #1a3c6e !important;
-    }
-    .pub-toc a, html[data-theme="dark"] .pub-toc a {
-        color: #1a3c6e !important;
-        text-decoration: none !important;
-    }
-    .pub-toc .niv1, html[data-theme="dark"] .pub-toc .niv1,
-    .pub-toc .niv2, html[data-theme="dark"] .pub-toc .niv2 {
-        color: #000000 !important;
-    }
-    .pub-toc .niv3, html[data-theme="dark"] .pub-toc .niv3 {
-        color: #555555 !important;
-    }
-    .pub-toc ul {
-        background: transparent !important;
-    }
-
-}
-
-/* Forensisch Bronopvragings- en Contactvenster (Modal) */
-.bm-modal-overlay {
-    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.65); z-index: 1000;
-    display: none; align-items: center; justify-content: center;
-    padding: 20px; backdrop-filter: blur(2px);
-}
-.bm-modal-overlay.bm-open { display: flex; }
-.bm-modal-dialog {
-    background: #ffffff; color: #222222; border-radius: 8px;
-    max-width: 680px; width: 100%; max-height: 90vh; overflow-y: auto;
-    padding: 24px 28px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-    border: 1px solid #d5d0c5; font-family: Aptos, Calibri, sans-serif;
-    position: relative; box-sizing: border-box; text-align: left;
-}
-.bm-modal-kop {
-    display: flex; justify-content: space-between; align-items: flex-start;
-    border-bottom: 2px solid #1a3c6e; padding-bottom: 12px; margin-bottom: 16px;
-}
-.bm-modal-kop h3 {
-    margin: 0; font-size: 16pt; color: #1a3c6e; border: none; padding: 0;
-}
-.bm-modal-sluit {
-    background: none; border: none; font-size: 22pt; line-height: 1;
-    color: #888; cursor: pointer; padding: 0 4px;
-}
-.bm-modal-sluit:hover { color: #c62828; }
-.bm-intro {
-    font-size: 10pt; line-height: 1.5; color: #555555; background: #f7f5f1;
-    padding: 10px 14px; border-left: 3px solid #1a3c6e; border-radius: 3px;
-    margin-bottom: 18px;
-}
-.bm-groep { margin-bottom: 14px; }
-.bm-groep label.bm-label {
-    display: block; font-weight: 700; font-size: 10.5pt; color: #1a3c6e; margin-bottom: 5px;
-}
-.bm-input, .bm-textarea {
-    width: 100%; box-sizing: border-box; padding: 8px 12px;
-    border: 1px solid #ccc; border-radius: 4px; font-family: inherit;
-    font-size: 10.5pt; background: #faf8f5; color: #222;
-}
-.bm-input:focus, .bm-textarea:focus {
-    border-color: #1a3c6e; background: #fff; outline: none;
-}
-.bm-textarea { min-height: 90px; resize: vertical; }
-.bm-radio-groep {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px;
-}
-@media (max-width: 580px) {
-    .bm-radio-groep { grid-template-columns: 1fr; }
-}
-.bm-radio-optie {
-    display: flex; align-items: flex-start; gap: 8px; background: #f9f8f6;
-    border: 1px solid #e2ddd5; padding: 8px 10px; border-radius: 4px;
-    font-size: 9.5pt; cursor: pointer;
-}
-.bm-radio-optie:hover { border-color: #1a3c6e; background: #f0f4f9; }
-.bm-radio-optie input { margin-top: 2px; }
-.bm-check-groep {
-    display: flex; align-items: flex-start; gap: 8px; font-size: 9.5pt;
-    color: #444; margin: 14px 0 18px;
-}
-.bm-knoppen { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
-.bm-btn-mail {
-    background: #1a3c6e; color: #ffffff; border: 1px solid #1a3c6e;
-    padding: 8px 16px; border-radius: 4px; font-size: 10.5pt; font-weight: 700;
-    cursor: pointer; transition: background .15s;
-}
-.bm-btn-mail:hover { background: #122b50; }
-.bm-btn-copy {
-    background: #f0eee9; color: #333; border: 1px solid #d5d0c5;
-    padding: 8px 14px; border-radius: 4px; font-size: 10.5pt; font-weight: 600;
-    cursor: pointer; transition: all .15s;
-}
-.bm-btn-copy:hover { background: #e2ded5; }
-.bm-btn-copy.bm-copied { background: #2e7d32; color: #ffffff; border-color: #2e7d32; }
-
-@media (max-width: 1320px) {
-    .pub-nav { padding: 10px 20px; }
-    .pub-nav .pub-nav-actions {
-        width: 100%;
-        justify-content: flex-end;
-        margin-top: 6px;
-        margin-left: 0;
-    }
-}
-@media (max-width: 768px) {
-    body {
-        margin: 0 !important;
-        padding: 16pt 24pt !important;
-        padding-left: max(24pt, env(safe-area-inset-left)) !important;
-        padding-right: max(20pt, env(safe-area-inset-right)) !important;
-        padding-bottom: 120px !important;
-        font-size: 11pt !important;
-    }
-    .pub-top {
-        bottom: 16px !important; right: 16px !important;
-        width: 38px !important; height: 38px !important; font-size: 15pt !important;
-        opacity: 0.88;
-    }
-    .dm-toggle {
-        bottom: 62px !important; right: 16px !important;
-        width: 38px !important; height: 38px !important; font-size: 15pt !important;
-        opacity: 0.88;
-    }
-    p {
-        margin-top: 0 !important;
-        margin-bottom: 14pt !important;
-        line-height: 1.65 !important;
-        font-size: 11pt !important;
-    }
-    .entry { margin-bottom: 8pt !important; padding: 7pt 10pt !important; line-height: 1.4 !important; }
-    .pub-nav {
-        position: static !important; /* Scrolls away naturally with the page — never blocks 50% of the mobile screen! */
-        padding: 8px 14px !important;
-        margin: -16pt -24pt 16pt -24pt !important;
-        background: #ffffff;
-        border-bottom: 1px solid #d5d0c5;
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        justify-content: flex-start !important;
-        gap: 6px !important;
-        overflow-x: auto !important;
-        overflow-y: hidden !important;
-        white-space: nowrap !important;
-        -webkit-overflow-scrolling: touch !important;
-        scrollbar-width: none !important;
-        box-sizing: border-box !important;
-        max-width: calc(100% + 48pt) !important;
-    }
-    .pub-nav::-webkit-scrollbar { display: none !important; }
-    .pub-nav .links {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        align-items: center !important;
-        gap: 6px !important;
-        width: auto !important;
-    }
-    .pub-nav a {
-        padding: 6px 11px !important;
-        font-size: 9.5pt !important;
-        min-height: 32px !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        white-space: nowrap !important;
-        flex-shrink: 0 !important;
-        border-radius: 4px !important;
-        box-sizing: border-box !important;
-    }
-    .pub-nav .titel-klein { display: none !important; }
-    .pub-nav .pub-nav-actions {
-        display: flex !important;
-        align-items: center !important;
-        gap: 6px !important;
-        flex-shrink: 0 !important;
-        margin-left: 4px !important;
-    }
-    html[data-theme="dark"] .pub-nav {
-        background: #1e1e1e !important;
-        border-bottom: 1px solid #333333 !important;
-    }
-    html[data-theme="dark"] .pub-nav a {
-        background: #252525 !important;
-        border: 1px solid #3a3a3a !important;
-        color: #b0c8e8 !important;
-    }
-    html[data-theme="dark"] .pub-nav a.actief {
-        background: #4a6fa5 !important;
-        border-color: #7fb3ff !important;
-        color: #ffffff !important;
-    }
-    html[data-theme="dark"] .pub-nav a.home {
-        background: #252525 !important;
-        border-color: #4a4a4a !important;
-        color: #b0c8e8 !important;
-    }
-    .pub-contact-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 34px; max-width: 100%; box-sizing: border-box; }
-    .d0-rep-card { width: 154px !important; min-width: 144px !important; }
-    .pub-toc { padding: 10pt 14pt; }
-    .pub-toc .niv3 { padding-left: 20pt; }
-    .audit-bewijs { white-space: normal; flex-wrap: wrap; }
-    .bm-modal-dialog { padding: 18px 16px; width: 95%; max-height: 94vh; }
-    .bm-modal-kop h3 { font-size: 14pt; }
-    .bm-intro { font-size: 9.5pt; padding: 8px 10px; }
-    .bm-input, .bm-textarea { font-size: 16px; } /* Prevents iOS auto-zoom */
-    .bm-radio-groep { grid-template-columns: 1fr; }
-}
-@media (max-width: 480px) {
-    body {
-        margin: 0 !important;
-        padding: 14pt 20pt !important;
-        padding-left: max(24pt, env(safe-area-inset-left)) !important;
-        padding-right: max(20pt, env(safe-area-inset-right)) !important;
-        padding-bottom: 120px !important;
-    }
-    p {
-        margin-bottom: 14pt !important;
-        line-height: 1.65 !important;
-        font-size: 10.5pt !important;
-    }
-    .pub-nav { padding: 6px 10px !important; margin: -14pt -20pt 14pt -20pt !important; max-width: calc(100% + 40pt) !important; }
-    .pub-nav .links a { font-size: 9pt !important; padding: 5px 9px !important; min-height: 30px !important; }
-    .pub-contact-btn { width: 100%; justify-content: center; }
-    .audit-toolbar .at-pills { gap: 4px; }
-    .audit-toolbar .at-pill { font-size: 8.5pt; padding: 4px 8px; min-height: 34px; }
-}
-
-
-html[data-theme="dark"] { color-scheme: dark; }
-
-html[data-theme="dark"] body {
-    background: #1a1a1a;
-    color: #e0e0e0;
-}
-
-/* === v9.3 — headings + grijs-fix === */
-html[data-theme="dark"] h1,
-html[data-theme="dark"] h2,
-html[data-theme="dark"] h3,
-html[data-theme="dark"] h4,
-html[data-theme="dark"] h6 {
-    color: #7fb3ff !important;
-    border-color: #4a6fa5 !important;
-}
-html[data-theme="dark"] h5 {
-    color: #a8c5e8 !important;
-}
-
-html[data-theme="dark"] p.subtitel { color: #a8a8a8 !important; }
-html[data-theme="dark"] p.lead     { color: #b8b8b8 !important; }
-html[data-theme="dark"] p.tijd     { color: #a8a8a8 !important; }
-html[data-theme="dark"] .netwerk   { color: #b8b8b8 !important; }
-html[data-theme="dark"] .meta      { color: #c8c8c8 !important; }
-html[data-theme="dark"] .meta strong { color: #7fb3ff !important; }
-html[data-theme="dark"] .datum     { color: #f0f0f0 !important; }
-html[data-theme="dark"] .titel     { color: #e8e8e8 !important; }
-html[data-theme="dark"] .opvolging { color: #a8a8a8 !important; }
-html[data-theme="dark"] .oorsprong { color: #a8a8a8 !important; }
-html[data-theme="dark"] .caption   { color: #a8a8a8 !important; border-top-color: #3a3a3a !important; }
-
-html[data-theme="dark"] .richting-ontvangen { color: #7fb3ff !important; }
-html[data-theme="dark"] .richting-verzonden { color: #ff8a8a !important; }
-
-html[data-theme="dark"] .entry.technisch {
-    background: #232323;
-    border-left-color: #4a4a4a;
-    color: #a8a8a8;
-}
-html[data-theme="dark"] .entry.technisch .datum { color: #909090 !important; }
-html[data-theme="dark"] .entry.technisch .titel { color: #b0b0b0 !important; }
-html[data-theme="dark"] .entry.technisch .opvolging { color: #808080 !important; }
-html[data-theme="dark"] .entry.technisch .richting-ontvangen { color: #8fa8c8 !important; }
-html[data-theme="dark"] .entry.technisch .richting-verzonden { color: #c89090 !important; }
-html[data-theme="dark"] .entry.praktisch {
-    background: #1e1e1e; border-left-color: #2e2e2e; color: #808080;
-}
-html[data-theme="dark"] .entry.praktisch .datum { color: #707070 !important; }
-html[data-theme="dark"] .entry.praktisch .titel { color: #858585 !important; }
-html[data-theme="dark"] .entry.praktisch .opvolging { color: #707070 !important; }
-html[data-theme="dark"] .entry.praktisch .richting-ontvangen { color: #6a80a0 !important; }
-html[data-theme="dark"] .entry.praktisch .richting-verzonden { color: #a07070 !important; }
-
-html[data-theme="dark"] .technisch-notice {
-    background: #232323; color: #a8a8a8 !important; border-left-color: #4a4a4a;
-}
-
-/* === Voetnoten — waren te donker === */
-html[data-theme="dark"] .footnotes,
-html[data-theme="dark"] .footnotes p {
-    color: #b0b0b0 !important;
-}
-html[data-theme="dark"] .footnotes strong {
-    color: #7fb3ff !important;
-}
-
-html[data-theme="dark"] hr { border-top-color: #3a3a3a; }
-html[data-theme="dark"] .titelblad h1 { color: #7fb3ff !important; }
-html[data-theme="dark"] .titelblad .ondertitel { color: #c8c8c8 !important; }
-html[data-theme="dark"] .titelblad .documentaanduiding { color: #7fb3ff !important; }
-html[data-theme="dark"] .titelblad .auteur,
-html[data-theme="dark"] .titelblad .meta-lijn { color: #a8a8a8 !important; }
-html[data-theme="dark"] .gebruikersaanwijzing p { color: #c8c8c8 !important; }
-html[data-theme="dark"] table th { background: #2e4a72; border-color: #2e4a72; }
-html[data-theme="dark"] table td {
-    background: #232323; border-color: #3a3a3a; color: #d0d0d0;
-}
-html[data-theme="dark"] tr:nth-child(even) td { background: #2a2a2a; }
-html[data-theme="dark"] .figure { background: #232323; border-color: #3a3a3a; }
-html[data-theme="dark"] .figure svg { background: transparent; }
-html[data-theme="dark"] .intro-rechten {
-    background: #232323; color: #b8b8b8; border-left-color: #4a6fa5;
-}
-html[data-theme="dark"] .actie { background: #2a2440; color: #d0d0d0; }
-html[data-theme="dark"] .afsluiting { background: #2a2440; color: #d0d0d0; }
-html[data-theme="dark"] .werkversie { background: #332c14; color: #d0c090; }
-html[data-theme="dark"] .noot { color: #a8a8a8 !important; border-top-color: #3a3a3a; }
-html[data-theme="dark"] a { color: #7fb3ff; }
-
-/* === Actor-blokken (Document C) === */
-html[data-theme="dark"] .actor { border-bottom-color: #3a3a3a; }
-html[data-theme="dark"] .actor-naam { color: #e0e0e0 !important; }
-html[data-theme="dark"] .actor-rol  { color: #7fb3ff !important; }
-
-/* === Sectie-banners (Document C) === */
-html[data-theme="dark"] .banner-be {
-    background: #2a1c1c; border-left-color: #ff8a8a;
-}
-html[data-theme="dark"] .banner-be strong { color: #ff8a8a !important; }
-html[data-theme="dark"] .banner-nl {
-    background: #1c2129; border-left-color: #7fb3ff;
-}
-html[data-theme="dark"] .banner-nl strong { color: #7fb3ff !important; }
-html[data-theme="dark"] .banner-eu {
-    background: #1c2628; border-left-color: #5fc8cc;
-}
-html[data-theme="dark"] .banner-eu strong { color: #5fc8cc !important; }
-
-/* === Inline badges === */
-html[data-theme="dark"] .badge-be  { color: #ff8a8a !important; }
-html[data-theme="dark"] .badge-nl  { color: #7fb3ff !important; }
-html[data-theme="dark"] .badge-mem { color: #ffb380 !important; }
-html[data-theme="dark"] .badge-eu  { color: #5fc8cc !important; }
-
-/* === Sectorkoppen (Document E) === */
-html[data-theme="dark"] .sector-titel { color: #7fb3ff !important; }
-html[data-theme="dark"] .recht-kop-wrapper { border-bottom-color: #4a6fa5; }
-html[data-theme="dark"] .legend-row { color: #c0c0c0; }
-
-/* === Contactblok === */
-html[data-theme="dark"] .contactblok {
-    background: #232323; border-left-color: #4a6fa5;
-}
-html[data-theme="dark"] .contactblok a { color: #7fb3ff !important; }
-
-/* === Navigatie === */
-html[data-theme="dark"] .pub-nav {
-    background: #1e1e1e !important;
-    border-bottom: 1px solid #333333 !important;
-}
-html[data-theme="dark"] .pub-nav a {
-    color: #b0c8e8 !important;
-    background: #252525 !important;
-    border: 1px solid #3a3a3a !important;
-}
-html[data-theme="dark"] .pub-nav a:hover {
-    background: #333333 !important;
-    border-color: #555555 !important;
-    color: #ffffff !important;
-}
-html[data-theme="dark"] .pub-nav a.actief {
-    background: #4a6fa5 !important;
-    border-color: #7fb3ff !important;
-    color: #ffffff !important;
-}
-html[data-theme="dark"] .pub-nav a.home {
-    background: #252525 !important;
-    border-color: #4a4a4a !important;
-    color: #b0c8e8 !important;
-}
-html[data-theme="dark"] .pub-nav .titel-klein { color: #888 !important; }
-
-html[data-theme="dark"] .pub-toc {
-    background: #232323; border-left-color: #4a6fa5;
-}
-html[data-theme="dark"] .pub-toc a { color: #b0c8e8 !important; }
-html[data-theme="dark"] .pub-toc .niv3 { color: #888 !important; }
-html[data-theme="dark"] .audit-toolbar {
-    background: #232323; border-color: #3a3a3a; border-left-color: #7fb3ff;
-}
-html[data-theme="dark"] .audit-toolbar .at-stats {
-    color: #d0d0d0; border-bottom-color: #3a3a3a;
-}
-html[data-theme="dark"] .audit-toolbar .at-verified { color: #81c784; }
-html[data-theme="dark"] .audit-toolbar .at-live-count {
-    background: #1a1a1a; color: #b0c8e8;
-}
-html[data-theme="dark"] .audit-toolbar .at-search,
-html[data-theme="dark"] .audit-toolbar .at-select {
-    background: #1a1a1a; border-color: #4a4a4a; color: #e8e8e8;
-}
-html[data-theme="dark"] .audit-toolbar .at-pill {
-    background: #1a1a1a; border-color: #4a4a4a; color: #c8c8c8;
-}
-html[data-theme="dark"] .audit-toolbar .at-pill.actief {
-    background: #4a6fa5; border-color: #7fb3ff; color: #ffffff;
-}
-html[data-theme="dark"] .audit-org-bar {
-    background: #232323;
-}
-html[data-theme="dark"] .audit-org-stat { color: #a8a8a8; }
-html[data-theme="dark"] .audit-crosslink { color: #7fb3ff !important; }
-html[data-theme="dark"] .audit-bewijs {
-    background: #262930; border-color: #3e4452; color: #a8b5c8;
-}
-html[data-theme="dark"] .entry { background-color: #24272c; }
-html[data-theme="dark"] .entry-in {
-    background-color: #1e2633 !important;
-    border-left-color: #4a88d9 !important;
-}
-html[data-theme="dark"] .entry-in .datum { color: #7fb3ff !important; }
-html[data-theme="dark"] .entry-uit {
-    background-color: #332024 !important;
-    border-right-color: #d9534f !important;
-}
-html[data-theme="dark"] .entry-uit .datum { color: #ff8a8a !important; }
-html[data-theme="dark"] .entry.technisch, html[data-theme="dark"] .entry.praktisch {
-    background-color: transparent !important;
-    border-top-color: #444 !important;
-    border-bottom-color: #444 !important;
-    color: #999 !important;
-}
-html[data-theme="dark"] .entry.technisch .datum, html[data-theme="dark"] .entry.praktisch .datum { color: #888 !important; }
-html[data-theme="dark"] .entry.technisch .titel, html[data-theme="dark"] .entry.praktisch .titel { color: #aaa !important; }
-
-html[data-theme="dark"] .pub-footer {
-    border-top-color: #3a3a3a; color: #888;
-}
-html[data-theme="dark"] .pub-footer a { color: #b0c8e8 !important; }
-html[data-theme="dark"] .pub-naar-boven { color: #888 !important; }
-html[data-theme="dark"] .pub-naar-boven:hover { color: #b0c8e8 !important; }
-html[data-theme="dark"] .dm-toggle {
-    background: #232323; border-color: #4a4a4a; color: #e0e0e0;
-}
-html[data-theme="dark"] .dm-toggle:hover {
-    background: #2a2a2a; border-color: #7fb3ff;
-}
-
-/* === SVG dark-mode === */
-html[data-theme="dark"] .figure svg {
-    filter: invert(0.88) hue-rotate(180deg);
-}
-html[data-theme="dark"] .figure {
-    background: #1e1e1e;
-}
-html[data-theme="dark"] .figure img {
-    filter: invert(0.88) hue-rotate(180deg);
-}
-
-/* === v9.4 — intro-rij accenten === */
-html[data-theme="dark"] .intro-rij[lang="nl"] {
-    --accent: #ff9147 !important;
-    --accent-soft: #3a2814 !important;
-}
-html[data-theme="dark"] .intro-rij[lang="en"] {
-    --accent: #7fb3ff !important;
-    --accent-soft: #1c2940 !important;
-}
-html[data-theme="dark"] .intro-rij[lang="de"] {
-    --accent: #ff8080 !important;
-    --accent-soft: #3a1c1c !important;
-}
-html[data-theme="dark"] .intro-rij[lang="fr"] {
-    --accent: #7fb3ff !important;
-    --accent-soft: #1c2940 !important;
-}
-
-/* Subtiel wit randje voor extra leesbaarheid */
-html[data-theme="dark"] .intro-rij h3 { color: #7fb3ff !important; }
-
-html[data-theme="dark"] .pub-contact-btn {
-    background: #232323; color: #b0c8e8; border-color: #4a4a4a;
-}
-html[data-theme="dark"] .pub-contact-btn:hover {
-    background: #2a2a2a; border-color: #7fb3ff; color: #ffffff;
-}
-html[data-theme="dark"] .audit-bewijs:hover {
-    border-color: #7fb3ff !important; background: #2f3642 !important;
-    box-shadow: 0 1px 6px rgba(127,179,255,0.25);
-}
-html[data-theme="dark"] .bm-modal-dialog {
-    background: #202226; color: #e0e0e0; border-color: #3a3f48;
-}
-html[data-theme="dark"] .bm-modal-kop { border-bottom-color: #4a6fa5; }
-html[data-theme="dark"] .bm-modal-kop h3 { color: #7fb3ff !important; }
-html[data-theme="dark"] .bm-intro {
-    background: #282c34; border-left-color: #7fb3ff; color: #b8b8b8;
-}
-html[data-theme="dark"] .bm-groep label.bm-label { color: #7fb3ff !important; }
-html[data-theme="dark"] .bm-input,
-html[data-theme="dark"] .bm-textarea {
-    background: #181a1f; border-color: #3e4450; color: #e8e8e8;
-}
-html[data-theme="dark"] .bm-input:focus,
-html[data-theme="dark"] .bm-textarea:focus {
-    border-color: #7fb3ff; background: #1f2229;
-}
-html[data-theme="dark"] .bm-radio-optie {
-    background: #262930; border-color: #3e4450; color: #d0d0d0;
-}
-html[data-theme="dark"] .bm-radio-optie:hover {
-    background: #2f3440; border-color: #7fb3ff;
-}
-html[data-theme="dark"] .bm-check-groep { color: #b0b0b0; }
-html[data-theme="dark"] .bm-btn-mail {
-    background: #4a6fa5; border-color: #4a6fa5; color: #ffffff;
-}
-html[data-theme="dark"] .bm-btn-mail:hover { background: #395782; }
-html[data-theme="dark"] .bm-btn-copy {
-    background: #2a2e36; border-color: #404754; color: #e0e0e0;
-}
-html[data-theme="dark"] .bm-btn-copy:hover {
-    background: #353b47; border-color: #7fb3ff;
-}
-
-html[data-theme="dark"] .intro-rij a.goto {
-    text-shadow: 0 0 1px rgba(255,255,255,0.25),
-                 0 0 3px rgba(255,255,255,0.10);
-}
-
-
-/* Forensisch Bronopvragings- en Contactvenster (Modal) */
-.pub-contact-btn {
-    background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
-    padding: 5px 12px; border-radius: 4px; font-size: 10pt; font-weight: 600;
-    cursor: pointer; font-family: inherit; transition: all .15s;
-    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
-}
-.pub-contact-btn:hover { background: #1a3c6e; color: #ffffff; border-color: #1a3c6e; }
-.pub-contact-footer { margin: 10pt 0 4pt; font-size: 10.5pt; padding: 7px 16px; }
-
-.audit-bewijs { cursor: pointer; transition: border-color .15s, background .15s, box-shadow .15s; }
-.audit-bewijs:hover {
-    border-color: #1a3c6e; background: #e6edf7;
-    box-shadow: 0 1px 4px rgba(26,60,110,0.18);
-}
-
-.bm-modal-overlay {
-    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.65); z-index: 1000;
-    display: none; align-items: center; justify-content: center;
-    padding: 20px; backdrop-filter: blur(2px);
-}
-.bm-modal-overlay.bm-open { display: flex; }
-.bm-modal-dialog {
-    background: #ffffff; color: #222222; border-radius: 8px;
-    max-width: 680px; width: 100%; max-height: 90vh; overflow-y: auto;
-    padding: 24px 28px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-    border: 1px solid #d5d0c5; font-family: Aptos, Calibri, sans-serif;
-    position: relative; box-sizing: border-box; text-align: left;
-}
-.bm-modal-kop {
-    display: flex; justify-content: space-between; align-items: flex-start;
-    border-bottom: 2px solid #1a3c6e; padding-bottom: 12px; margin-bottom: 16px;
-}
-.bm-modal-kop h3 {
-    margin: 0; font-size: 16pt; color: #1a3c6e; border: none; padding: 0;
-}
-.bm-modal-sluit {
-    background: none; border: none; font-size: 22pt; line-height: 1;
-    color: #888; cursor: pointer; padding: 0 4px;
-}
-.bm-modal-sluit:hover { color: #c62828; }
-.bm-intro {
-    font-size: 10pt; line-height: 1.5; color: #555555; background: #f7f5f1;
-    padding: 10px 14px; border-left: 3px solid #1a3c6e; border-radius: 3px;
-    margin-bottom: 18px;
-}
-.bm-groep { margin-bottom: 14px; }
-.bm-groep label.bm-label {
-    display: block; font-weight: 700; font-size: 10.5pt; color: #1a3c6e; margin-bottom: 5px;
-}
-.bm-input, .bm-textarea {
-    width: 100%; box-sizing: border-box; padding: 8px 12px;
-    border: 1px solid #ccc; border-radius: 4px; font-family: inherit;
-    font-size: 10.5pt; background: #faf8f5; color: #222;
-}
-.bm-input:focus, .bm-textarea:focus {
-    border-color: #1a3c6e; background: #fff; outline: none;
-}
-.bm-textarea { min-height: 90px; resize: vertical; }
-.bm-radio-groep {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px;
-}
-@media (max-width: 580px) {
-    .bm-radio-groep { grid-template-columns: 1fr; }
-}
-.bm-radio-optie {
-    display: flex; align-items: flex-start; gap: 8px; background: #f9f8f6;
-    border: 1px solid #e2ddd5; padding: 8px 10px; border-radius: 4px;
-    font-size: 9.5pt; cursor: pointer;
-}
-.bm-radio-optie:hover { border-color: #1a3c6e; background: #f0f4f9; }
-.bm-radio-optie input { margin-top: 2px; }
-.bm-check-groep {
-    display: flex; align-items: flex-start; gap: 8px; font-size: 9.5pt;
-    color: #444; margin: 14px 0 18px;
-}
-.bm-knoppen { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
-.bm-btn-mail {
-    background: #1a3c6e; color: #ffffff; border: 1px solid #1a3c6e;
-    padding: 8px 16px; border-radius: 4px; font-size: 10.5pt; font-weight: 700;
-    cursor: pointer; transition: background .15s;
-}
-.bm-btn-mail:hover { background: #122b50; }
-.bm-btn-copy {
-    background: #f0eee9; color: #333; border: 1px solid #d5d0c5;
-    padding: 8px 14px; border-radius: 4px; font-size: 10.5pt; font-weight: 600;
-    cursor: pointer; transition: all .15s;
-}
-.bm-btn-copy:hover { background: #e2ded5; }
-.bm-btn-copy.bm-copied { background: #2e7d32; color: #ffffff; border-color: #2e7d32; }
-
-@media (max-width: 768px) {
-    .pub-contact-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 38px; }
-    .bm-modal-dialog { padding: 18px 16px; width: 95%; max-height: 94vh; }
-    .bm-modal-kop h3 { font-size: 14pt; }
-    .bm-intro { font-size: 9.5pt; padding: 8px 10px; }
-    .bm-input, .bm-textarea { font-size: 16px; }
-    .bm-radio-groep { grid-template-columns: 1fr; }
-}
-
-/* Modal Dark-Mode */
-html[data-theme="dark"] .pub-contact-btn {
-    background: #232323; color: #b0c8e8; border-color: #4a4a4a;
-}
-html[data-theme="dark"] .pub-contact-btn:hover {
-    background: #2a2a2a; border-color: #7fb3ff; color: #ffffff;
-}
-html[data-theme="dark"] .audit-bewijs:hover {
-    border-color: #7fb3ff !important; background: #2f3642 !important;
-    box-shadow: 0 1px 6px rgba(127,179,255,0.25);
-}
-html[data-theme="dark"] .bm-modal-dialog {
-    background: #202226; color: #e0e0e0; border-color: #3a3f48;
-}
-html[data-theme="dark"] .bm-modal-kop { border-bottom-color: #4a6fa5; }
-html[data-theme="dark"] .bm-modal-kop h3 { color: #7fb3ff !important; }
-html[data-theme="dark"] .bm-intro {
-    background: #282c34; border-left-color: #7fb3ff; color: #b8b8b8;
-}
-html[data-theme="dark"] .bm-groep label.bm-label { color: #7fb3ff !important; }
-html[data-theme="dark"] .bm-input,
-html[data-theme="dark"] .bm-textarea {
-    background: #181a1f; border-color: #3e4450; color: #e8e8e8;
-}
-html[data-theme="dark"] .bm-input:focus,
-html[data-theme="dark"] .bm-textarea:focus {
-    border-color: #7fb3ff; background: #1f2229;
-}
-html[data-theme="dark"] .bm-radio-optie {
-    background: #262930; border-color: #3e4450; color: #d0d0d0;
-}
-html[data-theme="dark"] .bm-radio-optie:hover {
-    background: #2f3440; border-color: #7fb3ff;
-}
-html[data-theme="dark"] .bm-check-groep { color: #b0b0b0; }
-html[data-theme="dark"] .bm-btn-mail {
-    background: #4a6fa5; border-color: #4a6fa5; color: #ffffff;
-}
-html[data-theme="dark"] .bm-btn-mail:hover { background: #395782; }
-html[data-theme="dark"] .bm-btn-copy {
-    background: #2a2e36; border-color: #404754; color: #e0e0e0;
-}
-html[data-theme="dark"] .bm-btn-copy:hover {
-    background: #353b47; border-color: #7fb3ff;
-}
-
-/* Taal-kiezer styling in navigatie */
-.pub-lang-switch {
-    display: inline-flex; align-items: center; gap: 4px;
-    background: #eef2f7; padding: 2px 4px; border-radius: 4px;
-    border: 1px solid #d5d0c5;
-}
-.pub-lang-btn {
-    text-decoration: none; font-size: 9.5pt; font-weight: 600;
-    color: #1a3c6e; padding: 3px 7px; border-radius: 3px;
-    transition: background .15s, color .15s;
-}
-.pub-lang-btn:hover { background: #dce6f2; }
-.pub-lang-btn.actief { background: #1a3c6e; color: #ffffff !important; }
-
-html[data-theme="dark"] .pub-lang-switch { background: #1f2229; border-color: #3e4450; }
-html[data-theme="dark"] .pub-lang-btn { color: #b0c8e8; }
-html[data-theme="dark"] .pub-lang-btn:hover { background: #2a3342; }
-html[data-theme="dark"] .pub-lang-btn.actief { background: #4a6fa5; color: #ffffff !important; }
-
-/* Google Translate Widget & Frame Styling */
-.goog-te-banner-frame, .skiptranslate iframe, #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
-body { top: 0px !important; position: static !important; }
-.goog-text-highlight { background: transparent !important; box-shadow: none !important; }
-font[style] { background: transparent !important; box-shadow: none !important; }
-
-.pub-lang-select, #int-lang-select {
-    font-family: inherit; font-size: 10pt; font-weight: 600;
-    padding: 4px 8px; border: 1px solid #d5d0c5; border-radius: 4px;
-    background-color: #ffffff; color: #1a3c6e; cursor: pointer;
-    color-scheme: light;
-}
-.pub-lang-select option, #int-lang-select option {
-    background-color: #ffffff; color: #1a3c6e;
-    color-scheme: light;
-}
-html[data-theme="dark"] .pub-lang-select,
-html[data-theme="dark"] #int-lang-select,
-html[data-theme="dark"] select.pub-lang-select {
-    background-color: #232323 !important;
-    background: #232323 !important;
-    border-color: #4a4a4a !important;
-    color: #e0e0e0 !important;
-    color-scheme: dark !important;
-}
-html[data-theme="dark"] .pub-lang-select option,
-html[data-theme="dark"] #int-lang-select option,
-html[data-theme="dark"] select.pub-lang-select option {
-    background-color: #232323 !important;
-    background: #232323 !important;
-    color: #e0e0e0 !important;
-    color-scheme: dark !important;
-}
-
-/* === Audit Neurale Audiospeler (.audit-audio-bar) === */
-
-.audit-audio-bar {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    background: #f4f1ea;
-
-    border: 1px solid #dcd7cc;
-
-    border-left: 4px solid #1a3c6e;
-
-    border-radius: 6px;
-
-    padding: 8px 14px;
-
-    margin: 12pt 0 16pt 0;
-
-    font-family: Aptos, Calibri, sans-serif;
-
-    box-sizing: border-box;
-
-    width: 100%;
-
-}
-
-.aab-play-btn {
-
-    background: #1a3c6e;
-
-    color: #ffffff;
-
-    border: none;
-
-    border-radius: 50%;
-
-    width: 36px;
-
-    height: 36px;
-
-    cursor: pointer;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 13pt;
-
-    flex-shrink: 0;
-
-    transition: transform .15s ease, background-color .15s ease;
-
-}
-
-.aab-play-btn:hover { background: #2a5298; transform: scale(1.05); }
-
-.aab-play-btn.aab-playing { background: #8b1e1e; }
-
-.aab-info {
-
-    flex: 1;
-
-    min-width: 0;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 4px;
-
-}
-
-.aab-meta {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    flex-wrap: wrap;
-
-    font-size: 9.5pt;
-
-    line-height: 1.2;
-
-}
-
-.aab-badge {
-
-    font-weight: 700;
-
-    letter-spacing: 0.5px;
-
-    color: #1a3c6e;
-
-    font-size: 8.5pt;
-
-}
-
-.aab-title {
-
-    color: #333333;
-
-    font-weight: 500;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
-
-    white-space: nowrap;
-
-}
-
-.aab-time {
-
-    margin-left: auto;
-
-    color: #666666;
-
-    font-family: Consolas, monospace;
-
-    font-size: 9pt;
-
-}
-
-.aab-progress-wrap {
-
-    width: 100%;
-
-    height: 6px;
-
-    background: #e0dbce;
-
-    border-radius: 3px;
-
-    cursor: pointer;
-
-    overflow: hidden;
-
-}
-
-.aab-progress-bar { width: 100%; height: 100%; }
-
-.aab-progress-fill {
-
-    width: 0%;
-
-    height: 100%;
-
-    background: #1a3c6e;
-
-    border-radius: 3px;
-
-    transition: width 0.1s linear;
-
-}
-
-.aab-controls {
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 6px;
-
-}
-
-.aab-speed-btn {
-
-    background: #ffffff;
-
-    border: 1px solid #dcd7cc;
-
-    border-radius: 4px;
-
-    color: #1a3c6e;
-
-    font-weight: 600;
-
-    font-size: 9pt;
-
-    padding: 3px 8px;
-
-    cursor: pointer;
-
-}
-
-.aab-speed-btn:hover { background: #e8e4db; }
-
-
-
-.aab-next-btn {
-
-    background: #1a3c6e;
-
-    border: 1px solid #1a3c6e;
-
-    border-radius: 4px;
-
-    color: #ffffff;
-
-    font-weight: 600;
-
-    font-size: 8.8pt;
-
-    padding: 4px 10px;
-
-    cursor: pointer;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 4px;
-
-    white-space: nowrap;
-
-    transition: background .15s ease, transform .12s ease;
-
-}
-
-.aab-next-btn:hover {
-
-    background: #2a5298;
-
-    border-color: #2a5298;
-
-    transform: translateY(-1px);
-
-}
-
-
-
-/* === Vermelding bovenaan document: Luistermodus / Audio-Playlist === */
-
-.audit-playlist-topbanner {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 14px;
-
-    flex-wrap: wrap;
-
-    max-width: 860px;
-
-    margin: 14pt 0 22pt 0;
-
-    padding: 12px 16px;
-
-    border-radius: 8px;
-
-    background: #eef3f9;
-
-    border: 1px solid #c5d4e8;
-
-    border-left: 4px solid #1a3c6e;
-
-    font-family: Aptos, Calibri, sans-serif;
-
-    box-sizing: border-box;
-
-}
-
-.apt-info {
-
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 10px;
-
-    flex: 1;
-
-    min-width: 240px;
-
-}
-
-.apt-icon {
-
-    font-size: 16pt;
-
-    line-height: 1.1;
-
-    flex-shrink: 0;
-
-}
-
-.apt-text {
-
-    font-size: 9.8pt;
-
-    line-height: 1.45;
-
-    color: #2c3e50;
-
-}
-
-.apt-text strong { color: #1a3c6e; }
-
-.apt-actions {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    flex-wrap: wrap;
-
-    flex-shrink: 0;
-
-}
-
-.apt-btn {
-
-    font-size: 9.2pt;
-
-    font-weight: 600;
-
-    padding: 6px 12px;
-
-    border-radius: 5px;
-
-    cursor: pointer;
-
-    text-decoration: none !important;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 5px;
-
-    white-space: nowrap;
-
-    transition: all .15s ease;
-
-    font-family: inherit;
-
-}
-
-.apt-btn-play {
-
-    background: #1a3c6e;
-
-    color: #ffffff !important;
-
-    border: 1px solid #1a3c6e;
-
-}
-
-.apt-btn-play:hover { background: #2a5298; }
-
-.apt-btn-jump {
-
-    background: #ffffff;
-
-    color: #1a3c6e !important;
-
-    border: 1px solid #b5c7de;
-
-}
-
-.apt-btn-jump:hover { background: #e3ecf8; }
-
-
-
-/* === Audio-Playlist Sectie onderaan document (#audit-audio-playlist) === */
-
-.audit-playlist-sectie {
-
-    max-width: 860px;
-
-    margin: 38pt 0 24pt 0;
-
-    padding: 20px 22px;
-
-    border-radius: 10px;
-
-    background: #f4f1ea;
-
-    border: 1px solid #d5d0c5;
-
-    border-top: 4px solid #1a3c6e;
-
-    font-family: Aptos, Calibri, sans-serif;
-
-    box-sizing: border-box;
-
-}
-
-.aps-header { margin-bottom: 14px; }
-
-.aps-title-row {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 10px;
-
-    flex-wrap: wrap;
-
-    margin-bottom: 6px;
-
-}
-
-.aps-badge {
-
-    display: inline-block;
-
-    font-size: 8pt;
-
-    font-weight: 700;
-
-    letter-spacing: 0.6px;
-
-    text-transform: uppercase;
-
-    padding: 3px 8px;
-
-    border-radius: 4px;
-
-    background: #1a3c6e;
-
-    color: #ffffff;
-
-}
-
-.audit-playlist-sectie h2 {
-
-    margin: 4pt 0 6pt 0 !important;
-
-    font-size: 15pt !important;
-
-    border: none !important;
-
-    padding: 0 !important;
-
-    color: #1a3c6e;
-
-}
-
-.aps-desc {
-
-    font-size: 10pt !important;
-
-    line-height: 1.5 !important;
-
-    color: #4a4a4a;
-
-    margin-bottom: 12pt !important;
-
-}
-
-.aps-master-player {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 14px;
-
-    flex-wrap: wrap;
-
-    padding: 12px 16px;
-
-    border-radius: 8px;
-
-    margin-bottom: 14px;
-
-    background: #ffffff;
-
-    border: 1px solid #dcd7cc;
-
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-
-}
-
-.aps-mp-controls {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    flex-shrink: 0;
-
-}
-
-.aps-mp-play {
-
-    width: 44px;
-
-    height: 44px;
-
-    border-radius: 50%;
-
-    border: none;
-
-    background: #1a3c6e;
-
-    color: #ffffff;
-
-    font-size: 14pt;
-
-    cursor: pointer;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    transition: transform .15s, background .15s;
-
-}
-
-.aps-mp-play:hover { background: #2a5298; transform: scale(1.05); }
-
-.aps-mp-play.aps-playing { background: #8b1e1e; }
-
-.aps-mp-prev, .aps-mp-next {
-
-    width: 34px;
-
-    height: 34px;
-
-    border-radius: 50%;
-
-    border: 1px solid #d5d0c5;
-
-    background: #f8f6f2;
-
-    color: #1a3c6e;
-
-    font-size: 10.5pt;
-
-    cursor: pointer;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    transition: background .15s;
-
-}
-
-.aps-mp-prev:hover, .aps-mp-next:hover { background: #e8e4db; }
-
-.aps-mp-info {
-
-    flex: 1;
-
-    min-width: 200px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 4px;
-
-}
-
-.aps-mp-meta {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    font-size: 8.8pt;
-
-    font-weight: 700;
-
-    color: #1a3c6e;
-
-}
-
-.aps-mp-time {
-
-    font-family: Consolas, monospace;
-
-    font-weight: 500;
-
-    color: #666666;
-
-}
-
-.aps-mp-trackname {
-
-    font-size: 10pt;
-
-    font-weight: 600;
-
-    color: #222222;
-
-    white-space: nowrap;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
-
-}
-
-.aps-mp-progress-wrap {
-
-    width: 100%;
-
-    height: 7px;
-
-    background: #e0dbce;
-
-    border-radius: 4px;
-
-    cursor: pointer;
-
-    overflow: hidden;
-
-}
-
-.aps-mp-progress-bar { width: 100%; height: 100%; }
-
-.aps-mp-progress-fill {
-
-    width: 0%;
-
-    height: 100%;
-
-    background: #1a3c6e;
-
-    border-radius: 4px;
-
-    transition: width 0.1s linear;
-
-}
-
-.aps-mp-extra {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    flex-shrink: 0;
-
-}
-
-.aps-autoplay-toggle {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 5px;
-
-    font-size: 9pt;
-
-    font-weight: 600;
-
-    color: #333333;
-
-    cursor: pointer;
-
-    user-select: none;
-
-}
-
-.aps-autoplay-toggle input { cursor: pointer; accent-color: #1a3c6e; }
-
-.aps-tracklist {
-
-    max-height: 420px;
-
-    overflow-y: auto;
-
-    border: 1px solid #dcd7cc;
-
-    border-radius: 6px;
-
-    background: #faf8f5;
-
-}
-
-.aps-track {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding: 8px 12px;
-
-    border-bottom: 1px solid #eae6dd;
-
-    cursor: pointer;
-
-    transition: background .12s;
-
-    font-size: 9.8pt;
-
-    color: #222222;
-
-}
-
-.aps-track:last-child { border-bottom: none; }
-
-.aps-track:hover { background: #eef2f7; }
-
-.aps-track.aps-active {
-
-    background: #e3ecf8;
-
-    font-weight: 600;
-
-    border-left: 3px solid #1a3c6e;
-
-}
-
-.aps-t-num {
-
-    font-family: Consolas, monospace;
-
-    font-size: 8.8pt;
-
-    color: #777777;
-
-    min-width: 24px;
-
-}
-
-.aps-t-icon {
-
-    width: 24px;
-
-    height: 24px;
-
-    border-radius: 50%;
-
-    background: #e8e4db;
-
-    color: #1a3c6e;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 8.5pt;
-
-    flex-shrink: 0;
-
-}
-
-.aps-track.aps-active .aps-t-icon {
-
-    background: #1a3c6e;
-
-    color: #ffffff;
-
-}
-
-.aps-track-title {
-
-    flex: 1;
-
-    min-width: 0;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
-
-    white-space: nowrap;
-
-}
-
-.aps-track-jump {
-
-    font-size: 8.5pt;
-
-    color: #555555;
-
-    text-decoration: none !important;
-
-    padding: 2px 8px;
-
-    border-radius: 4px;
-
-    border: 1px solid #d5d0c5;
-
-    background: #ffffff;
-
-    flex-shrink: 0;
-
-}
-
-.aps-track-jump:hover {
-
-    color: #1a3c6e;
-
-    border-color: #1a3c6e;
-
-    background: #eef3f9;
-
-}
-
-
-
-/* Dark-mode styling voor de audiospeler, topbanner en playlist */
-
-html[data-theme="dark"] .audit-audio-bar {
-
-    background: #23272e !important;
-
-    border-color: #363b45 !important;
-
-    border-left-color: #7fb3ff !important;
-
-}
-
-html[data-theme="dark"] .aab-play-btn {
-
-    background: #4a6fa5 !important;
-
-    color: #ffffff !important;
-
-}
-
-html[data-theme="dark"] .aab-play-btn:hover { background: #5c85c2 !important; }
-
-html[data-theme="dark"] .aab-play-btn.aab-playing { background: #d32f2f !important; }
-
-html[data-theme="dark"] .aab-badge { color: #7fb3ff !important; }
-
-html[data-theme="dark"] .aab-title { color: #e0e4ec !important; }
-
-html[data-theme="dark"] .aab-time { color: #9aa5b8 !important; }
-
-html[data-theme="dark"] .aab-progress-wrap { background: #323842 !important; }
-
-html[data-theme="dark"] .aab-progress-fill { background: #7fb3ff !important; }
-
-html[data-theme="dark"] .aab-speed-btn {
-
-    background: #2d333b !important;
-
-    border-color: #444c56 !important;
-
-    color: #7fb3ff !important;
-
-}
-
-html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
-
-html[data-theme="dark"] .aab-next-btn {
-
-    background: #2b4c7e !important;
-
-    border-color: #4a6fa5 !important;
-
-    color: #e8f0fe !important;
-
-}
-
-html[data-theme="dark"] .aab-next-btn:hover {
-
-    background: #3b639e !important;
-
-    color: #ffffff !important;
-
-}
-
-html[data-theme="dark"] .audit-playlist-topbanner {
-
-    background: #1c232d !important;
-
-    border-color: #2f3b4c !important;
-
-    border-left-color: #58a6ff !important;
-
-}
-
-html[data-theme="dark"] .apt-text { color: #d0d8e4 !important; }
-
-html[data-theme="dark"] .apt-text strong { color: #79c0ff !important; }
-
-html[data-theme="dark"] .apt-btn-play {
-
-    background: #3867a6 !important;
-
-    border-color: #58a6ff !important;
-
-    color: #ffffff !important;
-
-}
-
-html[data-theme="dark"] .apt-btn-play:hover { background: #4a7ec2 !important; }
-
-html[data-theme="dark"] .apt-btn-jump {
-
-    background: #262c36 !important;
-
-    border-color: #444c56 !important;
-
-    color: #79c0ff !important;
-
-}
-
-html[data-theme="dark"] .apt-btn-jump:hover { background: #303846 !important; }
-
-html[data-theme="dark"] .audit-playlist-sectie {
-
-    background: #1b1f26 !important;
-
-    border-color: #323842 !important;
-
-    border-top-color: #58a6ff !important;
-
-}
-
-html[data-theme="dark"] .aps-badge {
-
-    background: #2b4c7e !important;
-
-    color: #cae0ff !important;
-
-}
-
-html[data-theme="dark"] .audit-playlist-sectie h2 { color: #79c0ff !important; }
-
-html[data-theme="dark"] .aps-desc { color: #a9b4c4 !important; }
-
-html[data-theme="dark"] .aps-master-player {
-
-    background: #232832 !important;
-
-    border-color: #363d4a !important;
-
-}
-
-html[data-theme="dark"] .aps-mp-play { background: #4a6fa5 !important; }
-
-html[data-theme="dark"] .aps-mp-play.aps-playing { background: #d32f2f !important; }
-
-html[data-theme="dark"] .aps-mp-prev,
-
-html[data-theme="dark"] .aps-mp-next {
-
-    background: #2d333b !important;
-
-    border-color: #444c56 !important;
-
-    color: #b0c8e8 !important;
-
-}
-
-html[data-theme="dark"] .aps-mp-prev:hover,
-
-html[data-theme="dark"] .aps-mp-next:hover { background: #373e47 !important; }
-
-html[data-theme="dark"] .aps-mp-meta { color: #79c0ff !important; }
-
-html[data-theme="dark"] .aps-mp-time { color: #9aa5b8 !important; }
-
-html[data-theme="dark"] .aps-mp-trackname { color: #e6edf3 !important; }
-
-html[data-theme="dark"] .aps-mp-progress-wrap { background: #323842 !important; }
-
-html[data-theme="dark"] .aps-mp-progress-fill { background: #58a6ff !important; }
-
-html[data-theme="dark"] .aps-autoplay-toggle { color: #c9d1d9 !important; }
-
-html[data-theme="dark"] .aps-autoplay-toggle input { accent-color: #58a6ff; }
-
-html[data-theme="dark"] .aps-tracklist {
-
-    background: #15181e !important;
-
-    border-color: #2d333b !important;
-
-}
-
-html[data-theme="dark"] .aps-track {
-
-    border-bottom-color: #222730 !important;
-
-    color: #c9d1d9 !important;
-
-}
-
-html[data-theme="dark"] .aps-track:hover { background: #20252d !important; }
-
-html[data-theme="dark"] .aps-track.aps-active {
-
-    background: #1e2a3a !important;
-
-    color: #ffffff !important;
-
-    border-left-color: #58a6ff !important;
-
-}
-
-html[data-theme="dark"] .aps-t-num { color: #8b949e !important; }
-
-html[data-theme="dark"] .aps-t-icon {
-
-    background: #2d333b !important;
-
-    color: #79c0ff !important;
-
-}
-
-html[data-theme="dark"] .aps-track.aps-active .aps-t-icon {
-
-    background: #4a6fa5 !important;
-
-    color: #ffffff !important;
-
-}
-
-html[data-theme="dark"] .aps-track-jump {
-
-    background: #21262d !important;
-
-    border-color: #363b42 !important;
-
-    color: #8b949e !important;
-
-}
-
-html[data-theme="dark"] .aps-track-jump:hover {
-
-    color: #79c0ff !important;
-
-    border-color: #58a6ff !important;
-
-}
-
-
-
-@media (max-width: 600px) {
-
-    .audit-audio-bar { flex-wrap: wrap; gap: 8px; padding: 8px 10px; }
-
-    .aab-controls { width: 100%; justify-content: flex-end; border-top: 1px solid rgba(128,128,128,0.18); padding-top: 6px; }
-
-    .aps-master-player { flex-direction: column; align-items: stretch; gap: 10px; }
-
-    .aps-mp-controls { justify-content: center; }
-
-    .aps-mp-extra { justify-content: space-between; }
-
-}
-
-
-
-/* Verberg de audiospeler en playlist bij het printen of PDF-genereren */
-
-@media print {
-
-    .audit-audio-bar,
-
-    .audit-playlist-topbanner,
-
-    .audit-playlist-sectie,
-
-    .toc-playlist-item { display: none !important; }
-
-}
-
 </style>
 <meta content="notranslate" name="google"/><script>
-(function(){try{var t=localStorage.getItem('systeem-audit-thema');if(t!=='dark'&&t!=='light'){t='dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
-</script><script>
 (function(){try{var t=localStorage.getItem('systeem-audit-thema');if(t!=='dark'&&t!=='light'){t='dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
 </script></head>
 <body><a id="top"></a>
@@ -5401,16 +3242,16 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <select autocomplete="off" class="pub-lang-select notranslate" id="int-lang-select" onchange="wisselTaal(this.value)" translate="no"><option selected="" value="en">🇬🇧 EN (English)</option><option value="de">🇩🇪 DE (Deutsch)</option><option value="fr">🇫🇷 FR (Français)</option><option value="it">🇮🇹 IT (Italiano)</option><option value="es">🇪🇸 ES (Español)</option><option value="pl">🇵🇱 PL (Polski)</option><option value="da">🇩🇰 DA (Dansk)</option><option value="sv">🈀🇪 SV (Svenska)</option><option value="pt">🇵🇹 PT (Português)</option><option value="ro">🇷🇴 RO (Română)</option></select>
 </div>
 </nav>
-<a id="top"></a>
+
 
 <div class="titelblad">
-<h1 id="systeem-audit">Systeem-Audit</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h1 id="systeem-audit">Systeem-Audit</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document A — De narratieve audit</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 3 november 2026, 14:26</p>
+<p class="meta-lijn">Versie bijgewerkt: 3 november 2026, 14:57</p>
 </div>
-<div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
+<div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
 <li class="niv1"><a href="#systeem-audit">Systeem-Audit</a></li>
 <li class="niv1"><a href="#i-belgië">I. België</a></li>
 <li class="niv2"><a href="#zorg-fysieke-realiteit">Zorg &amp; Fysieke Realiteit</a></li>
@@ -5485,18 +3326,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <li class="niv3"><a href="#org-euco">EUROPESE RAAD</a></li>
 <li class="niv1"><a href="#v-internationaal">V. Internationaal</a></li>
 <li class="niv3"><a href="#org-verenigdenaties">VERENIGDE NATIES</a></li>
-<li class="niv1 toc-playlist-item"><a href="#audit-audio-playlist">🎧 Audio-Playlist — Alles achter elkaar beluisteren (62 onderdelen)</a></li></ul></div><div class="audit-toolbar" id="audit-toolbar">
-<div class="at-stats">
-<span class="at-stat"><strong>Narratieve Systeem-Audit</strong> · 62 geanalyseerde organisaties</span>
-<span class="at-sep">·</span>
-<span class="at-stat">Elke organisatie is rechtstreeks gekoppeld aan de feiten-tijdlijn in <a href="document-b.html">Document B</a></span>
-</div>
-<div class="at-controls">
-<select aria-label="Spring naar organisatie" class="at-select" id="at-jump" onchange="if(this.value){location.hash=this.value;this.selectedIndex=0;}" style="width:100%">
-<option value="">Spring direct naar organisatie (62)…</option><option value="#org-bajartorthopedie">BAJART ORTHOPEDIE</option><option value="#org-huisartsenpraktijktervierschaar">HUISARTSENPRAKTIJK TER VIERSCHAAR</option><option value="#org-onafhankelijkeexpertsbe">ONAFHANKELIJKE EXPERTS (BE)</option><option value="#org-oogartsensintniklaas">OOGARTSEN SINT-NIKLAAS</option><option value="#org-orthovano">ORTHOVANO</option><option value="#org-uzgent">UZ GENT</option><option value="#org-vitaz">VITAZ</option><option value="#org-acv">ALGEMENE CHRISTELIJKE VAKBOND (ACV)</option><option value="#org-agodi">AGODI</option><option value="#org-cmchristelijkemutualiteit">CHRISTELIJKE MUTUALITEIT</option><option value="#org-fodfinancien">FOD FINANCIËN</option><option value="#org-fodibz">FOD IBZ</option><option value="#org-fodsocialezekerheiddghan">FOD SOCIALE ZEKERHEID (DG HAN)</option><option value="#org-parentia">PARENTIA</option><option value="#org-rva">RVA</option><option value="#org-sfpd">SFPD</option><option value="#org-verticobusinesssolutions">VERTICO BUSINESS SOLUTIONS</option><option value="#org-cdz">CONTROLEDIENST VOOR DE ZIEKENFONDSEN (CDZ)</option><option value="#org-federaleombudsman">DE FEDERALE OMBUDSMAN</option><option value="#org-kamercommissiesocialezaken">DE KAMER (COMMISSIE SOCIALE ZAKEN)</option><option value="#org-kamercommissieverzoekschriften">COMMISSIE VOOR VERZOEKSCHRIFTEN</option><option value="#org-fodjustitiearbeidsauditoraatgent">ARBEIDSAUDITORAAT GENT</option><option value="#org-koninklijkpaleisbelgie">KONINKLIJK PALEIS VAN BELGIË</option><option value="#org-ordederartsen">ORDE DER ARTSEN</option><option value="#org-politiekepartijenbelgie">POLITIEKE PARTIJEN &amp; FRACTIES</option><option value="#org-riziv">RIZIV</option><option value="#org-unia">UNIA</option><option value="#org-cak">CAK</option><option value="#org-cz">CZ</option><option value="#org-onafhankelijkeexpertsnl">ONAFHANKELIJKE EXPERTS (NL)</option><option value="#org-pallionhuisartsenpraktijk">PALLION HUISARTSENPRAKTIJK</option><option value="#org-zin">ZORGINSTITUUT NEDERLAND (ZIN)</option><option value="#org-zorgsaam">ZORGSAAM</option><option value="#org-belastingdienst">BELASTINGDIENST</option><option value="#org-energiedirect">ENERGIEDIRECT</option><option value="#org-gemeentehulst">GEMEENTE HULST &amp; HULST VOOR ELKAAR</option><option value="#org-ingnederland">ING NEDERLAND</option><option value="#org-lereninzeeland">LEREN IN ZEELAND</option><option value="#org-reizendoorzeeland">REIZEN DOOR ZEELAND</option><option value="#org-rijksdienstvooridentiteitsgegevens">RvIG</option><option value="#org-stedin">STEDIN</option><option value="#org-svb">SVB &amp; BBZ</option><option value="#org-uwv">UWV</option><option value="#org-valys">VALYS</option><option value="#org-vattenfall">VATTENFALL</option><option value="#org-denationaleombudsman">DE NATIONALE OMBUDSMAN (NL)</option><option value="#org-koninklijkhuisnl">KONINKLIJK HUIS (NEDERLAND)</option><option value="#org-nederlandsepolitiekepartijen">NEDERLANDSE POLITIEKE PARTIJEN</option><option value="#org-tweedekamercommissieszw">TWEEDE KAMER (COMMISSIE SZW)</option><option value="#org-academischeobservatielaag">ACADEMISCHE OBSERVATIELAAG</option><option value="#org-beneluxunie">BENELUX UNIE</option><option value="#org-gip">GRENSINFOPUNT (GIP)</option><option value="#org-mediapubliekeintellectuelen">MEDIA &amp; PUBLIEKE INTELLECTUELEN</option><option value="#org-solvit">SOLVIT</option><option value="#org-strategischebelangenbehartiging">STRATEGISCHE BELANGENBEHARTIGING</option><option value="#org-ec">EUROPESE COMMISSIE</option><option value="#org-ehrm">EUROPEES HOF VOOR DE RECHTEN VAN DE MENS (EHRM)</option><option value="#org-ela">EUROPESE ARBEIDSAUTORITEIT (ELA)</option><option value="#org-eo">EUROPESE OMBUDSMAN</option><option value="#org-ep">EUROPEES PARLEMENT</option><option value="#org-euco">EUROPESE RAAD</option><option value="#org-verenigdenaties">VERENIGDE NATIES</option>
-</select>
-</div>
-</div><div class="audit-playlist-topbanner notranslate" translate="no">
+<li class="niv1 toc-playlist-item"><a href="#audit-audio-playlist">🎧 Audio-Playlist — Alles achter elkaar beluisteren (62 onderdelen)</a></li></ul></div><div class="audit-playlist-topbanner">
 <div class="apt-info">
 <span class="apt-icon">🎧</span>
 <div class="apt-text">
@@ -5515,8 +3345,8 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p>Dit is Document A — De narratieve audit van het Systeem-Audit-project. Het beschrijft de organisaties die samen het netwerk vormen, als een reeks lopende verhalen.</p>
 <p>Lees het als een reeks verhalen, niet als een database.</p>
 </div>
-<h1 id="i-belgië">I. België</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a>
-<h2 id="zorg-fysieke-realiteit">Zorg &amp; Fysieke Realiteit</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h1 id="i-belgië">I. België</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="zorg-fysieke-realiteit">Zorg &amp; Fysieke Realiteit</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <h3 data-org="BajartOrthopedie" id="org-bajartorthopedie">BAJART ORTHOPEDIE</h3>
 <p class="subtitel">De Schoen die niet Paste</p><div class="audit-audio-bar" data-audio-id="docA_bajartorthopedie" data-audio-src="../assets/audio/docA_bajartorthopedie_nl_31470afb.mp3" data-clean-heading="BAJART ORTHOPEDIE" data-clean-text="Bajart Orthopedie, De Schoen die niet Paste. Bajart Orthopedie is een orthopedisch schoenmaker met hoofdzetel te Bornem en een afdeling te Grembergen, Dendermonde. De organisatie werkt op voorschrift van artsen en specialisten en levert maatschoenen, semi orthopedische schoenen en steunzolen binnen het Belgische terugbetalingsstelsel van het Riziv. De facturatie loopt rechtstreeks met de adviserend arts van de mutualiteit; de patiënt betaalt enkel een remgeld. . Voor de aanvrager werd in 2025 een orthopedische schoen volledig op maat gemaakt, op medisch voorschrift van de behandelend specialist. De kostprijs van de schoen bedroeg meer dan 2500 euro, waarvan het remgeld voor de patiënt ongeveer 50 euro bedroeg. Vanaf de eerste testfase traden complicaties op: een bloedblaar onder de voorvoet, gevolgd door blijvende wrijvingspijn na elke aanpassing. De aanpassingen werden uitgevoerd op de afdeling te Grembergen, op ongeveer een uur rijden van de woonplaats van de aanvrager. Na elke aanpassing volgde hetzelfde patroon: het probleem bleef, de schoen bleef pijnlijk, en de aanvrager moest opnieuw de rit maken. Bij de definitieve afgifte op 12 september 2025 was de schoen nog steeds niet draagbaar. De klinische werkelijkheid, een naar boven afgebogen voet met ernstige diabetische neuropathie en eerdere amputaties, was niet in de schoen verwerkt. . Toen de aanvrager de schoen later meenam naar een gespecialiseerde orthopedisch schoentechnoloog binnen het Universitair Ziekenhuis Gent, stelde deze vast dat de schoen structureel te plat was gemaakt, zonder de vereiste opwaartse correctie en zonder voldoende binnenruimte voor de vervormde voet. De UZ Gent specialist probeerde de schoen te herstellen, maar ook dit leverde geen bruikbaar resultaat op. De schoen bleef pijnlijk bij elke stap. Het eindresultaat is dat 2500 euro aan publieke middelen werd besteed aan een schoen die de patiënt niet kan aandoen, terwijl de patiënt zelf elke aanpassing met een uur reistijd en een fysieke terugslag heeft betaald. ." data-track-index="0" id="aab-docA_bajartorthopedie">
 <button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
@@ -5735,7 +3565,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <div class="footnotes">
 <p>*1* Conform de uitgangspunten van de Europese verordening inzake de coördinatie van de socialezekerheidsstelsels (Verordening (EG) nr. 883/2004) wordt gestreefd naar een naadloze gegevensuitwisseling tussen lidstaten, waarbij de burger niet als administratief doorgeefluik tussen instanties mag worden belast.</p>
 </div>
-<h2 id="financiën-rechten-sociale-zekerheid">Financiën, Rechten &amp; Sociale Zekerheid</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="financiën-rechten-sociale-zekerheid">Financiën, Rechten &amp; Sociale Zekerheid</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <h3 data-org="ACV" id="org-acv">ALGEMENE CHRISTELIJKE VAKBOND (ACV)</h3>
 <p class="subtitel">De Solidaire Grens en het Lidmaatschapsvacuüm</p><div class="audit-audio-bar" data-audio-id="docA_acv" data-audio-src="../assets/audio/docA_acv_nl_6a5b15e3.mp3" data-clean-heading="ALGEMENE CHRISTELIJKE VAKBOND (ACV)" data-clean-text="Algemene Christelijke Vakbond, ACV, De Solidaire Grens en het Lidmaatschapsvacuüm. Naast de reguliere overheidsdiensten kent het sociaal systeem ook particuliere beschermingsconstructies, waarvan de vakbond de grootste is. In de lente van 2026, wanneer de financiële uitputting door de blokkade bij het ziekenfonds, de C M, een kritiek punt bereikt, wordt een interne noodkreet uitgestuurd. Deze escalatie verloopt via de partner van de aanvrager, die zelf niet alleen betalend lid is, maar bovendien functioneert als vakbondsafgevaardigde in het onderwijs. Omdat het inkomen van het gezin en haar eigen fiscale rechten direct geraakt worden door de bestuurlijke impasse, roept zij de juridische bijstand van haar eigen organisatie in. . De reactie van de vakbondscentrale legt een beperking in de georganiseerde solidariteit bloot. De juridische dienst erkent de systeemfout volmondig. Men bevestigt zwart op wit de administratieve scheiding tussen invaliditeit, beheerd door de C M, en de erkenning van een handicap, voor de fiscus. Toch weigert de vakbond om de eigen juridische macht in te zetten tegen het weigerende ziekenfonds. De formele rechtvaardiging hiervoor is flinterdun: de aanvrager zélf heeft geen lidnummer. Dat het betalende lid, de partner, zware financiële en administratieve nevenschade ondervindt door dit specifieke overheidsfalen, wordt genegeerd. . Hierdoor openbaart zich een nieuwe institutionele muur. Een collectieve organisatie die is opgericht om werknemers te beschermen tegen systeemonrecht, herkent de grensoverschrijdende systeemparadox en begrijpt de juridische context van de Europese wetgeving. Desondanks kiest de organisatie ervoor om niet in te grijpen en plooit zij terug op een strikte, individuele lidmaatschapsregel. De bestuurlijke blokkade wordt erkend, maar de solidaire bescherming stopt abrupt bij de administratieve grens van het eigen ledenbestand. . De scheiding tussen de juridische en de fiscale poot van dezelfde vakbond is tekenend. Waar de juridische dienst zich terugtrekt op de lidmaatschapsgrens, levert de fiscale dienst van het ACV Oost Vlaanderen in september 2026 wél de praktische medewerking. Op 25 september 2026 controleert en dient de belastingservice de Belasting Niet Inwoners aangifte, aanslagjaar 2026, definitief in bij de Federale Overheidsdienst Financiën, inclusief de code invaliditeit voor de partner ten laste, het kind ten laste en twee attesten voor opvangkosten. Het berekende saldo bedraagt 2669 euro en 97 cent in het voordeel van het gezin. ." data-track-index="7" id="aab-docA_acv">
 <button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
@@ -6069,7 +3899,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <div class="footnotes">
 <p>*1* Het Portable Document U1 (PD U1) is het standaard Europese formulier dat perioden van verzekering of werkzaamheden in een EU-lidstaat bevestigt, essentieel voor de berekening van werkloosheids- of ziekte-uitkeringen in een ander land.</p>
 </div>
-<h2 id="escalatie-controle">Escalatie &amp; Controle</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="escalatie-controle">Escalatie &amp; Controle</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <h3 data-org="CDZ" id="org-cdz">CONTROLEDIENST VOOR DE ZIEKENFONDSEN (CDZ)</h3>
 <p class="subtitel">De Waakhond die Weigert te Bijten</p><div class="audit-audio-bar" data-audio-id="docA_cdz" data-audio-src="../assets/audio/docA_cdz_nl_a402edae.mp3" data-clean-heading="CONTROLEDIENST VOOR DE ZIEKENFONDSEN (CDZ)" data-clean-text="Controledienst voor de Ziekenfondsen, CDZ, De Waakhond die Weigert te Bijten. Als het Riziv faalt in haar regisseursrol, is er in de Belgische architectuur nog één gespecialiseerde toezichthouder: de Controledienst voor de Ziekenfondsen, CDZ. Deze administratieve waakhond heeft als kerntaak te controleren of ziekenfondsen de nationale wetten en Europese regels correct uitvoeren. Wanneer de CDZ in april 2026 formeel wordt aangeschreven over het feit dat de Christelijke Mutualiteit, C M, weigert het Europese Unierecht toe te passen, demonstreert deze dienst echter de klassieke overheidstactiek van eigen afbakening van de bevoegdheid. . De CDZ schuift de klacht onmiddellijk terzijde door zich onbevoegd te verklaren. Om deze weigering te legitimeren, gebruikt de toezichthouder een slimme administratieve truc: zij kwalificeert de structurele, grensoverschrijdende schending van Europese wetgeving door het ziekenfonds simpelweg als een individueel medisch geschil. En omdat medische geschillen onder het Riziv vallen, mag de CDZ het dossier officieel sluiten. Dit is een procedurele fout. De klacht ging immers niet over een medische diagnose, amputaties zijn een onbetwistbaar fysiek feit, maar over het doelbewust negeren van administratieve dwingende wetgeving door een uitvoeringsorgaan. . Wanneer de aanvrager krachtig protesteert tegen deze onterechte doorverwijzing en de CDZ herinnert aan haar wettelijke toezichtsplicht, trekt de waakhond zich volledig terug. In opeenvolgende correspondentie handhaaft de dienst haar standpunt, beschouwt zij de klacht eenzijdig als afgehandeld en weigert zij elke verdere inhoudelijke communicatie. De CDZ bewijst hiermee dat er in het Belgische stelsel geen enkel functionerend administratief toezichtorgaan bestaat dat in staat is om de ziekenfondsen dwingend te corrigeren wanneer zij op individueel niveau de Europese rechtsorde schenden. ." data-track-index="17" id="aab-docA_cdz">
 <button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
@@ -6356,8 +4186,8 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p>Wanneer uitvoerende instanties een burger bewust uitsluiten op basis van zijn woonplaats in een buurland, rijst onmiddellijk de vraag naar discriminatie. In België is UNIA (het Interfederaal Gelijkekansencentrum) de onafhankelijke waakhond die zulke situaties moet onderzoeken. In april 2026 ontvangt deze instantie de volledige dossieropbouw rondom de uitsluiting van de grensarbeider, waarbij de weigering van medische erkenningen puur vanwege een Nederlands domicilie wordt aangekaart.</p>
 <p>De beoordeling door UNIA ontmaskert echter een tekort in de Belgische antidiscriminatiewetgeving. De waakhond verklaart zich namelijk formeel onbevoegd, en wel om twee dodelijke redenen. Ten eerste: in de wet is 'woonplaats' simpelweg geen beschermd criterium. Men mag een burger dus probleemloos anders behandelen of uitsluiten puur omdat hij net over de grens slaapt. Ten tweede, en nog veel fundamenteler: UNIA mag geen actie ondernemen als de uitsluiting direct voortvloeit uit een wet of een decreet.</p>
 <p>Dit is de ultieme paradox van institutionele rechtvaardigheid: als een ambtenaar discrimineert, kan de waakhond ingrijpen, maar als de wet zelf discrimineert, is de waakhond machteloos. De enige instantie die discriminerende wetten mag toetsen en vernietigen is het Grondwettelijk Hof. Voor de burger betekent dit een situatie zonder uitweg, want dit Hof is alleen toegankelijk via loodzware en kostbare juridische rechtszaken. UNIA sluit het dossier, en bevestigt daarmee ongewild dat structurele uitsluiting van grensarbeiders binnen het huidige systeem volkomen gelegaliseerd is.</p>
-<h1 id="ii-nederland">II. Nederland</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a>
-<h2 id="zorg-verzekering">Zorg &amp; Verzekering</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h1 id="ii-nederland">II. Nederland</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="zorg-verzekering">Zorg &amp; Verzekering</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <h3 data-org="CAK" id="org-cak">CAK</h3>
 <p class="subtitel">De Ontbrekende Categorie in de Databank</p><div class="audit-audio-bar" data-audio-id="docA_cak" data-audio-src="../assets/audio/docA_cak_nl_be71e19b.mp3" data-clean-heading="CAK" data-clean-text="CAK, De Ontbrekende Categorie in de Databank. Het falen van CZ bij het doorgeven van de verdragspolis vindt zijn oorzaak bij de ontvangende partij: het Centraal Administratie Kantoor, CAK. Deze Nederlandse overheidsinstantie is de landelijke beheerder van het verzekeringsregister. Dit register fungeert als de absolute waarheid voor de Belastingdienst: wie hier niet als verzekerd staat aangemerkt, krijgt geen zorgtoeslag. Wanneer de burger in april 2026 formeel eist dat zijn actieve en betaalde verdragspolis in deze databank wordt bijgeschreven, legt het CAK een fundamentele architectuurfout in de eigen systemen bloot. . De instantie weigert de polis te registreren met een uiterst procedureel argument. Het CAK stelt dat zij uitsluitend de standaard grensarbeider registreren: de persoon die in Nederland werkt en in het buitenland woont. Voor de omgekeerde situatie, wonen in Nederland, werken in het buitenland, is er simpelweg geen categorie in het systeem geprogrammeerd. De wet staat het toe, het verdrag regelt het, maar de computer kent het formulierveld niet. . In plaats van deze administratieve fout te herstellen en de Europese burgerrechten te borgen, kiest de overheidsdienst voor de eenvoudigste weg: men sluit het dossier en weigert verdere actie. Door het ontbreken van één digitaal label wordt een inwoner van Nederland door de eigen overheid structureel als onverzekerd bestempeld, waardoor financiële tegemoetkomingen op de nul stand worden bevroren. ." data-track-index="27" id="aab-docA_cak">
 <button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
@@ -6521,7 +4351,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p>De Nederlandse thuiszorgorganisatie ZorgSaam illustreert feilloos de breuklijn tussen fysieke medische handelingen en de digitalisering daarvan. Na het ontslag uit het Belgische ziekenhuis in mei 2025 levert deze instantie maandenlang de noodzakelijke, complexe wondzorg voor de amputaties aan huis. Deze zorg wordt methodisch gedocumenteerd: het interne cliëntenportaal registreert meer dan honderdtwintig klinische verslagen van Nederlandse zorgverleners over de zware fysieke toestand van de patiënt. Dit bewijst dat de medische realiteit op Nederlands grondgebied onweerlegbaar is vastgesteld.</p>
 <p>Toch is deze schat aan informatie volstrekt nutteloos voor de rest van de overheid. De systemen van ZorgSaam zijn niet gekoppeld aan de Belgische ziekenhuizen, noch aan Nederlandse uitkeringsinstanties. Wanneer de Nederlandse arbeidsongeschiktheidsinstantie (UWV) de exacte ziektedatum betwist, stroomt de data van de eigen Nederlandse thuiszorg niet automatisch door om dit te corrigeren. De data bestaat, maar de overheid kan (of wil) er niet bij.</p>
 <p>Deze isolatie bereikt een dieptepunt wanneer de patiënt besluit om zélf als data-koerier te fungeren. Om de behandelende Nederlandse verpleegkundigen inzicht te geven in de Belgische ziekenhuisgeschiedenis, uploadt hij in het voorjaar van 2026 handmatig de complete medische dossiers in het Nederlandse portaal. ZorgSaam ontvangt de data, maar de software weigert deze te integreren in de gestructureerde medische velden. De zware diagnoses — zoals amputaties en weefselafbraak — worden door het systeem simpelweg weggestopt onder een onopvallend tabblad 'Multimedia'. Hierdoor blijft de werkelijke medische geschiedenis voor elke meekijkende arts of keuringsinstantie verborgen achter een digitale dode hoek.</p>
-<h2 id="financiën-sociale-zekerheid">Financiën &amp; Sociale Zekerheid</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="financiën-sociale-zekerheid">Financiën &amp; Sociale Zekerheid</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <h3 data-org="Belastingdienst" id="org-belastingdienst">BELASTINGDIENST</h3>
 <p class="subtitel">Het Digitale Doolhof en de Toeslagenval</p><div class="audit-audio-bar" data-audio-id="docA_belastingdienst" data-audio-src="../assets/audio/docA_belastingdienst_nl_eba68736.mp3" data-clean-heading="BELASTINGDIENST" data-clean-text="Belastingdienst, Het Digitale Doolhof en de Toeslagenval. De Belastingdienst en de daaraan gekoppelde Dienst Toeslagen vormen in theorie het sociale vangnet van de Nederlandse staat, maar in de praktijk blijken zij een feitelijke fuik voor grensarbeiders. Het online aangifteportaal is uitsluitend ingericht op een huishouden met een stabiel, binnenlands belastbaar inkomen. Zodra een grensarbeider met uitsluitend een buitenlands inkomen en een plotselinge medische uitval de gegevens probeert in te voeren, produceert het systeem een vastgelopen nulresultaat. Het noodzakelijke toetsingsinkomen voor toeslagen kan hierdoor niet berekend worden. . Dit vertaalt zich direct in een vicieuze cirkel van financiële onteigening. Omdat het CAK weigert de verdragspolis te registreren, weigert de Dienst Toeslagen om de zorgtoeslag uit te keren; deze wordt structureel op nul euro gezet. Het kindgebonden budget, de daadwerkelijke maandelijkse inkomensondersteuning vanuit de Belastingdienst, valt aanvankelijk weg omdat de S V B koppeling ontbreekt. Zodra de S V B het formele recht op kinderbijslag op naam van de aanvrager registreert, ondanks een uitbetaling van 0 euro kinderbijslag wegens de Belgische prioriteit, deblokkeert Dienst Toeslagen op 22 mei 2026 het kindgebonden budget met een toekenning van 1415 euro voor 2026 en 739 euro nabetaling over eind 2025. Het geld dat binnenkomt is daarmee zuiver kindgebonden budget van de Belastingdienst, niet kinderbijslag van de S V B. De huurtoeslag werkt deels, 1401 euro, met een verrekening van 526 euro op een openstaande schuld uit 2025, waardoor een resterend saldo van 912 euro blijft. De zorgtoeslag blijft bevroren op 0 euro door de RIV blokkade; tegen die blokkade loopt sinds 31 augustus 2026 een formeel herzieningsverzoek bij Dienst Toeslagen op basis van het betaalde Nederlandse eigen risico, 57 euro en 07 cent, bij CZ. De burger wordt zo geconfronteerd met het stopzetten van vitale inkomensondersteuning, terwijl de oorzaak volledig ligt bij administratieve fouten en ontbrekende vinkjes in de registers van andere overheden. . Wanneer de aanvrager om uitstel vraagt voor de inkomstenbelasting omdat de noodzakelijke buitenlandse attesten ontbreken, erkent de fiscus indirect de chaos door dit uitstel te verlenen. Toch blijft de geautomatiseerde incasso en verrekeningsmachine onverminderd doorraten. Eerdere, onterecht uitgekeerde, toeslagen worden met harde hand ingehouden op openstaande bedragen, en bezwaarschriften worden stelselmatig ongegrond verklaard met als argument dat het toetsingsinkomen niet klopt, een afwijking die het direct gevolg is van het feit dat het eigen systeem geen raad weet met de grensoverschrijdende realiteit. Als ultieme tegenreactie dwingt de burger via de privacywetgeving volledige transparantie af over de geautomatiseerde internationale gegevensuitwisseling via de Europese infrastructuur. Eind oktober 2026 bevestigt Dienst Toeslagen de structurele vertraging door de beslistermijn op het lopende bezwaarschrift formeel te verdagen tot 30 november 2026, terwijl de burger gelijktijdig geconfronteerd wordt met formele verzuimherstelbrieven wegens vermeende termijnoverschrijdingen. . Een laatste gevolg is het financiële lek van de vertraagde nabetalingen. Wanneer na meer dan een jaar blokkade eindelijk bedragen zoals het kindgebonden budget of een gedeeltelijke huurtoeslag worden vrijgegeven, kan het gezin daar in het dagelijks leven niet van profiteren. Omdat de inkomstenstroom anderhalf jaar lang is stilgelegd, verdwijnt elke euro die binnenkomt meteen in de opgelopen achterstanden, verrekeningen, roodstanden en energie en zorgrekeningen die tijdens het wachten zijn ontstaan. ." data-track-index="33" id="aab-docA_belastingdienst">
 <button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
@@ -6883,7 +4713,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p>De huishoudelijke impact van de grensoverschrijdende inkomensstagnatie kristalliseert zich pijnlijk uit in de relatie met de energieleverancier, Vattenfall. Door het uitblijven van wettelijke toeslagen en uitkeringen ontstaat er in 2025 en 2026 een aanhoudende betalingsachterstand op de energierekening van het huishouden. Hoewel er herhaaldelijk pogingen worden gedaan om via betalingsregelingen de lasten te spreiden, leidt de combinatie van stijgende maandtermijnen en torenhoge jaarafrekeningen tot een onoverbrugbare schuldencrisis die oploopt tot ruim tweeduizend euro.</p>
 <p>Wanneer de huishouding dreigt te worden afgesloten, vraagt de partner om de officiële beschermingsstatus van 'medisch kwetsbare consument' te activeren, aangezien de aanvrager de energie direct nodig heeft voor de gekoelde opslag van levensreddende insuline. Vattenfall eist hiervoor echter een officiële gezondheidsverklaring van een onafhankelijke Nederlandse arts. Zoals eerder vastgesteld, is een dergelijke verklaring voor een grensarbeider met een Belgisch medisch dossier via de lokale reguliere zorg nagenoeg onmogelijk te verkrijgen. De leverancier legt daarmee een eis neer die feitelijk onuitvoerbaar is.</p>
 <p>De communicatie ontaardt vervolgens in een langdurig, moeizaam administratief traject. Maandenlang laat Vattenfall de ingediende medische gezondheidsverklaring onbeantwoord, terwijl de geautomatiseerde incassomachine onverminderd doorraadt en incassokosten opstapelt. Pas na lang aandringen geeft de energieleverancier toe dat zij de verklaring onterecht hebben geëist, omdat zij als leverancier helemaal geen afsluitgarantie kunnen afgeven. Na deze administratieve desillusie wordt de openstaande vordering alsnog uit handen gegeven aan een incassobureau. De aanvrager wordt zo geconfronteerd met commerciële sancties en oplopende incassokosten, puur doordat de leverancier verzuimt de eigen verantwoordelijkheden te kennen en weigert de buitenlandse medische realiteit te erkennen.</p>
-<h2 id="escalatie-controle-2">Escalatie &amp; Controle</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h2 id="escalatie-controle-2">Escalatie &amp; Controle</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <h3 data-org="DeNationaleOmbudsman" id="org-denationaleombudsman">DE NATIONALE OMBUDSMAN (NL)</h3>
 <p class="subtitel">De Formele Drempel van de Onafhankelijke Arbiter</p><div class="audit-audio-bar" data-audio-id="docA_denationaleombudsman" data-audio-src="../assets/audio/docA_denationaleombudsman_nl_ae4acda7.mp3" data-clean-heading="DE NATIONALE OMBUDSMAN (NL)" data-clean-text="de Nationale Ombudsman, NL, De Formele Drempel van de Onafhankelijke Arbiter. De Nationale Ombudsman is in het Nederlandse bestel de onafhankelijke instantie die klachten behandelt over het handelen van overheidsinstanties zoals het U W V, de S V B en de Belastingdienst. Wanneer de grensarbeider in het voorjaar van 2026 dit instituut inschakelt om de gestapelde administratieve blokkades en het uitblijven van toeslagen aan te kaarten, ontstaat al snel een herkenbaar patroon van procedurele afwijzing. . Hoewel de klacht onder een officieel zaaknummer wordt geregistreerd, stuit het onderzoek direct op institutionele limieten. De Ombudsman meldt openlijk te kampen met structurele capaciteitsproblemen en hanteert een onwrikbare regel: er wordt geen actieve tussenkomst gestart zolang er formele bezwaar of beroepsprocedures bij de instanties zelf lopen. Omdat het dossier nu eenmaal uit openstaande juridische procedures bestaat, weigert de Ombudsman in te grijpen. . Het instituut adviseert de burger om eerst alle reguliere juridische wegen binnen de falende instanties volledig te doorlopen. Hiermee wordt de Ombudsman een verlengstuk van het vertragende systeem: de instantie die moet ingrijpen bij bestuurlijk falen, dwingt de burger om te wachten tot de administratieve molen zelf is uitgedraaid. Nadat herhaalde pogingen en aanvullende dossiers stranden op deze formele reflex, wordt het dossier definitief gesloten en uitsluitend nog geregistreerd als een passief signaal. ." data-track-index="45" id="aab-docA_denationaleombudsman">
 <button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
@@ -6988,7 +4818,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p>De Vaste Commissie voor Sociale Zaken en Werkgelegenheid (SZW) van de Tweede Kamer is het democratische orgaan dat de bewindspersonen controleert op de uitvoering van de sociale zekerheid. In april 2026 ontvangt deze commissie een dwingende brandbrief en de volledige Systeem-Audit, waarin wordt blootgelegd hoe de Nederlandse wetgeving en uitvoeringsinstanties (zoals het UWV en de SVB) falen in de bescherming van grensarbeiders.</p>
 <p>De ambtelijke griffie registreert de brief correct als een ingekomen stuk. Vervolgens past de politieke commissie een beproefde methode toe om directe verantwoordelijkheid te ontwijken: het dossier wordt formeel ingepland en 'geparkeerd' voor een toekomstig commissiedebat over de uitvoering van de sociale zekerheid. Daarbij wordt in de besluitvorming direct een procedurele beperking ingebouwd: men stelt expliciet dat de Kamer zich uitdrukkelijk niet bezighoudt met de individuele kwestie van de burger.</p>
 <p>Hiermee degradeert het parlement de keiharde empirische data van een systematisch bevoegdheidsvacuüm tot een abstract beleidssignaal. De volksvertegenwoordiging erkent hiermee indirect dat de door henzelf ontworpen wetgeving in de praktijk vastloopt, maar weigert om op basis van een concrete casus direct de ministers ter verantwoording te roepen of in te grijpen in de lopende administratieve situatie.</p>
-<h1 id="iii-overkoepelend-bemiddeling-maatschappelijke-resonantie">III. Overkoepelend, Bemiddeling &amp; Maatschappelijke Resonantie</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h1 id="iii-overkoepelend-bemiddeling-maatschappelijke-resonantie">III. Overkoepelend, Bemiddeling &amp; Maatschappelijke Resonantie</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <h3 data-org="AcademischeObservatielaag" id="org-academischeobservatielaag">ACADEMISCHE OBSERVATIELAAG</h3>
 <p class="subtitel">De Retrospectieve Analyse van een Crisis</p><div class="audit-audio-bar" data-audio-id="docA_academischeobservatielaag" data-audio-src="../assets/audio/docA_academischeobservatielaag_nl_e16bb70c.mp3" data-clean-heading="ACADEMISCHE OBSERVATIELAAG" data-clean-text="Academische Observatielaag, De Retrospectieve Analyse van een Crisis. Wetenschappelijke instituten, universitaire faculteiten voor sociaal recht en gespecialiseerde kenniscentra voor grenseffecten hebben binnen de rechtsstaat de taak om wetgeving te toetsen aan de maatschappelijke uitvoeringspraktijk. Zij analyseren structurele knelpunten in de sociale zekerheid en publiceren rapportages voor nationale parlementen en de Europese Commissie. Wanneer de gedocumenteerde Systeem Audit in het voorjaar van 2026 bij diverse Nederlandse en Belgische universiteiten wordt ingediend als actuele casuïstiek van een transnationaal bevoegdheidsvacuüm, blijft een inhoudelijke reactie aanvankelijk volledig uit. De academische infrastructuur is primair ingericht op retrospectief onderzoek binnen afgebakende onderzoeksprogramma s en beschikt niet over een operationeel protocol om een lopende, individuele systeemblokkade in real time te onderzoeken. . Deze radiostilte wordt in september 2026 doorbroken wanneer het geactualiseerde dossier het niveau van specifieke grensarbeid expertise bereikt. Na een eerste bevestiging van dossierstudie door een hoogleraar aan een grensoverschrijdend onderzoeksinstituut, volgt een diepgaande inhoudelijke analyse door een onafhankelijk onderzoeker met een decennialange staat van dienst in grensoverschrijdende procedures. In deze uitwisseling wordt de casus niet langer als een geïsoleerd incident behandeld, maar getoetst aan de wisselwerking tussen de Europese coördinatieverordening, de verordening inzake het vrij verkeer van werknemers en de vaste rechtspraak van het Hof van Justitie over fiscale en sociale gelijke behandeling over de grens. Daarbij wordt tevens aan de hand van officiële correspondentie van de Europese Commissie gedocumenteerd dat formele inbreukklachten tegen België en Vlaanderen over de uitsluiting van grensarbeiders bij sociale voordelen en het Groeipakket al sinds 2022 en 2023 in een onderzoeksfase verkeren zonder definitief besluit. . De interactie met de onderzoekswereld verschuift van passieve observatie naar actieve verificatie wanneer de onderzoeker de exacte medische en fiscale parameters van het dossier via een anonieme steekproef voorlegt aan de Belgische belastingdienst voor niet inwoners. De belastingadministratie bevestigt in deze steekproef schriftelijk dat bij het ontbreken van een Nederlands vervangingsinkomen boven de wettelijke drempel het spontaan toevoegen van medische verklaringen bij de aangifte een geldige route vormt om de fiscale handicapstatus naar Belgisch recht aan te tonen. Tegelijkertijd legt deze academische validatie de operationele grens van de wetenschap bloot. Hoewel het onderzoek bevestigt dat nationale uitvoeringsorganen vastlopen op het ontbreken van digitale standaardsjablonen voor grensarbeiders met een medische beperking, bezit de academische laag geen uitvoerende of afdwingende bevoegdheid. De wetenschappelijke bevestiging van de weeffout opent geen gesloten databanken zoals de Kruispuntbank van de Sociale Zekerheid en voorkomt evenmin dat een geslaagde fiscale correctie in het werkland via een gewijzigd inkomen nieuwe herberekeningen of terugvorderingen uitlokt bij inkomensafhankelijke regelingen aan beide zijden van de grens. Bovendien legt de uitwisseling van eind oktober 2026 een methodologische blinde vlek bloot tussen een interne micro analyse en een externe macro audit. Waar de onderzoeker tot driemaal toe blijft verwijzen naar de theoretische aansluitingsplicht bij de Vlaamse Sociale Bescherming op papier, toont de systeemanalyse van buitenaf aan dat het Vlaamse overheidsportaal buitenlandse inwoners standaard als in principe niet mogelijk categoriseert en na emigratie elke geautomatiseerde kennisgeving staakt, waardoor de theoretische wetgeving op een uitvoeringsarchitectuur botst die op uitsluiting is ingesteld. . Om deze academische cocon van binnenuit te doorbreken, is op 29 oktober 2026 een gerichte dialoog geopend met tien Europese denkers, biocybernetici, technologie ethici en systeemonderzoekers die opereren vanuit een extern observatieperspectief buiten de gevestigde ambtelijke kaders. Deze overdracht legt de kern van de co dialoog voor: de koppeling tussen de administratieve leemte van het Vester arrest en de biocybernetica van Frederic Vester, gecombineerd met de methodologie waarin de menselijke intuïtie en patroonherkenning worden versterkt door AI om de gesloten achttiende eeuwse machinerie integraal te radiograferen. . Aansluitend is op dezelfde dag een gerichte academische transmissie verzonden naar vooraanstaande hoogleraren en onderzoekers in het staats en bestuursrecht, de grondwettelijke wetgevingsevaluatie en de psychoanalytische cultuurkritiek aan universiteiten in Nederland en België. Deze lijn van de audit confronteert de academische discipline met de mechanische toepassing van wetgeving die wortelt in de jaren zeventig van de vorige eeuw: regelingen die ontworpen zijn voor een homogene, nationale industriële samenleving en die in de huidige grensoverschrijdende context structurele uitsluiting en administratieve ontmenselijking produceren. Door de fysieke breuk van de grensarbeider via een mens AI co dialoog te spiegelen aan de theorie van de wetgevingsstaat, wordt het academische veld uitgedaagd om voorbij de ambtelijke loketregels te kijken en de institutionele architectuur zelve ter discussie te stellen. . In opvolging hiervan is op 30 oktober 2026 een gerichte overdracht voorbereid aan een internationaal filosoof en sociaal wetenschapper gespecialiseerd in beleidsevaluatie en basisinkomens. Deze interactie adresseert direct de 8 punten paradox : het mechanisme waarbij een zwaar medisch gehandicapte grensarbeider door een koud rekensysteem op 8 punten wordt vastgepind, één punt onder de fiscale drempel van 9 punten, terwijl een grensoverschrijdende uitkering een armoedeval activeert. De audit confronteert de wetenschap met het feit dat theoretische beleidsconcepten op lokaal niveau door gebrekkige uitvoeringssystemen worden geperverteerd. ." data-track-index="49" id="aab-docA_academischeobservatielaag">
 <button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
@@ -7173,7 +5003,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p>*2* Voorbereiding en registratie van gerichte persoonlijke overdrachten d.d. 30-10-2026 aan brandweervrijwilligersnetwerken, de patiëntenvertegenwoordiging in de Duitstalige Gemeenschap te Eupen, een regionale autonomiebeweging in de Elzas, het burgemeestersambt in de provincie Bergamo, een financieel adviseur voor grenswerkers te Genève en een juridisch observatorium voor arbeidsrecht te Milaan (HvJ EU C-257/24), een burgeractiecomité in de Zeeuws-Vlaamse polder (Zaamslag) en een onafhankelijk grenspendelaarscomité voor het spoorvervoer (Lijn 12) (Verzonden op 30-10-2026, Gmail-ID's: 1a18b2f9b7561a48, 1a18b2f65fd4e01a, 1a18b2f052d3ab40, 1a18b2fca525afd6, 1a18b2ed0d778e06 [bevestiging: 1a18b2f22d1be15e], 1a18b2e84171d3c5, 1a18b2ea33bf0332, 1a18b2fb366cebbd; remediëringsconcepten r430366544821394683 en r-4238138219403452240).</p>
 <p>*3* Ontvangst van standaarddoorverwijzing Orde van Vlaamse Balies d.d. 02-11-2026 (Gmail-ID: 1a19c6c76b4f4cdc) en klaargezet wederwoord met overdracht van het precedentdossier (Draft-ID: r1935877777458837203).</p>
 </div>
-<h1 id="iv-europa">IV. Europa</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h1 id="iv-europa">IV. Europa</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <h3 data-org="EC" id="org-ec">EUROPESE COMMISSIE</h3>
 <p class="subtitel">De Architect Zonder Operationele Slagkracht</p><div class="audit-audio-bar" data-audio-id="docA_ec" data-audio-src="../assets/audio/docA_ec_nl_8bb2cd89.mp3" data-clean-heading="EUROPESE COMMISSIE" data-clean-text="Europese Commissie, De Architect Zonder Operationele Slagkracht. De Europese Commissie is de architect van het systeem. Zij schrijft de dwingende wetgeving die garandeert dat grensarbeiders niet tussen wal en schip mogen vallen. Wanneer de gedupeerde burger de Commissie echter wijst op het feit dat zowel België als Nederland deze wetten in de praktijk openlijk negeren, toont de architect zich volstrekt machteloos op het microniveau. . Om deze bestuurlijke patstelling te doorbreken, wordt het dossier via een formele klacht geëscaleerd naar het Directoraat generaal Werkgelegenheid, Sociale Zaken en Inclusie, DG Empl. De klacht legt de structurele leemtes in de Europese verordeningen en de falende nationale uitvoering genadeloos bloot. DG Empl bevestigt de theorie, maar ontbeert elke operationele bevoegdheid of afdwingbare machtsknop om een lokaal ziekenfonds of uitkeringsinstantie direct te corrigeren. . De Commissie mag niet ingrijpen in een individueel dossier. Het enige wapen dat zij bezit, is het opstarten van een zogenaamde inbreukprocedure tegen een falende lidstaat. Dit is echter een loodzwaar politiek en juridisch traject dat vele jaren in beslag neemt. Voor de burger die vandaag zonder inkomen zit omdat een grenscomputer hapert, biedt de Commissie daarmee enkel hoogdravende theorieën zonder enige praktische bescherming. . Wat op 25 september 2026 in het dossier komt, is dat de Commissie al sinds 2022 en 2023 meerdere inbreukklachten tegen België en Vlaanderen onderzoekt. Het gaat om klachten over de Vlaamse jobbonus, de studiefinanciering en het Groeipakket, alle drie onder de Europese verordening over het vrij verkeer van werknemers. De Commissie heeft in al die jaren geen definitief besluit genomen, wat betekent dat de klachten nog open zijn. De klacht van dit gezin is geen geïsoleerd geval, maar sluit aan bij een reeks klachten die al jaren loopt. ." data-track-index="55" id="aab-docA_ec">
 <button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
@@ -7347,7 +5177,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </div><div class="audit-org-bar"><a class="audit-crosslink" href="document-b.html#org-euco">[Interacties] Bekijk feiten, tijdlijn &amp; bewijsstukken in Document B →</a></div>
 <p>De Europese Raad, bestaande uit de regeringsleiders van alle lidstaten, bepaalt de algemene politieke richting van de Europese Unie. Binnen deze macro-architectuur bestaat de individuele grensarbeider simpelweg niet. </p>
 <p>De Raad zet abstracte doelen op papier, zoals 'een naadloze interne markt' of 'digitale gegevensuitwisseling in 2030'. Ze zijn volstrekt losgekoppeld van de uitvoerende rampen die ontstaan wanneer hun politieke idealen botsen op de formele, nationale systemen van hun eigen thuislanden. Elke poging tot escalatie richting dit orgaan is bij voorbaat zinloos, omdat het instituut zo ver verwijderd is van de dagelijkse bestuurlijke modder, dat ze geen mechanismen hebben ingebouwd om individueel onrecht überhaupt te registreren, laat staan te repareren.</p>
-<h1 id="v-internationaal">V. Internationaal</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h1 id="v-internationaal">V. Internationaal</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <h3 data-org="VerenigdeNaties" id="org-verenigdenaties">VERENIGDE NATIES</h3>
 <p class="subtitel">Het Papieren Verdrag en de Absolute Afstand</p><div class="audit-audio-bar" data-audio-id="docA_verenigdenaties" data-audio-src="../assets/audio/docA_verenigdenaties_nl_334ea824.mp3" data-clean-heading="VERENIGDE NATIES" data-clean-text="Verenigde Naties, Het Papieren Verdrag en de Absolute Afstand. De escalatieladder eindigt op het allerhoogste mondiale niveau: de Verenigde Naties. Zowel België als Nederland hebben het V N verdrag inzake de rechten van personen met een handicap, UN Crpd, geratificeerd. Dit verdrag verplicht de lidstaten om de volledige maatschappelijke en economische inclusie van personen met een fysieke beperking te garanderen en administratieve barrières proactief weg te nemen. De theorie op mondiaal niveau is sluitend en belooft universele bescherming. . Wanneer de empirische data van de Systeem Audit echter wordt afgezet tegen deze mondiale verdragen, wordt de ultieme institutionele ontkoppeling zichtbaar. Er is geen enkele operationele verbinding tussen het V N verdrag in New York of Genève en de dwingende foutcode in het digitale loket van een lokaal ziekenfonds of uitkeringsinstantie. De natiestaat ratificeert de nobele doelstellingen op het macro niveau, maar weigert deze rechten afdwingbaar te maken in de micro systemen die de dagelijkse overleving van de burger bepalen. . De Verenigde Naties bezitten geen toezichthoudende machtsmiddelen om een falende nationale uitvoeringsinstantie te corrigeren. Zij fungeren louter als een moreel kompas op een afstand die zo groot is, dat de zwaartekracht van hun verdragen de grond nooit bereikt. Hiermee is de hiërarchie van het bevoegdheidsvacuüm compleet: van de tastbare, medische werkelijkheid van amputaties op de vierkante meter, tot aan de volstrekt machteloze theorie van mondiale mensenrechten. . Op 14 juli 2026 wordt het dossier officieel ingediend bij de Special Procedures van de Verenigde Naties ter aankaarting van de structurele schending van fundamentele rechten. De klacht wordt geregistreerd onder kenmerk hh33z8rq. ." data-track-index="61" id="aab-docA_verenigdenaties">
 <button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
@@ -7378,220 +5208,14 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <div class="footnotes">
 <p>*1* UN Convention on the Rights of Persons with Disabilities, dat staten verplicht om de drempels voor personen met een handicap (inclusief in de sociale zekerheid) weg te nemen.</p>
 </div>
-<a class="pub-top" href="#top" title="Naar boven">↑</a><!-- Forensisch Bronopvragings- en Contactvenster (Modal) -->
-<div class="bm-modal-overlay" id="bm-modal" onclick="if(event.target===this)sluitBronModal()">
-<div aria-labelledby="bm-modal-titel" aria-modal="true" class="bm-modal-dialog" role="dialog">
-<div class="bm-modal-kop">
-<h3 id="bm-modal-titel">📄 Bronstuk opvragen / Contact</h3>
-<button aria-label="Venster sluiten" class="bm-modal-sluit" onclick="sluitBronModal()" type="button">×</button>
-</div>
-<div class="bm-intro">
-      Alle 708 interacties in deze audit zijn gebaseerd op objectieve brondocumenten (originele e-mails met Message-ID's, formele besluiten, brieven en medische verslagen). Om privacy en AVG-rechten van betrokkenen te waarborgen zijn persoonsgegevens in publieke bestanden afgeschermd. Geauthenticeerde onderzoekers, journalisten, toezichthouders en lotgenoten kunnen volledige, ongecensureerde brondossiers opvragen ter verificatie.
-    </div>
-<form id="bm-form" onsubmit="event.preventDefault();stuurEmail();">
-<div class="bm-groep">
-<label class="bm-label" for="bm-onderwerp">Onderwerp / Gevraagd bronstuk of referentie:</label>
-<input class="bm-input" id="bm-onderwerp" placeholder="Bijv. Bronopvraag: CZ Zorgverzekering - 06-10-2026 - Weigering S072" type="text"/>
-</div>
-<div class="bm-groep">
-<label class="bm-label">Uw hoedanigheid / perspectief:</label>
-<div class="bm-radio-groep">
-<label class="bm-radio-optie">
-<input checked="" name="bm-perspectief" type="radio" value="Lotgenoot / Grensarbeider"/>
-<span><strong>Lotgenoot / Grensarbeider</strong><br/><small style="color:#666">Ervaring delen, herkenning, vergelijkbare situatie</small></span>
-</label>
-<label class="bm-radio-optie">
-<input name="bm-perspectief" type="radio" value="Wetenschap / Beleidsonderzoek"/>
-<span><strong>Wetenschap / Beleid</strong><br/><small style="color:#666">Academisch onderzoek, beleidsevaluatie, EESSI/ESSPASS</small></span>
-</label>
-<label class="bm-radio-optie">
-<input name="bm-perspectief" type="radio" value="Journalistiek / Media"/>
-<span><strong>Journalistiek / Media</strong><br/><small style="color:#666">Feitelijke verificatie, achtergrondgesprek, publicatie</small></span>
-</label>
-<label class="bm-radio-optie">
-<input name="bm-perspectief" type="radio" value="Juridisch / Toezichthouder"/>
-<span><strong>Juridisch / Toezichthouder</strong><br/><small style="color:#666">Handhaving, AVG/GDPR, rechtbank, ombudsman</small></span>
-</label>
-</div>
-</div>
-<div class="bm-groep">
-<label class="bm-label" for="bm-vraag">Uw toelichting, vraag of verificatiedoel:</label>
-<textarea class="bm-textarea" id="bm-vraag" placeholder="Beschrijf kort uw onderzoeksvraag, hoedanigheid of situatie..."></textarea>
-</div>
-<div class="bm-check-groep">
-<input checked="" id="bm-akkoord" type="checkbox"/>
-<label for="bm-akkoord">Ik begrijp dat opgevraagde bronstukken uitsluitend voor verificatie, waarheidsvinding of belangenbehartiging worden verstrekt conform de privacywetgeving.</label>
-</div>
-<div class="bm-knoppen">
-<button class="bm-btn-copy" id="bm-copy-btn" onclick="kopieerAanvraag()" type="button">📋 Kopieer aanvraagtekst + e-mailadres</button>
-<button class="bm-btn-mail" type="submit">Open in e-mailprogramma →</button>
-</div>
-</form>
-</div>
-</div>
-<script>
-(function() {
-  window.openBronModal = function(onderwerp) {
-    var modal = document.getElementById('bm-modal');
-    if (!modal) return;
-    var inp = document.getElementById('bm-onderwerp');
-    if (inp) {
-      inp.value = onderwerp || 'Algemeen contact / Vraag over de Systeem-Audit';
-    }
-    modal.classList.add('bm-open');
-    if (inp) inp.focus();
-  };
+<!-- Forensisch Bronopvragings- en Contactvenster (Modal) -->
 
-  window.sluitBronModal = function() {
-    var modal = document.getElementById('bm-modal');
-    if (modal) modal.classList.remove('bm-open');
-  };
 
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') sluitBronModal();
-  });
 
-  // Event delegation voor klik op .audit-bewijs
-  document.addEventListener('click', function(e) {
-    var badge = e.target.closest ? e.target.closest('.audit-bewijs') : null;
-    if (!badge) return;
-    e.preventDefault();
 
-    var entry = badge.closest ? badge.closest('.entry') : null;
-    var orgNaam = '';
-    var datum = '';
-    var titel = '';
-
-    if (entry) {
-      var dEl = entry.querySelector('.datum');
-      if (dEl) datum = dEl.innerText.trim();
-      var tEl = entry.querySelector('.titel, .entry-titel');
-      if (tEl) titel = tEl.innerText.trim();
-      
-      // Zoek dichtstbijzijnde voorgaande h3
-      var allH3 = document.querySelectorAll('h3');
-      for (var i = allH3.length - 1; i >= 0; i--) {
-        if (allH3[i].compareDocumentPosition(badge) & Node.DOCUMENT_POSITION_FOLLOWING) {
-          orgNaam = allH3[i].innerText.trim();
-          break;
-        }
-      }
-    }
-
-    var cleanOrg = orgNaam.replace(/\s+/g, ' ').replace(/^[\d\.\s]+/, '').trim();
-    var parts = [];
-    if (cleanOrg) parts.push(cleanOrg);
-    if (datum) parts.push(datum);
-    if (titel) parts.push(titel.replace(/\s+/g, ' '));
-    else if (badge.innerText) parts.push(badge.innerText.trim());
-
-    var onderwerp = 'Bronopvraag: ' + parts.join(' - ');
-    openBronModal(onderwerp);
-  });
-
-  function genereerEmailTekst() {
-    var onderwerp = (document.getElementById('bm-onderwerp').value || '').trim();
-    var perspectiefEl = document.querySelector('input[name="bm-perspectief"]:checked');
-    var perspectief = perspectiefEl ? perspectiefEl.value : 'Niet opgegeven';
-    var toelichting = (document.getElementById('bm-vraag').value || '').trim();
-    var akkoord = document.getElementById('bm-akkoord').checked ? 'Ja' : 'Nee';
-
-    var tekst = "Geachte heer Messa / Systeem-Audit,\n\n" +
-      "Betreft: " + onderwerp + "\n" +
-      "Perspectief: " + perspectief + "\n\n" +
-      "Toelichting / Onderzoeksvraag:\n" +
-      (toelichting || "[Geen extra toelichting ingevoerd]") + "\n\n" +
-      "Akkoord met verificatievoorwaarden: " + akkoord + "\n\n" +
-      "---\nVerzonden via het bronopvragingsvenster van grensarbeid.org";
-    return { onderwerp: onderwerp, tekst: tekst };
-  }
-
-  window.stuurEmail = function() {
-    var data = genereerEmailTekst();
-    var mailto = "mailto:systeemaudit@gmail.com" +
-      "?subject=" + encodeURIComponent(data.onderwerp) +
-      "&body=" + encodeURIComponent(data.tekst);
-    window.location.href = mailto;
-  };
-
-  window.kopieerAanvraag = function() {
-    var data = genereerEmailTekst();
-    var klembordTekst = "Aan: systeemaudit@gmail.com\n" +
-      "Onderwerp: " + data.onderwerp + "\n\n" +
-      data.tekst;
-
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(klembordTekst).then(function() {
-        toonKopieerBevestiging();
-      }).catch(function() {
-        fallbackKopieer(klembordTekst);
-      });
-    } else {
-      fallbackKopieer(klembordTekst);
-    }
-  };
-
-  function fallbackKopieer(tekst) {
-    var ta = document.createElement('textarea');
-    ta.value = tekst;
-    ta.style.position = 'fixed';
-    ta.style.left = '-9999px';
-    document.body.appendChild(ta);
-    ta.focus();
-    ta.select();
-    try {
-      document.execCommand('copy');
-      toonKopieerBevestiging();
-    } catch(e) {
-      alert('Kopiëren mislukt. U kunt handmatig mailen naar systeemaudit@gmail.com');
-    }
-    document.body.removeChild(ta);
-  }
-
-  function toonKopieerBevestiging() {
-    var btn = document.getElementById('bm-copy-btn');
-    if (!btn) return;
-    var orig = btn.innerText;
-    btn.innerText = '✓ Gekopieerd naar klembord!';
-    btn.classList.add('bm-copied');
-    setTimeout(function() {
-      btn.innerText = orig;
-      btn.classList.remove('bm-copied');
-    }, 2500);
-  }
-})();
-</script><button aria-label="Schakel donkere/lichte modus" class="dm-toggle" onclick="dm_toggle()" title="Schakel donkere/lichte modus" type="button">
-<span class="dm-icon-dm">🌙</span>
-<span class="dm-icon-lm">☀️</span>
-</button>
-<script>
-(function(){
-  function s(k,v){try{localStorage.setItem(k,v);}catch(e){}}
-  window.dm_toggle=function(){
-    var r=document.documentElement;
-    var n=r.getAttribute('data-theme')==='dark'?'light':'dark';
-    r.setAttribute('data-theme',n);
-    s('systeem-audit-thema',n);
-  };
-})();
-</script>
-<footer class="pub-footer notranslate" translate="no">
-<p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 3 november 2026, 14:26</p>
-<div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
-<button class="pub-print-btn notranslate" onclick="window.print()" title="Print deze pagina of bewaar als PDF" translate="no" type="button">🖨️ Print / Bewaar als PDF</button>
-<button class="pub-contact-btn pub-contact-footer notranslate" onclick="openBronModal('Footer contact')" translate="no" type="button">📄 Bronstuk opvragen / Contact</button>
-</div>
-<p><a href="home.html">← Terug naar overzicht</a> ·
-     <a href="../home_int.html">🇪🇺 Europees portaal</a> ·
-     <a href="../index.html">Startportaal</a></p>
-</footer>
 <!-- Analytische sensor (verborgen landentracker, puur voor dossierbeheer) -->
-<div aria-hidden="true" style="display:none;position:absolute;width:0;height:0;overflow:hidden;opacity:0;pointer-events:none;">
-<img alt="" height="1" loading="eager" src="https://s05.flagcounter.com/count/xed2/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_18/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" width="1"/>
-<script async="" data-goatcounter="https://grensarbeid.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
-</div>
-<a class="pub-top" href="#top" title="Naar boven">↑</a><section aria-label="Volledige Audio-Playlist" class="audit-playlist-sectie notranslate" id="audit-audio-playlist" translate="no">
+
+<a class="pub-top" href="#top" title="Naar boven">↑</a><section aria-label="Volledige Audio-Playlist" class="audit-playlist-sectie" id="audit-audio-playlist">
 <div class="aps-header">
 <div class="aps-title-row">
 <span class="aps-badge">🎧 LUISTERMODUS ZONDER LEZEN</span>
@@ -7893,7 +5517,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 3 november 2026, 14:26</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 3 november 2026, 14:57</p>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-print-btn notranslate" onclick="window.print()" title="Print deze pagina of bewaar als PDF" translate="no" type="button">🖨️ Print / Bewaar als PDF</button>
 <button class="pub-contact-btn pub-contact-footer notranslate" onclick="openBronModal('Footer contact')" translate="no" type="button">📄 Bronstuk opvragen / Contact</button>
@@ -8073,14 +5697,23 @@ html[data-theme="dark"] .aps-track-jump:hover {
     }
   }
 
+  function updateMasterProgress(pct, curSec, totSec, isEst) {
+    var mpFill = document.getElementById('aps-mp-progress-fill');
+    if (mpFill) mpFill.style.width = pct + '%';
+    var mpTime = document.getElementById('aps-mp-time');
+    if (mpTime) mpTime.innerText = formatTime(curSec) + ' / ' + (isEst ? '~' : '') + formatTime(totSec);
+  }
+
   function updatePlaylistUI(bar, playing) {
     var pSection = document.getElementById('audit-audio-playlist');
     if (!pSection) return;
     var aid = bar ? bar.getAttribute('data-audio-id') : null;
     var rows = pSection.querySelectorAll('.aps-track');
+    var activeIdx = bar ? allBars.indexOf(bar) : -1;
     for (var i = 0; i < rows.length; i++) {
       var r = rows[i];
       if (aid && r.getAttribute('data-audio-id') === aid) {
+        r.classList.add('aps-active');
         if (playing) {
           r.classList.add('aps-playing');
           r.classList.remove('aps-paused');
@@ -8089,8 +5722,24 @@ html[data-theme="dark"] .aps-track-jump:hover {
           r.classList.add('aps-paused');
         }
       } else {
-        r.classList.remove('aps-playing', 'aps-paused');
+        r.classList.remove('aps-active', 'aps-playing', 'aps-paused');
       }
+    }
+    var mpPlay = document.getElementById('aps-play-btn');
+    if (mpPlay) {
+      var pI = mpPlay.querySelector('.aps-icon-play');
+      var paI = mpPlay.querySelector('.aps-icon-pause');
+      if (pI) pI.style.display = playing ? 'none' : 'inline-block';
+      if (paI) paI.style.display = playing ? 'inline-block' : 'none';
+      if (playing) mpPlay.classList.add('aps-playing');
+      else mpPlay.classList.remove('aps-playing');
+    }
+    if (bar && activeIdx !== -1) {
+      var mpName = document.getElementById('aps-mp-trackname');
+      var rowTitle = rows[activeIdx] ? rows[activeIdx].querySelector('.aps-track-title') : null;
+      if (mpName && rowTitle) mpName.innerText = (activeIdx + 1) + '. ' + rowTitle.innerText.trim();
+      var mpStatus = document.getElementById('aps-mp-status');
+      if (mpStatus) mpStatus.innerText = (playing ? '▶ ' : '❚❚ ') + '(' + (activeIdx + 1) + ' / ' + allBars.length + ')';
     }
   }
 
@@ -8123,6 +5772,11 @@ html[data-theme="dark"] .aps-track-jump:hover {
   }
 
   function playNextTrack(fromBar) {
+    var autoChk = document.getElementById('aps-autoplay-chk');
+    if (autoChk && !autoChk.checked) {
+      stopAllAudio();
+      return;
+    }
     var idx = allBars.indexOf(fromBar);
     if (idx !== -1 && idx < allBars.length - 1) {
       var nextBar = allBars[idx + 1];
@@ -8176,6 +5830,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
       if (timeEl) {
         timeEl.innerText = formatTime(estSec) + ' / ~' + formatTime(liveEstDuration);
       }
+      updateMasterProgress(pct, estSec, liveEstDuration, true);
     }, 250);
 
     playLiveChunk(0);
@@ -8308,6 +5963,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
       if (timeEl) {
         timeEl.innerText = formatTime(audioEl.currentTime) + ' / ' + formatTime(audioEl.duration);
       }
+      updateMasterProgress(pct, audioEl.currentTime, audioEl.duration, false);
     };
 
     audioEl.play().catch(function(err) {
@@ -8484,6 +6140,56 @@ html[data-theme="dark"] .aps-track-jump:hover {
       };
     }
 
+    var mpPlayBtn = document.getElementById('aps-play-btn');
+    if (mpPlayBtn) {
+      mpPlayBtn.onclick = function() {
+        var target = currentBar || allBars[0];
+        if (target) playBar(target);
+      };
+    }
+    var mpPrevBtn = document.getElementById('aps-prev-btn');
+    if (mpPrevBtn) {
+      mpPrevBtn.onclick = function() {
+        var idx = currentBar ? allBars.indexOf(currentBar) : 0;
+        var prevIdx = Math.max(0, idx - 1);
+        if (allBars[prevIdx]) playBar(allBars[prevIdx]);
+      };
+    }
+    var mpNextBtn = document.getElementById('aps-next-btn');
+    if (mpNextBtn) {
+      mpNextBtn.onclick = function() {
+        var idx = currentBar ? allBars.indexOf(currentBar) : -1;
+        var nextIdx = (idx + 1 < allBars.length) ? idx + 1 : 0;
+        if (allBars[nextIdx]) playBar(allBars[nextIdx]);
+      };
+    }
+    var mpSpeedBtn = document.getElementById('aps-speed-btn');
+    if (mpSpeedBtn) {
+      mpSpeedBtn.onclick = function(e) {
+        e.stopPropagation();
+        globalSpeedIdx = (globalSpeedIdx + 1) % speeds.length;
+        var sp = speeds[globalSpeedIdx];
+        var allSpBtns = document.querySelectorAll('.aab-speed-btn');
+        for (var s = 0; s < allSpBtns.length; s++) allSpBtns[s].innerText = sp + 'x';
+        if (currentAudio) currentAudio.playbackRate = sp;
+        if (currentLiveAudio) currentLiveAudio.playbackRate = sp;
+      };
+    }
+    var mpProgWrap = document.getElementById('aps-mp-progress-wrap');
+    if (mpProgWrap) {
+      mpProgWrap.onclick = function(e) {
+        var bar = currentBar || allBars[0];
+        if (!bar) return;
+        var rect = mpProgWrap.getBoundingClientRect();
+        var pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+        if (isIntPortal) {
+          seekLive(bar, pct);
+        } else if (currentAudio && currentBar === bar && currentAudio.duration) {
+          currentAudio.currentTime = pct * currentAudio.duration;
+        }
+      };
+    }
+
     var playlistRows = document.querySelectorAll('.aps-track');
     for (var r = 0; r < playlistRows.length; r++) {
       (function(row) {
@@ -8519,7 +6225,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <script class="notranslate" translate="no">
 (function() {
   var _origTexts = new Map();
-  var _isTranslating = false;
+  var _transJobId = 0;
   var _currentLang = 'nl';
 
   function getTranslatableNodes() {
@@ -8581,7 +6287,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
     var urlParams = new URLSearchParams(window.location.search);
     var target = urlParams.get('lang');
     if (!target) {
-      try { target = sessionStorage.getItem('grensarbeid-int-lang'); } catch(e) {}
+      try { target = sessionStorage.getItem('grensarbeid-int-lang') || localStorage.getItem('grensarbeid-int-lang'); } catch(e) {}
     }
     var supported = ['en','de','fr','it','es','pl','da','sv','pt','ro'];
     if (!target || supported.indexOf(target) === -1) {
@@ -8615,8 +6321,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 
   window.vertaalPaginaNaar = function(lang) {
     if (!lang) return Promise.resolve();
-    if (_isTranslating) return Promise.resolve();
-    _isTranslating = true;
+    var myJob = ++_transJobId;
     _currentLang = lang;
 
     document.documentElement.lang = lang;
@@ -8682,6 +6387,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
       })
       .then(function(resp) { return resp.json(); })
       .then(function(data) {
+        if (myJob !== _transJobId) return;
         if (!data || !data[0]) return;
         var fullTrans = '';
         for (var p = 0; p < data[0].length; p++) {
@@ -8702,8 +6408,9 @@ html[data-theme="dark"] .aps-track-jump:hover {
     });
 
     return Promise.all(promises).then(function() {
-      _isTranslating = false;
-      showStatusPill('✓ Translated (' + lang.toUpperCase() + ')', true);
+      if (myJob === _transJobId) {
+        showStatusPill('✓ Translated (' + lang.toUpperCase() + ')', true);
+      }
     });
   };
 
@@ -8711,7 +6418,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
   window.wisselTaal = function(lang) {
     if (!lang) return;
     try {
-      sessionStorage.setItem('grensarbeid-int-lang', lang);
+      sessionStorage.setItem('grensarbeid-int-lang', lang); localStorage.setItem('grensarbeid-int-lang', lang);
     } catch(e) {}
 
     var curUrl = new URL(window.location.href);
