@@ -5408,7 +5408,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document D — De synthese</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 3 november 2026, 12:52</p>
+<p class="meta-lijn">Versie bijgewerkt: 3 november 2026, 14:26</p>
 </div>
 <div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
 <li class="niv1"><a href="#systeem-audit">Systeem-Audit</a></li>
@@ -6236,7 +6236,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 3 november 2026, 12:52</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 3 november 2026, 14:26</p>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-print-btn notranslate" onclick="window.print()" title="Print deze pagina of bewaar als PDF" translate="no" type="button">🖨️ Print / Bewaar als PDF</button>
 <button class="pub-contact-btn pub-contact-footer notranslate" onclick="openBronModal('Footer contact')" translate="no" type="button">📄 Bronstuk opvragen / Contact</button>
@@ -6497,7 +6497,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 3 november 2026, 12:52</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 3 november 2026, 14:26</p>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-print-btn notranslate" onclick="window.print()" title="Print deze pagina of bewaar als PDF" translate="no" type="button">🖨️ Print / Bewaar als PDF</button>
 <button class="pub-contact-btn pub-contact-footer notranslate" onclick="openBronModal('Footer contact')" translate="no" type="button">📄 Bronstuk opvragen / Contact</button>
@@ -6516,7 +6516,10 @@ html[data-theme="dark"] .aps-track-jump:hover {
 // AUDIT AUDIO PLAYER ENGINE — Hybride Speler (NL MP3 + Live-TTS Int Portaal)
 // ==========================================================================
 (function() {
-  var isIntPortal = document.documentElement.hasAttribute('data-int-portal');
+  var isIntPortal = document.documentElement.hasAttribute('data-int-portal') ||
+                    location.pathname.indexOf('/int/') !== -1 ||
+                    location.pathname.indexOf('home_int.html') !== -1 ||
+                    window.location.search.indexOf('int=1') !== -1;
   var allBars = [];
   var currentBar = null;
   var currentAudio = null;
@@ -6566,15 +6569,18 @@ html[data-theme="dark"] .aps-track-jump:hover {
   function getSectionLiveText(bar) {
     var textParts = [];
     var prev = bar.previousElementSibling;
-    while (prev && !/^(h[1-6]|div)$/i.test(prev.tagName)) {
+    while (prev && !(/^h[1-6]$/i.test(prev.tagName) || (prev.tagName === 'DIV' && prev.classList.contains('recht-kop-wrapper')))) {
       prev = prev.previousElementSibling;
     }
-    if (prev && (/^h[1-6]$/i.test(prev.tagName) || (prev.tagName === 'DIV' && prev.classList.contains('recht-kop-wrapper')))) {
+    if (prev) {
       var hClone = prev.cloneNode(true);
       var nb = hClone.querySelectorAll('.pub-naar-boven, button, .aps-track-jump');
       for (var k = 0; k < nb.length; k++) nb[k].remove();
       var ht = hClone.innerText.trim();
       if (ht) textParts.push(ht + '. ');
+    } else {
+      var fallbackHeading = bar.getAttribute('data-clean-heading');
+      if (fallbackHeading) textParts.push(fallbackHeading + '. ');
     }
 
     var curr = bar.nextElementSibling;
@@ -6590,7 +6596,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
         curr = curr.nextElementSibling;
         continue;
       }
-      var summary = curr.querySelector('.tts-spoken-summary');
+      var summary = curr.classList.contains('tts-spoken-summary') ? curr : curr.querySelector('.tts-spoken-summary');
       if (summary) {
         var st = summary.innerText.trim();
         if (st) textParts.push(st + '. ');
@@ -6733,6 +6739,10 @@ html[data-theme="dark"] .aps-track-jump:hover {
 
   // --- LIVE TTS PLAYBACK (INTERNATIONAL PORTAL) ---
   function startLivePlayback(bar) {
+    if (!currentLiveAudio) {
+      currentLiveAudio = new Audio();
+      currentLiveAudio.referrerPolicy = "no-referrer";
+    }
     var text = getSectionLiveText(bar);
     if (!text) {
       console.warn("No text found for live playback in section");
@@ -6986,6 +6996,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
       jumps[j].innerText = t.jumpText;
     }
   }
+  window.updateAudioPlayerUI = updateAudioPlayerUI;
 
   window.wisselTaal = function(lang) {
     var wasPlaying = isPlayingLive || (currentAudio && !currentAudio.paused);
@@ -7300,6 +7311,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
     });
   };
 
+  var _origWisselTaal = window.wisselTaal;
   window.wisselTaal = function(lang) {
     if (!lang) return;
     try {
@@ -7310,46 +7322,30 @@ html[data-theme="dark"] .aps-track-jump:hover {
     curUrl.searchParams.set('lang', lang);
     window.history.replaceState({}, '', curUrl.toString());
 
-    window.vertaalPaginaNaar(lang);
+    if (typeof _origWisselTaal === 'function') {
+      _origWisselTaal(lang);
+    } else {
+      window.vertaalPaginaNaar(lang);
+    }
   };
 
   function initOrSync() {
-    var isInt = window.location.search.indexOf('int=1') !== -1;
-    var isHomeInt = location.pathname.indexOf('home_int.html') !== -1;
-    var autoLang = document.documentElement.getAttribute('data-auto-lang');
-    var hasAutoLang = autoLang && autoLang !== 'nl';
-
-    if (!isInt && !isHomeInt && !hasAutoLang) {
-      // 100% hard authentic Dutch mode!
-      return;
-    }
-
-    var target = (hasAutoLang && !window.location.search.includes('lang=')) ? autoLang : bepaalDoeltaal();
+    var isIntPortal = document.documentElement.hasAttribute('data-int-portal') ||
+                      location.pathname.indexOf('/int/') !== -1 ||
+                      location.pathname.indexOf('home_int.html') !== -1 ||
+                      window.location.search.indexOf('int=1') !== -1;
+    if (!isIntPortal) return;
+    var target = bepaalDoeltaal();
     document.documentElement.lang = target;
     document.documentElement.setAttribute('lang', target);
-    if (window.updateAudioLanguage) {
-      window.updateAudioLanguage(target);
-    }
     syncDropdown(target);
-    if (isInt || isHomeInt) {
-      updatePageLinks(target);
-    }
-
-    if (_currentLang !== target) {
-      window.vertaalPaginaNaar(target).then(function() {
-        if (window.location.search.indexOf('print=1') !== -1) {
-          setTimeout(function() { window.print(); }, 400);
-        }
-      });
-    } else {
-      syncDropdown(target);
-      if (isInt || isHomeInt) {
-        updatePageLinks(target);
-      }
+    updatePageLinks(target);
+    window._transPromise = window.vertaalPaginaNaar(target).then(function() {
+      if (typeof window.updateAudioPlayerUI === 'function') window.updateAudioPlayerUI(target);
       if (window.location.search.indexOf('print=1') !== -1) {
         setTimeout(function() { window.print(); }, 400);
       }
-    }
+    });
   }
 
   // Initial execution

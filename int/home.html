@@ -1200,7 +1200,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 
 <h1>GRENSARBEID.ORG — Systeem-Audit</h1>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen</p>
-<p class="auteur">Auteur: Eric Messa &bull; Versie bijgewerkt: 3 november 2026, 12:52</p>
+<p class="auteur">Auteur: Eric Messa &bull; Versie bijgewerkt: 3 november 2026, 14:26</p>
 
 <div class="pub-ab-banner" style="margin: 16pt 0 24pt 0;">
   <strong>Language &amp; Translation Notice:</strong> Dutch (nl/) is the sole authentic source language of this System-Audit. The automated translations of the overview, documents, visual architecture, synthesis and rights matrix are provided to make the documented cross-border mechanisms accessible across Europe. In case of any ambiguity or legal interpretation, the original Dutch text and source files prevail.
@@ -1666,6 +1666,7 @@ html[data-theme="dark"] select.pub-lang-select option {
     });
   };
 
+  var _origWisselTaal = window.wisselTaal;
   window.wisselTaal = function(lang) {
     if (!lang) return;
     try {
@@ -1676,46 +1677,30 @@ html[data-theme="dark"] select.pub-lang-select option {
     curUrl.searchParams.set('lang', lang);
     window.history.replaceState({}, '', curUrl.toString());
 
-    window.vertaalPaginaNaar(lang);
+    if (typeof _origWisselTaal === 'function') {
+      _origWisselTaal(lang);
+    } else {
+      window.vertaalPaginaNaar(lang);
+    }
   };
 
   function initOrSync() {
-    var isInt = window.location.search.indexOf('int=1') !== -1;
-    var isHomeInt = location.pathname.indexOf('home_int.html') !== -1;
-    var autoLang = document.documentElement.getAttribute('data-auto-lang');
-    var hasAutoLang = autoLang && autoLang !== 'nl';
-
-    if (!isInt && !isHomeInt && !hasAutoLang) {
-      // 100% hard authentic Dutch mode!
-      return;
-    }
-
-    var target = (hasAutoLang && !window.location.search.includes('lang=')) ? autoLang : bepaalDoeltaal();
+    var isIntPortal = document.documentElement.hasAttribute('data-int-portal') ||
+                      location.pathname.indexOf('/int/') !== -1 ||
+                      location.pathname.indexOf('home_int.html') !== -1 ||
+                      window.location.search.indexOf('int=1') !== -1;
+    if (!isIntPortal) return;
+    var target = bepaalDoeltaal();
     document.documentElement.lang = target;
     document.documentElement.setAttribute('lang', target);
-    if (window.updateAudioLanguage) {
-      window.updateAudioLanguage(target);
-    }
     syncDropdown(target);
-    if (isInt || isHomeInt) {
-      updatePageLinks(target);
-    }
-
-    if (_currentLang !== target) {
-      window.vertaalPaginaNaar(target).then(function() {
-        if (window.location.search.indexOf('print=1') !== -1) {
-          setTimeout(function() { window.print(); }, 400);
-        }
-      });
-    } else {
-      syncDropdown(target);
-      if (isInt || isHomeInt) {
-        updatePageLinks(target);
-      }
+    updatePageLinks(target);
+    window._transPromise = window.vertaalPaginaNaar(target).then(function() {
+      if (typeof window.updateAudioPlayerUI === 'function') window.updateAudioPlayerUI(target);
       if (window.location.search.indexOf('print=1') !== -1) {
         setTimeout(function() { window.print(); }, 400);
       }
-    }
+    });
   }
 
   // Initial execution
