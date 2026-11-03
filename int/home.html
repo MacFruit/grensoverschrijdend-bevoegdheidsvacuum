@@ -2,6 +2,8 @@
 <html lang="en" data-int-portal="1" data-theme="dark">
 <head>
 <meta charset="UTF-8">
+<meta name="referrer" content="no-referrer">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Systeem-Audit — Overzicht</title>
 <meta name="description" content="Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen">
@@ -1240,7 +1242,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 
 <h1>GRENSARBEID.ORG — Systeem-Audit</h1>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen</p>
-<p class="auteur">Auteur: Eric Messa &bull; Versie bijgewerkt: 3 november 2026, 15:14</p>
+<p class="auteur">Auteur: Eric Messa &bull; Versie bijgewerkt: 3 november 2026, 15:54</p>
 
 <div class="pub-ab-banner" style="margin: 16pt 0 24pt 0;">
   <strong>Language &amp; Translation Notice:</strong> Dutch (nl/) is the sole authentic source language of this System-Audit. The automated translations of the overview, documents, visual architecture, synthesis and rights matrix are provided to make the documented cross-border mechanisms accessible across Europe. In case of any ambiguity or legal interpretation, the original Dutch text and source files prevail.
@@ -1518,8 +1520,10 @@ html[data-theme="dark"] select.pub-lang-select option {
 <script class="notranslate" translate="no">
 (function() {
   var _origTexts = new Map();
+  var _transCache = {};
   var _transJobId = 0;
   var _currentLang = 'nl';
+  var _lastCompletedLang = null;
 
   function getTranslatableNodes() {
     var nodes = [];
@@ -1538,7 +1542,7 @@ html[data-theme="dark"] select.pub-lang-select option {
           p = p.parentElement;
         }
         var text = node.nodeValue.replace(/\s+/g, ' ').trim();
-        if (text.length >= 2 && /[a-zA-ZÀ-ÿ]{2,}/.test(text)) {
+        if (text.length >= 2 && /[a-zA-Z\u00C0-\u00FF]{2,}/.test(text)) {
           return NodeFilter.FILTER_ACCEPT;
         }
         return NodeFilter.FILTER_REJECT;
@@ -1612,6 +1616,39 @@ html[data-theme="dark"] select.pub-lang-select option {
     }
   }
 
+  function fetchTranslationWithFallback(q, lang) {
+    var body = 'q=' + encodeURIComponent(q);
+    var headers = {'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'};
+    var urls = [
+      'https://translate.googleapis.com/translate_a/single?client=gtx&sl=nl&tl=' + encodeURIComponent(lang) + '&dt=t',
+      'https://translate.google.com/translate_a/single?client=gtx&sl=nl&tl=' + encodeURIComponent(lang) + '&dt=t',
+      'https://translate.googleapis.com/translate_a/single?client=at&sl=nl&tl=' + encodeURIComponent(lang) + '&dt=t',
+      'https://translate.google.com/translate_a/single?client=at&sl=nl&tl=' + encodeURIComponent(lang) + '&dt=t'
+    ];
+    function tryIdx(i) {
+      if (i >= urls.length) {
+        return Promise.reject(new Error('All translate endpoints failed'));
+      }
+      return fetch(urls[i], { method: 'POST', headers: headers, body: body })
+        .then(function(resp) {
+          if (!resp.ok) throw new Error('HTTP ' + resp.status);
+          return resp.json();
+        })
+        .then(function(data) {
+          if (!data || !Array.isArray(data[0])) throw new Error('Invalid translation JSON format');
+          var fullTrans = '';
+          for (var p = 0; p < data[0].length; p++) {
+            if (data[0][p][0]) fullTrans += data[0][p][0];
+          }
+          return fullTrans.split('\n');
+        })
+        .catch(function(err) {
+          return tryIdx(i + 1);
+        });
+    }
+    return tryIdx(0);
+  }
+
   window.vertaalPaginaNaar = function(lang) {
     if (!lang) return Promise.resolve();
     var myJob = ++_transJobId;
@@ -1641,20 +1678,25 @@ html[data-theme="dark"] select.pub-lang-select option {
           n.nodeValue = _origTexts.get(n);
         }
       }
-      _isTranslating = false;
+      _lastCompletedLang = 'nl';
       showStatusPill('✓ Nederlands (Origineel)', true);
       return Promise.resolve();
     }
 
     showStatusPill('⏳ Translating (' + lang.toUpperCase() + ')...', false);
 
+    if (!_transCache[lang]) {
+      _transCache[lang] = {};
+    }
+
     var chunks = [];
     var curNodes = [];
     var curLen = 0;
     for (var i = 0; i < nodes.length; i++) {
       var n = nodes[i];
-      var orig = _origTexts.get(n).replace(/\s+/g, ' ').trim();
-      if (curLen + orig.length > 3000 && curNodes.length > 0) {
+      var rawOrig = _origTexts.get(n) || n.nodeValue || '';
+      var orig = rawOrig.replace(/\s+/g, ' ').trim();
+      if (curLen + orig.length > 3200 && curNodes.length > 0) {
         chunks.push(curNodes);
         curNodes = [];
         curLen = 0;
@@ -1664,44 +1706,51 @@ html[data-theme="dark"] select.pub-lang-select option {
     }
     if (curNodes.length > 0) chunks.push(curNodes);
 
-    var promises = chunks.map(function(chunk) {
-      var lines = chunk.map(function(n) {
-        return _origTexts.get(n).replace(/\s+/g, ' ').trim();
+    function applyTransToChunk(chunk, transLines) {
+      for (var k = 0; k < chunk.length && k < transLines.length; k++) {
+        var node = chunk[k];
+        var orig = _origTexts.get(node) || node.nodeValue || '';
+        var leadingSpace = (orig.match(/^\s*/) || [''])[0];
+        var trailingSpace = (orig.match(/\s*$/) || [''])[0];
+        node.nodeValue = leadingSpace + transLines[k] + trailingSpace;
+      }
+    }
+
+    // Beperk gelijktijdige requests tot 2 parallelle workers (voorkomt HTTP 429 rate limits)
+    var chunkIdx = 0;
+    function worker() {
+      if (myJob !== _transJobId) return Promise.resolve();
+      if (chunkIdx >= chunks.length) return Promise.resolve();
+      var thisChunk = chunks[chunkIdx++];
+      var lines = thisChunk.map(function(n) {
+        var val = _origTexts.get(n) || n.nodeValue || '';
+        return val.replace(/\s+/g, ' ').trim();
       });
       var q = lines.join('\n');
-      var url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=nl&tl=' + lang + '&dt=t';
 
-      return fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-        },
-        body: 'q=' + encodeURIComponent(q)
-      })
-      .then(function(resp) { return resp.json(); })
-      .then(function(data) {
-        if (myJob !== _transJobId) return;
-        if (!data || !data[0]) return;
-        var fullTrans = '';
-        for (var p = 0; p < data[0].length; p++) {
-          if (data[0][p][0]) fullTrans += data[0][p][0];
-        }
-        var transLines = fullTrans.split('\n');
-        for (var k = 0; k < chunk.length && k < transLines.length; k++) {
-          var node = chunk[k];
-          var orig = _origTexts.get(node);
-          var leadingSpace = orig.match(/^\s*/)[0];
-          var trailingSpace = orig.match(/\s*$/)[0];
-          node.nodeValue = leadingSpace + transLines[k] + trailingSpace;
-        }
-      })
-      .catch(function(err) {
-        console.warn('Translation error for chunk:', err);
-      });
-    });
+      if (_transCache[lang][q]) {
+        applyTransToChunk(thisChunk, _transCache[lang][q]);
+        return worker();
+      }
 
-    return Promise.all(promises).then(function() {
+      return fetchTranslationWithFallback(q, lang)
+        .then(function(transLines) {
+          if (myJob !== _transJobId) return;
+          _transCache[lang][q] = transLines;
+          applyTransToChunk(thisChunk, transLines);
+        })
+        .catch(function(err) {
+          console.warn('Chunk translation failed:', err);
+        })
+        .then(function() {
+          return worker();
+        });
+    }
+
+    var workers = [worker(), worker()];
+    return Promise.all(workers).then(function() {
       if (myJob === _transJobId) {
+        _lastCompletedLang = lang;
         showStatusPill('✓ Translated (' + lang.toUpperCase() + ')', true);
       }
     });
@@ -1711,7 +1760,8 @@ html[data-theme="dark"] select.pub-lang-select option {
   window.wisselTaal = function(lang) {
     if (!lang) return;
     try {
-      sessionStorage.setItem('grensarbeid-int-lang', lang); localStorage.setItem('grensarbeid-int-lang', lang);
+      sessionStorage.setItem('grensarbeid-int-lang', lang);
+      localStorage.setItem('grensarbeid-int-lang', lang);
     } catch(e) {}
 
     var curUrl = new URL(window.location.href);
@@ -1736,6 +1786,11 @@ html[data-theme="dark"] select.pub-lang-select option {
     document.documentElement.setAttribute('lang', target);
     syncDropdown(target);
     updatePageLinks(target);
+
+    if (_currentLang === target && _lastCompletedLang === target) {
+      return;
+    }
+
     window._transPromise = window.vertaalPaginaNaar(target).then(function() {
       if (typeof window.updateAudioPlayerUI === 'function') window.updateAudioPlayerUI(target);
       if (window.location.search.indexOf('print=1') !== -1) {
@@ -1747,9 +1802,11 @@ html[data-theme="dark"] select.pub-lang-select option {
   // Initial execution
   initOrSync();
 
-  // Listen to pageshow (BFCache restore on back/forward) and popstate
-  window.addEventListener('pageshow', function() {
-    initOrSync();
+  // Listen to pageshow (only when restored from BFCache) and popstate
+  window.addEventListener('pageshow', function(e) {
+    if (e.persisted) {
+      initOrSync();
+    }
   });
   window.addEventListener('popstate', function() {
     initOrSync();

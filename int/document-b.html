@@ -3246,7 +3246,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 }
 
 </style>
-<meta content="notranslate" name="google"/><script>
+<meta content="notranslate" name="google"/><meta content="no-referrer" name="referrer"/><script>
 (function(){try{var t=localStorage.getItem('systeem-audit-thema');if(t!=='dark'&&t!=='light'){t='dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
 </script></head>
 <body><a id="top"></a>
@@ -3263,7 +3263,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document B — De data-matrix</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 3 november 2026, 15:14</p>
+<p class="meta-lijn">Versie bijgewerkt: 3 november 2026, 15:54</p>
 </div>
 <div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
 <li class="niv1"><a href="#systeem-audit">Systeem-Audit</a></li>
@@ -4361,7 +4361,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 3 november 2026, 15:14</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 3 november 2026, 15:54</p>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-print-btn notranslate" onclick="window.print()" title="Print deze pagina of bewaar als PDF" translate="no" type="button">🖨️ Print / Bewaar als PDF</button>
 <button class="pub-contact-btn pub-contact-footer notranslate" onclick="openBronModal('Footer contact')" translate="no" type="button">📄 Bronstuk opvragen / Contact</button>
@@ -4636,92 +4636,11 @@ html[data-theme="dark"] .aps-track-jump:hover {
   var liveAccumulatedSec = 0;
   var liveChunkStartMs = 0;
 
-  var EDGE_NEURAL_VOICES = {
-    'en': 'en-GB-RyanNeural',
-    'de': 'de-DE-ConradNeural',
-    'fr': 'fr-FR-HenriNeural',
-    'it': 'it-IT-DiegoNeural',
-    'es': 'es-ES-AlvaroNeural',
-    'pl': 'pl-PL-MarekNeural',
-    'da': 'da-DK-JeppeNeural',
-    'sv': 'sv-SE-MattiasNeural',
-    'pt': 'pt-PT-DuarteNeural',
-    'ro': 'ro-RO-EmilNeural'
-  };
-
-  // Streamt rechtstreeks van Microsoft Edge Neural TTS via browser WebSocket (werkt voor ALLE talen incl. SV, DA, RO!)
-  function fetchEdgeNeuralBlob(text, lang, ratePct) {
-    return new Promise(function(resolve, reject) {
-      try {
-        var voice = EDGE_NEURAL_VOICES[lang] || 'en-GB-RyanNeural';
-        var token = '6A5AA1D4EAFF4E9FB37E23D68491D6F4';
-        var reqId = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'.replace(/x/g, function() {
-          return Math.floor(Math.random() * 16).toString(16);
-        });
-        var wsUrl = 'wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=' + token + '&ConnectionId=' + reqId;
-        var ws = new WebSocket(wsUrl);
-        ws.binaryType = 'arraybuffer';
-        var audioParts = [];
-        var finished = false;
-        var timer = setTimeout(function() {
-          if (!finished) {
-            finished = true;
-            try { ws.close(); } catch(e) {}
-            reject(new Error('Edge WS timeout'));
-          }
-        }, 4500);
-
-        ws.onopen = function() {
-          var cfgMsg = 'Content-Type:application/json; charset=utf-8\r\nPath:speech.config\r\n\r\n' +
-            JSON.stringify({ context: { synthesis: { audio: { metadataoptions: { sentenceBoundaryEnabled: "false", wordBoundaryEnabled: "false" }, outputFormat: "audio-24khz-48kbitrate-mono-mp3" } } } });
-          ws.send(cfgMsg);
-
-          var safeText = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-          var langTag = voice.split('-').slice(0, 2).join('-');
-          var ssml = "<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='" + langTag + "'>" +
-                     "<voice name='" + voice + "'><prosody pitch='+0Hz' rate='" + ratePct + "'>" + safeText + "</prosody></speak>";
-          var ssmlMsg = 'X-RequestId:' + reqId + '\r\nContent-Type:application/ssml+xml\r\nPath:ssml\r\n\r\n' + ssml;
-          ws.send(ssmlMsg);
-        };
-
-        ws.onmessage = function(evt) {
-          if (typeof evt.data === 'string') {
-            if (evt.data.indexOf('Path:turn.end') !== -1) {
-              finished = true;
-              clearTimeout(timer);
-              try { ws.close(); } catch(e) {}
-              if (audioParts.length > 0) {
-                resolve(new Blob(audioParts, { type: 'audio/mpeg' }));
-              } else {
-                reject(new Error('Empty audio'));
-              }
-            }
-          } else if (evt.data instanceof ArrayBuffer) {
-            var view = new DataView(evt.data);
-            var headerLen = view.getUint16(0);
-            if (evt.data.byteLength > headerLen + 2) {
-              audioParts.push(evt.data.slice(headerLen + 2));
-            }
-          }
-        };
-
-        ws.onerror = function(err) {
-          if (!finished) {
-            finished = true;
-            clearTimeout(timer);
-            reject(err);
-          }
-        };
-      } catch (e) {
-        reject(e);
-      }
-    });
-  }
-
-  function startLivePlayback(bar) {
+    function startLivePlayback(bar) {
     if (!currentLiveAudio) {
       currentLiveAudio = new Audio();
       currentLiveAudio.referrerPolicy = "no-referrer";
+      try { currentLiveAudio.setAttribute("referrerpolicy", "no-referrer"); } catch(e) {}
     }
     var text = getSectionLiveText(bar);
     if (!text) {
@@ -4785,43 +4704,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
     var lang = getLang();
     var curSpeed = speeds[globalSpeedIdx];
 
-    // Motor 1: Probeer eerst Microsoft Edge Neural TTS WebSocket (werkt voor ALLE 10 talen incl. SV, DA, RO met topkwaliteit!)
-    var ratePct = '+' + Math.round((curSpeed - 1.0) * 100) + '%';
-    fetchEdgeNeuralBlob(chunk, lang, ratePct).then(function(blob) {
-      if (!isPlayingLive) return;
-      if (!currentLiveAudio) {
-        currentLiveAudio = new Audio();
-      }
-      var blobUrl = URL.createObjectURL(blob);
-      currentLiveAudio.src = blobUrl;
-      currentLiveAudio.playbackRate = 1.0;
-      currentLiveAudio.onplaying = function() {
-        liveChunkActive = true;
-        liveChunkStartMs = Date.now();
-      };
-      currentLiveAudio.onended = function() {
-        liveChunkActive = false;
-        URL.revokeObjectURL(blobUrl);
-        if (isPlayingLive) playLiveChunk(idx + 1);
-      };
-      currentLiveAudio.onerror = function() {
-        liveChunkActive = false;
-        URL.revokeObjectURL(blobUrl);
-        if (isPlayingLive) playFallbackSpeechOrGoogle(chunk, idx, lang, curSpeed);
-      };
-      currentLiveAudio.play().catch(function() {
-        liveChunkActive = false;
-        URL.revokeObjectURL(blobUrl);
-        if (isPlayingLive) playFallbackSpeechOrGoogle(chunk, idx, lang, curSpeed);
-      });
-    }).catch(function() {
-      if (isPlayingLive) playFallbackSpeechOrGoogle(chunk, idx, lang, curSpeed);
-    });
-  }
-
-  function playFallbackSpeechOrGoogle(chunk, idx, lang, curSpeed) {
-    if (!isPlayingLive) return;
-    // Motor 2: Lokale Web Speech API (indien de taal op het apparaat geïnstalleerd is)
+    // Motor 1: Check of er een lokale browserstem (Web Speech API) beschikbaar is
     var matchedVoice = null;
     if (window.speechSynthesis) {
       var voices = window.speechSynthesis.getVoices();
@@ -4847,7 +4730,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
           try { window.speechSynthesis.cancel(); } catch(e) {}
           playGoogleStream(chunk, idx, lang, curSpeed);
         }
-      }, 900);
+      }, 800);
 
       utter.onstart = function() {
         started = true;
@@ -4869,6 +4752,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
       };
       window.speechSynthesis.speak(utter);
     } else {
+      // Motor 2: Direct Google TTS Stream (werkt direct voor ALLE talen, incl. DA, SV, RO!)
       playGoogleStream(chunk, idx, lang, curSpeed);
     }
   }
@@ -4878,9 +4762,15 @@ html[data-theme="dark"] .aps-track-jump:hover {
     if (!currentLiveAudio) {
       currentLiveAudio = new Audio();
       currentLiveAudio.referrerPolicy = "no-referrer";
+      try { currentLiveAudio.setAttribute("referrerpolicy", "no-referrer"); } catch(e) {}
+    }
+    var cleanChunk = chunk.replace(/[#*_`\[\]]/g, '').trim();
+    if (!cleanChunk) {
+      if (isPlayingLive) playLiveChunk(idx + 1);
+      return;
     }
     var url = "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=" +
-              encodeURIComponent(lang) + "&q=" + encodeURIComponent(chunk);
+              encodeURIComponent(lang) + "&q=" + encodeURIComponent(cleanChunk);
     currentLiveAudio.src = url;
     currentLiveAudio.playbackRate = curSpeed;
     currentLiveAudio.onplaying = function() {
@@ -4893,12 +4783,25 @@ html[data-theme="dark"] .aps-track-jump:hover {
     };
     currentLiveAudio.onerror = function() {
       liveChunkActive = false;
-      stopAllAudio();
+      console.warn("TTS stream error on chunk " + idx + ", advancing to next");
+      if (isPlayingLive) {
+        setTimeout(function() {
+          if (isPlayingLive) playLiveChunk(idx + 1);
+        }, 100);
+      }
     };
-    currentLiveAudio.play().catch(function() {
-      liveChunkActive = false;
-      stopAllAudio();
-    });
+    var playPromise = currentLiveAudio.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(function(err) {
+        console.warn("Playback catch on chunk " + idx + ":", err);
+        liveChunkActive = false;
+        if (isPlayingLive) {
+          setTimeout(function() {
+            if (isPlayingLive) playLiveChunk(idx + 1);
+          }, 100);
+        }
+      });
+    }
   }
 
   // --- STANDARD MP3 PLAYBACK (DUTCH ENVIRONMENT) ---
@@ -5033,16 +4936,14 @@ html[data-theme="dark"] .aps-track-jump:hover {
     var wasPlaying = isPlayingLive || (currentAudio && !currentAudio.paused);
     var lastBar = currentBar;
     stopAllAudio();
+    updateAudioPlayerUI(lang);
 
     if (typeof window.vertaalPaginaNaar === 'function') {
       window._transPromise = window.vertaalPaginaNaar(lang).then(function() {
-        updateAudioPlayerUI(lang);
         if (wasPlaying && lastBar) {
           playBar(lastBar);
         }
       });
-    } else {
-      updateAudioPlayerUI(lang);
     }
   };
 
@@ -5204,8 +5105,10 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <script class="notranslate" translate="no">
 (function() {
   var _origTexts = new Map();
+  var _transCache = {};
   var _transJobId = 0;
   var _currentLang = 'nl';
+  var _lastCompletedLang = null;
 
   function getTranslatableNodes() {
     var nodes = [];
@@ -5224,7 +5127,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
           p = p.parentElement;
         }
         var text = node.nodeValue.replace(/\s+/g, ' ').trim();
-        if (text.length >= 2 && /[a-zA-ZÀ-ÿ]{2,}/.test(text)) {
+        if (text.length >= 2 && /[a-zA-Z\u00C0-\u00FF]{2,}/.test(text)) {
           return NodeFilter.FILTER_ACCEPT;
         }
         return NodeFilter.FILTER_REJECT;
@@ -5298,6 +5201,39 @@ html[data-theme="dark"] .aps-track-jump:hover {
     }
   }
 
+  function fetchTranslationWithFallback(q, lang) {
+    var body = 'q=' + encodeURIComponent(q);
+    var headers = {'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'};
+    var urls = [
+      'https://translate.googleapis.com/translate_a/single?client=gtx&sl=nl&tl=' + encodeURIComponent(lang) + '&dt=t',
+      'https://translate.google.com/translate_a/single?client=gtx&sl=nl&tl=' + encodeURIComponent(lang) + '&dt=t',
+      'https://translate.googleapis.com/translate_a/single?client=at&sl=nl&tl=' + encodeURIComponent(lang) + '&dt=t',
+      'https://translate.google.com/translate_a/single?client=at&sl=nl&tl=' + encodeURIComponent(lang) + '&dt=t'
+    ];
+    function tryIdx(i) {
+      if (i >= urls.length) {
+        return Promise.reject(new Error('All translate endpoints failed'));
+      }
+      return fetch(urls[i], { method: 'POST', headers: headers, body: body })
+        .then(function(resp) {
+          if (!resp.ok) throw new Error('HTTP ' + resp.status);
+          return resp.json();
+        })
+        .then(function(data) {
+          if (!data || !Array.isArray(data[0])) throw new Error('Invalid translation JSON format');
+          var fullTrans = '';
+          for (var p = 0; p < data[0].length; p++) {
+            if (data[0][p][0]) fullTrans += data[0][p][0];
+          }
+          return fullTrans.split('\n');
+        })
+        .catch(function(err) {
+          return tryIdx(i + 1);
+        });
+    }
+    return tryIdx(0);
+  }
+
   window.vertaalPaginaNaar = function(lang) {
     if (!lang) return Promise.resolve();
     var myJob = ++_transJobId;
@@ -5327,20 +5263,25 @@ html[data-theme="dark"] .aps-track-jump:hover {
           n.nodeValue = _origTexts.get(n);
         }
       }
-      _isTranslating = false;
+      _lastCompletedLang = 'nl';
       showStatusPill('✓ Nederlands (Origineel)', true);
       return Promise.resolve();
     }
 
     showStatusPill('⏳ Translating (' + lang.toUpperCase() + ')...', false);
 
+    if (!_transCache[lang]) {
+      _transCache[lang] = {};
+    }
+
     var chunks = [];
     var curNodes = [];
     var curLen = 0;
     for (var i = 0; i < nodes.length; i++) {
       var n = nodes[i];
-      var orig = _origTexts.get(n).replace(/\s+/g, ' ').trim();
-      if (curLen + orig.length > 3000 && curNodes.length > 0) {
+      var rawOrig = _origTexts.get(n) || n.nodeValue || '';
+      var orig = rawOrig.replace(/\s+/g, ' ').trim();
+      if (curLen + orig.length > 3200 && curNodes.length > 0) {
         chunks.push(curNodes);
         curNodes = [];
         curLen = 0;
@@ -5350,44 +5291,51 @@ html[data-theme="dark"] .aps-track-jump:hover {
     }
     if (curNodes.length > 0) chunks.push(curNodes);
 
-    var promises = chunks.map(function(chunk) {
-      var lines = chunk.map(function(n) {
-        return _origTexts.get(n).replace(/\s+/g, ' ').trim();
+    function applyTransToChunk(chunk, transLines) {
+      for (var k = 0; k < chunk.length && k < transLines.length; k++) {
+        var node = chunk[k];
+        var orig = _origTexts.get(node) || node.nodeValue || '';
+        var leadingSpace = (orig.match(/^\s*/) || [''])[0];
+        var trailingSpace = (orig.match(/\s*$/) || [''])[0];
+        node.nodeValue = leadingSpace + transLines[k] + trailingSpace;
+      }
+    }
+
+    // Beperk gelijktijdige requests tot 2 parallelle workers (voorkomt HTTP 429 rate limits)
+    var chunkIdx = 0;
+    function worker() {
+      if (myJob !== _transJobId) return Promise.resolve();
+      if (chunkIdx >= chunks.length) return Promise.resolve();
+      var thisChunk = chunks[chunkIdx++];
+      var lines = thisChunk.map(function(n) {
+        var val = _origTexts.get(n) || n.nodeValue || '';
+        return val.replace(/\s+/g, ' ').trim();
       });
       var q = lines.join('\n');
-      var url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=nl&tl=' + lang + '&dt=t';
 
-      return fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-        },
-        body: 'q=' + encodeURIComponent(q)
-      })
-      .then(function(resp) { return resp.json(); })
-      .then(function(data) {
-        if (myJob !== _transJobId) return;
-        if (!data || !data[0]) return;
-        var fullTrans = '';
-        for (var p = 0; p < data[0].length; p++) {
-          if (data[0][p][0]) fullTrans += data[0][p][0];
-        }
-        var transLines = fullTrans.split('\n');
-        for (var k = 0; k < chunk.length && k < transLines.length; k++) {
-          var node = chunk[k];
-          var orig = _origTexts.get(node);
-          var leadingSpace = orig.match(/^\s*/)[0];
-          var trailingSpace = orig.match(/\s*$/)[0];
-          node.nodeValue = leadingSpace + transLines[k] + trailingSpace;
-        }
-      })
-      .catch(function(err) {
-        console.warn('Translation error for chunk:', err);
-      });
-    });
+      if (_transCache[lang][q]) {
+        applyTransToChunk(thisChunk, _transCache[lang][q]);
+        return worker();
+      }
 
-    return Promise.all(promises).then(function() {
+      return fetchTranslationWithFallback(q, lang)
+        .then(function(transLines) {
+          if (myJob !== _transJobId) return;
+          _transCache[lang][q] = transLines;
+          applyTransToChunk(thisChunk, transLines);
+        })
+        .catch(function(err) {
+          console.warn('Chunk translation failed:', err);
+        })
+        .then(function() {
+          return worker();
+        });
+    }
+
+    var workers = [worker(), worker()];
+    return Promise.all(workers).then(function() {
       if (myJob === _transJobId) {
+        _lastCompletedLang = lang;
         showStatusPill('✓ Translated (' + lang.toUpperCase() + ')', true);
       }
     });
@@ -5397,7 +5345,8 @@ html[data-theme="dark"] .aps-track-jump:hover {
   window.wisselTaal = function(lang) {
     if (!lang) return;
     try {
-      sessionStorage.setItem('grensarbeid-int-lang', lang); localStorage.setItem('grensarbeid-int-lang', lang);
+      sessionStorage.setItem('grensarbeid-int-lang', lang);
+      localStorage.setItem('grensarbeid-int-lang', lang);
     } catch(e) {}
 
     var curUrl = new URL(window.location.href);
@@ -5422,6 +5371,11 @@ html[data-theme="dark"] .aps-track-jump:hover {
     document.documentElement.setAttribute('lang', target);
     syncDropdown(target);
     updatePageLinks(target);
+
+    if (_currentLang === target && _lastCompletedLang === target) {
+      return;
+    }
+
     window._transPromise = window.vertaalPaginaNaar(target).then(function() {
       if (typeof window.updateAudioPlayerUI === 'function') window.updateAudioPlayerUI(target);
       if (window.location.search.indexOf('print=1') !== -1) {
@@ -5433,9 +5387,11 @@ html[data-theme="dark"] .aps-track-jump:hover {
   // Initial execution
   initOrSync();
 
-  // Listen to pageshow (BFCache restore on back/forward) and popstate
-  window.addEventListener('pageshow', function() {
-    initOrSync();
+  // Listen to pageshow (only when restored from BFCache) and popstate
+  window.addEventListener('pageshow', function(e) {
+    if (e.persisted) {
+      initOrSync();
+    }
   });
   window.addEventListener('popstate', function() {
     initOrSync();
