@@ -109,6 +109,37 @@ a.taalkeuze:hover { background: #f0f0f0; color: #1a3c6e; }
 
 /* Dark mode overrides */
 html[data-theme="dark"] body { background: #121212 !important; color: #e0e0e0 !important; }
+html[data-theme="dark"] .pub-ab-banner {
+  background: #232016 !important;
+  color: #e5d8b0 !important;
+  border: 1px solid #5c4b18 !important;
+  border-left: 4pt solid #d4a017 !important;
+  padding: 10pt 14pt !important;
+  border-radius: 6px !important;
+}
+html[data-theme="dark"] .doc-lijst .downloads a,
+html[data-theme="dark"] .doc-0 .downloads a, html[data-theme="dark"] .eigen-kleur-0 .downloads a,
+html[data-theme="dark"] .doc-a .downloads a, html[data-theme="dark"] .eigen-kleur-A .downloads a,
+html[data-theme="dark"] .doc-b .downloads a, html[data-theme="dark"] .eigen-kleur-B .downloads a,
+html[data-theme="dark"] .doc-c .downloads a, html[data-theme="dark"] .eigen-kleur-C .downloads a,
+html[data-theme="dark"] .doc-d .downloads a, html[data-theme="dark"] .eigen-kleur-D .downloads a,
+html[data-theme="dark"] .doc-e .downloads a, html[data-theme="dark"] .eigen-kleur-E .downloads a {
+  background: #262b33 !important;
+  color: #cbd5e1 !important;
+  border: 1px solid #3d4654 !important;
+}
+html[data-theme="dark"] .doc-0 .downloads a:hover, html[data-theme="dark"] .eigen-kleur-0 .downloads a:hover { background: #3a2020 !important; color: #fca5a5 !important; border-color: #ef4444 !important; }
+html[data-theme="dark"] .doc-a .downloads a:hover, html[data-theme="dark"] .eigen-kleur-A .downloads a:hover { background: #2e203a !important; color: #d8b4fe !important; border-color: #a855f7 !important; }
+html[data-theme="dark"] .doc-b .downloads a:hover, html[data-theme="dark"] .eigen-kleur-B .downloads a:hover { background: #1e2d42 !important; color: #93c5fd !important; border-color: #3b82f6 !important; }
+html[data-theme="dark"] .doc-c .downloads a:hover, html[data-theme="dark"] .eigen-kleur-C .downloads a:hover { background: #292238 !important; color: #c4b5fd !important; border-color: #8b5cf6 !important; }
+html[data-theme="dark"] .doc-d .downloads a:hover, html[data-theme="dark"] .eigen-kleur-D .downloads a:hover { background: #1b3320 !important; color: #86efac !important; border-color: #22c55e !important; }
+html[data-theme="dark"] .doc-e .downloads a:hover, html[data-theme="dark"] .eigen-kleur-E .downloads a:hover { background: #163335 !important; color: #5eead4 !important; border-color: #14b8a6 !important; }
+html[data-theme="dark"] .doc-0 a.titel, html[data-theme="dark"] .eigen-kleur-0 a.titel { color: #f87171 !important; }
+html[data-theme="dark"] .doc-a a.titel, html[data-theme="dark"] .eigen-kleur-A a.titel { color: #c084fc !important; }
+html[data-theme="dark"] .doc-b a.titel, html[data-theme="dark"] .eigen-kleur-B a.titel { color: #60a5fa !important; }
+html[data-theme="dark"] .doc-c a.titel, html[data-theme="dark"] .eigen-kleur-C a.titel { color: #a78bfa !important; }
+html[data-theme="dark"] .doc-d a.titel, html[data-theme="dark"] .eigen-kleur-D a.titel { color: #4ade80 !important; }
+html[data-theme="dark"] .doc-e a.titel, html[data-theme="dark"] .eigen-kleur-E a.titel { color: #2dd4bf !important; }
 html[data-theme="dark"] .wrap { color: #e0e0e0 !important; }
 html[data-theme="dark"] h1 { color: #7fb3ff !important; }
 html[data-theme="dark"] .ondertitel { color: #cccccc !important; }
@@ -979,6 +1010,15 @@ html[data-theme="dark"] .bm-btn-copy:hover {
     background: #353b47; border-color: #7fb3ff;
 }
 
+html[data-theme="dark"] .pub-ab-banner {
+    background: #232016 !important;
+    color: #e5d8b0 !important;
+    border: 1px solid #5c4b18 !important;
+    border-left: 4pt solid #d4a017 !important;
+}
+html[data-theme="dark"] .aps-next-doc {
+    border-top-color: #323842 !important;
+}
 html[data-theme="dark"] .intro-rij a.goto {
     text-shadow: 0 0 1px rgba(255,255,255,0.25),
                  0 0 3px rgba(255,255,255,0.10);
@@ -1200,7 +1240,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 
 <h1>GRENSARBEID.ORG — Systeem-Audit</h1>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen</p>
-<p class="auteur">Auteur: Eric Messa &bull; Versie bijgewerkt: 3 november 2026, 14:57</p>
+<p class="auteur">Auteur: Eric Messa &bull; Versie bijgewerkt: 3 november 2026, 15:14</p>
 
 <div class="pub-ab-banner" style="margin: 16pt 0 24pt 0;">
   <strong>Language &amp; Translation Notice:</strong> Dutch (nl/) is the sole authentic source language of this System-Audit. The automated translations of the overview, documents, visual architecture, synthesis and rights matrix are provided to make the documented cross-border mechanisms accessible across Europe. In case of any ambiguity or legal interpretation, the original Dutch text and source files prevail.
@@ -1214,7 +1254,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <li class="doc-0 eigen-kleur-0">
 <a class="titel" href="document-0.html">Document 0 — Inleiding en leeswijzer</a>
 <p class="beschrijving">Biografisch essay over drie generaties grensarbeid. Legt uit waarom dit dossier bestaat en hoe de documenten samenhangen.</p>
-<div class="downloads notranslate" translate="no">
+<div class="downloads">
   <a href="document-0.html">&#128214; Read online</a>
   <a href="document-0.html?print=1">&#128424; Print / Save as PDF</a>
 </div>
@@ -1222,7 +1262,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <li class="doc-a eigen-kleur-A">
 <a class="titel" href="document-a.html">Document A — De narratieve audit</a>
 <p class="beschrijving">Het verhaal per organisatie. Doorlopende tekst met de rol in het netwerk, de frictie en de systemische paradox.</p>
-<div class="downloads notranslate" translate="no">
+<div class="downloads">
   <a href="document-a.html">&#128214; Read online</a>
   <a href="document-a.html?print=1">&#128424; Print / Save as PDF</a>
 </div>
@@ -1230,7 +1270,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <li class="doc-b eigen-kleur-B">
 <a class="titel" href="document-b.html">Document B — De data-matrix</a>
 <p class="beschrijving">Alle feiten: datums, referentienummers, correspondentie en tijdlijnen. De ruwe laag waarop de andere documenten zijn gebouwd.</p>
-<div class="downloads notranslate" translate="no">
+<div class="downloads">
   <a href="document-b.html">&#128214; Read online</a>
   <a href="document-b.html?print=1">&#128424; Print / Save as PDF</a>
 </div>
@@ -1238,7 +1278,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <li class="doc-c eigen-kleur-C">
 <a class="titel" href="document-c.html">Document C — De visuele architectuur</a>
 <p class="beschrijving">Schema's en datastromen. Twee starre werelden, een membraan in het midden, drie kanalen, vier institutionele lagen.</p>
-<div class="downloads notranslate" translate="no">
+<div class="downloads">
   <a href="document-c.html">&#128214; Read online</a>
   <a href="document-c.html?print=1">&#128424; Print / Save as PDF</a>
 </div>
@@ -1246,7 +1286,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <li class="doc-d eigen-kleur-D">
 <a class="titel" href="document-d.html">Document D — De synthese</a>
 <p class="beschrijving">Het patroon, de paradoxen, de rol van de Europese Unie en drie bouwstenen voor hervorming.</p>
-<div class="downloads notranslate" translate="no">
+<div class="downloads">
   <a href="document-d.html">&#128214; Read online</a>
   <a href="document-d.html?print=1">&#128424; Print / Save as PDF</a>
 </div>
@@ -1254,7 +1294,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <li class="doc-e eigen-kleur-E">
 <a class="titel" href="document-e.html">Document E — Het rechtenoverzicht</a>
 <p class="beschrijving">Per recht: wat het is, wie het krijgt, waar het vastloopt, en wat het oplevert. Met status per recht.</p>
-<div class="downloads notranslate" translate="no">
+<div class="downloads">
   <a href="document-e.html">&#128214; Read online</a>
   <a href="document-e.html?print=1">&#128424; Print / Save as PDF</a>
 </div>

@@ -1933,6 +1933,15 @@ html[data-theme="dark"] .bm-btn-copy:hover {
     background: #353b47; border-color: #7fb3ff;
 }
 
+html[data-theme="dark"] .pub-ab-banner {
+    background: #232016 !important;
+    color: #e5d8b0 !important;
+    border: 1px solid #5c4b18 !important;
+    border-left: 4pt solid #d4a017 !important;
+}
+html[data-theme="dark"] .aps-next-doc {
+    border-top-color: #323842 !important;
+}
 html[data-theme="dark"] .intro-rij a.goto {
     text-shadow: 0 0 1px rgba(255,255,255,0.25),
                  0 0 3px rgba(255,255,255,0.10);
@@ -3249,7 +3258,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document C — De visuele architectuur</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 3 november 2026, 14:57</p>
+<p class="meta-lijn">Versie bijgewerkt: 3 november 2026, 15:14</p>
 </div>
 <div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
 <li class="niv1"><a href="#systeem-audit">Systeem-Audit</a></li>
@@ -3280,7 +3289,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <div class="aab-info">
 <div class="aab-meta">
 <span class="aab-badge notranslate" translate="no">🎧 BELUISTER</span>
-<span class="aab-title">Beluister inleiding: 'De visuele architectuur' (AI-stem Arnaud)</span>
+<span class="aab-title">Beluister inleiding: De visuele architectuur</span>
 <span class="aab-time notranslate" translate="no">0:00 / --:--</span>
 </div>
 <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="aab-progress-wrap notranslate" role="progressbar" translate="no">
@@ -4341,7 +4350,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 3 november 2026, 14:57</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 3 november 2026, 15:14</p>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-print-btn notranslate" onclick="window.print()" title="Print deze pagina of bewaar als PDF" translate="no" type="button">🖨️ Print / Bewaar als PDF</button>
 <button class="pub-contact-btn pub-contact-footer notranslate" onclick="openBronModal('Footer contact')" translate="no" type="button">📄 Bronstuk opvragen / Contact</button>
@@ -4612,6 +4621,92 @@ html[data-theme="dark"] .aps-track-jump:hover {
   }
 
   // --- LIVE TTS PLAYBACK (INTERNATIONAL PORTAL) ---
+  var liveChunkActive = false;
+  var liveAccumulatedSec = 0;
+  var liveChunkStartMs = 0;
+
+  var EDGE_NEURAL_VOICES = {
+    'en': 'en-GB-RyanNeural',
+    'de': 'de-DE-ConradNeural',
+    'fr': 'fr-FR-HenriNeural',
+    'it': 'it-IT-DiegoNeural',
+    'es': 'es-ES-AlvaroNeural',
+    'pl': 'pl-PL-MarekNeural',
+    'da': 'da-DK-JeppeNeural',
+    'sv': 'sv-SE-MattiasNeural',
+    'pt': 'pt-PT-DuarteNeural',
+    'ro': 'ro-RO-EmilNeural'
+  };
+
+  // Streamt rechtstreeks van Microsoft Edge Neural TTS via browser WebSocket (werkt voor ALLE talen incl. SV, DA, RO!)
+  function fetchEdgeNeuralBlob(text, lang, ratePct) {
+    return new Promise(function(resolve, reject) {
+      try {
+        var voice = EDGE_NEURAL_VOICES[lang] || 'en-GB-RyanNeural';
+        var token = '6A5AA1D4EAFF4E9FB37E23D68491D6F4';
+        var reqId = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'.replace(/x/g, function() {
+          return Math.floor(Math.random() * 16).toString(16);
+        });
+        var wsUrl = 'wss://speech.platform.bing.com/consumer/speech/synthesize/readaloud/edge/v1?TrustedClientToken=' + token + '&ConnectionId=' + reqId;
+        var ws = new WebSocket(wsUrl);
+        ws.binaryType = 'arraybuffer';
+        var audioParts = [];
+        var finished = false;
+        var timer = setTimeout(function() {
+          if (!finished) {
+            finished = true;
+            try { ws.close(); } catch(e) {}
+            reject(new Error('Edge WS timeout'));
+          }
+        }, 4500);
+
+        ws.onopen = function() {
+          var cfgMsg = 'Content-Type:application/json; charset=utf-8\r\nPath:speech.config\r\n\r\n' +
+            JSON.stringify({ context: { synthesis: { audio: { metadataoptions: { sentenceBoundaryEnabled: "false", wordBoundaryEnabled: "false" }, outputFormat: "audio-24khz-48kbitrate-mono-mp3" } } } });
+          ws.send(cfgMsg);
+
+          var safeText = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+          var langTag = voice.split('-').slice(0, 2).join('-');
+          var ssml = "<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis' xml:lang='" + langTag + "'>" +
+                     "<voice name='" + voice + "'><prosody pitch='+0Hz' rate='" + ratePct + "'>" + safeText + "</prosody></speak>";
+          var ssmlMsg = 'X-RequestId:' + reqId + '\r\nContent-Type:application/ssml+xml\r\nPath:ssml\r\n\r\n' + ssml;
+          ws.send(ssmlMsg);
+        };
+
+        ws.onmessage = function(evt) {
+          if (typeof evt.data === 'string') {
+            if (evt.data.indexOf('Path:turn.end') !== -1) {
+              finished = true;
+              clearTimeout(timer);
+              try { ws.close(); } catch(e) {}
+              if (audioParts.length > 0) {
+                resolve(new Blob(audioParts, { type: 'audio/mpeg' }));
+              } else {
+                reject(new Error('Empty audio'));
+              }
+            }
+          } else if (evt.data instanceof ArrayBuffer) {
+            var view = new DataView(evt.data);
+            var headerLen = view.getUint16(0);
+            if (evt.data.byteLength > headerLen + 2) {
+              audioParts.push(evt.data.slice(headerLen + 2));
+            }
+          }
+        };
+
+        ws.onerror = function(err) {
+          if (!finished) {
+            finished = true;
+            clearTimeout(timer);
+            reject(err);
+          }
+        };
+      } catch (e) {
+        reject(e);
+      }
+    });
+  }
+
   function startLivePlayback(bar) {
     if (!currentLiveAudio) {
       currentLiveAudio = new Audio();
@@ -4622,7 +4717,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
       console.warn("No text found for live playback in section");
       return;
     }
-    currentChunks = chunkText(text, 180);
+    currentChunks = chunkText(text, 175);
     if (!currentChunks.length) return;
 
     totalLiveChars = 0;
@@ -4633,8 +4728,10 @@ html[data-theme="dark"] .aps-track-jump:hover {
     }
 
     var curSpeed = speeds[globalSpeedIdx];
-    liveEstDuration = Math.max(1, totalLiveChars / (15 * curSpeed));
+    liveEstDuration = Math.max(1, totalLiveChars / (14.5 * curSpeed));
     liveStartTime = Date.now();
+    liveAccumulatedSec = 0;
+    liveChunkActive = false;
     currentChunkIdx = 0;
     isPlayingLive = true;
     currentBar = bar;
@@ -4644,8 +4741,10 @@ html[data-theme="dark"] .aps-track-jump:hover {
     if (liveProgressTimer) clearInterval(liveProgressTimer);
     liveProgressTimer = setInterval(function() {
       if (!isPlayingLive || !currentBar) return;
-      var elapsedSec = (Date.now() - liveStartTime) / 1000;
-      var estSec = Math.min(liveEstDuration, elapsedSec);
+      // Tel de tijd ALLEEN op terwijl er daadwerkelijk geluid afspeelt!
+      var curChunkElapsed = liveChunkActive ? ((Date.now() - liveChunkStartMs) / 1000) : 0;
+      var charBaseSec = (chunkStartChars[currentChunkIdx] || 0) / (14.5 * speeds[globalSpeedIdx]);
+      var estSec = Math.min(liveEstDuration, charBaseSec + curChunkElapsed);
       var pct = Math.min(100, Math.max(0, (estSec / liveEstDuration) * 100));
 
       var pFill = currentBar.querySelector('.aab-progress-fill');
@@ -4670,16 +4769,53 @@ html[data-theme="dark"] .aps-track-jump:hover {
       return;
     }
     currentChunkIdx = idx;
+    liveChunkActive = false;
     var chunk = currentChunks[idx];
     var lang = getLang();
     var curSpeed = speeds[globalSpeedIdx];
 
-    // Motor A: Web Speech API
+    // Motor 1: Probeer eerst Microsoft Edge Neural TTS WebSocket (werkt voor ALLE 10 talen incl. SV, DA, RO met topkwaliteit!)
+    var ratePct = '+' + Math.round((curSpeed - 1.0) * 100) + '%';
+    fetchEdgeNeuralBlob(chunk, lang, ratePct).then(function(blob) {
+      if (!isPlayingLive) return;
+      if (!currentLiveAudio) {
+        currentLiveAudio = new Audio();
+      }
+      var blobUrl = URL.createObjectURL(blob);
+      currentLiveAudio.src = blobUrl;
+      currentLiveAudio.playbackRate = 1.0;
+      currentLiveAudio.onplaying = function() {
+        liveChunkActive = true;
+        liveChunkStartMs = Date.now();
+      };
+      currentLiveAudio.onended = function() {
+        liveChunkActive = false;
+        URL.revokeObjectURL(blobUrl);
+        if (isPlayingLive) playLiveChunk(idx + 1);
+      };
+      currentLiveAudio.onerror = function() {
+        liveChunkActive = false;
+        URL.revokeObjectURL(blobUrl);
+        if (isPlayingLive) playFallbackSpeechOrGoogle(chunk, idx, lang, curSpeed);
+      };
+      currentLiveAudio.play().catch(function() {
+        liveChunkActive = false;
+        URL.revokeObjectURL(blobUrl);
+        if (isPlayingLive) playFallbackSpeechOrGoogle(chunk, idx, lang, curSpeed);
+      });
+    }).catch(function() {
+      if (isPlayingLive) playFallbackSpeechOrGoogle(chunk, idx, lang, curSpeed);
+    });
+  }
+
+  function playFallbackSpeechOrGoogle(chunk, idx, lang, curSpeed) {
+    if (!isPlayingLive) return;
+    // Motor 2: Lokale Web Speech API (indien de taal op het apparaat geïnstalleerd is)
     var matchedVoice = null;
     if (window.speechSynthesis) {
       var voices = window.speechSynthesis.getVoices();
       for (var v = 0; v < voices.length; v++) {
-        if (voices[v].lang && voices[v].lang.toLowerCase().startsWith(lang.toLowerCase())) {
+        if (voices[v].lang && voices[v].lang.toLowerCase().split('-')[0] === lang.toLowerCase()) {
           matchedVoice = voices[v];
           break;
         }
@@ -4687,6 +4823,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
     }
 
     if (matchedVoice) {
+      try { window.speechSynthesis.cancel(); } catch(e) {}
       var utter = new SpeechSynthesisUtterance(chunk);
       utter.voice = matchedVoice;
       utter.lang = matchedVoice.lang;
@@ -4697,52 +4834,59 @@ html[data-theme="dark"] .aps-track-jump:hover {
       var startTimer = setTimeout(function() {
         if (!started && isPlayingLive) {
           try { window.speechSynthesis.cancel(); } catch(e) {}
-          playMotorB(chunk, idx, lang, curSpeed);
+          playGoogleStream(chunk, idx, lang, curSpeed);
         }
-      }, 800);
+      }, 900);
 
       utter.onstart = function() {
         started = true;
+        liveChunkActive = true;
+        liveChunkStartMs = Date.now();
         clearTimeout(startTimer);
       };
       utter.onend = function() {
+        liveChunkActive = false;
         clearTimeout(startTimer);
         if (isPlayingLive) playLiveChunk(idx + 1);
       };
       utter.onerror = function() {
+        liveChunkActive = false;
         clearTimeout(startTimer);
         if (isPlayingLive && !started) {
-          playMotorB(chunk, idx, lang, curSpeed);
+          playGoogleStream(chunk, idx, lang, curSpeed);
         }
       };
       window.speechSynthesis.speak(utter);
     } else {
-      playMotorB(chunk, idx, lang, curSpeed);
+      playGoogleStream(chunk, idx, lang, curSpeed);
     }
   }
 
-  function playMotorB(chunk, idx, lang, curSpeed) {
+  function playGoogleStream(chunk, idx, lang, curSpeed) {
     if (!isPlayingLive) return;
     if (!currentLiveAudio) {
       currentLiveAudio = new Audio();
       currentLiveAudio.referrerPolicy = "no-referrer";
     }
-    var url = "https://translate.googleapis.com/translate_tts?ie=UTF-8&client=gtx&tl=" +
+    var url = "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=" +
               encodeURIComponent(lang) + "&q=" + encodeURIComponent(chunk);
     currentLiveAudio.src = url;
     currentLiveAudio.playbackRate = curSpeed;
+    currentLiveAudio.onplaying = function() {
+      liveChunkActive = true;
+      liveChunkStartMs = Date.now();
+    };
     currentLiveAudio.onended = function() {
+      liveChunkActive = false;
       if (isPlayingLive) playLiveChunk(idx + 1);
     };
     currentLiveAudio.onerror = function() {
-      if (isPlayingLive) {
-        setTimeout(function() { playLiveChunk(idx + 1); }, 300);
-      }
+      liveChunkActive = false;
+      stopAllAudio();
     };
     currentLiveAudio.play().catch(function() {
-      if (isPlayingLive) {
-        setTimeout(function() { playLiveChunk(idx + 1); }, 400);
-      }
+      liveChunkActive = false;
+      stopAllAudio();
     });
   }
 
