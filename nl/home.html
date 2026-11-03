@@ -2,7 +2,6 @@
 <html lang="nl" data-theme="dark" class="notranslate" translate="no">
 <head>
 <meta charset="UTF-8">
-<meta name="google" content="notranslate">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Systeem-Audit — Overzicht</title>
 <meta name="description" content="Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen">
@@ -43,80 +42,84 @@ h1 { font-size: 36pt; color: #1a3c6e; margin: 0 0 8pt; border: none; }
 .doc-lijst .beschrijving { font-size: 11pt; color: #444; margin: 0; line-height: 1.5; }
 .doc-lijst .downloads { margin-top: 12pt; font-size: 10pt; display: flex; gap: 8px; flex-wrap: wrap; }
 .doc-lijst .downloads a {
-    display: inline-block; padding: 5px 12px; border-radius: 4px;
-    font-size: 9.5pt; font-weight: 600; text-decoration: none;
-    transition: all .15s; background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
+    display: inline-block; padding: 5pt 10pt; background: #eef2f7;
+    color: #1a3c6e; text-decoration: none; border-radius: 3px;
+    font-size: 9.5pt; border: 1px solid #d0dbe7;
 }
-.doc-lijst .downloads a:hover { background: #1a3c6e; color: #ffffff; border-color: #1a3c6e; }
-.doc-lijst .downloads a.pdf { color: #8b1e1e; }
-.doc-lijst .downloads a.pdf:hover { background: #8b1e1e; color: #ffffff; border-color: #8b1e1e; }
-.eigen-kleur-0 { border-left-color: #8b1e1e; } .eigen-kleur-0 a.titel { color: #8b1e1e; }
-.eigen-kleur-A { border-left-color: #7a3e9d; } .eigen-kleur-A a.titel { color: #7a3e9d; }
-.eigen-kleur-B { border-left-color: #1a3c6e; } .eigen-kleur-B a.titel { color: #1a3c6e; }
-.eigen-kleur-C { border-left-color: #4a3b6b; } .eigen-kleur-C a.titel { color: #4a3b6b; }
-.eigen-kleur-D { border-left-color: #2e7d32; } .eigen-kleur-D a.titel { color: #2e7d32; }
-.eigen-kleur-E { border-left-color: #0d7377; } .eigen-kleur-E a.titel { color: #0d7377; }
-.footer { margin-top: 60pt; padding-top: 20pt; border-top: 1px solid #d5d0c5;
-          font-size: 10pt; color: #666; text-align: center; }
-.footer a { color: #1a3c6e; }
-.kop-balk { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20pt; gap: 10px; flex-wrap: wrap; }
-.taalkeuze { display: inline-block; padding: 6px 12px;
-             border: 1px solid #d5d0c5; border-radius: 4px;
-             font-size: 10pt; color: #1a3c6e; text-decoration: none; }
-.taalkeuze:hover { background: #eef2f7; }
-.pub-ab-banner {
-    background: #f7f5f1; border-left: 4px solid #1a3c6e; padding: 10pt 14pt;
-    font-size: 10pt; line-height: 1.5; color: #444; border-radius: 4px;
+.doc-lijst .downloads a:hover { background: #dbe4ef; }
+.kop-balk {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 24pt; padding-bottom: 12pt; border-bottom: 1px solid #e0ded8;
+    flex-wrap: wrap; gap: 10px;
 }
-@media (max-width: 700px) {
-    .wrap { padding: 20pt 16pt 40pt; }
-    h1 { font-size: 26pt; }
-    .ondertitel { font-size: 14pt; }
-    body { font-size: 13pt; }
-    .intro { font-size: 13pt; }
-    .doc-lijst li { padding: 14pt 16pt; }
-    .doc-lijst a.titel { font-size: 15pt; }
-    .doc-lijst .beschrijving { font-size: 12pt; }
-    .doc-lijst .downloads { font-size: 11pt; }
+a.taalkeuze {
+    font-size: 10.5pt; color: #666; text-decoration: none;
+    display: inline-block; padding: 4pt 8pt; border: 1px solid #ccc;
+    border-radius: 3px; background: #fff;
 }
+a.taalkeuze:hover { background: #f0f0f0; color: #1a3c6e; }
 
-/* === Strikte Dark Mode regels met !important voor alle home.html pagina's === */
-html[data-theme="dark"] body { background: #1a1a1a !important; color: #e0e0e0 !important; }
+.pub-lang-select {
+    padding: 5pt 8pt;
+    font-size: 10pt;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+}
+.pub-lang-btn {
+    font-size: 10pt;
+    color: #1a3c6e;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5pt 10pt;
+    border: 1px solid #b8cde3;
+    border-radius: 4px;
+    background: #eef4fb;
+    font-weight: 600;
+}
+.pub-lang-btn:hover { background: #dbe8f7; }
+
+/* Documentkleuren */
+.doc-0 { border-left-color: #8b1e1e !important; }
+.doc-0 a.titel, .eigen-kleur-0 a.titel { color: #8b1e1e !important; }
+.doc-0 .downloads a, .eigen-kleur-0 .downloads a { background: #fbeeed !important; color: #8b1e1e !important; border-color: #eecac8 !important; }
+
+.doc-a { border-left-color: #7a3e9d !important; }
+.doc-a a.titel, .eigen-kleur-A a.titel { color: #7a3e9d !important; }
+.doc-a .downloads a, .eigen-kleur-A .downloads a { background: #f5eefb !important; color: #7a3e9d !important; border-color: #ddcaee !important; }
+
+.doc-b { border-left-color: #1a3c6e !important; }
+.doc-b a.titel, .eigen-kleur-B a.titel { color: #1a3c6e !important; }
+.doc-b .downloads a, .eigen-kleur-B .downloads a { background: #eef2f7 !important; color: #1a3c6e !important; border-color: #d0dbe7 !important; }
+
+.doc-c { border-left-color: #4a3b6b !important; }
+.doc-c a.titel, .eigen-kleur-C a.titel { color: #4a3b6b !important; }
+.doc-c .downloads a, .eigen-kleur-C .downloads a { background: #f2eef8 !important; color: #4a3b6b !important; border-color: #d4cae5 !important; }
+
+.doc-d { border-left-color: #2e7d32 !important; }
+.doc-d a.titel, .eigen-kleur-D a.titel { color: #2e7d32 !important; }
+.doc-d .downloads a, .eigen-kleur-D .downloads a { background: #edf5ee !important; color: #2e7d32 !important; border-color: #c8e0ca !important; }
+
+.doc-e { border-left-color: #007777 !important; }
+.doc-e a.titel, .eigen-kleur-E a.titel { color: #007777 !important; }
+.doc-e .downloads a, .eigen-kleur-E .downloads a { background: #e6f5f5 !important; color: #007777 !important; border-color: #b3e0e0 !important; }
+
+/* Dark mode overrides */
+html[data-theme="dark"] body { background: #121212 !important; color: #e0e0e0 !important; }
+html[data-theme="dark"] .wrap { color: #e0e0e0 !important; }
 html[data-theme="dark"] h1 { color: #7fb3ff !important; }
-html[data-theme="dark"] .ondertitel { color: #c8c8c8 !important; }
-html[data-theme="dark"] .auteur { color: #a8a8a8 !important; }
-html[data-theme="dark"] .intro { color: #c0c0c0 !important; }
-html[data-theme="dark"] .pub-ab-banner { background: #232323 !important; border-left-color: #4a6fa5 !important; color: #b8b8b8 !important; }
-html[data-theme="dark"] .taalkeuze { background: #232323 !important; border-color: #4a4a4a !important; color: #b0c8e8 !important; }
-html[data-theme="dark"] .taalkeuze:hover { background: #2a2a2a !important; border-color: #7fb3ff !important; }
-html[data-theme="dark"] .footer { border-top-color: #3a3a3a !important; color: #888888 !important; }
-html[data-theme="dark"] .footer a { color: #7fb3ff !important; }
-
-html[data-theme="dark"] .doc-lijst li { background: #232323 !important; border-color: #4a6fa5 !important; box-shadow: 0 2px 6px rgba(0,0,0,.4) !important; }
-html[data-theme="dark"] .doc-lijst a.titel { color: #7fb3ff !important; }
-html[data-theme="dark"] .doc-lijst .beschrijving { color: #c8c8c8 !important; }
-html[data-theme="dark"] .doc-lijst .downloads a { background: #2c3545 !important; color: #b0c8e8 !important; border: 1px solid #4a6fa5 !important; }
-html[data-theme="dark"] .doc-lijst .downloads a:hover { background: #3a4659 !important; color: #ffffff !important; }
-html[data-theme="dark"] .doc-0, html[data-theme="dark"] .eigen-kleur-0 { border-left-color: #ff8a8a !important; background: #2a1c1c !important; }
-html[data-theme="dark"] .doc-0 a.titel, html[data-theme="dark"] .eigen-kleur-0 a.titel { color: #ff8a8a !important; }
-html[data-theme="dark"] .doc-0 .downloads a, html[data-theme="dark"] .eigen-kleur-0 .downloads a { background: #3a2424 !important; color: #ff8a8a !important; border-color: #6b3a3a !important; }
-html[data-theme="dark"] .doc-a, html[data-theme="dark"] .eigen-kleur-A { border-left-color: #c89bf0 !important; background: #241c2a !important; }
-html[data-theme="dark"] .doc-a a.titel, html[data-theme="dark"] .eigen-kleur-A a.titel { color: #c89bf0 !important; }
-html[data-theme="dark"] .doc-a .downloads a, html[data-theme="dark"] .eigen-kleur-A .downloads a { background: #322440 !important; color: #c89bf0 !important; border-color: #5b3e75 !important; }
-html[data-theme="dark"] .doc-b, html[data-theme="dark"] .eigen-kleur-B { border-left-color: #7fb3ff !important; background: #1c2129 !important; }
-html[data-theme="dark"] .doc-b a.titel, html[data-theme="dark"] .eigen-kleur-B a.titel { color: #7fb3ff !important; }
-html[data-theme="dark"] .doc-b .downloads a, html[data-theme="dark"] .eigen-kleur-B .downloads a { background: #253040 !important; color: #7fb3ff !important; border-color: #3d5a80 !important; }
-html[data-theme="dark"] .doc-c, html[data-theme="dark"] .eigen-kleur-C { border-left-color: #a99cd4 !important; background: #211f28 !important; }
-html[data-theme="dark"] .doc-c a.titel, html[data-theme="dark"] .eigen-kleur-C a.titel { color: #a99cd4 !important; }
-html[data-theme="dark"] .doc-c .downloads a, html[data-theme="dark"] .eigen-kleur-C .downloads a { background: #2c2940 !important; color: #a99cd4 !important; border-color: #524b75 !important; }
-html[data-theme="dark"] .doc-d, html[data-theme="dark"] .eigen-kleur-D { border-left-color: #7fcf88 !important; background: #1c241d !important; }
-html[data-theme="dark"] .doc-d a.titel, html[data-theme="dark"] .eigen-kleur-D a.titel { color: #7fcf88 !important; }
-html[data-theme="dark"] .doc-d .downloads a, html[data-theme="dark"] .eigen-kleur-D .downloads a { background: #243a28 !important; color: #7fcf88 !important; border-color: #3b6642 !important; }
-html[data-theme="dark"] .doc-e, html[data-theme="dark"] .eigen-kleur-E { border-left-color: #5fc8cc !important; background: #1c2628 !important; }
-html[data-theme="dark"] .doc-e a.titel, html[data-theme="dark"] .eigen-kleur-E a.titel { color: #5fc8cc !important; }
-html[data-theme="dark"] .doc-e .downloads a, html[data-theme="dark"] .eigen-kleur-E .downloads a { background: #234245 !important; color: #5fc8cc !important; border-color: #386b70 !important; }
-html[data-theme="dark"] .pub-nav .langs a, html[data-theme="dark"] .pub-lang-btn { background: #1a1a1a !important; border-color: #4a4a4a !important; color: #d0d0d0 !important; }
-html[data-theme="dark"] .pub-nav .langs a.actief, html[data-theme="dark"] .pub-lang-btn.actief { background: #4a6fa5 !important; color: #ffffff !important; border-color: #7fb3ff !important; }
+html[data-theme="dark"] .ondertitel { color: #cccccc !important; }
+html[data-theme="dark"] .auteur { color: #999999 !important; }
+html[data-theme="dark"] .intro { color: #d0d0d0 !important; }
+html[data-theme="dark"] .doc-lijst li { background: #1e1e1e !important; box-shadow: 0 2px 8px rgba(0,0,0,.3) !important; }
+html[data-theme="dark"] .doc-lijst .beschrijving { color: #b0b0b0 !important; }
+html[data-theme="dark"] a.taalkeuze { background: #2a2a2a !important; color: #e0e0e0 !important; border-color: #444 !important; }
+html[data-theme="dark"] .pub-lang-select { background: #2a2a2a !important; color: #e0e0e0 !important; border-color: #444 !important; }
+html[data-theme="dark"] .pub-lang-btn { background: #1a2a3a !important; color: #7fb3ff !important; border-color: #2d4560 !important; }
+html[data-theme="dark"] .kop-balk { border-bottom-color: #333 !important; }
 
 
 html { overflow-x: hidden; }
@@ -1188,20 +1191,19 @@ html[data-theme="dark"] select.pub-lang-select option {
 <div class="wrap">
 
 <div class="kop-balk">
-  <a class="taalkeuze" href="../index.html" title="Terug naar het Startportaal">← Startportaal</a>
-  <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-    <a href="../home_int.html" class="pub-lang-btn notranslate" translate="no" title="European &amp; International Portal (English, Français, Deutsch, +8)" style="font-weight:600; text-decoration:none;">🇪🇺 Europees Portaal / Other languages (EN · DE · FR · ...)</a>
-  </div>
+  <a class="taalkeuze notranslate" translate="no" href="../index.html" title="Startportaal">&#8592; Startportaal</a>
+  <div style="display:flex; gap:8px; align-items:center;">
+  <a href="../int/home.html" class="pub-lang-btn notranslate" translate="no" title="European &amp; International Portal (English, Deutsch, Fran&#231;ais, +7)">&#127466;&#127482; Europees Portaal / Other languages</a>
+</div>
 </div>
 
 <h1>GRENSARBEID.ORG — Systeem-Audit</h1>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen</p>
-<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 2 november 2026, 23:12</p>
+<p class="auteur">Auteur: Eric Messa &bull; Versie bijgewerkt: 3 november 2026, 12:52</p>
 
 
 
 <p class="intro">Geen adviesloket en geen pleister op een vastgelopen formulier. Deze site toont aan de hand van één volledig gedocumenteerd dossier (62 instanties, meer dan 700 handelingen) hoe de Belgische en Nederlandse systemen achter de schermen werkelijk op elkaar inwerken — waar ze blokkeren, waarom brieven elkaar tegenspreken, en welke hefbomen wél werken.</p>
-
 <p class="intro"><strong>Elk van de zes documenten is beschikbaar in drie vormen:</strong> als webpagina (direct te lezen in de browser), als Word-bestand (.docx, voor wie wil bewerken of afdrukken), en als PDF (voor wie een vaste lay-out wil of wil archiveren).</p>
 
 <ul class="doc-lijst">
@@ -1259,10 +1261,10 @@ html[data-theme="dark"] select.pub-lang-select option {
 <div class="footer notranslate" translate="no">
 <p>Openbaar materiaal. Wie eruit citeert, citeert Document B als bron van de feiten.</p>
 <div style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
-  <button type="button" class="pub-print-btn notranslate" translate="no" onclick="window.print()" title="Print deze pagina of bewaar als PDF">🖨️ Print / Bewaar als PDF</button>
-  <button type="button" class="pub-contact-btn pub-contact-footer notranslate" translate="no" onclick="openBronModal()">📄 Bronstuk opvragen / Contact</button>
+  <button type="button" class="pub-print-btn notranslate" translate="no" onclick="window.print()" title="Print deze pagina of bewaar als PDF">&#128424; Print / Bewaar als PDF</button>
+  <button type="button" class="pub-contact-btn pub-contact-footer notranslate" translate="no" onclick="openBronModal()">&#128140; Bronstuk opvragen / Contact</button>
 </div>
-<p><a href="../index.html">← Startportaal</a> · <a href="../home_int.html">🇪🇺 Europees &amp; Internationaal Portaal</a></p>
+<p><a href="../index.html">&#8592; Startportaal</a> &bull; <a href="../int/home.html">&#127466;&#127482; European &amp; International Portal</a></p>
 </div>
 
 </div>

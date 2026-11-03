@@ -2140,584 +2140,3276 @@ html[data-theme="dark"] select.pub-lang-select option {
 }
 
 /* === Audit Neurale Audiospeler (.audit-audio-bar) === */
+
 .audit-audio-bar {
+
     display: flex;
+
     align-items: center;
+
     gap: 12px;
+
     background: #f4f1ea;
+
     border: 1px solid #dcd7cc;
+
     border-left: 4px solid #1a3c6e;
+
     border-radius: 6px;
+
     padding: 8px 14px;
+
     margin: 12pt 0 16pt 0;
+
     font-family: Aptos, Calibri, sans-serif;
+
     box-sizing: border-box;
+
     width: 100%;
+
 }
+
 .aab-play-btn {
+
     background: #1a3c6e;
+
     color: #ffffff;
+
     border: none;
+
     border-radius: 50%;
+
     width: 36px;
+
     height: 36px;
+
     cursor: pointer;
+
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
+
     font-size: 13pt;
+
     flex-shrink: 0;
+
     transition: transform .15s ease, background-color .15s ease;
+
 }
+
 .aab-play-btn:hover { background: #2a5298; transform: scale(1.05); }
+
 .aab-play-btn.aab-playing { background: #8b1e1e; }
+
 .aab-info {
+
     flex: 1;
+
     min-width: 0;
+
     display: flex;
+
     flex-direction: column;
+
     gap: 4px;
+
 }
+
 .aab-meta {
+
     display: flex;
+
     align-items: center;
+
     gap: 8px;
+
     flex-wrap: wrap;
+
     font-size: 9.5pt;
+
     line-height: 1.2;
+
 }
+
 .aab-badge {
+
     font-weight: 700;
+
     letter-spacing: 0.5px;
+
     color: #1a3c6e;
+
     font-size: 8.5pt;
+
 }
+
 .aab-title {
+
     color: #333333;
+
     font-weight: 500;
+
     overflow: hidden;
+
     text-overflow: ellipsis;
+
     white-space: nowrap;
+
 }
+
 .aab-time {
+
     margin-left: auto;
+
     color: #666666;
+
     font-family: Consolas, monospace;
+
     font-size: 9pt;
+
 }
+
 .aab-progress-wrap {
+
     width: 100%;
+
     height: 6px;
+
     background: #e0dbce;
+
     border-radius: 3px;
+
     cursor: pointer;
+
     overflow: hidden;
+
 }
+
 .aab-progress-bar { width: 100%; height: 100%; }
+
 .aab-progress-fill {
+
     width: 0%;
+
     height: 100%;
+
     background: #1a3c6e;
+
     border-radius: 3px;
+
     transition: width 0.1s linear;
+
 }
+
 .aab-controls {
+
     flex-shrink: 0;
+
     display: flex;
+
     align-items: center;
+
     gap: 6px;
+
 }
+
 .aab-speed-btn {
+
     background: #ffffff;
+
     border: 1px solid #dcd7cc;
+
     border-radius: 4px;
+
     color: #1a3c6e;
+
     font-weight: 600;
+
     font-size: 9pt;
+
     padding: 3px 8px;
+
     cursor: pointer;
+
 }
+
 .aab-speed-btn:hover { background: #e8e4db; }
 
+
+
 .aab-next-btn {
+
     background: #1a3c6e;
+
     border: 1px solid #1a3c6e;
+
     border-radius: 4px;
+
     color: #ffffff;
+
     font-weight: 600;
+
     font-size: 8.8pt;
+
     padding: 4px 10px;
+
     cursor: pointer;
+
     display: inline-flex;
+
     align-items: center;
+
     gap: 4px;
+
     white-space: nowrap;
+
     transition: background .15s ease, transform .12s ease;
+
 }
+
 .aab-next-btn:hover {
+
     background: #2a5298;
+
     border-color: #2a5298;
+
     transform: translateY(-1px);
+
 }
+
+
 
 /* === Vermelding bovenaan document: Luistermodus / Audio-Playlist === */
+
 .audit-playlist-topbanner {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     gap: 14px;
+
     flex-wrap: wrap;
+
     max-width: 860px;
+
     margin: 14pt 0 22pt 0;
+
     padding: 12px 16px;
+
     border-radius: 8px;
+
     background: #eef3f9;
+
     border: 1px solid #c5d4e8;
+
     border-left: 4px solid #1a3c6e;
+
     font-family: Aptos, Calibri, sans-serif;
+
     box-sizing: border-box;
+
 }
+
 .apt-info {
+
     display: flex;
+
     align-items: flex-start;
+
     gap: 10px;
+
     flex: 1;
+
     min-width: 240px;
+
 }
+
 .apt-icon {
+
     font-size: 16pt;
+
     line-height: 1.1;
+
     flex-shrink: 0;
+
 }
+
 .apt-text {
+
     font-size: 9.8pt;
+
     line-height: 1.45;
+
     color: #2c3e50;
+
 }
+
 .apt-text strong { color: #1a3c6e; }
+
 .apt-actions {
+
     display: flex;
+
     align-items: center;
+
     gap: 8px;
+
     flex-wrap: wrap;
+
     flex-shrink: 0;
+
 }
+
 .apt-btn {
+
     font-size: 9.2pt;
+
     font-weight: 600;
+
     padding: 6px 12px;
+
     border-radius: 5px;
+
     cursor: pointer;
+
     text-decoration: none !important;
+
     display: inline-flex;
+
     align-items: center;
+
     gap: 5px;
+
     white-space: nowrap;
+
     transition: all .15s ease;
+
     font-family: inherit;
+
 }
+
 .apt-btn-play {
+
     background: #1a3c6e;
+
     color: #ffffff !important;
+
     border: 1px solid #1a3c6e;
+
 }
+
 .apt-btn-play:hover { background: #2a5298; }
+
 .apt-btn-jump {
+
     background: #ffffff;
+
     color: #1a3c6e !important;
+
     border: 1px solid #b5c7de;
+
 }
+
 .apt-btn-jump:hover { background: #e3ecf8; }
 
+
+
 /* === Audio-Playlist Sectie onderaan document (#audit-audio-playlist) === */
+
 .audit-playlist-sectie {
+
     max-width: 860px;
+
     margin: 38pt 0 24pt 0;
+
     padding: 20px 22px;
+
     border-radius: 10px;
+
     background: #f4f1ea;
+
     border: 1px solid #d5d0c5;
+
     border-top: 4px solid #1a3c6e;
+
     font-family: Aptos, Calibri, sans-serif;
+
     box-sizing: border-box;
+
 }
+
 .aps-header { margin-bottom: 14px; }
+
 .aps-title-row {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     gap: 10px;
+
     flex-wrap: wrap;
+
     margin-bottom: 6px;
+
 }
+
 .aps-badge {
+
     display: inline-block;
+
     font-size: 8pt;
+
     font-weight: 700;
+
     letter-spacing: 0.6px;
+
     text-transform: uppercase;
+
     padding: 3px 8px;
+
     border-radius: 4px;
+
     background: #1a3c6e;
+
     color: #ffffff;
+
 }
+
 .audit-playlist-sectie h2 {
+
     margin: 4pt 0 6pt 0 !important;
+
     font-size: 15pt !important;
+
     border: none !important;
+
     padding: 0 !important;
+
     color: #1a3c6e;
+
 }
+
 .aps-desc {
+
     font-size: 10pt !important;
+
     line-height: 1.5 !important;
+
     color: #4a4a4a;
+
     margin-bottom: 12pt !important;
+
 }
+
 .aps-master-player {
+
     display: flex;
+
     align-items: center;
+
     gap: 14px;
+
     flex-wrap: wrap;
+
     padding: 12px 16px;
+
     border-radius: 8px;
+
     margin-bottom: 14px;
+
     background: #ffffff;
+
     border: 1px solid #dcd7cc;
+
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+
 }
+
 .aps-mp-controls {
+
     display: flex;
+
     align-items: center;
+
     gap: 8px;
+
     flex-shrink: 0;
+
 }
+
 .aps-mp-play {
+
     width: 44px;
+
     height: 44px;
+
     border-radius: 50%;
+
     border: none;
+
     background: #1a3c6e;
+
     color: #ffffff;
+
     font-size: 14pt;
+
     cursor: pointer;
+
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
+
     transition: transform .15s, background .15s;
+
 }
+
 .aps-mp-play:hover { background: #2a5298; transform: scale(1.05); }
+
 .aps-mp-play.aps-playing { background: #8b1e1e; }
+
 .aps-mp-prev, .aps-mp-next {
+
     width: 34px;
+
     height: 34px;
+
     border-radius: 50%;
+
     border: 1px solid #d5d0c5;
+
     background: #f8f6f2;
+
     color: #1a3c6e;
+
     font-size: 10.5pt;
+
     cursor: pointer;
+
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
+
     transition: background .15s;
+
 }
+
 .aps-mp-prev:hover, .aps-mp-next:hover { background: #e8e4db; }
+
 .aps-mp-info {
+
     flex: 1;
+
     min-width: 200px;
+
     display: flex;
+
     flex-direction: column;
+
     gap: 4px;
+
 }
+
 .aps-mp-meta {
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     font-size: 8.8pt;
+
     font-weight: 700;
+
     color: #1a3c6e;
+
 }
+
 .aps-mp-time {
+
     font-family: Consolas, monospace;
+
     font-weight: 500;
+
     color: #666666;
+
 }
+
 .aps-mp-trackname {
+
     font-size: 10pt;
+
     font-weight: 600;
+
     color: #222222;
+
     white-space: nowrap;
+
     overflow: hidden;
+
     text-overflow: ellipsis;
+
 }
+
 .aps-mp-progress-wrap {
+
     width: 100%;
+
     height: 7px;
+
     background: #e0dbce;
+
     border-radius: 4px;
+
     cursor: pointer;
+
     overflow: hidden;
+
 }
+
 .aps-mp-progress-bar { width: 100%; height: 100%; }
+
 .aps-mp-progress-fill {
+
     width: 0%;
+
     height: 100%;
+
     background: #1a3c6e;
+
     border-radius: 4px;
+
     transition: width 0.1s linear;
+
 }
+
 .aps-mp-extra {
+
     display: flex;
+
     align-items: center;
+
     gap: 10px;
+
     flex-shrink: 0;
+
 }
+
 .aps-autoplay-toggle {
+
     display: inline-flex;
+
     align-items: center;
+
     gap: 5px;
+
     font-size: 9pt;
+
     font-weight: 600;
+
     color: #333333;
+
     cursor: pointer;
+
     user-select: none;
+
 }
+
 .aps-autoplay-toggle input { cursor: pointer; accent-color: #1a3c6e; }
+
 .aps-tracklist {
+
     max-height: 420px;
+
     overflow-y: auto;
+
     border: 1px solid #dcd7cc;
+
     border-radius: 6px;
+
     background: #faf8f5;
+
 }
+
 .aps-track {
+
     display: flex;
+
     align-items: center;
+
     gap: 10px;
+
     padding: 8px 12px;
+
     border-bottom: 1px solid #eae6dd;
+
     cursor: pointer;
+
     transition: background .12s;
+
     font-size: 9.8pt;
+
     color: #222222;
+
 }
+
 .aps-track:last-child { border-bottom: none; }
+
 .aps-track:hover { background: #eef2f7; }
+
 .aps-track.aps-active {
+
     background: #e3ecf8;
+
     font-weight: 600;
+
     border-left: 3px solid #1a3c6e;
+
 }
+
 .aps-t-num {
+
     font-family: Consolas, monospace;
+
     font-size: 8.8pt;
+
     color: #777777;
+
     min-width: 24px;
+
 }
+
 .aps-t-icon {
+
     width: 24px;
+
     height: 24px;
+
     border-radius: 50%;
+
     background: #e8e4db;
+
     color: #1a3c6e;
+
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
+
     font-size: 8.5pt;
+
     flex-shrink: 0;
+
 }
+
 .aps-track.aps-active .aps-t-icon {
+
     background: #1a3c6e;
+
     color: #ffffff;
+
 }
+
 .aps-track-title {
+
     flex: 1;
+
     min-width: 0;
+
     overflow: hidden;
+
     text-overflow: ellipsis;
+
     white-space: nowrap;
+
 }
+
 .aps-track-jump {
+
     font-size: 8.5pt;
+
     color: #555555;
+
     text-decoration: none !important;
+
     padding: 2px 8px;
+
     border-radius: 4px;
+
     border: 1px solid #d5d0c5;
+
     background: #ffffff;
+
     flex-shrink: 0;
+
 }
+
 .aps-track-jump:hover {
+
     color: #1a3c6e;
+
     border-color: #1a3c6e;
+
     background: #eef3f9;
+
 }
+
+
 
 /* Dark-mode styling voor de audiospeler, topbanner en playlist */
+
 html[data-theme="dark"] .audit-audio-bar {
+
     background: #23272e !important;
+
     border-color: #363b45 !important;
+
     border-left-color: #7fb3ff !important;
+
 }
+
 html[data-theme="dark"] .aab-play-btn {
+
     background: #4a6fa5 !important;
+
     color: #ffffff !important;
+
 }
+
 html[data-theme="dark"] .aab-play-btn:hover { background: #5c85c2 !important; }
+
 html[data-theme="dark"] .aab-play-btn.aab-playing { background: #d32f2f !important; }
+
 html[data-theme="dark"] .aab-badge { color: #7fb3ff !important; }
+
 html[data-theme="dark"] .aab-title { color: #e0e4ec !important; }
+
 html[data-theme="dark"] .aab-time { color: #9aa5b8 !important; }
+
 html[data-theme="dark"] .aab-progress-wrap { background: #323842 !important; }
+
 html[data-theme="dark"] .aab-progress-fill { background: #7fb3ff !important; }
+
 html[data-theme="dark"] .aab-speed-btn {
+
     background: #2d333b !important;
+
     border-color: #444c56 !important;
+
     color: #7fb3ff !important;
+
 }
+
 html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
+
 html[data-theme="dark"] .aab-next-btn {
+
     background: #2b4c7e !important;
+
     border-color: #4a6fa5 !important;
+
     color: #e8f0fe !important;
+
 }
+
 html[data-theme="dark"] .aab-next-btn:hover {
+
     background: #3b639e !important;
+
     color: #ffffff !important;
+
 }
+
 html[data-theme="dark"] .audit-playlist-topbanner {
+
     background: #1c232d !important;
+
     border-color: #2f3b4c !important;
+
     border-left-color: #58a6ff !important;
+
 }
+
 html[data-theme="dark"] .apt-text { color: #d0d8e4 !important; }
+
 html[data-theme="dark"] .apt-text strong { color: #79c0ff !important; }
+
 html[data-theme="dark"] .apt-btn-play {
+
     background: #3867a6 !important;
+
     border-color: #58a6ff !important;
+
     color: #ffffff !important;
+
 }
+
 html[data-theme="dark"] .apt-btn-play:hover { background: #4a7ec2 !important; }
+
 html[data-theme="dark"] .apt-btn-jump {
+
     background: #262c36 !important;
+
     border-color: #444c56 !important;
+
     color: #79c0ff !important;
+
 }
+
 html[data-theme="dark"] .apt-btn-jump:hover { background: #303846 !important; }
+
 html[data-theme="dark"] .audit-playlist-sectie {
+
     background: #1b1f26 !important;
+
     border-color: #323842 !important;
+
     border-top-color: #58a6ff !important;
+
 }
+
 html[data-theme="dark"] .aps-badge {
+
     background: #2b4c7e !important;
+
     color: #cae0ff !important;
+
 }
+
 html[data-theme="dark"] .audit-playlist-sectie h2 { color: #79c0ff !important; }
+
 html[data-theme="dark"] .aps-desc { color: #a9b4c4 !important; }
+
 html[data-theme="dark"] .aps-master-player {
+
     background: #232832 !important;
+
     border-color: #363d4a !important;
+
 }
+
 html[data-theme="dark"] .aps-mp-play { background: #4a6fa5 !important; }
+
 html[data-theme="dark"] .aps-mp-play.aps-playing { background: #d32f2f !important; }
+
 html[data-theme="dark"] .aps-mp-prev,
+
 html[data-theme="dark"] .aps-mp-next {
+
     background: #2d333b !important;
+
     border-color: #444c56 !important;
+
     color: #b0c8e8 !important;
+
 }
+
 html[data-theme="dark"] .aps-mp-prev:hover,
+
 html[data-theme="dark"] .aps-mp-next:hover { background: #373e47 !important; }
+
 html[data-theme="dark"] .aps-mp-meta { color: #79c0ff !important; }
+
 html[data-theme="dark"] .aps-mp-time { color: #9aa5b8 !important; }
+
 html[data-theme="dark"] .aps-mp-trackname { color: #e6edf3 !important; }
+
 html[data-theme="dark"] .aps-mp-progress-wrap { background: #323842 !important; }
+
 html[data-theme="dark"] .aps-mp-progress-fill { background: #58a6ff !important; }
+
 html[data-theme="dark"] .aps-autoplay-toggle { color: #c9d1d9 !important; }
+
 html[data-theme="dark"] .aps-autoplay-toggle input { accent-color: #58a6ff; }
+
 html[data-theme="dark"] .aps-tracklist {
+
     background: #15181e !important;
+
     border-color: #2d333b !important;
+
 }
+
 html[data-theme="dark"] .aps-track {
+
     border-bottom-color: #222730 !important;
+
     color: #c9d1d9 !important;
+
 }
+
 html[data-theme="dark"] .aps-track:hover { background: #20252d !important; }
+
 html[data-theme="dark"] .aps-track.aps-active {
+
     background: #1e2a3a !important;
+
     color: #ffffff !important;
+
     border-left-color: #58a6ff !important;
+
 }
+
 html[data-theme="dark"] .aps-t-num { color: #8b949e !important; }
+
 html[data-theme="dark"] .aps-t-icon {
+
     background: #2d333b !important;
+
     color: #79c0ff !important;
+
 }
+
 html[data-theme="dark"] .aps-track.aps-active .aps-t-icon {
+
     background: #4a6fa5 !important;
+
     color: #ffffff !important;
+
 }
+
 html[data-theme="dark"] .aps-track-jump {
+
     background: #21262d !important;
+
     border-color: #363b42 !important;
+
     color: #8b949e !important;
+
 }
+
 html[data-theme="dark"] .aps-track-jump:hover {
+
     color: #79c0ff !important;
+
     border-color: #58a6ff !important;
+
 }
+
+
 
 @media (max-width: 600px) {
+
     .audit-audio-bar { flex-wrap: wrap; gap: 8px; padding: 8px 10px; }
+
     .aab-controls { width: 100%; justify-content: flex-end; border-top: 1px solid rgba(128,128,128,0.18); padding-top: 6px; }
+
     .aps-master-player { flex-direction: column; align-items: stretch; gap: 10px; }
+
     .aps-mp-controls { justify-content: center; }
+
     .aps-mp-extra { justify-content: space-between; }
+
 }
 
+
+
 /* Verberg de audiospeler en playlist bij het printen of PDF-genereren */
+
 @media print {
+
     .audit-audio-bar,
+
     .audit-playlist-topbanner,
+
     .audit-playlist-sectie,
+
     .toc-playlist-item { display: none !important; }
+
 }
+
+
+
+html { overflow-x: hidden; }
+body { margin: 0 !important; padding: 40pt !important; overflow-x: visible !important; box-sizing: border-box; }
+
+/* === Optimaal Leesgemak, Typografie & Witruimte (Anti-Bloktekst) === */
+p {
+    margin-top: 0 !important;
+    margin-bottom: 14pt !important;
+    line-height: 1.65 !important;
+    font-size: 11.5pt;
+    text-align: left !important;
+}
+
+/* Ergonomische leeskolom: regellengte max 860px (65-80 karakters) zodat ogen nooit verdwalen op brede schermen */
+p, .gebruikersaanwijzing, .intro-rechten, .actie, .afsluiting, .werkversie, .lead, .footnotes, .pub-toc, .contactblok {
+    max-width: 860px;
+}
+h1, h2, h3, h4, h5 {
+    max-width: 960px;
+}
+h2 {
+    margin-top: 36pt !important;
+    margin-bottom: 12pt !important;
+    line-height: 1.3 !important;
+}
+h3 {
+    margin-top: 26pt !important;
+    margin-bottom: 10pt !important;
+    line-height: 1.35 !important;
+}
+h4 {
+    margin-top: 20pt !important;
+    margin-bottom: 8pt !important;
+    line-height: 1.4 !important;
+}
+h5 {
+    margin-top: 16pt !important;
+    margin-bottom: 6pt !important;
+    line-height: 1.4 !important;
+}
+
+/* Duidelijke ademruimte tussen interactie-kaarten in Document B */
+.entry {
+    margin-bottom: 10pt !important;
+    padding: 8pt 12pt !important;
+    line-height: 1.45 !important;
+    max-width: 920px;
+}
+
+/* === Discrete Document Download Links (Anti-Bloat Top Nav) === */
+.pub-discreet-dl {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f7f5f1;
+    border: 1px solid #d5d0c5;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 9.5pt;
+    color: #555555;
+    margin: 4pt 0 16pt 0;
+    font-family: Aptos, Calibri, sans-serif;
+}
+html[data-theme="dark"] .pub-discreet-dl {
+    background: #181b22;
+    border-color: #30363d;
+    color: #8b949e;
+}
+.pub-discreet-dl .pdd-label { font-weight: 700; color: #1a3c6e; }
+html[data-theme="dark"] .pub-discreet-dl .pdd-label { color: #58a6ff; }
+.pub-discreet-dl .pdd-link {
+    color: #1a3c6e;
+    text-decoration: none;
+    font-weight: 600;
+}
+html[data-theme="dark"] .pub-discreet-dl .pdd-link { color: #79c0ff; }
+.pub-discreet-dl .pdd-link:hover { text-decoration: underline; }
+.pub-discreet-dl .pdd-sep { color: #aaa; }
+
+.pub-nav {
+    position: sticky; top: 0; z-index: 100;
+    background: #ffffff; border-bottom: 2px solid #d5d0c5;
+    padding: 10px 40pt; margin: -40pt -40pt 20pt -40pt;
+    font-family: Aptos, Calibri, sans-serif;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 12px 16px; flex-wrap: wrap; box-sizing: border-box;
+}
+.pub-nav .links { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.pub-nav .pub-nav-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-left: auto; flex-shrink: 0; }
+.pub-nav a {
+    color: #1a3c6e; text-decoration: none; padding: 6px 12px;
+    border-radius: 4px; font-size: 11pt; font-weight: 600;
+    border: 1px solid transparent;
+}
+.pub-nav a:hover { background: #eef2f7; border-color: #d5d0c5; }
+.pub-nav a.actief { background: #1a3c6e; color: #ffffff; }
+.pub-nav a.home { border: 1px solid #d5d0c5; }
+.pub-nav .titel-klein { font-size: 10pt; color: #666; font-style: italic; }
+.pub-top {
+    position: fixed; bottom: 24px; right: 24px; z-index: 200;
+    background: #1a3c6e; color: #fff; border: none;
+    width: 44px; height: 44px; border-radius: 50%;
+    cursor: pointer; font-size: 18pt; line-height: 1;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    text-decoration: none; display: flex; align-items: center; justify-content: center;
+    transition: transform .15s;
+}
+.pub-top:hover { transform: scale(1.1); background: #12294d; }
+.pub-toc {
+    background: #f7f5f1; border-left: 4px solid #1a3c6e;
+    padding: 14pt 18pt; margin: 20pt 0 30pt;
+    border-radius: 4px;
+}
+.pub-toc h2 { margin-top: 0 !important; border-bottom: none !important; font-size: 16pt !important; }
+.pub-toc ul { list-style: none; padding-left: 0; margin: 0; }
+.pub-toc li { margin: 3pt 0; }
+.pub-toc a { color: #1a3c6e; text-decoration: none; font-size: 11pt; }
+.pub-toc a:hover { text-decoration: underline; }
+.pub-toc .niv1 { font-weight: 700; margin-top: 8pt; }
+.pub-toc .niv2 { padding-left: 18pt; }
+.pub-toc .niv3 { padding-left: 36pt; font-size: 10pt; color: #555; }
+.audit-toolbar {
+    background: #ffffff; border: 1px solid #d5d0c5; border-left: 5px solid #1a3c6e;
+    border-radius: 6px; padding: 14pt 18pt; margin: 16pt 0 28pt;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04); font-family: Aptos, Calibri, sans-serif;
+}
+.audit-toolbar .at-stats {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+    font-size: 10.5pt; color: #333; margin-bottom: 10pt; padding-bottom: 8pt;
+    border-bottom: 1px solid #ece8df;
+}
+.audit-toolbar .at-sep { color: #b5afa2; }
+.audit-toolbar .at-verified { color: #1b5e20; }
+.audit-toolbar .at-live-count {
+    margin-left: auto; font-family: Consolas, monospace; font-size: 9.5pt;
+    background: #f0eee9; padding: 2px 8px; border-radius: 12px; color: #444;
+}
+.audit-toolbar .at-controls {
+    display: grid; grid-template-columns: 1fr 280px; gap: 10px; margin-bottom: 10pt;
+}
+.audit-toolbar .at-search, .audit-toolbar .at-select {
+    font-family: inherit; font-size: 10.5pt; padding: 7px 11px;
+    border: 1px solid #ccc6b8; border-radius: 4px; background: #faf8f5; color: #111;
+}
+.audit-toolbar .at-search:focus, .audit-toolbar .at-select:focus {
+    outline: none; border-color: #1a3c6e; background: #fff;
+}
+.audit-toolbar .at-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.audit-toolbar .at-pill {
+    font-family: inherit; font-size: 9.5pt; font-weight: 600;
+    padding: 5px 11px; border-radius: 16px; border: 1px solid #d5d0c5;
+    background: #f7f5f1; color: #333; cursor: pointer; transition: all .15s;
+}
+.audit-toolbar .at-pill:hover { border-color: #1a3c6e; background: #eef2f7; }
+.audit-toolbar .at-pill.actief {
+    background: #1a3c6e; color: #ffffff; border-color: #1a3c6e;
+}
+.audit-org-bar {
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+    gap: 8px; margin: 2pt 0 10pt; padding: 4pt 8pt;
+    background: #f7f5f1; border-radius: 4px; font-size: 9.5pt;
+}
+.audit-org-stat { color: #555; font-family: Consolas, monospace; font-size: 9pt; }
+.audit-crosslink {
+    display: inline-block; color: #1a3c6e; font-weight: 600;
+    text-decoration: none; font-size: 9.5pt;
+}
+.audit-crosslink:hover { text-decoration: underline; }
+@media (max-width: 700px) {
+    .audit-toolbar .at-controls { grid-template-columns: 1fr; }
+    .audit-toolbar .at-live-count { margin-left: 0; }
+}
+.pub-footer {
+    margin-top: 60pt; padding-top: 20pt; border-top: 1px solid #d5d0c5;
+    font-size: 10pt; color: #666; text-align: center;
+}
+.pub-footer a { color: #1a3c6e; }
+.pub-naar-boven {
+    display: block; text-align: right; margin-top: 10pt;
+    font-size: 10pt; color: #888; text-decoration: none;
+}
+.pub-naar-boven:hover { color: #1a3c6e; text-decoration: underline; }
+
+.dm-toggle {
+    position: fixed; bottom: 80px; right: 24px; z-index: 200;
+    background: #ffffff; color: #1a3c6e; border: 1px solid #d5d0c5;
+    width: 44px; height: 44px; border-radius: 50%;
+    cursor: pointer; font-size: 18pt; line-height: 1; padding: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .15s, background .15s, border-color .15s;
+    font-family: Aptos, Calibri, sans-serif;
+}
+.dm-toggle:hover { transform: scale(1.1); background: #eef2f7; border-color: #1a3c6e; }
+.dm-toggle .dm-icon-lm { display: none; }
+html[data-theme="dark"] .dm-toggle .dm-icon-dm { display: none; }
+html[data-theme="dark"] .dm-toggle .dm-icon-lm { display: inline; }
+
+
+.pub-nav .nav-acties { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+.pub-contact-btn {
+    background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
+    padding: 5px 12px; border-radius: 4px; font-size: 10pt; font-weight: 600;
+    cursor: pointer; font-family: inherit; transition: all .15s;
+    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+}
+.pub-contact-btn:hover { background: #1a3c6e; color: #ffffff; border-color: #1a3c6e; }
+.pub-contact-footer { margin: 10pt 0 4pt; font-size: 10.5pt; padding: 7px 16px; }
+
+/* Forensische bewijs-badge interactief */
+.audit-bewijs { cursor: pointer; transition: border-color .15s, background .15s, box-shadow .15s; }
+.audit-bewijs:hover {
+    border-color: #1a3c6e; background: #e6edf7;
+    box-shadow: 0 1px 4px rgba(26,60,110,0.18);
+}
+
+.pub-print-btn {
+    background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
+    padding: 5px 12px; border-radius: 4px; font-size: 10pt; font-weight: 600;
+    cursor: pointer; font-family: inherit; transition: all .15s;
+    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+}
+.pub-print-btn:hover { background: #1a3c6e; color: #ffffff; border-color: #1a3c6e; }
+html[data-theme="dark"] .pub-print-btn {
+    background: #232323; color: #b0c8e8; border-color: #4a4a4a;
+}
+html[data-theme="dark"] .pub-print-btn:hover {
+    background: #2a2a2a; border-color: #7fb3ff; color: #ffffff;
+}
+@media (max-width: 768px) {
+    .pub-print-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 38px; }
+}
+
+.pub-lang-select, #int-lang-select {
+    font-family: inherit; font-size: 10pt; font-weight: 600;
+    padding: 4px 8px; border: 1px solid #d5d0c5; border-radius: 4px;
+    background-color: #ffffff; color: #1a3c6e; cursor: pointer;
+    color-scheme: light;
+}
+.pub-lang-select option, #int-lang-select option {
+    background-color: #ffffff; color: #1a3c6e;
+    color-scheme: light;
+}
+html[data-theme="dark"] .pub-lang-select,
+html[data-theme="dark"] #int-lang-select,
+html[data-theme="dark"] select.pub-lang-select {
+    background-color: #232323 !important;
+    background: #232323 !important;
+    border-color: #4a4a4a !important;
+    color: #e0e0e0 !important;
+    color-scheme: dark !important;
+}
+html[data-theme="dark"] .pub-lang-select option,
+html[data-theme="dark"] #int-lang-select option,
+html[data-theme="dark"] select.pub-lang-select option {
+    background-color: #232323 !important;
+    background: #232323 !important;
+    color: #e0e0e0 !important;
+    color-scheme: dark !important;
+}
+
+/* === Professionele A4 Print / Opslaan als PDF Stylesheet === */
+@media print {
+    html, html[data-theme="dark"], body, html[data-theme="dark"] body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        margin: 12mm !important;
+        padding: 0 !important;
+        font-size: 10.5pt !important;
+    }
+    .pub-nav, .pub-top, .dm-toggle, .audit-toolbar, .audit-crosslink,
+    .audit-audio-bar, .pub-discreet-dl,
+    .pub-naar-boven, .bm-modal-overlay, .skiptranslate,
+    .goog-te-banner-frame, #goog-gt-tt {
+        display: none !important;
+    }
+    /* Houd de vertaaldisclaimer bovenaan de PDF zichtbaar! */
+    .pub-ab-banner {
+        display: block !important;
+        background: #fdf6e3 !important;
+        color: #000000 !important;
+        border: 1px solid #d4a017 !important;
+        border-left: 4pt solid #d4a017 !important;
+        padding: 8pt 12pt !important;
+        margin-bottom: 14pt !important;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        color: #1a3c6e !important;
+        page-break-after: avoid !important;
+    }
+    table, tr, .figure, .entry, .actor {
+        page-break-inside: avoid !important;
+    }
+    table th {
+        background: #1a3c6e !important;
+        color: #ffffff !important;
+    }
+    table td {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border-color: #cccccc !important;
+    }
+    /* Schakel de dark-mode invert op SVG's en plaatjes uit tijdens printen! */
+    .figure, html[data-theme="dark"] .figure {
+        background: #ffffff !important;
+        border-color: #cccccc !important;
+    }
+    .figure svg, html[data-theme="dark"] .figure svg,
+    .figure img, html[data-theme="dark"] .figure img {
+        filter: none !important;
+    }
+    .entry-in, html[data-theme="dark"] .entry-in {
+        background: #f0f4f9 !important;
+        color: #000000 !important;
+        border-left: 3pt solid #1a3c6e !important;
+    }
+    .entry-uit, html[data-theme="dark"] .entry-uit {
+        background: #faf0f2 !important;
+        color: #000000 !important;
+        border-right: 3pt solid #8b1e1e !important;
+    }
+    .datum, .titel, .opvolging, .oorsprong {
+        color: #000000 !important;
+    }
+    /* Herstel Inhoudsopgave (TOC) naar helder wit papier zonder zwart blok! */
+    .pub-toc, html[data-theme="dark"] .pub-toc {
+        background: #ffffff !important;
+        color: #000000 !important;
+        border: 1px solid #d5d0c5 !important;
+        border-left: 4px solid #1a3c6e !important;
+        page-break-inside: avoid !important;
+        box-shadow: none !important;
+    }
+    .pub-toc h2, html[data-theme="dark"] .pub-toc h2 {
+        color: #1a3c6e !important;
+    }
+    .pub-toc a, html[data-theme="dark"] .pub-toc a {
+        color: #1a3c6e !important;
+        text-decoration: none !important;
+    }
+    .pub-toc .niv1, html[data-theme="dark"] .pub-toc .niv1,
+    .pub-toc .niv2, html[data-theme="dark"] .pub-toc .niv2 {
+        color: #000000 !important;
+    }
+    .pub-toc .niv3, html[data-theme="dark"] .pub-toc .niv3 {
+        color: #555555 !important;
+    }
+    .pub-toc ul {
+        background: transparent !important;
+    }
+
+}
+
+/* Forensisch Bronopvragings- en Contactvenster (Modal) */
+.bm-modal-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.65); z-index: 1000;
+    display: none; align-items: center; justify-content: center;
+    padding: 20px; backdrop-filter: blur(2px);
+}
+.bm-modal-overlay.bm-open { display: flex; }
+.bm-modal-dialog {
+    background: #ffffff; color: #222222; border-radius: 8px;
+    max-width: 680px; width: 100%; max-height: 90vh; overflow-y: auto;
+    padding: 24px 28px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    border: 1px solid #d5d0c5; font-family: Aptos, Calibri, sans-serif;
+    position: relative; box-sizing: border-box; text-align: left;
+}
+.bm-modal-kop {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    border-bottom: 2px solid #1a3c6e; padding-bottom: 12px; margin-bottom: 16px;
+}
+.bm-modal-kop h3 {
+    margin: 0; font-size: 16pt; color: #1a3c6e; border: none; padding: 0;
+}
+.bm-modal-sluit {
+    background: none; border: none; font-size: 22pt; line-height: 1;
+    color: #888; cursor: pointer; padding: 0 4px;
+}
+.bm-modal-sluit:hover { color: #c62828; }
+.bm-intro {
+    font-size: 10pt; line-height: 1.5; color: #555555; background: #f7f5f1;
+    padding: 10px 14px; border-left: 3px solid #1a3c6e; border-radius: 3px;
+    margin-bottom: 18px;
+}
+.bm-groep { margin-bottom: 14px; }
+.bm-groep label.bm-label {
+    display: block; font-weight: 700; font-size: 10.5pt; color: #1a3c6e; margin-bottom: 5px;
+}
+.bm-input, .bm-textarea {
+    width: 100%; box-sizing: border-box; padding: 8px 12px;
+    border: 1px solid #ccc; border-radius: 4px; font-family: inherit;
+    font-size: 10.5pt; background: #faf8f5; color: #222;
+}
+.bm-input:focus, .bm-textarea:focus {
+    border-color: #1a3c6e; background: #fff; outline: none;
+}
+.bm-textarea { min-height: 90px; resize: vertical; }
+.bm-radio-groep {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px;
+}
+@media (max-width: 580px) {
+    .bm-radio-groep { grid-template-columns: 1fr; }
+}
+.bm-radio-optie {
+    display: flex; align-items: flex-start; gap: 8px; background: #f9f8f6;
+    border: 1px solid #e2ddd5; padding: 8px 10px; border-radius: 4px;
+    font-size: 9.5pt; cursor: pointer;
+}
+.bm-radio-optie:hover { border-color: #1a3c6e; background: #f0f4f9; }
+.bm-radio-optie input { margin-top: 2px; }
+.bm-check-groep {
+    display: flex; align-items: flex-start; gap: 8px; font-size: 9.5pt;
+    color: #444; margin: 14px 0 18px;
+}
+.bm-knoppen { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+.bm-btn-mail {
+    background: #1a3c6e; color: #ffffff; border: 1px solid #1a3c6e;
+    padding: 8px 16px; border-radius: 4px; font-size: 10.5pt; font-weight: 700;
+    cursor: pointer; transition: background .15s;
+}
+.bm-btn-mail:hover { background: #122b50; }
+.bm-btn-copy {
+    background: #f0eee9; color: #333; border: 1px solid #d5d0c5;
+    padding: 8px 14px; border-radius: 4px; font-size: 10.5pt; font-weight: 600;
+    cursor: pointer; transition: all .15s;
+}
+.bm-btn-copy:hover { background: #e2ded5; }
+.bm-btn-copy.bm-copied { background: #2e7d32; color: #ffffff; border-color: #2e7d32; }
+
+@media (max-width: 1320px) {
+    .pub-nav { padding: 10px 20px; }
+    .pub-nav .pub-nav-actions {
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 6px;
+        margin-left: 0;
+    }
+}
+@media (max-width: 768px) {
+    body {
+        margin: 0 !important;
+        padding: 16pt 24pt !important;
+        padding-left: max(24pt, env(safe-area-inset-left)) !important;
+        padding-right: max(20pt, env(safe-area-inset-right)) !important;
+        padding-bottom: 120px !important;
+        font-size: 11pt !important;
+    }
+    .pub-top {
+        bottom: 16px !important; right: 16px !important;
+        width: 38px !important; height: 38px !important; font-size: 15pt !important;
+        opacity: 0.88;
+    }
+    .dm-toggle {
+        bottom: 62px !important; right: 16px !important;
+        width: 38px !important; height: 38px !important; font-size: 15pt !important;
+        opacity: 0.88;
+    }
+    p {
+        margin-top: 0 !important;
+        margin-bottom: 14pt !important;
+        line-height: 1.65 !important;
+        font-size: 11pt !important;
+    }
+    .entry { margin-bottom: 8pt !important; padding: 7pt 10pt !important; line-height: 1.4 !important; }
+    .pub-nav {
+        position: static !important; /* Scrolls away naturally with the page — never blocks 50% of the mobile screen! */
+        padding: 8px 14px !important;
+        margin: -16pt -24pt 16pt -24pt !important;
+        background: #ffffff;
+        border-bottom: 1px solid #d5d0c5;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 6px !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        white-space: nowrap !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        box-sizing: border-box !important;
+        max-width: calc(100% + 48pt) !important;
+    }
+    .pub-nav::-webkit-scrollbar { display: none !important; }
+    .pub-nav .links {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        gap: 6px !important;
+        width: auto !important;
+    }
+    .pub-nav a {
+        padding: 6px 11px !important;
+        font-size: 9.5pt !important;
+        min-height: 32px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        border-radius: 4px !important;
+        box-sizing: border-box !important;
+    }
+    .pub-nav .titel-klein { display: none !important; }
+    .pub-nav .pub-nav-actions {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        flex-shrink: 0 !important;
+        margin-left: 4px !important;
+    }
+    html[data-theme="dark"] .pub-nav {
+        background: #1e1e1e !important;
+        border-bottom: 1px solid #333333 !important;
+    }
+    html[data-theme="dark"] .pub-nav a {
+        background: #252525 !important;
+        border: 1px solid #3a3a3a !important;
+        color: #b0c8e8 !important;
+    }
+    html[data-theme="dark"] .pub-nav a.actief {
+        background: #4a6fa5 !important;
+        border-color: #7fb3ff !important;
+        color: #ffffff !important;
+    }
+    html[data-theme="dark"] .pub-nav a.home {
+        background: #252525 !important;
+        border-color: #4a4a4a !important;
+        color: #b0c8e8 !important;
+    }
+    .pub-contact-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 34px; max-width: 100%; box-sizing: border-box; }
+    .d0-rep-card { width: 154px !important; min-width: 144px !important; }
+    .pub-toc { padding: 10pt 14pt; }
+    .pub-toc .niv3 { padding-left: 20pt; }
+    .audit-bewijs { white-space: normal; flex-wrap: wrap; }
+    .bm-modal-dialog { padding: 18px 16px; width: 95%; max-height: 94vh; }
+    .bm-modal-kop h3 { font-size: 14pt; }
+    .bm-intro { font-size: 9.5pt; padding: 8px 10px; }
+    .bm-input, .bm-textarea { font-size: 16px; } /* Prevents iOS auto-zoom */
+    .bm-radio-groep { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+    body {
+        margin: 0 !important;
+        padding: 14pt 20pt !important;
+        padding-left: max(24pt, env(safe-area-inset-left)) !important;
+        padding-right: max(20pt, env(safe-area-inset-right)) !important;
+        padding-bottom: 120px !important;
+    }
+    p {
+        margin-bottom: 14pt !important;
+        line-height: 1.65 !important;
+        font-size: 10.5pt !important;
+    }
+    .pub-nav { padding: 6px 10px !important; margin: -14pt -20pt 14pt -20pt !important; max-width: calc(100% + 40pt) !important; }
+    .pub-nav .links a { font-size: 9pt !important; padding: 5px 9px !important; min-height: 30px !important; }
+    .pub-contact-btn { width: 100%; justify-content: center; }
+    .audit-toolbar .at-pills { gap: 4px; }
+    .audit-toolbar .at-pill { font-size: 8.5pt; padding: 4px 8px; min-height: 34px; }
+}
+
+
+html[data-theme="dark"] { color-scheme: dark; }
+
+html[data-theme="dark"] body {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+
+/* === v9.3 — headings + grijs-fix === */
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h6 {
+    color: #7fb3ff !important;
+    border-color: #4a6fa5 !important;
+}
+html[data-theme="dark"] h5 {
+    color: #a8c5e8 !important;
+}
+
+html[data-theme="dark"] p.subtitel { color: #a8a8a8 !important; }
+html[data-theme="dark"] p.lead     { color: #b8b8b8 !important; }
+html[data-theme="dark"] p.tijd     { color: #a8a8a8 !important; }
+html[data-theme="dark"] .netwerk   { color: #b8b8b8 !important; }
+html[data-theme="dark"] .meta      { color: #c8c8c8 !important; }
+html[data-theme="dark"] .meta strong { color: #7fb3ff !important; }
+html[data-theme="dark"] .datum     { color: #f0f0f0 !important; }
+html[data-theme="dark"] .titel     { color: #e8e8e8 !important; }
+html[data-theme="dark"] .opvolging { color: #a8a8a8 !important; }
+html[data-theme="dark"] .oorsprong { color: #a8a8a8 !important; }
+html[data-theme="dark"] .caption   { color: #a8a8a8 !important; border-top-color: #3a3a3a !important; }
+
+html[data-theme="dark"] .richting-ontvangen { color: #7fb3ff !important; }
+html[data-theme="dark"] .richting-verzonden { color: #ff8a8a !important; }
+
+html[data-theme="dark"] .entry.technisch {
+    background: #232323;
+    border-left-color: #4a4a4a;
+    color: #a8a8a8;
+}
+html[data-theme="dark"] .entry.technisch .datum { color: #909090 !important; }
+html[data-theme="dark"] .entry.technisch .titel { color: #b0b0b0 !important; }
+html[data-theme="dark"] .entry.technisch .opvolging { color: #808080 !important; }
+html[data-theme="dark"] .entry.technisch .richting-ontvangen { color: #8fa8c8 !important; }
+html[data-theme="dark"] .entry.technisch .richting-verzonden { color: #c89090 !important; }
+html[data-theme="dark"] .entry.praktisch {
+    background: #1e1e1e; border-left-color: #2e2e2e; color: #808080;
+}
+html[data-theme="dark"] .entry.praktisch .datum { color: #707070 !important; }
+html[data-theme="dark"] .entry.praktisch .titel { color: #858585 !important; }
+html[data-theme="dark"] .entry.praktisch .opvolging { color: #707070 !important; }
+html[data-theme="dark"] .entry.praktisch .richting-ontvangen { color: #6a80a0 !important; }
+html[data-theme="dark"] .entry.praktisch .richting-verzonden { color: #a07070 !important; }
+
+html[data-theme="dark"] .technisch-notice {
+    background: #232323; color: #a8a8a8 !important; border-left-color: #4a4a4a;
+}
+
+/* === Voetnoten — waren te donker === */
+html[data-theme="dark"] .footnotes,
+html[data-theme="dark"] .footnotes p {
+    color: #b0b0b0 !important;
+}
+html[data-theme="dark"] .footnotes strong {
+    color: #7fb3ff !important;
+}
+
+html[data-theme="dark"] hr { border-top-color: #3a3a3a; }
+html[data-theme="dark"] .titelblad h1 { color: #7fb3ff !important; }
+html[data-theme="dark"] .titelblad .ondertitel { color: #c8c8c8 !important; }
+html[data-theme="dark"] .titelblad .documentaanduiding { color: #7fb3ff !important; }
+html[data-theme="dark"] .titelblad .auteur,
+html[data-theme="dark"] .titelblad .meta-lijn { color: #a8a8a8 !important; }
+html[data-theme="dark"] .gebruikersaanwijzing p { color: #c8c8c8 !important; }
+html[data-theme="dark"] table th { background: #2e4a72; border-color: #2e4a72; }
+html[data-theme="dark"] table td {
+    background: #232323; border-color: #3a3a3a; color: #d0d0d0;
+}
+html[data-theme="dark"] tr:nth-child(even) td { background: #2a2a2a; }
+html[data-theme="dark"] .figure { background: #232323; border-color: #3a3a3a; }
+html[data-theme="dark"] .figure svg { background: transparent; }
+html[data-theme="dark"] .intro-rechten {
+    background: #232323; color: #b8b8b8; border-left-color: #4a6fa5;
+}
+html[data-theme="dark"] .actie { background: #2a2440; color: #d0d0d0; }
+html[data-theme="dark"] .afsluiting { background: #2a2440; color: #d0d0d0; }
+html[data-theme="dark"] .werkversie { background: #332c14; color: #d0c090; }
+html[data-theme="dark"] .noot { color: #a8a8a8 !important; border-top-color: #3a3a3a; }
+html[data-theme="dark"] a { color: #7fb3ff; }
+
+/* === Actor-blokken (Document C) === */
+html[data-theme="dark"] .actor { border-bottom-color: #3a3a3a; }
+html[data-theme="dark"] .actor-naam { color: #e0e0e0 !important; }
+html[data-theme="dark"] .actor-rol  { color: #7fb3ff !important; }
+
+/* === Sectie-banners (Document C) === */
+html[data-theme="dark"] .banner-be {
+    background: #2a1c1c; border-left-color: #ff8a8a;
+}
+html[data-theme="dark"] .banner-be strong { color: #ff8a8a !important; }
+html[data-theme="dark"] .banner-nl {
+    background: #1c2129; border-left-color: #7fb3ff;
+}
+html[data-theme="dark"] .banner-nl strong { color: #7fb3ff !important; }
+html[data-theme="dark"] .banner-eu {
+    background: #1c2628; border-left-color: #5fc8cc;
+}
+html[data-theme="dark"] .banner-eu strong { color: #5fc8cc !important; }
+
+/* === Inline badges === */
+html[data-theme="dark"] .badge-be  { color: #ff8a8a !important; }
+html[data-theme="dark"] .badge-nl  { color: #7fb3ff !important; }
+html[data-theme="dark"] .badge-mem { color: #ffb380 !important; }
+html[data-theme="dark"] .badge-eu  { color: #5fc8cc !important; }
+
+/* === Sectorkoppen (Document E) === */
+html[data-theme="dark"] .sector-titel { color: #7fb3ff !important; }
+html[data-theme="dark"] .recht-kop-wrapper { border-bottom-color: #4a6fa5; }
+html[data-theme="dark"] .legend-row { color: #c0c0c0; }
+
+/* === Contactblok === */
+html[data-theme="dark"] .contactblok {
+    background: #232323; border-left-color: #4a6fa5;
+}
+html[data-theme="dark"] .contactblok a { color: #7fb3ff !important; }
+
+/* === Navigatie === */
+html[data-theme="dark"] .pub-nav {
+    background: #1e1e1e !important;
+    border-bottom: 1px solid #333333 !important;
+}
+html[data-theme="dark"] .pub-nav a {
+    color: #b0c8e8 !important;
+    background: #252525 !important;
+    border: 1px solid #3a3a3a !important;
+}
+html[data-theme="dark"] .pub-nav a:hover {
+    background: #333333 !important;
+    border-color: #555555 !important;
+    color: #ffffff !important;
+}
+html[data-theme="dark"] .pub-nav a.actief {
+    background: #4a6fa5 !important;
+    border-color: #7fb3ff !important;
+    color: #ffffff !important;
+}
+html[data-theme="dark"] .pub-nav a.home {
+    background: #252525 !important;
+    border-color: #4a4a4a !important;
+    color: #b0c8e8 !important;
+}
+html[data-theme="dark"] .pub-nav .titel-klein { color: #888 !important; }
+
+html[data-theme="dark"] .pub-toc {
+    background: #232323; border-left-color: #4a6fa5;
+}
+html[data-theme="dark"] .pub-toc a { color: #b0c8e8 !important; }
+html[data-theme="dark"] .pub-toc .niv3 { color: #888 !important; }
+html[data-theme="dark"] .audit-toolbar {
+    background: #232323; border-color: #3a3a3a; border-left-color: #7fb3ff;
+}
+html[data-theme="dark"] .audit-toolbar .at-stats {
+    color: #d0d0d0; border-bottom-color: #3a3a3a;
+}
+html[data-theme="dark"] .audit-toolbar .at-verified { color: #81c784; }
+html[data-theme="dark"] .audit-toolbar .at-live-count {
+    background: #1a1a1a; color: #b0c8e8;
+}
+html[data-theme="dark"] .audit-toolbar .at-search,
+html[data-theme="dark"] .audit-toolbar .at-select {
+    background: #1a1a1a; border-color: #4a4a4a; color: #e8e8e8;
+}
+html[data-theme="dark"] .audit-toolbar .at-pill {
+    background: #1a1a1a; border-color: #4a4a4a; color: #c8c8c8;
+}
+html[data-theme="dark"] .audit-toolbar .at-pill.actief {
+    background: #4a6fa5; border-color: #7fb3ff; color: #ffffff;
+}
+html[data-theme="dark"] .audit-org-bar {
+    background: #232323;
+}
+html[data-theme="dark"] .audit-org-stat { color: #a8a8a8; }
+html[data-theme="dark"] .audit-crosslink { color: #7fb3ff !important; }
+html[data-theme="dark"] .audit-bewijs {
+    background: #262930; border-color: #3e4452; color: #a8b5c8;
+}
+html[data-theme="dark"] .entry { background-color: #24272c; }
+html[data-theme="dark"] .entry-in {
+    background-color: #1e2633 !important;
+    border-left-color: #4a88d9 !important;
+}
+html[data-theme="dark"] .entry-in .datum { color: #7fb3ff !important; }
+html[data-theme="dark"] .entry-uit {
+    background-color: #332024 !important;
+    border-right-color: #d9534f !important;
+}
+html[data-theme="dark"] .entry-uit .datum { color: #ff8a8a !important; }
+html[data-theme="dark"] .entry.technisch, html[data-theme="dark"] .entry.praktisch {
+    background-color: transparent !important;
+    border-top-color: #444 !important;
+    border-bottom-color: #444 !important;
+    color: #999 !important;
+}
+html[data-theme="dark"] .entry.technisch .datum, html[data-theme="dark"] .entry.praktisch .datum { color: #888 !important; }
+html[data-theme="dark"] .entry.technisch .titel, html[data-theme="dark"] .entry.praktisch .titel { color: #aaa !important; }
+
+html[data-theme="dark"] .pub-footer {
+    border-top-color: #3a3a3a; color: #888;
+}
+html[data-theme="dark"] .pub-footer a { color: #b0c8e8 !important; }
+html[data-theme="dark"] .pub-naar-boven { color: #888 !important; }
+html[data-theme="dark"] .pub-naar-boven:hover { color: #b0c8e8 !important; }
+html[data-theme="dark"] .dm-toggle {
+    background: #232323; border-color: #4a4a4a; color: #e0e0e0;
+}
+html[data-theme="dark"] .dm-toggle:hover {
+    background: #2a2a2a; border-color: #7fb3ff;
+}
+
+/* === SVG dark-mode === */
+html[data-theme="dark"] .figure svg {
+    filter: invert(0.88) hue-rotate(180deg);
+}
+html[data-theme="dark"] .figure {
+    background: #1e1e1e;
+}
+html[data-theme="dark"] .figure img {
+    filter: invert(0.88) hue-rotate(180deg);
+}
+
+/* === v9.4 — intro-rij accenten === */
+html[data-theme="dark"] .intro-rij[lang="nl"] {
+    --accent: #ff9147 !important;
+    --accent-soft: #3a2814 !important;
+}
+html[data-theme="dark"] .intro-rij[lang="en"] {
+    --accent: #7fb3ff !important;
+    --accent-soft: #1c2940 !important;
+}
+html[data-theme="dark"] .intro-rij[lang="de"] {
+    --accent: #ff8080 !important;
+    --accent-soft: #3a1c1c !important;
+}
+html[data-theme="dark"] .intro-rij[lang="fr"] {
+    --accent: #7fb3ff !important;
+    --accent-soft: #1c2940 !important;
+}
+
+/* Subtiel wit randje voor extra leesbaarheid */
+html[data-theme="dark"] .intro-rij h3 { color: #7fb3ff !important; }
+
+html[data-theme="dark"] .pub-contact-btn {
+    background: #232323; color: #b0c8e8; border-color: #4a4a4a;
+}
+html[data-theme="dark"] .pub-contact-btn:hover {
+    background: #2a2a2a; border-color: #7fb3ff; color: #ffffff;
+}
+html[data-theme="dark"] .audit-bewijs:hover {
+    border-color: #7fb3ff !important; background: #2f3642 !important;
+    box-shadow: 0 1px 6px rgba(127,179,255,0.25);
+}
+html[data-theme="dark"] .bm-modal-dialog {
+    background: #202226; color: #e0e0e0; border-color: #3a3f48;
+}
+html[data-theme="dark"] .bm-modal-kop { border-bottom-color: #4a6fa5; }
+html[data-theme="dark"] .bm-modal-kop h3 { color: #7fb3ff !important; }
+html[data-theme="dark"] .bm-intro {
+    background: #282c34; border-left-color: #7fb3ff; color: #b8b8b8;
+}
+html[data-theme="dark"] .bm-groep label.bm-label { color: #7fb3ff !important; }
+html[data-theme="dark"] .bm-input,
+html[data-theme="dark"] .bm-textarea {
+    background: #181a1f; border-color: #3e4450; color: #e8e8e8;
+}
+html[data-theme="dark"] .bm-input:focus,
+html[data-theme="dark"] .bm-textarea:focus {
+    border-color: #7fb3ff; background: #1f2229;
+}
+html[data-theme="dark"] .bm-radio-optie {
+    background: #262930; border-color: #3e4450; color: #d0d0d0;
+}
+html[data-theme="dark"] .bm-radio-optie:hover {
+    background: #2f3440; border-color: #7fb3ff;
+}
+html[data-theme="dark"] .bm-check-groep { color: #b0b0b0; }
+html[data-theme="dark"] .bm-btn-mail {
+    background: #4a6fa5; border-color: #4a6fa5; color: #ffffff;
+}
+html[data-theme="dark"] .bm-btn-mail:hover { background: #395782; }
+html[data-theme="dark"] .bm-btn-copy {
+    background: #2a2e36; border-color: #404754; color: #e0e0e0;
+}
+html[data-theme="dark"] .bm-btn-copy:hover {
+    background: #353b47; border-color: #7fb3ff;
+}
+
+html[data-theme="dark"] .intro-rij a.goto {
+    text-shadow: 0 0 1px rgba(255,255,255,0.25),
+                 0 0 3px rgba(255,255,255,0.10);
+}
+
+
+/* Forensisch Bronopvragings- en Contactvenster (Modal) */
+.pub-contact-btn {
+    background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
+    padding: 5px 12px; border-radius: 4px; font-size: 10pt; font-weight: 600;
+    cursor: pointer; font-family: inherit; transition: all .15s;
+    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+}
+.pub-contact-btn:hover { background: #1a3c6e; color: #ffffff; border-color: #1a3c6e; }
+.pub-contact-footer { margin: 10pt 0 4pt; font-size: 10.5pt; padding: 7px 16px; }
+
+.audit-bewijs { cursor: pointer; transition: border-color .15s, background .15s, box-shadow .15s; }
+.audit-bewijs:hover {
+    border-color: #1a3c6e; background: #e6edf7;
+    box-shadow: 0 1px 4px rgba(26,60,110,0.18);
+}
+
+.bm-modal-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.65); z-index: 1000;
+    display: none; align-items: center; justify-content: center;
+    padding: 20px; backdrop-filter: blur(2px);
+}
+.bm-modal-overlay.bm-open { display: flex; }
+.bm-modal-dialog {
+    background: #ffffff; color: #222222; border-radius: 8px;
+    max-width: 680px; width: 100%; max-height: 90vh; overflow-y: auto;
+    padding: 24px 28px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    border: 1px solid #d5d0c5; font-family: Aptos, Calibri, sans-serif;
+    position: relative; box-sizing: border-box; text-align: left;
+}
+.bm-modal-kop {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    border-bottom: 2px solid #1a3c6e; padding-bottom: 12px; margin-bottom: 16px;
+}
+.bm-modal-kop h3 {
+    margin: 0; font-size: 16pt; color: #1a3c6e; border: none; padding: 0;
+}
+.bm-modal-sluit {
+    background: none; border: none; font-size: 22pt; line-height: 1;
+    color: #888; cursor: pointer; padding: 0 4px;
+}
+.bm-modal-sluit:hover { color: #c62828; }
+.bm-intro {
+    font-size: 10pt; line-height: 1.5; color: #555555; background: #f7f5f1;
+    padding: 10px 14px; border-left: 3px solid #1a3c6e; border-radius: 3px;
+    margin-bottom: 18px;
+}
+.bm-groep { margin-bottom: 14px; }
+.bm-groep label.bm-label {
+    display: block; font-weight: 700; font-size: 10.5pt; color: #1a3c6e; margin-bottom: 5px;
+}
+.bm-input, .bm-textarea {
+    width: 100%; box-sizing: border-box; padding: 8px 12px;
+    border: 1px solid #ccc; border-radius: 4px; font-family: inherit;
+    font-size: 10.5pt; background: #faf8f5; color: #222;
+}
+.bm-input:focus, .bm-textarea:focus {
+    border-color: #1a3c6e; background: #fff; outline: none;
+}
+.bm-textarea { min-height: 90px; resize: vertical; }
+.bm-radio-groep {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px;
+}
+@media (max-width: 580px) {
+    .bm-radio-groep { grid-template-columns: 1fr; }
+}
+.bm-radio-optie {
+    display: flex; align-items: flex-start; gap: 8px; background: #f9f8f6;
+    border: 1px solid #e2ddd5; padding: 8px 10px; border-radius: 4px;
+    font-size: 9.5pt; cursor: pointer;
+}
+.bm-radio-optie:hover { border-color: #1a3c6e; background: #f0f4f9; }
+.bm-radio-optie input { margin-top: 2px; }
+.bm-check-groep {
+    display: flex; align-items: flex-start; gap: 8px; font-size: 9.5pt;
+    color: #444; margin: 14px 0 18px;
+}
+.bm-knoppen { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+.bm-btn-mail {
+    background: #1a3c6e; color: #ffffff; border: 1px solid #1a3c6e;
+    padding: 8px 16px; border-radius: 4px; font-size: 10.5pt; font-weight: 700;
+    cursor: pointer; transition: background .15s;
+}
+.bm-btn-mail:hover { background: #122b50; }
+.bm-btn-copy {
+    background: #f0eee9; color: #333; border: 1px solid #d5d0c5;
+    padding: 8px 14px; border-radius: 4px; font-size: 10.5pt; font-weight: 600;
+    cursor: pointer; transition: all .15s;
+}
+.bm-btn-copy:hover { background: #e2ded5; }
+.bm-btn-copy.bm-copied { background: #2e7d32; color: #ffffff; border-color: #2e7d32; }
+
+@media (max-width: 768px) {
+    .pub-contact-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 38px; }
+    .bm-modal-dialog { padding: 18px 16px; width: 95%; max-height: 94vh; }
+    .bm-modal-kop h3 { font-size: 14pt; }
+    .bm-intro { font-size: 9.5pt; padding: 8px 10px; }
+    .bm-input, .bm-textarea { font-size: 16px; }
+    .bm-radio-groep { grid-template-columns: 1fr; }
+}
+
+/* Modal Dark-Mode */
+html[data-theme="dark"] .pub-contact-btn {
+    background: #232323; color: #b0c8e8; border-color: #4a4a4a;
+}
+html[data-theme="dark"] .pub-contact-btn:hover {
+    background: #2a2a2a; border-color: #7fb3ff; color: #ffffff;
+}
+html[data-theme="dark"] .audit-bewijs:hover {
+    border-color: #7fb3ff !important; background: #2f3642 !important;
+    box-shadow: 0 1px 6px rgba(127,179,255,0.25);
+}
+html[data-theme="dark"] .bm-modal-dialog {
+    background: #202226; color: #e0e0e0; border-color: #3a3f48;
+}
+html[data-theme="dark"] .bm-modal-kop { border-bottom-color: #4a6fa5; }
+html[data-theme="dark"] .bm-modal-kop h3 { color: #7fb3ff !important; }
+html[data-theme="dark"] .bm-intro {
+    background: #282c34; border-left-color: #7fb3ff; color: #b8b8b8;
+}
+html[data-theme="dark"] .bm-groep label.bm-label { color: #7fb3ff !important; }
+html[data-theme="dark"] .bm-input,
+html[data-theme="dark"] .bm-textarea {
+    background: #181a1f; border-color: #3e4450; color: #e8e8e8;
+}
+html[data-theme="dark"] .bm-input:focus,
+html[data-theme="dark"] .bm-textarea:focus {
+    border-color: #7fb3ff; background: #1f2229;
+}
+html[data-theme="dark"] .bm-radio-optie {
+    background: #262930; border-color: #3e4450; color: #d0d0d0;
+}
+html[data-theme="dark"] .bm-radio-optie:hover {
+    background: #2f3440; border-color: #7fb3ff;
+}
+html[data-theme="dark"] .bm-check-groep { color: #b0b0b0; }
+html[data-theme="dark"] .bm-btn-mail {
+    background: #4a6fa5; border-color: #4a6fa5; color: #ffffff;
+}
+html[data-theme="dark"] .bm-btn-mail:hover { background: #395782; }
+html[data-theme="dark"] .bm-btn-copy {
+    background: #2a2e36; border-color: #404754; color: #e0e0e0;
+}
+html[data-theme="dark"] .bm-btn-copy:hover {
+    background: #353b47; border-color: #7fb3ff;
+}
+
+/* Taal-kiezer styling in navigatie */
+.pub-lang-switch {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: #eef2f7; padding: 2px 4px; border-radius: 4px;
+    border: 1px solid #d5d0c5;
+}
+.pub-lang-btn {
+    text-decoration: none; font-size: 9.5pt; font-weight: 600;
+    color: #1a3c6e; padding: 3px 7px; border-radius: 3px;
+    transition: background .15s, color .15s;
+}
+.pub-lang-btn:hover { background: #dce6f2; }
+.pub-lang-btn.actief { background: #1a3c6e; color: #ffffff !important; }
+
+html[data-theme="dark"] .pub-lang-switch { background: #1f2229; border-color: #3e4450; }
+html[data-theme="dark"] .pub-lang-btn { color: #b0c8e8; }
+html[data-theme="dark"] .pub-lang-btn:hover { background: #2a3342; }
+html[data-theme="dark"] .pub-lang-btn.actief { background: #4a6fa5; color: #ffffff !important; }
+
+/* Google Translate Widget & Frame Styling */
+.goog-te-banner-frame, .skiptranslate iframe, #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+body { top: 0px !important; position: static !important; }
+.goog-text-highlight { background: transparent !important; box-shadow: none !important; }
+font[style] { background: transparent !important; box-shadow: none !important; }
+
+.pub-lang-select, #int-lang-select {
+    font-family: inherit; font-size: 10pt; font-weight: 600;
+    padding: 4px 8px; border: 1px solid #d5d0c5; border-radius: 4px;
+    background-color: #ffffff; color: #1a3c6e; cursor: pointer;
+    color-scheme: light;
+}
+.pub-lang-select option, #int-lang-select option {
+    background-color: #ffffff; color: #1a3c6e;
+    color-scheme: light;
+}
+html[data-theme="dark"] .pub-lang-select,
+html[data-theme="dark"] #int-lang-select,
+html[data-theme="dark"] select.pub-lang-select {
+    background-color: #232323 !important;
+    background: #232323 !important;
+    border-color: #4a4a4a !important;
+    color: #e0e0e0 !important;
+    color-scheme: dark !important;
+}
+html[data-theme="dark"] .pub-lang-select option,
+html[data-theme="dark"] #int-lang-select option,
+html[data-theme="dark"] select.pub-lang-select option {
+    background-color: #232323 !important;
+    background: #232323 !important;
+    color: #e0e0e0 !important;
+    color-scheme: dark !important;
+}
+
+/* === Audit Neurale Audiospeler (.audit-audio-bar) === */
+
+.audit-audio-bar {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    background: #f4f1ea;
+
+    border: 1px solid #dcd7cc;
+
+    border-left: 4px solid #1a3c6e;
+
+    border-radius: 6px;
+
+    padding: 8px 14px;
+
+    margin: 12pt 0 16pt 0;
+
+    font-family: Aptos, Calibri, sans-serif;
+
+    box-sizing: border-box;
+
+    width: 100%;
+
+}
+
+.aab-play-btn {
+
+    background: #1a3c6e;
+
+    color: #ffffff;
+
+    border: none;
+
+    border-radius: 50%;
+
+    width: 36px;
+
+    height: 36px;
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 13pt;
+
+    flex-shrink: 0;
+
+    transition: transform .15s ease, background-color .15s ease;
+
+}
+
+.aab-play-btn:hover { background: #2a5298; transform: scale(1.05); }
+
+.aab-play-btn.aab-playing { background: #8b1e1e; }
+
+.aab-info {
+
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+.aab-meta {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    font-size: 9.5pt;
+
+    line-height: 1.2;
+
+}
+
+.aab-badge {
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    color: #1a3c6e;
+
+    font-size: 8.5pt;
+
+}
+
+.aab-title {
+
+    color: #333333;
+
+    font-weight: 500;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+.aab-time {
+
+    margin-left: auto;
+
+    color: #666666;
+
+    font-family: Consolas, monospace;
+
+    font-size: 9pt;
+
+}
+
+.aab-progress-wrap {
+
+    width: 100%;
+
+    height: 6px;
+
+    background: #e0dbce;
+
+    border-radius: 3px;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+}
+
+.aab-progress-bar { width: 100%; height: 100%; }
+
+.aab-progress-fill {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: #1a3c6e;
+
+    border-radius: 3px;
+
+    transition: width 0.1s linear;
+
+}
+
+.aab-controls {
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+}
+
+.aab-speed-btn {
+
+    background: #ffffff;
+
+    border: 1px solid #dcd7cc;
+
+    border-radius: 4px;
+
+    color: #1a3c6e;
+
+    font-weight: 600;
+
+    font-size: 9pt;
+
+    padding: 3px 8px;
+
+    cursor: pointer;
+
+}
+
+.aab-speed-btn:hover { background: #e8e4db; }
+
+
+
+.aab-next-btn {
+
+    background: #1a3c6e;
+
+    border: 1px solid #1a3c6e;
+
+    border-radius: 4px;
+
+    color: #ffffff;
+
+    font-weight: 600;
+
+    font-size: 8.8pt;
+
+    padding: 4px 10px;
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    white-space: nowrap;
+
+    transition: background .15s ease, transform .12s ease;
+
+}
+
+.aab-next-btn:hover {
+
+    background: #2a5298;
+
+    border-color: #2a5298;
+
+    transform: translateY(-1px);
+
+}
+
+
+
+/* === Vermelding bovenaan document: Luistermodus / Audio-Playlist === */
+
+.audit-playlist-topbanner {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+
+    max-width: 860px;
+
+    margin: 14pt 0 22pt 0;
+
+    padding: 12px 16px;
+
+    border-radius: 8px;
+
+    background: #eef3f9;
+
+    border: 1px solid #c5d4e8;
+
+    border-left: 4px solid #1a3c6e;
+
+    font-family: Aptos, Calibri, sans-serif;
+
+    box-sizing: border-box;
+
+}
+
+.apt-info {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    flex: 1;
+
+    min-width: 240px;
+
+}
+
+.apt-icon {
+
+    font-size: 16pt;
+
+    line-height: 1.1;
+
+    flex-shrink: 0;
+
+}
+
+.apt-text {
+
+    font-size: 9.8pt;
+
+    line-height: 1.45;
+
+    color: #2c3e50;
+
+}
+
+.apt-text strong { color: #1a3c6e; }
+
+.apt-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    flex-shrink: 0;
+
+}
+
+.apt-btn {
+
+    font-size: 9.2pt;
+
+    font-weight: 600;
+
+    padding: 6px 12px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    text-decoration: none !important;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    white-space: nowrap;
+
+    transition: all .15s ease;
+
+    font-family: inherit;
+
+}
+
+.apt-btn-play {
+
+    background: #1a3c6e;
+
+    color: #ffffff !important;
+
+    border: 1px solid #1a3c6e;
+
+}
+
+.apt-btn-play:hover { background: #2a5298; }
+
+.apt-btn-jump {
+
+    background: #ffffff;
+
+    color: #1a3c6e !important;
+
+    border: 1px solid #b5c7de;
+
+}
+
+.apt-btn-jump:hover { background: #e3ecf8; }
+
+
+
+/* === Audio-Playlist Sectie onderaan document (#audit-audio-playlist) === */
+
+.audit-playlist-sectie {
+
+    max-width: 860px;
+
+    margin: 38pt 0 24pt 0;
+
+    padding: 20px 22px;
+
+    border-radius: 10px;
+
+    background: #f4f1ea;
+
+    border: 1px solid #d5d0c5;
+
+    border-top: 4px solid #1a3c6e;
+
+    font-family: Aptos, Calibri, sans-serif;
+
+    box-sizing: border-box;
+
+}
+
+.aps-header { margin-bottom: 14px; }
+
+.aps-title-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 6px;
+
+}
+
+.aps-badge {
+
+    display: inline-block;
+
+    font-size: 8pt;
+
+    font-weight: 700;
+
+    letter-spacing: 0.6px;
+
+    text-transform: uppercase;
+
+    padding: 3px 8px;
+
+    border-radius: 4px;
+
+    background: #1a3c6e;
+
+    color: #ffffff;
+
+}
+
+.audit-playlist-sectie h2 {
+
+    margin: 4pt 0 6pt 0 !important;
+
+    font-size: 15pt !important;
+
+    border: none !important;
+
+    padding: 0 !important;
+
+    color: #1a3c6e;
+
+}
+
+.aps-desc {
+
+    font-size: 10pt !important;
+
+    line-height: 1.5 !important;
+
+    color: #4a4a4a;
+
+    margin-bottom: 12pt !important;
+
+}
+
+.aps-master-player {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+
+    padding: 12px 16px;
+
+    border-radius: 8px;
+
+    margin-bottom: 14px;
+
+    background: #ffffff;
+
+    border: 1px solid #dcd7cc;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+
+}
+
+.aps-mp-controls {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+
+}
+
+.aps-mp-play {
+
+    width: 44px;
+
+    height: 44px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: #1a3c6e;
+
+    color: #ffffff;
+
+    font-size: 14pt;
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: transform .15s, background .15s;
+
+}
+
+.aps-mp-play:hover { background: #2a5298; transform: scale(1.05); }
+
+.aps-mp-play.aps-playing { background: #8b1e1e; }
+
+.aps-mp-prev, .aps-mp-next {
+
+    width: 34px;
+
+    height: 34px;
+
+    border-radius: 50%;
+
+    border: 1px solid #d5d0c5;
+
+    background: #f8f6f2;
+
+    color: #1a3c6e;
+
+    font-size: 10.5pt;
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: background .15s;
+
+}
+
+.aps-mp-prev:hover, .aps-mp-next:hover { background: #e8e4db; }
+
+.aps-mp-info {
+
+    flex: 1;
+
+    min-width: 200px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+.aps-mp-meta {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 8.8pt;
+
+    font-weight: 700;
+
+    color: #1a3c6e;
+
+}
+
+.aps-mp-time {
+
+    font-family: Consolas, monospace;
+
+    font-weight: 500;
+
+    color: #666666;
+
+}
+
+.aps-mp-trackname {
+
+    font-size: 10pt;
+
+    font-weight: 600;
+
+    color: #222222;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}
+
+.aps-mp-progress-wrap {
+
+    width: 100%;
+
+    height: 7px;
+
+    background: #e0dbce;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+}
+
+.aps-mp-progress-bar { width: 100%; height: 100%; }
+
+.aps-mp-progress-fill {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: #1a3c6e;
+
+    border-radius: 4px;
+
+    transition: width 0.1s linear;
+
+}
+
+.aps-mp-extra {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+
+}
+
+.aps-autoplay-toggle {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    font-size: 9pt;
+
+    font-weight: 600;
+
+    color: #333333;
+
+    cursor: pointer;
+
+    user-select: none;
+
+}
+
+.aps-autoplay-toggle input { cursor: pointer; accent-color: #1a3c6e; }
+
+.aps-tracklist {
+
+    max-height: 420px;
+
+    overflow-y: auto;
+
+    border: 1px solid #dcd7cc;
+
+    border-radius: 6px;
+
+    background: #faf8f5;
+
+}
+
+.aps-track {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 8px 12px;
+
+    border-bottom: 1px solid #eae6dd;
+
+    cursor: pointer;
+
+    transition: background .12s;
+
+    font-size: 9.8pt;
+
+    color: #222222;
+
+}
+
+.aps-track:last-child { border-bottom: none; }
+
+.aps-track:hover { background: #eef2f7; }
+
+.aps-track.aps-active {
+
+    background: #e3ecf8;
+
+    font-weight: 600;
+
+    border-left: 3px solid #1a3c6e;
+
+}
+
+.aps-t-num {
+
+    font-family: Consolas, monospace;
+
+    font-size: 8.8pt;
+
+    color: #777777;
+
+    min-width: 24px;
+
+}
+
+.aps-t-icon {
+
+    width: 24px;
+
+    height: 24px;
+
+    border-radius: 50%;
+
+    background: #e8e4db;
+
+    color: #1a3c6e;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 8.5pt;
+
+    flex-shrink: 0;
+
+}
+
+.aps-track.aps-active .aps-t-icon {
+
+    background: #1a3c6e;
+
+    color: #ffffff;
+
+}
+
+.aps-track-title {
+
+    flex: 1;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+.aps-track-jump {
+
+    font-size: 8.5pt;
+
+    color: #555555;
+
+    text-decoration: none !important;
+
+    padding: 2px 8px;
+
+    border-radius: 4px;
+
+    border: 1px solid #d5d0c5;
+
+    background: #ffffff;
+
+    flex-shrink: 0;
+
+}
+
+.aps-track-jump:hover {
+
+    color: #1a3c6e;
+
+    border-color: #1a3c6e;
+
+    background: #eef3f9;
+
+}
+
+
+
+/* Dark-mode styling voor de audiospeler, topbanner en playlist */
+
+html[data-theme="dark"] .audit-audio-bar {
+
+    background: #23272e !important;
+
+    border-color: #363b45 !important;
+
+    border-left-color: #7fb3ff !important;
+
+}
+
+html[data-theme="dark"] .aab-play-btn {
+
+    background: #4a6fa5 !important;
+
+    color: #ffffff !important;
+
+}
+
+html[data-theme="dark"] .aab-play-btn:hover { background: #5c85c2 !important; }
+
+html[data-theme="dark"] .aab-play-btn.aab-playing { background: #d32f2f !important; }
+
+html[data-theme="dark"] .aab-badge { color: #7fb3ff !important; }
+
+html[data-theme="dark"] .aab-title { color: #e0e4ec !important; }
+
+html[data-theme="dark"] .aab-time { color: #9aa5b8 !important; }
+
+html[data-theme="dark"] .aab-progress-wrap { background: #323842 !important; }
+
+html[data-theme="dark"] .aab-progress-fill { background: #7fb3ff !important; }
+
+html[data-theme="dark"] .aab-speed-btn {
+
+    background: #2d333b !important;
+
+    border-color: #444c56 !important;
+
+    color: #7fb3ff !important;
+
+}
+
+html[data-theme="dark"] .aab-speed-btn:hover { background: #373e47 !important; }
+
+html[data-theme="dark"] .aab-next-btn {
+
+    background: #2b4c7e !important;
+
+    border-color: #4a6fa5 !important;
+
+    color: #e8f0fe !important;
+
+}
+
+html[data-theme="dark"] .aab-next-btn:hover {
+
+    background: #3b639e !important;
+
+    color: #ffffff !important;
+
+}
+
+html[data-theme="dark"] .audit-playlist-topbanner {
+
+    background: #1c232d !important;
+
+    border-color: #2f3b4c !important;
+
+    border-left-color: #58a6ff !important;
+
+}
+
+html[data-theme="dark"] .apt-text { color: #d0d8e4 !important; }
+
+html[data-theme="dark"] .apt-text strong { color: #79c0ff !important; }
+
+html[data-theme="dark"] .apt-btn-play {
+
+    background: #3867a6 !important;
+
+    border-color: #58a6ff !important;
+
+    color: #ffffff !important;
+
+}
+
+html[data-theme="dark"] .apt-btn-play:hover { background: #4a7ec2 !important; }
+
+html[data-theme="dark"] .apt-btn-jump {
+
+    background: #262c36 !important;
+
+    border-color: #444c56 !important;
+
+    color: #79c0ff !important;
+
+}
+
+html[data-theme="dark"] .apt-btn-jump:hover { background: #303846 !important; }
+
+html[data-theme="dark"] .audit-playlist-sectie {
+
+    background: #1b1f26 !important;
+
+    border-color: #323842 !important;
+
+    border-top-color: #58a6ff !important;
+
+}
+
+html[data-theme="dark"] .aps-badge {
+
+    background: #2b4c7e !important;
+
+    color: #cae0ff !important;
+
+}
+
+html[data-theme="dark"] .audit-playlist-sectie h2 { color: #79c0ff !important; }
+
+html[data-theme="dark"] .aps-desc { color: #a9b4c4 !important; }
+
+html[data-theme="dark"] .aps-master-player {
+
+    background: #232832 !important;
+
+    border-color: #363d4a !important;
+
+}
+
+html[data-theme="dark"] .aps-mp-play { background: #4a6fa5 !important; }
+
+html[data-theme="dark"] .aps-mp-play.aps-playing { background: #d32f2f !important; }
+
+html[data-theme="dark"] .aps-mp-prev,
+
+html[data-theme="dark"] .aps-mp-next {
+
+    background: #2d333b !important;
+
+    border-color: #444c56 !important;
+
+    color: #b0c8e8 !important;
+
+}
+
+html[data-theme="dark"] .aps-mp-prev:hover,
+
+html[data-theme="dark"] .aps-mp-next:hover { background: #373e47 !important; }
+
+html[data-theme="dark"] .aps-mp-meta { color: #79c0ff !important; }
+
+html[data-theme="dark"] .aps-mp-time { color: #9aa5b8 !important; }
+
+html[data-theme="dark"] .aps-mp-trackname { color: #e6edf3 !important; }
+
+html[data-theme="dark"] .aps-mp-progress-wrap { background: #323842 !important; }
+
+html[data-theme="dark"] .aps-mp-progress-fill { background: #58a6ff !important; }
+
+html[data-theme="dark"] .aps-autoplay-toggle { color: #c9d1d9 !important; }
+
+html[data-theme="dark"] .aps-autoplay-toggle input { accent-color: #58a6ff; }
+
+html[data-theme="dark"] .aps-tracklist {
+
+    background: #15181e !important;
+
+    border-color: #2d333b !important;
+
+}
+
+html[data-theme="dark"] .aps-track {
+
+    border-bottom-color: #222730 !important;
+
+    color: #c9d1d9 !important;
+
+}
+
+html[data-theme="dark"] .aps-track:hover { background: #20252d !important; }
+
+html[data-theme="dark"] .aps-track.aps-active {
+
+    background: #1e2a3a !important;
+
+    color: #ffffff !important;
+
+    border-left-color: #58a6ff !important;
+
+}
+
+html[data-theme="dark"] .aps-t-num { color: #8b949e !important; }
+
+html[data-theme="dark"] .aps-t-icon {
+
+    background: #2d333b !important;
+
+    color: #79c0ff !important;
+
+}
+
+html[data-theme="dark"] .aps-track.aps-active .aps-t-icon {
+
+    background: #4a6fa5 !important;
+
+    color: #ffffff !important;
+
+}
+
+html[data-theme="dark"] .aps-track-jump {
+
+    background: #21262d !important;
+
+    border-color: #363b42 !important;
+
+    color: #8b949e !important;
+
+}
+
+html[data-theme="dark"] .aps-track-jump:hover {
+
+    color: #79c0ff !important;
+
+    border-color: #58a6ff !important;
+
+}
+
+
+
+@media (max-width: 600px) {
+
+    .audit-audio-bar { flex-wrap: wrap; gap: 8px; padding: 8px 10px; }
+
+    .aab-controls { width: 100%; justify-content: flex-end; border-top: 1px solid rgba(128,128,128,0.18); padding-top: 6px; }
+
+    .aps-master-player { flex-direction: column; align-items: stretch; gap: 10px; }
+
+    .aps-mp-controls { justify-content: center; }
+
+    .aps-mp-extra { justify-content: space-between; }
+
+}
+
+
+
+/* Verberg de audiospeler en playlist bij het printen of PDF-genereren */
+
+@media print {
+
+    .audit-audio-bar,
+
+    .audit-playlist-topbanner,
+
+    .audit-playlist-sectie,
+
+    .toc-playlist-item { display: none !important; }
+
+}
+
 </style>
 <meta content="notranslate" name="google"/><script>
+(function(){try{var t=localStorage.getItem('systeem-audit-thema');if(t!=='dark'&&t!=='light'){t='dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+</script><script>
 (function(){try{var t=localStorage.getItem('systeem-audit-thema');if(t!=='dark'&&t!=='light'){t='dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
 </script></head>
 <body><a id="top"></a>
 <nav class="pub-nav">
-<div class="links"><a class="home" href="home.html" id="nav-home-link">← Overzicht</a> <a class="" href="document-0.html">Inleiding</a> <a class="" href="document-a.html">Narratief</a> <a class="" href="document-b.html">Data</a> <a class="actief" href="document-c.html">Visueel</a> <a class="" href="document-d.html">Synthese</a> <a class="" href="document-e.html">Rechten</a></div>
+<div class="links"><a class="home" href="home.html" id="nav-home-link">Overzicht</a> <a class="home" href="../int/document-c.html" id="nav-int-link" title="European &amp; International Portal">🇪🇺 Europees portaal</a> <a class="" href="document-0.html">Inleiding</a> <a class="" href="document-a.html">Narratief</a> <a class="" href="document-b.html">Data</a> <a class="actief" href="document-c.html">Visueel</a> <a class="" href="document-d.html">Synthese</a> <a class="" href="document-e.html">Rechten</a></div>
 <div class="pub-nav-actions">
-<select autocomplete="off" class="pub-lang-select notranslate" id="int-lang-select" onchange="wisselTaal(this.value)" style="display:none;" translate="no"><option value="nl">🇳🇱 NL (Nederlands)</option><option value="en">🇬🇧 EN (English)</option><option value="de">🇩🇪 DE (Deutsch)</option><option value="fr">🇫🇷 FR (Français)</option><option value="it">🇮🇹 IT (Italiano)</option><option value="es">🇪🇸 ES (Español)</option><option value="pl">🇵🇱 PL (Polski)</option><option value="da">🇩🇰 DA (Dansk)</option><option value="sv">🇸🇪 SV (Svenska)</option><option value="pt">🇵🇹 PT (Português)</option><option value="ro">🇷🇴 RO (Română)</option></select>
 </div>
 </nav>
-<script class="notranslate" translate="no">
-(function() {
-  if (window.location.search.indexOf('int=1') !== -1) {
-    var sel = document.getElementById('int-lang-select');
-    if (sel) sel.style.display = 'inline-block';
-    var intLink = document.getElementById('nav-int-link');
-    if (intLink) intLink.style.display = 'none';
-    var homeLink = document.getElementById('nav-home-link');
-    if (homeLink) homeLink.setAttribute('href', '../home_int.html');
-  }
-})();
-</script>
+<a id="top"></a>
 
 <div class="titelblad">
-<h1 id="systeem-audit">Systeem-Audit</h1><div class="pub-discreet-dl notranslate" translate="no"><span class="pdd-label">Downloads:</span> <a class="pdd-link" href="pdf/document-c.pdf" title="Download vaste PDF-lay-out van Document C">📄 PDF-versie</a> <span class="pdd-sep">·</span> <a class="pdd-link" href="docx/document-c.docx" title="Download bewerkbare Word-versie van Document C">📝 Word-versie (.docx)</a></div><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h1 id="systeem-audit">Systeem-Audit</h1><div class="pub-discreet-dl notranslate" translate="no"><span class="pdd-label">Downloads:</span> <a class="pdd-link" href="pdf/document-c.pdf" title="Download vaste PDF-lay-out van Document C">📄 PDF-versie</a> <span class="pdd-sep">·</span> <a class="pdd-link" href="docx/document-c.docx" title="Download bewerkbare Word-versie van Document C">📝 Word-versie (.docx)</a></div><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document C — De visuele architectuur</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 2 november 2026, 23:12</p>
+<p class="meta-lijn">Versie bijgewerkt: 3 november 2026, 12:52</p>
 </div>
-
-<div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
+<div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
 <li class="niv1"><a href="#systeem-audit">Systeem-Audit</a></li>
 <li class="niv1"><a href="#i-de-mens-en-de-grens">I. De mens en de grens</a></li>
 <li class="niv3"><a href="#twee-cellen-die-weigeren-samen-te-werken">Twee cellen die weigeren samen te werken</a></li>
@@ -2737,26 +5429,25 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <li class="niv3"><a href="#drie-knoppen-die-zonder-nieuwe-wet-direct-zeventien-blokkades-oplossen">Drie knoppen die zonder nieuwe wet direct zeventien blokkades oplossen</a></li>
 <li class="niv3"><a href="#slotplaat-van-twee-vijandige-muren-naar-twee-verbonden-cellen">Slotplaat: van twee vijandige muren naar twee verbonden cellen</a></li>
 </ul></div>
-
-<h1 id="i-de-mens-en-de-grens">I. De mens en de grens</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
-<h3 id="twee-cellen-die-weigeren-samen-te-werken">Twee cellen die weigeren samen te werken</h3><div class="audit-audio-bar notranslate" data-audio-id="docC_inleiding" data-audio-src="../assets/audio/docC_inleiding_nl_9a6ea6af.mp3" data-audio-src-de="../assets/audio/docC_inleiding_de_51688113.mp3" data-audio-src-en="../assets/audio/docC_inleiding_en_de00e7d8.mp3" data-audio-src-fr="../assets/audio/docC_inleiding_fr_f3776035.mp3" data-clean-text="Twee cellen die weigeren samen te werken. Twee buurlanden binnen één Europese Unie sluiten hun deuren hermetisch voor elkaar. Het gezin zit precies in de knel tussen twee starre systemen. . Wat de brief op de mat zegt: U geniet als E U burger van vrij verkeer en bent in beide lidstaten beschermd. . Wat er achter de muur echt gebeurt: Zodra je in Nederland woont en in België werkt, sluiten beide systemen de deuren. . . Wat de brief op de mat zegt: Onze overheidsdiensten wisselen gegevens digitaal uit via Europese netwerken. . Wat er achter de muur echt gebeurt: Alleen belastingheffing stroomt automatisch; het medisch en sociaal dossier bestaat voor de buren niet. . . Wat de brief op de mat zegt: U kunt zich wenden tot het bevoegde orgaan in uw woonland. . Wat er achter de muur echt gebeurt: Beide landen wijzen permanent naar elkaar; de burger is de enige kabel tussen twee muren. . ." translate="no">
-<button aria-label="Beluister tekst" class="aab-play-btn" title="Beluister passage (AI-stem)" type="button">
+<h1 id="i-de-mens-en-de-grens">I. De mens en de grens</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h3 id="twee-cellen-die-weigeren-samen-te-werken">Twee cellen die weigeren samen te werken</h3><div class="audit-audio-bar" data-audio-id="docC_inleiding" data-audio-src="../assets/audio/docC_inleiding_nl_9a6ea6af.mp3" data-clean-text="Twee cellen die weigeren samen te werken. Twee buurlanden binnen één Europese Unie sluiten hun deuren hermetisch voor elkaar. Het gezin zit precies in de knel tussen twee starre systemen. . Wat de brief op de mat zegt: U geniet als E U burger van vrij verkeer en bent in beide lidstaten beschermd. . Wat er achter de muur echt gebeurt: Zodra je in Nederland woont en in België werkt, sluiten beide systemen de deuren. . . Wat de brief op de mat zegt: Onze overheidsdiensten wisselen gegevens digitaal uit via Europese netwerken. . Wat er achter de muur echt gebeurt: Alleen belastingheffing stroomt automatisch; het medisch en sociaal dossier bestaat voor de buren niet. . . Wat de brief op de mat zegt: U kunt zich wenden tot het bevoegde orgaan in uw woonland. . Wat er achter de muur echt gebeurt: Beide landen wijzen permanent naar elkaar; de burger is de enige kabel tussen twee muren. . .">
+<button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
 </button>
 <div class="aab-info">
 <div class="aab-meta">
-<span class="aab-badge">🎧 BELUISTER</span>
+<span class="aab-badge notranslate" translate="no">🎧 BELUISTER</span>
 <span class="aab-title">Beluister inleiding: 'De visuele architectuur' (AI-stem Arnaud)</span>
-<span class="aab-time">0:00 / --:--</span>
+<span class="aab-time notranslate" translate="no">0:00 / --:--</span>
 </div>
-<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="aab-progress-wrap" role="progressbar">
+<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="aab-progress-wrap notranslate" role="progressbar" translate="no">
 <div class="aab-progress-bar">
 <div class="aab-progress-fill"></div>
 </div>
 </div>
 </div>
-<div class="aab-controls">
+<div class="aab-controls notranslate" translate="no">
 <button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
 </div>
 <audio class="aab-audio-el" preload="none" src="../assets/audio/docC_inleiding_nl_9a6ea6af.mp3"></audio>
@@ -2843,7 +5534,6 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <tr><td>U kunt zich wenden tot het bevoegde orgaan in uw woonland.</td><td>Beide landen wijzen permanent naar elkaar; de burger is de enige kabel tussen twee muren.</td></tr>
 </tbody>
 </table>
-
 <h3 id="twee-ritmes-die-op-elkaar-botsen">Twee ritmes die op elkaar botsen</h3>
 <p class="lead">België en Nederland draaien op een andere administratieve klok en meten met een andere lat. Het gezin zit precies op het breukvlak.</p>
 <div class="figure">
@@ -2910,7 +5600,6 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <tr><td>Uw vervoerspas is geblokkeerd wegens een openstaande ritbijdrage.</td><td>Belgisch loon valt eind van de maand; Nederlands systeem incasseert de 15e en blokkeert direct.</td></tr>
 </tbody>
 </table>
-
 <h3 id="zo-boven-zo-beneden-de-spiegel-van-het-afschuiven">Zo boven, zo beneden: de spiegel van het afschuiven</h3>
 <p class="lead">Wat op het hoogste niveau in Brussel wordt nagelaten, herhaalt zich één-op-één aan het kleinste uitvoeringsloket aan de keukentafel.</p>
 <div class="figure">
@@ -2980,8 +5669,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <tr><td>In 2030 lost het digitale Europese systeem (ESSPASS) dit op.</td><td>Het formulier wordt een digitaal bestand, maar de weigering data in te lezen blijft identiek.</td></tr>
 </tbody>
 </table>
-
-<h1 id="ii-het-lichaam-en-het-papier">II. Het lichaam en het papier</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h1 id="ii-het-lichaam-en-het-papier">II. Het lichaam en het papier</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <h3 id="vijf-behandelaars-zien-het-lichaam-twee-loketten-zien-het-papier">Vijf behandelaars zien het lichaam, twee loketten zien het papier</h3>
 <p class="lead">Vijf artsen in twee landen onderzoeken het lichaam en zien dezelfde zware schade. Twee administratieve artsen beslissen op papier het tegendeel.</p>
 <div class="figure">
@@ -3038,7 +5726,6 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <tr><td>Geen invaliditeitsattest mogelijk omdat u geen uitkering ontvangt.</td><td>Medische erkenning wordt gekoppeld aan geld; wie geen uitkering krijgt, mag niet ziek zijn.</td></tr>
 </tbody>
 </table>
-
 <h3 id="hoe-één-ontbrekend-vinkje-zes-deuren-op-slot-gooit">Hoe één ontbrekend vinkje zes deuren op slot gooit</h3>
 <p class="lead">Eén leeg veld in een centrale databank veroorzaakt een grensoverschrijdende kettingreactie. Zes deuren vallen tegelijk in het slot.</p>
 <div class="figure">
@@ -3120,7 +5807,6 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <tr><td>Bijzondere bijstand kan niet beoordeeld worden zonder compleet dossier.</td><td>Gemeente Hulst kan Belgische loongegevens niet automatisch inlezen en wist de aanvraag na 73 dagen.</td></tr>
 </tbody>
 </table>
-
 <h3 id="de-waterval-hoe-stilstand-bij-de-overheid-een-privéschuld-wordt">De waterval: hoe stilstand bij de overheid een privéschuld wordt</h3>
 <p class="lead">Wanneer de overheid weigert te beslissen, vangt de bankrekening de klap op. De commerciële markt neemt het gat over tegen rente en sancties.</p>
 <div class="figure">
@@ -3207,8 +5893,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <tr><td>Uw betalingsregeling is goedgekeurd onder voorwaarde van intrekking van alle kredietfaciliteiten.</td><td>De bank wordt de strenge bewindvoerder van een gezin dat door overheidsstilstand is drooggelegd.</td></tr>
 </tbody>
 </table>
-
-<h1 id="iii-de-muur-tussen-belgië-en-nederland">III. De muur tussen België en Nederland</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h1 id="iii-de-muur-tussen-belgië-en-nederland">III. De muur tussen België en Nederland</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <h3 id="dezelfde-muur-in-twee-talen-cm-tegenover-cz-en-rva-tegenover-uwv">Dezelfde muur in twee talen: CM tegenover CZ en RVA tegenover UWV</h3>
 <p class="lead">Aan weerszijden van de grens gebruiken instanties exact hetzelfde draaiboek om de burger buiten te houden. De Europese digitale snelweg blijft leeg.</p>
 <div class="figure">
@@ -3270,7 +5955,6 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <tr><td>De gegevensuitwisseling verloopt automatisch via het beveiligde EESSI-netwerk.</td><td>DPO-besluiten van RIZIV, RVA (29-09-2026) en SVB (24-10-2026) bewijzen: nul berichten verstuurd.</td></tr>
 </tbody>
 </table>
-
 <h3 id="wonen-waar-geen-dokter-je-kent-reizen-waar-de-pas-stopt">Wonen waar geen dokter je kent, reizen waar de pas stopt</h3>
 <p class="lead">In het land waar hij woont mag geen huisarts hem inschrijven. En de Europese gehandicaptenkaart wordt bij de gemeentegrens genegeerd.</p>
 <div class="figure">
@@ -3334,8 +6018,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <tr><td>Wmo-vervoer naar buitenlandse overheidsdiensten valt buiten het vervoersplan.</td><td>De regiotaxi mag wel naar het ziekenhuis in Gent, maar weigert de keuring in dezelfde straat.</td></tr>
 </tbody>
 </table>
-
-<h1 id="iv-waar-de-doorgang-wel-werkt">IV. Waar de doorgang wel werkt</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h1 id="iv-waar-de-doorgang-wel-werkt">IV. Waar de doorgang wel werkt</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <h3 id="het-bewijs-dat-het-wél-kan-de-gezinsbijslag-en-de-fiscale-omweg">Het bewijs dat het wél kan: de gezinsbijslag en de fiscale omweg</h3>
 <p class="lead">Wanneer de starre centrale ketens falen, bewijzen twee concrete doorbraken dat de regels wél ruimte bieden als men de juiste hefboom vindt.</p>
 <div class="figure">
@@ -3401,8 +6084,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <tr><td>Wij kunnen de loonadministratie niet met terugwerkende kracht aanpassen.</td><td>Met het juiste medische attest paste het schoolsecretariaat de loonheffing direct retroactief aan.</td></tr>
 </tbody>
 </table>
-
-<h1 id="v-wie-toekijkt-en-de-drie-sleutels">V. Wie toekijkt en de drie sleutels</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h1 id="v-wie-toekijkt-en-de-drie-sleutels">V. Wie toekijkt en de drie sleutels</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <h3 id="de-ring-van-toeschouwers-en-de-twee-deuren-die-wél-opengingen">De ring van toeschouwers en de twee deuren die wél opengingen</h3>
 <p class="lead">Tientallen toezichthouders, ministers en rechters keken toe en verklaarden zich onbevoegd. Twee onverwachte deuren gingen wél open.</p>
 <div class="figure">
@@ -3453,7 +6135,6 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <tr><td>Uw verzoekschrift is ontvankelijk verklaard en in onderzoek gegeven bij de Europese Commissie.</td><td>Het Europees Parlement doorbreekt de nationale stilte: het dossier dwingt Brussel tot onderzoek.</td></tr>
 </tbody>
 </table>
-
 <h3 id="drie-knoppen-die-zonder-nieuwe-wet-direct-zeventien-blokkades-oplossen">Drie knoppen die zonder nieuwe wet direct zeventien blokkades oplossen</h3>
 <p class="lead">Er is geen nieuw Europees verdrag nodig om de impasse te doorbreken. Drie bestaande wettelijke knoppen lossen alle zeventien blokkades direct op.</p>
 <div class="figure">
@@ -3538,7 +6219,6 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <tr><td>U moet zelf bewijzen dat u verzekerd bent voor geneeskundige zorg.</td><td>Eén software-aanpassing in het CAK-register lost de zorgtoeslagblokkade voor duizenden op.</td></tr>
 </tbody>
 </table>
-
 <h3 id="slotplaat-van-twee-vijandige-muren-naar-twee-verbonden-cellen">Slotplaat: van twee vijandige muren naar twee verbonden cellen</h3>
 <p class="lead">Twee manieren om naar de grens te kijken: een verstikkend doolhof waarin de zieke mens bezwijkt, of twee ademende cellen in gezonde samenwerking.</p>
 <div class="figure">
@@ -3812,7 +6492,220 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 2 november 2026, 23:12</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 3 november 2026, 12:52</p>
+<div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
+<button class="pub-print-btn notranslate" onclick="window.print()" title="Print deze pagina of bewaar als PDF" translate="no" type="button">🖨️ Print / Bewaar als PDF</button>
+<button class="pub-contact-btn pub-contact-footer notranslate" onclick="openBronModal('Footer contact')" translate="no" type="button">📄 Bronstuk opvragen / Contact</button>
+</div>
+<p><a href="home.html">← Terug naar overzicht</a> ·
+     <a href="../home_int.html">🇪🇺 Europees portaal</a> ·
+     <a href="../index.html">Startportaal</a></p>
+</footer>
+<!-- Analytische sensor (verborgen landentracker, puur voor dossierbeheer) -->
+<div aria-hidden="true" style="display:none;position:absolute;width:0;height:0;overflow:hidden;opacity:0;pointer-events:none;">
+<img alt="" height="1" loading="eager" src="https://s05.flagcounter.com/count/xed2/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_18/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" width="1"/>
+<script async="" data-goatcounter="https://grensarbeid.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
+</div>
+<a class="pub-top" href="#top" title="Naar boven">↑</a><!-- Forensisch Bronopvragings- en Contactvenster (Modal) -->
+<div class="bm-modal-overlay" id="bm-modal" onclick="if(event.target===this)sluitBronModal()">
+<div aria-labelledby="bm-modal-titel" aria-modal="true" class="bm-modal-dialog" role="dialog">
+<div class="bm-modal-kop">
+<h3 id="bm-modal-titel">📄 Bronstuk opvragen / Contact</h3>
+<button aria-label="Venster sluiten" class="bm-modal-sluit" onclick="sluitBronModal()" type="button">×</button>
+</div>
+<div class="bm-intro">
+      Alle 708 interacties in deze audit zijn gebaseerd op objectieve brondocumenten (originele e-mails met Message-ID's, formele besluiten, brieven en medische verslagen). Om privacy en AVG-rechten van betrokkenen te waarborgen zijn persoonsgegevens in publieke bestanden afgeschermd. Geauthenticeerde onderzoekers, journalisten, toezichthouders en lotgenoten kunnen volledige, ongecensureerde brondossiers opvragen ter verificatie.
+    </div>
+<form id="bm-form" onsubmit="event.preventDefault();stuurEmail();">
+<div class="bm-groep">
+<label class="bm-label" for="bm-onderwerp">Onderwerp / Gevraagd bronstuk of referentie:</label>
+<input class="bm-input" id="bm-onderwerp" placeholder="Bijv. Bronopvraag: CZ Zorgverzekering - 06-10-2026 - Weigering S072" type="text"/>
+</div>
+<div class="bm-groep">
+<label class="bm-label">Uw hoedanigheid / perspectief:</label>
+<div class="bm-radio-groep">
+<label class="bm-radio-optie">
+<input checked="" name="bm-perspectief" type="radio" value="Lotgenoot / Grensarbeider"/>
+<span><strong>Lotgenoot / Grensarbeider</strong><br/><small style="color:#666">Ervaring delen, herkenning, vergelijkbare situatie</small></span>
+</label>
+<label class="bm-radio-optie">
+<input name="bm-perspectief" type="radio" value="Wetenschap / Beleidsonderzoek"/>
+<span><strong>Wetenschap / Beleid</strong><br/><small style="color:#666">Academisch onderzoek, beleidsevaluatie, EESSI/ESSPASS</small></span>
+</label>
+<label class="bm-radio-optie">
+<input name="bm-perspectief" type="radio" value="Journalistiek / Media"/>
+<span><strong>Journalistiek / Media</strong><br/><small style="color:#666">Feitelijke verificatie, achtergrondgesprek, publicatie</small></span>
+</label>
+<label class="bm-radio-optie">
+<input name="bm-perspectief" type="radio" value="Juridisch / Toezichthouder"/>
+<span><strong>Juridisch / Toezichthouder</strong><br/><small style="color:#666">Handhaving, AVG/GDPR, rechtbank, ombudsman</small></span>
+</label>
+</div>
+</div>
+<div class="bm-groep">
+<label class="bm-label" for="bm-vraag">Uw toelichting, vraag of verificatiedoel:</label>
+<textarea class="bm-textarea" id="bm-vraag" placeholder="Beschrijf kort uw onderzoeksvraag, hoedanigheid of situatie..."></textarea>
+</div>
+<div class="bm-check-groep">
+<input checked="" id="bm-akkoord" type="checkbox"/>
+<label for="bm-akkoord">Ik begrijp dat opgevraagde bronstukken uitsluitend voor verificatie, waarheidsvinding of belangenbehartiging worden verstrekt conform de privacywetgeving.</label>
+</div>
+<div class="bm-knoppen">
+<button class="bm-btn-copy" id="bm-copy-btn" onclick="kopieerAanvraag()" type="button">📋 Kopieer aanvraagtekst + e-mailadres</button>
+<button class="bm-btn-mail" type="submit">Open in e-mailprogramma →</button>
+</div>
+</form>
+</div>
+</div>
+<script>
+(function() {
+  window.openBronModal = function(onderwerp) {
+    var modal = document.getElementById('bm-modal');
+    if (!modal) return;
+    var inp = document.getElementById('bm-onderwerp');
+    if (inp) {
+      inp.value = onderwerp || 'Algemeen contact / Vraag over de Systeem-Audit';
+    }
+    modal.classList.add('bm-open');
+    if (inp) inp.focus();
+  };
+
+  window.sluitBronModal = function() {
+    var modal = document.getElementById('bm-modal');
+    if (modal) modal.classList.remove('bm-open');
+  };
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') sluitBronModal();
+  });
+
+  // Event delegation voor klik op .audit-bewijs
+  document.addEventListener('click', function(e) {
+    var badge = e.target.closest ? e.target.closest('.audit-bewijs') : null;
+    if (!badge) return;
+    e.preventDefault();
+
+    var entry = badge.closest ? badge.closest('.entry') : null;
+    var orgNaam = '';
+    var datum = '';
+    var titel = '';
+
+    if (entry) {
+      var dEl = entry.querySelector('.datum');
+      if (dEl) datum = dEl.innerText.trim();
+      var tEl = entry.querySelector('.titel, .entry-titel');
+      if (tEl) titel = tEl.innerText.trim();
+      
+      // Zoek dichtstbijzijnde voorgaande h3
+      var allH3 = document.querySelectorAll('h3');
+      for (var i = allH3.length - 1; i >= 0; i--) {
+        if (allH3[i].compareDocumentPosition(badge) & Node.DOCUMENT_POSITION_FOLLOWING) {
+          orgNaam = allH3[i].innerText.trim();
+          break;
+        }
+      }
+    }
+
+    var cleanOrg = orgNaam.replace(/\s+/g, ' ').replace(/^[\d\.\s]+/, '').trim();
+    var parts = [];
+    if (cleanOrg) parts.push(cleanOrg);
+    if (datum) parts.push(datum);
+    if (titel) parts.push(titel.replace(/\s+/g, ' '));
+    else if (badge.innerText) parts.push(badge.innerText.trim());
+
+    var onderwerp = 'Bronopvraag: ' + parts.join(' - ');
+    openBronModal(onderwerp);
+  });
+
+  function genereerEmailTekst() {
+    var onderwerp = (document.getElementById('bm-onderwerp').value || '').trim();
+    var perspectiefEl = document.querySelector('input[name="bm-perspectief"]:checked');
+    var perspectief = perspectiefEl ? perspectiefEl.value : 'Niet opgegeven';
+    var toelichting = (document.getElementById('bm-vraag').value || '').trim();
+    var akkoord = document.getElementById('bm-akkoord').checked ? 'Ja' : 'Nee';
+
+    var tekst = "Geachte heer Messa / Systeem-Audit,\n\n" +
+      "Betreft: " + onderwerp + "\n" +
+      "Perspectief: " + perspectief + "\n\n" +
+      "Toelichting / Onderzoeksvraag:\n" +
+      (toelichting || "[Geen extra toelichting ingevoerd]") + "\n\n" +
+      "Akkoord met verificatievoorwaarden: " + akkoord + "\n\n" +
+      "---\nVerzonden via het bronopvragingsvenster van grensarbeid.org";
+    return { onderwerp: onderwerp, tekst: tekst };
+  }
+
+  window.stuurEmail = function() {
+    var data = genereerEmailTekst();
+    var mailto = "mailto:systeemaudit@gmail.com" +
+      "?subject=" + encodeURIComponent(data.onderwerp) +
+      "&body=" + encodeURIComponent(data.tekst);
+    window.location.href = mailto;
+  };
+
+  window.kopieerAanvraag = function() {
+    var data = genereerEmailTekst();
+    var klembordTekst = "Aan: systeemaudit@gmail.com\n" +
+      "Onderwerp: " + data.onderwerp + "\n\n" +
+      data.tekst;
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(klembordTekst).then(function() {
+        toonKopieerBevestiging();
+      }).catch(function() {
+        fallbackKopieer(klembordTekst);
+      });
+    } else {
+      fallbackKopieer(klembordTekst);
+    }
+  };
+
+  function fallbackKopieer(tekst) {
+    var ta = document.createElement('textarea');
+    ta.value = tekst;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    try {
+      document.execCommand('copy');
+      toonKopieerBevestiging();
+    } catch(e) {
+      alert('Kopiëren mislukt. U kunt handmatig mailen naar systeemaudit@gmail.com');
+    }
+    document.body.removeChild(ta);
+  }
+
+  function toonKopieerBevestiging() {
+    var btn = document.getElementById('bm-copy-btn');
+    if (!btn) return;
+    var orig = btn.innerText;
+    btn.innerText = '✓ Gekopieerd naar klembord!';
+    btn.classList.add('bm-copied');
+    setTimeout(function() {
+      btn.innerText = orig;
+      btn.classList.remove('bm-copied');
+    }, 2500);
+  }
+})();
+</script><button aria-label="Schakel donkere/lichte modus" class="dm-toggle" onclick="dm_toggle()" title="Schakel donkere/lichte modus" type="button">
+<span class="dm-icon-dm">🌙</span>
+<span class="dm-icon-lm">☀️</span>
+</button>
+<script>
+(function(){
+  function s(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  window.dm_toggle=function(){
+    var r=document.documentElement;
+    var n=r.getAttribute('data-theme')==='dark'?'light':'dark';
+    r.setAttribute('data-theme',n);
+    s('systeem-audit-thema',n);
+  };
+})();
+</script>
+<footer class="pub-footer notranslate" translate="no">
+<p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
+  Auteur: Eric Messa · Versie bijgewerkt: 3 november 2026, 12:52</p>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-print-btn notranslate" onclick="window.print()" title="Print deze pagina of bewaar als PDF" translate="no" type="button">🖨️ Print / Bewaar als PDF</button>
 <button class="pub-contact-btn pub-contact-footer notranslate" onclick="openBronModal('Footer contact')" translate="no" type="button">📄 Bronstuk opvragen / Contact</button>
@@ -3828,1025 +6721,600 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </div>
 <script class="notranslate" translate="no">
 // ==========================================================================
-// AUDIT AUDIO PLAYER ENGINE — HTML5 Audio + "Luister verder" + Playlist
+// AUDIT AUDIO PLAYER ENGINE — Hybride Speler (NL MP3 + Live-TTS Int Portaal)
 // ==========================================================================
 (function() {
+  var isIntPortal = document.documentElement.hasAttribute('data-int-portal');
   var allBars = [];
   var currentBar = null;
-  var currentTrackIdx = 0;
-  var currentSynthTimer = null;
-  var synthDurationEst = 0;
-  var synthStartTime = 0;
-  var synthCancelled = false;
+  var currentAudio = null;
   var speeds = [1.0, 1.25, 1.5];
   var globalSpeedIdx = 0;
 
+  // Live-TTS toestand voor internationaal portaal
+  var isPlayingLive = false;
+  var currentLiveAudio = null;
+  var liveUtterance = null;
+  var currentChunks = [];
+  var currentChunkIdx = 0;
+  var liveStartTime = 0;
+  var liveEstDuration = 0;
+  var liveProgressTimer = null;
+  var chunkStartChars = [];
+  var totalLiveChars = 0;
+
   var AUDIO_UI_I18N = {
-    nl: {
-      badge: "🎧 BELUISTER",
-      next: "⏭ Luister verder",
-      playlistBtn: "🎧 Playlist",
-      topStrong: "Alleen luisteren zonder te lezen?",
-      topBody1: "Dit document bevat ",
-      topBody2: " ingesproken audio-onderdelen",
-      topBody3: ". Gebruik bij elk onderdeel de knop ‘⏭ Luister verder’ om direct naar het volgende geluidsfragment te springen, of open onderaan de Audio-Playlist om alles automatisch achter elkaar te beluisteren.",
-      topPlayAll: "▶ Direct alles afspelen",
-      topJump: "↓ Naar Audio-Playlist",
-      apsBadge: "🎧 LUISTERMODUS ZONDER LEZEN",
-      apsTitle1: "Audio-Playlist — Volledig document achter elkaar beluisteren (",
-      apsTitle2: " onderdelen)",
-      apsDesc1: "Voor wie dit document liever volledig beluistert zonder door de tekst te hoeven scrollen. Druk op ▶ in de hoofdspeler om alle ",
-      apsDesc2: " onderdelen automatisch na elkaar te laten voorlezen, of tik op een specifiek onderdeel in de onderstaande lijst.",
-      statusReady: "Klaar om af te spelen",
-      statusPlaying: "🔊 Nu aan het afspelen",
-      statusPaused: "⏸ Gepauzeerd",
-      autoContinue: "Auto-vervolg",
-      jumpText: "↑ tekst",
-      topLink: "↑ naar boven"
-    },
-    en: {
-      badge: "🎧 LISTEN",
-      next: "⏭ Listen next",
-      playlistBtn: "🎧 Playlist",
-      topStrong: "Prefer listening without reading?",
-      topBody1: "This document contains ",
-      topBody2: " narrated audio sections",
-      topBody3: ". Use the ‘⏭ Listen next’ button on any section to jump directly to the next audio track, or open the Audio Playlist at the bottom to listen to everything continuously.",
-      topPlayAll: "▶ Play all now",
-      topJump: "↓ To Audio Playlist",
-      apsBadge: "🎧 HANDS-FREE LISTENING MODE",
-      apsTitle1: "Audio Playlist — Listen to the full document continuously (",
-      apsTitle2: " sections)",
-      apsDesc1: "For those who prefer listening to the entire document without scrolling through the text. Press ▶ in the master player to play all ",
-      apsDesc2: " sections automatically one after another, or tap a specific section in the list below.",
-      statusReady: "Ready to play",
-      statusPlaying: "🔊 Now playing",
-      statusPaused: "⏸ Paused",
-      autoContinue: "Auto-continue",
-      jumpText: "↑ text",
-      topLink: "↑ top"
-    },
-    de: {
-      badge: "🎧 ANHÖREN",
-      next: "⏭ Weiterhören",
-      playlistBtn: "🎧 Playlist",
-      topStrong: "Lieber nur zuhören statt lesen?",
-      topBody1: "Dieses Dokument enthält ",
-      topBody2: " eingesprochene Audio-Abschnitte",
-      topBody3: ". Nutzen Sie bei jedem Abschnitt die Schaltfläche ‚⏭ Weiterhören‘, um direkt zum nächsten Audiofragment zu springen, oder öffnen Sie unten die Audio-Playlist, um alles automatisch nacheinander anzuhören.",
-      topPlayAll: "▶ Alles direkt abspielen",
-      topJump: "↓ Zur Audio-Playlist",
-      apsBadge: "🎧 HÖRMODUS OHNE LESEN",
-      apsTitle1: "Audio-Playlist — Gesamtes Dokument nacheinander anhören (",
-      apsTitle2: " Abschnitte)",
-      apsDesc1: "Für alle, die dieses Dokument lieber vollständig anhören möchten, ohne durch den Text zu scrollen. Drücken Sie auf ▶ im Hauptplayer, um alle ",
-      apsDesc2: " Abschnitte automatisch nacheinander vorlesen zu lassen, oder tippen Sie unten auf einen bestimmten Abschnitt.",
-      statusReady: "Bereit zur Wiedergabe",
-      statusPlaying: "🔊 Wird abgespielt",
-      statusPaused: "⏸ Pausiert",
-      autoContinue: "Auto-Folge",
-      jumpText: "↑ Text",
-      topLink: "↑ nach oben"
-    },
-    fr: {
-      badge: "🎧 ÉCOUTER",
-      next: "⏭ Écouter la suite",
-      playlistBtn: "🎧 Playlist",
-      topStrong: "Écouter sans lire ?",
-      topBody1: "Ce document contient ",
-      topBody2: " sections audio narrées",
-      topBody3: ". Utilisez le bouton « ⏭ Écouter la suite » sur chaque section pour passer directement à l'extrait suivant, ou ouvrez la Playlist Audio en bas de page pour tout écouter automatiquement à la suite.",
-      topPlayAll: "▶ Tout écouter maintenant",
-      topJump: "↓ Vers la Playlist Audio",
-      apsBadge: "🎧 MODE ÉCOUTE SANS LECTURE",
-      apsTitle1: "Playlist Audio — Écouter le document complet en continu (",
-      apsTitle2: " sections)",
-      apsDesc1: "Pour ceux qui préfèrent écouter l'intégralité de ce document sans faire défiler le texte. Appuyez sur ▶ dans le lecteur principal pour lire automatiquement les ",
-      apsDesc2: " sections à la suite, ou sélectionnez une section précise dans la liste ci-dessous.",
-      statusReady: "Prêt à écouter",
-      statusPlaying: "🔊 Lecture en cours",
-      statusPaused: "⏸ En pause",
-      autoContinue: "Lecture auto",
-      jumpText: "↑ texte",
-      topLink: "↑ haut"
-    }
+    'en': { play: 'Listen to section (AI voice)', pause: 'Pause playback', badge: '🎧 LISTEN', next: '› Listen next', playlist: '🎧 Playlist', playAll: '▶ Play all sections', jumpPlaylist: '↓ To Playlist', jumpText: '↑ text', speed: 'Change speed' },
+    'de': { play: 'Abschnitt anhören (KI-Stimme)', pause: 'Wiedergabe anhalten', badge: '🎧 ANHÖREN', next: '› Weiterhören', playlist: '🎧 Playlist', playAll: '▶ Alle abspielen', jumpPlaylist: '↓ Zur Playlist', jumpText: '↑ Text', speed: 'Geschwindigkeit ändern' },
+    'fr': { play: 'Écouter la section (voix IA)', pause: 'Pause', badge: '🎧 ÉCOUTER', next: '› Écouter la suite', playlist: '🎧 Playlist', playAll: '▶ Tout lire', jumpPlaylist: '↓ Vers la playlist', jumpText: '↑ texte', speed: 'Changer la vitesse' },
+    'it': { play: 'Ascolta la sezione (voce IA)', pause: 'Pausa', badge: '🎧 ASCOLTA', next: '› Ascolta successivo', playlist: '🎧 Playlist', playAll: '▶ Riproduci tutto', jumpPlaylist: '↓ Alla playlist', jumpText: '↑ testo', speed: 'Cambia velocità' },
+    'es': { play: 'Escuchar sección (voz IA)', pause: 'Pausa', badge: '🎧 ESCUCHAR', next: '› Continuar escuchando', playlist: '🎧 Playlist', playAll: '▶ Reproducir todo', jumpPlaylist: '↓ A la lista', jumpText: '↑ texto', speed: 'Cambiar velocidad' },
+    'pl': { play: 'Odsłuchaj fragment (głos SI)', pause: 'Pauza', badge: '🎧 SŁUCHAJ', next: '› Słuchaj dalej', playlist: '🎧 Playlist', playAll: '▶ Odtwórz wszystko', jumpPlaylist: '↓ Do playlisty', jumpText: '↑ tekst', speed: 'Zmień prędkość' },
+    'da': { play: 'Lyt til afsnit (AI-stemme)', pause: 'Pause', badge: '🎧 LYT', next: '› Lyt videre', playlist: '🎧 Playlist', playAll: '▶ Afspil alle', jumpPlaylist: '↓ Til spilleliste', jumpText: '↑ tekst', speed: 'Skift hastighed' },
+    'sv': { play: 'Lyssna på avsnitt (AI-röst)', pause: 'Pausa', badge: '🎧 LYSSNA', next: '› Lyssna vidare', playlist: '🎧 Playlist', playAll: '▶ Spela alla', jumpPlaylist: '↓ Till spellista', jumpText: '↑ text', speed: 'Ändra hastighet' },
+    'pt': { play: 'Ouvir secção (voz IA)', pause: 'Pausa', badge: '🎧 OUVIR', next: '› Continuar a ouvir', playlist: '🎧 Playlist', playAll: '▶ Reproduzir tudo', jumpPlaylist: '↓ Para a playlist', jumpText: '↑ texto', speed: 'Alterar velocidade' },
+    'ro': { play: 'Ascultă secțiunea (voce AI)', pause: 'Pauză', badge: '🎧 ASCULTĂ', next: '› Ascultă mai departe', playlist: '🎧 Playlist', playAll: '▶ Redă tot', jumpPlaylist: '↓ La lista de redare', jumpText: '↑ text', speed: 'Schimbă viteza' }
   };
 
-  function getUiDict(lang) {
-    var l = (lang || 'nl').toLowerCase().split('-')[0];
-    if (AUDIO_UI_I18N[l]) return AUDIO_UI_I18N[l];
-    return AUDIO_UI_I18N['en'];
+  function getLang() {
+    var sel = document.getElementById('int-lang-select');
+    if (sel && sel.value) return sel.value.toLowerCase().split('-')[0];
+    var hl = document.documentElement.getAttribute('lang');
+    if (hl) return hl.toLowerCase().split('-')[0];
+    return 'en';
   }
 
-  function translateTitleLabel(origTitle, lang) {
-    var l = (lang || 'nl').toLowerCase().split('-')[0];
-    if (l === 'nl') return origTitle;
-    var t = origTitle;
-    if (l === 'fr') {
-      t = t.replace(/^Beluister hoofdstuk:/i, 'Écouter le chapitre :')
-           .replace(/^Beluister audit:/i, "Écouter l'audit :")
-           .replace(/^Beluister inleiding:/i, "Écouter l'introduction :")
-           .replace(/^Beluister recht:/i, 'Écouter le droit :')
-           .replace(/^Beluister Deel\b/i, 'Écouter la Partie')
-           .replace(/\(AI-stem Arnaud\)/gi, '(Voix IA Henri)');
-    } else if (l === 'de') {
-      t = t.replace(/^Beluister hoofdstuk:/i, 'Kapitel anhören:')
-           .replace(/^Beluister audit:/i, 'Audit anhören:')
-           .replace(/^Beluister inleiding:/i, 'Einleitung anhören:')
-           .replace(/^Beluister recht:/i, 'Recht anhören:')
-           .replace(/^Beluister Deel\b/i, 'Teil anhören')
-           .replace(/\(AI-stem Arnaud\)/gi, '(KI-Stimme Conrad)');
-    } else {
-      var voiceLabel = (l === 'en') ? '(AI voice Ryan)' : '(AI voice)';
-      t = t.replace(/^Beluister hoofdstuk:/i, 'Listen to chapter:')
-           .replace(/^Beluister audit:/i, 'Listen to audit:')
-           .replace(/^Beluister inleiding:/i, 'Listen to introduction:')
-           .replace(/^Beluister recht:/i, 'Listen to right:')
-           .replace(/^Beluister Deel\b/i, 'Listen to Part')
-           .replace(/\(AI-stem Arnaud\)/gi, voiceLabel);
-    }
-    return t;
-  }
-
-  function formatTime(secs) {
-    if (isNaN(secs) || secs < 0) return "0:00";
-    var m = Math.floor(secs / 60);
-    var s = Math.floor(secs % 60);
-    return m + ":" + (s < 10 ? "0" : "") + s;
-  }
-
-  function getActiveLanguage() {
-    var htmlLang = document.documentElement.getAttribute('lang') || document.documentElement.lang;
-    if (htmlLang && htmlLang.trim()) return htmlLang.trim().toLowerCase();
-    var combo = document.querySelector('.goog-te-combo');
-    if (combo && combo.value) return combo.value.toLowerCase();
-    return 'nl';
+  function formatTime(s) {
+    if (isNaN(s) || s < 0) s = 0;
+    var m = Math.floor(s / 60);
+    var sec = Math.floor(s % 60);
+    return m + ':' + (sec < 10 ? '0' : '') + sec;
   }
 
   function getSectionLiveText(bar) {
-    var texts = [];
+    var textParts = [];
+    var prev = bar.previousElementSibling;
+    while (prev && !/^(h[1-6]|div)$/i.test(prev.tagName)) {
+      prev = prev.previousElementSibling;
+    }
+    if (prev && (/^h[1-6]$/i.test(prev.tagName) || (prev.tagName === 'DIV' && prev.classList.contains('recht-kop-wrapper')))) {
+      var hClone = prev.cloneNode(true);
+      var nb = hClone.querySelectorAll('.pub-naar-boven, button, .aps-track-jump');
+      for (var k = 0; k < nb.length; k++) nb[k].remove();
+      var ht = hClone.innerText.trim();
+      if (ht) textParts.push(ht + '. ');
+    }
+
     var curr = bar.nextElementSibling;
     while (curr) {
-      var tag = curr.tagName ? curr.tagName.toLowerCase() : '';
-      if (tag === 'h1' || tag === 'h2' || tag === 'h3' || tag === 'footer' || tag === 'section' || (curr.classList && (curr.classList.contains('recht-kop-wrapper') || curr.classList.contains('pub-toc') || curr.classList.contains('audit-audio-bar') || curr.classList.contains('audit-playlist-sectie')))) {
+      if (/^h[1-6]$/i.test(curr.tagName) || curr.classList.contains('audit-audio-bar') || curr.id === 'audit-audio-playlist' || curr.tagName === 'FOOTER') {
         break;
       }
-      if (tag === 'table') {
-        var ths = [];
-        curr.querySelectorAll('thead th').forEach(function(th) {
-          var hTxt = (th.innerText || th.textContent || '').replace(/\s+/g, ' ').trim();
-          if (hTxt) ths.push(hTxt);
-        });
-        curr.querySelectorAll('tbody tr').forEach(function(tr) {
-          var cells = [];
-          tr.querySelectorAll('td, th').forEach(function(td, cIdx) {
-            var cTxt = (td.innerText || td.textContent || '').replace(/\s+/g, ' ').trim();
-            if (cTxt) {
-              if (ths[cIdx] && cIdx > 0) {
-                cells.push(ths[cIdx] + ': ' + cTxt);
-              } else {
-                cells.push(cTxt);
-              }
-            }
-          });
-          if (cells.length > 0) texts.push(cells.join('. '));
-        });
-      } else if (!curr.classList || (!curr.classList.contains('notranslate') && !curr.classList.contains('audit-bewijs') && !curr.classList.contains('footnotes') && tag !== 'svg' && tag !== 'button')) {
-        var clone = curr.cloneNode(true);
-        clone.querySelectorAll('svg, .notranslate, .audit-bewijs, .footnotes, sup, button').forEach(function(el) { el.remove(); });
-        var t = clone.innerText || clone.textContent || '';
-        t = t.replace(/\s+/g, ' ').trim();
-        if (t) texts.push(t);
+      if (curr.classList.contains('pub-discreet-dl') || curr.classList.contains('audit-org-bar') || curr.classList.contains('footnotes')) {
+        curr = curr.nextElementSibling;
+        continue;
       }
+      if (curr.tagName === 'P' && (curr.classList.contains('subtitel') || curr.classList.contains('netwerk') || curr.classList.contains('meta'))) {
+        curr = curr.nextElementSibling;
+        continue;
+      }
+      var summary = curr.querySelector('.tts-spoken-summary');
+      if (summary) {
+        var st = summary.innerText.trim();
+        if (st) textParts.push(st + '. ');
+        curr = curr.nextElementSibling;
+        continue;
+      }
+      var clone = curr.cloneNode(true);
+      var bad = clone.querySelectorAll('.pub-naar-boven, button, sup, .footnotes, .tts-spoken-summary');
+      for (var b = 0; b < bad.length; b++) bad[b].remove();
+      var pt = clone.innerText.trim();
+      if (pt) textParts.push(pt);
       curr = curr.nextElementSibling;
     }
-    var combined = texts.join('. ');
-    combined = combined.replace(/https?:\/\/\S+/g, ' ')
-                       .replace(/www\.\S+/g, ' ')
-                       .replace(/\[(?:Mail|Brief|Besluit|Doc|Dossier|Notitie|Bijlage|Ref|ID|Bewijs)\b[^\]]*\]/gi, ' ')
-                       .replace(/\[\s*#?\d+[^\]]*\]/g, ' ')
-                       .replace(/[\*•→↔↑↓✕✖✓✔#\[\]{}~_\\|^=★⏱️🧬📄❌⚠️🎧▶❚]/g, ' ')
-                       .replace(/\s+/g, ' ')
-                       .trim();
-    return combined;
+
+    var full = textParts.join(' ');
+    full = full.replace(/[*#\[\]→↔•]/g, ' ');
+    full = full.replace(/\s+/g, ' ').trim();
+    return full;
   }
 
-  function splitTextIntoSpeechChunks(text, maxLen) {
-    maxLen = maxLen || 220;
+  function chunkText(text, maxLen) {
+    maxLen = maxLen || 180;
     var rawSentences = text.split(/(?<=[.!?])\s+/);
     var chunks = [];
-    var current = "";
+    var cur = '';
     for (var i = 0; i < rawSentences.length; i++) {
       var s = rawSentences[i].trim();
       if (!s) continue;
       if (s.length > maxLen) {
-        if (current) {
-          chunks.push(current.trim());
-          current = "";
-        }
-        var subParts = s.split(/(?<=[,;:])\s+/);
-        var subCur = "";
-        for (var j = 0; j < subParts.length; j++) {
-          var sp = subParts[j];
-          if ((subCur + " " + sp).trim().length > maxLen) {
-            if (subCur) chunks.push(subCur.trim());
-            subCur = sp;
+        if (cur) { chunks.push(cur); cur = ''; }
+        var parts = s.split(/(?<=[,;:])\s+/);
+        for (var j = 0; j < parts.length; j++) {
+          var p = parts[j].trim();
+          if (!p) continue;
+          if (p.length > maxLen) {
+            var words = p.split(/\s+/);
+            var wc = '';
+            for (var w = 0; w < words.length; w++) {
+              if ((wc + ' ' + words[w]).trim().length <= maxLen) {
+                wc = (wc + ' ' + words[w]).trim();
+              } else {
+                if (wc) chunks.push(wc);
+                wc = words[w];
+              }
+            }
+            if (wc) chunks.push(wc);
           } else {
-            subCur = (subCur ? subCur + " " : "") + sp;
+            if ((cur + ' ' + p).trim().length <= maxLen) {
+              cur = cur ? (cur + ' ' + p) : p;
+            } else {
+              if (cur) chunks.push(cur);
+              cur = p;
+            }
           }
         }
-        if (subCur) chunks.push(subCur.trim());
-      } else if ((current + " " + s).trim().length > maxLen) {
-        if (current) chunks.push(current.trim());
-        current = s;
       } else {
-        current = (current ? current + " " : "") + s;
-      }
-    }
-    if (current.trim()) chunks.push(current.trim());
-    return chunks.length > 0 ? chunks : [text];
-  }
-
-  function speakTextChunked(textToSpeak, lang, rate, onAllEnded, onErr) {
-    if (!window.speechSynthesis) {
-      if (onErr) onErr();
-      return;
-    }
-    synthCancelled = false;
-    window.speechSynthesis.cancel();
-    var chunks = splitTextIntoSpeechChunks(textToSpeak, 220);
-    var cIdx = 0;
-
-    function speakNext() {
-      if (synthCancelled) return;
-      if (cIdx >= chunks.length) {
-        if (onAllEnded) onAllEnded();
-        return;
-      }
-      var utter = new SpeechSynthesisUtterance(chunks[cIdx]);
-      utter.lang = lang;
-      utter.rate = rate;
-      utter.onend = function() {
-        if (synthCancelled) return;
-        cIdx++;
-        speakNext();
-      };
-      utter.onerror = function(e) {
-        if (synthCancelled) return;
-        if (e && (e.error === 'interrupted' || e.error === 'canceled')) return;
-        cIdx++;
-        if (cIdx < chunks.length) {
-          speakNext();
-        } else if (onErr) {
-          onErr();
+        if ((cur + ' ' + s).trim().length <= maxLen) {
+          cur = cur ? (cur + ' ' + s) : s;
+        } else {
+          if (cur) chunks.push(cur);
+          cur = s;
         }
-      };
-      window.speechSynthesis.speak(utter);
+      }
     }
-
-    speakNext();
+    if (cur) chunks.push(cur);
+    return chunks;
   }
 
-  function updateMasterPlaylistUI(isPlaying, curTime, totTime, pct) {
-    var dict = getUiDict(getActiveLanguage());
-    var mpPlay = document.getElementById('aps-play-btn');
-    var mpStatus = document.getElementById('aps-mp-status');
-    var mpTime = document.getElementById('aps-mp-time');
-    var mpTrackname = document.getElementById('aps-mp-trackname');
-    var mpFill = document.getElementById('aps-mp-progress-fill');
+  function setBarPlayingUI(bar, playing) {
+    var playIcon = bar.querySelector('.aab-icon-play');
+    var pauseIcon = bar.querySelector('.aab-icon-pause');
+    if (playIcon) playIcon.style.display = playing ? 'none' : 'inline-block';
+    if (pauseIcon) pauseIcon.style.display = playing ? 'inline-block' : 'none';
+    if (playing) {
+      bar.classList.add('aab-active');
+    } else {
+      bar.classList.remove('aab-active');
+    }
+  }
 
-    if (mpPlay) {
-      if (isPlaying) {
-        mpPlay.classList.add('aps-playing');
-        var pI = mpPlay.querySelector('.aps-icon-play');
-        var paI = mpPlay.querySelector('.aps-icon-pause');
-        if (pI) pI.style.display = 'none';
-        if (paI) paI.style.display = 'inline';
+  function updatePlaylistUI(bar, playing) {
+    var pSection = document.getElementById('audit-audio-playlist');
+    if (!pSection) return;
+    var aid = bar ? bar.getAttribute('data-audio-id') : null;
+    var rows = pSection.querySelectorAll('.aps-track');
+    for (var i = 0; i < rows.length; i++) {
+      var r = rows[i];
+      if (aid && r.getAttribute('data-audio-id') === aid) {
+        if (playing) {
+          r.classList.add('aps-playing');
+          r.classList.remove('aps-paused');
+        } else {
+          r.classList.remove('aps-playing');
+          r.classList.add('aps-paused');
+        }
       } else {
-        mpPlay.classList.remove('aps-playing');
-        var pI2 = mpPlay.querySelector('.aps-icon-play');
-        var paI2 = mpPlay.querySelector('.aps-icon-pause');
-        if (pI2) pI2.style.display = 'inline';
-        if (paI2) paI2.style.display = 'none';
+        r.classList.remove('aps-playing', 'aps-paused');
       }
     }
-
-    if (allBars.length > 0 && currentTrackIdx >= 0 && currentTrackIdx < allBars.length) {
-      var activeBar = allBars[currentTrackIdx];
-      var trackTitle = activeBar.getAttribute('data-clean-heading') || (activeBar.querySelector('.aab-title') ? activeBar.querySelector('.aab-title').textContent : (' #' + (currentTrackIdx + 1)));
-      if (mpStatus) {
-        mpStatus.textContent = (isPlaying ? dict.statusPlaying : dict.statusPaused) + " (" + (currentTrackIdx + 1) + " / " + allBars.length + ")";
-      }
-      if (mpTrackname) {
-        mpTrackname.textContent = (currentTrackIdx + 1) + ". " + trackTitle;
-      }
-    }
-
-    if (typeof pct === 'number' && mpFill) {
-      mpFill.style.width = Math.max(0, Math.min(100, pct)) + "%";
-    }
-    if (typeof curTime === 'number' && typeof totTime === 'number' && mpTime) {
-      mpTime.textContent = formatTime(curTime) + " / " + formatTime(totTime);
-    }
-
-    var trackRows = document.querySelectorAll('.aps-track');
-    trackRows.forEach(function(row) {
-      var rIdx = parseInt(row.getAttribute('data-track-idx') || '-1', 10);
-      var iconEl = row.querySelector('.aps-t-icon');
-      if (rIdx === currentTrackIdx) {
-        row.classList.add('aps-active');
-        if (iconEl) iconEl.textContent = isPlaying ? '❚❚' : '▶';
-      } else {
-        row.classList.remove('aps-active');
-        if (iconEl) iconEl.textContent = '▶';
-      }
-    });
   }
 
   function stopAllAudio() {
-    synthCancelled = true;
-    allBars.forEach(function(bar) {
-      var audio = bar.querySelector('.aab-audio-el');
-      if (audio && !audio.paused) {
-        audio.pause();
-      }
-      var playBtn = bar.querySelector('.aab-play-btn');
-      if (playBtn) {
-        playBtn.classList.remove('aab-playing');
-        var pIcon = playBtn.querySelector('.aab-icon-play');
-        var paIcon = playBtn.querySelector('.aab-icon-pause');
-        if (pIcon) pIcon.style.display = 'inline';
-        if (paIcon) paIcon.style.display = 'none';
-      }
-    });
+    if (currentAudio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+      currentAudio = null;
+    }
     if (window.speechSynthesis) {
-      window.speechSynthesis.cancel();
+      try { window.speechSynthesis.cancel(); } catch(e) {}
     }
-    if (currentSynthTimer) {
-      clearInterval(currentSynthTimer);
-      currentSynthTimer = null;
+    if (currentLiveAudio) {
+      currentLiveAudio.pause();
+      currentLiveAudio.src = '';
+      currentLiveAudio = null;
     }
-    updateMasterPlaylistUI(false);
+    if (liveProgressTimer) {
+      clearInterval(liveProgressTimer);
+      liveProgressTimer = null;
+    }
+    isPlayingLive = false;
+    currentChunks = [];
+    currentChunkIdx = 0;
+
+    for (var i = 0; i < allBars.length; i++) {
+      setBarPlayingUI(allBars[i], false);
+    }
+    updatePlaylistUI(null, false);
   }
 
-  function applyGlobalSpeed(spd) {
-    allBars.forEach(function(bar) {
-      var audio = bar.querySelector('.aab-audio-el');
-      var speedBtn = bar.querySelector('.aab-speed-btn');
-      if (audio) audio.playbackRate = spd;
-      if (speedBtn) speedBtn.textContent = spd + "x";
-    });
-    var mpSpeed = document.getElementById('aps-speed-btn');
-    if (mpSpeed) mpSpeed.textContent = spd + "x";
-  }
-
-  function handleTrackEnded(idx) {
-    var autoChk = document.getElementById('aps-autoplay-chk');
-    var shouldAutoContinue = autoChk ? autoChk.checked : true;
-    if (shouldAutoContinue && idx + 1 < allBars.length) {
-      playTrackByIndex(idx + 1, false);
+  function playNextTrack(fromBar) {
+    var idx = allBars.indexOf(fromBar);
+    if (idx !== -1 && idx < allBars.length - 1) {
+      var nextBar = allBars[idx + 1];
+      nextBar.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      playBar(nextBar);
     } else {
-      updateMasterPlaylistUI(false, 0, 0, 0);
-    }
-  }
-
-  function playTrackByIndex(idx, scrollToBar) {
-    if (idx < 0 || idx >= allBars.length) return;
-    currentTrackIdx = idx;
-    var targetBar = allBars[idx];
-
-    if (scrollToBar) {
-      var prev = targetBar.previousElementSibling;
-      var scrollEl = (prev && (/^H[1-4]$/.test(prev.tagName) || prev.classList.contains('recht-kop-wrapper'))) ? prev : targetBar;
-      scrollEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    var trackRow = document.querySelector('.aps-track[data-track-idx="' + idx + '"]');
-    var trackList = document.getElementById('aps-tracklist');
-    if (trackRow && trackList) {
-      var topPos = trackRow.offsetTop - trackList.offsetTop;
-      trackList.scrollTo({ top: Math.max(0, topPos - 60), behavior: 'smooth' });
-    }
-
-    if (targetBar && targetBar._startPlayback) {
-      targetBar._startPlayback();
-    }
-  }
-
-  function initAudioBar(bar, idx) {
-    if (bar._initialized) return;
-    bar._initialized = true;
-
-    var playBtn = bar.querySelector('.aab-play-btn');
-    var speedBtn = bar.querySelector('.aab-speed-btn');
-    var nextBtn = bar.querySelector('.aab-next-btn');
-    var progressWrap = bar.querySelector('.aab-progress-wrap');
-    var progressFill = bar.querySelector('.aab-progress-fill');
-    var timeEl = bar.querySelector('.aab-time');
-    var titleEl = bar.querySelector('.aab-title');
-    var audio = bar.querySelector('.aab-audio-el');
-    var cleanText = bar.getAttribute('data-clean-text') || '';
-    var baseAudioSrc = bar.getAttribute('data-audio-src') || '';
-
-    if (titleEl && !bar.getAttribute('data-orig-title')) {
-      bar.setAttribute('data-orig-title', titleEl.textContent);
-    }
-
-    if (speedBtn) {
-      speedBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        globalSpeedIdx = (globalSpeedIdx + 1) % speeds.length;
-        applyGlobalSpeed(speeds[globalSpeedIdx]);
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        var nextIdxAttr = nextBtn.getAttribute('data-next-idx');
-        if (nextIdxAttr === 'playlist') {
-          var pl = document.getElementById('audit-audio-playlist');
-          if (pl) pl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else {
-          var nextIdx = parseInt(nextIdxAttr, 10);
-          if (!isNaN(nextIdx) && nextIdx < allBars.length) {
-            playTrackByIndex(nextIdx, true);
-          }
-        }
-      });
-    }
-
-    if (audio) {
-      audio.addEventListener('loadedmetadata', function() {
-        if (timeEl) timeEl.textContent = "0:00 / " + formatTime(audio.duration);
-        if (currentTrackIdx === idx) {
-          updateMasterPlaylistUI(!audio.paused, audio.currentTime, audio.duration, 0);
-        }
-      });
-
-      audio.addEventListener('timeupdate', function() {
-        if (audio.duration) {
-          var pct = (audio.currentTime / audio.duration) * 100;
-          if (progressFill) progressFill.style.width = pct + "%";
-          if (timeEl) timeEl.textContent = formatTime(audio.currentTime) + " / " + formatTime(audio.duration);
-          if (currentTrackIdx === idx) {
-            updateMasterPlaylistUI(!audio.paused, audio.currentTime, audio.duration, pct);
-          }
-        }
-      });
-
-      audio.addEventListener('ended', function() {
-        if (playBtn) {
-          playBtn.classList.remove('aab-playing');
-          var pIcon = playBtn.querySelector('.aab-icon-play');
-          var paIcon = playBtn.querySelector('.aab-icon-pause');
-          if (pIcon) pIcon.style.display = 'inline';
-          if (paIcon) paIcon.style.display = 'none';
-        }
-        if (progressFill) progressFill.style.width = "0%";
-        if (timeEl) timeEl.textContent = "0:00 / " + formatTime(audio.duration);
-        handleTrackEnded(idx);
-      });
-    }
-
-    if (progressWrap && audio) {
-      progressWrap.addEventListener('click', function(e) {
-        if (audio.duration) {
-          var rect = progressWrap.getBoundingClientRect();
-          var pos = (e.clientX - rect.left) / rect.width;
-          audio.currentTime = pos * audio.duration;
-        }
-      });
-    }
-
-    function syncAudioSrcForLang(lang) {
-      if (!audio || !baseAudioSrc) return;
-      var shortLang = (lang || 'nl').toLowerCase().split('-')[0];
-      if (shortLang === 'nl') {
-        if (audio.getAttribute('src') !== baseAudioSrc) {
-          audio.src = baseAudioSrc;
-          audio.load();
-        }
-        return;
-      }
-      var attrSrc = bar.getAttribute('data-audio-src-' + shortLang);
-      if (attrSrc) {
-        if (audio.getAttribute('src') !== attrSrc) {
-          audio.src = attrSrc;
-          audio.load();
-        }
-      }
-    }
-
-    bar._updateLanguage = syncAudioSrcForLang;
-
-    function startPlayback() {
-      var lang = getActiveLanguage();
-      var shortLang = (lang || 'nl').toLowerCase().split('-')[0];
-      syncAudioSrcForLang(shortLang);
-      var hasAudioFile = (shortLang === 'nl') || !!bar.getAttribute('data-audio-src-' + shortLang);
-      var isTranslatedFallback = !hasAudioFile;
-
       stopAllAudio();
-      currentBar = bar;
-      currentTrackIdx = idx;
-
-      if (isTranslatedFallback && window.speechSynthesis) {
-        if (playBtn) {
-          playBtn.classList.add('aab-playing');
-          var pIcon = playBtn.querySelector('.aab-icon-play');
-          var paIcon = playBtn.querySelector('.aab-icon-pause');
-          if (pIcon) pIcon.style.display = 'none';
-          if (paIcon) paIcon.style.display = 'inline';
-        }
-
-        var textToSpeak = cleanText;
-        if (shortLang !== 'nl') {
-          var liveText = getSectionLiveText(bar);
-          if (liveText && liveText.length > 20) {
-            textToSpeak = liveText;
-          }
-        }
-
-        var wordCount = textToSpeak.split(/\s+/).length;
-        synthDurationEst = Math.max(5, (wordCount / 130) * 60 / speeds[globalSpeedIdx]);
-        synthStartTime = Date.now();
-        updateMasterPlaylistUI(true, 0, synthDurationEst, 0);
-
-        currentSynthTimer = setInterval(function() {
-          var elapsed = (Date.now() - synthStartTime) / 1000;
-          if (elapsed > synthDurationEst) elapsed = synthDurationEst;
-          var pct = (elapsed / synthDurationEst) * 100;
-          if (progressFill) progressFill.style.width = pct + "%";
-          if (timeEl) timeEl.textContent = formatTime(elapsed) + " / " + formatTime(synthDurationEst);
-          updateMasterPlaylistUI(true, elapsed, synthDurationEst, pct);
-        }, 250);
-
-        speakTextChunked(textToSpeak, lang, speeds[globalSpeedIdx], function() {
-          stopAllAudio();
-          if (progressFill) progressFill.style.width = "0%";
-          if (timeEl) timeEl.textContent = "0:00 / " + formatTime(synthDurationEst);
-          handleTrackEnded(idx);
-        }, function() {
-          stopAllAudio();
-        });
-      } else if (audio) {
-        if (playBtn) {
-          playBtn.classList.add('aab-playing');
-          var pIcon2 = playBtn.querySelector('.aab-icon-play');
-          var paIcon2 = playBtn.querySelector('.aab-icon-pause');
-          if (pIcon2) pIcon2.style.display = 'none';
-          if (paIcon2) paIcon2.style.display = 'inline';
-        }
-        audio.playbackRate = speeds[globalSpeedIdx];
-        updateMasterPlaylistUI(true, audio.currentTime || 0, audio.duration || 0, 0);
-
-        audio.play().catch(function(err) {
-          console.warn("[AUDIO INFO] Neuraal bestand niet direct beschikbaar, omschakelen naar browser stem:", err);
-          if (window.speechSynthesis) {
-            var liveText = getSectionLiveText(bar);
-            var fallbackText = (liveText && liveText.length > 20) ? liveText : cleanText;
-            speakTextChunked(fallbackText, lang, speeds[globalSpeedIdx], function() {
-              stopAllAudio();
-              handleTrackEnded(idx);
-            }, function() {
-              stopAllAudio();
-            });
-          } else {
-            stopAllAudio();
-          }
-        });
-      }
-    }
-
-    bar._startPlayback = startPlayback;
-
-    if (playBtn) {
-      playBtn.addEventListener('click', function() {
-        var isPlaying = playBtn.classList.contains('aab-playing');
-        if (isPlaying) {
-          stopAllAudio();
-        } else {
-          startPlayback();
-        }
-      });
     }
   }
 
-  var playlistControlsInitialized = false;
-  function initPlaylistControls() {
-    if (playlistControlsInitialized) return;
-    playlistControlsInitialized = true;
-
-    var mpPlay = document.getElementById('aps-play-btn');
-    var mpPrev = document.getElementById('aps-prev-btn');
-    var mpNext = document.getElementById('aps-next-btn');
-    var mpSpeed = document.getElementById('aps-speed-btn');
-    var mpProgress = document.getElementById('aps-mp-progress-wrap');
-    var topPlayAll = document.getElementById('apt-play-all-btn');
-
-    if (topPlayAll) {
-      topPlayAll.addEventListener('click', function() {
-        var pl = document.getElementById('audit-audio-playlist');
-        if (pl) pl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        playTrackByIndex(0, false);
-      });
-    }
-
-    if (mpPlay) {
-      mpPlay.addEventListener('click', function() {
-        var isPlaying = mpPlay.classList.contains('aps-playing');
-        if (isPlaying) {
-          stopAllAudio();
-        } else {
-          playTrackByIndex(currentTrackIdx || 0, false);
-        }
-      });
-    }
-
-    if (mpPrev) {
-      mpPrev.addEventListener('click', function() {
-        var prevIdx = currentTrackIdx > 0 ? currentTrackIdx - 1 : 0;
-        playTrackByIndex(prevIdx, false);
-      });
-    }
-
-    if (mpNext) {
-      mpNext.addEventListener('click', function() {
-        if (currentTrackIdx + 1 < allBars.length) {
-          playTrackByIndex(currentTrackIdx + 1, false);
-        }
-      });
-    }
-
-    if (mpSpeed) {
-      mpSpeed.addEventListener('click', function() {
-        globalSpeedIdx = (globalSpeedIdx + 1) % speeds.length;
-        applyGlobalSpeed(speeds[globalSpeedIdx]);
-      });
-    }
-
-    if (mpProgress) {
-      mpProgress.addEventListener('click', function(e) {
-        if (currentTrackIdx >= 0 && currentTrackIdx < allBars.length) {
-          var bar = allBars[currentTrackIdx];
-          var audio = bar ? bar.querySelector('.aab-audio-el') : null;
-          if (audio && audio.duration) {
-            var rect = mpProgress.getBoundingClientRect();
-            var pos = (e.clientX - rect.left) / rect.width;
-            audio.currentTime = pos * audio.duration;
-          }
-        }
-      });
-    }
-
-    document.querySelectorAll('.aps-track').forEach(function(row) {
-      row.addEventListener('click', function(e) {
-        if (e.target && e.target.closest('.aps-track-jump')) {
-          return;
-        }
-        var idx = parseInt(row.getAttribute('data-track-idx') || '0', 10);
-        var mpPlayBtn = document.getElementById('aps-play-btn');
-        var isCurrentlyPlayingThis = (currentTrackIdx === idx) && mpPlayBtn && mpPlayBtn.classList.contains('aps-playing');
-        if (isCurrentlyPlayingThis) {
-          stopAllAudio();
-        } else {
-          playTrackByIndex(idx, false);
-        }
-      });
-    });
-  }
-
-  function ensureInitialized() {
-    if (allBars.length === 0) {
-      allBars = Array.prototype.slice.call(document.querySelectorAll('.audit-audio-bar'));
-      allBars.forEach(function(bar, idx) {
-        initAudioBar(bar, idx);
-      });
-      initPlaylistControls();
-    }
-  }
-
-  window.updateAudioLanguage = function(lang) {
-    ensureInitialized();
-    var dict = getUiDict(lang);
-    var nTotal = allBars.length;
-
-    allBars.forEach(function(bar) {
-      if (bar._updateLanguage) bar._updateLanguage(lang);
-      var badge = bar.querySelector('.aab-badge');
-      if (badge) badge.textContent = dict.badge;
-      var nextBtn = bar.querySelector('.aab-next-btn');
-      if (nextBtn) {
-        if (nextBtn.getAttribute('data-next-idx') === 'playlist') {
-          nextBtn.textContent = dict.playlistBtn;
-        } else {
-          nextBtn.textContent = dict.next;
-        }
-      }
-      var titleEl = bar.querySelector('.aab-title');
-      var origTitle = bar.getAttribute('data-orig-title');
-      if (titleEl && origTitle) {
-        titleEl.textContent = translateTitleLabel(origTitle, lang);
-      }
-    });
-
-    var topBanner = document.querySelector('.audit-playlist-topbanner');
-    if (topBanner && nTotal > 0) {
-      var aptText = topBanner.querySelector('.apt-text');
-      if (aptText) {
-        aptText.innerHTML = '<strong>' + dict.topStrong + '</strong><br/>' +
-          dict.topBody1 + '<strong>' + nTotal + dict.topBody2 + '</strong>' + dict.topBody3;
-      }
-      var playAllBtn = document.getElementById('apt-play-all-btn');
-      if (playAllBtn) playAllBtn.textContent = dict.topPlayAll;
-      var jumpBtn = topBanner.querySelector('.apt-btn-jump');
-      if (jumpBtn) jumpBtn.textContent = dict.topJump + ' (' + nTotal + ')';
-    }
-
-    var plSec = document.getElementById('audit-audio-playlist');
-    if (plSec && nTotal > 0) {
-      var apsBadge = plSec.querySelector('.aps-badge');
-      if (apsBadge) apsBadge.textContent = dict.apsBadge;
-      var apsTopLink = plSec.querySelector('.pub-naar-boven');
-      if (apsTopLink) apsTopLink.textContent = dict.topLink;
-      var apsH2 = plSec.querySelector('.aps-header h2');
-      if (apsH2) apsH2.textContent = dict.apsTitle1 + nTotal + dict.apsTitle2;
-      var apsDesc = plSec.querySelector('.aps-desc');
-      if (apsDesc) apsDesc.textContent = dict.apsDesc1 + nTotal + dict.apsDesc2;
-      var autoSpan = plSec.querySelector('.aps-autoplay-toggle span');
-      if (autoSpan) autoSpan.textContent = dict.autoContinue;
-      plSec.querySelectorAll('.aps-track-jump').forEach(function(jmp) {
-        jmp.textContent = dict.jumpText;
-      });
-      var mpStatus = document.getElementById('aps-mp-status');
-      var mpPlay = document.getElementById('aps-play-btn');
-      var isPl = mpPlay && mpPlay.classList.contains('aps-playing');
-      if (mpStatus) {
-        mpStatus.textContent = (isPl ? dict.statusPlaying : dict.statusReady) + " (" + ((currentTrackIdx || 0) + 1) + " / " + nTotal + ")";
-      }
-    }
-  };
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', ensureInitialized);
-  } else {
-    ensureInitialized();
-  }
-})();
-
-</script><!-- Direct DOM Translation Engine (works on file://, http://, and https://) -->
-<script class="notranslate" translate="no">
-(function() {
-  var _origTexts = new Map();
-  var _isTranslating = false;
-  var _currentLang = 'nl';
-
-  function getTranslatableNodes() {
-    var nodes = [];
-    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-      acceptNode: function(node) {
-        if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
-        var p = node.parentElement;
-        while (p) {
-          if (p.classList && (p.classList.contains('notranslate') || p.id === 'bm-modal' || p.id === 'rechten-banner')) {
-            return NodeFilter.FILTER_REJECT;
-          }
-          var tag = p.tagName.toLowerCase();
-          if (tag === 'script' || tag === 'style' || tag === 'code' || tag === 'pre') {
-            return NodeFilter.FILTER_REJECT;
-          }
-          p = p.parentElement;
-        }
-        var text = node.nodeValue.replace(/\s+/g, ' ').trim();
-        if (text.length >= 2 && /[a-zA-ZÀ-ÿ]{2,}/.test(text)) {
-          return NodeFilter.FILTER_ACCEPT;
-        }
-        return NodeFilter.FILTER_REJECT;
-      }
-    });
-    while (walker.nextNode()) {
-      nodes.push(walker.currentNode);
-    }
-    return nodes;
-  }
-
-  function updatePageLinks(lang) {
-    var links = document.querySelectorAll('a[href]');
-    for (var i = 0; i < links.length; i++) {
-      var a = links[i];
-      var href = a.getAttribute('href');
-      if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('javascript:')) continue;
-      var hashPart = href.indexOf('#') !== -1 ? href.substring(href.indexOf('#')) : '';
-      var withoutHash = href.split('#')[0];
-      var base = withoutHash.split('?')[0];
-      if (href.indexOf('document-') !== -1) {
-        var isPrint = withoutHash.indexOf('print=1') !== -1;
-        a.setAttribute('href', base + '?int=1&lang=' + lang + (isPrint ? '&print=1' : '') + hashPart);
-      } else if (href.indexOf('home_int.html') !== -1) {
-        a.setAttribute('href', base + '?lang=' + lang + hashPart);
-      }
-    }
-  }
-
-  function syncDropdown(lang) {
-    var sel = document.getElementById('int-lang-select');
-    if (sel && lang) {
-      sel.value = lang;
-    }
-  }
-
-  function bepaalDoeltaal() {
-    var urlParams = new URLSearchParams(window.location.search);
-    var target = urlParams.get('lang');
-    if (!target) {
-      try { target = sessionStorage.getItem('grensarbeid-int-lang'); } catch(e) {}
-    }
-    if (!target) {
-      var navLang = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
-      target = navLang.toLowerCase().split('-')[0];
-    }
-    return target || 'en';
-  }
-
-  function showStatusPill(msg, isSuccess) {
-    var pill = document.getElementById('trans-status-pill');
-    if (!pill) {
-      pill = document.createElement('div');
-      pill.id = 'trans-status-pill';
-      pill.className = 'notranslate';
-      pill.style.cssText = 'position:fixed;bottom:24px;left:24px;z-index:9999;padding:6px 14px;border-radius:20px;font-size:10pt;font-weight:600;font-family:sans-serif;box-shadow:0 4px 12px rgba(0,0,0,0.3);transition:opacity .3s;';
-      document.body.appendChild(pill);
-    }
-    pill.textContent = msg;
-    pill.style.background = isSuccess ? '#2e7d32' : '#003399';
-    pill.style.color = '#ffffff';
-    pill.style.opacity = '1';
-    pill.style.display = 'block';
-    if (isSuccess) {
-      setTimeout(function() {
-        pill.style.opacity = '0';
-        setTimeout(function(){ pill.style.display='none'; }, 300);
-      }, 2500);
-    }
-  }
-
-  window.vertaalPaginaNaar = function(lang) {
-    if (!lang) return Promise.resolve();
-    if (_isTranslating) return Promise.resolve();
-    _isTranslating = true;
-    _currentLang = lang;
-
-    document.documentElement.lang = lang;
-    document.documentElement.setAttribute('lang', lang);
-    if (window.updateAudioLanguage) {
-      window.updateAudioLanguage(lang);
-    }
-
-    updatePageLinks(lang);
-    syncDropdown(lang);
-
-    var nodes = getTranslatableNodes();
-    for (var i = 0; i < nodes.length; i++) {
-      var n = nodes[i];
-      if (!_origTexts.has(n)) {
-        _origTexts.set(n, n.nodeValue);
-      }
-    }
-
-    if (lang === 'nl') {
-      for (var i = 0; i < nodes.length; i++) {
-        var n = nodes[i];
-        if (_origTexts.has(n)) {
-          n.nodeValue = _origTexts.get(n);
-        }
-      }
-      _isTranslating = false;
-      showStatusPill('✓ Nederlands (Origineel)', true);
-      return Promise.resolve();
-    }
-
-    showStatusPill('⏳ Translating (' + lang.toUpperCase() + ')...', false);
-
-    var chunks = [];
-    var curNodes = [];
-    var curLen = 0;
-    for (var i = 0; i < nodes.length; i++) {
-      var n = nodes[i];
-      var orig = _origTexts.get(n).replace(/\s+/g, ' ').trim();
-      if (curLen + orig.length > 3000 && curNodes.length > 0) {
-        chunks.push(curNodes);
-        curNodes = [];
-        curLen = 0;
-      }
-      curNodes.push(n);
-      curLen += orig.length + 1;
-    }
-    if (curNodes.length > 0) chunks.push(curNodes);
-
-    var promises = chunks.map(function(chunk) {
-      var lines = chunk.map(function(n) {
-        return _origTexts.get(n).replace(/\s+/g, ' ').trim();
-      });
-      var q = lines.join('\n');
-      var url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=nl&tl=' + lang + '&dt=t';
-
-      return fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-        },
-        body: 'q=' + encodeURIComponent(q)
-      })
-      .then(function(resp) { return resp.json(); })
-      .then(function(data) {
-        if (!data || !data[0]) return;
-        var fullTrans = '';
-        for (var p = 0; p < data[0].length; p++) {
-          if (data[0][p][0]) fullTrans += data[0][p][0];
-        }
-        var transLines = fullTrans.split('\n');
-        for (var k = 0; k < chunk.length && k < transLines.length; k++) {
-          var node = chunk[k];
-          var orig = _origTexts.get(node);
-          var leadingSpace = orig.match(/^\s*/)[0];
-          var trailingSpace = orig.match(/\s*$/)[0];
-          node.nodeValue = leadingSpace + transLines[k] + trailingSpace;
-        }
-      })
-      .catch(function(err) {
-        console.warn('Translation error for chunk:', err);
-      });
-    });
-
-    return Promise.all(promises).then(function() {
-      _isTranslating = false;
-      showStatusPill('✓ Translated (' + lang.toUpperCase() + ')', true);
-    });
-  };
-
-  window.wisselTaal = function(lang) {
-    if (!lang) return;
-    try {
-      sessionStorage.setItem('grensarbeid-int-lang', lang);
-    } catch(e) {}
-
-    var curUrl = new URL(window.location.href);
-    curUrl.searchParams.set('lang', lang);
-    window.history.replaceState({}, '', curUrl.toString());
-
-    window.vertaalPaginaNaar(lang);
-  };
-
-  function initOrSync() {
-    var isInt = window.location.search.indexOf('int=1') !== -1;
-    var isHomeInt = location.pathname.indexOf('home_int.html') !== -1;
-    var autoLang = document.documentElement.getAttribute('data-auto-lang');
-    var hasAutoLang = autoLang && autoLang !== 'nl';
-
-    if (!isInt && !isHomeInt && !hasAutoLang) {
-      // 100% hard authentic Dutch mode!
+  // --- LIVE TTS PLAYBACK (INTERNATIONAL PORTAL) ---
+  function startLivePlayback(bar) {
+    var text = getSectionLiveText(bar);
+    if (!text) {
+      console.warn("No text found for live playback in section");
       return;
     }
+    currentChunks = chunkText(text, 180);
+    if (!currentChunks.length) return;
 
-    var target = (hasAutoLang && !window.location.search.includes('lang=')) ? autoLang : bepaalDoeltaal();
-    document.documentElement.lang = target;
-    document.documentElement.setAttribute('lang', target);
-    if (window.updateAudioLanguage) {
-      window.updateAudioLanguage(target);
-    }
-    syncDropdown(target);
-    if (isInt || isHomeInt) {
-      updatePageLinks(target);
+    totalLiveChars = 0;
+    chunkStartChars = [];
+    for (var i = 0; i < currentChunks.length; i++) {
+      chunkStartChars.push(totalLiveChars);
+      totalLiveChars += currentChunks[i].length;
     }
 
-    if (_currentLang !== target) {
-      window.vertaalPaginaNaar(target).then(function() {
-        if (window.location.search.indexOf('print=1') !== -1) {
-          setTimeout(function() { window.print(); }, 400);
+    var curSpeed = speeds[globalSpeedIdx];
+    liveEstDuration = Math.max(1, totalLiveChars / (15 * curSpeed));
+    liveStartTime = Date.now();
+    currentChunkIdx = 0;
+    isPlayingLive = true;
+    currentBar = bar;
+    setBarPlayingUI(bar, true);
+    updatePlaylistUI(bar, true);
+
+    if (liveProgressTimer) clearInterval(liveProgressTimer);
+    liveProgressTimer = setInterval(function() {
+      if (!isPlayingLive || !currentBar) return;
+      var elapsedSec = (Date.now() - liveStartTime) / 1000;
+      var estSec = Math.min(liveEstDuration, elapsedSec);
+      var pct = Math.min(100, Math.max(0, (estSec / liveEstDuration) * 100));
+
+      var pFill = currentBar.querySelector('.aab-progress-fill');
+      if (pFill) pFill.style.width = pct + '%';
+      var timeEl = currentBar.querySelector('.aab-time');
+      if (timeEl) {
+        timeEl.innerText = formatTime(estSec) + ' / ~' + formatTime(liveEstDuration);
+      }
+    }, 250);
+
+    playLiveChunk(0);
+  }
+
+  function playLiveChunk(idx) {
+    if (!isPlayingLive || !currentBar || idx >= currentChunks.length) {
+      if (isPlayingLive && currentBar && idx >= currentChunks.length) {
+        var finishedBar = currentBar;
+        stopAllAudio();
+        playNextTrack(finishedBar);
+      }
+      return;
+    }
+    currentChunkIdx = idx;
+    var chunk = currentChunks[idx];
+    var lang = getLang();
+    var curSpeed = speeds[globalSpeedIdx];
+
+    // Motor A: Web Speech API
+    var matchedVoice = null;
+    if (window.speechSynthesis) {
+      var voices = window.speechSynthesis.getVoices();
+      for (var v = 0; v < voices.length; v++) {
+        if (voices[v].lang && voices[v].lang.toLowerCase().startsWith(lang.toLowerCase())) {
+          matchedVoice = voices[v];
+          break;
         }
-      });
+      }
+    }
+
+    if (matchedVoice) {
+      var utter = new SpeechSynthesisUtterance(chunk);
+      utter.voice = matchedVoice;
+      utter.lang = matchedVoice.lang;
+      utter.rate = curSpeed;
+      liveUtterance = utter;
+
+      var started = false;
+      var startTimer = setTimeout(function() {
+        if (!started && isPlayingLive) {
+          try { window.speechSynthesis.cancel(); } catch(e) {}
+          playMotorB(chunk, idx, lang, curSpeed);
+        }
+      }, 800);
+
+      utter.onstart = function() {
+        started = true;
+        clearTimeout(startTimer);
+      };
+      utter.onend = function() {
+        clearTimeout(startTimer);
+        if (isPlayingLive) playLiveChunk(idx + 1);
+      };
+      utter.onerror = function() {
+        clearTimeout(startTimer);
+        if (isPlayingLive && !started) {
+          playMotorB(chunk, idx, lang, curSpeed);
+        }
+      };
+      window.speechSynthesis.speak(utter);
     } else {
-      syncDropdown(target);
-      if (isInt || isHomeInt) {
-        updatePageLinks(target);
-      }
-      if (window.location.search.indexOf('print=1') !== -1) {
-        setTimeout(function() { window.print(); }, 400);
-      }
+      playMotorB(chunk, idx, lang, curSpeed);
     }
   }
 
-  // Initial execution
-  initOrSync();
+  function playMotorB(chunk, idx, lang, curSpeed) {
+    if (!isPlayingLive) return;
+    if (!currentLiveAudio) {
+      currentLiveAudio = new Audio();
+      currentLiveAudio.referrerPolicy = "no-referrer";
+    }
+    var url = "https://translate.googleapis.com/translate_tts?ie=UTF-8&client=gtx&tl=" +
+              encodeURIComponent(lang) + "&q=" + encodeURIComponent(chunk);
+    currentLiveAudio.src = url;
+    currentLiveAudio.playbackRate = curSpeed;
+    currentLiveAudio.onended = function() {
+      if (isPlayingLive) playLiveChunk(idx + 1);
+    };
+    currentLiveAudio.onerror = function() {
+      if (isPlayingLive) {
+        setTimeout(function() { playLiveChunk(idx + 1); }, 300);
+      }
+    };
+    currentLiveAudio.play().catch(function() {
+      if (isPlayingLive) {
+        setTimeout(function() { playLiveChunk(idx + 1); }, 400);
+      }
+    });
+  }
 
-  // Listen to pageshow (BFCache restore on back/forward) and popstate
-  window.addEventListener('pageshow', function() {
-    initOrSync();
-  });
-  window.addEventListener('popstate', function() {
-    initOrSync();
-  });
+  // --- STANDARD MP3 PLAYBACK (DUTCH ENVIRONMENT) ---
+  function playMp3Bar(bar) {
+    var audioEl = bar.querySelector('.aab-audio-el');
+    if (!audioEl) {
+      var src = bar.getAttribute('data-audio-src');
+      if (src) {
+        audioEl = document.createElement('audio');
+        audioEl.className = 'aab-audio-el';
+        audioEl.preload = 'none';
+        audioEl.src = src;
+        bar.appendChild(audioEl);
+      }
+    }
+    if (!audioEl) return;
+
+    currentAudio = audioEl;
+    currentBar = bar;
+    audioEl.playbackRate = speeds[globalSpeedIdx];
+
+    audioEl.onplay = function() {
+      setBarPlayingUI(bar, true);
+      updatePlaylistUI(bar, true);
+    };
+    audioEl.onpause = function() {
+      setBarPlayingUI(bar, false);
+      updatePlaylistUI(bar, false);
+    };
+    audioEl.onended = function() {
+      setBarPlayingUI(bar, false);
+      updatePlaylistUI(bar, false);
+      playNextTrack(bar);
+    };
+    audioEl.ontimeupdate = function() {
+      if (!audioEl.duration) return;
+      var pct = (audioEl.currentTime / audioEl.duration) * 100;
+      var pFill = bar.querySelector('.aab-progress-fill');
+      if (pFill) pFill.style.width = pct + '%';
+      var timeEl = bar.querySelector('.aab-time');
+      if (timeEl) {
+        timeEl.innerText = formatTime(audioEl.currentTime) + ' / ' + formatTime(audioEl.duration);
+      }
+    };
+
+    audioEl.play().catch(function(err) {
+      console.warn("Audio play error:", err);
+    });
+  }
+
+  function playBar(bar) {
+    if (currentBar === bar) {
+      if (isIntPortal) {
+        if (isPlayingLive) {
+          stopAllAudio();
+          return;
+        }
+      } else {
+        if (currentAudio && !currentAudio.paused) {
+          currentAudio.pause();
+          return;
+        } else if (currentAudio && currentAudio.paused) {
+          currentAudio.play();
+          return;
+        }
+      }
+    }
+
+    stopAllAudio();
+
+    if (isIntPortal) {
+      if (window._transPromise) {
+        window._transPromise.then(function() {
+          startLivePlayback(bar);
+        });
+      } else {
+        startLivePlayback(bar);
+      }
+    } else {
+      playMp3Bar(bar);
+    }
+  }
+
+  function seekLive(bar, pct) {
+    if (!isPlayingLive || currentBar !== bar || !currentChunks.length) return;
+    var targetChar = pct * totalLiveChars;
+    var targetIdx = 0;
+    for (var i = 0; i < chunkStartChars.length; i++) {
+      if (targetChar >= chunkStartChars[i]) {
+        targetIdx = i;
+      }
+    }
+    if (window.speechSynthesis) {
+      try { window.speechSynthesis.cancel(); } catch(e) {}
+    }
+    if (currentLiveAudio) {
+      currentLiveAudio.pause();
+    }
+    liveStartTime = Date.now() - ((targetChar / (15 * speeds[globalSpeedIdx])) * 1000);
+    playLiveChunk(targetIdx);
+  }
+
+  function updateAudioPlayerUI(lang) {
+    var t = AUDIO_UI_I18N[lang] || AUDIO_UI_I18N['en'];
+    for (var i = 0; i < allBars.length; i++) {
+      var bar = allBars[i];
+      var pBtn = bar.querySelector('.aab-play-btn');
+      if (pBtn) pBtn.setAttribute('title', t.play);
+      var badge = bar.querySelector('.aab-badge');
+      if (badge) badge.innerText = t.badge;
+      var nBtn = bar.querySelector('.aab-next-btn:not(.aab-to-playlist-btn)');
+      if (nBtn) nBtn.innerText = t.next;
+      var toPBtn = bar.querySelector('.aab-to-playlist-btn');
+      if (toPBtn) toPBtn.innerText = t.playlist;
+      var spBtn = bar.querySelector('.aab-speed-btn');
+      if (spBtn) spBtn.setAttribute('title', t.speed);
+    }
+
+    var playAllBtn = document.getElementById('apt-play-all-btn');
+    if (playAllBtn) playAllBtn.innerText = t.playAll;
+    var aptJump = document.querySelector('.apt-btn-jump');
+    if (aptJump) aptJump.innerText = t.jumpPlaylist;
+    var jumps = document.querySelectorAll('.aps-track-jump');
+    for (var j = 0; j < jumps.length; j++) {
+      jumps[j].innerText = t.jumpText;
+    }
+  }
+
+  window.wisselTaal = function(lang) {
+    var wasPlaying = isPlayingLive || (currentAudio && !currentAudio.paused);
+    var lastBar = currentBar;
+    stopAllAudio();
+
+    if (typeof window.vertaalPaginaNaar === 'function') {
+      window._transPromise = window.vertaalPaginaNaar(lang).then(function() {
+        updateAudioPlayerUI(lang);
+        if (wasPlaying && lastBar) {
+          playBar(lastBar);
+        }
+      });
+    } else {
+      updateAudioPlayerUI(lang);
+    }
+  };
+
+  function initAudioPlayer() {
+    allBars = Array.prototype.slice.call(document.querySelectorAll('.audit-audio-bar'));
+    if (!allBars.length) return;
+
+    for (var i = 0; i < allBars.length; i++) {
+      (function(bar, idx) {
+        var pBtn = bar.querySelector('.aab-play-btn');
+        if (pBtn) {
+          pBtn.onclick = function(e) {
+            e.stopPropagation();
+            playBar(bar);
+          };
+        }
+
+        var spBtn = bar.querySelector('.aab-speed-btn');
+        if (spBtn) {
+          spBtn.onclick = function(e) {
+            e.stopPropagation();
+            globalSpeedIdx = (globalSpeedIdx + 1) % speeds.length;
+            var sp = speeds[globalSpeedIdx];
+            var allSpBtns = document.querySelectorAll('.aab-speed-btn');
+            for (var s = 0; s < allSpBtns.length; s++) {
+              allSpBtns[s].innerText = sp + 'x';
+            }
+            if (currentAudio) currentAudio.playbackRate = sp;
+            if (currentLiveAudio) currentLiveAudio.playbackRate = sp;
+          };
+        }
+
+        var progWrap = bar.querySelector('.aab-progress-wrap');
+        if (progWrap) {
+          progWrap.onclick = function(e) {
+            e.stopPropagation();
+            var rect = progWrap.getBoundingClientRect();
+            var pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+            if (isIntPortal) {
+              seekLive(bar, pct);
+            } else if (currentAudio && currentBar === bar && currentAudio.duration) {
+              currentAudio.currentTime = pct * currentAudio.duration;
+            }
+          };
+        }
+
+        var nextBtn = bar.querySelector('.aab-next-btn');
+        if (nextBtn) {
+          nextBtn.onclick = function(e) {
+            e.stopPropagation();
+            var target = nextBtn.getAttribute('data-next-target');
+            if (target === '#audit-audio-playlist') {
+              var pSec = document.getElementById('audit-audio-playlist');
+              if (pSec) pSec.scrollIntoView({ behavior: 'smooth' });
+            } else if (target) {
+              var nextEl = document.querySelector(target);
+              if (nextEl) {
+                nextEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                playBar(nextEl);
+              }
+            }
+          };
+        }
+      })(allBars[i], i);
+    }
+
+    var playAllBtn = document.getElementById('apt-play-all-btn');
+    if (playAllBtn) {
+      playAllBtn.onclick = function() {
+        if (allBars.length) {
+          allBars[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+          playBar(allBars[0]);
+        }
+      };
+    }
+
+    var playlistRows = document.querySelectorAll('.aps-track');
+    for (var r = 0; r < playlistRows.length; r++) {
+      (function(row) {
+        row.onclick = function(e) {
+          if (e.target.tagName === 'A') return;
+          var aid = row.getAttribute('data-audio-id');
+          var targetBar = document.querySelector('.audit-audio-bar[data-audio-id="' + aid + '"]');
+          if (targetBar) {
+            targetBar.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            playBar(targetBar);
+          }
+        };
+      })(playlistRows[r]);
+    }
+
+    if (window.speechSynthesis && window.speechSynthesis.onvoiceschanged !== undefined) {
+      window.speechSynthesis.onvoiceschanged = function() {};
+    }
+
+    if (isIntPortal) {
+      updateAudioPlayerUI(getLang());
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAudioPlayer);
+  } else {
+    initAudioPlayer();
+  }
 })();
+
 </script></body>
 </html>
