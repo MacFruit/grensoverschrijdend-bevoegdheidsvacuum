@@ -2,7 +2,7 @@
 
 <html data-int-portal="1" data-theme="dark" lang="en">
 <head>
-<meta charset="utf-8"/>
+<meta charset="utf-8"/><meta content="no-referrer" name="referrer"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Visuele architectuur van het bevoegdheidsvacuüm — schema's en datastromen | Systeem-Audit</title>
 <meta content="Twee starre werelden, één membraan, drie kanalen. Schema's en netwerken die tonen waarom het systeem faalt voor wie in twee landen tegelijk bestaat." name="description"/>
@@ -3241,7 +3241,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 }
 
 </style>
-<meta content="no-referrer" name="referrer"/><script>
+<script>
 (function(){try{var t=localStorage.getItem('systeem-audit-thema');if(t!=='dark'&&t!=='light'){t='dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
 </script></head>
 <body><a id="top"></a>
@@ -3254,11 +3254,13 @@ html[data-theme="dark"] .aps-track-jump:hover {
 
 
 <div class="titelblad">
-<h1 id="systeem-audit">Systeem-Audit</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h1 id="systeem-audit">Document C — The visual architecture</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="pub-ab-banner" style="margin: 16pt 0 24pt 0;">
+<strong>Language &amp; Translation Notice:</strong> Dutch (nl/) is the sole authentic source language of this System-Audit. The automated translations of the overview, documents, visual architecture, synthesis and rights matrix are provided to make the documented cross-border mechanisms accessible across Europe. In case of any ambiguity or legal interpretation, the original Dutch text and source files prevail.
+</div>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document C — De visuele architectuur</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 3 november 2026, 16:10</p>
+<p class="meta-lijn">Versie bijgewerkt: 3 november 2026, 16:48</p>
 </div>
 <div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
 <li class="niv1"><a href="#systeem-audit">Systeem-Audit</a></li>
@@ -4350,7 +4352,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 3 november 2026, 16:10</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 3 november 2026, 16:48</p>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-print-btn notranslate" onclick="window.print()" title="Print deze pagina of bewaar als PDF" translate="no" type="button">🖨️ Print / Bewaar als PDF</button>
 <button class="pub-contact-btn pub-contact-footer notranslate" onclick="openBronModal('Footer contact')" translate="no" type="button">📄 Bronstuk opvragen / Contact</button>
@@ -4719,7 +4721,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
           try { window.speechSynthesis.cancel(); } catch(e) {}
           playGoogleStream(chunk, idx, lang, curSpeed);
         }
-      }, 800);
+      }, 1200);
 
       utter.onstart = function() {
         started = true;
@@ -4741,7 +4743,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
       };
       window.speechSynthesis.speak(utter);
     } else {
-      // Motor 2: Direct Google TTS Stream (werkt direct voor ALLE talen, incl. DA, SV, RO!)
+      // Motor 2: Direct Google TTS Stream (for DA, SV, RO and any language without local voice)
       playGoogleStream(chunk, idx, lang, curSpeed);
     }
   }
@@ -4772,11 +4774,11 @@ html[data-theme="dark"] .aps-track-jump:hover {
     };
     currentLiveAudio.onerror = function() {
       liveChunkActive = false;
-      console.warn("TTS stream error on chunk " + idx + ", advancing to next");
+      console.warn("TTS stream error on chunk " + idx + ", advancing with safety delay");
       if (isPlayingLive) {
         setTimeout(function() {
           if (isPlayingLive) playLiveChunk(idx + 1);
-        }, 100);
+        }, 400);
       }
     };
     var playPromise = currentLiveAudio.play();
@@ -4787,7 +4789,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
         if (isPlayingLive) {
           setTimeout(function() {
             if (isPlayingLive) playLiveChunk(idx + 1);
-          }, 100);
+          }, 400);
         }
       });
     }
@@ -5090,7 +5092,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
   }
 })();
 
-</script><!-- Google Translate Widget Integration for European & International Portal -->
+</script><!-- Embedded International Translation Engine -->
 <div class="notranslate" id="google_translate_element" style="display:none;" translate="no"></div>
 <script class="notranslate" translate="no">
 function googleTranslateElementInit() {
@@ -5103,6 +5105,10 @@ function googleTranslateElementInit() {
 </script>
 <script class="notranslate" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" translate="no"></script>
 <script class="notranslate" translate="no">
+window.HOME_TEKSTEN = {"nl": {"title": "Systeem-Audit — Overzicht", "ondertitel": "Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen", "auteur_label": "Auteur", "versie_label": "Versie bijgewerkt", "zes_docs": "<strong>Elk van de zes documenten is beschikbaar in drie vormen:</strong> als webpagina (direct te lezen in de browser), als Word-bestand (.docx, voor wie wil bewerken of afdrukken), en als PDF (voor wie een vaste lay-out wil of wil archiveren).", "taalkeuze": "🌐 Taalkeuze / Other languages", "footer": "Openbaar materiaal. Wie eruit citeert, citeert Document B als bron van de feiten.", "docs": {"0": {"titel": "Document 0 — Inleiding en leeswijzer", "desc": "Biografisch essay over drie generaties grensarbeid. Legt uit waarom dit dossier bestaat en hoe de documenten samenhangen."}, "A": {"titel": "Document A — De narratieve audit", "desc": "Het verhaal per organisatie. Doorlopende tekst met de rol in het netwerk, de frictie en de systemische paradox."}, "B": {"titel": "Document B — De data-matrix", "desc": "Alle feiten: datums, referentienummers, correspondentie en tijdlijnen. De ruwe laag waarop de andere documenten zijn gebouwd."}, "C": {"titel": "Document C — De visuele architectuur", "desc": "Schema's en datastromen. Twee starre werelden, een membraan in het midden, drie kanalen, vier institutionele lagen."}, "D": {"titel": "Document D — De synthese", "desc": "Het patroon, de paradoxen, de rol van de Europese Unie en drie bouwstenen voor hervorming."}, "E": {"titel": "Document E — Het rechtenoverzicht", "desc": "Per recht: wat het is, wie het krijgt, waar het vastloopt, en wat het oplevert. Met status per recht."}}}, "en": {"title": "System-Audit — Overview", "ondertitel": "Cross-border jurisdictional vacuum in social security — an open-source X-ray of two national systems", "auteur_label": "Author", "versie_label": "Version updated", "zes_docs": "<strong>Each of the six documents is available in three formats:</strong> as a web page (readable directly in the browser), as a Word document (.docx, for editing or printing), and as a PDF (for fixed layout or archiving).", "taalkeuze": "🌐 Language Selection / Andere taal", "footer": "Public forensic material. When quoting, cite Document B as the primary factual record.", "docs": {"0": {"titel": "Document 0 — Introduction and reading guide", "desc": "Biographical essay on three generations of cross-border work. Explains why this case exists and how the six documents interconnect."}, "A": {"titel": "Document A — The narrative audit", "desc": "The institutional accounts. Continuous analysis covering each organisation's role in the network, administrative friction, and systemic paradoxes."}, "B": {"titel": "Document B — The data matrix", "desc": "All facts: dates, reference numbers, correspondence, and timelines. The empirical evidence layer upon which the other documents are founded."}, "C": {"titel": "Document C — The visual architecture", "desc": "Diagrams and data flows. Two rigid systems, a membrane in between, three communication channels, and four institutional tiers."}, "D": {"titel": "Document D — The synthesis", "desc": "The overarching failure patterns, the role of EU coordination, GDPR audit results, and three structural reform pillars."}, "E": {"titel": "Document E — The social rights overview", "desc": "Per right: qualifying conditions, administrative bottlenecks, and current legal/operational status of 17 cross-border rights."}}}, "de": {"title": "System-Audit — Übersicht", "ondertitel": "Grenzüberschreitendes Zuständigkeitsvakuum in der sozialen Sicherheit — ein quelloffenes Röntgenbild zweier nationaler Systeme", "auteur_label": "Autor", "versie_label": "Version aktualisiert", "zes_docs": "<strong>Jedes der sechs Dokumente steht in drei Formaten zur Verfügung:</strong> als Webseite (direkt im Browser lesbar), als Word-Dokument (.docx, zur Bearbeitung oder zum Ausdruck) und als PDF (für feste Formatierung oder Archivierung).", "taalkeuze": "🌐 Sprachauswahl / Andere taal", "footer": "Öffentliches forensisches Dossier. Bei Zitaten wird Dokument B als Tatsachenquelle herangezogen.", "docs": {"0": {"titel": "Dokument 0 — Einleitung und Lesehinweise", "desc": "Biografischer Essay über drei Generationen Grenzgängerarbeit. Erläutert die Entstehung des Dossiers und den Zusammenhang der sechs Dokumente."}, "A": {"titel": "Dokument A — Das narrative Audit", "desc": "Der institutionelle Ablauf. Fortlaufender Text mit Analyse der jeweiligen Rolle im Netzwerk, Reibungspunkten und systemischen Paradoxien."}, "B": {"titel": "Dokument B — Die Datenmatrix", "desc": "Alle Fakten: Daten, Aktenzeichen, Korrespondenz und Chronologie. Das empirische Fundament, auf dem die übrigen Dokumente ruhen."}, "C": {"titel": "Dokument C — Die visuelle Architektur", "desc": "Schemata und Datenflüsse. Zwei starre Systeme, eine Membran in der Mitte, drei Kanäle und vier institutionelle Ebenen."}, "D": {"titel": "Dokument D — Die Synthese", "desc": "Das Gesamtmuster, Paradoxien, die Rolle der Europäischen Union, DSGVO-Ergebnisse und drei Bausteine zur Reform."}, "E": {"titel": "Dokument E — Die Rechteübersicht", "desc": "Pro Recht: Anspruchskriterien, Verfahrenshürden und aktueller Stand von 17 grenzüberschreitenden sozialen Rechten."}}}, "fr": {"title": "Audit-Système — Aperçu", "ondertitel": "Vide juridique transfrontalier dans la sécurité sociale — une radiographie open source de deux systèmes nationaux", "auteur_label": "Auteur", "versie_label": "Version mise à jour", "zes_docs": "<strong>Chacun des six documents est disponible sous trois formes :</strong> en page web (directement lisible dans le navigateur), en fichier Word (.docx, pour modification ou impression) et en PDF (pour mise en page fixe ou archivage).", "taalkeuze": "🌐 Choix de langue / Andere taal", "footer": "Dossier médico-juridique public. Pour toute citation, Document B constitue la source probante des faits.", "docs": {"0": {"titel": "Document 0 — Introduction et guide de lecture", "desc": "Essai biographique sur trois générations de travail transfrontalier. Explique l'origine de ce dossier et l'articulation des six documents."}, "A": {"titel": "Document A — L'audit narratif", "desc": "L'analyse par organisme. Récit continu détaillant le rôle dans le réseau, les frictions et les paradoxes systémiques."}, "B": {"titel": "Document B — La matrice de données", "desc": "L'ensemble des faits : dates, numéros de référence, correspondances et chronologie. Le socle empirique sur lequel reposent les analyses."}, "C": {"titel": "Document C — L'architecture visuelle", "desc": "Schémas et flux de données. Deux mondes rigides, une membrane centrale, trois canaux et quatre strates institutionnelles."}, "D": {"titel": "Document D — La synthèse", "desc": "La mécanique globale, les paradoxes, le rôle de l'Union européenne, résultats RGPD et trois piliers de réforme."}, "E": {"titel": "Document E — L'état des droits sociaux", "desc": "Par droit : conditions d'accès, causes de blocage et état actuel de traitement de 17 droits sociaux transfrontaliers."}}}, "it": {"title": "Systeemaudit — Panoramica", "ondertitel": "Vuoto di competenze transfrontaliero nella sicurezza sociale — una radiografia open source di due sistemi nazionali", "auteur_label": "Autore", "versie_label": "Versione aggiornata", "zes_docs": "<strong>Ciascuno dei sei documenti è disponibile in tre formati:</strong> come pagina web, come documento Word (.docx) e come PDF.", "taalkeuze": "🌐 Selezione della lingua / Taalkeuze", "footer": "Materiale forense pubblico. Nelle citazioni, fare riferimento al Documento B come fonte dei fatti.", "docs": {"0": {"titel": "Documento 0 — Introduzione e guida alla lettura", "desc": "Saggio biografico su tre generazioni di lavoro transfrontaliero. Spiega l'origine del dossier e l'interconnessione tra i documenti."}, "A": {"titel": "Documento A — L'audit narrativo", "desc": "Il resoconto istituzionale. Testo continuo che analizza il ruolo di ciascuna organizzazione, le frizioni e i paradossi sistemici."}, "B": {"titel": "Documento B — La matrice dei dati", "desc": "Tutti i fatti: date, numeri di protocollo, corrispondenza e cronologie. La base empirica dell'intero audit."}, "C": {"titel": "Documento C — L'architettura visuale", "desc": "Diagrammi e flussi di dati. Due sistemi rigidi, una membrana centrale, tre canali di comunicazione, quattro livelli istituzionali."}, "D": {"titel": "Documento D — La sintesi", "desc": "I modelli di fallimento, i paradossi, il ruolo del coordinamento UE e tre pilastri per la riforma strutturale."}, "E": {"titel": "Documento E — Il quadro dei diritti", "desc": "Per ciascun diritto: condizioni di accesso, blocchi burocratici e stato giuridico di 17 diritti transfrontalieri."}}}, "es": {"title": "Auditoría del Sistema — Visión general", "ondertitel": "Vacío competencial transfronterizo en la seguridad social — una radiografía de código abierto de dos sistemas nacionales", "auteur_label": "Autor", "versie_label": "Versión actualizada", "zes_docs": "<strong>Cada uno de los seis documentos está disponible en tres formatos:</strong> página web, documento Word (.docx) y PDF.", "taalkeuze": "🌐 Selección de idioma / Taalkeuze", "footer": "Material forense público. Al citar, referencie el Documento B como fuente de los hechos.", "docs": {"0": {"titel": "Documento 0 — Introducción y guía de lectura", "desc": "Ensayo biográfico sobre tres generaciones de trabajo transfronterizo. Explica el origen del caso y la relación entre los documentos."}, "A": {"titel": "Documento A — La auditoría narrativa", "desc": "El relato institucional. Análisis continuo del papel de cada organismo, la fricción administrativa y las paradojas sistémicas."}, "B": {"titel": "Documento B — La matriz de datos", "desc": "Todos los hechos: fechas, números de registro, correspondencia y cronologías. La base empírica de la auditoría."}, "C": {"titel": "Documento C — La arquitectura visual", "desc": "Diagramas y flujos de datos. Dos sistemas rígidos, una membrana central, tres canales de comunicación, cuatro niveles institucionales."}, "D": {"titel": "Documento D — La síntesis", "desc": "Los patrones de fallo, las paradojas, el papel de la UE y tres pilares para la reforma estructural."}, "E": {"titel": "Documento E — El catálogo de derechos", "desc": "Por derecho: condiciones de acceso, bloqueos burocráticos y estado jurídico de 17 derechos transfronterizos."}}}, "pl": {"title": "Audyt Systemu — Przegląd", "ondertitel": "Transgraniczna próżnia kompetencyjna w zabezpieczeniu społecznym — rentgen open-source dwóch systemów narodowych", "auteur_label": "Autor", "versie_label": "Wersja zaktualizowana", "zes_docs": "<strong>Każdy z sześciu dokumentów jest dostępny w trzech formatach:</strong> jako strona internetowa, dokument Word (.docx) oraz plik PDF.", "taalkeuze": "🌐 Wybór języka / Taalkeuze", "footer": "Publiczny materiał dowodowy. W cytowaniach należy powoływać się na Dokument B jako źródło faktów.", "docs": {"0": {"titel": "Dokument 0 — Wprowadzenie i przewodnik", "desc": "Biograficzny esej o trzech pokoleniach pracy transgranicznej. Wyjaśnia genezę sprawy i powiązania między dokumentami."}, "A": {"titel": "Dokument A — Audyt narracyjny", "desc": "Relacja instytucjonalna. Ciągła analiza roli każdej organizacji, tarć administracyjnych i paradoksów systemowych."}, "B": {"titel": "Dokument B — Macierz danych", "desc": "Wszystkie fakty: daty, numery spraw, korespondencja i osie czasu. Empiryczna podstawa całego audytu."}, "C": {"titel": "Dokument C — Architektura wizualna", "desc": "Diagramy i przepływy danych. Dwa sztywne systemy, centralna membrana, trzy kanały komunikacji, cztery poziomy."}, "D": {"titel": "Dokument D — Synteza", "desc": "Wzorce błędów, paradoksy, rola koordynacji unijnej oraz trzy filary reformy strukturalnej."}, "E": {"titel": "Dokument E — Wykaz praw socjalnych", "desc": "Według prawa: warunki nabycia, zatory biurokratyczne i status prawny 17 praw transgranicznych."}}}, "da": {"title": "System-Audit — Oversigt", "ondertitel": "Grænseoverskridende kompetencevakuum i social sikring — et open source røntgenbillede af to nationale systemer", "auteur_label": "Forfatter", "versie_label": "Opdateret version", "zes_docs": "<strong>Hvert af de seks dokumenter er tilgængeligt i tre formater:</strong> webside, Word-dokument (.docx) og PDF.", "taalkeuze": "🌐 Vælg sprog / Taalkeuze", "footer": "Offentligt retsmedicinsk materiale. Henvis til Dokument B som kilde til de faktiske omstændigheder.", "docs": {"0": {"titel": "Dokument 0 — Indledning og læsevejledning", "desc": "Biografisk essay om tre generationers grænsearbejde. Forklarer sagens opståen og dokumenternes sammenhæng."}, "A": {"titel": "Dokument A — Den narrative audit", "desc": "Den institutionelle beretning. Løbende analyse af hver organisations rolle, administrativ friktion og paradokser."}, "B": {"titel": "Dokument B — Datamatricen", "desc": "Alle fakta: datoer, journalnumre, korrespondance og tidslinjer. Det empiriske grundlag for hele revisionen."}, "C": {"titel": "Dokument C — Den visuelle arkitektur", "desc": "Diagrammer og datastrømme. To stive systemer, en central membran, tre kommunikationskanaler, fire niveauer."}, "D": {"titel": "Dokument D — Syntesen", "desc": "Systemfejlenes mønster, paradokserne, EU-koordineringens rolle og tre søjler for strukturel reform."}, "E": {"titel": "Dokument E — Rettighedsoversigten", "desc": "Pr. rettighed: betingelser, bureaukratiske flaskehalse og juridisk status for 17 grænseoverskridende rettigheder."}}}, "sv": {"title": "System-Audit — Översikt", "ondertitel": "Gränsöverskridande kompetensvakuum inom social trygghet — en öppen källkods-röntgen av två nationella system", "auteur_label": "Författare", "versie_label": "Uppdaterad version", "zes_docs": "<strong>Vart och ett av de sex dokumenten finns i tre format:</strong> som webbsida, Word-dokument (.docx) och PDF.", "taalkeuze": "🌐 Välj språk / Taalkeuze", "footer": "Offentligt forensiskt material. Vid citering ska Dokument B anges som faktakälla.", "docs": {"0": {"titel": "Dokument 0 — Inledning och läsanvisning", "desc": "Biografisk essä om tre generationers gränsarbete. Förklarar ärendets uppkomst och hur dokumenten hänger ihop."}, "A": {"titel": "Dokument A — Den narrativa granskningen", "desc": "Den institutionella redogörelsen. Kontinuerlig analys av varje organisations roll, friktion och systemiska paradoxer."}, "B": {"titel": "Dokument B — Datamatrisen", "desc": "Alla fakta: datum, diarienummer, korrespondens och tidslinjer. Det empiriska underlaget för hela granskningen."}, "C": {"titel": "Dokument C — Den visuella arkitekturen", "desc": "Diagram och dataflöden. Två stela system, ett centralt membran, tre kommunikationskanaler, fyra nivåer."}, "D": {"titel": "Dokument D — Syntesen", "desc": "Strukturfelens mönster, paradoxerna, EU-samordningens roll och tre grundpelare för strukturell reform."}, "E": {"titel": "Dokument E — Rättighetsöversikten", "desc": "Per rättighet: villkor, byråkratiska flaskhalsar och juridisk status för 17 gränsöverskridande rättigheter."}}}, "pt": {"title": "Auditoria do Sistema — Visão geral", "ondertitel": "Vazio de competências transfronteiriço na segurança social — um raio-X open source de dois sistemas nacionais", "auteur_label": "Autor", "versie_label": "Versão atualizada", "zes_docs": "<strong>Cada um dos seis documentos está disponível em três formatos:</strong> página web, documento Word (.docx) e PDF.", "taalkeuze": "🌐 Seleção de idioma / Taalkeuze", "footer": "Material forense público. Ao citar, faça referência ao Documento B como fonte factual.", "docs": {"0": {"titel": "Documento 0 — Introdução e guia de leitura", "desc": "Ensaio biográfico sobre três gerações de trabalho transfronteiriço. Explica a origem do processo e a ligação entre os documentos."}, "A": {"titel": "Documento A — A auditoria narrativa", "desc": "O relato institucional. Análise contínua do papel de cada organização, fricções administrativas e paradoxos sistémicos."}, "B": {"titel": "Documento B — A matriz de dados", "desc": "Todos os factos: datas, números de processo, correspondência e cronologias. A base empírica da auditoria."}, "C": {"titel": "Documento C — A arquitetura visual", "desc": "Diagramas e fluxos de dados. Dois sistemas rígidos, uma membrana central, três canais de comunicação, quatro níveis."}, "D": {"titel": "Documento D — A síntese", "desc": "Padrões de falha, paradoxos, o papel da coordenação da UE e três pilares para reforma estrutural."}, "E": {"titel": "Documento E — O quadro de direitos", "desc": "Por direito: condições de acesso, bloqueios burocráticos e estatuto jurídico de 17 direitos transfronteiriços."}}}, "ro": {"title": "Audit de Sistem — Prezentare generală", "ondertitel": "Vid de competență transfrontalier în securitatea socială — o radiografie open-source a două sisteme naționale", "auteur_label": "Autor", "versie_label": "Versiune actualizată", "zes_docs": "<strong>Fiecare dintre cele șase documente este disponibil în trei formate:</strong> pagină web, document Word (.docx) și PDF.", "taalkeuze": "🌐 Selectare limbă / Taalkeuze", "footer": "Material medico-legal public. În citate, menționați Documentul B ca sursă a faptelor.", "docs": {"0": {"titel": "Documentul 0 — Introducere și ghid de lectură", "desc": "Eseu biografic despre trei generații de muncă transfrontalieră. Explică originea dosarului și legătura dintre documente."}, "A": {"titel": "Documentul A — Auditul narativ", "desc": "Raportul instituțional. Analiză continuă a rolului fiecărei organizații, fricțiunilor administrative și paradoxurilor sistemice."}, "B": {"titel": "Documentul B — Matricea de date", "desc": "Toate faptele: date, numere de înregistrare, corespondență și cronologii. Baza empirică a întregului audit."}, "C": {"titel": "Documentul C — Arhitectura vizuală", "desc": "Diagrame și fluxuri de date. Două sisteme rigide, o membrană centrală, trei canale de comunicare, patru niveluri."}, "D": {"titel": "Documentul D — Sinteza", "desc": "Tiparele eșecului, paradoxurile, rolul coordonării UE și trei piloni pentru reforma structurală."}, "E": {"titel": "Documentul E — Prezentarea drepturilor", "desc": "Pe fiecare drept: condiții de acordare, blocaje birocratice și statutul juridic a 17 drepturi transfrontaliere."}}}};
+window.INTRO_TEKSTEN = {"nl": "Geen adviesloket en geen pleister op een vastgelopen formulier. Deze site toont aan de hand van één volledig gedocumenteerd dossier (62 instanties, meer dan 700 handelingen) hoe de Belgische en Nederlandse systemen achter de schermen werkelijk op elkaar inwerken — waar ze blokkeren, waarom brieven elkaar tegenspreken, en welke hefbomen wél werken.", "en": "Not an advice desk and not a band-aid on a stalled form. Through one fully documented case (62 institutions, over 700 actions), this site shows how the Belgian and Dutch systems actually interact behind the scenes — where they lock up, why official letters contradict each other, and which levers actually work.", "de": "Keine Beratungsstelle und kein Pflaster auf einem festgefahrenen Formular. Anhand einer vollständig dokumentierten Akte (62 Behörden, über 700 Vorgänge) zeigt diese Seite, wie das belgische und das niederländische System hinter den Kulissen tatsächlich zusammenwirken — wo sie blockieren, warum Briefe sich widersprechen und welche Hebel wirklich funktionieren.", "fr": "Ni un guichet de conseil, ni un pansement sur un formulaire bloqué. À travers un dossier entièrement documenté (62 institutions, plus de 700 actes), ce site montre comment les systèmes belge et néerlandais interagissent réellement en coulisses — où ils bloquent, pourquoi les courriers se contredisent et quels leviers fonctionnent vraiment.", "it": "Nessuno sportello di consulenza e nessun cerotto su un modulo bloccato. Attraverso un caso completamente documentato (62 istituzioni, oltre 700 azioni), questo sito mostra come i sistemi belga e olandese interagiscono realmente dietro le quinte — dove si bloccano, perché le lettere si contraddicono e quali leve funzionano davvero.", "es": "No es una oficina de asesoramiento ni un parche para un formulario atascado. A través de un caso completamente documentado (62 instituciones, más de 700 actuaciones), este sitio muestra cómo interactúan realmente entre bastidores los sistemas belga y neerlandés: dónde se bloquean, por qué las cartas se contradicen y qué palancas funcionan realmente.", "pl": "Żadne biuro porad ani plaster na zablokowany formularz. Na podstawie jednej w pełni udokumentowanej sprawy (62 instytucje, ponad 700 czynności) ta strona pokazuje, jak systemy belgijski i holenderski rzeczywiście współdziałają za kulisami — gdzie się blokują, dlaczego pisma sobie przeczą i jakie dźwignie naprawdę działają.", "da": "Ikke en rådgivningsskranke og ikke et plaster på en fastlåst formular. Gennem én fuldt dokumenteret sag (62 institutioner, over 700 handlinger) viser dette websted, hvordan de belgiske og nederlandske systemer reelt interagerer bag kulisserne — hvor de blokerer, hvorfor breve modsiger hinanden, og hvilke håndtag der faktisk virker.", "sv": "Inte en rådgivningsdisk och inte ett plåster på ett fastnat formulär. Genom ett fullständigt dokumenterat fall (62 institutioner, över 700 åtgärder) visar denna webbplats hur de belgiska och nederländska systemen verkligen interagerar bakom kulisserna — var de låser sig, varför brev motsäger varandra och vilka spakar som faktiskt fungerar.", "pt": "Não é um balcão de aconselhamento nem um penso rápido para um formulário bloqueado. Através de um caso totalmente documentado (62 instituições, mais de 700 ações), este site mostra como os sistemas belga e neerlandês interagem realmente nos bastidores — onde bloqueiam, porque as cartas se contradizem e que alavancas realmente funcionam.", "ro": "Nu este un birou de consultanță și nici un plasture pe un formular blocat. Printr-un dosar complet documentat (62 de instituții, peste 700 de acțiuni), acest site arată cum interacționează cu adevărat sistemele belgian și olandez în culise — unde se blochează, de ce scrisorile se contrazic și ce pârghii funcționează cu adevărat."};
+window.DISCLAIMERS = {"en": "<strong>Language &amp; Translation Notice:</strong> Dutch (nl/) is the sole authentic source language of this System-Audit. The automated translations of the overview, documents, visual architecture, synthesis and rights matrix are provided to make the documented cross-border mechanisms accessible across Europe. In case of any ambiguity or legal interpretation, the original Dutch text and source files prevail.", "de": "<strong>Hinweis zur Sprache und Übersetzung:</strong> Niederländisch (nl/) ist die einzige verbindliche Originalsprache dieses System-Audits. Die Übersetzungen dienen dazu, die dokumentierten grenzüberschreitenden Mechanismen europaweit zugänglich zu machen. Im Zweifelsfall oder bei rechtlichen Fragen ist ausschließlich der niederländische Originaltext maßgeblich.", "fr": "<strong>Note linguistique et de traduction :</strong> Le néerlandais (nl/) est la seule langue originale faisant foi pour cet Audit-Système. Les traductions visent à rendre les mécanismes transfrontaliers documentés accessibles à l'échelle européenne. En cas de doute ou d'interprétation juridique, seul le texte original néerlandais prévaut.", "it": "<strong>Nota linguistica e di traduzione:</strong> L'olandese (nl/) è l'unica lingua originale autentica di questo audit di sistema. Le traduzioni sono fornite per rendere accessibili in tutta Europa i meccanismi transfrontalieri documentati. In caso di ambiguità o interpretazione legale, prevalgono il testo e i documenti originali in olandese.", "es": "<strong>Aviso lingüístico y de traducción:</strong> El neerlandés (nl/) es el único idioma original auténtico de esta auditoría del sistema. Las traducciones se proporcionan para hacer accesibles en toda Europa los mecanismos transfronterizos documentados. En caso de ambigüedad o interpretación legal, prevalecen el texto y los documentos originales en neerlandés.", "pl": "<strong>Uwaga dotycząca języka i tłumaczenia:</strong> Język niderlandzki (nl/) jest jedynym autentycznym językiem źródłowym tego audytu systemu. Tłumaczenia służą udostępnieniu udokumentowanych mechanizmów transgranicznych w całej Europie. W przypadku wątpliwości lub interpretacji prawnej rozstrzygający jest oryginalny tekst niderlandzki.", "da": "<strong>Sprog- og oversættelsesmeddelelse:</strong> Nederlandsk (nl/) er det eneste autentiske kildesprog for denne systemrevision. Oversættelserne stilles til rådighed for at gøre de dokumenterede grænseoverskridende mekanismer tilgængelige i hele Europa. I tilfælde af tvivl eller juridisk fortolkning er den oprindelige nederlandske tekst afgørende.", "sv": "<strong>Språk- och översättningsmeddelande:</strong> Nederländska (nl/) är det enda autentiska källspråket för denna systemgranskning. Översättningarna tillhandahålls för att göra de dokumenterade gränsöverskridande mekanismerna tillgängliga i hela Europa. Vid oklarheter eller juridisk tolkning gäller den nederländska originaltexten.", "pt": "<strong>Aviso linguístico e de tradução:</strong> O neerlandês (nl/) é a única língua original autêntica desta auditoria de sistema. As traduções são fornecidas para tornar acessíveis em toda a Europa os mecanismos transfronteiriços documentados. Em caso de ambiguidade ou interpretação jurídica, prevalece o texto original em neerlandês.", "ro": "<strong>Notă lingvistică și de traducere:</strong> Olandeza (nl/) este singura limbă sursă autentică a acestui audit de sistem. Traducerile sunt furnizate pentru a face accesibile în întreaga Europă mecanismele transfrontaliere documentate. În caz de ambiguitate sau interpretare juridică, textul original în limba olandeză prevalează."};
+
 (function() {
   function getTargetLang() {
     var p = new URLSearchParams(window.location.search);
@@ -5123,18 +5129,20 @@ function googleTranslateElementInit() {
   function setTransCookie(lang) {
     var host = window.location.hostname;
     document.cookie = 'googtrans=/nl/' + lang + '; path=/;';
+    document.cookie = 'googtrans=/auto/' + lang + '; path=/;';
     if (host && host.indexOf('.') !== -1) {
       document.cookie = 'googtrans=/nl/' + lang + '; path=/; domain=' + host + ';';
+      document.cookie = 'googtrans=/auto/' + lang + '; path=/; domain=' + host + ';';
       var parts = host.split('.');
       if (parts.length >= 2) {
         var rootDomain = parts.slice(-2).join('.');
         document.cookie = 'googtrans=/nl/' + lang + '; path=/; domain=.' + rootDomain + ';';
+        document.cookie = 'googtrans=/auto/' + lang + '; path=/; domain=.' + rootDomain + ';';
       }
     }
   }
 
-  // Zorg dat de cookie direct gezet is bij binnenkomst
-  var currentCookie = (document.cookie.match(/(^|;\s*)googtrans=\/nl\/([a-z]{2})/i) || [])[2];
+  var currentCookie = (document.cookie.match(/(^|;\s*)googtrans=\/(?:nl|auto)\/([a-z]{2})/i) || [])[2];
   if (!currentCookie || currentCookie !== targetLang) {
     setTransCookie(targetLang);
   }
@@ -5163,8 +5171,59 @@ function googleTranslateElementInit() {
     }
   }
 
-  syncDropdown(targetLang);
-  updatePageLinks(targetLang);
+  function updateHomeDom(lang) {
+    if (!window.HOME_TEKSTEN || !window.HOME_TEKSTEN[lang]) return;
+    var ht = window.HOME_TEKSTEN[lang];
+    var intro = (window.INTRO_TEKSTEN && window.INTRO_TEKSTEN[lang]) || '';
+    var disc = (window.DISCLAIMERS && window.DISCLAIMERS[lang]) || '';
+
+    if (ht.title) document.title = ht.title;
+    var h1 = document.querySelector('h1');
+    if (h1 && ht.title) {
+      var shortT = ht.title.indexOf(' — ') !== -1 ? ht.title.split(' — ')[0] : ht.title;
+      h1.innerHTML = '<span class="notranslate" translate="no">GRENSARBEID.ORG</span> — ' + shortT;
+    }
+    var sub = document.querySelector('.ondertitel');
+    if (sub && ht.ondertitel) sub.innerText = ht.ondertitel;
+    var banner = document.querySelector('.pub-ab-banner');
+    if (banner && disc) banner.innerHTML = disc;
+    var intros = document.querySelectorAll('.intro');
+    if (intros[0] && intro) intros[0].innerText = intro;
+    if (intros[1] && ht.zes_docs) intros[1].innerHTML = ht.zes_docs;
+
+    var docs = ['0', 'a', 'b', 'c', 'd', 'e'];
+    for (var i = 0; i < docs.length; i++) {
+      var letter = docs[i];
+      var L = letter.toUpperCase();
+      var card = document.querySelector('.doc-' + letter);
+      if (card && ht.docs && ht.docs[L]) {
+        var tEl = card.querySelector('a.titel');
+        if (tEl) tEl.innerText = ht.docs[L].titel;
+        var dEl = card.querySelector('.beschrijving');
+        if (dEl) dEl.innerText = ht.docs[L].desc;
+      }
+    }
+
+    var foot = document.querySelector('.footer p');
+    if (foot && ht.footer) foot.innerText = ht.footer;
+  }
+
+  function updateDocHeaders(lang) {
+    if (!window.HOME_TEKSTEN || !window.HOME_TEKSTEN[lang]) return;
+    var ht = window.HOME_TEKSTEN[lang];
+    var disc = (window.DISCLAIMERS && window.DISCLAIMERS[lang]) || '';
+    var m = location.pathname.match(/document-([0a-e])\.html/i);
+    var docLetter = m ? m[1].toUpperCase() : '';
+    if (docLetter && ht.docs && ht.docs[docLetter]) {
+      var h1 = document.querySelector('h1');
+      if (h1) h1.innerText = ht.docs[docLetter].titel;
+      var sub = document.querySelector('p.subtitel');
+      if (sub) sub.innerText = ht.docs[docLetter].desc;
+      document.title = ht.docs[docLetter].titel + ' | System-Audit';
+    }
+    var banner = document.querySelector('.pub-ab-banner');
+    if (banner && disc) banner.innerHTML = disc;
+  }
 
   function triggerGoogleCombo(lang) {
     var combo = document.querySelector('.goog-te-combo');
@@ -5176,10 +5235,16 @@ function googleTranslateElementInit() {
     return false;
   }
 
+  // Direct sync on page load
+  syncDropdown(targetLang);
+  updatePageLinks(targetLang);
+  updateHomeDom(targetLang);
+  updateDocHeaders(targetLang);
+
   var attempts = 0;
   var checkTimer = setInterval(function() {
     attempts++;
-    if (triggerGoogleCombo(targetLang) || attempts > 25) {
+    if (triggerGoogleCombo(targetLang) || attempts > 30) {
       clearInterval(checkTimer);
     }
   }, 200);
@@ -5200,13 +5265,14 @@ function googleTranslateElementInit() {
     updatePageLinks(lang);
     setTransCookie(lang);
 
+    updateHomeDom(lang);
+    updateDocHeaders(lang);
+
     if (typeof _origAudioWissel === 'function') {
       _origAudioWissel(lang);
     }
 
-    if (!triggerGoogleCombo(lang)) {
-      window.location.reload();
-    }
+    triggerGoogleCombo(lang);
   };
 })();
 </script></body>
