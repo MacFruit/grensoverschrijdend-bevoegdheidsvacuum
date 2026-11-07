@@ -1933,6 +1933,38 @@ html[data-theme="dark"] .bm-btn-copy:hover {
     background: #353b47; border-color: #7fb3ff;
 }
 
+/* === THEME MAP (LIGHT / DARK VECTOR SVG) === */
+.theme-map {
+    display: block;
+    width: 100%;
+    margin: 16pt 0 20pt 0;
+}
+.theme-map img, .root-kaart img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid #e2ddd2;
+    transition: filter .2s, box-shadow .2s, border-color .2s;
+}
+html[data-theme="dark"] .theme-map img,
+body[data-theme="dark"] .theme-map img,
+html[data-theme="dark"] .root-kaart img {
+    content: url("../assets/kaart_eu_dark.svg?v=2");
+    border: 1px solid #3a3a3a;
+    box-shadow: 0 4px 20px rgba(0,0,0,.6);
+    filter: none !important;
+}
+html[data-theme="light"] .theme-map img,
+body[data-theme="light"] .theme-map img,
+html[data-theme="light"] .root-kaart img {
+    content: url("../assets/kaart_eu_light.svg?v=2");
+    border: 1px solid #e2ddd2;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    filter: none !important;
+}
+
 html[data-theme="dark"] .pub-ab-banner {
     background: #232016 !important;
     color: #e5d8b0 !important;
@@ -1947,6 +1979,180 @@ html[data-theme="dark"] .intro-rij a.goto {
                  0 0 3px rgba(255,255,255,0.10);
 }
 
+
+/* === Client-Side Zoekmachine Modal (Search Engine) === */
+.pub-search-btn {
+    background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
+    padding: 5px 12px; border-radius: 4px; font-size: 10pt; font-weight: 600;
+    cursor: pointer; font-family: inherit; transition: all .15s;
+    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+}
+.pub-search-btn:hover { background: #1a3c6e; color: #ffffff; border-color: #1a3c6e; }
+
+.sm-modal-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.65); z-index: 1000;
+    display: none; align-items: flex-start; justify-content: center;
+    padding: 40px 16px 20px 16px; backdrop-filter: blur(3px);
+    box-sizing: border-box;
+}
+.sm-modal-overlay.sm-open { display: flex; }
+.sm-modal-dialog {
+    background: #ffffff; color: #222222; border-radius: 8px;
+    max-width: 720px; width: 100%; max-height: 85vh;
+    display: flex; flex-direction: column;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+    border: 1px solid #d5d0c5; font-family: Aptos, Calibri, sans-serif;
+    position: relative; box-sizing: border-box; overflow: hidden;
+}
+.sm-modal-header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 18px; border-bottom: 2px solid #1a3c6e;
+    background: #faf8f5;
+}
+.sm-search-bar {
+    display: flex; align-items: center; flex: 1;
+    background: #ffffff; border: 1.5px solid #1a3c6e; border-radius: 6px;
+    padding: 4px 12px; gap: 8px;
+}
+.sm-icon { font-size: 14pt; user-select: none; }
+.sm-input {
+    flex: 1; border: none; outline: none; background: transparent;
+    font-size: 11.5pt; font-family: inherit; color: #111;
+    padding: 6px 0;
+}
+.sm-clear-btn {
+    background: none; border: none; font-size: 16pt; color: #888;
+    cursor: pointer; padding: 0 4px; line-height: 1;
+}
+.sm-clear-btn:hover { color: #c62828; }
+.sm-modal-sluit {
+    background: none; border: none; font-size: 24pt; line-height: 1;
+    color: #666; cursor: pointer; padding: 0 4px;
+}
+.sm-modal-sluit:hover { color: #c62828; }
+
+.sm-status-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 6px 18px; font-size: 9pt; color: #666; background: #f2efe9;
+    border-bottom: 1px solid #e0dcd3;
+}
+.sm-shortcut-hint kbd {
+    background: #e4e0d7; border: 1px solid #c8c2b5; border-radius: 3px;
+    padding: 1px 4px; font-size: 8pt; font-family: monospace;
+}
+
+.sm-results {
+    overflow-y: auto; padding: 12px 18px; display: flex; flex-direction: column; gap: 10px;
+    flex: 1; min-height: 120px; max-height: calc(85vh - 120px);
+}
+.sm-result-card {
+    display: block; text-decoration: none; color: inherit;
+    background: #faf8f5; border: 1px solid #e2ded5; border-radius: 6px;
+    padding: 10px 14px; transition: border-color .15s, background .15s, transform .1s;
+    text-align: left;
+}
+.sm-result-card:hover, .sm-result-card:focus {
+    background: #eef3fb; border-color: #1a3c6e; outline: none;
+    transform: translateY(-1px);
+}
+.sm-result-badge {
+    display: inline-block; font-size: 8pt; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 2px 6px; border-radius: 3px;
+    background: #1a3c6e; color: #ffffff; margin-bottom: 4px;
+}
+.sm-result-title {
+    font-size: 11pt; font-weight: 700; color: #1a3c6e; margin: 2px 0 4px;
+}
+.sm-result-snippet {
+    font-size: 9.5pt; line-height: 1.45; color: #444; margin: 0;
+}
+.sm-result-snippet mark {
+    background: #fff2a8; color: #000; font-weight: 700; padding: 0 2px; border-radius: 2px;
+}
+.sm-empty {
+    padding: 24px 12px; text-align: center; color: #777; font-size: 10.5pt;
+}
+
+/* Floating Search Button */
+.sm-toggle {
+    position: fixed; bottom: 136px; right: 24px; z-index: 200;
+    background: #ffffff; color: #1a3c6e; border: 1px solid #d5d0c5;
+    width: 44px; height: 44px; border-radius: 50%;
+    cursor: pointer; font-size: 16pt; line-height: 1; padding: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .15s, background .15s, border-color .15s;
+    font-family: Aptos, Calibri, sans-serif;
+}
+.sm-toggle:hover { transform: scale(1.1); background: #eef2f7; border-color: #1a3c6e; }
+
+/* Dark mode styling voor zoekmachine */
+html[data-theme="dark"] .pub-search-btn {
+    background: #232323; color: #b0c8e8; border-color: #4a4a4a;
+}
+html[data-theme="dark"] .pub-search-btn:hover {
+    background: #2a2a2a; border-color: #7fb3ff; color: #ffffff;
+}
+html[data-theme="dark"] .sm-modal-dialog {
+    background: #202226; color: #e0e0e0; border-color: #3a3f48;
+}
+html[data-theme="dark"] .sm-modal-header {
+    background: #25282e; border-bottom-color: #4a6fa5;
+}
+html[data-theme="dark"] .sm-search-bar {
+    background: #181a1f; border-color: #4a6fa5;
+}
+html[data-theme="dark"] .sm-input { color: #f0f0f0; }
+html[data-theme="dark"] .sm-clear-btn { color: #aaa; }
+html[data-theme="dark"] .sm-modal-sluit { color: #aaa; }
+html[data-theme="dark"] .sm-modal-sluit:hover { color: #ff6b6b; }
+html[data-theme="dark"] .sm-status-bar {
+    background: #1c1e22; border-bottom-color: #32363e; color: #999;
+}
+html[data-theme="dark"] .sm-shortcut-hint kbd {
+    background: #2a2d34; border-color: #444; color: #bbb;
+}
+html[data-theme="dark"] .sm-result-card {
+    background: #26292f; border-color: #3a3f48; color: #d0d0d0;
+}
+html[data-theme="dark"] .sm-result-card:hover,
+html[data-theme="dark"] .sm-result-card:focus {
+    background: #2f343d; border-color: #7fb3ff;
+}
+html[data-theme="dark"] .sm-result-badge {
+    background: #34568b; color: #ffffff;
+}
+html[data-theme="dark"] .sm-result-title {
+    color: #7fb3ff !important;
+}
+html[data-theme="dark"] .sm-result-snippet {
+    color: #bbb;
+}
+html[data-theme="dark"] .sm-result-snippet mark {
+    background: #614a00; color: #ffeb80;
+}
+html[data-theme="dark"] .sm-toggle {
+    background: #25282e; color: #7fb3ff; border-color: #4a5060;
+    box-shadow: 0 2px 8px rgba(0,0,0,.6);
+}
+html[data-theme="dark"] .sm-toggle:hover {
+    background: #2f343d; border-color: #7fb3ff;
+}
+
+@media (max-width: 600px) {
+    .sm-modal-overlay { padding: 10px; }
+    .sm-modal-dialog { max-height: 94vh; }
+    .sm-toggle {
+        bottom: 108px !important; right: 16px !important;
+        width: 38px !important; height: 38px !important; font-size: 14pt !important;
+        opacity: 0.88;
+    }
+}
+@media print {
+    .sm-modal-overlay, .sm-toggle { display: none !important; }
+}
 
 /* Forensisch Bronopvragings- en Contactvenster (Modal) */
 .pub-contact-btn {
@@ -3257,7 +3463,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document E — Het rechtenoverzicht</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 7 november 2026, 05:20</p>
+<p class="meta-lijn">Versie bijgewerkt: 7 november 2026, 06:40</p>
 </div>
 <div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
 <li class="niv1"><a href="#systeem-audit">Systeem-Audit</a></li>
@@ -5282,6 +5488,264 @@ afrekening na aanslag 2025. Impact tot nu toe: voorlopig bedrag
 ontvangen, definitieve uitkomst onzeker.</p>
 <!-- Forensisch Bronopvragings- en Contactvenster (Modal) -->
 
+<!-- Client-Side Search Modal -->
+<div aria-labelledby="sm-input" aria-modal="true" class="sm-modal-overlay notranslate" id="sm-modal" onclick="if(event.target===this)sluitSearchModal()" role="dialog" style="display:none;" translate="no">
+<div class="sm-modal-dialog">
+<div class="sm-modal-header">
+<div class="sm-search-bar">
+<span class="sm-icon">🔍</span>
+<input aria-label="Doorzoek audit" autocomplete="off" class="sm-input" id="sm-input" placeholder="Doorzoek audit (bijv. UWV, S072, 5124, EESSI, regiotaxi)..." spellcheck="false" type="search"/>
+<button aria-label="Invoer wissen" class="sm-clear-btn" onclick="smClearInput()" style="display:none;" title="Invoer wissen" type="button">×</button>
+</div>
+<button aria-label="Sluiten" class="sm-modal-sluit" onclick="sluitSearchModal()" type="button">×</button>
+</div>
+<div class="sm-status-bar">
+<span id="sm-status-txt">Typ minimaal 2 tekens om te zoeken</span>
+<span class="sm-shortcut-hint"><kbd>ESC</kbd> om te sluiten</span>
+</div>
+<div aria-live="polite" class="sm-results" id="sm-results" role="region"></div>
+</div>
+</div>
+<script class="notranslate" translate="no">
+(function() {
+  var searchIndex = null;
+  var isLoading = false;
+
+  window.openSearchModal = function() {
+    var modal = document.getElementById('sm-modal');
+    if (!modal) return;
+    modal.classList.add('sm-open');
+    modal.style.display = 'flex';
+    var inp = document.getElementById('sm-input');
+    if (inp) {
+      inp.focus();
+      if (inp.value.trim().length >= 2) {
+        doSearch(inp.value.trim());
+      }
+    }
+    loadIndex();
+  };
+
+  window.sluitSearchModal = function() {
+    var modal = document.getElementById('sm-modal');
+    if (!modal) return;
+    modal.classList.remove('sm-open');
+    modal.style.display = 'none';
+  };
+
+  window.smClearInput = function() {
+    var inp = document.getElementById('sm-input');
+    if (inp) {
+      inp.value = '';
+      inp.focus();
+      var clr = document.querySelector('.sm-clear-btn');
+      if (clr) clr.style.display = 'none';
+      var res = document.getElementById('sm-results');
+      if (res) res.innerHTML = '';
+      var status = document.getElementById('sm-status-txt');
+      if (status) status.textContent = 'Typ minimaal 2 tekens om te zoeken';
+    }
+  };
+
+  document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+      e.preventDefault();
+      var modal = document.getElementById('sm-modal');
+      if (modal && modal.classList.contains('sm-open')) {
+        sluitSearchModal();
+      } else {
+        openSearchModal();
+      }
+    } else if (e.key === 'Escape') {
+      var modal = document.getElementById('sm-modal');
+      if (modal && modal.classList.contains('sm-open')) {
+        sluitSearchModal();
+      }
+    }
+  });
+
+  function loadIndex() {
+    if (searchIndex || isLoading) return;
+    isLoading = true;
+    var status = document.getElementById('sm-status-txt');
+    if (status) status.textContent = 'Zoekindex inladen...';
+
+    var p = window.location.pathname.toLowerCase();
+    var isRoot = !p.includes('/nl/') && !p.includes('/int/');
+    var indexPath = isRoot ? 'nl/search_index.json' : 'search_index.json';
+
+    fetch(indexPath)
+      .then(function(r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(function(data) {
+        searchIndex = data;
+        isLoading = false;
+        if (status) status.textContent = 'Index gereed (' + data.length + ' secties doorzoekbaar)';
+        var inp = document.getElementById('sm-input');
+        if (inp && inp.value.trim().length >= 2) {
+          doSearch(inp.value.trim());
+        }
+      })
+      .catch(function(err) {
+        isLoading = false;
+        if (status) status.textContent = 'Fout bij inladen zoekindex';
+        console.error('Search index load error:', err);
+      });
+  }
+
+  function escapeHtml(str) {
+    return (str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function highlightWords(text, words) {
+    if (!text) return '';
+    var escaped = escapeHtml(text);
+    words.forEach(function(w) {
+      if (!w) return;
+      var cleanW = w.replace(/[.*+?^${}()|[\]\]/g, '\$&');
+      var reg = new RegExp('(' + cleanW + ')', 'gi');
+      escaped = escaped.replace(reg, '<mark>$1</mark>');
+    });
+    return escaped;
+  }
+
+  function createSnippet(text, words, maxLen) {
+    if (!text) return '';
+    maxLen = maxLen || 140;
+    var low = text.toLowerCase();
+    var firstIdx = -1;
+    for (var i = 0; i < words.length; i++) {
+      var idx = low.indexOf(words[i].toLowerCase());
+      if (idx !== -1 && (firstIdx === -1 || idx < firstIdx)) {
+        firstIdx = idx;
+      }
+    }
+    if (firstIdx === -1) {
+      var snippet = text.slice(0, maxLen);
+      return highlightWords(snippet + (text.length > maxLen ? '...' : ''), words);
+    }
+    var start = Math.max(0, firstIdx - 40);
+    var end = Math.min(text.length, firstIdx + maxLen);
+    var snippet = (start > 0 ? '...' : '') + text.slice(start, end) + (end < text.length ? '...' : '');
+    return highlightWords(snippet, words);
+  }
+
+  var debounceTimer = null;
+  function bindInput() {
+    var inp = document.getElementById('sm-input');
+    if (!inp || inp._bound) return;
+    inp._bound = true;
+    inp.addEventListener('input', function() {
+      var val = inp.value.trim();
+      var clr = document.querySelector('.sm-clear-btn');
+      if (clr) clr.style.display = val.length > 0 ? 'inline-block' : 'none';
+
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(function() {
+        if (val.length < 2) {
+          var res = document.getElementById('sm-results');
+          if (res) res.innerHTML = '';
+          var status = document.getElementById('sm-status-txt');
+          if (status) status.textContent = 'Typ minimaal 2 tekens om te zoeken';
+          return;
+        }
+        if (!searchIndex) {
+          loadIndex();
+        } else {
+          doSearch(val);
+        }
+      }, 120);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bindInput);
+  } else {
+    bindInput();
+  }
+
+  function doSearch(query) {
+    if (!searchIndex) return;
+    var words = query.toLowerCase().split(/\s+/).filter(function(w) { return w.length > 0; });
+    if (words.length === 0) return;
+
+    var matches = [];
+    for (var i = 0; i < searchIndex.length; i++) {
+      var item = searchIndex[i];
+      var tLow = (item.title || '').toLowerCase();
+      var bLow = (item.text || '').toLowerCase();
+      var dLow = (item.doc || '').toLowerCase();
+
+      var allMatch = true;
+      var titleMatchCount = 0;
+      for (var w = 0; w < words.length; w++) {
+        var word = words[w];
+        var inTitle = tLow.indexOf(word) !== -1;
+        var inBody = bLow.indexOf(word) !== -1;
+        var inDoc = dLow.indexOf(word) !== -1;
+        if (!inTitle && !inBody && !inDoc) {
+          allMatch = false;
+          break;
+        }
+        if (inTitle) titleMatchCount++;
+      }
+
+      if (allMatch) {
+        var score = 1;
+        if (titleMatchCount === words.length) score = 10;
+        else if (titleMatchCount > 0) score = 5;
+        matches.push({ score: score, item: item });
+      }
+    }
+
+    matches.sort(function(a, b) {
+      if (b.score !== a.score) return b.score - a.score;
+      return a.item.title.localeCompare(b.item.title);
+    });
+
+    renderResults(matches, words, query);
+  }
+
+  function renderResults(matches, words, query) {
+    var container = document.getElementById('sm-results');
+    var status = document.getElementById('sm-status-txt');
+    if (!container) return;
+
+    if (matches.length === 0) {
+      container.innerHTML = '<div class="sm-empty">' + 'Geen resultaten gevonden voor &ldquo;' + escapeHtml(query) + '&rdquo;</div>';
+      if (status) status.textContent = '0 resultaten';
+      return;
+    }
+
+    if (status) {
+      status.textContent = matches.length + ' resultaten gevonden';
+    }
+
+    var p = window.location.pathname.toLowerCase();
+    var isRoot = !p.includes('/nl/') && !p.includes('/int/');
+    var prefix = isRoot ? 'nl/' : '';
+
+    var html = '';
+    var limit = Math.min(matches.length, 50);
+    for (var i = 0; i < limit; i++) {
+      var item = matches[i].item;
+      var titleHighlighted = highlightWords(item.title, words);
+      var snippet = createSnippet(item.text, words, 160);
+      var linkUrl = prefix + item.url;
+      html += '<a class="sm-result-card" href="' + escapeHtml(linkUrl) + '" onclick="sluitSearchModal()">' +
+                '<div><span class="sm-result-badge">' + escapeHtml(item.doc) + '</span></div>' +
+                '<div class="sm-result-title">' + titleHighlighted + '</div>' +
+                '<p class="sm-result-snippet">' + snippet + '</p>' +
+              '</a>';
+    }
+    container.innerHTML = html;
+  }
+})();
+</script><button aria-label="Doorzoek audit" class="sm-toggle" onclick="openSearchModal()" title="Doorzoek audit (Ctrl+K)" type="button">
+<span>🔍</span>
+</button>
 
 
 
@@ -5527,24 +5991,298 @@ ontvangen, definitieve uitkomst onzeker.</p>
     }, 2500);
   }
 })();
-</script><button aria-label="Schakel donkere/lichte modus" class="dm-toggle" onclick="dm_toggle()" title="Schakel donkere/lichte modus" type="button">
+</script><!-- Client-Side Search Modal -->
+<div aria-labelledby="sm-input" aria-modal="true" class="sm-modal-overlay notranslate" id="sm-modal" onclick="if(event.target===this)sluitSearchModal()" role="dialog" style="display:none;" translate="no">
+<div class="sm-modal-dialog">
+<div class="sm-modal-header">
+<div class="sm-search-bar">
+<span class="sm-icon">🔍</span>
+<input aria-label="Doorzoek audit" autocomplete="off" class="sm-input" id="sm-input" placeholder="Doorzoek audit (bijv. UWV, S072, 5124, EESSI, regiotaxi)..." spellcheck="false" type="search"/>
+<button aria-label="Invoer wissen" class="sm-clear-btn" onclick="smClearInput()" style="display:none;" title="Invoer wissen" type="button">×</button>
+</div>
+<button aria-label="Sluiten" class="sm-modal-sluit" onclick="sluitSearchModal()" type="button">×</button>
+</div>
+<div class="sm-status-bar">
+<span id="sm-status-txt">Typ minimaal 2 tekens om te zoeken</span>
+<span class="sm-shortcut-hint"><kbd>ESC</kbd> om te sluiten</span>
+</div>
+<div aria-live="polite" class="sm-results" id="sm-results" role="region"></div>
+</div>
+</div>
+<script class="notranslate" translate="no">
+(function() {
+  var searchIndex = null;
+  var isLoading = false;
+
+  window.openSearchModal = function() {
+    var modal = document.getElementById('sm-modal');
+    if (!modal) return;
+    modal.classList.add('sm-open');
+    modal.style.display = 'flex';
+    var inp = document.getElementById('sm-input');
+    if (inp) {
+      inp.focus();
+      if (inp.value.trim().length >= 2) {
+        doSearch(inp.value.trim());
+      }
+    }
+    loadIndex();
+  };
+
+  window.sluitSearchModal = function() {
+    var modal = document.getElementById('sm-modal');
+    if (!modal) return;
+    modal.classList.remove('sm-open');
+    modal.style.display = 'none';
+  };
+
+  window.smClearInput = function() {
+    var inp = document.getElementById('sm-input');
+    if (inp) {
+      inp.value = '';
+      inp.focus();
+      var clr = document.querySelector('.sm-clear-btn');
+      if (clr) clr.style.display = 'none';
+      var res = document.getElementById('sm-results');
+      if (res) res.innerHTML = '';
+      var status = document.getElementById('sm-status-txt');
+      if (status) status.textContent = 'Typ minimaal 2 tekens om te zoeken';
+    }
+  };
+
+  document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+      e.preventDefault();
+      var modal = document.getElementById('sm-modal');
+      if (modal && modal.classList.contains('sm-open')) {
+        sluitSearchModal();
+      } else {
+        openSearchModal();
+      }
+    } else if (e.key === 'Escape') {
+      var modal = document.getElementById('sm-modal');
+      if (modal && modal.classList.contains('sm-open')) {
+        sluitSearchModal();
+      }
+    }
+  });
+
+  function loadIndex() {
+    if (searchIndex || isLoading) return;
+    isLoading = true;
+    var status = document.getElementById('sm-status-txt');
+    if (status) status.textContent = 'Zoekindex inladen...';
+
+    var p = window.location.pathname.toLowerCase();
+    var isRoot = !p.includes('/nl/') && !p.includes('/int/');
+    var indexPath = isRoot ? 'nl/search_index.json' : 'search_index.json';
+
+    fetch(indexPath)
+      .then(function(r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(function(data) {
+        searchIndex = data;
+        isLoading = false;
+        if (status) status.textContent = 'Index gereed (' + data.length + ' secties doorzoekbaar)';
+        var inp = document.getElementById('sm-input');
+        if (inp && inp.value.trim().length >= 2) {
+          doSearch(inp.value.trim());
+        }
+      })
+      .catch(function(err) {
+        isLoading = false;
+        if (status) status.textContent = 'Fout bij inladen zoekindex';
+        console.error('Search index load error:', err);
+      });
+  }
+
+  function escapeHtml(str) {
+    return (str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function highlightWords(text, words) {
+    if (!text) return '';
+    var escaped = escapeHtml(text);
+    words.forEach(function(w) {
+      if (!w) return;
+      var cleanW = w.replace(/[.*+?^${}()|[\]\]/g, '\$&');
+      var reg = new RegExp('(' + cleanW + ')', 'gi');
+      escaped = escaped.replace(reg, '<mark>$1</mark>');
+    });
+    return escaped;
+  }
+
+  function createSnippet(text, words, maxLen) {
+    if (!text) return '';
+    maxLen = maxLen || 140;
+    var low = text.toLowerCase();
+    var firstIdx = -1;
+    for (var i = 0; i < words.length; i++) {
+      var idx = low.indexOf(words[i].toLowerCase());
+      if (idx !== -1 && (firstIdx === -1 || idx < firstIdx)) {
+        firstIdx = idx;
+      }
+    }
+    if (firstIdx === -1) {
+      var snippet = text.slice(0, maxLen);
+      return highlightWords(snippet + (text.length > maxLen ? '...' : ''), words);
+    }
+    var start = Math.max(0, firstIdx - 40);
+    var end = Math.min(text.length, firstIdx + maxLen);
+    var snippet = (start > 0 ? '...' : '') + text.slice(start, end) + (end < text.length ? '...' : '');
+    return highlightWords(snippet, words);
+  }
+
+  var debounceTimer = null;
+  function bindInput() {
+    var inp = document.getElementById('sm-input');
+    if (!inp || inp._bound) return;
+    inp._bound = true;
+    inp.addEventListener('input', function() {
+      var val = inp.value.trim();
+      var clr = document.querySelector('.sm-clear-btn');
+      if (clr) clr.style.display = val.length > 0 ? 'inline-block' : 'none';
+
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(function() {
+        if (val.length < 2) {
+          var res = document.getElementById('sm-results');
+          if (res) res.innerHTML = '';
+          var status = document.getElementById('sm-status-txt');
+          if (status) status.textContent = 'Typ minimaal 2 tekens om te zoeken';
+          return;
+        }
+        if (!searchIndex) {
+          loadIndex();
+        } else {
+          doSearch(val);
+        }
+      }, 120);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bindInput);
+  } else {
+    bindInput();
+  }
+
+  function doSearch(query) {
+    if (!searchIndex) return;
+    var words = query.toLowerCase().split(/\s+/).filter(function(w) { return w.length > 0; });
+    if (words.length === 0) return;
+
+    var matches = [];
+    for (var i = 0; i < searchIndex.length; i++) {
+      var item = searchIndex[i];
+      var tLow = (item.title || '').toLowerCase();
+      var bLow = (item.text || '').toLowerCase();
+      var dLow = (item.doc || '').toLowerCase();
+
+      var allMatch = true;
+      var titleMatchCount = 0;
+      for (var w = 0; w < words.length; w++) {
+        var word = words[w];
+        var inTitle = tLow.indexOf(word) !== -1;
+        var inBody = bLow.indexOf(word) !== -1;
+        var inDoc = dLow.indexOf(word) !== -1;
+        if (!inTitle && !inBody && !inDoc) {
+          allMatch = false;
+          break;
+        }
+        if (inTitle) titleMatchCount++;
+      }
+
+      if (allMatch) {
+        var score = 1;
+        if (titleMatchCount === words.length) score = 10;
+        else if (titleMatchCount > 0) score = 5;
+        matches.push({ score: score, item: item });
+      }
+    }
+
+    matches.sort(function(a, b) {
+      if (b.score !== a.score) return b.score - a.score;
+      return a.item.title.localeCompare(b.item.title);
+    });
+
+    renderResults(matches, words, query);
+  }
+
+  function renderResults(matches, words, query) {
+    var container = document.getElementById('sm-results');
+    var status = document.getElementById('sm-status-txt');
+    if (!container) return;
+
+    if (matches.length === 0) {
+      container.innerHTML = '<div class="sm-empty">' + 'Geen resultaten gevonden voor &ldquo;' + escapeHtml(query) + '&rdquo;</div>';
+      if (status) status.textContent = '0 resultaten';
+      return;
+    }
+
+    if (status) {
+      status.textContent = matches.length + ' resultaten gevonden';
+    }
+
+    var p = window.location.pathname.toLowerCase();
+    var isRoot = !p.includes('/nl/') && !p.includes('/int/');
+    var prefix = isRoot ? 'nl/' : '';
+
+    var html = '';
+    var limit = Math.min(matches.length, 50);
+    for (var i = 0; i < limit; i++) {
+      var item = matches[i].item;
+      var titleHighlighted = highlightWords(item.title, words);
+      var snippet = createSnippet(item.text, words, 160);
+      var linkUrl = prefix + item.url;
+      html += '<a class="sm-result-card" href="' + escapeHtml(linkUrl) + '" onclick="sluitSearchModal()">' +
+                '<div><span class="sm-result-badge">' + escapeHtml(item.doc) + '</span></div>' +
+                '<div class="sm-result-title">' + titleHighlighted + '</div>' +
+                '<p class="sm-result-snippet">' + snippet + '</p>' +
+              '</a>';
+    }
+    container.innerHTML = html;
+  }
+})();
+</script><button aria-label="Doorzoek audit" class="sm-toggle" onclick="openSearchModal()" title="Doorzoek audit (Ctrl+K)" type="button">
+<span>🔍</span>
+</button>
+<button aria-label="Schakel donkere/lichte modus" class="dm-toggle" onclick="dm_toggle()" title="Schakel donkere/lichte modus" type="button">
 <span class="dm-icon-dm">🌙</span>
 <span class="dm-icon-lm">☀️</span>
 </button>
 <script>
 (function(){
   function s(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  function syncThemeMaps(mode){
+    var maps = document.querySelectorAll('.theme-map');
+    maps.forEach(function(m){
+      var source = m.querySelector('source');
+      var img = m.querySelector('img');
+      if(!img) return;
+      var darkSvg = source ? source.getAttribute('srcset') : (img.getAttribute('data-dark-src') || '../assets/kaart_eu_dark.svg?v=2');
+      var lightSvg = img.getAttribute('data-light-src') || img.src || '../assets/kaart_eu_light.svg?v=2';
+      if(mode === 'dark'){
+        img.src = darkSvg;
+      } else {
+        img.src = lightSvg;
+      }
+    });
+  }
   window.dm_toggle=function(){
     var r=document.documentElement;
     var n=r.getAttribute('data-theme')==='dark'?'light':'dark';
     r.setAttribute('data-theme',n);
     s('systeem-audit-thema',n);
+    syncThemeMaps(n);
   };
 })();
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 05:20</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 06:40</p>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-print-btn notranslate" onclick="window.print()" title="Print deze pagina of bewaar als PDF" translate="no" type="button">🖨️ Print / Bewaar als PDF</button>
 <button class="pub-contact-btn pub-contact-footer notranslate" onclick="openBronModal('Footer contact')" translate="no" type="button">📄 Bronstuk opvragen / Contact</button>
