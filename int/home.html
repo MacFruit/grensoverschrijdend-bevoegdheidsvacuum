@@ -1060,6 +1060,18 @@ html[data-theme="dark"] .intro-rij a.goto {
 
 
 /* === Client-Side Zoekmachine Modal (Search Engine) === */
+
+.pub-a11y-notice {
+    max-width: 680px; margin: 12pt auto 10pt auto; padding: 9pt 14pt;
+    background: #f7f5f0; border: 1px solid #dcd6ca; border-left: 3.5px solid #1a3c6e;
+    border-radius: 5px; font-size: 8.8pt; line-height: 1.5; color: #444444;
+    text-align: left;
+}
+html[data-theme="dark"] .pub-a11y-notice {
+    background: #1e2126; border-color: #343942; border-left-color: #7fb3ff;
+    color: #b8c0cc;
+}
+
 .pub-search-btn {
     background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
     padding: 5px 12px; border-radius: 4px; font-size: 10pt; font-weight: 600;
@@ -1168,7 +1180,19 @@ html[data-theme="dark"] .intro-rij a.goto {
 .sm-toggle:hover { transform: scale(1.1); background: #eef2f7; border-color: #1a3c6e; }
 
 /* Dark mode styling voor zoekmachine */
-html[data-theme="dark"] .pub-search-btn {
+html[data-theme="dark"] 
+.pub-a11y-notice {
+    max-width: 680px; margin: 12pt auto 10pt auto; padding: 9pt 14pt;
+    background: #f7f5f0; border: 1px solid #dcd6ca; border-left: 3.5px solid #1a3c6e;
+    border-radius: 5px; font-size: 8.8pt; line-height: 1.5; color: #444444;
+    text-align: left;
+}
+html[data-theme="dark"] .pub-a11y-notice {
+    background: #1e2126; border-color: #343942; border-left-color: #7fb3ff;
+    color: #b8c0cc;
+}
+
+.pub-search-btn {
     background: #232323; color: #b0c8e8; border-color: #4a4a4a;
 }
 html[data-theme="dark"] .pub-search-btn:hover {
@@ -1575,7 +1599,7 @@ html[data-theme="dark"] .doc-lijst li:hover {
 
 <h1><span class="notranslate" translate="no">GRENSARBEID.ORG</span> — System-Audit</h1>
 <p class="ondertitel">Cross-border jurisdictional vacuum in social security — an open-source X-ray of two national systems</p>
-<p class="auteur">Author: Eric Messa &bull; Version updated: 7 november 2026, 06:40</p>
+<p class="auteur">Author: Eric Messa &bull; Version updated: 7 november 2026, 06:53</p>
 
 <div class="pub-ab-banner" style="margin: 16pt 0 24pt 0;">
   <strong>Language &amp; Translation Notice:</strong> Dutch (nl/) is the sole authentic source language of this System-Audit. The automated translations of the overview, documents, visual architecture, synthesis and rights matrix are provided to make the documented cross-border mechanisms accessible across Europe. In case of any ambiguity or legal interpretation, the original Dutch text and source files prevail.
@@ -1645,6 +1669,7 @@ html[data-theme="dark"] .doc-lijst li:hover {
 
 <div class="footer notranslate" translate="no">
 <p>Public forensic material. When quoting, cite Document B as the primary factual record.</p>
+<div class="pub-a11y-notice"><strong>Accessibility &amp; AI-Prosthesis Disclosure:</strong> Due to severe visual impairment of the researcher (photophobia and visual acuity &lt; 0.02 in the left eye) and the thousands of pages of physical, black-on-white paper records issued by national authorities, this system audit was compiled using advanced digital assistive technologies. Dark Mode inversion, Optical Character Recognition (OCR), neural Text-to-Speech (TTS), and Large Language Models (AI) were deployed as an essential visual and cognitive prosthesis to render an inaccessible paper reality readable, searchable, and structurally verifiable. Every fact, quote, and reference number is grounded in authentic primary source documents.</div>
 <div style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
   <button type="button" class="pub-search-btn notranslate" translate="no" onclick="openSearchModal()" title="Doorzoek het complete dossier">🔍 Search audit</button>
   <button type="button" class="pub-print-btn notranslate" translate="no" onclick="window.print()" title="Print deze pagina of bewaar als PDF">&#128424; Print / Bewaar als PDF</button>
