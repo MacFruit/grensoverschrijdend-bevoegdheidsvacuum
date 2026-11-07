@@ -4693,15 +4693,42 @@ html[data-theme="dark"] .aps-track-jump:hover {
     var autoChk = document.getElementById('aps-autoplay-chk');
     if (autoChk && !autoChk.checked) {
       stopAllAudio();
+      currentBar = null;
       return;
     }
     var idx = allBars.indexOf(fromBar);
+    if (idx === -1 && fromBar) {
+      var aid = fromBar.getAttribute('data-audio-id');
+      for (var i = 0; i < allBars.length; i++) {
+        if (allBars[i].getAttribute('data-audio-id') === aid) {
+          idx = i;
+          break;
+        }
+      }
+    }
     if (idx !== -1 && idx < allBars.length - 1) {
       var nextBar = allBars[idx + 1];
       nextBar.scrollIntoView({ behavior: 'smooth', block: 'center' });
       playBar(nextBar);
     } else {
       stopAllAudio();
+      currentBar = null;
+      var pSec = document.getElementById('audit-audio-playlist');
+      if (pSec) pSec.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      var nextDocLink = document.querySelector('.aps-next-doc a.apt-btn-play, a.apt-btn-play[href*="#audit-audio-playlist"]');
+      var mpStatus = document.getElementById('aps-mp-status');
+      var mpName = document.getElementById('aps-mp-trackname');
+      if (nextDocLink && nextDocLink.getAttribute('href')) {
+        var nextHref = nextDocLink.getAttribute('href');
+        var nextLabel = (nextDocLink.innerText || nextHref).trim();
+        if (mpStatus) mpStatus.innerText = '✓ Einde document bereikt (' + allBars.length + ' / ' + allBars.length + ')';
+        if (mpName) {
+          mpName.innerHTML = 'Einde document. Ga naar volgend document: <a href="' + nextHref + '" style="color:#58a6ff;text-decoration:underline;font-weight:700;">' + nextLabel + '</a>';
+        }
+        nextDocLink.click();
+      } else {
+        if (mpStatus) mpStatus.innerText = '✓ Einde document bereikt (' + allBars.length + ' / ' + allBars.length + ')';
+      }
     }
   }
 
@@ -5148,17 +5175,22 @@ html[data-theme="dark"] .aps-track-jump:hover {
 
     var playlistRows = document.querySelectorAll('.aps-track');
     for (var r = 0; r < playlistRows.length; r++) {
-      (function(row) {
+      (function(row, rowIdx) {
         row.onclick = function(e) {
-          if (e.target.tagName === 'A') return;
+          if (e.target && (e.target.tagName === 'A' || (e.target.closest && e.target.closest('a')))) return;
           var aid = row.getAttribute('data-audio-id');
-          var targetBar = document.querySelector('.audit-audio-bar[data-audio-id="' + aid + '"]');
+          var tIdx = parseInt(row.getAttribute('data-track-idx'), 10);
+          var targetBar = (aid && document.querySelector('.audit-audio-bar[data-audio-id="' + aid + '"]'))
+            || (!isNaN(tIdx) && allBars[tIdx])
+            || allBars[rowIdx];
           if (targetBar) {
             targetBar.scrollIntoView({ behavior: 'smooth', block: 'center' });
             playBar(targetBar);
+          } else {
+            console.warn('Audio player: targetBar niet gevonden voor playlist-rij:', aid, rowIdx);
           }
         };
-      })(playlistRows[r]);
+      })(playlistRows[r], r);
     }
 
     if (window.speechSynthesis && window.speechSynthesis.onvoiceschanged !== undefined) {

@@ -4639,10 +4639,22 @@ html[data-theme="dark"] .aps-track-jump:hover {
     } else {
       stopAllAudio();
       currentBar = null;
-      var mpStatus = document.getElementById('aps-mp-status');
-      if (mpStatus) mpStatus.innerText = '✓ Einde document bereikt (' + allBars.length + ' / ' + allBars.length + ')';
       var pSec = document.getElementById('audit-audio-playlist');
       if (pSec) pSec.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      var nextDocLink = document.querySelector('.aps-next-doc a.apt-btn-play, a.apt-btn-play[href*="#audit-audio-playlist"]');
+      var mpStatus = document.getElementById('aps-mp-status');
+      var mpName = document.getElementById('aps-mp-trackname');
+      if (nextDocLink && nextDocLink.getAttribute('href')) {
+        var nextHref = nextDocLink.getAttribute('href');
+        var nextLabel = (nextDocLink.innerText || nextHref).trim();
+        if (mpStatus) mpStatus.innerText = '✓ Einde document bereikt (' + allBars.length + ' / ' + allBars.length + ')';
+        if (mpName) {
+          mpName.innerHTML = 'Einde document. Ga naar volgend document: <a href="' + nextHref + '" style="color:#58a6ff;text-decoration:underline;font-weight:700;">' + nextLabel + '</a>';
+        }
+        nextDocLink.click();
+      } else {
+        if (mpStatus) mpStatus.innerText = '✓ Einde document bereikt (' + allBars.length + ' / ' + allBars.length + ')';
+      }
     }
   }
 
@@ -5100,6 +5112,8 @@ html[data-theme="dark"] .aps-track-jump:hover {
           if (targetBar) {
             targetBar.scrollIntoView({ behavior: 'smooth', block: 'center' });
             playBar(targetBar);
+          } else {
+            console.warn('Audio player: targetBar niet gevonden voor playlist-rij:', aid, rowIdx);
           }
         };
       })(playlistRows[r], r);
