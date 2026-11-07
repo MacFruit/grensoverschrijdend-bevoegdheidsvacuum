@@ -285,7 +285,7 @@ html[data-theme="dark"] .pub-a11y-notice {
 
 .sm-modal-overlay {
     position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.65); z-index: 1000;
+    background: rgba(0, 0, 0, 0.65); z-index: 99999;
     display: none; align-items: flex-start; justify-content: center;
     padding: 40px 16px 20px 16px; backdrop-filter: blur(3px);
     box-sizing: border-box;
@@ -369,6 +369,32 @@ html[data-theme="dark"] .pub-a11y-notice {
     padding: 24px 12px; text-align: center; color: #777; font-size: 10.5pt;
 }
 
+
+/* Floating Dark Mode Button (globaal beschikbaar op alle pagina's incl. index.html) */
+.dm-toggle {
+    position: fixed; bottom: 80px; right: 24px; z-index: 200;
+    background: #ffffff; color: #1a3c6e; border: 1px solid #d5d0c5;
+    width: 44px; height: 44px; border-radius: 50%;
+    cursor: pointer; font-size: 18pt; line-height: 1; padding: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .15s, background .15s, border-color .15s;
+    font-family: Aptos, Calibri, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+.dm-toggle:hover { transform: scale(1.1); background: #eef2f7; border-color: #1a3c6e; }
+.dm-toggle .dm-icon-lm { display: none; }
+html[data-theme="dark"] .dm-toggle .dm-icon-dm { display: none; }
+html[data-theme="dark"] .dm-toggle .dm-icon-lm { display: inline; }
+html[data-theme="dark"] .dm-toggle {
+    background: #25282e; color: #ffd43b; border-color: #4a5060;
+    box-shadow: 0 2px 8px rgba(0,0,0,.6);
+}
+html[data-theme="dark"] .dm-toggle:hover {
+    background: #2f343d; border-color: #7fb3ff;
+}
+
 /* Floating Search Button */
 .sm-toggle {
     position: fixed; bottom: 136px; right: 24px; z-index: 200;
@@ -450,10 +476,15 @@ html[data-theme="dark"] .sm-toggle:hover {
 @media (max-width: 600px) {
     .sm-modal-overlay { padding: 10px; }
     .sm-modal-dialog { max-height: 94vh; }
+    .dm-toggle {
+        bottom: 62px !important; right: 16px !important;
+        width: 38px !important; height: 38px !important; font-size: 15pt !important;
+        opacity: 0.92;
+    }
     .sm-toggle {
         bottom: 108px !important; right: 16px !important;
         width: 38px !important; height: 38px !important; font-size: 14pt !important;
-        opacity: 0.88;
+        opacity: 0.92;
     }
 }
 @media print {
@@ -478,7 +509,7 @@ html[data-theme="dark"] .sm-toggle:hover {
 
 .bm-modal-overlay {
     position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.65); z-index: 1000;
+    background: rgba(0, 0, 0, 0.65); z-index: 99999;
     display: none; align-items: center; justify-content: center;
     padding: 20px; backdrop-filter: blur(2px);
 }
@@ -667,7 +698,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <div class="spectrum"><span style="background:#8b1e1e"></span><span style="background:#7a3e9d"></span><span style="background:#1a3c6e"></span><span style="background:#4a3b6b"></span><span style="background:#2e7d32"></span></div>
 <h1><span class="notranslate" translate="no">GRENSARBEID.ORG</span> — Systeem-Audit</h1>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen</p>
-<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 06:53</p><div class="rechten-banner" id="rechten-banner">
+<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 07:01</p><div class="rechten-banner" id="rechten-banner">
 <style>
   .rechten-banner { max-width: 900px; margin: 24px auto 32px; padding: 0 20px;
                     font-family: Aptos, Calibri, sans-serif; }
@@ -1065,7 +1096,11 @@ html[data-theme="dark"] select.pub-lang-select option {
     Dit onafhankelijke archief blijft uitsluitend in de lucht dankzij <a href="https://systeemaudit.backme.org/" rel="noopener" style="color: inherit; text-decoration: underline;" target="_blank">vrijwillige bijdragen</a>.
   </div>
 <div class="footer notranslate" translate="no">
-<p>Openbaar materiaal · <button class="pub-contact-btn" onclick="openBronModal('Algemeen contact via index')">📄 Bronstuk opvragen / Contact</button></p>
+<div style="margin: 10pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
+<button class="pub-search-btn" onclick="openSearchModal()" type="button">🔍 Doorzoek audit</button>
+<button class="pub-contact-btn" onclick="openBronModal('Algemeen contact via index')" type="button">📄 Bronstuk opvragen / Contact</button>
+</div>
+<p>Openbaar materiaal · Systeem-Audit (grensarbeid.org)</p>
 </div>
 </div>
 <!-- Forensisch Bronopvragings- en Contactvenster (Modal) -->
@@ -1279,9 +1314,10 @@ html[data-theme="dark"] select.pub-lang-select option {
     if (!modal) return;
     modal.classList.add('sm-open');
     modal.style.display = 'flex';
+    bindInput();
     var inp = document.getElementById('sm-input');
     if (inp) {
-      inp.focus();
+      setTimeout(function() { inp.focus(); }, 50);
       if (inp.value.trim().length >= 2) {
         doSearch(inp.value.trim());
       }
@@ -1309,6 +1345,17 @@ html[data-theme="dark"] select.pub-lang-select option {
       if (status) status.textContent = 'Typ minimaal 2 tekens om te zoeken';
     }
   };
+
+  // Globale click-delegation voor mobiele browsers & touchscreens
+  document.addEventListener('click', function(e) {
+    var t = e.target;
+    if (!t || !t.closest) return;
+    var trigger = t.closest('.sm-toggle, .pub-search-btn');
+    if (trigger) {
+      e.preventDefault();
+      window.openSearchModal();
+    }
+  });
 
   document.addEventListener('keydown', function(e) {
     if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
@@ -1362,12 +1409,16 @@ html[data-theme="dark"] select.pub-lang-select option {
     return (str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
+  function escapeRegExp(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
   function highlightWords(text, words) {
     if (!text) return '';
     var escaped = escapeHtml(text);
     words.forEach(function(w) {
       if (!w) return;
-      var cleanW = w.replace(/[.*+?^${}()|[\]\]/g, '\$&');
+      var cleanW = escapeRegExp(escapeHtml(w));
       var reg = new RegExp('(' + cleanW + ')', 'gi');
       escaped = escaped.replace(reg, '<mark>$1</mark>');
     });
@@ -1518,13 +1569,16 @@ html[data-theme="dark"] select.pub-lang-select option {
 (function(){
   function s(k,v){try{localStorage.setItem(k,v);}catch(e){}}
   function syncThemeMaps(mode){
+    var p = window.location.pathname.toLowerCase();
+    var isRoot = !p.includes('/nl/') && !p.includes('/int/');
+    var assetPref = isRoot ? 'assets/' : '../assets/';
     var maps = document.querySelectorAll('.theme-map');
     maps.forEach(function(m){
       var source = m.querySelector('source');
       var img = m.querySelector('img');
       if(!img) return;
-      var darkSvg = source ? source.getAttribute('srcset') : (img.getAttribute('data-dark-src') || '../assets/kaart_eu_dark.svg?v=2');
-      var lightSvg = img.getAttribute('data-light-src') || img.src || '../assets/kaart_eu_light.svg?v=2';
+      var darkSvg = source ? source.getAttribute('srcset') : (img.getAttribute('data-dark-src') || (assetPref + 'kaart_eu_dark.svg?v=2'));
+      var lightSvg = img.getAttribute('data-light-src') || (assetPref + 'kaart_eu_light.svg?v=2');
       if(mode === 'dark'){
         img.src = darkSvg;
       } else {
@@ -1539,6 +1593,10 @@ html[data-theme="dark"] select.pub-lang-select option {
     s('systeem-audit-thema',n);
     syncThemeMaps(n);
   };
+  document.addEventListener('DOMContentLoaded', function(){
+    var cur = document.documentElement.getAttribute('data-theme') || 'dark';
+    syncThemeMaps(cur);
+  });
 })();
 </script>
 <!-- Analytische sensor (verborgen landentracker, puur voor dossierbeheer) -->
