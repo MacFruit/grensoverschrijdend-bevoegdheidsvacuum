@@ -2404,7 +2404,8 @@ html[data-theme="dark"] .doc-lijst li:hover {
 
 <h1><span class="notranslate" translate="no">GRENSARBEID.ORG</span> — Systeem-Audit</h1>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen</p>
-<p class="auteur">Auteur: Eric Messa &bull; Versie bijgewerkt: 7 november 2026, 08:57</p>
+<p class="auteur">Auteur: Eric Messa &bull; Versie bijgewerkt: 7 november 2026, 10:16</p>
+<p style="font-size: 9.5pt; color: #888; margin-top: -12pt; margin-bottom: 20pt;">Opmaak en structurering in co-creatie met een AI-leesmodel ter overbrugging van een visuele beperking — alle feiten berusten op primaire bronstukken.</p>
 
 
 
@@ -2465,7 +2466,6 @@ html[data-theme="dark"] .doc-lijst li:hover {
 
 <div class="footer notranslate" translate="no">
 <p>Openbaar materiaal. Wie eruit citeert, citeert Document B als bron van de feiten.</p>
-<div class="pub-a11y-notice"><strong>Toegankelijkheidsverantwoording (AI als Visuele &amp; Cognitieve Prothese):</strong> Vanwege ernstige visuele beperkingen van de onderzoeker (lichtschuwheid en visus &lt; 0,02 aan het linkeroog) en het feit dat nationale instanties duizenden pagina's uitsluitend op fysiek, zwart-wit geprint papier verstrekken, is bij de totstandkoming van dit dossier gebruikgemaakt van geavanceerde digitale hulpmiddelen. Dark Mode-inversie, optische tekenherkenning (OCR), neurale spraaksynthese (Text-to-Speech) en grote taalmodellen (AI) zijn ingezet als noodzakelijke visuele en cognitieve prothese om een ontoegankelijke papieren werkelijkheid leesbaar, doorzoekbaar en structureel verifieerbaar te maken. Elk feit, citaat en referentienummer berust op authentieke primaire bronstukken.</div>
 <div style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
   <button type="button" class="pub-search-btn notranslate" translate="no" onclick="openSearchModal()" title="Doorzoek het complete dossier">🔍 Doorzoek audit</button>
   <button type="button" class="pub-print-btn notranslate" translate="no" onclick="window.print()" title="Print deze pagina of bewaar als PDF">&#128424; Print / Bewaar als PDF</button>
@@ -2992,11 +2992,14 @@ html[data-theme="dark"] .doc-lijst li:hover {
     });
     var kmImg = document.getElementById('km-img');
     var kmLink = document.getElementById('km-full-link');
+    var isDoc0 = p.includes('document-0');
+    var svgDark = isDoc0 ? (assetPref + 'kaart_migratie_doc0_dark.svg?v=1') : (assetPref + 'kaart_eu_dark.svg?v=3');
+    var svgLight = isDoc0 ? (assetPref + 'kaart_migratie_doc0_light.svg?v=1') : (assetPref + 'kaart_eu_light.svg?v=3');
     if (kmImg) {
-      kmImg.src = (mode === 'dark') ? (assetPref + 'kaart_eu_dark.svg?v=3') : (assetPref + 'kaart_eu_light.svg?v=3');
+      kmImg.src = (mode === 'dark') ? svgDark : svgLight;
     }
     if (kmLink) {
-      kmLink.href = (mode === 'dark') ? (assetPref + 'kaart_eu_dark.svg?v=3') : (assetPref + 'kaart_eu_light.svg?v=3');
+      kmLink.href = (mode === 'dark') ? svgDark : svgLight;
     }
   }
   window.dm_toggle=function(){

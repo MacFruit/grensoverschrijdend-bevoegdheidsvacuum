@@ -2406,7 +2406,8 @@ html[data-theme="dark"] .doc-lijst li:hover {
 
 <h1><span class="notranslate" translate="no">GRENSARBEID.ORG</span> — System-Audit</h1>
 <p class="ondertitel">Cross-border jurisdictional vacuum in social security — an open-source X-ray of two national systems</p>
-<p class="auteur">Author: Eric Messa &bull; Version updated: 7 november 2026, 08:57</p>
+<p class="auteur">Author: Eric Messa &bull; Version updated: 7 november 2026, 10:16</p>
+<p style="font-size: 9.5pt; color: #888; margin-top: -12pt; margin-bottom: 20pt;">Formatting and structuring in co-creation with an AI reading model to bridge a visual impairment — all facts are based on primary source documents.</p>
 
 <div class="pub-ab-banner" style="margin: 16pt 0 24pt 0;">
   <strong>Language &amp; Translation Notice:</strong> Dutch (nl/) is the sole authentic source language of this System-Audit. The automated translations of the overview, documents, visual architecture, synthesis and rights matrix are provided to make the documented cross-border mechanisms accessible across Europe. In case of any ambiguity or legal interpretation, the original Dutch text and source files prevail.
@@ -2469,7 +2470,6 @@ html[data-theme="dark"] .doc-lijst li:hover {
 
 <div class="footer notranslate" translate="no">
 <p>Public forensic material. When quoting, cite Document B as the primary factual record.</p>
-<div class="pub-a11y-notice"><strong>Accessibility &amp; AI-Prosthesis Disclosure:</strong> Due to severe visual impairment of the researcher (photophobia and visual acuity &lt; 0.02 in the left eye) and the thousands of pages of physical, black-on-white paper records issued by national authorities, this system audit was compiled using advanced digital assistive technologies. Dark Mode inversion, Optical Character Recognition (OCR), neural Text-to-Speech (TTS), and Large Language Models (AI) were deployed as an essential visual and cognitive prosthesis to render an inaccessible paper reality readable, searchable, and structurally verifiable. Every fact, quote, and reference number is grounded in authentic primary source documents.</div>
 <div style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
   <button type="button" class="pub-search-btn notranslate" translate="no" onclick="openSearchModal()" title="Doorzoek het complete dossier">🔍 Search audit</button>
   <button type="button" class="pub-print-btn notranslate" translate="no" onclick="window.print()" title="Print deze pagina of bewaar als PDF">&#128424; Print / Bewaar als PDF</button>
@@ -2996,11 +2996,14 @@ html[data-theme="dark"] .doc-lijst li:hover {
     });
     var kmImg = document.getElementById('km-img');
     var kmLink = document.getElementById('km-full-link');
+    var isDoc0 = p.includes('document-0');
+    var svgDark = isDoc0 ? (assetPref + 'kaart_migratie_doc0_dark.svg?v=1') : (assetPref + 'kaart_eu_dark.svg?v=3');
+    var svgLight = isDoc0 ? (assetPref + 'kaart_migratie_doc0_light.svg?v=1') : (assetPref + 'kaart_eu_light.svg?v=3');
     if (kmImg) {
-      kmImg.src = (mode === 'dark') ? (assetPref + 'kaart_eu_dark.svg?v=3') : (assetPref + 'kaart_eu_light.svg?v=3');
+      kmImg.src = (mode === 'dark') ? svgDark : svgLight;
     }
     if (kmLink) {
-      kmLink.href = (mode === 'dark') ? (assetPref + 'kaart_eu_dark.svg?v=3') : (assetPref + 'kaart_eu_light.svg?v=3');
+      kmLink.href = (mode === 'dark') ? svgDark : svgLight;
     }
   }
   window.dm_toggle=function(){

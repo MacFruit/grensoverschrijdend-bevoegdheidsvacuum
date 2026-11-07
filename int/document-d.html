@@ -4299,7 +4299,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document D — De synthese</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 7 november 2026, 08:57</p>
+<p class="meta-lijn">Versie bijgewerkt: 7 november 2026, 10:16</p>
 </div>
 <div class="pub-toc" id="pub-toc-top"><h2>Inhoudsopgave</h2><div class="toc-controls-bar">
 <span class="toc-hint">Klik om de onderdelen uit of in te klappen:</span>
@@ -5660,12 +5660,30 @@ html[data-theme="dark"] .aps-track-jump:hover {
     var theme = document.documentElement.getAttribute('data-theme') || 'dark';
     var p = window.location.pathname.toLowerCase();
     var isRoot = !p.includes('/nl/') && !p.includes('/int/');
+    var isDoc0 = p.includes('document-0');
     var assetPref = isRoot ? 'assets/' : '../assets/';
     var img = document.getElementById('km-img');
     var fullLink = document.getElementById('km-full-link');
-    var svgPath = (theme === 'dark') ? (assetPref + 'kaart_eu_dark.svg?v=3') : (assetPref + 'kaart_eu_light.svg?v=3');
+    var legBar = document.querySelector('.km-legenda-bar');
+    var titleEl = document.getElementById('km-title');
+    var subEl = document.querySelector('.km-subtitle');
+
+    var svgDark = isDoc0 ? (assetPref + 'kaart_migratie_doc0_dark.svg?v=1') : (assetPref + 'kaart_eu_dark.svg?v=3');
+    var svgLight = isDoc0 ? (assetPref + 'kaart_migratie_doc0_light.svg?v=1') : (assetPref + 'kaart_eu_light.svg?v=3');
+    var svgPath = (theme === 'dark') ? svgDark : svgLight;
+
     if (img) img.src = svgPath;
     if (fullLink) fullLink.href = svgPath;
+
+    if (isDoc0) {
+      if (titleEl) titleEl.textContent = 'Migration & Border Regions — A European Story';
+      if (subEl) subEl.textContent = 'From Lombardy, Paris and Alsace to Flanders and Zeeuws-Vlaanderen';
+      if (legBar) legBar.style.display = 'none';
+    } else {
+      if (titleEl) titleEl.textContent = "Border Regions in the European Union";
+      if (subEl) subEl.textContent = "Focus: Zeeuws-Vlaanderen &amp; 10 Cross-Border Bottlenecks";
+      if (legBar) legBar.style.display = 'block';
+    }
 
     modal.classList.add('km-open');
     modal.style.display = 'flex';
@@ -5845,11 +5863,14 @@ html[data-theme="dark"] .aps-track-jump:hover {
     });
     var kmImg = document.getElementById('km-img');
     var kmLink = document.getElementById('km-full-link');
+    var isDoc0 = p.includes('document-0');
+    var svgDark = isDoc0 ? (assetPref + 'kaart_migratie_doc0_dark.svg?v=1') : (assetPref + 'kaart_eu_dark.svg?v=3');
+    var svgLight = isDoc0 ? (assetPref + 'kaart_migratie_doc0_light.svg?v=1') : (assetPref + 'kaart_eu_light.svg?v=3');
     if (kmImg) {
-      kmImg.src = (mode === 'dark') ? (assetPref + 'kaart_eu_dark.svg?v=3') : (assetPref + 'kaart_eu_light.svg?v=3');
+      kmImg.src = (mode === 'dark') ? svgDark : svgLight;
     }
     if (kmLink) {
-      kmLink.href = (mode === 'dark') ? (assetPref + 'kaart_eu_dark.svg?v=3') : (assetPref + 'kaart_eu_light.svg?v=3');
+      kmLink.href = (mode === 'dark') ? svgDark : svgLight;
     }
   }
   window.dm_toggle=function(){
@@ -5914,16 +5935,16 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 08:57</p>
-<div class="pub-a11y-notice"><strong>Accessibility &amp; AI-Prosthesis Disclosure:</strong> Due to severe visual impairment of the researcher (photophobia and visual acuity &lt; 0.02 in the left eye) and the thousands of pages of physical, black-on-white paper records issued by national authorities, this system audit was compiled using advanced digital assistive technologies. Dark Mode inversion, Optical Character Recognition (OCR), neural Text-to-Speech (TTS), and Large Language Models (AI) were deployed as an essential visual and cognitive prosthesis to render an inaccessible paper reality readable, searchable, and structurally verifiable. Every fact, quote, and reference number is grounded in authentic primary source documents.</div>
+  Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 10:16<br/>
+<span style="font-size: 9.5pt; color: #888;">Formatting and structuring in co-creation with an AI reading model to bridge a visual impairment — all facts are based on primary source documents.</span></p>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-search-btn notranslate" onclick="openSearchModal()" title="Search entire audit" translate="no" type="button">🔍 Search audit</button>
 <button class="pub-print-btn notranslate" onclick="window.print()" title="Print deze pagina of bewaar als PDF" translate="no" type="button">🖨️ Print / Save as PDF</button>
 <button class="pub-contact-btn pub-contact-footer notranslate" onclick="openBronModal('Footer contact')" translate="no" type="button">📄 Request source record / Contact</button>
 </div>
-<p><a href="home.html">← Terug naar overzicht</a> ·
-     <a href="../home_int.html">🇪🇺 Europees portaal</a> ·
-     <a href="../index.html">Startportaal</a></p>
+<p><strong><a href="document-e.html">Next page: Document E (Rights) →</a></strong> · <a href="home.html">← Back to overview</a> ·
+     <a href="../home_int.html">🇪🇺 European portal</a> ·
+     <a href="../index.html">Start portal</a></p>
 </footer>
 <!-- Analytische sensor (verborgen landentracker, puur voor dossierbeheer) -->
 <div aria-hidden="true" style="display:none;position:absolute;width:0;height:0;overflow:hidden;opacity:0;pointer-events:none;">

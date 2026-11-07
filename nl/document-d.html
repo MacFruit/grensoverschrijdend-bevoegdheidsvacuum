@@ -4296,7 +4296,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document D — De synthese</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 7 november 2026, 08:57</p>
+<p class="meta-lijn">Versie bijgewerkt: 7 november 2026, 10:16</p>
 </div>
 <div class="pub-toc" id="pub-toc-top"><h2>Inhoudsopgave</h2><div class="toc-controls-bar">
 <span class="toc-hint">Klik om de onderdelen uit of in te klappen:</span>
@@ -5657,12 +5657,30 @@ html[data-theme="dark"] .aps-track-jump:hover {
     var theme = document.documentElement.getAttribute('data-theme') || 'dark';
     var p = window.location.pathname.toLowerCase();
     var isRoot = !p.includes('/nl/') && !p.includes('/int/');
+    var isDoc0 = p.includes('document-0');
     var assetPref = isRoot ? 'assets/' : '../assets/';
     var img = document.getElementById('km-img');
     var fullLink = document.getElementById('km-full-link');
-    var svgPath = (theme === 'dark') ? (assetPref + 'kaart_eu_dark.svg?v=3') : (assetPref + 'kaart_eu_light.svg?v=3');
+    var legBar = document.querySelector('.km-legenda-bar');
+    var titleEl = document.getElementById('km-title');
+    var subEl = document.querySelector('.km-subtitle');
+
+    var svgDark = isDoc0 ? (assetPref + 'kaart_migratie_doc0_dark.svg?v=1') : (assetPref + 'kaart_eu_dark.svg?v=3');
+    var svgLight = isDoc0 ? (assetPref + 'kaart_migratie_doc0_light.svg?v=1') : (assetPref + 'kaart_eu_light.svg?v=3');
+    var svgPath = (theme === 'dark') ? svgDark : svgLight;
+
     if (img) img.src = svgPath;
     if (fullLink) fullLink.href = svgPath;
+
+    if (isDoc0) {
+      if (titleEl) titleEl.textContent = 'Migratie & Grensregio — Een Europees Verhaal';
+      if (subEl) subEl.textContent = 'Van Lombardije, Parijs en de Elzas naar Vlaanderen en Zeeuws-Vlaanderen';
+      if (legBar) legBar.style.display = 'none';
+    } else {
+      if (titleEl) titleEl.textContent = "Grensregio's in de Europese Unie";
+      if (subEl) subEl.textContent = "Focus: Zeeuws-Vlaanderen &amp; 10 Europese Knelpunten";
+      if (legBar) legBar.style.display = 'block';
+    }
 
     modal.classList.add('km-open');
     modal.style.display = 'flex';
@@ -5842,11 +5860,14 @@ html[data-theme="dark"] .aps-track-jump:hover {
     });
     var kmImg = document.getElementById('km-img');
     var kmLink = document.getElementById('km-full-link');
+    var isDoc0 = p.includes('document-0');
+    var svgDark = isDoc0 ? (assetPref + 'kaart_migratie_doc0_dark.svg?v=1') : (assetPref + 'kaart_eu_dark.svg?v=3');
+    var svgLight = isDoc0 ? (assetPref + 'kaart_migratie_doc0_light.svg?v=1') : (assetPref + 'kaart_eu_light.svg?v=3');
     if (kmImg) {
-      kmImg.src = (mode === 'dark') ? (assetPref + 'kaart_eu_dark.svg?v=3') : (assetPref + 'kaart_eu_light.svg?v=3');
+      kmImg.src = (mode === 'dark') ? svgDark : svgLight;
     }
     if (kmLink) {
-      kmLink.href = (mode === 'dark') ? (assetPref + 'kaart_eu_dark.svg?v=3') : (assetPref + 'kaart_eu_light.svg?v=3');
+      kmLink.href = (mode === 'dark') ? svgDark : svgLight;
     }
   }
   window.dm_toggle=function(){
@@ -5911,14 +5932,14 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 08:57</p>
-<div class="pub-a11y-notice"><strong>Toegankelijkheidsverantwoording (AI als Visuele &amp; Cognitieve Prothese):</strong> Vanwege ernstige visuele beperkingen van de onderzoeker (lichtschuwheid en visus &lt; 0,02 aan het linkeroog) en het feit dat nationale instanties duizenden pagina's uitsluitend op fysiek, zwart-wit geprint papier verstrekken, is bij de totstandkoming van dit dossier gebruikgemaakt van geavanceerde digitale hulpmiddelen. Dark Mode-inversie, optische tekenherkenning (OCR), neurale spraaksynthese (Text-to-Speech) en grote taalmodellen (AI) zijn ingezet als noodzakelijke visuele en cognitieve prothese om een ontoegankelijke papieren werkelijkheid leesbaar, doorzoekbaar en structureel verifieerbaar te maken. Elk feit, citaat en referentienummer berust op authentieke primaire bronstukken.</div>
+  Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 10:16<br/>
+<span style="font-size: 9.5pt; color: #888;">Opmaak en structurering in co-creatie met een AI-leesmodel ter overbrugging van een visuele beperking — alle feiten berusten op primaire bronstukken.</span></p>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-search-btn notranslate" onclick="openSearchModal()" title="Doorzoek het complete dossier" translate="no" type="button">🔍 Doorzoek audit</button>
 <button class="pub-print-btn notranslate" onclick="window.print()" title="Print deze pagina of bewaar als PDF" translate="no" type="button">🖨️ Print / Bewaar als PDF</button>
 <button class="pub-contact-btn pub-contact-footer notranslate" onclick="openBronModal('Footer contact')" translate="no" type="button">📄 Bronstuk opvragen / Contact</button>
 </div>
-<p><a href="home.html">← Terug naar overzicht</a> ·
+<p><strong><a href="document-e.html">Volgende pagina: Document E (Rechten) →</a></strong> · <a href="home.html">← Terug naar overzicht</a> ·
      <a href="../home_int.html">🇪🇺 Europees portaal</a> ·
      <a href="../index.html">Startportaal</a></p>
 </footer>
