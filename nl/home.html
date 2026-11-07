@@ -631,6 +631,258 @@ html[data-theme="dark"] select.pub-lang-select option {
 
 }
 
+
+/* === LOSGEKOPPELDE CREATIEVE HTML-LEGENDA ONDER KAARTEN (.kaart-html-legenda) === */
+.root-kaart {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.khl-map-wrap {
+    position: relative !important;
+    cursor: zoom-in !important;
+    display: block;
+    width: 100%;
+}
+.khl-map-wrap .theme-map {
+    margin: 0 !important;
+}
+.khl-map-wrap img {
+    border-radius: 8px 8px 0 0 !important;
+    border-bottom: none !important;
+}
+.kaart-html-legenda {
+    cursor: default !important;
+    background: #ffffff;
+    border: 1px solid #dcd6ca;
+    border-top: 2px solid #1a3c6e;
+    border-radius: 0 0 8px 8px;
+    padding: 14px 18px 16px 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    font-family: Aptos, Calibri, sans-serif;
+    color: #222222;
+    text-align: left;
+    line-height: 1.45;
+    user-select: text;
+}
+.khl-header {
+    border-bottom: 1px solid #e6e1d6;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+}
+.khl-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+.khl-title {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #1a3c6e;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+.khl-zoom-btn {
+    background: #eef3fb;
+    color: #1a3c6e;
+    border: 1px solid #c2d1ed;
+    border-radius: 16px;
+    padding: 4px 12px;
+    font-size: 9pt;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+}
+.khl-zoom-btn:hover {
+    background: #1a3c6e;
+    color: #ffffff;
+    border-color: #1a3c6e;
+}
+.khl-symbol-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    font-size: 9.2pt;
+    color: #444444;
+    background: #f8f6f1;
+    padding: 7px 12px;
+    border-radius: 6px;
+    border: 1px solid #e6e1d6;
+}
+.khl-sym {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+}
+.khl-line {
+    display: inline-block;
+    width: 22px;
+    height: 0;
+    vertical-align: middle;
+}
+.khl-line-border {
+    border-top: 3px solid #dc2626;
+}
+.khl-line-dotted {
+    border-top: 2.5px dotted #d95f5f;
+}
+.khl-dot-city {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #1e293b;
+    border: 1.5px solid #ffffff;
+    box-shadow: 0 0 0 1px #94a3b8;
+}
+.khl-arrow {
+    font-size: 12pt;
+    font-weight: 900;
+    line-height: 1;
+}
+.khl-arr-red { color: #dc2626; }
+.khl-arr-blue { color: #0284c7; }
+.khl-arr-purple { color: #7c3aed; }
+.khl-arr-gold { color: #d97706; }
+
+.khl-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 24px;
+}
+.khl-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.khl-col-title {
+    font-size: 9.2pt;
+    font-weight: 700;
+    color: #1a3c6e;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding-bottom: 4px;
+    border-bottom: 1.5px solid #e2ddd2;
+    margin-bottom: 2px;
+}
+.khl-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 9.8pt;
+    line-height: 1.42;
+    color: #2b2b2b;
+}
+.khl-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 4px;
+    border-radius: 50%;
+    color: #ffffff !important;
+    font-size: 9pt;
+    font-weight: 700;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.28);
+    border: 1.5px solid #ffffff;
+    box-sizing: border-box;
+}
+.khl-b-red { background: #dc2626; }
+.khl-b-blue { background: #0284c7; }
+.khl-b-purple { background: #7c3aed; }
+.khl-b-gold { background: #d97706; }
+.khl-text {
+    flex: 1;
+}
+.khl-text strong {
+    color: #111827;
+}
+.khl-footer-note {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px dashed #dcd6ca;
+    font-size: 9.2pt;
+    color: #555555;
+}
+
+/* Dark Mode voor .kaart-html-legenda */
+html[data-theme="dark"] .kaart-html-legenda {
+    background: #181c24 !important;
+    border-color: #2e3646 !important;
+    border-top: 2px solid #4a6fa5 !important;
+    color: #dce3ec !important;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.55) !important;
+}
+html[data-theme="dark"] .khl-header {
+    border-bottom-color: #2b3240 !important;
+}
+html[data-theme="dark"] .khl-title {
+    color: #7fb3ff !important;
+}
+html[data-theme="dark"] .khl-zoom-btn {
+    background: #232b38 !important;
+    color: #7fb3ff !important;
+    border-color: #3b485e !important;
+}
+html[data-theme="dark"] .khl-zoom-btn:hover {
+    background: #4a6fa5 !important;
+    color: #ffffff !important;
+    border-color: #7fb3ff !important;
+}
+html[data-theme="dark"] .khl-symbol-bar {
+    background: #12161d !important;
+    border-color: #28303d !important;
+    color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .khl-line-border {
+    border-top-color: #ff5252 !important;
+}
+html[data-theme="dark"] .khl-line-dotted {
+    border-top-color: #e06c6c !important;
+}
+html[data-theme="dark"] .khl-dot-city {
+    background: #f8fafc !important;
+    border-color: #0f172a !important;
+}
+html[data-theme="dark"] .khl-arr-red { color: #ff5252 !important; }
+html[data-theme="dark"] .khl-arr-blue { color: #38bdf8 !important; }
+html[data-theme="dark"] .khl-arr-purple { color: #c084fc !important; }
+html[data-theme="dark"] .khl-arr-gold { color: #fbbf24 !important; }
+html[data-theme="dark"] .khl-col-title {
+    color: #7fb3ff !important;
+    border-bottom-color: #2b3240 !important;
+}
+html[data-theme="dark"] .khl-item {
+    color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .khl-text strong {
+    color: #f8fafc !important;
+}
+html[data-theme="dark"] .khl-badge {
+    border-color: rgba(255, 255, 255, 0.85) !important;
+}
+html[data-theme="dark"] .khl-b-purple { background: #9333ea !important; }
+html[data-theme="dark"] .khl-footer-note {
+    border-top-color: #2b3240 !important;
+    color: #94a3b8 !important;
+}
+
+@media (max-width: 760px) {
+    .kaart-html-legenda { padding: 12px 14px; }
+    .khl-grid { grid-template-columns: 1fr; gap: 12px; }
+    .khl-symbol-bar { gap: 6px 12px; font-size: 8.8pt; }
+    .khl-item { font-size: 9.5pt; }
+}
+
 /* Forensisch Bronopvragings- en Contactvenster (Modal) */
 .bm-modal-overlay {
     position: fixed; top: 0; left: 0; right: 0; bottom: 0;
@@ -1167,21 +1419,19 @@ html[data-theme="light"] .root-kaart img {
 }
 
 /* Document 0 — Tweeluik-migratiekaart (Light & Dark vector) */
-html[data-theme="dark"] .kaart-migratie img,
-html[data-theme="dark"] .doc0-kaart img {
-    content: url("../assets/kaart_migratie_doc0_dark.svg?v=3");
+html[data-theme="dark"] .kaart-migratie img {
+    content: url("../assets/kaart_migratie_doc0_dark.svg?v=4");
 }
-html[data-theme="light"] .kaart-migratie img,
-html[data-theme="light"] .doc0-kaart img {
-    content: url("../assets/kaart_migratie_doc0_light.svg?v=3");
+html[data-theme="light"] .kaart-migratie img {
+    content: url("../assets/kaart_migratie_doc0_light.svg?v=4");
 }
 
 /* Root index.html — EU Knelpuntenkaart (Light & Dark vector) */
 html[data-theme="dark"] .index-theme-map img {
-    content: url("assets/kaart_eu_dark.svg?v=2");
+    content: url("assets/kaart_eu_dark.svg?v=4");
 }
 html[data-theme="light"] .index-theme-map img {
-    content: url("assets/kaart_eu_light.svg?v=2");
+    content: url("assets/kaart_eu_light.svg?v=4");
 }
 
 html[data-theme="dark"] .pub-ab-banner {
@@ -2545,7 +2795,7 @@ html[data-theme="dark"] .doc-lijst li:hover {
 
 <h1><span class="notranslate" translate="no">GRENSARBEID.ORG</span> — Systeem-Audit</h1>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen</p>
-<p class="auteur">Auteur: Eric Messa &bull; Versie bijgewerkt: 7 november 2026, 11:52</p>
+<p class="auteur">Auteur: Eric Messa &bull; Versie bijgewerkt: 7 november 2026, 12:41</p>
 <p style="font-size: 9.5pt; color: #888; margin-top: -12pt; margin-bottom: 20pt;">Opmaak en structurering in co-creatie met een AI-leesmodel ter overbrugging van een visuele beperking — alle feiten berusten op primaire bronstukken.</p>
 
 
@@ -3124,8 +3374,8 @@ html[data-theme="dark"] .doc-lijst li:hover {
       var source = m.querySelector('source');
       var img = m.querySelector('img');
       if(!img) return;
-      var darkSvg = source ? source.getAttribute('srcset') : (img.getAttribute('data-dark-src') || (assetPref + (isDoc0 ? 'kaart_migratie_doc0_dark.svg?v=3' : 'kaart_eu_dark.svg?v=2')));
-      var lightSvg = img.getAttribute('data-light-src') || (assetPref + (isDoc0 ? 'kaart_migratie_doc0_light.svg?v=3' : 'kaart_eu_light.svg?v=2'));
+      var darkSvg = source ? source.getAttribute('srcset') : (img.getAttribute('data-dark-src') || (assetPref + (isDoc0 ? 'kaart_migratie_doc0_dark.svg?v=4' : 'kaart_eu_dark.svg?v=4')));
+      var lightSvg = img.getAttribute('data-light-src') || (assetPref + (isDoc0 ? 'kaart_migratie_doc0_light.svg?v=4' : 'kaart_eu_light.svg?v=4'));
       if(mode === 'dark'){
         img.src = darkSvg;
       } else {
@@ -3134,8 +3384,8 @@ html[data-theme="dark"] .doc-lijst li:hover {
     });
     var kmImg = document.getElementById('km-img');
     var kmLink = document.getElementById('km-full-link');
-    var svgDark = isDoc0 ? (assetPref + 'kaart_migratie_doc0_dark.svg?v=3') : (assetPref + 'kaart_eu_dark.svg?v=3');
-    var svgLight = isDoc0 ? (assetPref + 'kaart_migratie_doc0_light.svg?v=3') : (assetPref + 'kaart_eu_light.svg?v=3');
+    var svgDark = isDoc0 ? (assetPref + 'kaart_migratie_doc0_dark.svg?v=4') : (assetPref + 'kaart_eu_dark.svg?v=4');
+    var svgLight = isDoc0 ? (assetPref + 'kaart_migratie_doc0_light.svg?v=4') : (assetPref + 'kaart_eu_light.svg?v=4');
     if (kmImg) {
       kmImg.src = (mode === 'dark') ? svgDark : svgLight;
     }
