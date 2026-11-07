@@ -409,7 +409,6 @@ html[data-theme="dark"] .dm-toggle:hover {
 .sm-toggle:hover { transform: scale(1.1); background: #eef2f7; border-color: #1a3c6e; }
 
 /* Dark mode styling voor zoekmachine */
-html[data-theme="dark"] 
 .pub-a11y-notice {
     max-width: 680px; margin: 12pt auto 10pt auto; padding: 9pt 14pt;
     background: #f7f5f0; border: 1px solid #dcd6ca; border-left: 3.5px solid #1a3c6e;
@@ -421,7 +420,7 @@ html[data-theme="dark"] .pub-a11y-notice {
     color: #b8c0cc;
 }
 
-.pub-search-btn {
+html[data-theme="dark"] .pub-search-btn {
     background: #232323; color: #b0c8e8; border-color: #4a4a4a;
 }
 html[data-theme="dark"] .pub-search-btn:hover {
@@ -490,6 +489,387 @@ html[data-theme="dark"] .sm-toggle:hover {
 @media print {
     .sm-modal-overlay, .sm-toggle { display: none !important; }
 }
+
+/* === Geünificeerde Inklapbare 3-Knops Floating Speed-Dial Dock (#audit-fab-dock) === */
+.audit-fab-dock {
+    position: fixed;
+    right: 0;
+    bottom: 24px;
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    font-family: Aptos, Calibri, sans-serif;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.afb-drawer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #d5d0c5;
+    border-right: none;
+    border-radius: 12px 0 0 12px;
+    padding: 8px 6px 8px 8px;
+    box-shadow: -4px 4px 18px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    transform: translateX(calc(100% + 40px));
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.18s ease;
+    margin-right: -1px;
+}
+.audit-fab-dock.afb-open .afb-drawer {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+@media (hover: hover) and (pointer: fine) {
+    .audit-fab-dock:hover .afb-drawer {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+.afb-btn {
+    position: static !important;
+    width: 44px !important;
+    height: 42px !important;
+    border-radius: 8px !important;
+    border: 1px solid #d5d0c5 !important;
+    background: #f8f6f1 !important;
+    color: #1a3c6e !important;
+    cursor: pointer;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 1px !important;
+    padding: 2px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+    transition: background 0.15s, border-color 0.15s, transform 0.12s !important;
+    text-decoration: none !important;
+}
+.afb-btn:hover {
+    background: #eef3fb !important;
+    border-color: #1a3c6e !important;
+    transform: translateY(-1px) !important;
+}
+.afb-ico {
+    font-size: 13pt !important;
+    line-height: 1 !important;
+}
+.afb-lbl {
+    font-size: 6.8pt !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.2px !important;
+    text-transform: uppercase !important;
+    line-height: 1 !important;
+    color: inherit !important;
+}
+.afb-btn.dm-toggle .dm-icon-lm { display: none !important; }
+html[data-theme="dark"] .afb-btn.dm-toggle .dm-icon-dm { display: none !important; }
+html[data-theme="dark"] .afb-btn.dm-toggle .dm-icon-lm { display: inline !important; }
+
+.afb-handle {
+    width: 28px;
+    height: 64px;
+    background: rgba(26, 60, 110, 0.88);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.25);
+    transition: background 0.15s, width 0.15s, opacity 0.15s;
+    opacity: 0.78;
+}
+.afb-handle:hover, .audit-fab-dock.afb-open .afb-handle {
+    opacity: 1;
+    background: #1a3c6e;
+    width: 32px;
+}
+.afb-handle-closed {
+    display: inline-flex;
+    align-items: center;
+    font-size: 13pt;
+    font-weight: 700;
+    line-height: 1;
+    gap: 1px;
+}
+.afb-handle-dots {
+    font-size: 12pt;
+    opacity: 0.85;
+}
+.afb-handle-open {
+    display: none;
+    font-size: 15pt;
+    font-weight: 700;
+    line-height: 1;
+}
+.audit-fab-dock.afb-open .afb-handle-closed { display: none; }
+.audit-fab-dock.afb-open .afb-handle-open { display: inline; }
+
+/* Dark Mode voor #audit-fab-dock */
+html[data-theme="dark"] .afb-drawer {
+    background: rgba(30, 33, 39, 0.96);
+    border-color: #454c59;
+    box-shadow: -4px 4px 20px rgba(0, 0, 0, 0.65);
+}
+html[data-theme="dark"] .afb-btn {
+    background: #282c34 !important;
+    border-color: #454c59 !important;
+    color: #b0c8e8 !important;
+}
+html[data-theme="dark"] .afb-btn:hover {
+    background: #323844 !important;
+    border-color: #7fb3ff !important;
+    color: #ffffff !important;
+}
+html[data-theme="dark"] .afb-handle {
+    background: rgba(52, 86, 139, 0.9);
+    border-color: rgba(127, 179, 255, 0.35);
+    color: #e8f0fe;
+}
+html[data-theme="dark"] .afb-handle:hover,
+html[data-theme="dark"] .audit-fab-dock.afb-open .afb-handle {
+    background: #4a6fa5;
+}
+
+/* === Inklapbare Accordeon Inhoudsopgave (.toc-accordion) === */
+.toc-controls-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 4pt 0 10pt 0;
+    padding-bottom: 8pt;
+    border-bottom: 1px solid #e2ddd3;
+}
+.toc-hint {
+    font-size: 9.5pt;
+    color: #666;
+    font-style: italic;
+}
+.toc-toggle-all-btn {
+    background: #ffffff;
+    color: #1a3c6e;
+    border: 1px solid #c5bfb2;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 9pt;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+}
+.toc-toggle-all-btn:hover {
+    background: #1a3c6e;
+    color: #ffffff;
+    border-color: #1a3c6e;
+}
+.toc-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+details.toc-chapter {
+    background: #ffffff;
+    border: 1px solid #dedad0;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+}
+details.toc-chapter[open] {
+    border-color: #1a3c6e;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+summary.toc-summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 10.5pt;
+    color: #1a3c6e;
+    background: #fcfbf9;
+    user-select: none;
+    transition: background 0.15s;
+}
+summary.toc-summary::-webkit-details-marker { display: none; }
+summary.toc-summary:hover { background: #f0f4fa; }
+.toc-arrow {
+    display: inline-block;
+    font-size: 10pt;
+    transition: transform 0.18s ease;
+    color: #1a3c6e;
+    flex-shrink: 0;
+}
+details.toc-chapter[open] .toc-arrow {
+    transform: rotate(90deg);
+}
+.toc-ch-title {
+    flex: 1;
+    line-height: 1.35;
+}
+.toc-ch-badge {
+    font-size: 8.5pt;
+    font-weight: 600;
+    background: #eef2f7;
+    color: #1a3c6e;
+    border: 1px solid #d0dbe8;
+    padding: 2px 8px;
+    border-radius: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.toc-chapter-body {
+    padding: 8px 14px 10px 14px;
+    border-top: 1px solid #ece8df;
+    background: #ffffff;
+}
+.toc-ch-direct {
+    margin-bottom: 6px;
+    font-size: 9pt;
+}
+.toc-ch-direct a {
+    color: #666 !important;
+    font-style: italic;
+}
+.toc-sublist {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+.toc-sublist li.niv2 {
+    padding-left: 4pt !important;
+    font-weight: 600;
+    margin-top: 6pt !important;
+    color: #222;
+}
+.toc-sublist li.niv3 {
+    padding-left: 18pt !important;
+    font-size: 10pt;
+}
+
+.toc-chapter-single {
+    padding: 7px 12px;
+    background: #fcfbf9;
+    border: 1px solid #dedad0;
+    border-radius: 6px;
+    font-size: 10pt;
+    font-weight: 600;
+}
+.toc-chapter-single a {
+    color: #1a3c6e;
+    text-decoration: none;
+}
+.toc-chapter-single a:hover {
+    text-decoration: underline;
+}
+html[data-theme="dark"] .toc-chapter-single {
+    background: #21252b !important;
+    border-color: #343942 !important;
+}
+html[data-theme="dark"] .toc-chapter-single a {
+    color: #7fb3ff !important;
+}
+
+.toc-playlist-box {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #eef3f9;
+    border: 1px solid #c5d4e8;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+/* Dark mode voor .toc-accordion */
+html[data-theme="dark"] .toc-controls-bar { border-bottom-color: #383d47; }
+html[data-theme="dark"] .toc-hint { color: #9aa5b5; }
+html[data-theme="dark"] .toc-toggle-all-btn {
+    background: #282c34;
+    color: #b0c8e8;
+    border-color: #454c59;
+}
+html[data-theme="dark"] .toc-toggle-all-btn:hover {
+    background: #4a6fa5;
+    color: #ffffff;
+    border-color: #7fb3ff;
+}
+html[data-theme="dark"] details.toc-chapter {
+    background: #1c1f24;
+    border-color: #343942;
+}
+html[data-theme="dark"] details.toc-chapter[open] {
+    border-color: #4a6fa5;
+}
+html[data-theme="dark"] summary.toc-summary {
+    background: #21252b;
+    color: #7fb3ff;
+}
+html[data-theme="dark"] summary.toc-summary:hover {
+    background: #282e38;
+}
+html[data-theme="dark"] .toc-arrow { color: #7fb3ff; }
+html[data-theme="dark"] .toc-ch-badge {
+    background: #283040;
+    color: #b0c8e8;
+    border-color: #3d4b63;
+}
+html[data-theme="dark"] .toc-chapter-body {
+    background: #181b20;
+    border-top-color: #2d323b;
+}
+html[data-theme="dark"] .toc-sublist li.niv2 { color: #e0e6f0; }
+html[data-theme="dark"] .toc-playlist-box {
+    background: #1c232d;
+    border-color: #2f3b4c;
+}
+
+/* Compacte '↑ Inhoudsopgave' link in organisatiebalk en na h3 */
+.audit-org-top {
+    font-size: 8.8pt;
+    font-weight: 600;
+    color: #666;
+    text-decoration: none;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #dcd7cc;
+    background: #ffffff;
+    margin-left: auto;
+    white-space: nowrap;
+}
+.audit-org-top:hover {
+    color: #1a3c6e;
+    border-color: #1a3c6e;
+    background: #eef3fb;
+    text-decoration: none;
+}
+html[data-theme="dark"] .audit-org-top {
+    background: #1c1f26;
+    border-color: #383e4a;
+    color: #9aa5b5;
+}
+html[data-theme="dark"] .audit-org-top:hover {
+    color: #7fb3ff;
+    border-color: #7fb3ff;
+    background: #262c36;
+}
+
+@media print {
+    .audit-fab-dock, .toc-controls-bar, .audit-org-top { display: none !important; }
+    details.toc-chapter { border: none !important; }
+    details.toc-chapter > .toc-chapter-body { display: block !important; }
+}
+
 
 /* Forensisch Bronopvragings- en Contactvenster (Modal) */
 .pub-contact-btn {
@@ -694,11 +1074,12 @@ html[data-theme="dark"] select.pub-lang-select option {
 </style>
 </head>
 <body>
+<a id="top"></a>
 <div class="container">
 <div class="spectrum"><span style="background:#8b1e1e"></span><span style="background:#7a3e9d"></span><span style="background:#1a3c6e"></span><span style="background:#4a3b6b"></span><span style="background:#2e7d32"></span></div>
 <h1><span class="notranslate" translate="no">GRENSARBEID.ORG</span> — Systeem-Audit</h1>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen</p>
-<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 07:01</p><div class="rechten-banner" id="rechten-banner">
+<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 07:43</p><div class="rechten-banner" id="rechten-banner">
 <style>
   .rechten-banner { max-width: 900px; margin: 24px auto 32px; padding: 0 20px;
                     font-family: Aptos, Calibri, sans-serif; }
@@ -1292,7 +1673,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <div class="sm-modal-header">
 <div class="sm-search-bar">
 <span class="sm-icon">🔍</span>
-<input aria-label="Doorzoek audit" autocomplete="off" class="sm-input" id="sm-input" placeholder="Doorzoek audit (bijv. UWV, S072, 5124, EESSI, regiotaxi)..." spellcheck="false" type="search"/>
+<input aria-label="Doorzoek audit" autocomplete="off" class="sm-input" id="sm-input" inputmode="search" placeholder="Doorzoek audit (bijv. UWV, S072, 5124, EESSI, regiotaxi)..." spellcheck="false" type="text"/>
 <button aria-label="Invoer wissen" class="sm-clear-btn" onclick="smClearInput()" style="display:none;" title="Invoer wissen" type="button">×</button>
 </div>
 <button aria-label="Sluiten" class="sm-modal-sluit" onclick="sluitSearchModal()" type="button">×</button>
@@ -1480,9 +1861,23 @@ html[data-theme="dark"] select.pub-lang-select option {
     bindInput();
   }
 
+  var TYPO_ALIASES = {
+    'uvw': 'uwv',
+    'uvv': 'uwv',
+    'svv': 'svb',
+    'sbv': 'svb',
+    'caak': 'cak',
+    'riizv': 'riziv',
+    'rizv': 'riziv',
+    'eesi': 'eessi',
+    'esssi': 'eessi',
+    'solvt': 'solvit'
+  };
   function doSearch(query) {
     if (!searchIndex) return;
-    var words = query.toLowerCase().split(/\s+/).filter(function(w) { return w.length > 0; });
+    var words = query.toLowerCase().split(/\s+/).filter(function(w) { return w.length > 0; }).map(function(w) {
+      return TYPO_ALIASES[w] || w;
+    });
     if (words.length === 0) return;
 
     var matches = [];
@@ -1558,13 +1953,27 @@ html[data-theme="dark"] select.pub-lang-select option {
   }
 })();
 </script>
-<button aria-label="Doorzoek audit" class="sm-toggle" onclick="openSearchModal()" title="Doorzoek audit (Ctrl+K)" type="button">
-<span>🔍</span>
+<div aria-label="Snelle paginanavigatie en weergave" class="audit-fab-dock notranslate" id="audit-fab-dock" role="region" translate="no">
+<div class="afb-drawer" id="afb-drawer">
+<button aria-label="Doorzoek audit" class="afb-btn sm-toggle" onclick="openSearchModal(); closeFabDock();" title="Doorzoek audit (Ctrl+K)" type="button">
+<span class="afb-ico">🔍</span>
+<span class="afb-lbl">Zoek</span>
 </button>
-<button aria-label="Schakel donkere/lichte modus" class="dm-toggle" onclick="dm_toggle()" title="Schakel donkere/lichte modus" type="button">
-<span class="dm-icon-dm">🌙</span>
-<span class="dm-icon-lm">☀️</span>
+<button aria-label="Schakel donkere/lichte modus" class="afb-btn dm-toggle" onclick="dm_toggle();" title="Schakel donkere/lichte modus" type="button">
+<span class="afb-ico dm-icon-dm">🌙</span>
+<span class="afb-ico dm-icon-lm">☀️</span>
+<span class="afb-lbl">Thema</span>
 </button>
+<button aria-label="Terug naar boven" class="afb-btn pub-top" onclick="scrollNaarBoven(); closeFabDock();" title="Terug naar boven" type="button">
+<span class="afb-ico">↑</span>
+<span class="afb-lbl">Boven</span>
+</button>
+</div>
+<button aria-expanded="false" aria-label="Snelle hulpmiddelen" class="afb-handle" id="afb-handle" onclick="toggleFabDock(event)" title="Open/sluit snelle hulpmiddelen (Zoeken, Dark Mode, Naar boven)" type="button">
+<span class="afb-handle-closed">‹<span class="afb-handle-dots">⋮</span></span>
+<span class="afb-handle-open">›</span>
+</button>
+</div>
 <script>
 (function(){
   function s(k,v){try{localStorage.setItem(k,v);}catch(e){}}
@@ -1593,6 +2002,53 @@ html[data-theme="dark"] select.pub-lang-select option {
     s('systeem-audit-thema',n);
     syncThemeMaps(n);
   };
+  window.scrollNaarBoven=function(){
+    try {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    } catch(e) {
+      window.scrollTo(0, 0);
+    }
+  };
+  window.toggleFabDock=function(e){
+    if(e) e.stopPropagation();
+    var dock = document.getElementById('audit-fab-dock');
+    var handle = document.getElementById('afb-handle');
+    if(!dock) return;
+    var isOpen = dock.classList.toggle('afb-open');
+    if(handle) handle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  };
+  window.closeFabDock=function(){
+    var dock = document.getElementById('audit-fab-dock');
+    var handle = document.getElementById('afb-handle');
+    if(dock) dock.classList.remove('afb-open');
+    if(handle) handle.setAttribute('aria-expanded', 'false');
+  };
+  window.toggleAllToc=function(btn){
+    var toc = btn ? btn.closest('.pub-toc') : document.querySelector('.pub-toc');
+    if(!toc) return;
+    var details = toc.querySelectorAll('details.toc-chapter');
+    var anyClosed = false;
+    for(var i=0; i<details.length; i++){
+      if(!details[i].open){ anyClosed = true; break; }
+    }
+    for(var j=0; j<details.length; j++){
+      details[j].open = anyClosed;
+    }
+    var isInt = document.documentElement.getAttribute('data-int-portal') === '1';
+    if(btn){
+      btn.textContent = anyClosed
+        ? (isInt ? '▲ Collapse all chapters' : '▲ Alles inklappen')
+        : (isInt ? '▼ Expand all chapters' : '▼ Alles uitklappen');
+    }
+  };
+  document.addEventListener('click', function(e){
+    var dock = document.getElementById('audit-fab-dock');
+    if(dock && dock.classList.contains('afb-open')){
+      if(!dock.contains(e.target)){
+        closeFabDock();
+      }
+    }
+  });
   document.addEventListener('DOMContentLoaded', function(){
     var cur = document.documentElement.getAttribute('data-theme') || 'dark';
     syncThemeMaps(cur);

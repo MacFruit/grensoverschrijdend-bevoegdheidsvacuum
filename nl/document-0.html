@@ -1079,6 +1079,9 @@ html[data-theme="dark"] .d0-px-link:hover {
 html { overflow-x: hidden; }
 body { margin: 0 !important; padding: 40pt !important; overflow-x: visible !important; box-sizing: border-box; }
 
+html { overflow-x: hidden; }
+body { margin: 0 !important; padding: 40pt !important; overflow-x: visible !important; box-sizing: border-box; }
+
 /* === Optimaal Leesgemak, Typografie & Witruimte (Anti-Bloktekst) === */
 p {
     margin-top: 0 !important;
@@ -2127,7 +2130,6 @@ html[data-theme="dark"] .dm-toggle:hover {
 .sm-toggle:hover { transform: scale(1.1); background: #eef2f7; border-color: #1a3c6e; }
 
 /* Dark mode styling voor zoekmachine */
-html[data-theme="dark"] 
 .pub-a11y-notice {
     max-width: 680px; margin: 12pt auto 10pt auto; padding: 9pt 14pt;
     background: #f7f5f0; border: 1px solid #dcd6ca; border-left: 3.5px solid #1a3c6e;
@@ -2139,7 +2141,7 @@ html[data-theme="dark"] .pub-a11y-notice {
     color: #b8c0cc;
 }
 
-.pub-search-btn {
+html[data-theme="dark"] .pub-search-btn {
     background: #232323; color: #b0c8e8; border-color: #4a4a4a;
 }
 html[data-theme="dark"] .pub-search-btn:hover {
@@ -2208,6 +2210,387 @@ html[data-theme="dark"] .sm-toggle:hover {
 @media print {
     .sm-modal-overlay, .sm-toggle { display: none !important; }
 }
+
+/* === Geünificeerde Inklapbare 3-Knops Floating Speed-Dial Dock (#audit-fab-dock) === */
+.audit-fab-dock {
+    position: fixed;
+    right: 0;
+    bottom: 24px;
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    font-family: Aptos, Calibri, sans-serif;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.afb-drawer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #d5d0c5;
+    border-right: none;
+    border-radius: 12px 0 0 12px;
+    padding: 8px 6px 8px 8px;
+    box-shadow: -4px 4px 18px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    transform: translateX(calc(100% + 40px));
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.18s ease;
+    margin-right: -1px;
+}
+.audit-fab-dock.afb-open .afb-drawer {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+@media (hover: hover) and (pointer: fine) {
+    .audit-fab-dock:hover .afb-drawer {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+.afb-btn {
+    position: static !important;
+    width: 44px !important;
+    height: 42px !important;
+    border-radius: 8px !important;
+    border: 1px solid #d5d0c5 !important;
+    background: #f8f6f1 !important;
+    color: #1a3c6e !important;
+    cursor: pointer;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 1px !important;
+    padding: 2px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+    transition: background 0.15s, border-color 0.15s, transform 0.12s !important;
+    text-decoration: none !important;
+}
+.afb-btn:hover {
+    background: #eef3fb !important;
+    border-color: #1a3c6e !important;
+    transform: translateY(-1px) !important;
+}
+.afb-ico {
+    font-size: 13pt !important;
+    line-height: 1 !important;
+}
+.afb-lbl {
+    font-size: 6.8pt !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.2px !important;
+    text-transform: uppercase !important;
+    line-height: 1 !important;
+    color: inherit !important;
+}
+.afb-btn.dm-toggle .dm-icon-lm { display: none !important; }
+html[data-theme="dark"] .afb-btn.dm-toggle .dm-icon-dm { display: none !important; }
+html[data-theme="dark"] .afb-btn.dm-toggle .dm-icon-lm { display: inline !important; }
+
+.afb-handle {
+    width: 28px;
+    height: 64px;
+    background: rgba(26, 60, 110, 0.88);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.25);
+    transition: background 0.15s, width 0.15s, opacity 0.15s;
+    opacity: 0.78;
+}
+.afb-handle:hover, .audit-fab-dock.afb-open .afb-handle {
+    opacity: 1;
+    background: #1a3c6e;
+    width: 32px;
+}
+.afb-handle-closed {
+    display: inline-flex;
+    align-items: center;
+    font-size: 13pt;
+    font-weight: 700;
+    line-height: 1;
+    gap: 1px;
+}
+.afb-handle-dots {
+    font-size: 12pt;
+    opacity: 0.85;
+}
+.afb-handle-open {
+    display: none;
+    font-size: 15pt;
+    font-weight: 700;
+    line-height: 1;
+}
+.audit-fab-dock.afb-open .afb-handle-closed { display: none; }
+.audit-fab-dock.afb-open .afb-handle-open { display: inline; }
+
+/* Dark Mode voor #audit-fab-dock */
+html[data-theme="dark"] .afb-drawer {
+    background: rgba(30, 33, 39, 0.96);
+    border-color: #454c59;
+    box-shadow: -4px 4px 20px rgba(0, 0, 0, 0.65);
+}
+html[data-theme="dark"] .afb-btn {
+    background: #282c34 !important;
+    border-color: #454c59 !important;
+    color: #b0c8e8 !important;
+}
+html[data-theme="dark"] .afb-btn:hover {
+    background: #323844 !important;
+    border-color: #7fb3ff !important;
+    color: #ffffff !important;
+}
+html[data-theme="dark"] .afb-handle {
+    background: rgba(52, 86, 139, 0.9);
+    border-color: rgba(127, 179, 255, 0.35);
+    color: #e8f0fe;
+}
+html[data-theme="dark"] .afb-handle:hover,
+html[data-theme="dark"] .audit-fab-dock.afb-open .afb-handle {
+    background: #4a6fa5;
+}
+
+/* === Inklapbare Accordeon Inhoudsopgave (.toc-accordion) === */
+.toc-controls-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 4pt 0 10pt 0;
+    padding-bottom: 8pt;
+    border-bottom: 1px solid #e2ddd3;
+}
+.toc-hint {
+    font-size: 9.5pt;
+    color: #666;
+    font-style: italic;
+}
+.toc-toggle-all-btn {
+    background: #ffffff;
+    color: #1a3c6e;
+    border: 1px solid #c5bfb2;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 9pt;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+}
+.toc-toggle-all-btn:hover {
+    background: #1a3c6e;
+    color: #ffffff;
+    border-color: #1a3c6e;
+}
+.toc-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+details.toc-chapter {
+    background: #ffffff;
+    border: 1px solid #dedad0;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+}
+details.toc-chapter[open] {
+    border-color: #1a3c6e;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+summary.toc-summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 10.5pt;
+    color: #1a3c6e;
+    background: #fcfbf9;
+    user-select: none;
+    transition: background 0.15s;
+}
+summary.toc-summary::-webkit-details-marker { display: none; }
+summary.toc-summary:hover { background: #f0f4fa; }
+.toc-arrow {
+    display: inline-block;
+    font-size: 10pt;
+    transition: transform 0.18s ease;
+    color: #1a3c6e;
+    flex-shrink: 0;
+}
+details.toc-chapter[open] .toc-arrow {
+    transform: rotate(90deg);
+}
+.toc-ch-title {
+    flex: 1;
+    line-height: 1.35;
+}
+.toc-ch-badge {
+    font-size: 8.5pt;
+    font-weight: 600;
+    background: #eef2f7;
+    color: #1a3c6e;
+    border: 1px solid #d0dbe8;
+    padding: 2px 8px;
+    border-radius: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.toc-chapter-body {
+    padding: 8px 14px 10px 14px;
+    border-top: 1px solid #ece8df;
+    background: #ffffff;
+}
+.toc-ch-direct {
+    margin-bottom: 6px;
+    font-size: 9pt;
+}
+.toc-ch-direct a {
+    color: #666 !important;
+    font-style: italic;
+}
+.toc-sublist {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+.toc-sublist li.niv2 {
+    padding-left: 4pt !important;
+    font-weight: 600;
+    margin-top: 6pt !important;
+    color: #222;
+}
+.toc-sublist li.niv3 {
+    padding-left: 18pt !important;
+    font-size: 10pt;
+}
+
+.toc-chapter-single {
+    padding: 7px 12px;
+    background: #fcfbf9;
+    border: 1px solid #dedad0;
+    border-radius: 6px;
+    font-size: 10pt;
+    font-weight: 600;
+}
+.toc-chapter-single a {
+    color: #1a3c6e;
+    text-decoration: none;
+}
+.toc-chapter-single a:hover {
+    text-decoration: underline;
+}
+html[data-theme="dark"] .toc-chapter-single {
+    background: #21252b !important;
+    border-color: #343942 !important;
+}
+html[data-theme="dark"] .toc-chapter-single a {
+    color: #7fb3ff !important;
+}
+
+.toc-playlist-box {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #eef3f9;
+    border: 1px solid #c5d4e8;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+/* Dark mode voor .toc-accordion */
+html[data-theme="dark"] .toc-controls-bar { border-bottom-color: #383d47; }
+html[data-theme="dark"] .toc-hint { color: #9aa5b5; }
+html[data-theme="dark"] .toc-toggle-all-btn {
+    background: #282c34;
+    color: #b0c8e8;
+    border-color: #454c59;
+}
+html[data-theme="dark"] .toc-toggle-all-btn:hover {
+    background: #4a6fa5;
+    color: #ffffff;
+    border-color: #7fb3ff;
+}
+html[data-theme="dark"] details.toc-chapter {
+    background: #1c1f24;
+    border-color: #343942;
+}
+html[data-theme="dark"] details.toc-chapter[open] {
+    border-color: #4a6fa5;
+}
+html[data-theme="dark"] summary.toc-summary {
+    background: #21252b;
+    color: #7fb3ff;
+}
+html[data-theme="dark"] summary.toc-summary:hover {
+    background: #282e38;
+}
+html[data-theme="dark"] .toc-arrow { color: #7fb3ff; }
+html[data-theme="dark"] .toc-ch-badge {
+    background: #283040;
+    color: #b0c8e8;
+    border-color: #3d4b63;
+}
+html[data-theme="dark"] .toc-chapter-body {
+    background: #181b20;
+    border-top-color: #2d323b;
+}
+html[data-theme="dark"] .toc-sublist li.niv2 { color: #e0e6f0; }
+html[data-theme="dark"] .toc-playlist-box {
+    background: #1c232d;
+    border-color: #2f3b4c;
+}
+
+/* Compacte '↑ Inhoudsopgave' link in organisatiebalk en na h3 */
+.audit-org-top {
+    font-size: 8.8pt;
+    font-weight: 600;
+    color: #666;
+    text-decoration: none;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #dcd7cc;
+    background: #ffffff;
+    margin-left: auto;
+    white-space: nowrap;
+}
+.audit-org-top:hover {
+    color: #1a3c6e;
+    border-color: #1a3c6e;
+    background: #eef3fb;
+    text-decoration: none;
+}
+html[data-theme="dark"] .audit-org-top {
+    background: #1c1f26;
+    border-color: #383e4a;
+    color: #9aa5b5;
+}
+html[data-theme="dark"] .audit-org-top:hover {
+    color: #7fb3ff;
+    border-color: #7fb3ff;
+    background: #262c36;
+}
+
+@media print {
+    .audit-fab-dock, .toc-controls-bar, .audit-org-top { display: none !important; }
+    details.toc-chapter { border: none !important; }
+    details.toc-chapter > .toc-chapter-body { display: block !important; }
+}
+
 
 /* Forensisch Bronopvragings- en Contactvenster (Modal) */
 .pub-contact-btn {
@@ -3514,28 +3897,35 @@ html[data-theme="dark"] .aps-track-jump:hover {
 
 
 <div class="titelblad">
-<h1 id="systeem-audit">Systeem-Audit</h1><div class="pub-discreet-dl notranslate" translate="no"><span class="pdd-label">Downloads:</span> <a class="pdd-link" href="pdf/document-0.pdf" title="Download vaste PDF-lay-out van Document 0">📄 PDF-versie</a> <span class="pdd-sep">·</span> <a class="pdd-link" href="docx/document-0.docx" title="Download bewerkbare Word-versie van Document 0">📝 Word-versie (.docx)</a></div><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h1 id="systeem-audit">Systeem-Audit</h1><div class="pub-discreet-dl notranslate" translate="no"><span class="pdd-label">Downloads:</span> <a class="pdd-link" href="pdf/document-0.pdf" title="Download vaste PDF-lay-out van Document 0">📄 PDF-versie</a> <span class="pdd-sep">·</span> <a class="pdd-link" href="docx/document-0.docx" title="Download bewerkbare Word-versie van Document 0">📝 Word-versie (.docx)</a></div>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document 0 — Inleiding en leeswijzer</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 7 november 2026, 07:01</p>
+<p class="meta-lijn">Versie bijgewerkt: 7 november 2026, 07:43</p>
 </div>
-<div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
-<li class="niv1"><a href="#systeem-audit">Systeem-Audit</a></li>
-<li class="niv2"><a href="#een-europees-verhaal">Een Europees verhaal</a></li>
-<li class="niv2"><a href="#waarom-dit-project">Waarom dit project</a></li>
-<li class="niv2"><a href="#wat-dit-project-niet-is">Wat dit project niet is</a></li>
-<li class="niv2"><a href="#de-zes-documenten">De zes documenten</a></li>
+<div class="pub-toc" id="pub-toc-top"><h2>Inhoudsopgave</h2><div class="toc-controls-bar">
+<span class="toc-hint">Klik om de onderdelen uit of in te klappen:</span>
+<button class="toc-toggle-all-btn" onclick="toggleAllToc(this)" type="button">? Alles uitklappen</button>
+</div><div class="toc-accordion">
+<div class="toc-chapter-single"><a href="#een-europees-verhaal">Een Europees verhaal</a></div>
+<div class="toc-chapter-single"><a href="#waarom-dit-project">Waarom dit project</a></div>
+<div class="toc-chapter-single"><a href="#wat-dit-project-niet-is">Wat dit project niet is</a></div>
+<details class="toc-chapter">
+<summary class="toc-summary"><span class="toc-arrow">?</span><span class="toc-ch-title">De zes documenten</span><span class="toc-ch-badge">6 onderdelen</span></summary>
+<div class="toc-chapter-body">
+<div class="toc-ch-direct"><a href="#de-zes-documenten">? Spring naar De zes documenten</a></div>
+<ul class="toc-sublist">
 <li class="niv3"><a href="#document-0-de-inleiding-en-leeswijzer">Document 0 — De inleiding en leeswijzer</a></li>
 <li class="niv3"><a href="#document-a-de-narratieve-audit">Document A — De narratieve audit</a></li>
 <li class="niv3"><a href="#document-b-de-data-matrix">Document B — De data-matrix</a></li>
 <li class="niv3"><a href="#document-c-de-visuele-architectuur">Document C — De visuele architectuur</a></li>
 <li class="niv3"><a href="#document-d-de-synthese">Document D — De synthese</a></li>
 <li class="niv3"><a href="#document-e-het-rechtenoverzicht">Document E — Het rechtenoverzicht</a></li>
-<li class="niv2"><a href="#hoe-je-ze-gebruikt">Hoe je ze gebruikt</a></li>
-<li class="niv2"><a href="#voor-wie">Voor wie</a></li>
-<li class="niv2"><a href="#bron-en-verificatie">Bron en verificatie</a></li>
-<li class="niv1 toc-playlist-item"><a href="#audit-audio-playlist">🎧 Audio-Playlist — Alles achter elkaar beluisteren (7 onderdelen)</a></li></ul></div><div class="audit-playlist-topbanner">
+<li class="niv1 toc-playlist-item"><a href="#audit-audio-playlist">🎧 Audio-Playlist — Alles achter elkaar beluisteren (7 onderdelen)</a></li></ul></div></details>
+<div class="toc-chapter-single"><a href="#hoe-je-ze-gebruikt">Hoe je ze gebruikt</a></div>
+<div class="toc-chapter-single"><a href="#voor-wie">Voor wie</a></div>
+<div class="toc-chapter-single"><a href="#bron-en-verificatie">Bron en verificatie</a></div>
+</div></div><div class="audit-playlist-topbanner">
 <div class="apt-info">
 <span class="apt-icon">🎧</span>
 <div class="apt-text">
@@ -4900,17 +5290,17 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <audio class="aab-audio-el" preload="none" src="../assets/audio/doc0_devijfdocumenten_nl_aecc07a6.mp3"></audio>
 </div>
 <p>Elk document is zelfstandig leesbaar. Elk belicht hetzelfde materiaal vanuit een andere hoek — van de macro-architectuur van Europese verdragen tot de micro-uitvoering aan het loket.</p>
-<h3 id="document-0-de-inleiding-en-leeswijzer">Document 0 — De inleiding en leeswijzer</h3>
+<h3 id="document-0-de-inleiding-en-leeswijzer">Document 0 — De inleiding en leeswijzer</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p>Schetst het uitgangspunt, de kaders en de opbouw van de audit. Voor wie wil weten vanuit welke feitelijke positie dit dossier vertrekt en hoe de verschillende lagen op elkaar ingrijpen.</p>
-<h3 id="document-a-de-narratieve-audit">Document A — De narratieve audit</h3>
+<h3 id="document-a-de-narratieve-audit">Document A — De narratieve audit</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p>Vertelt het verhaal van de organisaties die samen het systeem vormen. Wat ze doen, volgens welke logica ze werken, waar hun mandaat eindigt en hoe een beslissing doorwerkt op de volgende schakel. Voor wie het geheel wil begrijpen zonder direct de onderliggende data te doorlopen.</p>
-<h3 id="document-b-de-data-matrix">Document B — De data-matrix</h3>
+<h3 id="document-b-de-data-matrix">Document B — De data-matrix</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p>Bevat alle feiten in chronologische volgorde per organisatie: datums, referentienummers, correspondentie, beslissingen en primaire bronkoppelingen. De forensische bewijslaag waarop alle andere documenten zijn gebouwd. Voor wie wil verifiëren wat er precies is gebeurd.</p>
-<h3 id="document-c-de-visuele-architectuur">Document C — De visuele architectuur</h3>
+<h3 id="document-c-de-visuele-architectuur">Document C — De visuele architectuur</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p>Toont de structuren, netwerken en datastromen die aan het vastlopen ten grondslag liggen. Brengt de systeemdynamiek tussen België, Nederland en de Europese Unie in beeld: waar de knooppunten zitten, hoe terugkoppelingen werken en hoe het bovenliggende verdrag zich spiegelt in de uitvoering beneden aan het loket. Voor wie wil zien waarom de feiten tot deze uitkomst leiden.</p>
-<h3 id="document-d-de-synthese">Document D — De synthese</h3>
+<h3 id="document-d-de-synthese">Document D — De synthese</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p>Brengt de patronen samen die uit het materiaal naar voren komen. Hoe de twee werkelijkheden — de fysieke en de administratieve — uit elkaar groeien, welke mechanismen steeds terugkeren en welke structurele sleutels het verschil maken tussen stilstand en oplossing. Voor wie de optelsom wil.</p>
-<h3 id="document-e-het-rechtenoverzicht">Document E — Het rechtenoverzicht</h3>
+<h3 id="document-e-het-rechtenoverzicht">Document E — Het rechtenoverzicht</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a>
 <p>Toetst per sociaal recht wat de wet belooft, waarom het bij een grensarbeider vastloopt in een Catch-22 of gesloten deur, welke alternatieve route er bestaat en wat het in de praktijk oplevert of nog laat aanslepen. Voor wie per recht de concrete status en uitwerking wil overzien.</p>
 <h2 id="hoe-je-ze-gebruikt">Hoe je ze gebruikt</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="doc0_hoejezegebruikt" data-audio-src="../assets/audio/doc0_hoejezegebruikt_nl_716eca53.mp3" data-clean-heading="Hoe je ze gebruikt" data-clean-text="Hoe je ze gebruikt. Begin waar je begint. Elk document staat op zichzelf. . Wie alleen het verhaal per organisatie wil: Document A. Wie de feiten en bewijsstukken wil: Document B. Wie het visuele systeemoverzicht wil: Document C. Wie de overkoepelende synthese wil: Document D. Wie per sociaal recht wil zien waar het vastloopt, wat er nog loopt en welke route overblijft: Document E. . Wie alles in samenhang wil lezen, begint bij Document 0, gaat dan naar Document A voor de organisaties, naar Document B voor de onderliggende feiten, naar Document C voor de systeemarchitectuur, naar Document D voor de synthese, en sluit af met Document E voor het actuele rechtenoverzicht. ." data-track-index="4" id="aab-doc0_hoejezegebruikt">
 <button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
@@ -4991,285 +5381,13 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <!-- Forensisch Bronopvragings- en Contactvenster (Modal) -->
 
 <!-- Client-Side Search Modal -->
-<div aria-labelledby="sm-input" aria-modal="true" class="sm-modal-overlay notranslate" id="sm-modal" onclick="if(event.target===this)sluitSearchModal()" role="dialog" style="display:none;" translate="no">
-<div class="sm-modal-dialog">
-<div class="sm-modal-header">
-<div class="sm-search-bar">
-<span class="sm-icon">🔍</span>
-<input aria-label="Doorzoek audit" autocomplete="off" class="sm-input" id="sm-input" placeholder="Doorzoek audit (bijv. UWV, S072, 5124, EESSI, regiotaxi)..." spellcheck="false" type="search"/>
-<button aria-label="Invoer wissen" class="sm-clear-btn" onclick="smClearInput()" style="display:none;" title="Invoer wissen" type="button">×</button>
-</div>
-<button aria-label="Sluiten" class="sm-modal-sluit" onclick="sluitSearchModal()" type="button">×</button>
-</div>
-<div class="sm-status-bar">
-<span id="sm-status-txt">Typ minimaal 2 tekens om te zoeken</span>
-<span class="sm-shortcut-hint"><kbd>ESC</kbd> om te sluiten</span>
-</div>
-<div aria-live="polite" class="sm-results" id="sm-results" role="region"></div>
-</div>
-</div>
-<script class="notranslate" translate="no">
-(function() {
-  var searchIndex = null;
-  var isLoading = false;
 
-  window.openSearchModal = function() {
-    var modal = document.getElementById('sm-modal');
-    if (!modal) return;
-    modal.classList.add('sm-open');
-    modal.style.display = 'flex';
-    bindInput();
-    var inp = document.getElementById('sm-input');
-    if (inp) {
-      setTimeout(function() { inp.focus(); }, 50);
-      if (inp.value.trim().length >= 2) {
-        doSearch(inp.value.trim());
-      }
-    }
-    loadIndex();
-  };
-
-  window.sluitSearchModal = function() {
-    var modal = document.getElementById('sm-modal');
-    if (!modal) return;
-    modal.classList.remove('sm-open');
-    modal.style.display = 'none';
-  };
-
-  window.smClearInput = function() {
-    var inp = document.getElementById('sm-input');
-    if (inp) {
-      inp.value = '';
-      inp.focus();
-      var clr = document.querySelector('.sm-clear-btn');
-      if (clr) clr.style.display = 'none';
-      var res = document.getElementById('sm-results');
-      if (res) res.innerHTML = '';
-      var status = document.getElementById('sm-status-txt');
-      if (status) status.textContent = 'Typ minimaal 2 tekens om te zoeken';
-    }
-  };
-
-  // Globale click-delegation voor mobiele browsers & touchscreens
-  document.addEventListener('click', function(e) {
-    var t = e.target;
-    if (!t || !t.closest) return;
-    var trigger = t.closest('.sm-toggle, .pub-search-btn');
-    if (trigger) {
-      e.preventDefault();
-      window.openSearchModal();
-    }
-  });
-
-  document.addEventListener('keydown', function(e) {
-    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-      e.preventDefault();
-      var modal = document.getElementById('sm-modal');
-      if (modal && modal.classList.contains('sm-open')) {
-        sluitSearchModal();
-      } else {
-        openSearchModal();
-      }
-    } else if (e.key === 'Escape') {
-      var modal = document.getElementById('sm-modal');
-      if (modal && modal.classList.contains('sm-open')) {
-        sluitSearchModal();
-      }
-    }
-  });
-
-  function loadIndex() {
-    if (searchIndex || isLoading) return;
-    isLoading = true;
-    var status = document.getElementById('sm-status-txt');
-    if (status) status.textContent = 'Zoekindex inladen...';
-
-    var p = window.location.pathname.toLowerCase();
-    var isRoot = !p.includes('/nl/') && !p.includes('/int/');
-    var indexPath = isRoot ? 'nl/search_index.json' : 'search_index.json';
-
-    fetch(indexPath)
-      .then(function(r) {
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        return r.json();
-      })
-      .then(function(data) {
-        searchIndex = data;
-        isLoading = false;
-        if (status) status.textContent = 'Index gereed (' + data.length + ' secties doorzoekbaar)';
-        var inp = document.getElementById('sm-input');
-        if (inp && inp.value.trim().length >= 2) {
-          doSearch(inp.value.trim());
-        }
-      })
-      .catch(function(err) {
-        isLoading = false;
-        if (status) status.textContent = 'Fout bij inladen zoekindex';
-        console.error('Search index load error:', err);
-      });
-  }
-
-  function escapeHtml(str) {
-    return (str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-  }
-
-  function escapeRegExp(str) {
-    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  }
-
-  function highlightWords(text, words) {
-    if (!text) return '';
-    var escaped = escapeHtml(text);
-    words.forEach(function(w) {
-      if (!w) return;
-      var cleanW = escapeRegExp(escapeHtml(w));
-      var reg = new RegExp('(' + cleanW + ')', 'gi');
-      escaped = escaped.replace(reg, '<mark>$1</mark>');
-    });
-    return escaped;
-  }
-
-  function createSnippet(text, words, maxLen) {
-    if (!text) return '';
-    maxLen = maxLen || 140;
-    var low = text.toLowerCase();
-    var firstIdx = -1;
-    for (var i = 0; i < words.length; i++) {
-      var idx = low.indexOf(words[i].toLowerCase());
-      if (idx !== -1 && (firstIdx === -1 || idx < firstIdx)) {
-        firstIdx = idx;
-      }
-    }
-    if (firstIdx === -1) {
-      var snippet = text.slice(0, maxLen);
-      return highlightWords(snippet + (text.length > maxLen ? '...' : ''), words);
-    }
-    var start = Math.max(0, firstIdx - 40);
-    var end = Math.min(text.length, firstIdx + maxLen);
-    var snippet = (start > 0 ? '...' : '') + text.slice(start, end) + (end < text.length ? '...' : '');
-    return highlightWords(snippet, words);
-  }
-
-  var debounceTimer = null;
-  function bindInput() {
-    var inp = document.getElementById('sm-input');
-    if (!inp || inp._bound) return;
-    inp._bound = true;
-    inp.addEventListener('input', function() {
-      var val = inp.value.trim();
-      var clr = document.querySelector('.sm-clear-btn');
-      if (clr) clr.style.display = val.length > 0 ? 'inline-block' : 'none';
-
-      clearTimeout(debounceTimer);
-      debounceTimer = setTimeout(function() {
-        if (val.length < 2) {
-          var res = document.getElementById('sm-results');
-          if (res) res.innerHTML = '';
-          var status = document.getElementById('sm-status-txt');
-          if (status) status.textContent = 'Typ minimaal 2 tekens om te zoeken';
-          return;
-        }
-        if (!searchIndex) {
-          loadIndex();
-        } else {
-          doSearch(val);
-        }
-      }, 120);
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', bindInput);
-  } else {
-    bindInput();
-  }
-
-  function doSearch(query) {
-    if (!searchIndex) return;
-    var words = query.toLowerCase().split(/\s+/).filter(function(w) { return w.length > 0; });
-    if (words.length === 0) return;
-
-    var matches = [];
-    for (var i = 0; i < searchIndex.length; i++) {
-      var item = searchIndex[i];
-      var tLow = (item.title || '').toLowerCase();
-      var bLow = (item.text || '').toLowerCase();
-      var dLow = (item.doc || '').toLowerCase();
-
-      var allMatch = true;
-      var titleMatchCount = 0;
-      for (var w = 0; w < words.length; w++) {
-        var word = words[w];
-        var inTitle = tLow.indexOf(word) !== -1;
-        var inBody = bLow.indexOf(word) !== -1;
-        var inDoc = dLow.indexOf(word) !== -1;
-        if (!inTitle && !inBody && !inDoc) {
-          allMatch = false;
-          break;
-        }
-        if (inTitle) titleMatchCount++;
-      }
-
-      if (allMatch) {
-        var score = 1;
-        if (titleMatchCount === words.length) score = 10;
-        else if (titleMatchCount > 0) score = 5;
-        matches.push({ score: score, item: item });
-      }
-    }
-
-    matches.sort(function(a, b) {
-      if (b.score !== a.score) return b.score - a.score;
-      return a.item.title.localeCompare(b.item.title);
-    });
-
-    renderResults(matches, words, query);
-  }
-
-  function renderResults(matches, words, query) {
-    var container = document.getElementById('sm-results');
-    var status = document.getElementById('sm-status-txt');
-    if (!container) return;
-
-    if (matches.length === 0) {
-      container.innerHTML = '<div class="sm-empty">' + 'Geen resultaten gevonden voor &ldquo;' + escapeHtml(query) + '&rdquo;</div>';
-      if (status) status.textContent = '0 resultaten';
-      return;
-    }
-
-    if (status) {
-      status.textContent = matches.length + ' resultaten gevonden';
-    }
-
-    var p = window.location.pathname.toLowerCase();
-    var isRoot = !p.includes('/nl/') && !p.includes('/int/');
-    var prefix = isRoot ? 'nl/' : '';
-
-    var html = '';
-    var limit = Math.min(matches.length, 50);
-    for (var i = 0; i < limit; i++) {
-      var item = matches[i].item;
-      var titleHighlighted = highlightWords(item.title, words);
-      var snippet = createSnippet(item.text, words, 160);
-      var linkUrl = prefix + item.url;
-      html += '<a class="sm-result-card" href="' + escapeHtml(linkUrl) + '" onclick="sluitSearchModal()">' +
-                '<div><span class="sm-result-badge">' + escapeHtml(item.doc) + '</span></div>' +
-                '<div class="sm-result-title">' + titleHighlighted + '</div>' +
-                '<p class="sm-result-snippet">' + snippet + '</p>' +
-              '</a>';
-    }
-    container.innerHTML = html;
-  }
-})();
-</script><button aria-label="Doorzoek audit" class="sm-toggle" onclick="openSearchModal()" title="Doorzoek audit (Ctrl+K)" type="button">
-<span>🔍</span>
-</button>
 
 
 
 <!-- Analytische sensor (verborgen landentracker, puur voor dossierbeheer) -->
 
-<a class="pub-top" href="#top" title="Naar boven">↑</a><section aria-label="Volledige Audio-Playlist" class="audit-playlist-sectie" id="audit-audio-playlist">
+<section aria-label="Volledige Audio-Playlist" class="audit-playlist-sectie" id="audit-audio-playlist">
 <div class="aps-header">
 <div class="aps-title-row">
 <span class="aps-badge">🎧 LUISTERMODUS ZONDER LEZEN</span>
@@ -5505,7 +5623,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <div class="sm-modal-header">
 <div class="sm-search-bar">
 <span class="sm-icon">🔍</span>
-<input aria-label="Doorzoek audit" autocomplete="off" class="sm-input" id="sm-input" placeholder="Doorzoek audit (bijv. UWV, S072, 5124, EESSI, regiotaxi)..." spellcheck="false" type="search"/>
+<input aria-label="Doorzoek audit" autocomplete="off" class="sm-input" id="sm-input" inputmode="search" placeholder="Doorzoek audit (bijv. UWV, S072, 5124, EESSI, regiotaxi)..." spellcheck="false" type="text"/>
 <button aria-label="Invoer wissen" class="sm-clear-btn" onclick="smClearInput()" style="display:none;" title="Invoer wissen" type="button">×</button>
 </div>
 <button aria-label="Sluiten" class="sm-modal-sluit" onclick="sluitSearchModal()" type="button">×</button>
@@ -5693,9 +5811,23 @@ html[data-theme="dark"] .aps-track-jump:hover {
     bindInput();
   }
 
+  var TYPO_ALIASES = {
+    'uvw': 'uwv',
+    'uvv': 'uwv',
+    'svv': 'svb',
+    'sbv': 'svb',
+    'caak': 'cak',
+    'riizv': 'riziv',
+    'rizv': 'riziv',
+    'eesi': 'eessi',
+    'esssi': 'eessi',
+    'solvt': 'solvit'
+  };
   function doSearch(query) {
     if (!searchIndex) return;
-    var words = query.toLowerCase().split(/\s+/).filter(function(w) { return w.length > 0; });
+    var words = query.toLowerCase().split(/\s+/).filter(function(w) { return w.length > 0; }).map(function(w) {
+      return TYPO_ALIASES[w] || w;
+    });
     if (words.length === 0) return;
 
     var matches = [];
@@ -5770,13 +5902,27 @@ html[data-theme="dark"] .aps-track-jump:hover {
     container.innerHTML = html;
   }
 })();
-</script><button aria-label="Doorzoek audit" class="sm-toggle" onclick="openSearchModal()" title="Doorzoek audit (Ctrl+K)" type="button">
-<span>🔍</span>
+</script><div aria-label="Snelle paginanavigatie en weergave" class="audit-fab-dock notranslate" id="audit-fab-dock" role="region" translate="no">
+<div class="afb-drawer" id="afb-drawer">
+<button aria-label="Doorzoek audit" class="afb-btn sm-toggle" onclick="openSearchModal(); closeFabDock();" title="Doorzoek audit (Ctrl+K)" type="button">
+<span class="afb-ico">🔍</span>
+<span class="afb-lbl">Zoek</span>
 </button>
-<button aria-label="Schakel donkere/lichte modus" class="dm-toggle" onclick="dm_toggle()" title="Schakel donkere/lichte modus" type="button">
-<span class="dm-icon-dm">🌙</span>
-<span class="dm-icon-lm">☀️</span>
+<button aria-label="Schakel donkere/lichte modus" class="afb-btn dm-toggle" onclick="dm_toggle();" title="Schakel donkere/lichte modus" type="button">
+<span class="afb-ico dm-icon-dm">🌙</span>
+<span class="afb-ico dm-icon-lm">☀️</span>
+<span class="afb-lbl">Thema</span>
 </button>
+<button aria-label="Terug naar boven" class="afb-btn pub-top" onclick="scrollNaarBoven(); closeFabDock();" title="Terug naar boven" type="button">
+<span class="afb-ico">↑</span>
+<span class="afb-lbl">Boven</span>
+</button>
+</div>
+<button aria-expanded="false" aria-label="Snelle hulpmiddelen" class="afb-handle" id="afb-handle" onclick="toggleFabDock(event)" title="Open/sluit snelle hulpmiddelen (Zoeken, Dark Mode, Naar boven)" type="button">
+<span class="afb-handle-closed">‹<span class="afb-handle-dots">⋮</span></span>
+<span class="afb-handle-open">›</span>
+</button>
+</div>
 <script>
 (function(){
   function s(k,v){try{localStorage.setItem(k,v);}catch(e){}}
@@ -5805,6 +5951,53 @@ html[data-theme="dark"] .aps-track-jump:hover {
     s('systeem-audit-thema',n);
     syncThemeMaps(n);
   };
+  window.scrollNaarBoven=function(){
+    try {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    } catch(e) {
+      window.scrollTo(0, 0);
+    }
+  };
+  window.toggleFabDock=function(e){
+    if(e) e.stopPropagation();
+    var dock = document.getElementById('audit-fab-dock');
+    var handle = document.getElementById('afb-handle');
+    if(!dock) return;
+    var isOpen = dock.classList.toggle('afb-open');
+    if(handle) handle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  };
+  window.closeFabDock=function(){
+    var dock = document.getElementById('audit-fab-dock');
+    var handle = document.getElementById('afb-handle');
+    if(dock) dock.classList.remove('afb-open');
+    if(handle) handle.setAttribute('aria-expanded', 'false');
+  };
+  window.toggleAllToc=function(btn){
+    var toc = btn ? btn.closest('.pub-toc') : document.querySelector('.pub-toc');
+    if(!toc) return;
+    var details = toc.querySelectorAll('details.toc-chapter');
+    var anyClosed = false;
+    for(var i=0; i<details.length; i++){
+      if(!details[i].open){ anyClosed = true; break; }
+    }
+    for(var j=0; j<details.length; j++){
+      details[j].open = anyClosed;
+    }
+    var isInt = document.documentElement.getAttribute('data-int-portal') === '1';
+    if(btn){
+      btn.textContent = anyClosed
+        ? (isInt ? '▲ Collapse all chapters' : '▲ Alles inklappen')
+        : (isInt ? '▼ Expand all chapters' : '▼ Alles uitklappen');
+    }
+  };
+  document.addEventListener('click', function(e){
+    var dock = document.getElementById('audit-fab-dock');
+    if(dock && dock.classList.contains('afb-open')){
+      if(!dock.contains(e.target)){
+        closeFabDock();
+      }
+    }
+  });
   document.addEventListener('DOMContentLoaded', function(){
     var cur = document.documentElement.getAttribute('data-theme') || 'dark';
     syncThemeMaps(cur);
@@ -5813,7 +6006,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 07:01</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 07:43</p>
 <div class="pub-a11y-notice"><strong>Toegankelijkheidsverantwoording (AI als Visuele &amp; Cognitieve Prothese):</strong> Vanwege ernstige visuele beperkingen van de onderzoeker (lichtschuwheid en visus &lt; 0,02 aan het linkeroog) en het feit dat nationale instanties duizenden pagina's uitsluitend op fysiek, zwart-wit geprint papier verstrekken, is bij de totstandkoming van dit dossier gebruikgemaakt van geavanceerde digitale hulpmiddelen. Dark Mode-inversie, optische tekenherkenning (OCR), neurale spraaksynthese (Text-to-Speech) en grote taalmodellen (AI) zijn ingezet als noodzakelijke visuele en cognitieve prothese om een ontoegankelijke papieren werkelijkheid leesbaar, doorzoekbaar en structureel verifieerbaar te maken. Elk feit, citaat en referentienummer berust op authentieke primaire bronstukken.</div>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-search-btn notranslate" onclick="openSearchModal()" title="Doorzoek het complete dossier" translate="no" type="button">🔍 Doorzoek audit</button>
