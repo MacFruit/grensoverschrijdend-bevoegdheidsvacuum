@@ -1169,11 +1169,11 @@ html[data-theme="light"] .root-kaart img {
 /* Document 0 — Tweeluik-migratiekaart (Light & Dark vector) */
 html[data-theme="dark"] .kaart-migratie img,
 html[data-theme="dark"] .doc0-kaart img {
-    content: url("../assets/kaart_migratie_doc0_dark.svg?v=2");
+    content: url("../assets/kaart_migratie_doc0_dark.svg?v=3");
 }
 html[data-theme="light"] .kaart-migratie img,
 html[data-theme="light"] .doc0-kaart img {
-    content: url("../assets/kaart_migratie_doc0_light.svg?v=2");
+    content: url("../assets/kaart_migratie_doc0_light.svg?v=3");
 }
 
 /* Root index.html — EU Knelpuntenkaart (Light & Dark vector) */
@@ -2545,7 +2545,7 @@ html[data-theme="dark"] .doc-lijst li:hover {
 
 <h1><span class="notranslate" translate="no">GRENSARBEID.ORG</span> — Systeem-Audit</h1>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen</p>
-<p class="auteur">Auteur: Eric Messa &bull; Versie bijgewerkt: 7 november 2026, 11:15</p>
+<p class="auteur">Auteur: Eric Messa &bull; Versie bijgewerkt: 7 november 2026, 11:45</p>
 <p style="font-size: 9.5pt; color: #888; margin-top: -12pt; margin-bottom: 20pt;">Opmaak en structurering in co-creatie met een AI-leesmodel ter overbrugging van een visuele beperking — alle feiten berusten op primaire bronstukken.</p>
 
 
@@ -3124,8 +3124,8 @@ html[data-theme="dark"] .doc-lijst li:hover {
       var source = m.querySelector('source');
       var img = m.querySelector('img');
       if(!img) return;
-      var darkSvg = source ? source.getAttribute('srcset') : (img.getAttribute('data-dark-src') || (assetPref + (isDoc0 ? 'kaart_migratie_doc0_dark.svg?v=2' : 'kaart_eu_dark.svg?v=2')));
-      var lightSvg = img.getAttribute('data-light-src') || (assetPref + (isDoc0 ? 'kaart_migratie_doc0_light.svg?v=2' : 'kaart_eu_light.svg?v=2'));
+      var darkSvg = source ? source.getAttribute('srcset') : (img.getAttribute('data-dark-src') || (assetPref + (isDoc0 ? 'kaart_migratie_doc0_dark.svg?v=3' : 'kaart_eu_dark.svg?v=2')));
+      var lightSvg = img.getAttribute('data-light-src') || (assetPref + (isDoc0 ? 'kaart_migratie_doc0_light.svg?v=3' : 'kaart_eu_light.svg?v=2'));
       if(mode === 'dark'){
         img.src = darkSvg;
       } else {
@@ -3134,8 +3134,8 @@ html[data-theme="dark"] .doc-lijst li:hover {
     });
     var kmImg = document.getElementById('km-img');
     var kmLink = document.getElementById('km-full-link');
-    var svgDark = isDoc0 ? (assetPref + 'kaart_migratie_doc0_dark.svg?v=2') : (assetPref + 'kaart_eu_dark.svg?v=3');
-    var svgLight = isDoc0 ? (assetPref + 'kaart_migratie_doc0_light.svg?v=2') : (assetPref + 'kaart_eu_light.svg?v=3');
+    var svgDark = isDoc0 ? (assetPref + 'kaart_migratie_doc0_dark.svg?v=3') : (assetPref + 'kaart_eu_dark.svg?v=3');
+    var svgLight = isDoc0 ? (assetPref + 'kaart_migratie_doc0_light.svg?v=3') : (assetPref + 'kaart_eu_light.svg?v=3');
     if (kmImg) {
       kmImg.src = (mode === 'dark') ? svgDark : svgLight;
     }
