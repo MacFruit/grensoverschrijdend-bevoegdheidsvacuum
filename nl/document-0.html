@@ -1933,6 +1933,38 @@ html[data-theme="dark"] .bm-btn-copy:hover {
     background: #353b47; border-color: #7fb3ff;
 }
 
+/* === THEME MAP (LIGHT / DARK VECTOR SVG) === */
+.theme-map {
+    display: block;
+    width: 100%;
+    margin: 16pt 0 20pt 0;
+}
+.theme-map img, .root-kaart img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid #e2ddd2;
+    transition: filter .2s, box-shadow .2s, border-color .2s;
+}
+html[data-theme="dark"] .theme-map img,
+body[data-theme="dark"] .theme-map img,
+html[data-theme="dark"] .root-kaart img {
+    content: url("../assets/kaart_eu_dark.svg");
+    border: 1px solid #3a3a3a;
+    box-shadow: 0 4px 20px rgba(0,0,0,.6);
+    filter: none !important;
+}
+html[data-theme="light"] .theme-map img,
+body[data-theme="light"] .theme-map img,
+html[data-theme="light"] .root-kaart img {
+    content: url("../assets/kaart_eu_light.svg");
+    border: 1px solid #e2ddd2;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    filter: none !important;
+}
+
 html[data-theme="dark"] .pub-ab-banner {
     background: #232016 !important;
     color: #e5d8b0 !important;
@@ -3257,7 +3289,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document 0 — Inleiding en leeswijzer</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 7 november 2026, 05:20</p>
+<p class="meta-lijn">Versie bijgewerkt: 7 november 2026, 05:48</p>
 </div>
 <div class="pub-toc"><h2>Inhoudsopgave</h2><a class="pub-naar-boven" href="#top">↑ naar boven</a><ul>
 <li class="niv1"><a href="#systeem-audit">Systeem-Audit</a></li>
@@ -3310,6 +3342,12 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
 <button class="aab-next-btn" data-next-idx="1" data-next-target="#aab-doc0_waaromditproject" title="Spring direct naar het volgende audiogedeelte (2/7) en luister verder" type="button">⏭ Luister verder</button></div>
 <audio class="aab-audio-el" preload="none" src="../assets/audio/doc0_eeneuropeesverhaal_nl_dd01f832.mp3"></audio>
+</div>
+<div class="root-kaart" style="margin: 18pt 0 24pt 0;">
+<picture class="theme-map">
+<source media="(prefers-color-scheme: dark)" srcset="../assets/kaart_eu_dark.svg"/>
+<img alt="Kaart Europa — Grensregio's in de Europese Unie" class="map-light-only" src="../assets/kaart_eu_light.svg"/>
+</picture>
 </div>
 <p>Dit dossier begint niet bij een grens. Het begint bij vlucht, werk en liefde.</p>
 <p>Voor de Tweede Wereldoorlog ontvlucht een Noord-Italiaanse familie haar geboortestreek in Lombardije en vestigt zich als migranten onder de rook van Parijs, in Bondy — toen nog gelegen in het oude Franse departement <em>Seine (75)</em> in <em>Île-de-France</em>, dat pas in 1968 zal worden opgeknipt tot <em>Seine-Saint-Denis (93)</em>.</p>
@@ -4965,17 +5003,33 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <script>
 (function(){
   function s(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  function syncThemeMaps(mode){
+    var maps = document.querySelectorAll('.theme-map');
+    maps.forEach(function(m){
+      var source = m.querySelector('source');
+      var img = m.querySelector('img');
+      if(!img) return;
+      var darkSvg = source ? source.getAttribute('srcset') : (img.getAttribute('data-dark-src') || '../assets/kaart_eu_dark.svg');
+      var lightSvg = img.getAttribute('data-light-src') || img.src || '../assets/kaart_eu_light.svg';
+      if(mode === 'dark'){
+        img.src = darkSvg;
+      } else {
+        img.src = lightSvg;
+      }
+    });
+  }
   window.dm_toggle=function(){
     var r=document.documentElement;
     var n=r.getAttribute('data-theme')==='dark'?'light':'dark';
     r.setAttribute('data-theme',n);
     s('systeem-audit-thema',n);
+    syncThemeMaps(n);
   };
 })();
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 05:20</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 05:48</p>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-print-btn notranslate" onclick="window.print()" title="Print deze pagina of bewaar als PDF" translate="no" type="button">🖨️ Print / Bewaar als PDF</button>
 <button class="pub-contact-btn pub-contact-footer notranslate" onclick="openBronModal('Footer contact')" translate="no" type="button">📄 Bronstuk opvragen / Contact</button>

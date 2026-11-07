@@ -38,13 +38,28 @@ h1 { font-size: 32pt; color: #1a3c6e; margin: 0 0 6pt; letter-spacing: -0.5pt; t
 .ondertitel { font-size: 14pt; color: #4a5560; margin: 0 0 8pt; font-weight: 400; text-align: center; }
 .auteur { font-size: 10.5pt; color: #6b7280; margin: 0 0 26pt; font-style: italic; text-align: center; }
 
-/* Kaart */
+/* Kaart en Theme Map */
 .root-kaart { margin: 0 0 20pt; }
-.root-kaart img { display: block; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+.theme-map { display: block; width: 100%; }
+.theme-map img, .root-kaart img {
+    display: block; width: 100%; height: auto;
+    border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border: 1px solid transparent;
+    transition: box-shadow .2s, border-color .2s;
+}
+html[data-theme="dark"] .theme-map img,
 html[data-theme="dark"] .root-kaart img {
     border: 1px solid #3a3a3a;
     box-shadow: 0 4px 20px rgba(0,0,0,.6);
-    filter: invert(0.92) hue-rotate(180deg) brightness(0.95) saturate(1.1);
+    content: url("assets/kaart_eu_dark.svg");
+    filter: none !important;
+}
+html[data-theme="light"] .theme-map img,
+html[data-theme="light"] .root-kaart img {
+    border: 1px solid #e2ddd2;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    content: url("assets/kaart_eu_light.svg");
+    filter: none !important;
 }
 
 /* Intro kolommen */
@@ -454,7 +469,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <div class="spectrum"><span style="background:#8b1e1e"></span><span style="background:#7a3e9d"></span><span style="background:#1a3c6e"></span><span style="background:#4a3b6b"></span><span style="background:#2e7d32"></span></div>
 <h1><span class="notranslate" translate="no">GRENSARBEID.ORG</span> — Systeem-Audit</h1>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen</p>
-<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 05:20</p><div class="rechten-banner" id="rechten-banner">
+<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 05:48</p><div class="rechten-banner" id="rechten-banner">
 <style>
   .rechten-banner { max-width: 900px; margin: 24px auto 32px; padding: 0 20px;
                     font-family: Aptos, Calibri, sans-serif; }
@@ -708,7 +723,10 @@ html[data-theme="dark"] select.pub-lang-select option {
   </script>
 </div>
 <div class="root-kaart">
-<img alt="Grensregio's in de Europese Unie — focus op Zeeuws-Vlaanderen" src="assets/kaart_eu.png"/>
+<picture class="theme-map index-theme-map">
+<source media="(prefers-color-scheme: dark)" srcset="assets/kaart_eu_dark.svg"/>
+<img alt="Grensregio's in de Europese Unie — focus op Zeeuws-Vlaanderen" class="map-light-only" src="assets/kaart_eu_light.svg"/>
+</picture>
 </div>
 <div class="root-intro-grid">
 <div class="root-intro-kolom" lang="nl">
@@ -1042,11 +1060,27 @@ html[data-theme="dark"] select.pub-lang-select option {
 <script>
 (function(){
   function s(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  function syncThemeMaps(mode){
+    var maps = document.querySelectorAll('.theme-map');
+    maps.forEach(function(m){
+      var source = m.querySelector('source');
+      var img = m.querySelector('img');
+      if(!img) return;
+      var darkSvg = source ? source.getAttribute('srcset') : (img.getAttribute('data-dark-src') || '../assets/kaart_eu_dark.svg');
+      var lightSvg = img.getAttribute('data-light-src') || img.src || '../assets/kaart_eu_light.svg';
+      if(mode === 'dark'){
+        img.src = darkSvg;
+      } else {
+        img.src = lightSvg;
+      }
+    });
+  }
   window.dm_toggle=function(){
     var r=document.documentElement;
     var n=r.getAttribute('data-theme')==='dark'?'light':'dark';
     r.setAttribute('data-theme',n);
     s('systeem-audit-thema',n);
+    syncThemeMaps(n);
   };
 })();
 </script>
