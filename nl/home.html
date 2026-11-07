@@ -1029,7 +1029,7 @@ html[data-theme="dark"] .bm-btn-copy:hover {
 html[data-theme="dark"] .theme-map img,
 body[data-theme="dark"] .theme-map img,
 html[data-theme="dark"] .root-kaart img {
-    content: url("../assets/kaart_eu_dark.svg");
+    content: url("../assets/kaart_eu_dark.svg?v=2");
     border: 1px solid #3a3a3a;
     box-shadow: 0 4px 20px rgba(0,0,0,.6);
     filter: none !important;
@@ -1037,7 +1037,7 @@ html[data-theme="dark"] .root-kaart img {
 html[data-theme="light"] .theme-map img,
 body[data-theme="light"] .theme-map img,
 html[data-theme="light"] .root-kaart img {
-    content: url("../assets/kaart_eu_light.svg");
+    content: url("../assets/kaart_eu_light.svg?v=2");
     border: 1px solid #e2ddd2;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     filter: none !important;
@@ -1399,7 +1399,7 @@ html[data-theme="dark"] .doc-lijst li:hover {
 
 <h1><span class="notranslate" translate="no">GRENSARBEID.ORG</span> — Systeem-Audit</h1>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen</p>
-<p class="auteur">Auteur: Eric Messa &bull; Versie bijgewerkt: 7 november 2026, 06:06</p>
+<p class="auteur">Auteur: Eric Messa &bull; Versie bijgewerkt: 7 november 2026, 06:07</p>
 
 
 
@@ -1408,8 +1408,8 @@ html[data-theme="dark"] .doc-lijst li:hover {
 
 <div class="root-kaart" style="margin: 20pt 0 28pt 0;">
   <picture class="theme-map">
-    <source srcset="../assets/kaart_eu_dark.svg" media="(prefers-color-scheme: dark)">
-    <img src="../assets/kaart_eu_light.svg" class="map-light-only" alt="Kaart Europa — Grensregio's in de Europese Unie">
+    <source srcset="../assets/kaart_eu_dark.svg?v=2" media="(prefers-color-scheme: dark)">
+    <img src="../assets/kaart_eu_light.svg?v=2" class="map-light-only" alt="Kaart Europa — Grensregio's in de Europese Unie">
   </picture>
 </div>
 
@@ -1676,8 +1676,8 @@ html[data-theme="dark"] .doc-lijst li:hover {
       var source = m.querySelector('source');
       var img = m.querySelector('img');
       if(!img) return;
-      var darkSvg = source ? source.getAttribute('srcset') : (img.getAttribute('data-dark-src') || '../assets/kaart_eu_dark.svg');
-      var lightSvg = img.getAttribute('data-light-src') || img.src || '../assets/kaart_eu_light.svg';
+      var darkSvg = source ? source.getAttribute('srcset') : (img.getAttribute('data-dark-src') || '../assets/kaart_eu_dark.svg?v=2');
+      var lightSvg = img.getAttribute('data-light-src') || img.src || '../assets/kaart_eu_light.svg?v=2';
       if(mode === 'dark'){
         img.src = darkSvg;
       } else {

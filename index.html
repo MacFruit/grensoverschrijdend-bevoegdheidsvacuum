@@ -51,14 +51,14 @@ html[data-theme="dark"] .theme-map img,
 html[data-theme="dark"] .root-kaart img {
     border: 1px solid #3a3a3a;
     box-shadow: 0 4px 20px rgba(0,0,0,.6);
-    content: url("assets/kaart_eu_dark.svg");
+    content: url("assets/kaart_eu_dark.svg?v=2");
     filter: none !important;
 }
 html[data-theme="light"] .theme-map img,
 html[data-theme="light"] .root-kaart img {
     border: 1px solid #e2ddd2;
     box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    content: url("assets/kaart_eu_light.svg");
+    content: url("assets/kaart_eu_light.svg?v=2");
     filter: none !important;
 }
 
@@ -469,7 +469,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <div class="spectrum"><span style="background:#8b1e1e"></span><span style="background:#7a3e9d"></span><span style="background:#1a3c6e"></span><span style="background:#4a3b6b"></span><span style="background:#2e7d32"></span></div>
 <h1><span class="notranslate" translate="no">GRENSARBEID.ORG</span> — Systeem-Audit</h1>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen</p>
-<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 06:06</p><div class="rechten-banner" id="rechten-banner">
+<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 06:07</p><div class="rechten-banner" id="rechten-banner">
 <style>
   .rechten-banner { max-width: 900px; margin: 24px auto 32px; padding: 0 20px;
                     font-family: Aptos, Calibri, sans-serif; }
@@ -724,8 +724,8 @@ html[data-theme="dark"] select.pub-lang-select option {
 </div>
 <div class="root-kaart">
 <picture class="theme-map index-theme-map">
-<source media="(prefers-color-scheme: dark)" srcset="assets/kaart_eu_dark.svg"/>
-<img alt="Grensregio's in de Europese Unie — focus op Zeeuws-Vlaanderen" class="map-light-only" src="assets/kaart_eu_light.svg"/>
+<source media="(prefers-color-scheme: dark)" srcset="assets/kaart_eu_dark.svg?v=2"/>
+<img alt="Grensregio's in de Europese Unie — focus op Zeeuws-Vlaanderen" class="map-light-only" src="assets/kaart_eu_light.svg?v=2"/>
 </picture>
 </div>
 <div class="root-intro-grid">
@@ -1066,8 +1066,8 @@ html[data-theme="dark"] select.pub-lang-select option {
       var source = m.querySelector('source');
       var img = m.querySelector('img');
       if(!img) return;
-      var darkSvg = source ? source.getAttribute('srcset') : (img.getAttribute('data-dark-src') || '../assets/kaart_eu_dark.svg');
-      var lightSvg = img.getAttribute('data-light-src') || img.src || '../assets/kaart_eu_light.svg';
+      var darkSvg = source ? source.getAttribute('srcset') : (img.getAttribute('data-dark-src') || '../assets/kaart_eu_dark.svg?v=2');
+      var lightSvg = img.getAttribute('data-light-src') || img.src || '../assets/kaart_eu_light.svg?v=2';
       if(mode === 'dark'){
         img.src = darkSvg;
       } else {
