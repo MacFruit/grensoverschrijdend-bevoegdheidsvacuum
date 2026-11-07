@@ -1667,6 +1667,401 @@ html[data-theme="dark"] .audit-org-top:hover {
 }
 
 
+
+/* === KAART LIGHTBOX & ZOOM MODAL (#km-modal) === */
+.root-kaart, .theme-map {
+    position: relative !important;
+    cursor: zoom-in !important;
+}
+.km-zoom-badge {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    z-index: 10;
+    background: rgba(26, 60, 110, 0.90);
+    color: #ffffff !important;
+    font-family: Aptos, Calibri, sans-serif;
+    font-size: 9.5pt;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.32);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    pointer-events: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: transform 0.18s ease, background 0.18s ease;
+    user-select: none;
+}
+.root-kaart:hover .km-zoom-badge, .theme-map:hover .km-zoom-badge {
+    transform: translateY(-2px) scale(1.04);
+    background: #1a3c6e;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.4);
+}
+html[data-theme="dark"] .km-zoom-badge {
+    background: rgba(35, 55, 85, 0.92);
+    border-color: rgba(127, 179, 255, 0.35);
+    color: #e8f0fe !important;
+}
+html[data-theme="dark"] .root-kaart:hover .km-zoom-badge,
+html[data-theme="dark"] .theme-map:hover .km-zoom-badge {
+    background: #34568b;
+}
+
+.km-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(8, 12, 18, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.km-modal-overlay.km-open {
+    display: flex;
+}
+body.km-no-scroll {
+    overflow: hidden !important;
+}
+.km-modal-dialog {
+    background: #ffffff;
+    border: 1px solid #d5d0c5;
+    border-radius: 12px;
+    width: 96vw;
+    max-width: 1360px;
+    height: 92vh;
+    max-height: 920px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.5);
+    font-family: Aptos, Calibri, sans-serif;
+    color: #222222;
+    animation: kmFadeIn 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@keyframes kmFadeIn {
+    from { opacity: 0; transform: scale(0.97); }
+    to { opacity: 1; transform: scale(1); }
+}
+.km-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 18px;
+    background: #f7f5f0;
+    border-bottom: 1px solid #e0ded8;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-shrink: 0;
+}
+.km-title-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.km-title-wrap .km-icon {
+    font-size: 15pt;
+    line-height: 1;
+}
+.km-title {
+    margin: 0;
+    font-size: 13pt;
+    font-weight: 700;
+    color: #1a3c6e;
+    line-height: 1.2;
+}
+.km-subtitle {
+    font-size: 9.5pt;
+    color: #666;
+    font-style: italic;
+}
+.km-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+}
+.km-btn {
+    background: #ffffff;
+    border: 1px solid #c5bfb2;
+    border-radius: 6px;
+    color: #1a3c6e;
+    padding: 5px 10px;
+    font-size: 9.5pt;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+.km-btn:hover {
+    background: #eef3fb;
+    border-color: #1a3c6e;
+    transform: translateY(-1px);
+}
+.km-zoom-val {
+    min-width: 52px;
+    font-family: monospace;
+    font-size: 9pt;
+    background: #f0eee9;
+}
+.km-close-btn {
+    background: none;
+    border: none;
+    font-size: 24pt;
+    line-height: 1;
+    color: #666;
+    cursor: pointer;
+    padding: 0 4px;
+    margin-left: 6px;
+    transition: color 0.15s;
+}
+.km-close-btn:hover {
+    color: #c62828;
+}
+
+/* Viewport & Image Stage */
+.km-viewport {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background: #eaedf2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-in;
+    touch-action: none;
+}
+.km-viewport.km-dragging {
+    cursor: grabbing !important;
+}
+.km-viewport.km-can-drag {
+    cursor: grab;
+}
+.km-img-stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transform-origin: center center;
+    will-change: transform;
+}
+.km-img {
+    max-width: 96%;
+    max-height: 96%;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    transition: box-shadow 0.2s;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.km-drag-hint {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(26, 60, 110, 0.85);
+    color: #ffffff;
+    font-size: 8.5pt;
+    padding: 4px 12px;
+    border-radius: 14px;
+    backdrop-filter: blur(4px);
+    pointer-events: none;
+    opacity: 0.88;
+    transition: opacity 0.5s;
+    z-index: 5;
+    white-space: nowrap;
+}
+
+/* Uitgebreide HTML Legenda onderaan */
+.km-legenda-bar {
+    background: #ffffff;
+    border-top: 1px solid #e0ded8;
+    padding: 10px 18px 12px;
+    flex-shrink: 0;
+    max-height: 34vh;
+    overflow-y: auto;
+}
+.km-legenda-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 8px;
+}
+.km-lh-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 9.5pt;
+    color: #1a3c6e;
+}
+.km-lh-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #d32f2f;
+    display: inline-block;
+}
+.km-lh-desc {
+    font-size: 9pt;
+    color: #666;
+    font-weight: normal;
+}
+.km-leg-toggle {
+    background: #f0eee9;
+    border: 1px solid #d5d0c5;
+    border-radius: 4px;
+    font-size: 8.5pt;
+    color: #555;
+    cursor: pointer;
+    padding: 2px 8px;
+    font-family: inherit;
+}
+.km-leg-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 20px;
+    font-size: 9pt;
+    line-height: 1.35;
+}
+.km-leg-item {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    color: #333;
+}
+.km-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: #d32f2f;
+    color: #ffffff;
+    font-size: 7.5pt;
+    font-weight: 700;
+    line-height: 1;
+    flex-shrink: 0;
+}
+.km-country {
+    color: #666;
+    font-weight: 600;
+}
+.km-leg-inzet-note {
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #eee;
+    font-size: 8.5pt;
+    color: #666;
+}
+
+/* Dark Mode voor #km-modal */
+html[data-theme="dark"] .km-modal-overlay {
+    background: rgba(6, 8, 12, 0.92);
+}
+html[data-theme="dark"] .km-modal-dialog {
+    background: #181b20;
+    border-color: #343942;
+    color: #e0e6ed;
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.75);
+}
+html[data-theme="dark"] .km-modal-header {
+    background: #21252b;
+    border-bottom-color: #343942;
+}
+html[data-theme="dark"] .km-title {
+    color: #7fb3ff;
+}
+html[data-theme="dark"] .km-subtitle {
+    color: #9aa5b5;
+}
+html[data-theme="dark"] .km-btn {
+    background: #282c34;
+    border-color: #454c59;
+    color: #b0c8e8;
+}
+html[data-theme="dark"] .km-btn:hover {
+    background: #363d4a;
+    border-color: #7fb3ff;
+    color: #ffffff;
+}
+html[data-theme="dark"] .km-zoom-val {
+    background: #1e2228;
+}
+html[data-theme="dark"] .km-close-btn {
+    color: #aaa;
+}
+html[data-theme="dark"] .km-close-btn:hover {
+    color: #ff6b6b;
+}
+html[data-theme="dark"] .km-viewport {
+    background: #0f1318;
+}
+html[data-theme="dark"] .km-img {
+    box-shadow: 0 4px 28px rgba(0, 0, 0, 0.7);
+}
+html[data-theme="dark"] .km-drag-hint {
+    background: rgba(52, 86, 139, 0.9);
+    border: 1px solid rgba(127, 179, 255, 0.3);
+}
+html[data-theme="dark"] .km-legenda-bar {
+    background: #181b20;
+    border-top-color: #2b303a;
+}
+html[data-theme="dark"] .km-lh-title {
+    color: #7fb3ff;
+}
+html[data-theme="dark"] .km-lh-desc {
+    color: #9aa5b5;
+}
+html[data-theme="dark"] .km-leg-toggle {
+    background: #282c34;
+    border-color: #454c59;
+    color: #b0c8e8;
+}
+html[data-theme="dark"] .km-leg-item {
+    color: #cbd5e1;
+}
+html[data-theme="dark"] .km-country {
+    color: #94a3b8;
+}
+html[data-theme="dark"] .km-leg-inzet-note {
+    border-top-color: #2b303a;
+    color: #94a3b8;
+}
+
+@media (max-width: 760px) {
+    .km-modal-dialog { width: 98vw; height: 96vh; }
+    .km-modal-header { padding: 8px 12px; }
+    .km-title { font-size: 11pt; }
+    .km-subtitle { display: none; }
+    .km-leg-grid { grid-template-columns: 1fr; gap: 4px; }
+    .km-legenda-bar { max-height: 40vh; padding: 8px 12px; }
+}
+
+@media print {
+    .km-modal-overlay, .km-zoom-badge { display: none !important; }
+}
+
+
 /* Forensisch Bronopvragings- en Contactvenster (Modal) */
 .pub-contact-btn {
     background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
@@ -2009,7 +2404,7 @@ html[data-theme="dark"] .doc-lijst li:hover {
 
 <h1><span class="notranslate" translate="no">GRENSARBEID.ORG</span> — Systeem-Audit</h1>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen</p>
-<p class="auteur">Auteur: Eric Messa &bull; Versie bijgewerkt: 7 november 2026, 07:43</p>
+<p class="auteur">Auteur: Eric Messa &bull; Versie bijgewerkt: 7 november 2026, 08:57</p>
 
 
 
@@ -2595,6 +2990,14 @@ html[data-theme="dark"] .doc-lijst li:hover {
         img.src = lightSvg;
       }
     });
+    var kmImg = document.getElementById('km-img');
+    var kmLink = document.getElementById('km-full-link');
+    if (kmImg) {
+      kmImg.src = (mode === 'dark') ? (assetPref + 'kaart_eu_dark.svg?v=3') : (assetPref + 'kaart_eu_light.svg?v=3');
+    }
+    if (kmLink) {
+      kmLink.href = (mode === 'dark') ? (assetPref + 'kaart_eu_dark.svg?v=3') : (assetPref + 'kaart_eu_light.svg?v=3');
+    }
   }
   window.dm_toggle=function(){
     var r=document.documentElement;

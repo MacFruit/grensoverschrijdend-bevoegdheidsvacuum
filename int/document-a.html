@@ -2592,6 +2592,401 @@ html[data-theme="dark"] .audit-org-top:hover {
 }
 
 
+
+/* === KAART LIGHTBOX & ZOOM MODAL (#km-modal) === */
+.root-kaart, .theme-map {
+    position: relative !important;
+    cursor: zoom-in !important;
+}
+.km-zoom-badge {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    z-index: 10;
+    background: rgba(26, 60, 110, 0.90);
+    color: #ffffff !important;
+    font-family: Aptos, Calibri, sans-serif;
+    font-size: 9.5pt;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.32);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    pointer-events: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: transform 0.18s ease, background 0.18s ease;
+    user-select: none;
+}
+.root-kaart:hover .km-zoom-badge, .theme-map:hover .km-zoom-badge {
+    transform: translateY(-2px) scale(1.04);
+    background: #1a3c6e;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.4);
+}
+html[data-theme="dark"] .km-zoom-badge {
+    background: rgba(35, 55, 85, 0.92);
+    border-color: rgba(127, 179, 255, 0.35);
+    color: #e8f0fe !important;
+}
+html[data-theme="dark"] .root-kaart:hover .km-zoom-badge,
+html[data-theme="dark"] .theme-map:hover .km-zoom-badge {
+    background: #34568b;
+}
+
+.km-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(8, 12, 18, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.km-modal-overlay.km-open {
+    display: flex;
+}
+body.km-no-scroll {
+    overflow: hidden !important;
+}
+.km-modal-dialog {
+    background: #ffffff;
+    border: 1px solid #d5d0c5;
+    border-radius: 12px;
+    width: 96vw;
+    max-width: 1360px;
+    height: 92vh;
+    max-height: 920px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.5);
+    font-family: Aptos, Calibri, sans-serif;
+    color: #222222;
+    animation: kmFadeIn 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@keyframes kmFadeIn {
+    from { opacity: 0; transform: scale(0.97); }
+    to { opacity: 1; transform: scale(1); }
+}
+.km-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 18px;
+    background: #f7f5f0;
+    border-bottom: 1px solid #e0ded8;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-shrink: 0;
+}
+.km-title-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.km-title-wrap .km-icon {
+    font-size: 15pt;
+    line-height: 1;
+}
+.km-title {
+    margin: 0;
+    font-size: 13pt;
+    font-weight: 700;
+    color: #1a3c6e;
+    line-height: 1.2;
+}
+.km-subtitle {
+    font-size: 9.5pt;
+    color: #666;
+    font-style: italic;
+}
+.km-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+}
+.km-btn {
+    background: #ffffff;
+    border: 1px solid #c5bfb2;
+    border-radius: 6px;
+    color: #1a3c6e;
+    padding: 5px 10px;
+    font-size: 9.5pt;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+.km-btn:hover {
+    background: #eef3fb;
+    border-color: #1a3c6e;
+    transform: translateY(-1px);
+}
+.km-zoom-val {
+    min-width: 52px;
+    font-family: monospace;
+    font-size: 9pt;
+    background: #f0eee9;
+}
+.km-close-btn {
+    background: none;
+    border: none;
+    font-size: 24pt;
+    line-height: 1;
+    color: #666;
+    cursor: pointer;
+    padding: 0 4px;
+    margin-left: 6px;
+    transition: color 0.15s;
+}
+.km-close-btn:hover {
+    color: #c62828;
+}
+
+/* Viewport & Image Stage */
+.km-viewport {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background: #eaedf2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-in;
+    touch-action: none;
+}
+.km-viewport.km-dragging {
+    cursor: grabbing !important;
+}
+.km-viewport.km-can-drag {
+    cursor: grab;
+}
+.km-img-stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transform-origin: center center;
+    will-change: transform;
+}
+.km-img {
+    max-width: 96%;
+    max-height: 96%;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    transition: box-shadow 0.2s;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.km-drag-hint {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(26, 60, 110, 0.85);
+    color: #ffffff;
+    font-size: 8.5pt;
+    padding: 4px 12px;
+    border-radius: 14px;
+    backdrop-filter: blur(4px);
+    pointer-events: none;
+    opacity: 0.88;
+    transition: opacity 0.5s;
+    z-index: 5;
+    white-space: nowrap;
+}
+
+/* Uitgebreide HTML Legenda onderaan */
+.km-legenda-bar {
+    background: #ffffff;
+    border-top: 1px solid #e0ded8;
+    padding: 10px 18px 12px;
+    flex-shrink: 0;
+    max-height: 34vh;
+    overflow-y: auto;
+}
+.km-legenda-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 8px;
+}
+.km-lh-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 9.5pt;
+    color: #1a3c6e;
+}
+.km-lh-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #d32f2f;
+    display: inline-block;
+}
+.km-lh-desc {
+    font-size: 9pt;
+    color: #666;
+    font-weight: normal;
+}
+.km-leg-toggle {
+    background: #f0eee9;
+    border: 1px solid #d5d0c5;
+    border-radius: 4px;
+    font-size: 8.5pt;
+    color: #555;
+    cursor: pointer;
+    padding: 2px 8px;
+    font-family: inherit;
+}
+.km-leg-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 20px;
+    font-size: 9pt;
+    line-height: 1.35;
+}
+.km-leg-item {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    color: #333;
+}
+.km-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: #d32f2f;
+    color: #ffffff;
+    font-size: 7.5pt;
+    font-weight: 700;
+    line-height: 1;
+    flex-shrink: 0;
+}
+.km-country {
+    color: #666;
+    font-weight: 600;
+}
+.km-leg-inzet-note {
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #eee;
+    font-size: 8.5pt;
+    color: #666;
+}
+
+/* Dark Mode voor #km-modal */
+html[data-theme="dark"] .km-modal-overlay {
+    background: rgba(6, 8, 12, 0.92);
+}
+html[data-theme="dark"] .km-modal-dialog {
+    background: #181b20;
+    border-color: #343942;
+    color: #e0e6ed;
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.75);
+}
+html[data-theme="dark"] .km-modal-header {
+    background: #21252b;
+    border-bottom-color: #343942;
+}
+html[data-theme="dark"] .km-title {
+    color: #7fb3ff;
+}
+html[data-theme="dark"] .km-subtitle {
+    color: #9aa5b5;
+}
+html[data-theme="dark"] .km-btn {
+    background: #282c34;
+    border-color: #454c59;
+    color: #b0c8e8;
+}
+html[data-theme="dark"] .km-btn:hover {
+    background: #363d4a;
+    border-color: #7fb3ff;
+    color: #ffffff;
+}
+html[data-theme="dark"] .km-zoom-val {
+    background: #1e2228;
+}
+html[data-theme="dark"] .km-close-btn {
+    color: #aaa;
+}
+html[data-theme="dark"] .km-close-btn:hover {
+    color: #ff6b6b;
+}
+html[data-theme="dark"] .km-viewport {
+    background: #0f1318;
+}
+html[data-theme="dark"] .km-img {
+    box-shadow: 0 4px 28px rgba(0, 0, 0, 0.7);
+}
+html[data-theme="dark"] .km-drag-hint {
+    background: rgba(52, 86, 139, 0.9);
+    border: 1px solid rgba(127, 179, 255, 0.3);
+}
+html[data-theme="dark"] .km-legenda-bar {
+    background: #181b20;
+    border-top-color: #2b303a;
+}
+html[data-theme="dark"] .km-lh-title {
+    color: #7fb3ff;
+}
+html[data-theme="dark"] .km-lh-desc {
+    color: #9aa5b5;
+}
+html[data-theme="dark"] .km-leg-toggle {
+    background: #282c34;
+    border-color: #454c59;
+    color: #b0c8e8;
+}
+html[data-theme="dark"] .km-leg-item {
+    color: #cbd5e1;
+}
+html[data-theme="dark"] .km-country {
+    color: #94a3b8;
+}
+html[data-theme="dark"] .km-leg-inzet-note {
+    border-top-color: #2b303a;
+    color: #94a3b8;
+}
+
+@media (max-width: 760px) {
+    .km-modal-dialog { width: 98vw; height: 96vh; }
+    .km-modal-header { padding: 8px 12px; }
+    .km-title { font-size: 11pt; }
+    .km-subtitle { display: none; }
+    .km-leg-grid { grid-template-columns: 1fr; gap: 4px; }
+    .km-legenda-bar { max-height: 40vh; padding: 8px 12px; }
+}
+
+@media print {
+    .km-modal-overlay, .km-zoom-badge { display: none !important; }
+}
+
+
 /* Forensisch Bronopvragings- en Contactvenster (Modal) */
 .pub-contact-btn {
     background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
@@ -3904,7 +4299,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document A — De narratieve audit</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 7 november 2026, 07:43</p>
+<p class="meta-lijn">Versie bijgewerkt: 7 november 2026, 08:57</p>
 </div>
 <div class="pub-toc" id="pub-toc-top"><h2>Inhoudsopgave</h2><div class="toc-controls-bar">
 <span class="toc-hint">Klik op een hoofdstuk om de organisaties/secties uit of in te klappen:</span>
@@ -5931,6 +6326,8 @@ html[data-theme="dark"] .aps-track-jump:hover {
 
 <!-- Client-Side Search Modal -->
 
+<!-- Kaart Lightbox & Zoom Modal -->
+
 
 
 
@@ -6506,6 +6903,281 @@ html[data-theme="dark"] .aps-track-jump:hover {
     container.innerHTML = html;
   }
 })();
+</script><!-- Kaart Lightbox & Zoom Modal -->
+<div aria-labelledby="km-title" aria-modal="true" class="km-modal-overlay notranslate" id="km-modal" onclick="if(event.target===this)sluitKaartModal()" role="dialog" style="display:none;" translate="no">
+<div class="km-modal-dialog">
+<div class="km-modal-header">
+<div class="km-title-wrap">
+<span class="km-icon">🗺️</span>
+<h3 class="km-title" id="km-title">Border Regions in the European Union</h3>
+<span class="km-subtitle">Focus: Zeeuws-Vlaanderen &amp; 10 Cross-Border Bottlenecks</span>
+</div>
+<div class="km-controls">
+<button aria-label="Zoom out (-)" class="km-btn km-zoom-out" onclick="kmZoomStep(-0.25)" title="Zoom out (-)" type="button">🔍−</button>
+<button aria-label="Reset zoom (100%)" class="km-btn km-zoom-val" onclick="kmResetZoom()" title="Reset zoom (100%)" type="button">100%</button>
+<button aria-label="Zoom in (+)" class="km-btn km-zoom-in" onclick="kmZoomStep(0.25)" title="Zoom in (+)" type="button">🔍+</button>
+<a class="km-btn km-full-btn" href="assets/kaart_eu_dark.svg?v=3" id="km-full-link" rel="noopener" target="_blank" title="Open vector SVG in new tab">SVG ↗</a>
+<button aria-label="Close (ESC)" class="km-close-btn" onclick="sluitKaartModal()" title="Close (ESC)" type="button">×</button>
+</div>
+</div>
+<div class="km-viewport" id="km-viewport" title="💡 Drag to move map · Mouse wheel or double click to zoom">
+<div class="km-img-stage" id="km-stage">
+<img alt="Border Regions in the European Union" class="km-img" draggable="false" id="km-img" src=""/>
+</div>
+<div class="km-drag-hint" id="km-drag-hint">💡 Drag to move map · Mouse wheel or double click to zoom</div>
+</div>
+<!-- Uitgebreide, kristalheldere legenda in HTML-tekst -->
+<div class="km-legenda-bar">
+<div class="km-legenda-header">
+<div class="km-lh-title">
+<span class="km-lh-dot"></span>
+<strong>BORDER BOTTLENECKS (1–10)</strong>
+<span class="km-lh-desc">— Selected cross-border administrative and legal voids in the EU</span>
+</div>
+<button class="km-leg-toggle" onclick="kmToggleLegenda(this)" title="Toon/verberg" type="button">▲ Legend</button>
+</div>
+<div class="km-legenda-content" id="km-leg-content">
+<div class="km-leg-grid">
+<div class="km-leg-col">
+<div class="km-leg-item"><span class="km-pill">1</span> <strong>Zeeuws-Vlaanderen</strong> <span class="km-country">(NL/BE)</span> — <em>Het laboratorium van de Systeem-Audit</em></div>
+<div class="km-leg-item"><span class="km-pill">2</span> <strong>Øresund / Sontregio</strong> <span class="km-country">(DK/SE)</span></div>
+<div class="km-leg-item"><span class="km-pill">3</span> <strong>Euregio Maas-Rijn</strong> <span class="km-country">(NL/BE/DE)</span></div>
+<div class="km-leg-item"><span class="km-pill">4</span> <strong>SaarLorLux / Grootregio</strong> <span class="km-country">(LU/FR/DE/BE)</span></div>
+<div class="km-leg-item"><span class="km-pill">5</span> <strong>Bovenrijn / Oberrhein</strong> <span class="km-country">(FR/DE/CH)</span></div>
+</div>
+<div class="km-leg-col">
+<div class="km-leg-item"><span class="km-pill">6</span> <strong>Pools-Duitse grens</strong> <span class="km-country">(PL/DE)</span></div>
+<div class="km-leg-item"><span class="km-pill">7</span> <strong>Centrope</strong> <span class="km-country">(AT/SK/CZ/HU)</span></div>
+<div class="km-leg-item"><span class="km-pill">8</span> <strong>Ierland / Noord-Ierland</strong> <span class="km-country">(IE/UK)</span></div>
+<div class="km-leg-item"><span class="km-pill">9</span> <strong>Frans-Italiaanse grens / Ventimiglia</strong> <span class="km-country">(FR/IT)</span></div>
+<div class="km-leg-item"><span class="km-pill">10</span> <strong>Spaans-Franse grens / Baskenland</strong> <span class="km-country">(ES/FR)</span></div>
+</div>
+</div>
+<div class="km-leg-inzet-note">📍 <strong>Inset map (top right):</strong> Detailed section of the cross-border void between Zeeuws-Vlaanderen (NL) and East Flanders / Waasland (BE).</div>
+</div>
+</div>
+</div>
+</div>
+<script class="notranslate" translate="no">
+(function(){
+  var scale = 1.0;
+  var panX = 0;
+  var panY = 0;
+  var isDragging = false;
+  var startX = 0;
+  var startY = 0;
+  var origPanX = 0;
+  var origPanY = 0;
+
+  function updateTransform(){
+    var stage = document.getElementById('km-stage');
+    var vp = document.getElementById('km-viewport');
+    var valBtn = document.querySelector('.km-zoom-val');
+    if (stage) {
+      stage.style.transform = 'translate(' + panX + 'px, ' + panY + 'px) scale(' + scale + ')';
+    }
+    if (valBtn) {
+      valBtn.textContent = Math.round(scale * 100) + '%';
+    }
+    if (vp) {
+      if (scale > 1.05) {
+        vp.classList.add('km-can-drag');
+      } else {
+        vp.classList.remove('km-can-drag');
+      }
+    }
+  }
+
+  window.kmResetZoom = function(){
+    scale = 1.0;
+    panX = 0;
+    panY = 0;
+    updateTransform();
+  };
+
+  window.kmSetZoom = function(newScale, clientX, clientY){
+    newScale = Math.max(0.75, Math.min(4.5, newScale));
+    var vp = document.getElementById('km-viewport');
+    if (clientX !== undefined && clientY !== undefined && vp) {
+      var rect = vp.getBoundingClientRect();
+      var offsetX = clientX - (rect.left + rect.width / 2);
+      var offsetY = clientY - (rect.top + rect.height / 2);
+      var ratio = newScale / scale;
+      panX = offsetX - ratio * (offsetX - panX);
+      panY = offsetY - ratio * (offsetY - panY);
+    }
+    scale = newScale;
+    if (scale <= 1.0) {
+      panX = 0;
+      panY = 0;
+    }
+    updateTransform();
+  };
+
+  window.kmZoomStep = function(delta){
+    window.kmSetZoom(scale + delta);
+  };
+
+  window.kmToggleLegenda = function(btn){
+    var content = document.getElementById('km-leg-content');
+    if (!content) return;
+    if (content.style.display === 'none') {
+      content.style.display = 'block';
+      if (btn) btn.textContent = '▲ Legenda';
+    } else {
+      content.style.display = 'none';
+      if (btn) btn.textContent = '▼ Legenda';
+    }
+  };
+
+  window.openKaartModal = function(){
+    var modal = document.getElementById('km-modal');
+    if (!modal) return;
+    var theme = document.documentElement.getAttribute('data-theme') || 'dark';
+    var p = window.location.pathname.toLowerCase();
+    var isRoot = !p.includes('/nl/') && !p.includes('/int/');
+    var assetPref = isRoot ? 'assets/' : '../assets/';
+    var img = document.getElementById('km-img');
+    var fullLink = document.getElementById('km-full-link');
+    var svgPath = (theme === 'dark') ? (assetPref + 'kaart_eu_dark.svg?v=3') : (assetPref + 'kaart_eu_light.svg?v=3');
+    if (img) img.src = svgPath;
+    if (fullLink) fullLink.href = svgPath;
+
+    modal.classList.add('km-open');
+    modal.style.display = 'flex';
+    document.body.classList.add('km-no-scroll');
+    window.kmResetZoom();
+
+    var hint = document.getElementById('km-drag-hint');
+    if (hint) {
+      hint.style.opacity = '0.9';
+      setTimeout(function(){ if (hint) hint.style.opacity = '0'; }, 3500);
+    }
+  };
+
+  window.sluitKaartModal = function(){
+    var modal = document.getElementById('km-modal');
+    if (!modal) return;
+    modal.classList.remove('km-open');
+    modal.style.display = 'none';
+    document.body.classList.remove('km-no-scroll');
+  };
+
+  document.addEventListener('keydown', function(e){
+    var modal = document.getElementById('km-modal');
+    if (!modal || !modal.classList.contains('km-open')) return;
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      window.sluitKaartModal();
+    } else if (e.key === '+' || e.key === '=') {
+      e.preventDefault();
+      window.kmZoomStep(0.25);
+    } else if (e.key === '-' || e.key === '_') {
+      e.preventDefault();
+      window.kmZoomStep(-0.25);
+    } else if (e.key === '0') {
+      e.preventDefault();
+      window.kmResetZoom();
+    }
+  });
+
+  function bindViewport(){
+    var vp = document.getElementById('km-viewport');
+    if (!vp || vp._bound) return;
+    vp._bound = true;
+
+    vp.addEventListener('wheel', function(e){
+      e.preventDefault();
+      var delta = (e.deltaY < 0) ? 0.25 : -0.25;
+      window.kmSetZoom(scale + delta, e.clientX, e.clientY);
+    }, { passive: false });
+
+    vp.addEventListener('dblclick', function(e){
+      e.preventDefault();
+      if (scale <= 1.15) {
+        window.kmSetZoom(2.2, e.clientX, e.clientY);
+      } else {
+        window.kmResetZoom();
+      }
+    });
+
+    vp.addEventListener('mousedown', function(e){
+      if (e.button !== 0) return;
+      isDragging = true;
+      startX = e.clientX;
+      startY = e.clientY;
+      origPanX = panX;
+      origPanY = panY;
+      vp.classList.add('km-dragging');
+    });
+
+    window.addEventListener('mousemove', function(e){
+      if (!isDragging) return;
+      panX = origPanX + (e.clientX - startX);
+      panY = origPanY + (e.clientY - startY);
+      updateTransform();
+    });
+
+    window.addEventListener('mouseup', function(){
+      if (!isDragging) return;
+      isDragging = false;
+      var vpEl = document.getElementById('km-viewport');
+      if (vpEl) vpEl.classList.remove('km-dragging');
+    });
+
+    var initialTouchDist = 0;
+    var initialScale = 1;
+    vp.addEventListener('touchstart', function(e){
+      if (e.touches.length === 1) {
+        isDragging = true;
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        origPanX = panX;
+        origPanY = panY;
+      } else if (e.touches.length === 2) {
+        isDragging = false;
+        var dx = e.touches[0].clientX - e.touches[1].clientX;
+        var dy = e.touches[0].clientY - e.touches[1].clientY;
+        initialTouchDist = Math.sqrt(dx * dx + dy * dy);
+        initialScale = scale;
+      }
+    }, { passive: true });
+
+    vp.addEventListener('touchmove', function(e){
+      if (isDragging && e.touches.length === 1) {
+        panX = origPanX + (e.touches[0].clientX - startX);
+        panY = origPanY + (e.touches[0].clientY - startY);
+        updateTransform();
+      } else if (e.touches.length === 2 && initialTouchDist > 0) {
+        var dx = e.touches[0].clientX - e.touches[1].clientX;
+        var dy = e.touches[0].clientY - e.touches[1].clientY;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        var factor = dist / initialTouchDist;
+        window.kmSetZoom(initialScale * factor);
+      }
+    }, { passive: true });
+
+    vp.addEventListener('touchend', function(){
+      isDragging = false;
+    });
+  }
+
+  document.addEventListener('click', function(e){
+    var t = e.target;
+    if (!t || !t.closest) return;
+    var mapEl = t.closest('.root-kaart, .theme-map, .km-zoom-badge');
+    if (mapEl && !t.closest('#km-modal')) {
+      e.preventDefault();
+      window.openKaartModal();
+    }
+  });
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bindViewport);
+  } else {
+    bindViewport();
+  }
+})();
 </script><div aria-label="Snelle paginanavigatie en weergave" class="audit-fab-dock notranslate" id="audit-fab-dock" role="region" translate="no">
 <div class="afb-drawer" id="afb-drawer">
 <button aria-label="Doorzoek audit" class="afb-btn sm-toggle" onclick="openSearchModal(); closeFabDock();" title="Doorzoek audit (Ctrl+K)" type="button">
@@ -6547,6 +7219,14 @@ html[data-theme="dark"] .aps-track-jump:hover {
         img.src = lightSvg;
       }
     });
+    var kmImg = document.getElementById('km-img');
+    var kmLink = document.getElementById('km-full-link');
+    if (kmImg) {
+      kmImg.src = (mode === 'dark') ? (assetPref + 'kaart_eu_dark.svg?v=3') : (assetPref + 'kaart_eu_light.svg?v=3');
+    }
+    if (kmLink) {
+      kmLink.href = (mode === 'dark') ? (assetPref + 'kaart_eu_dark.svg?v=3') : (assetPref + 'kaart_eu_light.svg?v=3');
+    }
   }
   window.dm_toggle=function(){
     var r=document.documentElement;
@@ -6610,7 +7290,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 07:43</p>
+  Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 08:57</p>
 <div class="pub-a11y-notice"><strong>Accessibility &amp; AI-Prosthesis Disclosure:</strong> Due to severe visual impairment of the researcher (photophobia and visual acuity &lt; 0.02 in the left eye) and the thousands of pages of physical, black-on-white paper records issued by national authorities, this system audit was compiled using advanced digital assistive technologies. Dark Mode inversion, Optical Character Recognition (OCR), neural Text-to-Speech (TTS), and Large Language Models (AI) were deployed as an essential visual and cognitive prosthesis to render an inaccessible paper reality readable, searchable, and structurally verifiable. Every fact, quote, and reference number is grounded in authentic primary source documents.</div>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-search-btn notranslate" onclick="openSearchModal()" title="Search entire audit" translate="no" type="button">🔍 Search audit</button>
