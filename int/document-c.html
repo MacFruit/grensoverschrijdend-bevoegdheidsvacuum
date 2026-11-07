@@ -198,6 +198,65 @@ html, body { overflow-x: hidden; }
     .titelblad h1 { font-size: 22pt; }
 }
 
+
+/* Dark mode for Executive Strip & Doc B Paspoort */
+html[data-theme="dark"] .oes-card {
+    border-color: rgba(255,255,255,0.08);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+html[data-theme="dark"] .oes-role {
+    background: #192231;
+    border-left: 4px solid #5c8ae6;
+    color: #e2e8f0;
+}
+html[data-theme="dark"] .oes-role .oes-label { color: #8bb2f8; }
+
+html[data-theme="dark"] .oes-system {
+    background: #14252a;
+    border-left: 4px solid #26c6da;
+    color: #e2e8f0;
+}
+html[data-theme="dark"] .oes-system .oes-label { color: #4dd0e1; }
+html[data-theme="dark"] .oes-stroom-badge {
+    background: #1b383d;
+    color: #80cbc4;
+}
+
+html[data-theme="dark"] .oes-breuk {
+    background: #2b181b;
+    border-left: 4px solid #ef5350;
+    color: #e2e8f0;
+}
+html[data-theme="dark"] .oes-breuk .oes-label { color: #ef9a9a; }
+
+html[data-theme="dark"] .docb-meta-card {
+    background: #1c1c1c;
+    border-color: #383838;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+html[data-theme="dark"] .docb-meta-item {
+    color: #d0d0d0;
+}
+html[data-theme="dark"] .docb-meta-breuk {
+    background: #2b181b;
+    border-left-color: #ef5350;
+    color: #e2e8f0;
+}
+html[data-theme="dark"] .docb-meta-breuk strong {
+    color: #ef9a9a;
+}
+html[data-theme="dark"] .meta-refs-collapse {
+    background: #252525;
+    border-color: #404040;
+}
+html[data-theme="dark"] .meta-refs-collapse summary {
+    color: #8bb2f8;
+}
+html[data-theme="dark"] .meta-refs-content {
+    border-top-color: #444;
+    color: #bbb;
+}
+
 /* === Professionele A4 Print / Opslaan als PDF Stylesheet === */
 @media print {
     html, html[data-theme="dark"], body, html[data-theme="dark"] body {
@@ -1250,6 +1309,131 @@ html[data-theme="dark"] .pub-discreet-dl .pdd-link { color: #79c0ff; }
     .audit-toolbar .at-controls { grid-template-columns: 1fr; }
     .audit-toolbar .at-live-count { margin-left: 0; }
 }
+
+/* === DEEL 3: Ergonomische Verrijking Doc A & Doc B === */
+.org-executive-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+    margin: 10pt 0 16pt 0;
+}
+.oes-card {
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 9.5pt;
+    line-height: 1.45;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.08);
+}
+.oes-card .oes-label {
+    font-weight: 700;
+    font-size: 8.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 5px;
+}
+.oes-role {
+    background: #f0f4fa;
+    border-left: 4px solid #1a3c6e;
+    color: #1a202c;
+}
+.oes-role .oes-label { color: #1a3c6e; }
+
+.oes-system {
+    background: #f2f7f7;
+    border-left: 4px solid #00838f;
+    color: #1a202c;
+}
+.oes-system .oes-label { color: #00695c; }
+.oes-stroom-badge {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: #e0f2f1;
+    color: #004d40;
+    font-size: 8.5pt;
+    font-weight: 600;
+}
+
+.oes-breuk {
+    background: #fff5f5;
+    border-left: 4px solid #c62828;
+    color: #1a202c;
+}
+.oes-breuk .oes-label { color: #b71c1c; }
+
+/* Document B Forensisch Paspoort */
+.docb-meta-card {
+    background: #fdfcf9;
+    border: 1px solid #d5d0c5;
+    border-radius: 6px;
+    margin: 8pt 0 16pt 0;
+    padding: 12px 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.docb-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 8px 14px;
+}
+.docb-meta-item {
+    font-size: 9.5pt;
+    line-height: 1.4;
+    color: #333;
+}
+.docb-meta-item p.meta, .docb-meta-item p.netwerk {
+    margin: 0;
+    padding: 0;
+    font-size: 9.5pt;
+}
+.docb-meta-wide {
+    grid-column: 1 / -1;
+}
+@media (min-width: 900px) {
+    .docb-meta-wide { grid-column: span 2; }
+}
+.docb-meta-full {
+    grid-column: 1 / -1 !important;
+}
+.docb-meta-breuk {
+    margin-top: 4px;
+    padding: 8px 12px;
+    background: #fff5f5;
+    border-left: 4px solid #c62828;
+    border-radius: 4px;
+    color: #1a202c;
+}
+.docb-meta-breuk strong {
+    color: #b71c1c;
+}
+.meta-refs-collapse {
+    background: #f4f2ec;
+    border: 1px solid #dcd7ce;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 9pt;
+}
+.meta-refs-collapse summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: #1a3c6e;
+    user-select: none;
+    outline: none;
+}
+.meta-refs-collapse summary:hover {
+    text-decoration: underline;
+}
+.meta-refs-content {
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px dashed #ccc;
+    font-family: Consolas, monospace;
+    font-size: 8.5pt;
+    line-height: 1.5;
+    color: #444;
+    word-break: break-word;
+}
+
 .pub-footer {
     margin-top: 60pt; padding-top: 20pt; border-top: 1px solid #d5d0c5;
     font-size: 10pt; color: #666; text-align: center;
@@ -4299,7 +4483,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document C — De visuele architectuur</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 7 november 2026, 10:16</p>
+<p class="meta-lijn">Versie bijgewerkt: 7 november 2026, 10:52</p>
 </div>
 <div class="pub-toc" id="pub-toc-top"><h2>Inhoudsopgave</h2><div class="toc-controls-bar">
 <span class="toc-hint">Klik op een hoofdstuk om de organisaties/secties uit of in te klappen:</span>
@@ -4313,7 +4497,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <li class="niv3"><a href="#twee-cellen-die-weigeren-samen-te-werken">Twee cellen die weigeren samen te werken</a></li>
 <li class="niv3"><a href="#twee-ritmes-die-op-elkaar-botsen">Twee ritmes die op elkaar botsen</a></li>
 <li class="niv3"><a href="#zo-boven-zo-beneden-de-spiegel-van-het-afschuiven">Zo boven, zo beneden: de spiegel van het afschuiven</a></li>
-</ul>
+<li class="niv1 toc-playlist-item"><a href="#audit-audio-playlist">🎧 Audio-Playlist — Alles achter elkaar beluisteren (12 onderdelen)</a></li></ul>
 </div>
 </details>
 <details class="toc-chapter">
@@ -4357,9 +4541,23 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </ul>
 </div>
 </details>
-</div></div>
+</div></div><div class="audit-playlist-topbanner">
+<div class="apt-info">
+<span class="apt-icon">🎧</span>
+<div class="apt-text">
+<strong>Alleen luisteren zonder te lezen?</strong><br/>
+
+      Dit document bevat <strong>12 ingesproken audio-onderdelen</strong>. Gebruik bij elk onderdeel de knop <em>‘⏭ Luister verder’</em> om direct naar het volgende geluidsfragment te springen, of open onderaan de <strong>Audio-Playlist</strong> om alles automatisch achter elkaar te beluisteren.
+
+    </div>
+</div>
+<div class="apt-actions">
+<button class="apt-btn apt-btn-play" id="apt-play-all-btn" title="Start direct met het achter elkaar afspelen van alle 12 audiobestanden" type="button">▶ Direct alles afspelen</button>
+<a class="apt-btn apt-btn-jump" href="#audit-audio-playlist" title="Spring naar de volledige Audio-Playlist onderaan dit document">↓ Naar Audio-Playlist (12)</a>
+</div>
+</div>
 <h1 id="i-de-mens-en-de-grens">I. De mens en de grens</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
-<h3 id="twee-cellen-die-weigeren-samen-te-werken">Twee cellen die weigeren samen te werken</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docC_inleiding" data-audio-src="../assets/audio/docC_inleiding_nl_9a6ea6af.mp3" data-clean-text="Twee cellen die weigeren samen te werken. Twee buurlanden binnen één Europese Unie sluiten hun deuren hermetisch voor elkaar. Het gezin zit precies in de knel tussen twee starre systemen. . Wat de brief op de mat zegt: U geniet als E U burger van vrij verkeer en bent in beide lidstaten beschermd. . Wat er achter de muur echt gebeurt: Zodra je in Nederland woont en in België werkt, sluiten beide systemen de deuren. . . Wat de brief op de mat zegt: Onze overheidsdiensten wisselen gegevens digitaal uit via Europese netwerken. . Wat er achter de muur echt gebeurt: Alleen belastingheffing stroomt automatisch; het medisch en sociaal dossier bestaat voor de buren niet. . . Wat de brief op de mat zegt: U kunt zich wenden tot het bevoegde orgaan in uw woonland. . Wat er achter de muur echt gebeurt: Beide landen wijzen permanent naar elkaar; de burger is de enige kabel tussen twee muren. . .">
+<h3 id="twee-cellen-die-weigeren-samen-te-werken">Twee cellen die weigeren samen te werken</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docC_fig1" data-audio-src="../assets/audio/docC_fig1_nl_5e49393c.mp3" data-clean-heading="Twee cellen die weigeren samen te werken" data-clean-text="Deel 1, De mens en de grens. Plaat 1: Twee cellen die weigeren samen te werken. Twee buurlanden binnen één Europese Unie sluiten hun deuren hermetisch voor elkaar. Het gezin zit precies in de knel tussen twee starre systemen. Op deze eerste afbeelding zie je hoe dat mechanisme visueel werkt. Binnen het grote kader van de Europese Unie liggen twee afgesloten nationale cellen: links in het rood de Cel België als werkland, met het ziekenfonds C M en de fiscus. Rechts in het blauw ligt de Cel Nederland als woonland, met het uitkeringsorgaan U W V en het CAK. Beide cellen dragen een positieve lading op hun buitenwand en stoten elkaar af. Precies in de smalle ruimte tussen die twee muren zit het gezin, vader, moeder en kind, gekneld. België zegt: geen uitkering zonder woonplaats in België. Nederland zegt: wij zijn niet bevoegd want u werkte in België. Onderaan de afbeelding zie je drie verbindingsbuizen die onder de grens door lopen. Buis één, de belastingdata, is groen en staat wagenwijd open: zodra er belasting geheven moet worden, stroomt de data automatisch. Buis twee, de zorgpolis S072, is oranje en wordt halverwege dichtgeknepen. En buis drie, het medisch en sociaal dossier, is rood en zit met twee kruisen volledig op slot, waardoor de zieke burger zelf zevenhonderd gram papier over de grens moet dragen. De tabel onder de afbeelding vat dit contrast samen. Waar de brief op de mat belooft dat je als E U burger in beide lidstaten beschermd bent, sluiten in werkelijkheid beide systemen de deur zodra je in het ene land woont en in het andere werkt. Waar de overheid beweert dat gegevens digitaal worden uitgewisseld, stroomt alleen de belastingheffing automatisch en bestaat het medisch dossier voor het buurland niet. En waar men adviseert om naar het loket in het woonland te gaan, wijzen beide landen in de praktijk permanent naar elkaar." data-track-index="0" id="aab-docC_fig1">
 <button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
 <span class="aab-icon-play">▶</span>
 <span class="aab-icon-pause" style="display:none;">❚❚</span>
@@ -4367,7 +4565,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <div class="aab-info">
 <div class="aab-meta">
 <span class="aab-badge notranslate" translate="no">🎧 BELUISTER</span>
-<span class="aab-title">Beluister inleiding: De visuele architectuur</span>
+<span class="aab-title">Plaat 1: Twee cellen die weigeren samen te werken</span>
 <span class="aab-time notranslate" translate="no">0:00 / --:--</span>
 </div>
 <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="aab-progress-wrap notranslate" role="progressbar" translate="no">
@@ -4378,11 +4576,11 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </div>
 <div class="aab-controls notranslate" translate="no">
 <button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
-</div>
-<audio class="aab-audio-el" preload="none" src="../assets/audio/docC_inleiding_nl_9a6ea6af.mp3"></audio>
+<button class="aab-next-btn" data-next-idx="1" data-next-target="#aab-docC_fig2" title="Spring direct naar het volgende audiogedeelte (2/12) en luister verder" type="button">⏭ Luister verder</button></div>
+<audio class="aab-audio-el" preload="none" src="../assets/audio/docC_fig1_nl_5e49393c.mp3"></audio>
 </div>
 <p class="lead">Twee buurlanden binnen één Europese Unie sluiten hun deuren hermetisch voor elkaar. Het gezin zit precies in de knel tussen twee starre systemen.</p>
-<div class="figure">
+<div class="figure"><div class="tts-spoken-summary notranslate-no" style="display:none;">Deel 1, De mens en de grens. Plaat 1: Twee cellen die weigeren samen te werken. Twee buurlanden binnen één Europese Unie sluiten hun deuren hermetisch voor elkaar. Het gezin zit precies in de knel tussen twee starre systemen. Op deze eerste afbeelding zie je hoe dat mechanisme visueel werkt. Binnen het grote kader van de Europese Unie liggen twee afgesloten nationale cellen: links in het rood de Cel België als werkland, met het ziekenfonds C M en de fiscus. Rechts in het blauw ligt de Cel Nederland als woonland, met het uitkeringsorgaan U W V en het CAK. Beide cellen dragen een positieve lading op hun buitenwand en stoten elkaar af. Precies in de smalle ruimte tussen die twee muren zit het gezin, vader, moeder en kind, gekneld. België zegt: geen uitkering zonder woonplaats in België. Nederland zegt: wij zijn niet bevoegd want u werkte in België. Onderaan de afbeelding zie je drie verbindingsbuizen die onder de grens door lopen. Buis één, de belastingdata, is groen en staat wagenwijd open: zodra er belasting geheven moet worden, stroomt de data automatisch. Buis twee, de zorgpolis S072, is oranje en wordt halverwege dichtgeknepen. En buis drie, het medisch en sociaal dossier, is rood en zit met twee kruisen volledig op slot, waardoor de zieke burger zelf zevenhonderd gram papier over de grens moet dragen. De tabel onder de afbeelding vat dit contrast samen. Waar de brief op de mat belooft dat je als E U burger in beide lidstaten beschermd bent, sluiten in werkelijkheid beide systemen de deur zodra je in het ene land woont en in het andere werkt. Waar de overheid beweert dat gegevens digitaal worden uitgewisseld, stroomt alleen de belastingheffing automatisch en bestaat het medisch dossier voor het buurland niet. En waar men adviseert om naar het loket in het woonland te gaan, wijzen beide landen in de praktijk permanent naar elkaar.</div>
 <svg viewbox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg">
 <defs>
 <marker id="m-green" markerheight="8" markerwidth="8" orient="auto" refx="7" refy="4">
@@ -4463,9 +4661,30 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <tr><td>U kunt zich wenden tot het bevoegde orgaan in uw woonland.</td><td>Beide landen wijzen permanent naar elkaar; de burger is de enige kabel tussen twee muren.</td></tr>
 </tbody>
 </table>
-<h3 id="twee-ritmes-die-op-elkaar-botsen">Twee ritmes die op elkaar botsen</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h3 id="twee-ritmes-die-op-elkaar-botsen">Twee ritmes die op elkaar botsen</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docC_fig2" data-audio-src="../assets/audio/docC_fig2_nl_b9d1d68f.mp3" data-clean-heading="Twee ritmes die op elkaar botsen" data-clean-text="Plaat 2: Twee ritmes die op elkaar botsen. België en Nederland draaien op een andere administratieve klok en meten met een andere lat. Het gezin zit precies op het breukvlak. Op de afbeelding zie je aan de linkerkant twee grote golven die tegen elkaar in bewegen: bovenaan de rode Belgische golf van het werkland, en onderaan de blauwe Nederlandse golf van het woonland. Omdat beide stelsels een ander ritme volgen, ontstaan er in het midden vier harde breuklijnen die aan de rechterkant van de afbeelding op een rij staan. Breuklijn één is de eerste ziektedag: België telt vanaf de ziekenhuisopname op 11 april, terwijl Nederland pas telt na dertig dagen gewaarborgd loon op 11 mei. Gevolg: een gat van precies één maand waardoor de Nederlandse W I A aanvraag direct wordt afgewezen. Breuklijn twee is de wachttijd: België hanteert honderdtachtig dagen wachttijd en Nederland honderdvier weken, waarbij zowel het Belgische ziekenfonds als het Nederlandse U W V weigeren om de gewerkte jaren uit beide landen bij elkaar op te tellen. Breuklijn drie is de medische meetlat: de overheidsarts kent 8 punten toe voor de handicap, terwijl de belastingdienst pas vanaf 9 punten fiscaal voordeel toekent, en de gemeente Hulst een Nederlandse loopnorm eist die niet in het Belgische attest staat. Breuklijn vier is het betaalritme: het Belgische onderwijsloon wordt op de laatste werkdag van de maand gestort, maar het Nederlandse incassosysteem schrijft halverwege de maand op de vijftiende af en blokkeert bij één mislukte poging direct de vervoerspas. De tabel onder de afbeelding laat het resultaat zien: achter formele afwijzingen over referteperiodes, peildata en openstaande ritbijdragen gaat een systeem schuil dat 21 jaar loopbaan uitwist en een burger straft omdat twee buurlanden een andere kalender hanteren." data-track-index="1" id="aab-docC_fig2">
+<button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
+<span class="aab-icon-play">▶</span>
+<span class="aab-icon-pause" style="display:none;">❚❚</span>
+</button>
+<div class="aab-info">
+<div class="aab-meta">
+<span class="aab-badge notranslate" translate="no">🎧 BELUISTER</span>
+<span class="aab-title">Plaat 2: Twee ritmes die op elkaar botsen</span>
+<span class="aab-time notranslate" translate="no">0:00 / --:--</span>
+</div>
+<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="aab-progress-wrap notranslate" role="progressbar" translate="no">
+<div class="aab-progress-bar">
+<div class="aab-progress-fill"></div>
+</div>
+</div>
+</div>
+<div class="aab-controls notranslate" translate="no">
+<button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
+<button class="aab-next-btn" data-next-idx="2" data-next-target="#aab-docC_fig3" title="Spring direct naar het volgende audiogedeelte (3/12) en luister verder" type="button">⏭ Luister verder</button></div>
+<audio class="aab-audio-el" preload="none" src="../assets/audio/docC_fig2_nl_b9d1d68f.mp3"></audio>
+</div>
 <p class="lead">België en Nederland draaien op een andere administratieve klok en meten met een andere lat. Het gezin zit precies op het breukvlak.</p>
-<div class="figure">
+<div class="figure"><div class="tts-spoken-summary notranslate-no" style="display:none;">Plaat 2: Twee ritmes die op elkaar botsen. België en Nederland draaien op een andere administratieve klok en meten met een andere lat. Het gezin zit precies op het breukvlak. Op de afbeelding zie je aan de linkerkant twee grote golven die tegen elkaar in bewegen: bovenaan de rode Belgische golf van het werkland, en onderaan de blauwe Nederlandse golf van het woonland. Omdat beide stelsels een ander ritme volgen, ontstaan er in het midden vier harde breuklijnen die aan de rechterkant van de afbeelding op een rij staan. Breuklijn één is de eerste ziektedag: België telt vanaf de ziekenhuisopname op 11 april, terwijl Nederland pas telt na dertig dagen gewaarborgd loon op 11 mei. Gevolg: een gat van precies één maand waardoor de Nederlandse W I A aanvraag direct wordt afgewezen. Breuklijn twee is de wachttijd: België hanteert honderdtachtig dagen wachttijd en Nederland honderdvier weken, waarbij zowel het Belgische ziekenfonds als het Nederlandse U W V weigeren om de gewerkte jaren uit beide landen bij elkaar op te tellen. Breuklijn drie is de medische meetlat: de overheidsarts kent 8 punten toe voor de handicap, terwijl de belastingdienst pas vanaf 9 punten fiscaal voordeel toekent, en de gemeente Hulst een Nederlandse loopnorm eist die niet in het Belgische attest staat. Breuklijn vier is het betaalritme: het Belgische onderwijsloon wordt op de laatste werkdag van de maand gestort, maar het Nederlandse incassosysteem schrijft halverwege de maand op de vijftiende af en blokkeert bij één mislukte poging direct de vervoerspas. De tabel onder de afbeelding laat het resultaat zien: achter formele afwijzingen over referteperiodes, peildata en openstaande ritbijdragen gaat een systeem schuil dat 21 jaar loopbaan uitwist en een burger straft omdat twee buurlanden een andere kalender hanteren.</div>
 <svg viewbox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg">
 <!-- Titel -->
 <text fill="#4a3b6b" font-size="18" font-weight="700" text-anchor="middle" x="600" y="45">TWEE BOTSENDE RITMES: DE BELGISCHE EN NEDERLANDSE GOLF</text>
@@ -4529,9 +4748,30 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <tr><td>Uw vervoerspas is geblokkeerd wegens een openstaande ritbijdrage.</td><td>Belgisch loon valt eind van de maand; Nederlands systeem incasseert de 15e en blokkeert direct.</td></tr>
 </tbody>
 </table>
-<h3 id="zo-boven-zo-beneden-de-spiegel-van-het-afschuiven">Zo boven, zo beneden: de spiegel van het afschuiven</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h3 id="zo-boven-zo-beneden-de-spiegel-van-het-afschuiven">Zo boven, zo beneden: de spiegel van het afschuiven</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docC_fig3" data-audio-src="../assets/audio/docC_fig3_nl_19e6a8af.mp3" data-clean-heading="Zo boven, zo beneden: de spiegel van het afschuiven" data-clean-text="Plaat 3: Zo boven, zo beneden: de spiegel van het afschuiven. Wat op het hoogste niveau in Brussel wordt nagelaten, herhaalt zich één op één aan het kleinste uitvoeringsloket aan de keukentafel. Op deze afbeelding zie je een horizontale spiegellijn die de tekening in twee exact gelijke helften verdeelt. In de bovenste helft zie je de politieke wereld in Brussel. Links staat België met het standpunt dat het woonland moet betalen; rechts staat Nederland met het standpunt dat het werkland moet betalen. Tussen hen in lopen gekruiste pijlen en gaapt in het midden een leeg vak: in Verordening 883 uit 2004 hebben de ministers geen enkel noodventiel of voorlopige betaalplicht ingebouwd voor wanneer twee landen van mening verschillen. In de onderste helft van de afbeelding zie je onder de spiegellijn exact dezelfde figuur terug aan de keukentafel. Links wijst het Belgische ziekenfonds C M naar het U W V in Nederland; rechts wijst het Nederlandse U W V terug naar de C M in België. En precies in het gat in het midden valt het gezin tussen wal en schip. De tabel eronder maakt dit scherp: waar Brussel op papier belooft dat niemand tussen wal en schip valt, herhaalt de loketambtenaar beneden exact het gedrag van de ministers boven door elk dossier naar de overkant van de grens door te schuiven. Ook een nieuwe digitale pas in 2030 lost dit niet op zolang de weigering om elkaars gegevens in te lezen hetzelfde blijft." data-track-index="2" id="aab-docC_fig3">
+<button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
+<span class="aab-icon-play">▶</span>
+<span class="aab-icon-pause" style="display:none;">❚❚</span>
+</button>
+<div class="aab-info">
+<div class="aab-meta">
+<span class="aab-badge notranslate" translate="no">🎧 BELUISTER</span>
+<span class="aab-title">Plaat 3: Zo boven, zo beneden: de spiegel van het afschuiven</span>
+<span class="aab-time notranslate" translate="no">0:00 / --:--</span>
+</div>
+<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="aab-progress-wrap notranslate" role="progressbar" translate="no">
+<div class="aab-progress-bar">
+<div class="aab-progress-fill"></div>
+</div>
+</div>
+</div>
+<div class="aab-controls notranslate" translate="no">
+<button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
+<button class="aab-next-btn" data-next-idx="3" data-next-target="#aab-docC_fig4" title="Spring direct naar het volgende audiogedeelte (4/12) en luister verder" type="button">⏭ Luister verder</button></div>
+<audio class="aab-audio-el" preload="none" src="../assets/audio/docC_fig3_nl_19e6a8af.mp3"></audio>
+</div>
 <p class="lead">Wat op het hoogste niveau in Brussel wordt nagelaten, herhaalt zich één-op-één aan het kleinste uitvoeringsloket aan de keukentafel.</p>
-<div class="figure">
+<div class="figure"><div class="tts-spoken-summary notranslate-no" style="display:none;">Plaat 3: Zo boven, zo beneden: de spiegel van het afschuiven. Wat op het hoogste niveau in Brussel wordt nagelaten, herhaalt zich één op één aan het kleinste uitvoeringsloket aan de keukentafel. Op deze afbeelding zie je een horizontale spiegellijn die de tekening in twee exact gelijke helften verdeelt. In de bovenste helft zie je de politieke wereld in Brussel. Links staat België met het standpunt dat het woonland moet betalen; rechts staat Nederland met het standpunt dat het werkland moet betalen. Tussen hen in lopen gekruiste pijlen en gaapt in het midden een leeg vak: in Verordening 883 uit 2004 hebben de ministers geen enkel noodventiel of voorlopige betaalplicht ingebouwd voor wanneer twee landen van mening verschillen. In de onderste helft van de afbeelding zie je onder de spiegellijn exact dezelfde figuur terug aan de keukentafel. Links wijst het Belgische ziekenfonds C M naar het U W V in Nederland; rechts wijst het Nederlandse U W V terug naar de C M in België. En precies in het gat in het midden valt het gezin tussen wal en schip. De tabel eronder maakt dit scherp: waar Brussel op papier belooft dat niemand tussen wal en schip valt, herhaalt de loketambtenaar beneden exact het gedrag van de ministers boven door elk dossier naar de overkant van de grens door te schuiven. Ook een nieuwe digitale pas in 2030 lost dit niet op zolang de weigering om elkaars gegevens in te lezen hetzelfde blijft.</div>
 <svg viewbox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg">
 <defs>
 <marker id="m-mirror-red" markerheight="8" markerwidth="8" orient="auto" refx="7" refy="4">
@@ -4599,9 +4839,30 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </tbody>
 </table>
 <h1 id="ii-het-lichaam-en-het-papier">II. Het lichaam en het papier</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
-<h3 id="vijf-behandelaars-zien-het-lichaam-twee-loketten-zien-het-papier">Vijf behandelaars zien het lichaam, twee loketten zien het papier</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h3 id="vijf-behandelaars-zien-het-lichaam-twee-loketten-zien-het-papier">Vijf behandelaars zien het lichaam, twee loketten zien het papier</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docC_fig4" data-audio-src="../assets/audio/docC_fig4_nl_1811102e.mp3" data-clean-heading="Vijf behandelaars zien het lichaam, twee loketten zien het papier" data-clean-text="Deel 2, Het lichaam en het papier. Plaat 4: Vijf behandelaars zien het lichaam, twee loketten zien het papier. Vijf artsen in twee landen onderzoeken het lichaam en zien dezelfde zware schade. Twee administratieve artsen beslissen op papier het tegendeel. Op de afbeelding zie je een grote, scheefgezakte weegschaal. Op de linkerschaal staat de patiënt, omringd door vijf groene cirkels van de behandelende zorgverleners die het lichaam daadwerkelijk hebben geopereerd, verzorgd en onderzocht: ziekenhuis Vitaz, het Universitair Ziekenhuis Gent, de vaste huisarts, de Nederlandse thuiszorg ZorgSaam en schoentechnoloog Orthovano. Zij stellen allemaal dezelfde fysieke feiten vast: amputaties, blindheid aan één oog en chronische wondzorg. Toch wordt deze linkerschaal omhoog geduwd. Op de rechterschaal liggen namelijk twee zware rode stempelblokken die de weegschaal volledig naar beneden trekken. Blok één is de adviserend arts van het ziekenfonds C M, die de patiënt nooit fysiek heeft gezien maar op papier tot arbeidsgeschikt oordeelt. Blok twee is de keuringsarts van de overheid, die ondanks alle verslagen stopt op 8 van de vereiste 9 punten. Twee formulieren wegen in het systeem zwaarder dan vijf behandelende artsen. In de tabel onder de plaat zie je die tegenstelling terug: op papier heet het dat je niet arbeidsongeschikt bent of één punt tekortkomt, maar achter de muur wint een bureaucratische rekenformule van de tastbare medische werkelijkheid en wordt medische erkenning geweigerd zodra er geen uitkering tegenover staat." data-track-index="3" id="aab-docC_fig4">
+<button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
+<span class="aab-icon-play">▶</span>
+<span class="aab-icon-pause" style="display:none;">❚❚</span>
+</button>
+<div class="aab-info">
+<div class="aab-meta">
+<span class="aab-badge notranslate" translate="no">🎧 BELUISTER</span>
+<span class="aab-title">Plaat 4: Vijf behandelaars zien het lichaam, twee loketten zien het papier</span>
+<span class="aab-time notranslate" translate="no">0:00 / --:--</span>
+</div>
+<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="aab-progress-wrap notranslate" role="progressbar" translate="no">
+<div class="aab-progress-bar">
+<div class="aab-progress-fill"></div>
+</div>
+</div>
+</div>
+<div class="aab-controls notranslate" translate="no">
+<button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
+<button class="aab-next-btn" data-next-idx="4" data-next-target="#aab-docC_fig5" title="Spring direct naar het volgende audiogedeelte (5/12) en luister verder" type="button">⏭ Luister verder</button></div>
+<audio class="aab-audio-el" preload="none" src="../assets/audio/docC_fig4_nl_1811102e.mp3"></audio>
+</div>
 <p class="lead">Vijf artsen in twee landen onderzoeken het lichaam en zien dezelfde zware schade. Twee administratieve artsen beslissen op papier het tegendeel.</p>
-<div class="figure">
+<div class="figure"><div class="tts-spoken-summary notranslate-no" style="display:none;">Deel 2, Het lichaam en het papier. Plaat 4: Vijf behandelaars zien het lichaam, twee loketten zien het papier. Vijf artsen in twee landen onderzoeken het lichaam en zien dezelfde zware schade. Twee administratieve artsen beslissen op papier het tegendeel. Op de afbeelding zie je een grote, scheefgezakte weegschaal. Op de linkerschaal staat de patiënt, omringd door vijf groene cirkels van de behandelende zorgverleners die het lichaam daadwerkelijk hebben geopereerd, verzorgd en onderzocht: ziekenhuis Vitaz, het Universitair Ziekenhuis Gent, de vaste huisarts, de Nederlandse thuiszorg ZorgSaam en schoentechnoloog Orthovano. Zij stellen allemaal dezelfde fysieke feiten vast: amputaties, blindheid aan één oog en chronische wondzorg. Toch wordt deze linkerschaal omhoog geduwd. Op de rechterschaal liggen namelijk twee zware rode stempelblokken die de weegschaal volledig naar beneden trekken. Blok één is de adviserend arts van het ziekenfonds C M, die de patiënt nooit fysiek heeft gezien maar op papier tot arbeidsgeschikt oordeelt. Blok twee is de keuringsarts van de overheid, die ondanks alle verslagen stopt op 8 van de vereiste 9 punten. Twee formulieren wegen in het systeem zwaarder dan vijf behandelende artsen. In de tabel onder de plaat zie je die tegenstelling terug: op papier heet het dat je niet arbeidsongeschikt bent of één punt tekortkomt, maar achter de muur wint een bureaucratische rekenformule van de tastbare medische werkelijkheid en wordt medische erkenning geweigerd zodra er geen uitkering tegenover staat.</div>
 <svg viewbox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg">
 <!-- Titel -->
 <text fill="#4a3b6b" font-size="18" font-weight="700" text-anchor="middle" x="600" y="45">DE SCHEVE WEEGUSCHAAL: FORMULIEREN WEGEN ZWAARDER DAN HET LICHAAM</text>
@@ -4655,9 +4916,30 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <tr><td>Geen invaliditeitsattest mogelijk omdat u geen uitkering ontvangt.</td><td>Medische erkenning wordt gekoppeld aan geld; wie geen uitkering krijgt, mag niet ziek zijn.</td></tr>
 </tbody>
 </table>
-<h3 id="hoe-één-ontbrekend-vinkje-zes-deuren-op-slot-gooit">Hoe één ontbrekend vinkje zes deuren op slot gooit</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h3 id="hoe-één-ontbrekend-vinkje-zes-deuren-op-slot-gooit">Hoe één ontbrekend vinkje zes deuren op slot gooit</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docC_fig5" data-audio-src="../assets/audio/docC_fig5_nl_29f18009.mp3" data-clean-heading="Hoe één ontbrekend vinkje zes deuren op slot gooit" data-clean-text="Plaat 5: Hoe één ontbrekend vinkje zes deuren op slot gooit. Eén leeg veld in een centrale databank veroorzaakt een grensoverschrijdende kettingreactie. Zes deuren vallen tegelijk in het slot. Op de afbeelding zie je twee rijen met vallende dominostenen: bovenaan de Belgische keten en onderaan de Nederlandse keten. In de bovenste rij staat links de rode startsteen van België: op 31 juli 2025 wist het ziekenfonds C M het ziektevinkje in de centrale Kruispuntbank van de Sociale Zekerheid. Die ene steen tikt vier witte dominostenen achter elkaar omver: steen één zet het ziektegeld op nul euro; steen twee verhoogt het eigen remgeld met zevenhonderdvijftig euro per jaar omdat de verhoogde tegemoetkoming wegvalt; steen drie blokkeert de sociale toeslag op het Groeipakket; en steen vier blokkeert de automatische belastingvrijstelling voor invaliditeit. Vier sluitingen in België door één gewist vinkje. Daaronder zie je in het blauw de Nederlandse dominorij. De startsteen is hier het CAK, dat weigert om de verplichte grensarbeiderspolis aan te vinken in het Nederlandse verzekerdenregister. Die steen gooit direct steen vijf en zes omver: de Dienst Toeslagen zet de zorgtoeslag op nul euro, en de gemeente Hulst wijst de bijzondere bijstand af en wist de aanvraag na drieënzeventig dagen. De tabel onder de afbeelding laat zien hoe dit aan de voordeur klinkt: elke dienst stuurt een eigen afwijzingsbrief over inkomensgrenzen of ontbrekende registraties, terwijl ze in werkelijkheid allemaal blindelings dezelfde twee lege databasevelden kopiëren." data-track-index="4" id="aab-docC_fig5">
+<button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
+<span class="aab-icon-play">▶</span>
+<span class="aab-icon-pause" style="display:none;">❚❚</span>
+</button>
+<div class="aab-info">
+<div class="aab-meta">
+<span class="aab-badge notranslate" translate="no">🎧 BELUISTER</span>
+<span class="aab-title">Plaat 5: Hoe één ontbrekend vinkje zes deuren op slot gooit</span>
+<span class="aab-time notranslate" translate="no">0:00 / --:--</span>
+</div>
+<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="aab-progress-wrap notranslate" role="progressbar" translate="no">
+<div class="aab-progress-bar">
+<div class="aab-progress-fill"></div>
+</div>
+</div>
+</div>
+<div class="aab-controls notranslate" translate="no">
+<button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
+<button class="aab-next-btn" data-next-idx="5" data-next-target="#aab-docC_fig6" title="Spring direct naar het volgende audiogedeelte (6/12) en luister verder" type="button">⏭ Luister verder</button></div>
+<audio class="aab-audio-el" preload="none" src="../assets/audio/docC_fig5_nl_29f18009.mp3"></audio>
+</div>
 <p class="lead">Eén leeg veld in een centrale databank veroorzaakt een grensoverschrijdende kettingreactie. Zes deuren vallen tegelijk in het slot.</p>
-<div class="figure">
+<div class="figure"><div class="tts-spoken-summary notranslate-no" style="display:none;">Plaat 5: Hoe één ontbrekend vinkje zes deuren op slot gooit. Eén leeg veld in een centrale databank veroorzaakt een grensoverschrijdende kettingreactie. Zes deuren vallen tegelijk in het slot. Op de afbeelding zie je twee rijen met vallende dominostenen: bovenaan de Belgische keten en onderaan de Nederlandse keten. In de bovenste rij staat links de rode startsteen van België: op 31 juli 2025 wist het ziekenfonds C M het ziektevinkje in de centrale Kruispuntbank van de Sociale Zekerheid. Die ene steen tikt vier witte dominostenen achter elkaar omver: steen één zet het ziektegeld op nul euro; steen twee verhoogt het eigen remgeld met zevenhonderdvijftig euro per jaar omdat de verhoogde tegemoetkoming wegvalt; steen drie blokkeert de sociale toeslag op het Groeipakket; en steen vier blokkeert de automatische belastingvrijstelling voor invaliditeit. Vier sluitingen in België door één gewist vinkje. Daaronder zie je in het blauw de Nederlandse dominorij. De startsteen is hier het CAK, dat weigert om de verplichte grensarbeiderspolis aan te vinken in het Nederlandse verzekerdenregister. Die steen gooit direct steen vijf en zes omver: de Dienst Toeslagen zet de zorgtoeslag op nul euro, en de gemeente Hulst wijst de bijzondere bijstand af en wist de aanvraag na drieënzeventig dagen. De tabel onder de afbeelding laat zien hoe dit aan de voordeur klinkt: elke dienst stuurt een eigen afwijzingsbrief over inkomensgrenzen of ontbrekende registraties, terwijl ze in werkelijkheid allemaal blindelings dezelfde twee lege databasevelden kopiëren.</div>
 <svg viewbox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg">
 <!-- Titel -->
 <text fill="#4a3b6b" font-size="18" font-weight="700" text-anchor="middle" x="600" y="45">DE VALLENDE DOMINOSTENEN: ÉÉN VINKJE SLUIT ZES DEUREN</text>
@@ -4736,9 +5018,30 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <tr><td>Bijzondere bijstand kan niet beoordeeld worden zonder compleet dossier.</td><td>Gemeente Hulst kan Belgische loongegevens niet automatisch inlezen en wist de aanvraag na 73 dagen.</td></tr>
 </tbody>
 </table>
-<h3 id="de-waterval-hoe-stilstand-bij-de-overheid-een-privéschuld-wordt">De waterval: hoe stilstand bij de overheid een privéschuld wordt</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h3 id="de-waterval-hoe-stilstand-bij-de-overheid-een-privéschuld-wordt">De waterval: hoe stilstand bij de overheid een privéschuld wordt</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docC_fig6" data-audio-src="../assets/audio/docC_fig6_nl_484d336a.mp3" data-clean-heading="De waterval: hoe stilstand bij de overheid een privéschuld wordt" data-clean-text="Plaat 6: De waterval: hoe stilstand bij de overheid een privéschuld wordt. Wanneer de overheid weigert te beslissen, vangt de bankrekening de klap op. De commerciële markt neemt het gat over tegen rente en sancties. De afbeelding toont deze financiële kettingreactie van links naar rechts in drie kolommen. In de linkerkolom zie je vier gesloten rode kranen die allemaal nul euro opleveren: het loon van de vader stopt na de uitval, de ziekte uitkering bij de C M staat op nul, de W I A uitkering bij het U W V staat op nul, en de zorgtoeslag en bijzondere bijstand staan op nul. Daaronder staat slechts één groene kraan die nog openstaat: het onderwijsloon van de moeder en het basisbedrag van de kinderbijslag, die het gezin ternauwernood overeind houden. In de middelste kolom zie je het gevolg voor de gezamenlijke bankrekening: het waterpeil zakt ver onder de rode nulgrens naar een negatief saldo van min 6708 euro aan roodstand en creditcardschuld bij de I N G bank, plus min 2418 euro en 53 cent aan achterstand bij energieleverancier Vattenfall, samen ruim 9126 euro onder nul. Vanuit dat leeggelopen reservoir lopen drie dikke pijlen naar de rechterkolom, de commerciële overname: doorlopende medische kosten van meer dan veertienhonderd euro voor niet vergoede oogzorg, een verplichte kredietaflossing van 286 euro en 55 cent per maand bij de I N G waarbij de roodstand direct wordt vernietigd en het waterbedrijf storneert, én incassobureau Flanderijn dat 516 euro aan incassokosten oplegt terwijl netbeheerder Stedin met afsluiting van energie dreigt. De tabel eronder vat de menselijke prijs samen: het gezin betaalt rente en incassoboetes over een schuld die rechtstreeks is ontstaan doordat overheidsdiensten hun wettelijke uitkeringen vasthouden." data-track-index="5" id="aab-docC_fig6">
+<button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
+<span class="aab-icon-play">▶</span>
+<span class="aab-icon-pause" style="display:none;">❚❚</span>
+</button>
+<div class="aab-info">
+<div class="aab-meta">
+<span class="aab-badge notranslate" translate="no">🎧 BELUISTER</span>
+<span class="aab-title">Plaat 6: De waterval: hoe stilstand bij de overheid een privéschuld wordt</span>
+<span class="aab-time notranslate" translate="no">0:00 / --:--</span>
+</div>
+<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="aab-progress-wrap notranslate" role="progressbar" translate="no">
+<div class="aab-progress-bar">
+<div class="aab-progress-fill"></div>
+</div>
+</div>
+</div>
+<div class="aab-controls notranslate" translate="no">
+<button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
+<button class="aab-next-btn" data-next-idx="6" data-next-target="#aab-docC_fig7" title="Spring direct naar het volgende audiogedeelte (7/12) en luister verder" type="button">⏭ Luister verder</button></div>
+<audio class="aab-audio-el" preload="none" src="../assets/audio/docC_fig6_nl_484d336a.mp3"></audio>
+</div>
 <p class="lead">Wanneer de overheid weigert te beslissen, vangt de bankrekening de klap op. De commerciële markt neemt het gat over tegen rente en sancties.</p>
-<div class="figure">
+<div class="figure"><div class="tts-spoken-summary notranslate-no" style="display:none;">Plaat 6: De waterval: hoe stilstand bij de overheid een privéschuld wordt. Wanneer de overheid weigert te beslissen, vangt de bankrekening de klap op. De commerciële markt neemt het gat over tegen rente en sancties. De afbeelding toont deze financiële kettingreactie van links naar rechts in drie kolommen. In de linkerkolom zie je vier gesloten rode kranen die allemaal nul euro opleveren: het loon van de vader stopt na de uitval, de ziekte uitkering bij de C M staat op nul, de W I A uitkering bij het U W V staat op nul, en de zorgtoeslag en bijzondere bijstand staan op nul. Daaronder staat slechts één groene kraan die nog openstaat: het onderwijsloon van de moeder en het basisbedrag van de kinderbijslag, die het gezin ternauwernood overeind houden. In de middelste kolom zie je het gevolg voor de gezamenlijke bankrekening: het waterpeil zakt ver onder de rode nulgrens naar een negatief saldo van min 6708 euro aan roodstand en creditcardschuld bij de I N G bank, plus min 2418 euro en 53 cent aan achterstand bij energieleverancier Vattenfall, samen ruim 9126 euro onder nul. Vanuit dat leeggelopen reservoir lopen drie dikke pijlen naar de rechterkolom, de commerciële overname: doorlopende medische kosten van meer dan veertienhonderd euro voor niet vergoede oogzorg, een verplichte kredietaflossing van 286 euro en 55 cent per maand bij de I N G waarbij de roodstand direct wordt vernietigd en het waterbedrijf storneert, én incassobureau Flanderijn dat 516 euro aan incassokosten oplegt terwijl netbeheerder Stedin met afsluiting van energie dreigt. De tabel eronder vat de menselijke prijs samen: het gezin betaalt rente en incassoboetes over een schuld die rechtstreeks is ontstaan doordat overheidsdiensten hun wettelijke uitkeringen vasthouden.</div>
 <svg viewbox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg">
 <defs>
 <marker id="m-drain" markerheight="8" markerwidth="8" orient="auto" refx="7" refy="4">
@@ -4823,9 +5126,30 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </tbody>
 </table>
 <h1 id="iii-de-muur-tussen-belgië-en-nederland">III. De muur tussen België en Nederland</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
-<h3 id="dezelfde-muur-in-twee-talen-cm-tegenover-cz-en-rva-tegenover-uwv">Dezelfde muur in twee talen: CM tegenover CZ en RVA tegenover UWV</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h3 id="dezelfde-muur-in-twee-talen-cm-tegenover-cz-en-rva-tegenover-uwv">Dezelfde muur in twee talen: CM tegenover CZ en RVA tegenover UWV</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docC_fig7" data-audio-src="../assets/audio/docC_fig7_nl_a07af330.mp3" data-clean-heading="Dezelfde muur in twee talen: CM tegenover CZ en RVA tegenover UWV" data-clean-text="Deel 3, De muur tussen België en Nederland. Plaat 7: Dezelfde muur in twee talen: C M tegenover CZ en RVA tegenover U W V. Aan weerszijden van de grens gebruiken instanties exact hetzelfde draaiboek om de burger buiten te houden. De Europese digitale snelweg blijft leeg. Op deze afbeelding zie je twee hoge muren die spiegelbeeldig tegenover elkaar staan. Links staat de rode Belgische muur van ziekenfonds C M en arbeidsbureau RVA; rechts staat de blauwe Nederlandse muur van zorgverzekeraar CZ en uitkeringsinstantie U W V. Als je de drie blokken in beide muren met elkaar vergelijkt, zie je precies dezelfde logica in twee talen. Op de eerste rij betaalt de C M in België wél de ziekenhuisoperaties, maar weigert zij de uitkering en het invaliditeitsattest; precies zo betaalt CZ in Nederland wél de thuiszorg aan huis, maar weigert zij het noodzakelijke ziekenvervoer naar het ziekenhuis. Op de tweede rij weigert de Belgische RVA om de Nederlandse werkmaanden in te lezen met het argument wij zijn alleen zender; precies zo negeert het Nederlandse U W V eenentwintig jaar Belgische loopbaan en honderdzesentwintig verslagen van de thuiszorg. Op de derde rij eist België een C4 ontslagbewijs uit de privésector dat voor een vastbenoemde leerkracht niet bestaat; precies zo eist CZ in Nederland een gezichtsveldonderzoek dat het Belgische ziekenhuis niet uitvoert. Helemaal onderaan de plaat loopt een zwarte tweebaansweg: de Europese digitale datasnelweg Essie. Op die snelweg staat een groot rood verkeersbord met de uitkomst van het A V G onderzoek uit september en oktober 2026: nul berichten verstuurd in zes maanden tijd. De tabel onder de plaat bevestigt dit: terwijl elke brief beweert dat de uitwisseling automatisch via Essie verloopt, bewijzen de logboeken dat de snelweg volledig verlaten is." data-track-index="6" id="aab-docC_fig7">
+<button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
+<span class="aab-icon-play">▶</span>
+<span class="aab-icon-pause" style="display:none;">❚❚</span>
+</button>
+<div class="aab-info">
+<div class="aab-meta">
+<span class="aab-badge notranslate" translate="no">🎧 BELUISTER</span>
+<span class="aab-title">Plaat 7: Dezelfde muur in twee talen: CM tegenover CZ en RVA tegenover UWV</span>
+<span class="aab-time notranslate" translate="no">0:00 / --:--</span>
+</div>
+<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="aab-progress-wrap notranslate" role="progressbar" translate="no">
+<div class="aab-progress-bar">
+<div class="aab-progress-fill"></div>
+</div>
+</div>
+</div>
+<div class="aab-controls notranslate" translate="no">
+<button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
+<button class="aab-next-btn" data-next-idx="7" data-next-target="#aab-docC_fig8" title="Spring direct naar het volgende audiogedeelte (8/12) en luister verder" type="button">⏭ Luister verder</button></div>
+<audio class="aab-audio-el" preload="none" src="../assets/audio/docC_fig7_nl_a07af330.mp3"></audio>
+</div>
 <p class="lead">Aan weerszijden van de grens gebruiken instanties exact hetzelfde draaiboek om de burger buiten te houden. De Europese digitale snelweg blijft leeg.</p>
-<div class="figure">
+<div class="figure"><div class="tts-spoken-summary notranslate-no" style="display:none;">Deel 3, De muur tussen België en Nederland. Plaat 7: Dezelfde muur in twee talen: C M tegenover CZ en RVA tegenover U W V. Aan weerszijden van de grens gebruiken instanties exact hetzelfde draaiboek om de burger buiten te houden. De Europese digitale snelweg blijft leeg. Op deze afbeelding zie je twee hoge muren die spiegelbeeldig tegenover elkaar staan. Links staat de rode Belgische muur van ziekenfonds C M en arbeidsbureau RVA; rechts staat de blauwe Nederlandse muur van zorgverzekeraar CZ en uitkeringsinstantie U W V. Als je de drie blokken in beide muren met elkaar vergelijkt, zie je precies dezelfde logica in twee talen. Op de eerste rij betaalt de C M in België wél de ziekenhuisoperaties, maar weigert zij de uitkering en het invaliditeitsattest; precies zo betaalt CZ in Nederland wél de thuiszorg aan huis, maar weigert zij het noodzakelijke ziekenvervoer naar het ziekenhuis. Op de tweede rij weigert de Belgische RVA om de Nederlandse werkmaanden in te lezen met het argument wij zijn alleen zender; precies zo negeert het Nederlandse U W V eenentwintig jaar Belgische loopbaan en honderdzesentwintig verslagen van de thuiszorg. Op de derde rij eist België een C4 ontslagbewijs uit de privésector dat voor een vastbenoemde leerkracht niet bestaat; precies zo eist CZ in Nederland een gezichtsveldonderzoek dat het Belgische ziekenhuis niet uitvoert. Helemaal onderaan de plaat loopt een zwarte tweebaansweg: de Europese digitale datasnelweg Essie. Op die snelweg staat een groot rood verkeersbord met de uitkomst van het A V G onderzoek uit september en oktober 2026: nul berichten verstuurd in zes maanden tijd. De tabel onder de plaat bevestigt dit: terwijl elke brief beweert dat de uitwisseling automatisch via Essie verloopt, bewijzen de logboeken dat de snelweg volledig verlaten is.</div>
 <svg viewbox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg">
 <!-- Titel -->
 <text fill="#4a3b6b" font-size="18" font-weight="700" text-anchor="middle" x="600" y="45">DEZELFDE MUUR IN TWEE TALEN: CM/RVA (BE) ↔ CZ/UWV (NL)</text>
@@ -4884,9 +5208,30 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <tr><td>De gegevensuitwisseling verloopt automatisch via het beveiligde EESSI-netwerk.</td><td>DPO-besluiten van RIZIV, RVA (29-09-2026) en SVB (24-10-2026) bewijzen: nul berichten verstuurd.</td></tr>
 </tbody>
 </table>
-<h3 id="wonen-waar-geen-dokter-je-kent-reizen-waar-de-pas-stopt">Wonen waar geen dokter je kent, reizen waar de pas stopt</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h3 id="wonen-waar-geen-dokter-je-kent-reizen-waar-de-pas-stopt">Wonen waar geen dokter je kent, reizen waar de pas stopt</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docC_fig8" data-audio-src="../assets/audio/docC_fig8_nl_5b7691b5.mp3" data-clean-heading="Wonen waar geen dokter je kent, reizen waar de pas stopt" data-clean-text="Plaat 8: Wonen waar geen dokter je kent, reizen waar de pas stopt. In het land waar hij woont mag geen huisarts hem inschrijven. En de Europese gehandicaptenkaart wordt bij de gemeentegrens genegeerd. Op de afbeelding zie je links de gestippelde grenslijn tussen België en Nederland en in het midden het huis van het gezin in Hulst, in Nederland. Binnen in dat huis levert ZorgSaam de wondzorg, maar daaronder hangt een rood verbodsbord: Wettelijk Inschrijfverbod Nederland. De lokale huisartsenpraktijk Pallion in Hulst mag de patiënt niet inschrijven omdat de Nederlandse wet een dubbele inschrijving naast een Belgische huisarts verbiedt. Daardoor heeft een zwaar zieke patiënt in zijn eigen woonplaats geen enkele lokale arts als achterwacht bij een val of flauwte. Aan de rechterkant van het huis staat een rood-witte slagboom die de mobiliteit in drie blokken afsluit. Blok één is de eigen auto voor de deur: door een gezichtsvermogen van twee procent aan het linkeroog mag de patiënt medisch niet meer rijden. Blok twee is de Europese gehandicaptenparkeerkaart: België heeft die kaart op 3 augustus 2026 officieel toegekend, maar de gemeente Hulst weigert deze over te nemen voor het Nederlandse kenteken en eist een nieuwe keuring. Blok drie is de Wmo regiotaxi: die rijdt de patiënt wél twintig kilometer over de grens naar het ziekenhuis UZ Gent, maar weigert de rit naar de verplichte medische overheidskeuring in precies dezelfde straat in Gent. De tabel onder de afbeelding laat de absurditeit zien: regels tegen dubbele declaraties en starre vervoerszones zorgen ervoor dat een patiënt thuis geen dokter heeft en voor een verplichte keuring geen vervoer krijgt." data-track-index="7" id="aab-docC_fig8">
+<button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
+<span class="aab-icon-play">▶</span>
+<span class="aab-icon-pause" style="display:none;">❚❚</span>
+</button>
+<div class="aab-info">
+<div class="aab-meta">
+<span class="aab-badge notranslate" translate="no">🎧 BELUISTER</span>
+<span class="aab-title">Plaat 8: Wonen waar geen dokter je kent, reizen waar de pas stopt</span>
+<span class="aab-time notranslate" translate="no">0:00 / --:--</span>
+</div>
+<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="aab-progress-wrap notranslate" role="progressbar" translate="no">
+<div class="aab-progress-bar">
+<div class="aab-progress-fill"></div>
+</div>
+</div>
+</div>
+<div class="aab-controls notranslate" translate="no">
+<button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
+<button class="aab-next-btn" data-next-idx="8" data-next-target="#aab-docC_fig9" title="Spring direct naar het volgende audiogedeelte (9/12) en luister verder" type="button">⏭ Luister verder</button></div>
+<audio class="aab-audio-el" preload="none" src="../assets/audio/docC_fig8_nl_5b7691b5.mp3"></audio>
+</div>
 <p class="lead">In het land waar hij woont mag geen huisarts hem inschrijven. En de Europese gehandicaptenkaart wordt bij de gemeentegrens genegeerd.</p>
-<div class="figure">
+<div class="figure"><div class="tts-spoken-summary notranslate-no" style="display:none;">Plaat 8: Wonen waar geen dokter je kent, reizen waar de pas stopt. In het land waar hij woont mag geen huisarts hem inschrijven. En de Europese gehandicaptenkaart wordt bij de gemeentegrens genegeerd. Op de afbeelding zie je links de gestippelde grenslijn tussen België en Nederland en in het midden het huis van het gezin in Hulst, in Nederland. Binnen in dat huis levert ZorgSaam de wondzorg, maar daaronder hangt een rood verbodsbord: Wettelijk Inschrijfverbod Nederland. De lokale huisartsenpraktijk Pallion in Hulst mag de patiënt niet inschrijven omdat de Nederlandse wet een dubbele inschrijving naast een Belgische huisarts verbiedt. Daardoor heeft een zwaar zieke patiënt in zijn eigen woonplaats geen enkele lokale arts als achterwacht bij een val of flauwte. Aan de rechterkant van het huis staat een rood-witte slagboom die de mobiliteit in drie blokken afsluit. Blok één is de eigen auto voor de deur: door een gezichtsvermogen van twee procent aan het linkeroog mag de patiënt medisch niet meer rijden. Blok twee is de Europese gehandicaptenparkeerkaart: België heeft die kaart op 3 augustus 2026 officieel toegekend, maar de gemeente Hulst weigert deze over te nemen voor het Nederlandse kenteken en eist een nieuwe keuring. Blok drie is de Wmo regiotaxi: die rijdt de patiënt wél twintig kilometer over de grens naar het ziekenhuis UZ Gent, maar weigert de rit naar de verplichte medische overheidskeuring in precies dezelfde straat in Gent. De tabel onder de afbeelding laat de absurditeit zien: regels tegen dubbele declaraties en starre vervoerszones zorgen ervoor dat een patiënt thuis geen dokter heeft en voor een verplichte keuring geen vervoer krijgt.</div>
 <svg viewbox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg">
 <!-- Titel -->
 <text fill="#4a3b6b" font-size="18" font-weight="700" text-anchor="middle" x="600" y="45">HET GEÏSOLEERDE HUIS: WONEN ZONDER DOKTER, REIZEN ZONDER PAS</text>
@@ -4948,9 +5293,30 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </tbody>
 </table>
 <h1 id="iv-waar-de-doorgang-wel-werkt">IV. Waar de doorgang wel werkt</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
-<h3 id="het-bewijs-dat-het-wél-kan-de-gezinsbijslag-en-de-fiscale-omweg">Het bewijs dat het wél kan: de gezinsbijslag en de fiscale omweg</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h3 id="het-bewijs-dat-het-wél-kan-de-gezinsbijslag-en-de-fiscale-omweg">Het bewijs dat het wél kan: de gezinsbijslag en de fiscale omweg</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docC_fig9" data-audio-src="../assets/audio/docC_fig9_nl_9bd2fcd5.mp3" data-clean-heading="Het bewijs dat het wél kan: de gezinsbijslag en de fiscale omweg" data-clean-text="Deel 4, Waar de doorgang wel werkt. Plaat 9: Het bewijs dat het wél kan: de gezinsbijslag en de fiscale omweg. Wanneer de starre centrale ketens falen, bewijzen twee concrete doorbraken dat de regels wél ruimte bieden als men de juiste hefboom vindt. Op de afbeelding zie je in het midden de grijze, starre grensmuur staan, maar daarboven en daaronder overspannen twee dikke groene bruggen de muur van links naar rechts. De bovenste groene brug is de Kindergeld-brug tussen België en Nederland. Links stroomt via het werk van de moeder in het Vlaamse onderwijs het Belgische Groeipakket. In het midden opent de Nederlandse S V B op naam van de vader formeel het recht op Nederlandse kinderbijslag met een uitbetaling van nul euro, en precies die wettelijke sleutel opent rechts bij de Nederlandse Belastingdienst de kraan voor het Kindgebonden Budget, waardoor er 2154 euro aan gezinsondersteuning wordt uitbetaald. De onderste groene brug toont de Fiscale Omweg via de huisarts. Terwijl het ziekenfonds en de gehandicaptendienst op 8 punten bleven blokkeren, stelde de eigen Belgische huisarts op 8 september 2026 rechtstreeks het wettelijke invaliditeitsattest van minstens zesenzestig procent op. In het midden bevestigde de Belgische belastingdienst in Ledeberg dat dit spontane attest volledig rechtsgeldig is, en rechts zie je het resultaat: een belastingteruggave van 2669 euro en 97 cent én een retroactieve aanpassing van de loonheffing via het schoolsecretariaat. De tabel onder de plaat vat deze les samen: waar de geautomatiseerde loketten nee zeiden, boden de bestaande belastingwet en de juiste S V B registratie wél een werkende, legale doorgang." data-track-index="8" id="aab-docC_fig9">
+<button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
+<span class="aab-icon-play">▶</span>
+<span class="aab-icon-pause" style="display:none;">❚❚</span>
+</button>
+<div class="aab-info">
+<div class="aab-meta">
+<span class="aab-badge notranslate" translate="no">🎧 BELUISTER</span>
+<span class="aab-title">Plaat 9: Het bewijs dat het wél kan: de gezinsbijslag en de fiscale omweg</span>
+<span class="aab-time notranslate" translate="no">0:00 / --:--</span>
+</div>
+<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="aab-progress-wrap notranslate" role="progressbar" translate="no">
+<div class="aab-progress-bar">
+<div class="aab-progress-fill"></div>
+</div>
+</div>
+</div>
+<div class="aab-controls notranslate" translate="no">
+<button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
+<button class="aab-next-btn" data-next-idx="9" data-next-target="#aab-docC_fig10" title="Spring direct naar het volgende audiogedeelte (10/12) en luister verder" type="button">⏭ Luister verder</button></div>
+<audio class="aab-audio-el" preload="none" src="../assets/audio/docC_fig9_nl_9bd2fcd5.mp3"></audio>
+</div>
 <p class="lead">Wanneer de starre centrale ketens falen, bewijzen twee concrete doorbraken dat de regels wél ruimte bieden als men de juiste hefboom vindt.</p>
-<div class="figure">
+<div class="figure"><div class="tts-spoken-summary notranslate-no" style="display:none;">Deel 4, Waar de doorgang wel werkt. Plaat 9: Het bewijs dat het wél kan: de gezinsbijslag en de fiscale omweg. Wanneer de starre centrale ketens falen, bewijzen twee concrete doorbraken dat de regels wél ruimte bieden als men de juiste hefboom vindt. Op de afbeelding zie je in het midden de grijze, starre grensmuur staan, maar daarboven en daaronder overspannen twee dikke groene bruggen de muur van links naar rechts. De bovenste groene brug is de Kindergeld-brug tussen België en Nederland. Links stroomt via het werk van de moeder in het Vlaamse onderwijs het Belgische Groeipakket. In het midden opent de Nederlandse S V B op naam van de vader formeel het recht op Nederlandse kinderbijslag met een uitbetaling van nul euro, en precies die wettelijke sleutel opent rechts bij de Nederlandse Belastingdienst de kraan voor het Kindgebonden Budget, waardoor er 2154 euro aan gezinsondersteuning wordt uitbetaald. De onderste groene brug toont de Fiscale Omweg via de huisarts. Terwijl het ziekenfonds en de gehandicaptendienst op 8 punten bleven blokkeren, stelde de eigen Belgische huisarts op 8 september 2026 rechtstreeks het wettelijke invaliditeitsattest van minstens zesenzestig procent op. In het midden bevestigde de Belgische belastingdienst in Ledeberg dat dit spontane attest volledig rechtsgeldig is, en rechts zie je het resultaat: een belastingteruggave van 2669 euro en 97 cent én een retroactieve aanpassing van de loonheffing via het schoolsecretariaat. De tabel onder de plaat vat deze les samen: waar de geautomatiseerde loketten nee zeiden, boden de bestaande belastingwet en de juiste S V B registratie wél een werkende, legale doorgang.</div>
 <svg viewbox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg">
 <defs>
 <marker id="m-bridge" markerheight="8" markerwidth="8" orient="auto" refx="7" refy="4">
@@ -5014,9 +5380,30 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </tbody>
 </table>
 <h1 id="v-wie-toekijkt-en-de-drie-sleutels">V. Wie toekijkt en de drie sleutels</h1><a class="pub-naar-boven" href="#top">↑ naar boven</a>
-<h3 id="de-ring-van-toeschouwers-en-de-twee-deuren-die-wél-opengingen">De ring van toeschouwers en de twee deuren die wél opengingen</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h3 id="de-ring-van-toeschouwers-en-de-twee-deuren-die-wél-opengingen">De ring van toeschouwers en de twee deuren die wél opengingen</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docC_fig10" data-audio-src="../assets/audio/docC_fig10_nl_f174cca7.mp3" data-clean-heading="De ring van toeschouwers en de twee deuren die wél opengingen" data-clean-text="Deel 5, Wie toekijkt en de drie sleutels. Plaat 10: De ring van toeschouwers en de twee deuren die wél opengingen. Tientallen toezichthouders, ministers en rechters keken toe en verklaarden zich onbevoegd. Twee onverwachte deuren gingen wél open. Op de afbeelding zie je aan de linkerkant het gezin in het midden van drie grijze, concentrische cirkels van instanties die toekijken zonder in te grijpen. De binnenste ring bestaat uit de toezichthouders Riziv, CDZ, Zorginstituut Nederland en Unia, die allemaal verklaren geen bevoegdheid te hebben voor een individueel geschil. De middelste ring bestaat uit de ombudsmannen, de rechtbanken en het Europese bemiddelingsnetwerk Solvit, die het dossier sluiten zodra een loket voet bij stuk houdt. De buitenste ring bestaat uit de nationale parlementen en de koningshuizen, die brieven slechts doorsturen naar dezelfde ministers die eerder al niet ingrepen. Aan de rechterkant van de afbeelding zie je echter twee felle groene wiggen die dwars door al deze grijze ringen heen breken. De bovenste groene doorbraak is het Europees Parlement: op 15 oktober 2026 verklaarde de Commissie Verzoekschriften petitie 1034 uit 2026 officieel ontvankelijk en gaf zij de Europese Commissie opdracht tot een formeel onderzoek. De onderste groene doorbraak is de wetenschap en het medisch tuchtrecht: het grensinstituut ITEM van de Universiteit Maastricht valideerde de juridische knelpunten rond Wajong, Schumacker en het Vester arrest, en de Orde der Artsen nam de tuchtklachten tegen de keuringsartsen formeel in behandeling. De tabel eronder laat zien dat wanneer nationale waakhonden zwijgen, supranationale toetsing en academisch bewijs de muur alsnog openbreken." data-track-index="9" id="aab-docC_fig10">
+<button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
+<span class="aab-icon-play">▶</span>
+<span class="aab-icon-pause" style="display:none;">❚❚</span>
+</button>
+<div class="aab-info">
+<div class="aab-meta">
+<span class="aab-badge notranslate" translate="no">🎧 BELUISTER</span>
+<span class="aab-title">Plaat 10: De ring van toeschouwers en de twee deuren die wél opengingen</span>
+<span class="aab-time notranslate" translate="no">0:00 / --:--</span>
+</div>
+<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="aab-progress-wrap notranslate" role="progressbar" translate="no">
+<div class="aab-progress-bar">
+<div class="aab-progress-fill"></div>
+</div>
+</div>
+</div>
+<div class="aab-controls notranslate" translate="no">
+<button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
+<button class="aab-next-btn" data-next-idx="10" data-next-target="#aab-docC_fig11" title="Spring direct naar het volgende audiogedeelte (11/12) en luister verder" type="button">⏭ Luister verder</button></div>
+<audio class="aab-audio-el" preload="none" src="../assets/audio/docC_fig10_nl_f174cca7.mp3"></audio>
+</div>
 <p class="lead">Tientallen toezichthouders, ministers en rechters keken toe en verklaarden zich onbevoegd. Twee onverwachte deuren gingen wél open.</p>
-<div class="figure">
+<div class="figure"><div class="tts-spoken-summary notranslate-no" style="display:none;">Deel 5, Wie toekijkt en de drie sleutels. Plaat 10: De ring van toeschouwers en de twee deuren die wél opengingen. Tientallen toezichthouders, ministers en rechters keken toe en verklaarden zich onbevoegd. Twee onverwachte deuren gingen wél open. Op de afbeelding zie je aan de linkerkant het gezin in het midden van drie grijze, concentrische cirkels van instanties die toekijken zonder in te grijpen. De binnenste ring bestaat uit de toezichthouders Riziv, CDZ, Zorginstituut Nederland en Unia, die allemaal verklaren geen bevoegdheid te hebben voor een individueel geschil. De middelste ring bestaat uit de ombudsmannen, de rechtbanken en het Europese bemiddelingsnetwerk Solvit, die het dossier sluiten zodra een loket voet bij stuk houdt. De buitenste ring bestaat uit de nationale parlementen en de koningshuizen, die brieven slechts doorsturen naar dezelfde ministers die eerder al niet ingrepen. Aan de rechterkant van de afbeelding zie je echter twee felle groene wiggen die dwars door al deze grijze ringen heen breken. De bovenste groene doorbraak is het Europees Parlement: op 15 oktober 2026 verklaarde de Commissie Verzoekschriften petitie 1034 uit 2026 officieel ontvankelijk en gaf zij de Europese Commissie opdracht tot een formeel onderzoek. De onderste groene doorbraak is de wetenschap en het medisch tuchtrecht: het grensinstituut ITEM van de Universiteit Maastricht valideerde de juridische knelpunten rond Wajong, Schumacker en het Vester arrest, en de Orde der Artsen nam de tuchtklachten tegen de keuringsartsen formeel in behandeling. De tabel eronder laat zien dat wanneer nationale waakhonden zwijgen, supranationale toetsing en academisch bewijs de muur alsnog openbreken.</div>
 <svg viewbox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg">
 <!-- Titel -->
 <text fill="#4a3b6b" font-size="18" font-weight="700" text-anchor="middle" x="600" y="45">DE RING VAN TOESCHOUWERS EN DE TWEE DEUREN DIE WÉL OPENGINGEN</text>
@@ -5064,9 +5451,30 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <tr><td>Uw verzoekschrift is ontvankelijk verklaard en in onderzoek gegeven bij de Europese Commissie.</td><td>Het Europees Parlement doorbreekt de nationale stilte: het dossier dwingt Brussel tot onderzoek.</td></tr>
 </tbody>
 </table>
-<h3 id="drie-knoppen-die-zonder-nieuwe-wet-direct-zeventien-blokkades-oplossen">Drie knoppen die zonder nieuwe wet direct zeventien blokkades oplossen</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h3 id="drie-knoppen-die-zonder-nieuwe-wet-direct-zeventien-blokkades-oplossen">Drie knoppen die zonder nieuwe wet direct zeventien blokkades oplossen</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docC_fig11" data-audio-src="../assets/audio/docC_fig11_nl_0a2529c9.mp3" data-clean-heading="Drie knoppen die zonder nieuwe wet direct zeventien blokkades oplossen" data-clean-text="Plaat 11: Drie knoppen die zonder nieuwe wet direct zeventien blokkades oplossen. Er is geen nieuw Europees verdrag nodig om de impasse te doorbreken. Drie bestaande wettelijke knoppen lossen alle zeventien blokkades direct op. Op de afbeelding staan drie grote groene kolommen naast elkaar, elk met een schakelaar die op AAN staat. Links staat Knop 1: het Ziektevinkje in de Belgische Kruispuntbank. Als het ziekenfonds C M conform zijn wettelijke plicht de erkende invaliditeit aanvinkt in de Kruispuntbank, kost dat twee minuten werk en gaan er direct zes deuren open: het invaliditeitsstatuut, de verhoogde maximumfactuur, de sociale toeslag op het Groeipakket, de fiscale vrijstelling en het digitale Essie signaal naar Nederland. In het midden staat Knop 2: de Samentelling van Loopbaanjaren onder artikel 6 van Verordening 883 uit 2004. Als de 21 Belgische werkjaren en de 8 Nederlandse maanden gewoon volgens de wet bij elkaar worden opgeteld, gaan er direct vijf rechten open: de wachttijd van honderdtachtig dagen bij de C M is vervuld, de W I A beoordeling bij het U W V wordt geactiveerd, het peildatum-gat verdwijnt en de loopbaanoverzichten kloppen weer. Rechts staat Knop 3: het loslaten van de Woonplaatseis conform het Vester arrest en een simpele categorie grensarbeider in het CAK register. Daarmee gaan de laatste zes rechten open, waaronder de Nederlandse zorgtoeslag, de erkenning van de Europese parkeerkaart in Hulst, de bijzondere bijstand en het recht op een lokale huisarts. Onderaan de plaat staat een belangrijke balk die het verschil met Plaat 9 uitlegt: de fiscale huisartsroute en de S V B route uit Plaat 9 waren noodroutes van de burger zelf; deze drie knoppen zijn bestaande wettelijke plichten waarmee de overheid de oorzaak aan de bron wegneemt." data-track-index="10" id="aab-docC_fig11">
+<button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
+<span class="aab-icon-play">▶</span>
+<span class="aab-icon-pause" style="display:none;">❚❚</span>
+</button>
+<div class="aab-info">
+<div class="aab-meta">
+<span class="aab-badge notranslate" translate="no">🎧 BELUISTER</span>
+<span class="aab-title">Plaat 11: Drie knoppen die zonder nieuwe wet direct zeventien blokkades oplossen</span>
+<span class="aab-time notranslate" translate="no">0:00 / --:--</span>
+</div>
+<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="aab-progress-wrap notranslate" role="progressbar" translate="no">
+<div class="aab-progress-bar">
+<div class="aab-progress-fill"></div>
+</div>
+</div>
+</div>
+<div class="aab-controls notranslate" translate="no">
+<button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
+<button class="aab-next-btn" data-next-idx="11" data-next-target="#aab-docC_fig12" title="Spring direct naar het volgende audiogedeelte (12/12) en luister verder" type="button">⏭ Luister verder</button></div>
+<audio class="aab-audio-el" preload="none" src="../assets/audio/docC_fig11_nl_0a2529c9.mp3"></audio>
+</div>
 <p class="lead">Er is geen nieuw Europees verdrag nodig om de impasse te doorbreken. Drie bestaande wettelijke knoppen lossen alle zeventien blokkades direct op.</p>
-<div class="figure">
+<div class="figure"><div class="tts-spoken-summary notranslate-no" style="display:none;">Plaat 11: Drie knoppen die zonder nieuwe wet direct zeventien blokkades oplossen. Er is geen nieuw Europees verdrag nodig om de impasse te doorbreken. Drie bestaande wettelijke knoppen lossen alle zeventien blokkades direct op. Op de afbeelding staan drie grote groene kolommen naast elkaar, elk met een schakelaar die op AAN staat. Links staat Knop 1: het Ziektevinkje in de Belgische Kruispuntbank. Als het ziekenfonds C M conform zijn wettelijke plicht de erkende invaliditeit aanvinkt in de Kruispuntbank, kost dat twee minuten werk en gaan er direct zes deuren open: het invaliditeitsstatuut, de verhoogde maximumfactuur, de sociale toeslag op het Groeipakket, de fiscale vrijstelling en het digitale Essie signaal naar Nederland. In het midden staat Knop 2: de Samentelling van Loopbaanjaren onder artikel 6 van Verordening 883 uit 2004. Als de 21 Belgische werkjaren en de 8 Nederlandse maanden gewoon volgens de wet bij elkaar worden opgeteld, gaan er direct vijf rechten open: de wachttijd van honderdtachtig dagen bij de C M is vervuld, de W I A beoordeling bij het U W V wordt geactiveerd, het peildatum-gat verdwijnt en de loopbaanoverzichten kloppen weer. Rechts staat Knop 3: het loslaten van de Woonplaatseis conform het Vester arrest en een simpele categorie grensarbeider in het CAK register. Daarmee gaan de laatste zes rechten open, waaronder de Nederlandse zorgtoeslag, de erkenning van de Europese parkeerkaart in Hulst, de bijzondere bijstand en het recht op een lokale huisarts. Onderaan de plaat staat een belangrijke balk die het verschil met Plaat 9 uitlegt: de fiscale huisartsroute en de S V B route uit Plaat 9 waren noodroutes van de burger zelf; deze drie knoppen zijn bestaande wettelijke plichten waarmee de overheid de oorzaak aan de bron wegneemt.</div>
 <svg viewbox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg">
 <!-- Titel -->
 <text fill="#4a3b6b" font-size="18" font-weight="700" text-anchor="middle" x="600" y="40">DRIE BESTAANDE KNOPPEN DIE ZEVENTIEN BLOKKADES OPLOSSEN</text>
@@ -5148,9 +5556,30 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <tr><td>U moet zelf bewijzen dat u verzekerd bent voor geneeskundige zorg.</td><td>Eén software-aanpassing in het CAK-register lost de zorgtoeslagblokkade voor duizenden op.</td></tr>
 </tbody>
 </table>
-<h3 id="slotplaat-van-twee-vijandige-muren-naar-twee-verbonden-cellen">Slotplaat: van twee vijandige muren naar twee verbonden cellen</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a>
+<h3 id="slotplaat-van-twee-vijandige-muren-naar-twee-verbonden-cellen">Slotplaat: van twee vijandige muren naar twee verbonden cellen</h3><a class="pub-naar-boven" href="#top">↑ naar boven</a><div class="audit-audio-bar" data-audio-id="docC_fig12" data-audio-src="../assets/audio/docC_fig12_nl_51a980fc.mp3" data-clean-heading="Slotplaat: van twee vijandige muren naar twee verbonden cellen" data-clean-text="Plaat 12: Slotplaat: van twee vijandige muren naar twee verbonden cellen. Twee manieren om naar de grens te kijken: een verstikkend doolhof waarin de zieke mens bezwijkt, of twee ademende cellen in gezonde samenwerking. Op deze laatste afbeelding van Document C staan de huidige realiteit en het hervormde toekomstmodel naast elkaar. In het rode kader aan de linkerkant zie je de situatie van 2025 en 2026: het verstikte kluwen. Twee starre blokkendozen, België met 27 instanties en Nederland met 24 instanties, houden hun poorten op slot terwijl het gezin in het midden verstrikt zit in een rood spinnenweb van meer dan zeshonderdzestig handelingen, zevenhonderd gram papier en een bankrekening die tot min 9126 euro en 53 cent onder nul is gezakt. In het groene kader aan de rechterkant zie je hoe het hoort: gezonde symbiose. Daar smelten de ronde cellen van het werkland België en het woonland Nederland in het midden samen, zodat het gezin veilig wordt gedragen door drie structurele pijlers uit Document D. Pijler één: wie verhuist of over de grens werkt, activeert automatisch een datakoppeling tussen het Belgische Rijksregister en de Nederlandse Basisregistratie Personen. Pijler twee: één Europees Medisch Paspoort zorgt ervoor dat een medisch oordeel in België direct bindend is voor CZ, het U W V en de gemeente in Nederland. En pijler drie: erkende ziekte zet automatisch de juiste belastingvrijstelling en toeslagen aan. De slotconclusie in de tabel onderaan is helder: vrij verkeer van werknemers is het fundament van de Europese Unie en mag nooit bestraft worden met administratieve uitsluiting. Met deze drie koppelingsprincipes hoeft geen enkel gezin ooit nog door 62 loketten te kruipen." data-track-index="11" id="aab-docC_fig12">
+<button aria-label="Beluister tekst" class="aab-play-btn notranslate" title="Beluister passage (AI-stem)" translate="no" type="button">
+<span class="aab-icon-play">▶</span>
+<span class="aab-icon-pause" style="display:none;">❚❚</span>
+</button>
+<div class="aab-info">
+<div class="aab-meta">
+<span class="aab-badge notranslate" translate="no">🎧 BELUISTER</span>
+<span class="aab-title">Plaat 12: Slotplaat: van twee vijandige muren naar twee verbonden cellen</span>
+<span class="aab-time notranslate" translate="no">0:00 / --:--</span>
+</div>
+<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="aab-progress-wrap notranslate" role="progressbar" translate="no">
+<div class="aab-progress-bar">
+<div class="aab-progress-fill"></div>
+</div>
+</div>
+</div>
+<div class="aab-controls notranslate" translate="no">
+<button class="aab-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
+<button class="aab-next-btn aab-to-playlist-btn" data-next-idx="playlist" data-next-target="#audit-audio-playlist" title="Ga naar de volledige Audio-Playlist onderaan dit document" type="button">🎧 Playlist</button></div>
+<audio class="aab-audio-el" preload="none" src="../assets/audio/docC_fig12_nl_51a980fc.mp3"></audio>
+</div>
 <p class="lead">Twee manieren om naar de grens te kijken: een verstikkend doolhof waarin de zieke mens bezwijkt, of twee ademende cellen in gezonde samenwerking.</p>
-<div class="figure">
+<div class="figure"><div class="tts-spoken-summary notranslate-no" style="display:none;">Plaat 12: Slotplaat: van twee vijandige muren naar twee verbonden cellen. Twee manieren om naar de grens te kijken: een verstikkend doolhof waarin de zieke mens bezwijkt, of twee ademende cellen in gezonde samenwerking. Op deze laatste afbeelding van Document C staan de huidige realiteit en het hervormde toekomstmodel naast elkaar. In het rode kader aan de linkerkant zie je de situatie van 2025 en 2026: het verstikte kluwen. Twee starre blokkendozen, België met 27 instanties en Nederland met 24 instanties, houden hun poorten op slot terwijl het gezin in het midden verstrikt zit in een rood spinnenweb van meer dan zeshonderdzestig handelingen, zevenhonderd gram papier en een bankrekening die tot min 9126 euro en 53 cent onder nul is gezakt. In het groene kader aan de rechterkant zie je hoe het hoort: gezonde symbiose. Daar smelten de ronde cellen van het werkland België en het woonland Nederland in het midden samen, zodat het gezin veilig wordt gedragen door drie structurele pijlers uit Document D. Pijler één: wie verhuist of over de grens werkt, activeert automatisch een datakoppeling tussen het Belgische Rijksregister en de Nederlandse Basisregistratie Personen. Pijler twee: één Europees Medisch Paspoort zorgt ervoor dat een medisch oordeel in België direct bindend is voor CZ, het U W V en de gemeente in Nederland. En pijler drie: erkende ziekte zet automatisch de juiste belastingvrijstelling en toeslagen aan. De slotconclusie in de tabel onderaan is helder: vrij verkeer van werknemers is het fundament van de Europese Unie en mag nooit bestraft worden met administratieve uitsluiting. Met deze drie koppelingsprincipes hoeft geen enkel gezin ooit nog door 62 loketten te kruipen.</div>
 <svg viewbox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg">
 <!-- Titel -->
 <text fill="#4a3b6b" font-size="18" font-weight="700" text-anchor="middle" x="600" y="45">SLOTPLAAT: VERSTIKT KLUWEN TEGENOVER GEZONDE SYMBIOSE</text>
@@ -5233,7 +5662,60 @@ html[data-theme="dark"] .aps-track-jump:hover {
 
 <!-- Analytische sensor (verborgen landentracker, puur voor dossierbeheer) -->
 
-<!-- Forensisch Bronopvragings- en Contactvenster (Modal) -->
+<section aria-label="Volledige Audio-Playlist" class="audit-playlist-sectie" id="audit-audio-playlist">
+<div class="aps-header">
+<div class="aps-title-row">
+<span class="aps-badge">🎧 LUISTERMODUS ZONDER LEZEN</span>
+<a class="pub-naar-boven" href="#top">↑ naar boven</a>
+</div>
+<h2>Audio-Playlist — Volledig document achter elkaar beluisteren (12 onderdelen)</h2>
+<p class="aps-desc">Voor wie dit document liever volledig beluistert zonder door de tekst te hoeven scrollen. Druk op <strong>▶</strong> in de hoofdspeler om alle 12 onderdelen automatisch na elkaar te laten voorlezen, of tik op een specifiek onderdeel in de onderstaande lijst.</p>
+</div>
+<div class="aps-master-player" id="aps-master-player">
+<div class="aps-mp-controls">
+<button aria-label="Vorig onderdeel" class="aps-mp-prev" id="aps-prev-btn" title="Vorig onderdeel" type="button">⏮</button>
+<button aria-label="Afspelen of pauzeren" class="aps-mp-play" id="aps-play-btn" title="Alles achter elkaar afspelen / Pauzeren" type="button">
+<span class="aps-icon-play">▶</span>
+<span class="aps-icon-pause" style="display:none;">❚❚</span>
+</button>
+<button aria-label="Volgend onderdeel" class="aps-mp-next" id="aps-next-btn" title="Volgend onderdeel" type="button">⏭</button>
+</div>
+<div class="aps-mp-info">
+<div class="aps-mp-meta">
+<span class="aps-mp-status" id="aps-mp-status">Klaar om af te spelen (1 / 12)</span>
+<span class="aps-mp-time" id="aps-mp-time">0:00 / --:--</span>
+</div>
+<div class="aps-mp-trackname" id="aps-mp-trackname">1. Twee cellen die weigeren samen te werken</div>
+<div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="aps-mp-progress-wrap" id="aps-mp-progress-wrap" role="progressbar">
+<div class="aps-mp-progress-bar">
+<div class="aps-mp-progress-fill" id="aps-mp-progress-fill"></div>
+</div>
+</div>
+</div>
+<div class="aps-mp-extra">
+<label class="aps-autoplay-toggle" title="Speel automatisch het volgende onderdeel af zodra een opname klaar is">
+<input checked="checked" id="aps-autoplay-chk" type="checkbox"/>
+<span>Auto-vervolg</span>
+</label>
+<button class="aab-speed-btn" id="aps-speed-btn" title="Afspeelsnelheid wijzigen (1x / 1.25x / 1.5x)" type="button">1x</button>
+</div>
+</div>
+<div class="aps-tracklist" id="aps-tracklist">
+<div class="aps-track" data-audio-id="docC_fig1" data-track-idx="0"> <span class="aps-t-num">01</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Twee cellen die weigeren samen te werken</span> <a class="aps-track-jump" href="#twee-cellen-die-weigeren-samen-te-werken" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="docC_fig2" data-track-idx="1"> <span class="aps-t-num">02</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Twee ritmes die op elkaar botsen</span> <a class="aps-track-jump" href="#twee-ritmes-die-op-elkaar-botsen" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="docC_fig3" data-track-idx="2"> <span class="aps-t-num">03</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Zo boven, zo beneden: de spiegel van het afschuiven</span> <a class="aps-track-jump" href="#zo-boven-zo-beneden-de-spiegel-van-het-afschuiven" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="docC_fig4" data-track-idx="3"> <span class="aps-t-num">04</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Vijf behandelaars zien het lichaam, twee loketten zien het papier</span> <a class="aps-track-jump" href="#vijf-behandelaars-zien-het-lichaam-twee-loketten-zien-het-papier" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="docC_fig5" data-track-idx="4"> <span class="aps-t-num">05</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Hoe één ontbrekend vinkje zes deuren op slot gooit</span> <a class="aps-track-jump" href="#hoe-één-ontbrekend-vinkje-zes-deuren-op-slot-gooit" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="docC_fig6" data-track-idx="5"> <span class="aps-t-num">06</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">De waterval: hoe stilstand bij de overheid een privéschuld wordt</span> <a class="aps-track-jump" href="#de-waterval-hoe-stilstand-bij-de-overheid-een-privéschuld-wordt" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="docC_fig7" data-track-idx="6"> <span class="aps-t-num">07</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Dezelfde muur in twee talen: CM tegenover CZ en RVA tegenover UWV</span> <a class="aps-track-jump" href="#dezelfde-muur-in-twee-talen-cm-tegenover-cz-en-rva-tegenover-uwv" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="docC_fig8" data-track-idx="7"> <span class="aps-t-num">08</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Wonen waar geen dokter je kent, reizen waar de pas stopt</span> <a class="aps-track-jump" href="#wonen-waar-geen-dokter-je-kent-reizen-waar-de-pas-stopt" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="docC_fig9" data-track-idx="8"> <span class="aps-t-num">09</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Het bewijs dat het wél kan: de gezinsbijslag en de fiscale omweg</span> <a class="aps-track-jump" href="#het-bewijs-dat-het-wél-kan-de-gezinsbijslag-en-de-fiscale-omweg" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="docC_fig10" data-track-idx="9"> <span class="aps-t-num">10</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">De ring van toeschouwers en de twee deuren die wél opengingen</span> <a class="aps-track-jump" href="#de-ring-van-toeschouwers-en-de-twee-deuren-die-wél-opengingen" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="docC_fig11" data-track-idx="10"> <span class="aps-t-num">11</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Drie knoppen die zonder nieuwe wet direct zeventien blokkades oplossen</span> <a class="aps-track-jump" href="#drie-knoppen-die-zonder-nieuwe-wet-direct-zeventien-blokkades-oplossen" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+<div class="aps-track" data-audio-id="docC_fig12" data-track-idx="11"> <span class="aps-t-num">12</span> <span class="aps-t-icon">▶</span> <span class="aps-track-title">Slotplaat: van twee vijandige muren naar twee verbonden cellen</span> <a class="aps-track-jump" href="#slotplaat-van-twee-vijandige-muren-naar-twee-verbonden-cellen" title="Spring naar deze tekstpassage in het document">↑ tekst</a></div>
+</div>
+<div class="aps-next-doc" style="margin-top:16px; padding-top:14px; border-top:1px dashed #ccc; text-align:right;"><a class="apt-btn apt-btn-play" href="document-d.html#audit-audio-playlist">⏭ Verder luisteren: Naar de Audio-Playlist van Document D (De Synthese) →</a></div>
+</section><!-- Forensisch Bronopvragings- en Contactvenster (Modal) -->
 <div class="bm-modal-overlay" id="bm-modal" onclick="if(event.target===this)sluitBronModal()">
 <div aria-labelledby="bm-modal-titel" aria-modal="true" class="bm-modal-dialog" role="dialog">
 <div class="bm-modal-kop">
@@ -6108,7 +6590,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 10:16<br/>
+  Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 10:52<br/>
 <span style="font-size: 9.5pt; color: #888;">Formatting and structuring in co-creation with an AI reading model to bridge a visual impairment — all facts are based on primary source documents.</span></p>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-search-btn notranslate" onclick="openSearchModal()" title="Search entire audit" translate="no" type="button">🔍 Search audit</button>

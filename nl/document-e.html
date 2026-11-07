@@ -198,6 +198,65 @@ html, body { overflow-x: hidden; }
     .titelblad h1 { font-size: 22pt; }
 }
 
+
+/* Dark mode for Executive Strip & Doc B Paspoort */
+html[data-theme="dark"] .oes-card {
+    border-color: rgba(255,255,255,0.08);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+html[data-theme="dark"] .oes-role {
+    background: #192231;
+    border-left: 4px solid #5c8ae6;
+    color: #e2e8f0;
+}
+html[data-theme="dark"] .oes-role .oes-label { color: #8bb2f8; }
+
+html[data-theme="dark"] .oes-system {
+    background: #14252a;
+    border-left: 4px solid #26c6da;
+    color: #e2e8f0;
+}
+html[data-theme="dark"] .oes-system .oes-label { color: #4dd0e1; }
+html[data-theme="dark"] .oes-stroom-badge {
+    background: #1b383d;
+    color: #80cbc4;
+}
+
+html[data-theme="dark"] .oes-breuk {
+    background: #2b181b;
+    border-left: 4px solid #ef5350;
+    color: #e2e8f0;
+}
+html[data-theme="dark"] .oes-breuk .oes-label { color: #ef9a9a; }
+
+html[data-theme="dark"] .docb-meta-card {
+    background: #1c1c1c;
+    border-color: #383838;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+html[data-theme="dark"] .docb-meta-item {
+    color: #d0d0d0;
+}
+html[data-theme="dark"] .docb-meta-breuk {
+    background: #2b181b;
+    border-left-color: #ef5350;
+    color: #e2e8f0;
+}
+html[data-theme="dark"] .docb-meta-breuk strong {
+    color: #ef9a9a;
+}
+html[data-theme="dark"] .meta-refs-collapse {
+    background: #252525;
+    border-color: #404040;
+}
+html[data-theme="dark"] .meta-refs-collapse summary {
+    color: #8bb2f8;
+}
+html[data-theme="dark"] .meta-refs-content {
+    border-top-color: #444;
+    color: #bbb;
+}
+
 /* === Professionele A4 Print / Opslaan als PDF Stylesheet === */
 @media print {
     html, html[data-theme="dark"], body, html[data-theme="dark"] body {
@@ -1250,6 +1309,131 @@ html[data-theme="dark"] .pub-discreet-dl .pdd-link { color: #79c0ff; }
     .audit-toolbar .at-controls { grid-template-columns: 1fr; }
     .audit-toolbar .at-live-count { margin-left: 0; }
 }
+
+/* === DEEL 3: Ergonomische Verrijking Doc A & Doc B === */
+.org-executive-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+    margin: 10pt 0 16pt 0;
+}
+.oes-card {
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 9.5pt;
+    line-height: 1.45;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.08);
+}
+.oes-card .oes-label {
+    font-weight: 700;
+    font-size: 8.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 5px;
+}
+.oes-role {
+    background: #f0f4fa;
+    border-left: 4px solid #1a3c6e;
+    color: #1a202c;
+}
+.oes-role .oes-label { color: #1a3c6e; }
+
+.oes-system {
+    background: #f2f7f7;
+    border-left: 4px solid #00838f;
+    color: #1a202c;
+}
+.oes-system .oes-label { color: #00695c; }
+.oes-stroom-badge {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: #e0f2f1;
+    color: #004d40;
+    font-size: 8.5pt;
+    font-weight: 600;
+}
+
+.oes-breuk {
+    background: #fff5f5;
+    border-left: 4px solid #c62828;
+    color: #1a202c;
+}
+.oes-breuk .oes-label { color: #b71c1c; }
+
+/* Document B Forensisch Paspoort */
+.docb-meta-card {
+    background: #fdfcf9;
+    border: 1px solid #d5d0c5;
+    border-radius: 6px;
+    margin: 8pt 0 16pt 0;
+    padding: 12px 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.docb-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 8px 14px;
+}
+.docb-meta-item {
+    font-size: 9.5pt;
+    line-height: 1.4;
+    color: #333;
+}
+.docb-meta-item p.meta, .docb-meta-item p.netwerk {
+    margin: 0;
+    padding: 0;
+    font-size: 9.5pt;
+}
+.docb-meta-wide {
+    grid-column: 1 / -1;
+}
+@media (min-width: 900px) {
+    .docb-meta-wide { grid-column: span 2; }
+}
+.docb-meta-full {
+    grid-column: 1 / -1 !important;
+}
+.docb-meta-breuk {
+    margin-top: 4px;
+    padding: 8px 12px;
+    background: #fff5f5;
+    border-left: 4px solid #c62828;
+    border-radius: 4px;
+    color: #1a202c;
+}
+.docb-meta-breuk strong {
+    color: #b71c1c;
+}
+.meta-refs-collapse {
+    background: #f4f2ec;
+    border: 1px solid #dcd7ce;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 9pt;
+}
+.meta-refs-collapse summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: #1a3c6e;
+    user-select: none;
+    outline: none;
+}
+.meta-refs-collapse summary:hover {
+    text-decoration: underline;
+}
+.meta-refs-content {
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px dashed #ccc;
+    font-family: Consolas, monospace;
+    font-size: 8.5pt;
+    line-height: 1.5;
+    color: #444;
+    word-break: break-word;
+}
+
 .pub-footer {
     margin-top: 60pt; padding-top: 20pt; border-top: 1px solid #d5d0c5;
     font-size: 10pt; color: #666; text-align: center;
@@ -4296,7 +4480,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document E — Het rechtenoverzicht</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 7 november 2026, 10:16</p>
+<p class="meta-lijn">Versie bijgewerkt: 7 november 2026, 10:52</p>
 </div>
 <div class="pub-toc" id="pub-toc-top"><h2>Inhoudsopgave</h2><div class="toc-controls-bar">
 <span class="toc-hint">Klik op een hoofdstuk om de organisaties/secties uit of in te klappen:</span>
@@ -7279,7 +7463,7 @@ ontvangen, definitieve uitkomst onzeker.</p>
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 10:16<br/>
+  Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 10:52<br/>
 <span style="font-size: 9.5pt; color: #888;">Opmaak en structurering in co-creatie met een AI-leesmodel ter overbrugging van een visuele beperking — alle feiten berusten op primaire bronstukken.</span></p>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-search-btn notranslate" onclick="openSearchModal()" title="Doorzoek het complete dossier" translate="no" type="button">🔍 Doorzoek audit</button>
