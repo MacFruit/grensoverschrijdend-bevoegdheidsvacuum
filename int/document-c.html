@@ -1615,6 +1615,258 @@ html[data-theme="dark"] select.pub-lang-select option {
 
 }
 
+
+/* === LOSGEKOPPELDE CREATIEVE HTML-LEGENDA ONDER KAARTEN (.kaart-html-legenda) === */
+.root-kaart {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.khl-map-wrap {
+    position: relative !important;
+    cursor: zoom-in !important;
+    display: block;
+    width: 100%;
+}
+.khl-map-wrap .theme-map {
+    margin: 0 !important;
+}
+.khl-map-wrap img {
+    border-radius: 8px 8px 0 0 !important;
+    border-bottom: none !important;
+}
+.kaart-html-legenda {
+    cursor: default !important;
+    background: #ffffff;
+    border: 1px solid #dcd6ca;
+    border-top: 2px solid #1a3c6e;
+    border-radius: 0 0 8px 8px;
+    padding: 14px 18px 16px 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    font-family: Aptos, Calibri, sans-serif;
+    color: #222222;
+    text-align: left;
+    line-height: 1.45;
+    user-select: text;
+}
+.khl-header {
+    border-bottom: 1px solid #e6e1d6;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+}
+.khl-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+.khl-title {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #1a3c6e;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+.khl-zoom-btn {
+    background: #eef3fb;
+    color: #1a3c6e;
+    border: 1px solid #c2d1ed;
+    border-radius: 16px;
+    padding: 4px 12px;
+    font-size: 9pt;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+}
+.khl-zoom-btn:hover {
+    background: #1a3c6e;
+    color: #ffffff;
+    border-color: #1a3c6e;
+}
+.khl-symbol-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    font-size: 9.2pt;
+    color: #444444;
+    background: #f8f6f1;
+    padding: 7px 12px;
+    border-radius: 6px;
+    border: 1px solid #e6e1d6;
+}
+.khl-sym {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+}
+.khl-line {
+    display: inline-block;
+    width: 22px;
+    height: 0;
+    vertical-align: middle;
+}
+.khl-line-border {
+    border-top: 3px solid #dc2626;
+}
+.khl-line-dotted {
+    border-top: 2.5px dotted #d95f5f;
+}
+.khl-dot-city {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #1e293b;
+    border: 1.5px solid #ffffff;
+    box-shadow: 0 0 0 1px #94a3b8;
+}
+.khl-arrow {
+    font-size: 12pt;
+    font-weight: 900;
+    line-height: 1;
+}
+.khl-arr-red { color: #dc2626; }
+.khl-arr-blue { color: #0284c7; }
+.khl-arr-purple { color: #7c3aed; }
+.khl-arr-gold { color: #d97706; }
+
+.khl-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 24px;
+}
+.khl-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.khl-col-title {
+    font-size: 9.2pt;
+    font-weight: 700;
+    color: #1a3c6e;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding-bottom: 4px;
+    border-bottom: 1.5px solid #e2ddd2;
+    margin-bottom: 2px;
+}
+.khl-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 9.8pt;
+    line-height: 1.42;
+    color: #2b2b2b;
+}
+.khl-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 4px;
+    border-radius: 50%;
+    color: #ffffff !important;
+    font-size: 9pt;
+    font-weight: 700;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.28);
+    border: 1.5px solid #ffffff;
+    box-sizing: border-box;
+}
+.khl-b-red { background: #dc2626; }
+.khl-b-blue { background: #0284c7; }
+.khl-b-purple { background: #7c3aed; }
+.khl-b-gold { background: #d97706; }
+.khl-text {
+    flex: 1;
+}
+.khl-text strong {
+    color: #111827;
+}
+.khl-footer-note {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px dashed #dcd6ca;
+    font-size: 9.2pt;
+    color: #555555;
+}
+
+/* Dark Mode voor .kaart-html-legenda */
+html[data-theme="dark"] .kaart-html-legenda {
+    background: #181c24 !important;
+    border-color: #2e3646 !important;
+    border-top: 2px solid #4a6fa5 !important;
+    color: #dce3ec !important;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.55) !important;
+}
+html[data-theme="dark"] .khl-header {
+    border-bottom-color: #2b3240 !important;
+}
+html[data-theme="dark"] .khl-title {
+    color: #7fb3ff !important;
+}
+html[data-theme="dark"] .khl-zoom-btn {
+    background: #232b38 !important;
+    color: #7fb3ff !important;
+    border-color: #3b485e !important;
+}
+html[data-theme="dark"] .khl-zoom-btn:hover {
+    background: #4a6fa5 !important;
+    color: #ffffff !important;
+    border-color: #7fb3ff !important;
+}
+html[data-theme="dark"] .khl-symbol-bar {
+    background: #12161d !important;
+    border-color: #28303d !important;
+    color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .khl-line-border {
+    border-top-color: #ff5252 !important;
+}
+html[data-theme="dark"] .khl-line-dotted {
+    border-top-color: #e06c6c !important;
+}
+html[data-theme="dark"] .khl-dot-city {
+    background: #f8fafc !important;
+    border-color: #0f172a !important;
+}
+html[data-theme="dark"] .khl-arr-red { color: #ff5252 !important; }
+html[data-theme="dark"] .khl-arr-blue { color: #38bdf8 !important; }
+html[data-theme="dark"] .khl-arr-purple { color: #c084fc !important; }
+html[data-theme="dark"] .khl-arr-gold { color: #fbbf24 !important; }
+html[data-theme="dark"] .khl-col-title {
+    color: #7fb3ff !important;
+    border-bottom-color: #2b3240 !important;
+}
+html[data-theme="dark"] .khl-item {
+    color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .khl-text strong {
+    color: #f8fafc !important;
+}
+html[data-theme="dark"] .khl-badge {
+    border-color: rgba(255, 255, 255, 0.85) !important;
+}
+html[data-theme="dark"] .khl-b-purple { background: #9333ea !important; }
+html[data-theme="dark"] .khl-footer-note {
+    border-top-color: #2b3240 !important;
+    color: #94a3b8 !important;
+}
+
+@media (max-width: 760px) {
+    .kaart-html-legenda { padding: 12px 14px; }
+    .khl-grid { grid-template-columns: 1fr; gap: 12px; }
+    .khl-symbol-bar { gap: 6px 12px; font-size: 8.8pt; }
+    .khl-item { font-size: 9.5pt; }
+}
+
 /* Forensisch Bronopvragings- en Contactvenster (Modal) */
 .bm-modal-overlay {
     position: fixed; top: 0; left: 0; right: 0; bottom: 0;
@@ -2151,21 +2403,19 @@ html[data-theme="light"] .root-kaart img {
 }
 
 /* Document 0 — Tweeluik-migratiekaart (Light & Dark vector) */
-html[data-theme="dark"] .kaart-migratie img,
-html[data-theme="dark"] .doc0-kaart img {
-    content: url("../assets/kaart_migratie_doc0_dark.svg?v=3");
+html[data-theme="dark"] .kaart-migratie img {
+    content: url("../assets/kaart_migratie_doc0_dark.svg?v=4");
 }
-html[data-theme="light"] .kaart-migratie img,
-html[data-theme="light"] .doc0-kaart img {
-    content: url("../assets/kaart_migratie_doc0_light.svg?v=3");
+html[data-theme="light"] .kaart-migratie img {
+    content: url("../assets/kaart_migratie_doc0_light.svg?v=4");
 }
 
 /* Root index.html — EU Knelpuntenkaart (Light & Dark vector) */
 html[data-theme="dark"] .index-theme-map img {
-    content: url("assets/kaart_eu_dark.svg?v=2");
+    content: url("assets/kaart_eu_dark.svg?v=4");
 }
 html[data-theme="light"] .index-theme-map img {
-    content: url("assets/kaart_eu_light.svg?v=2");
+    content: url("assets/kaart_eu_light.svg?v=4");
 }
 
 html[data-theme="dark"] .pub-ab-banner {
@@ -4499,7 +4749,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document C — De visuele architectuur</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 7 november 2026, 11:45</p>
+<p class="meta-lijn">Versie bijgewerkt: 8 november 2026, 17:50</p>
 </div>
 <div class="pub-toc" id="pub-toc-top"><h2>Inhoudsopgave</h2><div class="toc-controls-bar">
 <span class="toc-hint">Klik op een hoofdstuk om de organisaties/secties uit of in te klappen:</span>
@@ -5739,7 +5989,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <button aria-label="Venster sluiten" class="bm-modal-sluit" onclick="sluitBronModal()" type="button">×</button>
 </div>
 <div class="bm-intro">
-      Alle 730 interacties in deze audit zijn gebaseerd op objectieve brondocumenten (originele e-mails met Message-ID's, formele besluiten, brieven en medische verslagen). Om privacy en AVG-rechten van betrokkenen te waarborgen zijn persoonsgegevens in publieke bestanden afgeschermd. Geauthenticeerde onderzoekers, journalisten, toezichthouders en lotgenoten kunnen volledige, ongecensureerde brondossiers opvragen ter verificatie.
+      Alle 744 interacties in deze audit zijn gebaseerd op objectieve brondocumenten (originele e-mails met Message-ID's, formele besluiten, brieven en medische verslagen). Om privacy en AVG-rechten van betrokkenen te waarborgen zijn persoonsgegevens in publieke bestanden afgeschermd. Geauthenticeerde onderzoekers, journalisten, toezichthouders en lotgenoten kunnen volledige, ongecensureerde brondossiers opvragen ter verificatie.
     </div>
 <form id="bm-form" onsubmit="event.preventDefault();stuurEmail();">
 <div class="bm-groep">
@@ -6211,7 +6461,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <button aria-label="Zoom out (-)" class="km-btn km-zoom-out" onclick="kmZoomStep(-0.25)" title="Zoom out (-)" type="button">🔍−</button>
 <button aria-label="Reset zoom (100%)" class="km-btn km-zoom-val" onclick="kmResetZoom()" title="Reset zoom (100%)" type="button">100%</button>
 <button aria-label="Zoom in (+)" class="km-btn km-zoom-in" onclick="kmZoomStep(0.25)" title="Zoom in (+)" type="button">🔍+</button>
-<a class="km-btn km-full-btn" href="assets/kaart_eu_dark.svg?v=3" id="km-full-link" rel="noopener" target="_blank" title="Open vector SVG in new tab">SVG ↗</a>
+<a class="km-btn km-full-btn" href="assets/kaart_eu_dark.svg?v=4" id="km-full-link" rel="noopener" target="_blank" title="Open vector SVG in new tab">SVG ↗</a>
 <button aria-label="Close (ESC)" class="km-close-btn" onclick="sluitKaartModal()" title="Close (ESC)" type="button">×</button>
 </div>
 </div>
@@ -6232,6 +6482,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <button class="km-leg-toggle" onclick="kmToggleLegenda(this)" title="Toon/verberg" type="button">▲ Legend</button>
 </div>
 <div class="km-legenda-content" id="km-leg-content">
+<div id="km-leg-eu">
 <div class="km-leg-grid">
 <div class="km-leg-col">
 <div class="km-leg-item"><span class="km-pill">1</span> <strong>Zeeuws-Vlaanderen</strong> <span class="km-country">(NL/BE)</span> — <em>Het laboratorium van de Systeem-Audit</em></div>
@@ -6249,6 +6500,25 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </div>
 </div>
 <div class="km-leg-inzet-note">📍 <strong>Inset map (top right):</strong> Detailed section of the cross-border void between Zeeuws-Vlaanderen (NL) and East Flanders / Waasland (BE).</div>
+</div>
+<div id="km-leg-doc0" style="display:none;">
+<div class="km-leg-grid">
+<div class="km-leg-col">
+<div class="km-leg-item"><span class="km-pill" style="background:#dc2626;">1</span> <strong>Vertova</strong> <span class="km-country">(Lombardije, IT)</span> — Familiewortels vader &amp; terugkeer na WOII</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#dc2626;">2</span> <strong>Bondy / Parijs</strong> <span class="km-country">(Île-de-France, FR)</span> — Geboorteplaats vader (1940)</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#0284c7;">3</span> <strong>Sélestat</strong> <span class="km-country">(Noord-Elzas, FR)</span> — Geboorteplaats moeder (1948)</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#7c3aed;">4</span> <strong>Hattstatt &amp; Colmar</strong> <span class="km-country">(Zuid-Elzas, FR)</span> — Hôpital Pasteur (ontmoeting &amp; huwelijk)</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#7c3aed;">5</span> <strong>Antwerpen: Wilrijk, Hoboken &amp; Berchem</strong> <span class="km-country">(BE)</span> — Vestiging 1972, geboorte aanvrager (1981) &amp; kind (2016)</div>
+</div>
+<div class="km-leg-col">
+<div class="km-leg-item"><span class="km-pill" style="background:#0284c7;">6</span> <strong>Brugse Ommeland: Snellegem &amp; Jabbeke</strong> <span class="km-country">(West-Vlaanderen, BE)</span> — Wortels partner</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#7c3aed;">7</span> <strong>Gent</strong> <span class="km-country">(Oost-Vlaanderen, BE)</span> — Samenkomst aanvrager &amp; partner</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#7c3aed;">8</span> <strong>Sint-Niklaas &amp; Waasland</strong> <span class="km-country">(Lokeren, Buggenhout, Elversele, Waasmunster &amp; Sint-Niklaas, BE)</span> — Huwelijk 2007, werk &amp; school</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#d97706;">9</span> <strong>Paal — Gemeente Hulst</strong> <span class="km-country">(Zeeuws-Vlaanderen, NL)</span> — Grensovergang 2014 &amp; woonplaats gezin</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#d97706;">⇄</span> <strong>Dagelijkse Grenspendel (9 ↔ 8)</strong> — Wonen in NL, werken &amp; schoolgaan in BE</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -6339,21 +6609,33 @@ html[data-theme="dark"] .aps-track-jump:hover {
     var titleEl = document.getElementById('km-title');
     var subEl = document.querySelector('.km-subtitle');
 
-    var svgDark = isDoc0 ? (assetPref + 'kaart_migratie_doc0_dark.svg?v=3') : (assetPref + 'kaart_eu_dark.svg?v=3');
-    var svgLight = isDoc0 ? (assetPref + 'kaart_migratie_doc0_light.svg?v=3') : (assetPref + 'kaart_eu_light.svg?v=3');
+    var svgDark = isDoc0 ? (assetPref + 'kaart_migratie_doc0_dark.svg?v=4') : (assetPref + 'kaart_eu_dark.svg?v=4');
+    var svgLight = isDoc0 ? (assetPref + 'kaart_migratie_doc0_light.svg?v=4') : (assetPref + 'kaart_eu_light.svg?v=4');
     var svgPath = (theme === 'dark') ? svgDark : svgLight;
 
     if (img) img.src = svgPath;
     if (fullLink) fullLink.href = svgPath;
 
+    var legEu = document.getElementById('km-leg-eu');
+    var legDoc0 = document.getElementById('km-leg-doc0');
+    var legTitleStrong = document.querySelector('.km-lh-title strong');
+    var legDescSpan = document.querySelector('.km-lh-desc');
     if (isDoc0) {
       if (titleEl) titleEl.textContent = 'Migration & Border Regions — A European Story';
       if (subEl) subEl.textContent = 'From Lombardy, Paris and Alsace to Flanders and Zeeuws-Vlaanderen';
-      if (legBar) legBar.style.display = 'none';
+      if (legBar) legBar.style.display = 'block';
+      if (legEu) legEu.style.display = 'none';
+      if (legDoc0) legDoc0.style.display = 'block';
+      if (legTitleStrong) legTitleStrong.textContent = 'MIGRATION NODES (1–9)';
+      if (legDescSpan) legDescSpan.textContent = '— Panel 1: Europe (1–5) · Panel 2: Flanders & Zeeuws-Vlaanderen (5–9)';
     } else {
       if (titleEl) titleEl.textContent = "Border Regions in the European Union";
       if (subEl) subEl.textContent = "Focus: Zeeuws-Vlaanderen &amp; 10 Cross-Border Bottlenecks";
       if (legBar) legBar.style.display = 'block';
+      if (legEu) legEu.style.display = 'block';
+      if (legDoc0) legDoc0.style.display = 'none';
+      if (legTitleStrong) legTitleStrong.textContent = "BORDER BOTTLENECKS (1–10)";
+      if (legDescSpan) legDescSpan.textContent = "— Selected cross-border administrative and legal voids in the EU";
     }
 
     modal.classList.add('km-open');
@@ -6478,7 +6760,8 @@ html[data-theme="dark"] .aps-track-jump:hover {
   document.addEventListener('click', function(e){
     var t = e.target;
     if (!t || !t.closest) return;
-    var mapEl = t.closest('.root-kaart, .theme-map, .km-zoom-badge');
+    if (t.closest('.kaart-html-legenda')) return;
+    var mapEl = t.closest('.khl-map-wrap, .theme-map, .km-zoom-badge, .root-kaart');
     if (mapEl && !t.closest('#km-modal')) {
       e.preventDefault();
       window.openKaartModal();
@@ -6525,8 +6808,8 @@ html[data-theme="dark"] .aps-track-jump:hover {
       var source = m.querySelector('source');
       var img = m.querySelector('img');
       if(!img) return;
-      var darkSvg = source ? source.getAttribute('srcset') : (img.getAttribute('data-dark-src') || (assetPref + (isDoc0 ? 'kaart_migratie_doc0_dark.svg?v=3' : 'kaart_eu_dark.svg?v=2')));
-      var lightSvg = img.getAttribute('data-light-src') || (assetPref + (isDoc0 ? 'kaart_migratie_doc0_light.svg?v=3' : 'kaart_eu_light.svg?v=2'));
+      var darkSvg = source ? source.getAttribute('srcset') : (img.getAttribute('data-dark-src') || (assetPref + (isDoc0 ? 'kaart_migratie_doc0_dark.svg?v=4' : 'kaart_eu_dark.svg?v=4')));
+      var lightSvg = img.getAttribute('data-light-src') || (assetPref + (isDoc0 ? 'kaart_migratie_doc0_light.svg?v=4' : 'kaart_eu_light.svg?v=4'));
       if(mode === 'dark'){
         img.src = darkSvg;
       } else {
@@ -6535,8 +6818,8 @@ html[data-theme="dark"] .aps-track-jump:hover {
     });
     var kmImg = document.getElementById('km-img');
     var kmLink = document.getElementById('km-full-link');
-    var svgDark = isDoc0 ? (assetPref + 'kaart_migratie_doc0_dark.svg?v=3') : (assetPref + 'kaart_eu_dark.svg?v=3');
-    var svgLight = isDoc0 ? (assetPref + 'kaart_migratie_doc0_light.svg?v=3') : (assetPref + 'kaart_eu_light.svg?v=3');
+    var svgDark = isDoc0 ? (assetPref + 'kaart_migratie_doc0_dark.svg?v=4') : (assetPref + 'kaart_eu_dark.svg?v=4');
+    var svgLight = isDoc0 ? (assetPref + 'kaart_migratie_doc0_light.svg?v=4') : (assetPref + 'kaart_eu_light.svg?v=4');
     if (kmImg) {
       kmImg.src = (mode === 'dark') ? svgDark : svgLight;
     }
@@ -6606,7 +6889,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 7 november 2026, 11:45<br/>
+  Auteur: Eric Messa · Versie bijgewerkt: 8 november 2026, 17:50<br/>
 <span style="font-size: 9.5pt; color: #888;">Formatting and structuring in co-creation with an AI reading model to bridge a visual impairment — all facts are based on primary source documents.</span></p>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-search-btn notranslate" onclick="openSearchModal()" title="Search entire audit" translate="no" type="button">🔍 Search audit</button>
