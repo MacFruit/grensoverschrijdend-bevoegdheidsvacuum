@@ -39,17 +39,31 @@ h1 { font-size: 32pt; color: #1a3c6e; margin: 0 0 6pt; letter-spacing: -0.5pt; t
 .auteur { font-size: 10.5pt; color: #6b7280; margin: 0 0 26pt; font-style: italic; text-align: center; }
 
 /* Kaart en Theme Map */
-.root-kaart { margin: 0 0 20pt; }
-.theme-map { display: block; width: 100%; }
+.root-kaart {
+    margin: 0 0 20pt;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.khl-map-wrap {
+    position: relative !important;
+    cursor: zoom-in !important;
+    display: block;
+    width: 100%;
+}
+.theme-map { display: block; width: 100%; margin: 0 !important; }
 .theme-map img, .root-kaart img {
     display: block; width: 100%; height: auto;
-    border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border-radius: 8px 8px 0 0 !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     border: 1px solid transparent;
+    border-bottom: none !important;
     transition: box-shadow .2s, border-color .2s;
 }
 html[data-theme="dark"] .theme-map img,
 html[data-theme="dark"] .root-kaart img {
     border: 1px solid #3a3a3a;
+    border-bottom: none !important;
     box-shadow: 0 4px 20px rgba(0,0,0,.6);
     content: url("assets/kaart_eu_dark.svg?v=4");
     filter: none !important;
@@ -57,9 +71,253 @@ html[data-theme="dark"] .root-kaart img {
 html[data-theme="light"] .theme-map img,
 html[data-theme="light"] .root-kaart img {
     border: 1px solid #e2ddd2;
+    border-bottom: none !important;
     box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     content: url("assets/kaart_eu_light.svg?v=4");
     filter: none !important;
+}
+
+/* Zoom Badge overlay op kaart */
+.km-zoom-badge {
+    position: absolute;
+    bottom: 12px;
+    right: 14px;
+    background: rgba(15, 23, 42, 0.78);
+    color: #f8fafc;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 8.5pt;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    pointer-events: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: background 0.15s, transform 0.15s;
+    backdrop-filter: blur(4px);
+}
+.khl-map-wrap:hover .km-zoom-badge {
+    background: rgba(15, 23, 42, 0.92);
+    transform: scale(1.03);
+}
+
+/* === GESTRUCTUREERDE HTML-LEGENDA ONDER DE KAART (CONFORM DOCUMENT 0) === */
+.kaart-html-legenda {
+    cursor: default !important;
+    background: #ffffff;
+    border: 1px solid #dcd6ca;
+    border-top: 2px solid #1a3c6e;
+    border-radius: 0 0 8px 8px;
+    padding: 14px 18px 16px 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    font-family: Aptos, Calibri, sans-serif;
+    color: #222222;
+    text-align: left;
+    line-height: 1.45;
+    user-select: text;
+    box-sizing: border-box;
+}
+.khl-header {
+    border-bottom: 1px solid #e6e1d6;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+}
+.khl-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+.khl-title {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #1a3c6e;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+.khl-zoom-btn {
+    background: #eef3fb;
+    color: #1a3c6e;
+    border: 1px solid #c2d1ed;
+    border-radius: 16px;
+    padding: 4px 12px;
+    font-size: 9pt;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+}
+.khl-zoom-btn:hover {
+    background: #1a3c6e;
+    color: #ffffff;
+    border-color: #1a3c6e;
+}
+.khl-symbol-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    font-size: 9.2pt;
+    color: #444444;
+    background: #f8f6f1;
+    padding: 7px 12px;
+    border-radius: 6px;
+    border: 1px solid #e6e1d6;
+}
+.khl-sym {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+}
+.khl-line {
+    display: inline-block;
+    width: 22px;
+    height: 0;
+    vertical-align: middle;
+}
+.khl-line-border { border-top: 3px solid #dc2626; }
+.khl-line-dotted { border-top: 2.5px dotted #d95f5f; }
+.khl-dot-city {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #1e293b;
+    border: 1.5px solid #ffffff;
+    box-shadow: 0 0 0 1px #94a3b8;
+}
+.khl-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 24px;
+}
+.khl-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.khl-col-title {
+    font-size: 9.2pt;
+    font-weight: 700;
+    color: #1a3c6e;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding-bottom: 4px;
+    border-bottom: 1.5px solid #e2ddd2;
+    margin-bottom: 2px;
+}
+.khl-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 9.8pt;
+    line-height: 1.42;
+    color: #2b2b2b;
+}
+.khl-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 4px;
+    border-radius: 50%;
+    color: #ffffff !important;
+    font-size: 9pt;
+    font-weight: 700;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.28);
+    border: 1.5px solid #ffffff;
+    box-sizing: border-box;
+}
+
+/* Kleurenpalet A t/m J (Light mode) */
+.khl-b-a { background: #dc2626; }
+.khl-b-b { background: #0284c7; }
+.khl-b-c { background: #7c3aed; }
+.khl-b-d { background: #d97706; }
+.khl-b-e { background: #059669; }
+.khl-b-f { background: #0891b2; }
+.khl-b-g { background: #4f46e5; }
+.khl-b-h { background: #16a34a; }
+.khl-b-i { background: #ea580c; }
+.khl-b-j { background: #c026d3; }
+
+.khl-text { flex: 1; }
+.khl-text strong { color: #111827; }
+.khl-footer-note {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px dashed #dcd6ca;
+    font-size: 9.2pt;
+    color: #555555;
+}
+
+/* Dark Mode voor .kaart-html-legenda op index.html */
+html[data-theme="dark"] .kaart-html-legenda {
+    background: #181c24 !important;
+    border-color: #2e3646 !important;
+    border-top: 2px solid #4a6fa5 !important;
+    color: #dce3ec !important;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.55) !important;
+}
+html[data-theme="dark"] .khl-header { border-bottom-color: #2b3240 !important; }
+html[data-theme="dark"] .khl-title { color: #7fb3ff !important; }
+html[data-theme="dark"] .khl-zoom-btn {
+    background: #232b38 !important;
+    color: #7fb3ff !important;
+    border-color: #3b485e !important;
+}
+html[data-theme="dark"] .khl-zoom-btn:hover {
+    background: #4a6fa5 !important;
+    color: #ffffff !important;
+    border-color: #7fb3ff !important;
+}
+html[data-theme="dark"] .khl-symbol-bar {
+    background: #12161d !important;
+    border-color: #28303d !important;
+    color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .khl-line-border { border-top-color: #ff5252 !important; }
+html[data-theme="dark"] .khl-line-dotted { border-top-color: #e06c6c !important; }
+html[data-theme="dark"] .khl-dot-city {
+    background: #f8fafc !important;
+    border-color: #0f172a !important;
+}
+html[data-theme="dark"] .khl-col-title {
+    color: #7fb3ff !important;
+    border-bottom-color: #2b3240 !important;
+}
+html[data-theme="dark"] .khl-item { color: #cbd5e1 !important; }
+html[data-theme="dark"] .khl-text strong { color: #f8fafc !important; }
+html[data-theme="dark"] .khl-badge { border-color: rgba(255, 255, 255, 0.85) !important; }
+
+/* Kleurenpalet A t/m J (Dark mode) */
+html[data-theme="dark"] .khl-b-a { background: #ef4444 !important; }
+html[data-theme="dark"] .khl-b-b { background: #38bdf8 !important; }
+html[data-theme="dark"] .khl-b-c { background: #a855f7 !important; }
+html[data-theme="dark"] .khl-b-d { background: #fbbf24 !important; }
+html[data-theme="dark"] .khl-b-e { background: #34d399 !important; }
+html[data-theme="dark"] .khl-b-f { background: #22d3ee !important; }
+html[data-theme="dark"] .khl-b-g { background: #818cf8 !important; }
+html[data-theme="dark"] .khl-b-h { background: #4ade80 !important; }
+html[data-theme="dark"] .khl-b-i { background: #fb923c !important; }
+html[data-theme="dark"] .khl-b-j { background: #e879f9 !important; }
+html[data-theme="dark"] .khl-footer-note {
+    border-top-color: #2b3240 !important;
+    color: #94a3b8 !important;
+}
+
+@media (max-width: 760px) {
+    .kaart-html-legenda { padding: 12px 14px; }
+    .khl-grid { grid-template-columns: 1fr; gap: 12px; }
+    .khl-symbol-bar { gap: 6px 12px; font-size: 8.8pt; }
+    .khl-item { font-size: 9.5pt; }
 }
 
 /* Intro kolommen */
@@ -1474,7 +1732,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <div class="spectrum"><span style="background:#8b1e1e"></span><span style="background:#7a3e9d"></span><span style="background:#1a3c6e"></span><span style="background:#4a3b6b"></span><span style="background:#2e7d32"></span></div>
 <h1><span class="notranslate" translate="no">GRENSARBEID.ORG</span> — Systeem-Audit</h1>
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen</p>
-<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 8 november 2026, 23:02</p><div class="rechten-banner" id="rechten-banner">
+<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 9 november 2026, 08:06</p><div class="rechten-banner" id="rechten-banner">
 <style>
   .rechten-banner { max-width: 900px; margin: 24px auto 32px; padding: 0 20px;
                     font-family: Aptos, Calibri, sans-serif; }
@@ -1552,7 +1810,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <a class="rb-slide rb-actief" data-index="0" href="nl/document-e.html#recht-cmziekte" style="border-left-color:#c62828">
 <div class="rb-kop">
 <span class="rb-status" style="background:#c62828">Vastgelopen</span>
-<span class="rb-datum">bijgewerkt 08-11-2026</span>
+<span class="rb-datum">bijgewerkt 09-11-2026</span>
 </div>
 <div class="rb-naam">Ziekte-uitkering / Invaliditeit</div>
 <div class="rb-kort">Tuchtklacht CM-arts loopt</div>
@@ -1561,7 +1819,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <a class="rb-slide" data-index="1" href="nl/document-e.html#recht-maximumfactuur" style="border-left-color:#2e7d32">
 <div class="rb-kop">
 <span class="rb-status" style="background:#2e7d32">Actief</span>
-<span class="rb-datum">bijgewerkt 08-11-2026</span>
+<span class="rb-datum">bijgewerkt 09-11-2026</span>
 </div>
 <div class="rb-naam">Maximumfactuur</div>
 <div class="rb-kort">Toegekend voor 2025 (€ 238,15 teruggestort)</div>
@@ -1570,7 +1828,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <a class="rb-slide" data-index="2" href="nl/document-e.html#recht-verhoogdetegemoetkoming" style="border-left-color:#c62828">
 <div class="rb-kop">
 <span class="rb-status" style="background:#c62828">Vastgelopen</span>
-<span class="rb-datum">bijgewerkt 08-11-2026</span>
+<span class="rb-datum">bijgewerkt 09-11-2026</span>
 </div>
 <div class="rb-naam">Verhoogde Tegemoetkoming</div>
 <div class="rb-kort">Status niet toegekend</div>
@@ -1579,7 +1837,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <a class="rb-slide" data-index="3" href="nl/document-e.html#recht-verhoogdemaximumfactuur" style="border-left-color:#c62828">
 <div class="rb-kop">
 <span class="rb-status" style="background:#c62828">Vastgelopen</span>
-<span class="rb-datum">bijgewerkt 08-11-2026</span>
+<span class="rb-datum">bijgewerkt 09-11-2026</span>
 </div>
 <div class="rb-naam">Verhoogde Maximumfactuur</div>
 <div class="rb-kort">Wacht op VT-status</div>
@@ -1588,7 +1846,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <a class="rb-slide" data-index="4" href="nl/document-e.html#recht-inkomensvervangendetegemoetkoming" style="border-left-color:#c62828">
 <div class="rb-kop">
 <span class="rb-status" style="background:#c62828">Vastgelopen</span>
-<span class="rb-datum">bijgewerkt 08-11-2026</span>
+<span class="rb-datum">bijgewerkt 09-11-2026</span>
 </div>
 <div class="rb-naam">Inkomensvervangende Tegemoetkoming</div>
 <div class="rb-kort">Medisch erkend, afgewezen op adres</div>
@@ -1597,7 +1855,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <a class="rb-slide" data-index="5" href="nl/document-e.html#recht-groeipakket" style="border-left-color:#2e7d32">
 <div class="rb-kop">
 <span class="rb-status" style="background:#2e7d32">Actief</span>
-<span class="rb-datum">bijgewerkt 08-11-2026</span>
+<span class="rb-datum">bijgewerkt 09-11-2026</span>
 </div>
 <div class="rb-naam">Groeipakket</div>
 <div class="rb-kort">Basisbedrag loopt, sociale toeslag niet</div>
@@ -1606,7 +1864,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <a class="rb-slide" data-index="6" href="nl/document-e.html#recht-socialetoeslaggroeipakket" style="border-left-color:#c62828">
 <div class="rb-kop">
 <span class="rb-status" style="background:#c62828">Vastgelopen</span>
-<span class="rb-datum">bijgewerkt 08-11-2026</span>
+<span class="rb-datum">bijgewerkt 09-11-2026</span>
 </div>
 <div class="rb-naam">Sociale Toeslag Groeipakket</div>
 <div class="rb-kort">Wacht op herziening KSZ 2028</div>
@@ -1615,7 +1873,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <a class="rb-slide" data-index="7" href="nl/document-e.html#recht-belastingvrijesom" style="border-left-color:#e65100">
 <div class="rb-kop">
 <span class="rb-status" style="background:#e65100">Aangevraagd</span>
-<span class="rb-datum">bijgewerkt 08-11-2026</span>
+<span class="rb-datum">bijgewerkt 09-11-2026</span>
 </div>
 <div class="rb-naam">Verhoogde Belastingvrije Som</div>
 <div class="rb-kort">Aangifte ingediend 25-09-2026</div>
@@ -1624,7 +1882,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <a class="rb-slide" data-index="8" href="nl/document-e.html#recht-zorgtoeslag" style="border-left-color:#c62828">
 <div class="rb-kop">
 <span class="rb-status" style="background:#c62828">Vastgelopen</span>
-<span class="rb-datum">bijgewerkt 08-11-2026</span>
+<span class="rb-datum">bijgewerkt 09-11-2026</span>
 </div>
 <div class="rb-naam">Zorgtoeslag</div>
 <div class="rb-kort">Bezwaar loopt — € 0,00 uitgekeerd</div>
@@ -1633,7 +1891,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <a class="rb-slide" data-index="9" href="nl/document-e.html#recht-aftrekzorgkosten" style="border-left-color:#e65100">
 <div class="rb-kop">
 <span class="rb-status" style="background:#e65100">Lopend</span>
-<span class="rb-datum">bijgewerkt 08-11-2026</span>
+<span class="rb-datum">bijgewerkt 09-11-2026</span>
 </div>
 <div class="rb-naam">Aftrek Zorgkosten</div>
 <div class="rb-kort">Aangifte ingediend</div>
@@ -1642,7 +1900,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <a class="rb-slide" data-index="10" href="nl/document-e.html#recht-wia" style="border-left-color:#c62828">
 <div class="rb-kop">
 <span class="rb-status" style="background:#c62828">Vastgelopen</span>
-<span class="rb-datum">bijgewerkt 08-11-2026</span>
+<span class="rb-datum">bijgewerkt 09-11-2026</span>
 </div>
 <div class="rb-naam">WIA-uitkering</div>
 <div class="rb-kort">Herzieningsverzoek loopt</div>
@@ -1651,7 +1909,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <a class="rb-slide" data-index="11" href="nl/document-e.html#recht-wajong" style="border-left-color:#e65100">
 <div class="rb-kop">
 <span class="rb-status" style="background:#e65100">Aangevraagd</span>
-<span class="rb-datum">bijgewerkt 08-11-2026</span>
+<span class="rb-datum">bijgewerkt 09-11-2026</span>
 </div>
 <div class="rb-naam">Wajong op latere leeftijd</div>
 <div class="rb-kort">Dossiers opvragen bij behandelaars</div>
@@ -1660,7 +1918,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <a class="rb-slide" data-index="12" href="nl/document-e.html#recht-aow" style="border-left-color:#2e7d32">
 <div class="rb-kop">
 <span class="rb-status" style="background:#2e7d32">Actief</span>
-<span class="rb-datum">bijgewerkt 08-11-2026</span>
+<span class="rb-datum">bijgewerkt 09-11-2026</span>
 </div>
 <div class="rb-naam">AOW-opbouw</div>
 <div class="rb-kort">Opbouw loopt automatisch</div>
@@ -1669,7 +1927,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <a class="rb-slide" data-index="13" href="nl/document-e.html#recht-bijzonderebijstand" style="border-left-color:#c62828">
 <div class="rb-kop">
 <span class="rb-status" style="background:#c62828">Vastgelopen</span>
-<span class="rb-datum">bijgewerkt 08-11-2026</span>
+<span class="rb-datum">bijgewerkt 09-11-2026</span>
 </div>
 <div class="rb-naam">Bijzondere Bijstand</div>
 <div class="rb-kort">Beslissing verdaagd tot eind oktober</div>
@@ -1678,7 +1936,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <a class="rb-slide" data-index="14" href="nl/document-e.html#recht-kindgebondenbudget" style="border-left-color:#2e7d32">
 <div class="rb-kop">
 <span class="rb-status" style="background:#2e7d32">Actief</span>
-<span class="rb-datum">bijgewerkt 08-11-2026</span>
+<span class="rb-datum">bijgewerkt 09-11-2026</span>
 </div>
 <div class="rb-naam">Kindgebonden Budget</div>
 <div class="rb-kort">Voorlopig toegekend april 2026</div>
@@ -1687,7 +1945,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <a class="rb-slide" data-index="15" href="nl/document-e.html#recht-huurtoeslag" style="border-left-color:#2e7d32">
 <div class="rb-kop">
 <span class="rb-status" style="background:#2e7d32">Actief</span>
-<span class="rb-datum">bijgewerkt 08-11-2026</span>
+<span class="rb-datum">bijgewerkt 09-11-2026</span>
 </div>
 <div class="rb-naam">Huurtoeslag</div>
 <div class="rb-kort">Voorlopig toegekend, uitstel verkregen</div>
@@ -1741,34 +1999,36 @@ html[data-theme="dark"] select.pub-lang-select option {
 <div class="kaart-html-legenda index-legenda" onclick="event.stopPropagation()">
 <div class="khl-header">
 <div class="khl-title-row">
-<span class="khl-title">🗺️ KNELPUNT GRENSREGIO'S IN DE EUROPESE UNIE (1 – 10)</span>
+<span class="khl-title">🗺️ LEGENDA — GRENSKNELPUNTEN IN DE EUROPESE UNIE (A – J)</span>
 <button class="khl-zoom-btn" onclick="openKaartModal()" type="button">🔍 Vergroot kaart</button>
 </div>
 <div class="khl-symbol-bar">
 <span class="khl-sym"><span class="khl-line khl-line-border"></span> Rijksgrens NL / BE (Inzetkaart)</span>
 <span class="khl-sym"><span class="khl-line khl-line-dotted"></span> Europese binnengrenzen</span>
 <span class="khl-sym"><span class="khl-dot-city"></span> Referentiesteden</span>
-<span class="khl-sym"><span class="khl-badge khl-b-red" style="min-width:18px;height:18px;font-size:7.5pt;">1</span> Geselecteerde EU-grensknelpunten (1–10)</span>
+<span class="khl-sym"><span class="khl-badge khl-b-a" style="min-width:18px;height:18px;font-size:7.5pt;">A</span> Geselecteerde EU-grensknelpunten (A–J)</span>
 </div>
 </div>
 <div class="khl-grid">
 <div class="khl-col">
-<div class="khl-item"><span class="khl-badge khl-b-red">1</span><div class="khl-text"><strong>Zeeuws-Vlaanderen / Vlaanderen (NL/BE):</strong> <em>Het laboratorium van deze Systeem-Audit</em> (zie uitvergrote inzetkaart rechts).</div></div>
-<div class="khl-item"><span class="khl-badge khl-b-red">2</span><div class="khl-text"><strong>Øresund / Sontregio (DK/SE):</strong> Kopenhagen – Malmö grensarbeidszone.</div></div>
-<div class="khl-item"><span class="khl-badge khl-b-red">3</span><div class="khl-text"><strong>Euregio Maas-Rijn (NL/BE/DE):</strong> Drielandenpunt Maastricht – Luik – Aken.</div></div>
-<div class="khl-item"><span class="khl-badge khl-b-red">4</span><div class="khl-text"><strong>SaarLorLux / Grootregio (LU/FR/DE/BE):</strong> Intensieve dagelijkse grenspendel rond Luxemburg.</div></div>
-<div class="khl-item"><span class="khl-badge khl-b-red">5</span><div class="khl-text"><strong>Bovenrijn / Oberrhein (FR/DE/CH):</strong> Elzas – Baden-Württemberg – Bazel.</div></div>
+<div class="khl-col-title">PANEEL 1 — WEST- EN NOORD-EUROPA (A – E)</div>
+<div class="khl-item"><span class="khl-badge khl-b-a">A</span><div class="khl-text"><strong>Zeeuws-Vlaanderen / Vlaanderen (NL/BE):</strong> <em>Het laboratorium van deze Systeem-Audit</em> (zie uitvergrote inzetkaart rechts).</div></div>
+<div class="khl-item"><span class="khl-badge khl-b-b">B</span><div class="khl-text"><strong>Øresund / Sontregio (DK/SE):</strong> Kopenhagen – Malmö grensarbeidszone.</div></div>
+<div class="khl-item"><span class="khl-badge khl-b-c">C</span><div class="khl-text"><strong>Euregio Maas-Rijn (NL/BE/DE):</strong> Drielandenpunt Maastricht – Luik – Aken.</div></div>
+<div class="khl-item"><span class="khl-badge khl-b-d">D</span><div class="khl-text"><strong>SaarLorLux / Grootregio (LU/FR/DE/BE):</strong> Intensieve dagelijkse grenspendel rond Luxemburg.</div></div>
+<div class="khl-item"><span class="khl-badge khl-b-e">E</span><div class="khl-text"><strong>Bovenrijn / Oberrhein (FR/DE/CH):</strong> Elzas – Baden-Württemberg – Bazel.</div></div>
 </div>
 <div class="khl-col">
-<div class="khl-item"><span class="khl-badge khl-b-red">6</span><div class="khl-text"><strong>Pools-Duitse grensregio (PL/DE):</strong> Oder-Neisse grenszone (Szczecin – Frankfurt/Oder).</div></div>
-<div class="khl-item"><span class="khl-badge khl-b-red">7</span><div class="khl-text"><strong>Centrope (AT/SK/CZ/HU):</strong> Vierlandenregio Wenen – Bratislava – Brno – Győr.</div></div>
-<div class="khl-item"><span class="khl-badge khl-b-red">8</span><div class="khl-text"><strong>Ierland / Noord-Ierland (IE/UK):</strong> Buitengrens EU/VK na Brexit op het Ierse eiland.</div></div>
-<div class="khl-item"><span class="khl-badge khl-b-red">9</span><div class="khl-text"><strong>Frans-Italiaanse grens / Ventimiglia (FR/IT):</strong> Maritieme Alpen &amp; Ligurische kustcorridor.</div></div>
-<div class="khl-item"><span class="khl-badge khl-b-red">10</span><div class="khl-text"><strong>Spaans-Franse grens / Baskenland (ES/FR):</strong> Eurocity Bayonne – San Sebastián.</div></div>
+<div class="khl-col-title">PANEEL 2 — CENTRAAL-, OOST- EN ZUID-EUROPA (F – J)</div>
+<div class="khl-item"><span class="khl-badge khl-b-f">F</span><div class="khl-text"><strong>Pools-Duitse grensregio (PL/DE):</strong> Oder-Neisse grenszone (Szczecin – Frankfurt/Oder).</div></div>
+<div class="khl-item"><span class="khl-badge khl-b-g">G</span><div class="khl-text"><strong>Centrope (AT/SK/CZ/HU):</strong> Vierlandenregio Wenen – Bratislava – Brno – Győr.</div></div>
+<div class="khl-item"><span class="khl-badge khl-b-h">H</span><div class="khl-text"><strong>Ierland / Noord-Ierland (IE/UK):</strong> Buitengrens EU/VK na Brexit op het Ierse eiland.</div></div>
+<div class="khl-item"><span class="khl-badge khl-b-i">I</span><div class="khl-text"><strong>Frans-Italiaanse grens / Ventimiglia (FR/IT):</strong> Maritieme Alpen &amp; Ligurische kustcorridor.</div></div>
+<div class="khl-item"><span class="khl-badge khl-b-j">J</span><div class="khl-text"><strong>Spaans-Franse grens / Baskenland (ES/FR):</strong> Eurocity Bayonne – San Sebastián.</div></div>
 </div>
 </div>
 <div class="khl-footer-note">
-        📍 <strong>Inzetkaart (rechts):</strong> Gedetailleerde uitsnede van het grensvacuüm tussen <strong>Zeeuws-Vlaanderen (NL — Sluis, Terneuzen, Hulst)</strong> en <strong>Vlaanderen (BE — Gent, Waasland, Antwerpen)</strong>.
+        📍 <strong>Inzetkaart (rechts):</strong> Gedetailleerde uitsnede van het grensvacuüm tussen <strong>Zeeuws-Vlaanderen (NL — Sluis, Terneuzen, Hulst)</strong> en <strong>Vlaanderen (BE — Gent, Waasland, Antwerpen)</strong> — <em>Knelpunt A</em>.
       </div>
 </div>
 </div>
@@ -2415,7 +2675,7 @@ html[data-theme="dark"] select.pub-lang-select option {
 <div class="km-legenda-header">
 <div class="km-lh-title">
 <span class="km-lh-dot"></span>
-<strong>KNELPUNT GRENSREGIO'S (1–10)</strong>
+<strong>GRENSKNELPUNTEN (A–J)</strong>
 <span class="km-lh-desc">— Empirisch gedocumenteerde grensknelpunten in het Europese binnengrenzennetwerk</span>
 </div>
 <button class="km-leg-toggle" onclick="kmToggleLegenda(this)" title="Toon/verberg" type="button">▲ Legenda</button>
@@ -2424,18 +2684,18 @@ html[data-theme="dark"] select.pub-lang-select option {
 <div id="km-leg-eu">
 <div class="km-leg-grid">
 <div class="km-leg-col">
-<div class="km-leg-item"><span class="km-pill">1</span> <strong>Zeeuws-Vlaanderen</strong> <span class="km-country">(NL/BE)</span> — <em>Het laboratorium van de Systeem-Audit</em></div>
-<div class="km-leg-item"><span class="km-pill">2</span> <strong>Øresund / Sontregio</strong> <span class="km-country">(DK/SE)</span></div>
-<div class="km-leg-item"><span class="km-pill">3</span> <strong>Euregio Maas-Rijn</strong> <span class="km-country">(NL/BE/DE)</span></div>
-<div class="km-leg-item"><span class="km-pill">4</span> <strong>SaarLorLux / Grootregio</strong> <span class="km-country">(LU/FR/DE/BE)</span></div>
-<div class="km-leg-item"><span class="km-pill">5</span> <strong>Bovenrijn / Oberrhein</strong> <span class="km-country">(FR/DE/CH)</span></div>
+<div class="km-leg-item"><span class="km-pill" style="background:#dc2626;">A</span> <strong>Zeeuws-Vlaanderen</strong> <span class="km-country">(NL/BE)</span> — <em>Het laboratorium van de Systeem-Audit</em> (zie inzetkaart)</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#0284c7;">B</span> <strong>Øresund / Sontregio</strong> <span class="km-country">(DK/SE)</span> — Kopenhagen – Malmö grensarbeidszone</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#7c3aed;">C</span> <strong>Euregio Maas-Rijn</strong> <span class="km-country">(NL/BE/DE)</span> — Drielandenpunt Maastricht – Luik – Aken</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#d97706;">D</span> <strong>SaarLorLux / Grootregio</strong> <span class="km-country">(LU/FR/DE/BE)</span> — Dagelijkse grenspendel rond Luxemburg</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#059669;">E</span> <strong>Bovenrijn / Oberrhein</strong> <span class="km-country">(FR/DE/CH)</span> — Elzas – Baden-Württemberg – Bazel</div>
 </div>
 <div class="km-leg-col">
-<div class="km-leg-item"><span class="km-pill">6</span> <strong>Pools-Duitse grens</strong> <span class="km-country">(PL/DE)</span></div>
-<div class="km-leg-item"><span class="km-pill">7</span> <strong>Centrope</strong> <span class="km-country">(AT/SK/CZ/HU)</span></div>
-<div class="km-leg-item"><span class="km-pill">8</span> <strong>Ierland / Noord-Ierland</strong> <span class="km-country">(IE/UK)</span></div>
-<div class="km-leg-item"><span class="km-pill">9</span> <strong>Frans-Italiaanse grens / Ventimiglia</strong> <span class="km-country">(FR/IT)</span></div>
-<div class="km-leg-item"><span class="km-pill">10</span> <strong>Spaans-Franse grens / Baskenland</strong> <span class="km-country">(ES/FR)</span></div>
+<div class="km-leg-item"><span class="km-pill" style="background:#0891b2;">F</span> <strong>Pools-Duitse grens</strong> <span class="km-country">(PL/DE)</span> — Oder-Neisse grenszone</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#4f46e5;">G</span> <strong>Centrope</strong> <span class="km-country">(AT/SK/CZ/HU)</span> — Wenen – Bratislava – Brno – Győr</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#16a34a;">H</span> <strong>Ierland / Noord-Ierland</strong> <span class="km-country">(IE/UK)</span> — Buitengrens EU/VK na Brexit</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#ea580c;">I</span> <strong>Frans-Italiaanse grens / Ventimiglia</strong> <span class="km-country">(FR/IT)</span> — Maritieme Alpen &amp; Ligurië</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#c026d3;">J</span> <strong>Spaans-Franse grens / Baskenland</strong> <span class="km-country">(ES/FR)</span> — Eurocity Bayonne – San Sebastián</div>
 </div>
 </div>
 <div class="km-leg-inzet-note">📍 <strong>Inzetkaart (rechtsboven):</strong> Gedetailleerde uitsnede van het grensvacuüm tussen Zeeuws-Vlaanderen (NL) en het Waasland / Gent (BE) — het laboratorium van de Systeem-Audit.</div>
@@ -2573,7 +2833,7 @@ html[data-theme="dark"] select.pub-lang-select option {
       if (legBar) legBar.style.display = 'block';
       if (legEu) legEu.style.display = 'block';
       if (legDoc0) legDoc0.style.display = 'none';
-      if (legTitleStrong) legTitleStrong.textContent = "KNELPUNT GRENSREGIO'S (1–10)";
+      if (legTitleStrong) legTitleStrong.textContent = "GRENSKNELPUNTEN (A–J)";
       if (legDescSpan) legDescSpan.textContent = "— Empirisch gedocumenteerde grensknelpunten in het Europese binnengrenzennetwerk";
     }
 
