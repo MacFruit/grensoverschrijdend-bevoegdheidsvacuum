@@ -1449,10 +1449,10 @@ html[data-theme="light"] .kaart-migratie img {
 
 /* Root index.html — EU Knelpuntenkaart (Light & Dark vector) */
 html[data-theme="dark"] .index-theme-map img {
-    content: url("assets/kaart_eu_dark.svg?v=4");
+    content: url("assets/kaart_eu_dark.svg?v=5");
 }
 html[data-theme="light"] .index-theme-map img {
-    content: url("assets/kaart_eu_light.svg?v=4");
+    content: url("assets/kaart_eu_light.svg?v=5");
 }
 
 html[data-theme="dark"] .pub-ab-banner {
@@ -2817,7 +2817,7 @@ html[data-theme="dark"] .doc-lijst li:hover {
 
 <h1><span class="notranslate" translate="no">GRENSARBEID.ORG</span> — System-Audit</h1>
 <p class="ondertitel">Cross-border jurisdictional vacuum in social security — an open-source X-ray of two national systems</p>
-<p class="auteur">Author: Eric Messa &bull; Version updated: 9 november 2026, 10:05</p>
+<p class="auteur">Author: Eric Messa &bull; Version updated: 9 november 2026, 10:31</p>
 <p style="font-size: 9.5pt; color: #888; margin-top: -12pt; margin-bottom: 20pt;">Formatting and structuring in co-creation with an AI reading model to bridge a visual impairment — all facts are based on primary source documents.</p>
 
 <div class="pub-ab-banner" style="margin: 16pt 0 24pt 0;">
@@ -3398,8 +3398,8 @@ html[data-theme="dark"] .doc-lijst li:hover {
       var source = m.querySelector('source');
       var img = m.querySelector('img');
       if(!img) return;
-      var darkSvg = source ? source.getAttribute('srcset') : (img.getAttribute('data-dark-src') || (assetPref + (isDoc0 ? 'kaart_migratie_doc0_dark.svg?v=4' : 'kaart_eu_dark.svg?v=4')));
-      var lightSvg = img.getAttribute('data-light-src') || (assetPref + (isDoc0 ? 'kaart_migratie_doc0_light.svg?v=4' : 'kaart_eu_light.svg?v=4'));
+      var darkSvg = source ? source.getAttribute('srcset') : (img.getAttribute('data-dark-src') || (assetPref + (isDoc0 ? 'kaart_migratie_doc0_dark.svg?v=4' : 'kaart_eu_dark.svg?v=5')));
+      var lightSvg = img.getAttribute('data-light-src') || (assetPref + (isDoc0 ? 'kaart_migratie_doc0_light.svg?v=4' : 'kaart_eu_light.svg?v=5'));
       if(mode === 'dark'){
         img.src = darkSvg;
       } else {
@@ -3408,8 +3408,8 @@ html[data-theme="dark"] .doc-lijst li:hover {
     });
     var kmImg = document.getElementById('km-img');
     var kmLink = document.getElementById('km-full-link');
-    var svgDark = isDoc0 ? (assetPref + 'kaart_migratie_doc0_dark.svg?v=4') : (assetPref + 'kaart_eu_dark.svg?v=4');
-    var svgLight = isDoc0 ? (assetPref + 'kaart_migratie_doc0_light.svg?v=4') : (assetPref + 'kaart_eu_light.svg?v=4');
+    var svgDark = isDoc0 ? (assetPref + 'kaart_migratie_doc0_dark.svg?v=4') : (assetPref + 'kaart_eu_dark.svg?v=5');
+    var svgLight = isDoc0 ? (assetPref + 'kaart_migratie_doc0_light.svg?v=4') : (assetPref + 'kaart_eu_light.svg?v=5');
     if (kmImg) {
       kmImg.src = (mode === 'dark') ? svgDark : svgLight;
     }

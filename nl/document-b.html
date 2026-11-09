@@ -2437,10 +2437,10 @@ html[data-theme="light"] .kaart-migratie img {
 
 /* Root index.html — EU Knelpuntenkaart (Light & Dark vector) */
 html[data-theme="dark"] .index-theme-map img {
-    content: url("assets/kaart_eu_dark.svg?v=4");
+    content: url("assets/kaart_eu_dark.svg?v=5");
 }
 html[data-theme="light"] .index-theme-map img {
-    content: url("assets/kaart_eu_light.svg?v=4");
+    content: url("assets/kaart_eu_light.svg?v=5");
 }
 
 html[data-theme="dark"] .pub-ab-banner {
@@ -4771,7 +4771,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</p>
 <p class="documentaanduiding">Document B — De data-matrix</p>
 <p class="auteur">Auteur: Eric Messa</p>
-<p class="meta-lijn">Versie bijgewerkt: 9 november 2026, 10:05</p>
+<p class="meta-lijn">Versie bijgewerkt: 9 november 2026, 10:31</p>
 </div>
 <div class="pub-toc" id="pub-toc-top"><h2>Inhoudsopgave</h2><div class="toc-controls-bar">
 <span class="toc-hint">Klik op een hoofdstuk om de organisaties/secties uit of in te klappen:</span>
@@ -6531,7 +6531,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 <button aria-label="Zoom uit (-)" class="km-btn km-zoom-out" onclick="kmZoomStep(-0.25)" title="Zoom uit (-)" type="button">🔍−</button>
 <button aria-label="Herstel zoom (100%)" class="km-btn km-zoom-val" onclick="kmResetZoom()" title="Herstel zoom (100%)" type="button">100%</button>
 <button aria-label="Zoom in (+)" class="km-btn km-zoom-in" onclick="kmZoomStep(0.25)" title="Zoom in (+)" type="button">🔍+</button>
-<a class="km-btn km-full-btn" href="assets/kaart_eu_dark.svg?v=4" id="km-full-link" rel="noopener" target="_blank" title="Open originele vector SVG in nieuw tabblad">SVG ↗</a>
+<a class="km-btn km-full-btn" href="assets/kaart_eu_dark.svg?v=5" id="km-full-link" rel="noopener" target="_blank" title="Open originele vector SVG in nieuw tabblad">SVG ↗</a>
 <button aria-label="Sluiten (ESC)" class="km-close-btn" onclick="sluitKaartModal()" title="Sluiten (ESC)" type="button">×</button>
 </div>
 </div>
@@ -6679,8 +6679,8 @@ html[data-theme="dark"] .aps-track-jump:hover {
     var titleEl = document.getElementById('km-title');
     var subEl = document.querySelector('.km-subtitle');
 
-    var svgDark = isDoc0 ? (assetPref + 'kaart_migratie_doc0_dark.svg?v=4') : (assetPref + 'kaart_eu_dark.svg?v=4');
-    var svgLight = isDoc0 ? (assetPref + 'kaart_migratie_doc0_light.svg?v=4') : (assetPref + 'kaart_eu_light.svg?v=4');
+    var svgDark = isDoc0 ? (assetPref + 'kaart_migratie_doc0_dark.svg?v=4') : (assetPref + 'kaart_eu_dark.svg?v=5');
+    var svgLight = isDoc0 ? (assetPref + 'kaart_migratie_doc0_light.svg?v=4') : (assetPref + 'kaart_eu_light.svg?v=5');
     var svgPath = (theme === 'dark') ? svgDark : svgLight;
 
     if (img) img.src = svgPath;
@@ -6878,8 +6878,8 @@ html[data-theme="dark"] .aps-track-jump:hover {
       var source = m.querySelector('source');
       var img = m.querySelector('img');
       if(!img) return;
-      var darkSvg = source ? source.getAttribute('srcset') : (img.getAttribute('data-dark-src') || (assetPref + (isDoc0 ? 'kaart_migratie_doc0_dark.svg?v=4' : 'kaart_eu_dark.svg?v=4')));
-      var lightSvg = img.getAttribute('data-light-src') || (assetPref + (isDoc0 ? 'kaart_migratie_doc0_light.svg?v=4' : 'kaart_eu_light.svg?v=4'));
+      var darkSvg = source ? source.getAttribute('srcset') : (img.getAttribute('data-dark-src') || (assetPref + (isDoc0 ? 'kaart_migratie_doc0_dark.svg?v=4' : 'kaart_eu_dark.svg?v=5')));
+      var lightSvg = img.getAttribute('data-light-src') || (assetPref + (isDoc0 ? 'kaart_migratie_doc0_light.svg?v=4' : 'kaart_eu_light.svg?v=5'));
       if(mode === 'dark'){
         img.src = darkSvg;
       } else {
@@ -6888,8 +6888,8 @@ html[data-theme="dark"] .aps-track-jump:hover {
     });
     var kmImg = document.getElementById('km-img');
     var kmLink = document.getElementById('km-full-link');
-    var svgDark = isDoc0 ? (assetPref + 'kaart_migratie_doc0_dark.svg?v=4') : (assetPref + 'kaart_eu_dark.svg?v=4');
-    var svgLight = isDoc0 ? (assetPref + 'kaart_migratie_doc0_light.svg?v=4') : (assetPref + 'kaart_eu_light.svg?v=4');
+    var svgDark = isDoc0 ? (assetPref + 'kaart_migratie_doc0_dark.svg?v=4') : (assetPref + 'kaart_eu_dark.svg?v=5');
+    var svgLight = isDoc0 ? (assetPref + 'kaart_migratie_doc0_light.svg?v=4') : (assetPref + 'kaart_eu_light.svg?v=5');
     if (kmImg) {
       kmImg.src = (mode === 'dark') ? svgDark : svgLight;
     }
@@ -6959,7 +6959,7 @@ html[data-theme="dark"] .aps-track-jump:hover {
 </script>
 <footer class="pub-footer notranslate" translate="no">
 <p><strong>Systeem-Audit — Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid</strong><br/>
-  Auteur: Eric Messa · Versie bijgewerkt: 9 november 2026, 10:05<br/>
+  Auteur: Eric Messa · Versie bijgewerkt: 9 november 2026, 10:31<br/>
 <span style="font-size: 9.5pt; color: #888;">Opmaak en structurering in co-creatie met een AI-leesmodel ter overbrugging van een visuele beperking — alle feiten berusten op primaire bronstukken.</span></p>
 <div class="pub-footer-actions" style="margin: 14pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
 <button class="pub-search-btn notranslate" onclick="openSearchModal()" title="Doorzoek het complete dossier" translate="no" type="button">🔍 Doorzoek audit</button>
