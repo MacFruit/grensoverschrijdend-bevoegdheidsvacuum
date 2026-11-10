@@ -1,0 +1,3430 @@
+<!DOCTYPE html>
+
+<html data-auto-lang="nl" data-target-lang="nl" data-theme="dark" lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GRENSARBEID.ORG — Systeem-Audit · Grensoverschrijdend bevoegdheidsvacuüm</title>
+<meta content="Empirische audit van het bevoegdheidsvacuüm tussen België en Nederland. Twee nationale systemen, 62 instanties, 700+ proceshandelingen." name="description"/>
+<link href="https://grensarbeid.org/" rel="canonical"/>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/assets/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/assets/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<meta content="GRENSARBEID.ORG — Systeem-Audit · Grensoverschrijdend bevoegdheidsvacuüm" property="og:title"/>
+<meta content="Empirische audit van het bevoegdheidsvacuüm tussen België en Nederland. Twee nationale systemen, 62 instanties, 700+ proceshandelingen." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://grensarbeid.org/" property="og:url"/>
+<meta content="https://grensarbeid.org/assets/kaart_eu.png" property="og:image"/>
+<script>
+(function(){try{var t=localStorage.getItem('systeem-audit-thema');if(t!=='dark'&&t!=='light'){t='dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();
+</script>
+<style>
+body {
+    font-family: Aptos, Calibri, sans-serif;
+    font-size: 12pt;
+    line-height: 1.6;
+    margin: 0;
+    padding: 30pt;
+    background: #f6f3ec;
+    color: #2a2a2a;
+}
+.container { max-width: 960px; margin: 0 auto; }
+
+.spectrum { height: 4px; display: flex; margin: 0 0 24pt; border-radius: 2px; overflow: hidden; }
+.spectrum span { flex: 1; }
+
+h1 { font-size: 32pt; color: #1a3c6e; margin: 0 0 6pt; letter-spacing: -0.5pt; text-align: center; }
+.ondertitel { font-size: 14pt; color: #4a5560; margin: 0 0 8pt; font-weight: 400; text-align: center; }
+.auteur { font-size: 10.5pt; color: #6b7280; margin: 0 0 26pt; font-style: italic; text-align: center; }
+
+/* Kaart en Theme Map */
+.root-kaart {
+    margin: 0 0 20pt;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.khl-map-wrap {
+    position: relative !important;
+    cursor: zoom-in !important;
+    display: block;
+    width: 100%;
+}
+.theme-map { display: block; width: 100%; margin: 0 !important; }
+.theme-map img, .root-kaart img {
+    display: block; width: 100%; height: auto;
+    border-radius: 8px 8px 0 0 !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border: 1px solid transparent;
+    border-bottom: none !important;
+    transition: box-shadow .2s, border-color .2s;
+}
+html[data-theme="dark"] .theme-map img,
+html[data-theme="dark"] .root-kaart img {
+    border: 1px solid #3a3a3a;
+    border-bottom: none !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,.6);
+    content: url("assets/kaart_eu_dark.svg?v=5");
+    filter: none !important;
+}
+html[data-theme="light"] .theme-map img,
+html[data-theme="light"] .root-kaart img {
+    border: 1px solid #e2ddd2;
+    border-bottom: none !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    content: url("assets/kaart_eu_light.svg?v=5");
+    filter: none !important;
+}
+
+/* Zoom Badge overlay op kaart */
+.km-zoom-badge {
+    position: absolute;
+    bottom: 12px;
+    right: 14px;
+    background: rgba(15, 23, 42, 0.78);
+    color: #f8fafc;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 8.5pt;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    pointer-events: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: background 0.15s, transform 0.15s;
+    backdrop-filter: blur(4px);
+}
+.khl-map-wrap:hover .km-zoom-badge {
+    background: rgba(15, 23, 42, 0.92);
+    transform: scale(1.03);
+}
+
+/* === GESTRUCTUREERDE HTML-LEGENDA ONDER DE KAART (CONFORM DOCUMENT 0) === */
+.kaart-html-legenda {
+    cursor: default !important;
+    background: #ffffff;
+    border: 1px solid #dcd6ca;
+    border-top: 2px solid #1a3c6e;
+    border-radius: 0 0 8px 8px;
+    padding: 14px 18px 16px 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    font-family: Aptos, Calibri, sans-serif;
+    color: #222222;
+    text-align: left;
+    line-height: 1.45;
+    user-select: text;
+    box-sizing: border-box;
+}
+.khl-header {
+    border-bottom: 1px solid #e6e1d6;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+}
+.khl-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+.khl-title {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #1a3c6e;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+.khl-zoom-btn {
+    background: #eef3fb;
+    color: #1a3c6e;
+    border: 1px solid #c2d1ed;
+    border-radius: 16px;
+    padding: 4px 12px;
+    font-size: 9pt;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+}
+.khl-zoom-btn:hover {
+    background: #1a3c6e;
+    color: #ffffff;
+    border-color: #1a3c6e;
+}
+.khl-symbol-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    font-size: 9.2pt;
+    color: #444444;
+    background: #f8f6f1;
+    padding: 7px 12px;
+    border-radius: 6px;
+    border: 1px solid #e6e1d6;
+}
+.khl-sym {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+}
+.khl-line {
+    display: inline-block;
+    width: 22px;
+    height: 0;
+    vertical-align: middle;
+}
+.khl-line-border { border-top: 3px solid #dc2626; }
+.khl-line-dotted { border-top: 2.5px dotted #d95f5f; }
+.khl-dot-city {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #1e293b;
+    border: 1.5px solid #ffffff;
+    box-shadow: 0 0 0 1px #94a3b8;
+}
+.khl-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 24px;
+}
+.khl-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.khl-col-title {
+    font-size: 9.2pt;
+    font-weight: 700;
+    color: #1a3c6e;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding-bottom: 4px;
+    border-bottom: 1.5px solid #e2ddd2;
+    margin-bottom: 2px;
+}
+.khl-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 9.8pt;
+    line-height: 1.42;
+    color: #2b2b2b;
+}
+.khl-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 4px;
+    border-radius: 50%;
+    color: #ffffff !important;
+    font-size: 9pt;
+    font-weight: 700;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.28);
+    border: 1.5px solid #ffffff;
+    box-sizing: border-box;
+}
+
+/* Kleurenpalet A t/m J (Light mode) */
+.khl-b-a { background: #dc2626; }
+.khl-b-b { background: #0284c7; }
+.khl-b-c { background: #7c3aed; }
+.khl-b-d { background: #d97706; }
+.khl-b-e { background: #059669; }
+.khl-b-f { background: #0891b2; }
+.khl-b-g { background: #4f46e5; }
+.khl-b-h { background: #16a34a; }
+.khl-b-i { background: #ea580c; }
+.khl-b-j { background: #c026d3; }
+
+.khl-text { flex: 1; }
+.khl-text strong { color: #111827; }
+.khl-footer-note {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px dashed #dcd6ca;
+    font-size: 9.2pt;
+    color: #555555;
+}
+
+/* Dark Mode voor .kaart-html-legenda op index.html */
+html[data-theme="dark"] .kaart-html-legenda {
+    background: #181c24 !important;
+    border-color: #2e3646 !important;
+    border-top: 2px solid #4a6fa5 !important;
+    color: #dce3ec !important;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.55) !important;
+}
+html[data-theme="dark"] .khl-header { border-bottom-color: #2b3240 !important; }
+html[data-theme="dark"] .khl-title { color: #7fb3ff !important; }
+html[data-theme="dark"] .khl-zoom-btn {
+    background: #232b38 !important;
+    color: #7fb3ff !important;
+    border-color: #3b485e !important;
+}
+html[data-theme="dark"] .khl-zoom-btn:hover {
+    background: #4a6fa5 !important;
+    color: #ffffff !important;
+    border-color: #7fb3ff !important;
+}
+html[data-theme="dark"] .khl-symbol-bar {
+    background: #12161d !important;
+    border-color: #28303d !important;
+    color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .khl-line-border { border-top-color: #ff5252 !important; }
+html[data-theme="dark"] .khl-line-dotted { border-top-color: #e06c6c !important; }
+html[data-theme="dark"] .khl-dot-city {
+    background: #f8fafc !important;
+    border-color: #0f172a !important;
+}
+html[data-theme="dark"] .khl-col-title {
+    color: #7fb3ff !important;
+    border-bottom-color: #2b3240 !important;
+}
+html[data-theme="dark"] .khl-item { color: #cbd5e1 !important; }
+html[data-theme="dark"] .khl-text strong { color: #f8fafc !important; }
+html[data-theme="dark"] .khl-badge { border-color: rgba(255, 255, 255, 0.85) !important; }
+
+/* Kleurenpalet A t/m J (Dark mode) */
+html[data-theme="dark"] .khl-b-a { background: #ef4444 !important; }
+html[data-theme="dark"] .khl-b-b { background: #38bdf8 !important; }
+html[data-theme="dark"] .khl-b-c { background: #a855f7 !important; }
+html[data-theme="dark"] .khl-b-d { background: #fbbf24 !important; }
+html[data-theme="dark"] .khl-b-e { background: #34d399 !important; }
+html[data-theme="dark"] .khl-b-f { background: #22d3ee !important; }
+html[data-theme="dark"] .khl-b-g { background: #818cf8 !important; }
+html[data-theme="dark"] .khl-b-h { background: #4ade80 !important; }
+html[data-theme="dark"] .khl-b-i { background: #fb923c !important; }
+html[data-theme="dark"] .khl-b-j { background: #e879f9 !important; }
+html[data-theme="dark"] .khl-footer-note {
+    border-top-color: #2b3240 !important;
+    color: #94a3b8 !important;
+}
+
+@media (max-width: 760px) {
+    .kaart-html-legenda { padding: 12px 14px; }
+    .khl-grid { grid-template-columns: 1fr; gap: 12px; }
+    .khl-symbol-bar { gap: 6px 12px; font-size: 8.8pt; }
+    .khl-item { font-size: 9.5pt; }
+}
+
+/* Intro kolommen */
+.root-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0 0 24pt; }
+.root-intro-kolom { background: #ffffff; border: 1px solid #e8e4dc; border-radius: 6px; padding: 12px 14px; }
+.root-intro-kop { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; }
+.root-intro-vlag { font-size: 16pt; line-height: 1; }
+.root-intro-taal { font-weight: 700; font-size: 10pt; color: #1a3c6e; text-transform: uppercase; letter-spacing: 0.5px; }
+.root-intro-kolom p { margin: 0; font-size: 10.5pt; line-height: 1.45; color: #333; }
+
+/* KEUZEPANEEL: TWEE HOOFDPOORTEN */
+.keuze-kop {
+    text-align: center; margin: 34pt 0 16pt;
+}
+.keuze-kop h2 {
+    font-size: 20pt; color: #1a3c6e; margin: 0 0 6pt;
+}
+.keuze-kop p {
+    font-size: 11pt; color: #555; margin: 0;
+}
+
+.portaal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20pt;
+    margin: 0 0 34pt;
+}
+.portaal-kaart {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    background: #ffffff;
+    border: 2px solid #e2ddd2;
+    border-radius: 12px;
+    padding: 26pt 22pt;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform .18s, box-shadow .2s, border-color .2s;
+    position: relative;
+    overflow: hidden;
+}
+.portaal-kaart:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+}
+.portaal-nl:hover { border-color: #ff6b00; }
+.portaal-eu:hover { border-color: #003399; }
+
+.portaal-vlag-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16pt;
+}
+
+.portaal-badge {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 9.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10pt;
+}
+.badge-nl { background: #fff0e0; color: #d05500; border: 1px solid #ffd8b3; }
+.badge-eu { background: #e6ebf5; color: #003399; border: 1px solid #c2d1ed; }
+
+.portaal-kaart h3 {
+    font-size: 18pt;
+    margin: 0 0 6pt;
+    color: #1a3c6e;
+}
+.portaal-ondertitel {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #6b7280;
+    margin: 0 0 12pt;
+}
+.portaal-beschrijving {
+    font-size: 11pt;
+    color: #4a5560;
+    line-height: 1.55;
+    margin: 0 0 16pt;
+    flex-grow: 1;
+}
+.portaal-punten {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20pt;
+    font-size: 10pt;
+    color: #333;
+}
+.portaal-punten li {
+    margin: 5pt 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.portaal-actie {
+    margin-top: auto;
+}
+.btn-poort {
+    display: block;
+    text-align: center;
+    padding: 10pt 16pt;
+    border-radius: 6px;
+    font-size: 11pt;
+    font-weight: 700;
+    transition: background .15s, color .15s;
+}
+.btn-poort-nl {
+    background: #ff6b00;
+    color: #ffffff;
+}
+.portaal-kaart:hover .btn-poort-nl {
+    background: #e05e00;
+}
+.btn-poort-eu {
+    background: #003399;
+    color: #ffffff;
+}
+.portaal-kaart:hover .btn-poort-eu {
+    background: #002266;
+}
+
+/* Disclaimer & EU-joke */
+.ab-melding {
+    background: #fdf6e3;
+    border-left: 4pt solid #d4a017;
+    padding: 14pt 18pt;
+    margin: 0 0 24pt;
+    border-radius: 6px;
+}
+.ab-melding h3 { margin: 0 0 8pt; color: #8b6200; font-size: 12pt; }
+.ab-melding p { margin: 0 0 8pt; font-size: 10.5pt; color: #6b4c00; line-height: 1.5; }
+.ab-melding p:last-child { margin-bottom: 0; }
+
+html { color-scheme: light dark; }
+html[data-theme="dark"] { color-scheme: dark; }
+
+.eu-joke {
+    text-align: center; font-size: 11pt; color: #6b7280; font-style: italic;
+    margin: 24pt 0; padding: 16pt;
+    border-top: 1px dashed #ddd7c9; border-bottom: 1px dashed #ddd7c9;
+}
+.eu-joke img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60px;
+    height: 40px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.2);
+    color-scheme: light !important;
+    filter: none !important;
+}
+html[data-theme="dark"] .eu-joke img {
+    filter: none !important;
+}
+
+.footer {
+    margin-top: 30pt; padding-top: 18pt; border-top: 1px solid #ddd7c9;
+    font-size: 9.5pt; color: #6b7280; text-align: center;
+}
+
+/* Dark Mode Overrides */
+html[data-theme="dark"] body { background: #1a1a1a !important; color: #e0e0e0 !important; }
+html[data-theme="dark"] h1, html[data-theme="dark"] .keuze-kop h2 { color: #7fb3ff !important; }
+html[data-theme="dark"] .ondertitel, html[data-theme="dark"] .keuze-kop p { color: #c0c0c0 !important; }
+html[data-theme="dark"] .root-intro-kolom { background: #232323 !important; border-color: #3a3a3a !important; }
+html[data-theme="dark"] .root-intro-taal { color: #7fb3ff !important; }
+html[data-theme="dark"] .root-intro-kolom p { color: #c0c0c0 !important; }
+html[data-theme="dark"] .portaal-kaart {
+    background: #232323 !important;
+    border-color: #3a3a3a !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,.4) !important;
+}
+html[data-theme="dark"] .portaal-kaart h3 { color: #f0f0f0 !important; }
+html[data-theme="dark"] .portaal-ondertitel { color: #888888 !important; }
+html[data-theme="dark"] .portaal-beschrijving { color: #b0b0b0 !important; }
+html[data-theme="dark"] .portaal-punten { color: #cccccc !important; }
+html[data-theme="dark"] .portaal-nl:hover { border-color: #ff9147 !important; }
+html[data-theme="dark"] .portaal-eu:hover { border-color: #7fb3ff !important; }
+html[data-theme="dark"] .badge-nl { background: #3d2314 !important; color: #ff9147 !important; border-color: #66381e !important; }
+html[data-theme="dark"] .badge-eu { background: #14233d !important; color: #7fb3ff !important; border-color: #1e3866 !important; }
+html[data-theme="dark"] .ab-melding { background: #332c14 !important; border-left-color: #d4a017 !important; }
+html[data-theme="dark"] .ab-melding h3 { color: #e8c268 !important; }
+html[data-theme="dark"] .ab-melding p { color: #d0c090 !important; }
+html[data-theme="dark"] .eu-joke { color: #a0a0a0 !important; border-color: #3a3a3a !important; }
+html[data-theme="dark"] .footer { color: #888 !important; border-color: #3a3a3a !important; }
+
+@media (max-width: 750px) {
+    body { padding: 14pt; }
+    h1 { font-size: 22pt; }
+    .portaal-grid { grid-template-columns: 1fr; }
+    .root-intro-grid { grid-template-columns: 1fr; }
+}
+</style>
+<style>
+
+/* === Client-Side Zoekmachine Modal (Search Engine) === */
+
+.pub-a11y-notice {
+    max-width: 680px; margin: 12pt auto 10pt auto; padding: 9pt 14pt;
+    background: #f7f5f0; border: 1px solid #dcd6ca; border-left: 3.5px solid #1a3c6e;
+    border-radius: 5px; font-size: 8.8pt; line-height: 1.5; color: #444444;
+    text-align: left;
+}
+html[data-theme="dark"] .pub-a11y-notice {
+    background: #1e2126; border-color: #343942; border-left-color: #7fb3ff;
+    color: #b8c0cc;
+}
+
+.pub-search-btn {
+    background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
+    padding: 5px 12px; border-radius: 4px; font-size: 10pt; font-weight: 600;
+    cursor: pointer; font-family: inherit; transition: all .15s;
+    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+}
+.pub-search-btn:hover { background: #1a3c6e; color: #ffffff; border-color: #1a3c6e; }
+
+.sm-modal-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.65); z-index: 99999;
+    display: none; align-items: flex-start; justify-content: center;
+    padding: 40px 16px 20px 16px; backdrop-filter: blur(3px);
+    box-sizing: border-box;
+}
+.sm-modal-overlay.sm-open { display: flex; }
+.sm-modal-dialog {
+    background: #ffffff; color: #222222; border-radius: 8px;
+    max-width: 720px; width: 100%; max-height: 85vh;
+    display: flex; flex-direction: column;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+    border: 1px solid #d5d0c5; font-family: Aptos, Calibri, sans-serif;
+    position: relative; box-sizing: border-box; overflow: hidden;
+}
+.sm-modal-header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 18px; border-bottom: 2px solid #1a3c6e;
+    background: #faf8f5;
+}
+.sm-search-bar {
+    display: flex; align-items: center; flex: 1;
+    background: #ffffff; border: 1.5px solid #1a3c6e; border-radius: 6px;
+    padding: 4px 12px; gap: 8px;
+}
+.sm-icon { font-size: 14pt; user-select: none; }
+.sm-input {
+    flex: 1; border: none; outline: none; background: transparent;
+    font-size: 11.5pt; font-family: inherit; color: #111;
+    padding: 6px 0;
+}
+.sm-clear-btn {
+    background: none; border: none; font-size: 16pt; color: #888;
+    cursor: pointer; padding: 0 4px; line-height: 1;
+}
+.sm-clear-btn:hover { color: #c62828; }
+.sm-modal-sluit {
+    background: none; border: none; font-size: 24pt; line-height: 1;
+    color: #666; cursor: pointer; padding: 0 4px;
+}
+.sm-modal-sluit:hover { color: #c62828; }
+
+.sm-status-bar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 6px 18px; font-size: 9pt; color: #666; background: #f2efe9;
+    border-bottom: 1px solid #e0dcd3;
+}
+.sm-shortcut-hint kbd {
+    background: #e4e0d7; border: 1px solid #c8c2b5; border-radius: 3px;
+    padding: 1px 4px; font-size: 8pt; font-family: monospace;
+}
+
+.sm-results {
+    overflow-y: auto; padding: 12px 18px; display: flex; flex-direction: column; gap: 10px;
+    flex: 1; min-height: 120px; max-height: calc(85vh - 120px);
+}
+.sm-result-card {
+    display: block; text-decoration: none; color: inherit;
+    background: #faf8f5; border: 1px solid #e2ded5; border-radius: 6px;
+    padding: 10px 14px; transition: border-color .15s, background .15s, transform .1s;
+    text-align: left;
+}
+.sm-result-card:hover, .sm-result-card:focus {
+    background: #eef3fb; border-color: #1a3c6e; outline: none;
+    transform: translateY(-1px);
+}
+.sm-result-badge {
+    display: inline-block; font-size: 8pt; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 2px 6px; border-radius: 3px;
+    background: #1a3c6e; color: #ffffff; margin-bottom: 4px;
+}
+.sm-result-title {
+    font-size: 11pt; font-weight: 700; color: #1a3c6e; margin: 2px 0 4px;
+}
+.sm-result-snippet {
+    font-size: 9.5pt; line-height: 1.45; color: #444; margin: 0;
+}
+.sm-result-snippet mark {
+    background: #fff2a8; color: #000; font-weight: 700; padding: 0 2px; border-radius: 2px;
+}
+.sm-empty {
+    padding: 24px 12px; text-align: center; color: #777; font-size: 10.5pt;
+}
+
+
+/* Floating Dark Mode Button (globaal beschikbaar op alle pagina's incl. index.html) */
+.dm-toggle {
+    position: fixed; bottom: 80px; right: 24px; z-index: 200;
+    background: #ffffff; color: #1a3c6e; border: 1px solid #d5d0c5;
+    width: 44px; height: 44px; border-radius: 50%;
+    cursor: pointer; font-size: 18pt; line-height: 1; padding: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .15s, background .15s, border-color .15s;
+    font-family: Aptos, Calibri, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+.dm-toggle:hover { transform: scale(1.1); background: #eef2f7; border-color: #1a3c6e; }
+.dm-toggle .dm-icon-lm { display: none; }
+html[data-theme="dark"] .dm-toggle .dm-icon-dm { display: none; }
+html[data-theme="dark"] .dm-toggle .dm-icon-lm { display: inline; }
+html[data-theme="dark"] .dm-toggle {
+    background: #25282e; color: #ffd43b; border-color: #4a5060;
+    box-shadow: 0 2px 8px rgba(0,0,0,.6);
+}
+html[data-theme="dark"] .dm-toggle:hover {
+    background: #2f343d; border-color: #7fb3ff;
+}
+
+/* Floating Search Button */
+.sm-toggle {
+    position: fixed; bottom: 136px; right: 24px; z-index: 200;
+    background: #ffffff; color: #1a3c6e; border: 1px solid #d5d0c5;
+    width: 44px; height: 44px; border-radius: 50%;
+    cursor: pointer; font-size: 16pt; line-height: 1; padding: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .15s, background .15s, border-color .15s;
+    font-family: Aptos, Calibri, sans-serif;
+}
+.sm-toggle:hover { transform: scale(1.1); background: #eef2f7; border-color: #1a3c6e; }
+
+/* Dark mode styling voor zoekmachine */
+.pub-a11y-notice {
+    max-width: 680px; margin: 12pt auto 10pt auto; padding: 9pt 14pt;
+    background: #f7f5f0; border: 1px solid #dcd6ca; border-left: 3.5px solid #1a3c6e;
+    border-radius: 5px; font-size: 8.8pt; line-height: 1.5; color: #444444;
+    text-align: left;
+}
+html[data-theme="dark"] .pub-a11y-notice {
+    background: #1e2126; border-color: #343942; border-left-color: #7fb3ff;
+    color: #b8c0cc;
+}
+
+html[data-theme="dark"] .pub-search-btn {
+    background: #232323; color: #b0c8e8; border-color: #4a4a4a;
+}
+html[data-theme="dark"] .pub-search-btn:hover {
+    background: #2a2a2a; border-color: #7fb3ff; color: #ffffff;
+}
+html[data-theme="dark"] .sm-modal-dialog {
+    background: #202226; color: #e0e0e0; border-color: #3a3f48;
+}
+html[data-theme="dark"] .sm-modal-header {
+    background: #25282e; border-bottom-color: #4a6fa5;
+}
+html[data-theme="dark"] .sm-search-bar {
+    background: #181a1f; border-color: #4a6fa5;
+}
+html[data-theme="dark"] .sm-input { color: #f0f0f0; }
+html[data-theme="dark"] .sm-clear-btn { color: #aaa; }
+html[data-theme="dark"] .sm-modal-sluit { color: #aaa; }
+html[data-theme="dark"] .sm-modal-sluit:hover { color: #ff6b6b; }
+html[data-theme="dark"] .sm-status-bar {
+    background: #1c1e22; border-bottom-color: #32363e; color: #999;
+}
+html[data-theme="dark"] .sm-shortcut-hint kbd {
+    background: #2a2d34; border-color: #444; color: #bbb;
+}
+html[data-theme="dark"] .sm-result-card {
+    background: #26292f; border-color: #3a3f48; color: #d0d0d0;
+}
+html[data-theme="dark"] .sm-result-card:hover,
+html[data-theme="dark"] .sm-result-card:focus {
+    background: #2f343d; border-color: #7fb3ff;
+}
+html[data-theme="dark"] .sm-result-badge {
+    background: #34568b; color: #ffffff;
+}
+html[data-theme="dark"] .sm-result-title {
+    color: #7fb3ff !important;
+}
+html[data-theme="dark"] .sm-result-snippet {
+    color: #bbb;
+}
+html[data-theme="dark"] .sm-result-snippet mark {
+    background: #614a00; color: #ffeb80;
+}
+html[data-theme="dark"] .sm-toggle {
+    background: #25282e; color: #7fb3ff; border-color: #4a5060;
+    box-shadow: 0 2px 8px rgba(0,0,0,.6);
+}
+html[data-theme="dark"] .sm-toggle:hover {
+    background: #2f343d; border-color: #7fb3ff;
+}
+
+@media (max-width: 600px) {
+    .sm-modal-overlay { padding: 10px; }
+    .sm-modal-dialog { max-height: 94vh; }
+    .dm-toggle {
+        bottom: 62px !important; right: 16px !important;
+        width: 38px !important; height: 38px !important; font-size: 15pt !important;
+        opacity: 0.92;
+    }
+    .sm-toggle {
+        bottom: 108px !important; right: 16px !important;
+        width: 38px !important; height: 38px !important; font-size: 14pt !important;
+        opacity: 0.92;
+    }
+}
+@media print {
+    .sm-modal-overlay, .sm-toggle { display: none !important; }
+}
+
+/* === Geünificeerde Inklapbare 3-Knops Floating Speed-Dial Dock (#audit-fab-dock) === */
+.audit-fab-dock {
+    position: fixed;
+    right: 0;
+    bottom: 24px;
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    font-family: Aptos, Calibri, sans-serif;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.afb-drawer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #d5d0c5;
+    border-right: none;
+    border-radius: 12px 0 0 12px;
+    padding: 8px 6px 8px 8px;
+    box-shadow: -4px 4px 18px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    transform: translateX(calc(100% + 40px));
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.18s ease;
+    margin-right: -1px;
+}
+.audit-fab-dock.afb-open .afb-drawer {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+@media (hover: hover) and (pointer: fine) {
+    .audit-fab-dock:hover .afb-drawer {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+.afb-btn {
+    position: static !important;
+    width: 44px !important;
+    height: 42px !important;
+    border-radius: 8px !important;
+    border: 1px solid #d5d0c5 !important;
+    background: #f8f6f1 !important;
+    color: #1a3c6e !important;
+    cursor: pointer;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 1px !important;
+    padding: 2px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+    transition: background 0.15s, border-color 0.15s, transform 0.12s !important;
+    text-decoration: none !important;
+}
+.afb-btn:hover {
+    background: #eef3fb !important;
+    border-color: #1a3c6e !important;
+    transform: translateY(-1px) !important;
+}
+.afb-ico {
+    font-size: 13pt !important;
+    line-height: 1 !important;
+}
+.afb-lbl {
+    font-size: 6.8pt !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.2px !important;
+    text-transform: uppercase !important;
+    line-height: 1 !important;
+    color: inherit !important;
+}
+.afb-btn.dm-toggle .dm-icon-lm { display: none !important; }
+html[data-theme="dark"] .afb-btn.dm-toggle .dm-icon-dm { display: none !important; }
+html[data-theme="dark"] .afb-btn.dm-toggle .dm-icon-lm { display: inline !important; }
+
+.afb-handle {
+    width: 28px;
+    height: 64px;
+    background: rgba(26, 60, 110, 0.88);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.25);
+    transition: background 0.15s, width 0.15s, opacity 0.15s;
+    opacity: 0.78;
+}
+.afb-handle:hover, .audit-fab-dock.afb-open .afb-handle {
+    opacity: 1;
+    background: #1a3c6e;
+    width: 32px;
+}
+.afb-handle-closed {
+    display: inline-flex;
+    align-items: center;
+    font-size: 13pt;
+    font-weight: 700;
+    line-height: 1;
+    gap: 1px;
+}
+.afb-handle-dots {
+    font-size: 12pt;
+    opacity: 0.85;
+}
+.afb-handle-open {
+    display: none;
+    font-size: 15pt;
+    font-weight: 700;
+    line-height: 1;
+}
+.audit-fab-dock.afb-open .afb-handle-closed { display: none; }
+.audit-fab-dock.afb-open .afb-handle-open { display: inline; }
+
+/* Dark Mode voor #audit-fab-dock */
+html[data-theme="dark"] .afb-drawer {
+    background: rgba(30, 33, 39, 0.96);
+    border-color: #454c59;
+    box-shadow: -4px 4px 20px rgba(0, 0, 0, 0.65);
+}
+html[data-theme="dark"] .afb-btn {
+    background: #282c34 !important;
+    border-color: #454c59 !important;
+    color: #b0c8e8 !important;
+}
+html[data-theme="dark"] .afb-btn:hover {
+    background: #323844 !important;
+    border-color: #7fb3ff !important;
+    color: #ffffff !important;
+}
+html[data-theme="dark"] .afb-handle {
+    background: rgba(52, 86, 139, 0.9);
+    border-color: rgba(127, 179, 255, 0.35);
+    color: #e8f0fe;
+}
+html[data-theme="dark"] .afb-handle:hover,
+html[data-theme="dark"] .audit-fab-dock.afb-open .afb-handle {
+    background: #4a6fa5;
+}
+
+/* === Inklapbare Accordeon Inhoudsopgave (.toc-accordion) === */
+.toc-controls-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 4pt 0 10pt 0;
+    padding-bottom: 8pt;
+    border-bottom: 1px solid #e2ddd3;
+}
+.toc-hint {
+    font-size: 9.5pt;
+    color: #666;
+    font-style: italic;
+}
+.toc-toggle-all-btn {
+    background: #ffffff;
+    color: #1a3c6e;
+    border: 1px solid #c5bfb2;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 9pt;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+}
+.toc-toggle-all-btn:hover {
+    background: #1a3c6e;
+    color: #ffffff;
+    border-color: #1a3c6e;
+}
+.toc-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+details.toc-chapter {
+    background: #ffffff;
+    border: 1px solid #dedad0;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+}
+details.toc-chapter[open] {
+    border-color: #1a3c6e;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+summary.toc-summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 10.5pt;
+    color: #1a3c6e;
+    background: #fcfbf9;
+    user-select: none;
+    transition: background 0.15s;
+}
+summary.toc-summary::-webkit-details-marker { display: none; }
+summary.toc-summary:hover { background: #f0f4fa; }
+.toc-arrow {
+    display: inline-block;
+    font-size: 10pt;
+    transition: transform 0.18s ease;
+    color: #1a3c6e;
+    flex-shrink: 0;
+}
+details.toc-chapter[open] .toc-arrow {
+    transform: rotate(90deg);
+}
+.toc-ch-title {
+    flex: 1;
+    line-height: 1.35;
+}
+.toc-ch-badge {
+    font-size: 8.5pt;
+    font-weight: 600;
+    background: #eef2f7;
+    color: #1a3c6e;
+    border: 1px solid #d0dbe8;
+    padding: 2px 8px;
+    border-radius: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.toc-chapter-body {
+    padding: 8px 14px 10px 14px;
+    border-top: 1px solid #ece8df;
+    background: #ffffff;
+}
+.toc-ch-direct {
+    margin-bottom: 6px;
+    font-size: 9pt;
+}
+.toc-ch-direct a {
+    color: #666 !important;
+    font-style: italic;
+}
+.toc-sublist {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+.toc-sublist li.niv2 {
+    padding-left: 4pt !important;
+    font-weight: 600;
+    margin-top: 6pt !important;
+    color: #222;
+}
+.toc-sublist li.niv3 {
+    padding-left: 18pt !important;
+    font-size: 10pt;
+}
+
+.toc-chapter-single {
+    padding: 7px 12px;
+    background: #fcfbf9;
+    border: 1px solid #dedad0;
+    border-radius: 6px;
+    font-size: 10pt;
+    font-weight: 600;
+}
+.toc-chapter-single a {
+    color: #1a3c6e;
+    text-decoration: none;
+}
+.toc-chapter-single a:hover {
+    text-decoration: underline;
+}
+html[data-theme="dark"] .toc-chapter-single {
+    background: #21252b !important;
+    border-color: #343942 !important;
+}
+html[data-theme="dark"] .toc-chapter-single a {
+    color: #7fb3ff !important;
+}
+
+.toc-playlist-box {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #eef3f9;
+    border: 1px solid #c5d4e8;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+/* Dark mode voor .toc-accordion */
+html[data-theme="dark"] .toc-controls-bar { border-bottom-color: #383d47; }
+html[data-theme="dark"] .toc-hint { color: #9aa5b5; }
+html[data-theme="dark"] .toc-toggle-all-btn {
+    background: #282c34;
+    color: #b0c8e8;
+    border-color: #454c59;
+}
+html[data-theme="dark"] .toc-toggle-all-btn:hover {
+    background: #4a6fa5;
+    color: #ffffff;
+    border-color: #7fb3ff;
+}
+html[data-theme="dark"] details.toc-chapter {
+    background: #1c1f24;
+    border-color: #343942;
+}
+html[data-theme="dark"] details.toc-chapter[open] {
+    border-color: #4a6fa5;
+}
+html[data-theme="dark"] summary.toc-summary {
+    background: #21252b;
+    color: #7fb3ff;
+}
+html[data-theme="dark"] summary.toc-summary:hover {
+    background: #282e38;
+}
+html[data-theme="dark"] .toc-arrow { color: #7fb3ff; }
+html[data-theme="dark"] .toc-ch-badge {
+    background: #283040;
+    color: #b0c8e8;
+    border-color: #3d4b63;
+}
+html[data-theme="dark"] .toc-chapter-body {
+    background: #181b20;
+    border-top-color: #2d323b;
+}
+html[data-theme="dark"] .toc-sublist li.niv2 { color: #e0e6f0; }
+html[data-theme="dark"] .toc-playlist-box {
+    background: #1c232d;
+    border-color: #2f3b4c;
+}
+
+/* Compacte '↑ Inhoudsopgave' link in organisatiebalk en na h3 */
+.audit-org-top {
+    font-size: 8.8pt;
+    font-weight: 600;
+    color: #666;
+    text-decoration: none;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #dcd7cc;
+    background: #ffffff;
+    margin-left: auto;
+    white-space: nowrap;
+}
+.audit-org-top:hover {
+    color: #1a3c6e;
+    border-color: #1a3c6e;
+    background: #eef3fb;
+    text-decoration: none;
+}
+html[data-theme="dark"] .audit-org-top {
+    background: #1c1f26;
+    border-color: #383e4a;
+    color: #9aa5b5;
+}
+html[data-theme="dark"] .audit-org-top:hover {
+    color: #7fb3ff;
+    border-color: #7fb3ff;
+    background: #262c36;
+}
+
+@media print {
+    .audit-fab-dock, .toc-controls-bar, .audit-org-top { display: none !important; }
+    details.toc-chapter { border: none !important; }
+    details.toc-chapter > .toc-chapter-body { display: block !important; }
+}
+
+
+
+/* === KAART LIGHTBOX & ZOOM MODAL (#km-modal) === */
+.root-kaart, .theme-map {
+    position: relative !important;
+    cursor: zoom-in !important;
+}
+.km-zoom-badge {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    z-index: 10;
+    background: rgba(26, 60, 110, 0.90);
+    color: #ffffff !important;
+    font-family: Aptos, Calibri, sans-serif;
+    font-size: 9.5pt;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.32);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    pointer-events: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: transform 0.18s ease, background 0.18s ease;
+    user-select: none;
+}
+.root-kaart:hover .km-zoom-badge, .theme-map:hover .km-zoom-badge {
+    transform: translateY(-2px) scale(1.04);
+    background: #1a3c6e;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.4);
+}
+html[data-theme="dark"] .km-zoom-badge {
+    background: rgba(35, 55, 85, 0.92);
+    border-color: rgba(127, 179, 255, 0.35);
+    color: #e8f0fe !important;
+}
+html[data-theme="dark"] .root-kaart:hover .km-zoom-badge,
+html[data-theme="dark"] .theme-map:hover .km-zoom-badge {
+    background: #34568b;
+}
+
+.km-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(8, 12, 18, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.km-modal-overlay.km-open {
+    display: flex;
+}
+body.km-no-scroll {
+    overflow: hidden !important;
+}
+.km-modal-dialog {
+    background: #ffffff;
+    border: 1px solid #d5d0c5;
+    border-radius: 12px;
+    width: 96vw;
+    max-width: 1360px;
+    height: 92vh;
+    max-height: 920px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.5);
+    font-family: Aptos, Calibri, sans-serif;
+    color: #222222;
+    animation: kmFadeIn 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@keyframes kmFadeIn {
+    from { opacity: 0; transform: scale(0.97); }
+    to { opacity: 1; transform: scale(1); }
+}
+.km-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 18px;
+    background: #f7f5f0;
+    border-bottom: 1px solid #e0ded8;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-shrink: 0;
+}
+.km-title-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.km-title-wrap .km-icon {
+    font-size: 15pt;
+    line-height: 1;
+}
+.km-title {
+    margin: 0;
+    font-size: 13pt;
+    font-weight: 700;
+    color: #1a3c6e;
+    line-height: 1.2;
+}
+.km-subtitle {
+    font-size: 9.5pt;
+    color: #666;
+    font-style: italic;
+}
+.km-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+}
+.km-btn {
+    background: #ffffff;
+    border: 1px solid #c5bfb2;
+    border-radius: 6px;
+    color: #1a3c6e;
+    padding: 5px 10px;
+    font-size: 9.5pt;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+.km-btn:hover {
+    background: #eef3fb;
+    border-color: #1a3c6e;
+    transform: translateY(-1px);
+}
+.km-zoom-val {
+    min-width: 52px;
+    font-family: monospace;
+    font-size: 9pt;
+    background: #f0eee9;
+}
+.km-close-btn {
+    background: none;
+    border: none;
+    font-size: 24pt;
+    line-height: 1;
+    color: #666;
+    cursor: pointer;
+    padding: 0 4px;
+    margin-left: 6px;
+    transition: color 0.15s;
+}
+.km-close-btn:hover {
+    color: #c62828;
+}
+
+/* Viewport & Image Stage */
+.km-viewport {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background: #eaedf2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-in;
+    touch-action: none;
+}
+.km-viewport.km-dragging {
+    cursor: grabbing !important;
+}
+.km-viewport.km-can-drag {
+    cursor: grab;
+}
+.km-img-stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transform-origin: center center;
+    will-change: transform;
+}
+.km-img {
+    max-width: 96%;
+    max-height: 96%;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    transition: box-shadow 0.2s;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.km-drag-hint {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(26, 60, 110, 0.85);
+    color: #ffffff;
+    font-size: 8.5pt;
+    padding: 4px 12px;
+    border-radius: 14px;
+    backdrop-filter: blur(4px);
+    pointer-events: none;
+    opacity: 0.88;
+    transition: opacity 0.5s;
+    z-index: 5;
+    white-space: nowrap;
+}
+
+/* Uitgebreide HTML Legenda onderaan */
+.km-legenda-bar {
+    background: #ffffff;
+    border-top: 1px solid #e0ded8;
+    padding: 10px 18px 12px;
+    flex-shrink: 0;
+    max-height: 34vh;
+    overflow-y: auto;
+}
+.km-legenda-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    gap: 8px;
+}
+.km-lh-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 9.5pt;
+    color: #1a3c6e;
+}
+.km-lh-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #d32f2f;
+    display: inline-block;
+}
+.km-lh-desc {
+    font-size: 9pt;
+    color: #666;
+    font-weight: normal;
+}
+.km-leg-toggle {
+    background: #f0eee9;
+    border: 1px solid #d5d0c5;
+    border-radius: 4px;
+    font-size: 8.5pt;
+    color: #555;
+    cursor: pointer;
+    padding: 2px 8px;
+    font-family: inherit;
+}
+.km-leg-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 20px;
+    font-size: 9pt;
+    line-height: 1.35;
+}
+.km-leg-item {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    color: #333;
+}
+.km-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: #d32f2f;
+    color: #ffffff;
+    font-size: 7.5pt;
+    font-weight: 700;
+    line-height: 1;
+    flex-shrink: 0;
+}
+.km-country {
+    color: #666;
+    font-weight: 600;
+}
+.km-leg-inzet-note {
+    margin-top: 8px;
+    padding-top: 6px;
+    border-top: 1px solid #eee;
+    font-size: 8.5pt;
+    color: #666;
+}
+
+/* Dark Mode voor #km-modal */
+html[data-theme="dark"] .km-modal-overlay {
+    background: rgba(6, 8, 12, 0.92);
+}
+html[data-theme="dark"] .km-modal-dialog {
+    background: #181b20;
+    border-color: #343942;
+    color: #e0e6ed;
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.75);
+}
+html[data-theme="dark"] .km-modal-header {
+    background: #21252b;
+    border-bottom-color: #343942;
+}
+html[data-theme="dark"] .km-title {
+    color: #7fb3ff;
+}
+html[data-theme="dark"] .km-subtitle {
+    color: #9aa5b5;
+}
+html[data-theme="dark"] .km-btn {
+    background: #282c34;
+    border-color: #454c59;
+    color: #b0c8e8;
+}
+html[data-theme="dark"] .km-btn:hover {
+    background: #363d4a;
+    border-color: #7fb3ff;
+    color: #ffffff;
+}
+html[data-theme="dark"] .km-zoom-val {
+    background: #1e2228;
+}
+html[data-theme="dark"] .km-close-btn {
+    color: #aaa;
+}
+html[data-theme="dark"] .km-close-btn:hover {
+    color: #ff6b6b;
+}
+html[data-theme="dark"] .km-viewport {
+    background: #0f1318;
+}
+html[data-theme="dark"] .km-img {
+    box-shadow: 0 4px 28px rgba(0, 0, 0, 0.7);
+}
+html[data-theme="dark"] .km-drag-hint {
+    background: rgba(52, 86, 139, 0.9);
+    border: 1px solid rgba(127, 179, 255, 0.3);
+}
+html[data-theme="dark"] .km-legenda-bar {
+    background: #181b20;
+    border-top-color: #2b303a;
+}
+html[data-theme="dark"] .km-lh-title {
+    color: #7fb3ff;
+}
+html[data-theme="dark"] .km-lh-desc {
+    color: #9aa5b5;
+}
+html[data-theme="dark"] .km-leg-toggle {
+    background: #282c34;
+    border-color: #454c59;
+    color: #b0c8e8;
+}
+html[data-theme="dark"] .km-leg-item {
+    color: #cbd5e1;
+}
+html[data-theme="dark"] .km-country {
+    color: #94a3b8;
+}
+html[data-theme="dark"] .km-leg-inzet-note {
+    border-top-color: #2b303a;
+    color: #94a3b8;
+}
+
+@media (max-width: 760px) {
+    .km-modal-dialog { width: 98vw; height: 96vh; }
+    .km-modal-header { padding: 8px 12px; }
+    .km-title { font-size: 11pt; }
+    .km-subtitle { display: none; }
+    .km-leg-grid { grid-template-columns: 1fr; gap: 4px; }
+    .km-legenda-bar { max-height: 40vh; padding: 8px 12px; }
+}
+
+@media print {
+    .km-modal-overlay, .km-zoom-badge { display: none !important; }
+}
+
+
+/* Forensisch Bronopvragings- en Contactvenster (Modal) */
+.pub-contact-btn {
+    background: #f0eee9; color: #1a3c6e; border: 1px solid #d5d0c5;
+    padding: 5px 12px; border-radius: 4px; font-size: 10pt; font-weight: 600;
+    cursor: pointer; font-family: inherit; transition: all .15s;
+    display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+}
+.pub-contact-btn:hover { background: #1a3c6e; color: #ffffff; border-color: #1a3c6e; }
+.pub-contact-footer { margin: 10pt 0 4pt; font-size: 10.5pt; padding: 7px 16px; }
+
+.audit-bewijs { cursor: pointer; transition: border-color .15s, background .15s, box-shadow .15s; }
+.audit-bewijs:hover {
+    border-color: #1a3c6e; background: #e6edf7;
+    box-shadow: 0 1px 4px rgba(26,60,110,0.18);
+}
+
+.bm-modal-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.65); z-index: 99999;
+    display: none; align-items: center; justify-content: center;
+    padding: 20px; backdrop-filter: blur(2px);
+}
+.bm-modal-overlay.bm-open { display: flex; }
+.bm-modal-dialog {
+    background: #ffffff; color: #222222; border-radius: 8px;
+    max-width: 680px; width: 100%; max-height: 90vh; overflow-y: auto;
+    padding: 24px 28px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    border: 1px solid #d5d0c5; font-family: Aptos, Calibri, sans-serif;
+    position: relative; box-sizing: border-box; text-align: left;
+}
+.bm-modal-kop {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    border-bottom: 2px solid #1a3c6e; padding-bottom: 12px; margin-bottom: 16px;
+}
+.bm-modal-kop h3 {
+    margin: 0; font-size: 16pt; color: #1a3c6e; border: none; padding: 0;
+}
+.bm-modal-sluit {
+    background: none; border: none; font-size: 22pt; line-height: 1;
+    color: #888; cursor: pointer; padding: 0 4px;
+}
+.bm-modal-sluit:hover { color: #c62828; }
+.bm-intro {
+    font-size: 10pt; line-height: 1.5; color: #555555; background: #f7f5f1;
+    padding: 10px 14px; border-left: 3px solid #1a3c6e; border-radius: 3px;
+    margin-bottom: 18px;
+}
+.bm-groep { margin-bottom: 14px; }
+.bm-groep label.bm-label {
+    display: block; font-weight: 700; font-size: 10.5pt; color: #1a3c6e; margin-bottom: 5px;
+}
+.bm-input, .bm-textarea {
+    width: 100%; box-sizing: border-box; padding: 8px 12px;
+    border: 1px solid #ccc; border-radius: 4px; font-family: inherit;
+    font-size: 10.5pt; background: #faf8f5; color: #222;
+}
+.bm-input:focus, .bm-textarea:focus {
+    border-color: #1a3c6e; background: #fff; outline: none;
+}
+.bm-textarea { min-height: 90px; resize: vertical; }
+.bm-radio-groep {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px;
+}
+@media (max-width: 580px) {
+    .bm-radio-groep { grid-template-columns: 1fr; }
+}
+.bm-radio-optie {
+    display: flex; align-items: flex-start; gap: 8px; background: #f9f8f6;
+    border: 1px solid #e2ddd5; padding: 8px 10px; border-radius: 4px;
+    font-size: 9.5pt; cursor: pointer;
+}
+.bm-radio-optie:hover { border-color: #1a3c6e; background: #f0f4f9; }
+.bm-radio-optie input { margin-top: 2px; }
+.bm-check-groep {
+    display: flex; align-items: flex-start; gap: 8px; font-size: 9.5pt;
+    color: #444; margin: 14px 0 18px;
+}
+.bm-knoppen { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+.bm-btn-mail {
+    background: #1a3c6e; color: #ffffff; border: 1px solid #1a3c6e;
+    padding: 8px 16px; border-radius: 4px; font-size: 10.5pt; font-weight: 700;
+    cursor: pointer; transition: background .15s;
+}
+.bm-btn-mail:hover { background: #122b50; }
+.bm-btn-copy {
+    background: #f0eee9; color: #333; border: 1px solid #d5d0c5;
+    padding: 8px 14px; border-radius: 4px; font-size: 10.5pt; font-weight: 600;
+    cursor: pointer; transition: all .15s;
+}
+.bm-btn-copy:hover { background: #e2ded5; }
+.bm-btn-copy.bm-copied { background: #2e7d32; color: #ffffff; border-color: #2e7d32; }
+
+@media (max-width: 768px) {
+    .pub-contact-btn { font-size: 9.5pt; padding: 6px 12px; min-height: 38px; }
+    .bm-modal-dialog { padding: 18px 16px; width: 95%; max-height: 94vh; }
+    .bm-modal-kop h3 { font-size: 14pt; }
+    .bm-intro { font-size: 9.5pt; padding: 8px 10px; }
+    .bm-input, .bm-textarea { font-size: 16px; }
+    .bm-radio-groep { grid-template-columns: 1fr; }
+}
+
+/* Modal Dark-Mode */
+html[data-theme="dark"] .pub-contact-btn {
+    background: #232323; color: #b0c8e8; border-color: #4a4a4a;
+}
+html[data-theme="dark"] .pub-contact-btn:hover {
+    background: #2a2a2a; border-color: #7fb3ff; color: #ffffff;
+}
+html[data-theme="dark"] .audit-bewijs:hover {
+    border-color: #7fb3ff !important; background: #2f3642 !important;
+    box-shadow: 0 1px 6px rgba(127,179,255,0.25);
+}
+html[data-theme="dark"] .bm-modal-dialog {
+    background: #202226; color: #e0e0e0; border-color: #3a3f48;
+}
+html[data-theme="dark"] .bm-modal-kop { border-bottom-color: #4a6fa5; }
+html[data-theme="dark"] .bm-modal-kop h3 { color: #7fb3ff !important; }
+html[data-theme="dark"] .bm-intro {
+    background: #282c34; border-left-color: #7fb3ff; color: #b8b8b8;
+}
+html[data-theme="dark"] .bm-groep label.bm-label { color: #7fb3ff !important; }
+html[data-theme="dark"] .bm-input,
+html[data-theme="dark"] .bm-textarea {
+    background: #181a1f; border-color: #3e4450; color: #e8e8e8;
+}
+html[data-theme="dark"] .bm-input:focus,
+html[data-theme="dark"] .bm-textarea:focus {
+    border-color: #7fb3ff; background: #1f2229;
+}
+html[data-theme="dark"] .bm-radio-optie {
+    background: #262930; border-color: #3e4450; color: #d0d0d0;
+}
+html[data-theme="dark"] .bm-radio-optie:hover {
+    background: #2f3440; border-color: #7fb3ff;
+}
+html[data-theme="dark"] .bm-check-groep { color: #b0b0b0; }
+html[data-theme="dark"] .bm-btn-mail {
+    background: #4a6fa5; border-color: #4a6fa5; color: #ffffff;
+}
+html[data-theme="dark"] .bm-btn-mail:hover { background: #395782; }
+html[data-theme="dark"] .bm-btn-copy {
+    background: #2a2e36; border-color: #404754; color: #e0e0e0;
+}
+html[data-theme="dark"] .bm-btn-copy:hover {
+    background: #353b47; border-color: #7fb3ff;
+}
+
+/* Taal-kiezer styling in navigatie */
+.pub-lang-switch {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: #eef2f7; padding: 2px 4px; border-radius: 4px;
+    border: 1px solid #d5d0c5;
+}
+.pub-lang-btn {
+    text-decoration: none; font-size: 9.5pt; font-weight: 600;
+    color: #1a3c6e; padding: 3px 7px; border-radius: 3px;
+    transition: background .15s, color .15s;
+}
+.pub-lang-btn:hover { background: #dce6f2; }
+.pub-lang-btn.actief { background: #1a3c6e; color: #ffffff !important; }
+
+html[data-theme="dark"] .pub-lang-switch { background: #1f2229; border-color: #3e4450; }
+html[data-theme="dark"] .pub-lang-btn { color: #b0c8e8; }
+html[data-theme="dark"] .pub-lang-btn:hover { background: #2a3342; }
+html[data-theme="dark"] .pub-lang-btn.actief { background: #4a6fa5; color: #ffffff !important; }
+
+/* Google Translate Widget & Frame Styling */
+.goog-te-banner-frame, .skiptranslate iframe, #goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+body { top: 0px !important; position: static !important; }
+.goog-text-highlight { background: transparent !important; box-shadow: none !important; }
+font[style] { background: transparent !important; box-shadow: none !important; }
+
+.pub-lang-select, #int-lang-select {
+    font-family: inherit; font-size: 10pt; font-weight: 600;
+    padding: 4px 8px; border: 1px solid #d5d0c5; border-radius: 4px;
+    background-color: #ffffff; color: #1a3c6e; cursor: pointer;
+    color-scheme: light;
+}
+.pub-lang-select option, #int-lang-select option {
+    background-color: #ffffff; color: #1a3c6e;
+    color-scheme: light;
+}
+html[data-theme="dark"] .pub-lang-select,
+html[data-theme="dark"] #int-lang-select,
+html[data-theme="dark"] select.pub-lang-select {
+    background-color: #232323 !important;
+    background: #232323 !important;
+    border-color: #4a4a4a !important;
+    color: #e0e0e0 !important;
+    color-scheme: dark !important;
+}
+html[data-theme="dark"] .pub-lang-select option,
+html[data-theme="dark"] #int-lang-select option,
+html[data-theme="dark"] select.pub-lang-select option {
+    background-color: #232323 !important;
+    background: #232323 !important;
+    color: #e0e0e0 !important;
+    color-scheme: dark !important;
+}
+
+</style>
+</head>
+<body>
+<a id="top"></a>
+<div class="container">
+<div class="spectrum"><span style="background:#8b1e1e"></span><span style="background:#7a3e9d"></span><span style="background:#1a3c6e"></span><span style="background:#4a3b6b"></span><span style="background:#2e7d32"></span></div>
+<h1><span class="notranslate" translate="no">GRENSARBEID.ORG</span> — Systeem-Audit</h1>
+<p class="ondertitel">Grensoverschrijdend bevoegdheidsvacuüm in de sociale zekerheid — een open-source röntgenfoto van twee nationale systemen</p>
+<p class="auteur">Auteur: Eric Messa · Versie bijgewerkt: 10 november 2026, 21:11</p><div aria-label="LAATSTE ONTWIKKELINGEN" class="lo-banner" id="live-ontwikkelingen-banner" role="region">
+<style>
+  #live-ontwikkelingen-banner {
+    max-width: 960px;
+    margin: 22px auto 30px;
+    background: #ffffff;
+    border: 1px solid #d5d0c5;
+    border-left: 5px solid #0d7377;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    font-family: Aptos, Calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow: hidden;
+    position: relative;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  #live-ontwikkelingen-banner:hover {
+    box-shadow: 0 5px 18px rgba(0,0,0,0.11);
+  }
+  .lo-wrapper {
+    display: flex;
+    align-items: stretch;
+    min-height: 82px;
+  }
+  .lo-label-col {
+    flex-shrink: 0;
+    width: 220px;
+    background: #f8fafc;
+    border-right: 1px solid #e2e8f0;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .lo-live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .lo-pulse-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #10b981;
+    display: inline-block;
+    flex-shrink: 0;
+    animation: lo-pulse-anim 2s infinite ease-in-out;
+  }
+  @keyframes lo-pulse-anim {
+    0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { transform: scale(1.15); box-shadow: 0 0 0 7px rgba(16, 185, 129, 0); }
+    100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  }
+  .lo-live-text {
+    font-size: 9pt;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    line-height: 1.2;
+  }
+  .lo-sub-text {
+    font-size: 8pt;
+    color: #64748b;
+    margin-left: 18px;
+    font-weight: 500;
+  }
+  .lo-content-col {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    padding: 10px 18px;
+    position: relative;
+    gap: 14px;
+  }
+  .lo-slider-pane {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+  }
+  .lo-slide {
+    display: none;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity .35s ease, transform .35s ease;
+  }
+  .lo-slide.lo-actief {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .lo-slide:focus-visible {
+    outline: 2px solid #0d7377;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  .lo-slide-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+    font-size: 9pt;
+  }
+  .lo-datum {
+    font-family: Consolas, monospace;
+    font-weight: 700;
+    color: #0d7377;
+    background: #f0fdf4;
+    padding: 1px 6px;
+    border-radius: 3px;
+    border: 1px solid #bbf7d0;
+  }
+  .lo-sep {
+    color: #94a3b8;
+    font-weight: 600;
+  }
+  .lo-org {
+    color: #1e293b;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+  }
+  .lo-badge {
+    display: inline-block;
+    padding: 1px 7px;
+    border-radius: 3px;
+    font-size: 7.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .lo-badge-in {
+    background: #e0f2fe;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+  }
+  .lo-badge-uit {
+    background: #fef3c7;
+    color: #b45309;
+    border: 1px solid #fde68a;
+  }
+  .lo-badge-proces {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+  }
+  .lo-slide-body {
+    font-size: 10pt;
+    line-height: 1.42;
+    color: #334155;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .lo-titel {
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .lo-samenvatting {
+    color: #475569;
+  }
+  .lo-cta {
+    font-size: 8.5pt;
+    color: #0d7377;
+    font-weight: 700;
+    margin-top: 4px;
+    display: inline-block;
+  }
+  .lo-controls-pane {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .lo-counter {
+    font-family: Consolas, monospace;
+    font-size: 9pt;
+    color: #64748b;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .lo-buttons {
+    display: flex;
+    gap: 4px;
+  }
+  .lo-pijl {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-size: 14pt;
+    line-height: 1;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 2px 0;
+    transition: all .15s ease;
+  }
+  .lo-pijl:hover {
+    background: #f1f5f9;
+    border-color: #0d7377;
+    color: #0d7377;
+  }
+  .lo-progress-track {
+    width: 100%;
+    height: 3px;
+    background: #e2e8f0;
+    overflow: hidden;
+  }
+  .lo-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #0d7377;
+  }
+  html[data-theme="dark"] #live-ontwikkelingen-banner {
+    background: #1e2430;
+    border-color: #334155;
+    border-left-color: #38bdf8;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+  }
+  html[data-theme="dark"] .lo-label-col {
+    background: #171c26;
+    border-right-color: #2b3545;
+  }
+  html[data-theme="dark"] .lo-live-text {
+    color: #f1f5f9;
+  }
+  html[data-theme="dark"] .lo-sub-text {
+    color: #94a3b8;
+  }
+  html[data-theme="dark"] .lo-datum {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.12);
+    border-color: rgba(56, 189, 248, 0.25);
+  }
+  html[data-theme="dark"] .lo-org {
+    color: #e2e8f0;
+  }
+  html[data-theme="dark"] .lo-slide-body {
+    color: #cbd5e1;
+  }
+  html[data-theme="dark"] .lo-titel {
+    color: #f8fafc;
+  }
+  html[data-theme="dark"] .lo-samenvatting {
+    color: #94a3b8;
+  }
+  html[data-theme="dark"] .lo-cta {
+    color: #38bdf8;
+  }
+  html[data-theme="dark"] .lo-badge-in {
+    background: rgba(14, 165, 233, 0.2);
+    color: #7dd3fc;
+    border-color: rgba(14, 165, 233, 0.35);
+  }
+  html[data-theme="dark"] .lo-badge-uit {
+    background: rgba(245, 158, 11, 0.2);
+    color: #fcd34d;
+    border-color: rgba(245, 158, 11, 0.35);
+  }
+  html[data-theme="dark"] .lo-badge-proces {
+    background: rgba(100, 116, 139, 0.2);
+    color: #cbd5e1;
+    border-color: rgba(100, 116, 139, 0.35);
+  }
+  html[data-theme="dark"] .lo-counter {
+    color: #94a3b8;
+  }
+  html[data-theme="dark"] .lo-pijl {
+    background: #242c3d;
+    border-color: #475569;
+    color: #e2e8f0;
+  }
+  html[data-theme="dark"] .lo-pijl:hover {
+    background: #2e384d;
+    border-color: #38bdf8;
+    color: #38bdf8;
+  }
+  html[data-theme="dark"] .lo-progress-track {
+    background: #2b3545;
+  }
+  html[data-theme="dark"] .lo-progress-bar {
+    background: #38bdf8;
+  }
+  @media (max-width: 768px) {
+    .lo-wrapper {
+      flex-direction: column;
+    }
+    .lo-label-col {
+      width: auto;
+      border-right: none;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 10px 14px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    html[data-theme="dark"] .lo-label-col {
+      border-bottom-color: #2b3545;
+    }
+    .lo-live-indicator {
+      margin-bottom: 0;
+    }
+    .lo-sub-text {
+      margin-left: 0;
+    }
+    .lo-content-col {
+      padding: 10px 14px 12px;
+    }
+  }
+  </style>
+<div class="lo-wrapper">
+<div class="lo-label-col">
+<div class="lo-live-indicator">
+<span class="lo-pulse-dot"></span>
+<span class="lo-live-text">LAATSTE ONTWIKKELINGEN</span>
+</div>
+<span class="lo-sub-text">Laatste 3 dossierdagen</span>
+</div>
+<div class="lo-content-col">
+<div class="lo-slider-pane">
+<a class="lo-slide lo-actief" data-index="0" href="document-b.html#org-academischeobservatielaag" title="TWEETALIGE KETENNOTIFICATIE: KLINISCHE DIAGNOSE VS. ADMINISTRATIEVE SYSTEEMFICTIE (WHO EUROPE, EUROPEAN OBSERVATORY, UZ GENT, VITAZ, ZORGSAAM, KCE, KAGB, KNMG, IGJ &amp; EP PETITIE 1034/2026)">
+<div class="lo-slide-meta">
+<span class="lo-datum">10-11-2026</span>
+<span class="lo-sep">—</span>
+<strong class="lo-org">ACADEMISCHE OBSERVATIELAAG</strong>
+<span class="lo-badge lo-badge-uit">UITGAAND</span>
+</div>
+<div class="lo-slide-body">
+<span class="lo-titel">TWEETALIGE KETENNOTIFICATIE: KLINISCHE DIAGNOSE VS. ADMINISTRATIEVE SYSTEEMFICTIE (WHO EUROPE, EUROPEAN OBSERVATORY, UZ GENT, VITAZ, ZORGSAAM, KCE, KAGB, KNMG, IGJ &amp; EP PETITIE 1034/2026)</span>
+<span class="lo-sep-inline">: </span>
+<span class="lo-samenvatting">De aanvrager verbindt de Raden van Bestuur van de behandelende zorginstellingen aan weerszijden van de grens (UZ Gent, Vitaz en ZorgSaam) rechtstreeks met het Regionaal...</span>
+</div>
+<div class="lo-cta">Bekijk in Data-Matrix (Doc B) →</div>
+</a>
+<a class="lo-slide" data-index="1" href="document-b.html#org-academischeobservatielaag" title="ONTVANGSTBEVESTIGING EN ZAAKREGISTRATIE INSPECTIE GEZONDHEIDSZORG EN JEUGD (IGJ ZAAK 2611 1326)">
+<div class="lo-slide-meta">
+<span class="lo-datum">10-11-2026</span>
+<span class="lo-sep">—</span>
+<strong class="lo-org">ACADEMISCHE OBSERVATIELAAG</strong>
+<span class="lo-badge lo-badge-in">INKOMEND</span>
+</div>
+<div class="lo-slide-body">
+<span class="lo-titel">ONTVANGSTBEVESTIGING EN ZAAKREGISTRATIE INSPECTIE GEZONDHEIDSZORG EN JEUGD (IGJ ZAAK 2611 1326)</span>
+<span class="lo-sep-inline">: </span>
+<span class="lo-samenvatting">De Inspectie Gezondheidszorg en Jeugd (IGJ) bevestigt per digitaal meldsysteem de goede ontvangst van de tweetalige ketenconfrontatie inzake administratieve...</span>
+</div>
+<div class="lo-cta">Bekijk in Data-Matrix (Doc B) →</div>
+</a>
+<a class="lo-slide" data-index="2" href="document-b.html#org-belastingdienst" title="FORMELE KETENCONFRONTATIE 'SPOOKBURGER'-PARADOX EN AANVULLING EP PETITIE 1034/2026 (RIV-REGISTERBLOKKADE CZ, CAK EN DIENST TOESLAGEN)">
+<div class="lo-slide-meta">
+<span class="lo-datum">10-11-2026</span>
+<span class="lo-sep">—</span>
+<strong class="lo-org">BELASTINGDIENST</strong>
+<span class="lo-badge lo-badge-uit">UITGAAND</span>
+</div>
+<div class="lo-slide-body">
+<span class="lo-titel">FORMELE KETENCONFRONTATIE 'SPOOKBURGER'-PARADOX EN AANVULLING EP PETITIE 1034/2026 (RIV-REGISTERBLOKKADE CZ, CAK EN DIENST TOESLAGEN)</span>
+<span class="lo-sep-inline">: </span>
+<span class="lo-samenvatting">De aanvrager plaatst de Raden van Bestuur en woordvoerders van zorgverzekeraar CZ, het CAK en Zorginstituut Nederland gezamenlijk met de Directie Toeslagen (Ministerie...</span>
+</div>
+<div class="lo-cta">Bekijk in Data-Matrix (Doc B) →</div>
+</a>
+<a class="lo-slide" data-index="3" href="document-b.html#org-cdz" title="FORMELE KETENCONFRONTATIE ONWETTIGE KOPPELVERKOOP MEDISCH ATTEST, KRUISPUNTBANK-BLOKKADE EN AANVULLING EP PETITIE 1034/2026">
+<div class="lo-slide-meta">
+<span class="lo-datum">10-11-2026</span>
+<span class="lo-sep">—</span>
+<strong class="lo-org">CDZ</strong>
+<span class="lo-badge lo-badge-uit">UITGAAND</span>
+</div>
+<div class="lo-slide-body">
+<span class="lo-titel">FORMELE KETENCONFRONTATIE ONWETTIGE KOPPELVERKOOP MEDISCH ATTEST, KRUISPUNTBANK-BLOKKADE EN AANVULLING EP PETITIE 1034/2026</span>
+<span class="lo-sep-inline">: </span>
+<span class="lo-samenvatting">Na de distributie van het auditdossier via het parlementaire extranet van de Belgische Kamercommissie voor Sociale Zaken plaatst de aanvrager het Nationaal...</span>
+</div>
+<div class="lo-cta">Bekijk in Data-Matrix (Doc B) →</div>
+</a>
+<a class="lo-slide" data-index="4" href="document-b.html#org-cdz" title="FORMELE SPOED-KETENCONFRONTATIE EN AANVULLING TUCHTDOSSIER ORDE DER ARTSEN (135493-09481-2026) &amp; EP PETITIE 1034/2026: HET DOORKNIPPEN VAN HET 2099-ATTEST OP 06-04-2026 EN DE RETROACTIEVE 7-DAGENEIS VAN 10-11-2026">
+<div class="lo-slide-meta">
+<span class="lo-datum">10-11-2026</span>
+<span class="lo-sep">—</span>
+<strong class="lo-org">CDZ</strong>
+<span class="lo-badge lo-badge-uit">UITGAAND</span>
+</div>
+<div class="lo-slide-body">
+<span class="lo-titel">FORMELE SPOED-KETENCONFRONTATIE EN AANVULLING TUCHTDOSSIER ORDE DER ARTSEN (135493-09481-2026) &amp; EP PETITIE 1034/2026: HET DOORKNIPPEN VAN HET 2099-ATTEST OP 06-04-2026 EN DE RETROACTIEVE 7-DAGENEIS VAN 10-11-2026</span>
+<span class="lo-sep-inline">: </span>
+<span class="lo-samenvatting">Naar aanleiding van de CM-beslissing van 10 november 2026 confronteert de aanvrager het Nationaal Voorzitterschap van de CM, de Orde der Artsen, het Kabinet...</span>
+</div>
+<div class="lo-cta">Bekijk in Data-Matrix (Doc B) →</div>
+</a>
+<a class="lo-slide" data-index="5" href="document-b.html#org-cmchristelijkemutualiteit" title="FORMELE KETENCONFRONTATIE MEDISCHE DEONTOLOGIE, ARTIKEL 30 KB NR. 79 (1967) EN AANVULLING EP PETITIE 1034/2026: GEHEIMHOUDINGSSTATUUT VS. ALGORITMISCHE BUDGETSTURING">
+<div class="lo-slide-meta">
+<span class="lo-datum">10-11-2026</span>
+<span class="lo-sep">—</span>
+<strong class="lo-org">CM</strong>
+<span class="lo-badge lo-badge-uit">UITGAAND</span>
+</div>
+<div class="lo-slide-body">
+<span class="lo-titel">FORMELE KETENCONFRONTATIE MEDISCHE DEONTOLOGIE, ARTIKEL 30 KB NR. 79 (1967) EN AANVULLING EP PETITIE 1034/2026: GEHEIMHOUDINGSSTATUUT VS. ALGORITMISCHE BUDGETSTURING</span>
+<span class="lo-sep-inline">: </span>
+<span class="lo-samenvatting">De aanvrager plaatst de Nationale Raad en de Provinciale Raden (Antwerpen en Oost-Vlaanderen) van de Orde der Artsen gezamenlijk met het Nationaal Voorzitterschap van de...</span>
+</div>
+<div class="lo-cta">Bekijk in Data-Matrix (Doc B) →</div>
+</a>
+<a class="lo-slide" data-index="6" href="document-b.html#org-cmchristelijkemutualiteit" title="RETROACTIEVE ERKENNING VOLLEDIG EERSTE ZIEKTEJAAR (07-04-2025 T/M 06-04-2026), DOORKNIPPEN 2099-ATTEST EN TIJDMACHINE-PARADOX">
+<div class="lo-slide-meta">
+<span class="lo-datum">10-11-2026</span>
+<span class="lo-sep">—</span>
+<strong class="lo-org">CM</strong>
+<span class="lo-badge lo-badge-in">INKOMEND</span>
+</div>
+<div class="lo-slide-body">
+<span class="lo-titel">RETROACTIEVE ERKENNING VOLLEDIG EERSTE ZIEKTEJAAR (07-04-2025 T/M 06-04-2026), DOORKNIPPEN 2099-ATTEST EN TIJDMACHINE-PARADOX</span>
+<span class="lo-sep-inline">: </span>
+<span class="lo-samenvatting">Ruim zes maanden na de aangifte van 30 april 2026 erkent de coördinerend arts expert van de CM (afdeling VVI Turnhout, kenmerk 810915 199 48 139770-VVI/IC/329065980) met...</span>
+</div>
+<div class="lo-cta">Bekijk in Data-Matrix (Doc B) →</div>
+</a>
+<a class="lo-slide" data-index="7" href="document-b.html#org-ec" title="FORMELE KETENCONFRONTATIE WEIGERING BELGISCH PD U1-STAATSDOCUMENT DOOR UWV EN EIS VAN 21 JAAR FYSIEKE LOONSTROKEN NA EESSI-NULMETING (EP PETITIE 1034/2026 / EC CPLT(2026)01544)">
+<div class="lo-slide-meta">
+<span class="lo-datum">10-11-2026</span>
+<span class="lo-sep">—</span>
+<strong class="lo-org">EC — EUROPESE COMMISSIE (DG EMPL)</strong>
+<span class="lo-badge lo-badge-uit">UITGAAND</span>
+</div>
+<div class="lo-slide-body">
+<span class="lo-titel">FORMELE KETENCONFRONTATIE WEIGERING BELGISCH PD U1-STAATSDOCUMENT DOOR UWV EN EIS VAN 21 JAAR FYSIEKE LOONSTROKEN NA EESSI-NULMETING (EP PETITIE 1034/2026 / EC CPLT(2026)01544)</span>
+<span class="lo-sep-inline">: </span>
+<span class="lo-samenvatting">De Raad van Bestuur van het Nederlandse UWV en de Directie van de Belgische RVA worden gezamenlijk ten overstaan van de Europese Commissie (DG EMPL, dossier...</span>
+</div>
+<div class="lo-cta">Bekijk in Data-Matrix (Doc B) →</div>
+</a>
+<a class="lo-slide" data-index="8" href="document-b.html#org-gemeentehulst" title="FORMELE KETENNOTIFICATIE FINANCIËLE ZORGPLICHT EN ZAAKREGISTRATIE COLLEGE VAN B&amp;W (ZAAK 1064153 / EP PETITIE 1034/2026): OVERHEIDSVACUÜM VS. BANCAIRE KREDIETSANERING ING">
+<div class="lo-slide-meta">
+<span class="lo-datum">10-11-2026</span>
+<span class="lo-sep">—</span>
+<strong class="lo-org">GEMEENTE HULST</strong>
+<span class="lo-badge lo-badge-uit">UITGAAND</span>
+</div>
+<div class="lo-slide-body">
+<span class="lo-titel">FORMELE KETENNOTIFICATIE FINANCIËLE ZORGPLICHT EN ZAAKREGISTRATIE COLLEGE VAN B&amp;W (ZAAK 1064153 / EP PETITIE 1034/2026): OVERHEIDSVACUÜM VS. BANCAIRE KREDIETSANERING ING</span>
+<span class="lo-sep-inline">: </span>
+<span class="lo-samenvatting">De aanvrager verbindt de directie Achterstanden en woordvoering van huisbankier ING Bank N.V.</span>
+</div>
+<div class="lo-cta">Bekijk in Data-Matrix (Doc B) →</div>
+</a>
+<a class="lo-slide" data-index="9" href="document-b.html#org-gemeentehulst" title="OFFICIËLE BEVESTIGING VOEGING KETENCONFRONTATIES (ING-KREDIETSANERING &amp; MOBILITEIT) BIJ BEZWAARDOSSIER 1064153">
+<div class="lo-slide-meta">
+<span class="lo-datum">10-11-2026</span>
+<span class="lo-sep">—</span>
+<strong class="lo-org">GEMEENTE HULST</strong>
+<span class="lo-badge lo-badge-in">INKOMEND</span>
+</div>
+<div class="lo-slide-body">
+<span class="lo-titel">OFFICIËLE BEVESTIGING VOEGING KETENCONFRONTATIES (ING-KREDIETSANERING &amp; MOBILITEIT) BIJ BEZWAARDOSSIER 1064153</span>
+<span class="lo-sep-inline">: </span>
+<span class="lo-samenvatting">De frontoffice van de Gemeente Hulst bevestigt per e-mail dat de op 10 november 2026 ingediende formele ketennotificaties (inzake de bancaire achterstands- en...</span>
+</div>
+<div class="lo-cta">Bekijk in Data-Matrix (Doc B) →</div>
+</a>
+<a class="lo-slide" data-index="10" href="document-b.html#org-rva" title="ONTVANGSTBEVESTIGING DIENST TOELAATBAARHEID (RVA TURNHOUT)">
+<div class="lo-slide-meta">
+<span class="lo-datum">10-11-2026</span>
+<span class="lo-sep">—</span>
+<strong class="lo-org">RVA</strong>
+<span class="lo-badge lo-badge-in">INKOMEND</span>
+</div>
+<div class="lo-slide-body">
+<span class="lo-titel">ONTVANGSTBEVESTIGING DIENST TOELAATBAARHEID (RVA TURNHOUT)</span>
+<span class="lo-sep-inline">: </span>
+<span class="lo-samenvatting">De Rijksdienst voor Arbeidsvoorziening (RVA), Dienst Toelaatbaarheid te Turnhout, bevestigt per digitaal bericht de goede ontvangst van de formele ketenconfrontatie...</span>
+</div>
+<div class="lo-cta">Bekijk in Data-Matrix (Doc B) →</div>
+</a>
+<a class="lo-slide" data-index="11" href="document-b.html#org-sfpd" title="SIGEDIS / DB2P JAARLIJKS OVERZICHT AANVULLENDE PENSIOENEN — INSTITUTIONEEL BEWIJS BELGISCH ARBEIDSVERLEDEN">
+<div class="lo-slide-meta">
+<span class="lo-datum">10-11-2026</span>
+<span class="lo-sep">—</span>
+<strong class="lo-org">SFPD</strong>
+<span class="lo-badge lo-badge-in">INKOMEND</span>
+</div>
+<div class="lo-slide-body">
+<span class="lo-titel">SIGEDIS / DB2P JAARLIJKS OVERZICHT AANVULLENDE PENSIOENEN — INSTITUTIONEEL BEWIJS BELGISCH ARBEIDSVERLEDEN</span>
+<span class="lo-sep-inline">: </span>
+<span class="lo-samenvatting">Ontvangst via de elektronische berichtenbox (e-Box / mypension.be) van het meertalige jaarlijkse overzicht van de aanvullende pensioenrechten (toestand 01-01-2026,...</span>
+</div>
+<div class="lo-cta">Bekijk in Data-Matrix (Doc B) →</div>
+</a>
+</div>
+<div class="lo-controls-pane">
+<span class="lo-counter"><span id="lo-huidig">1</span> / <span id="lo-totaal">12</span></span>
+<div class="lo-buttons">
+<button aria-label="Vorige" class="lo-pijl" onclick="lo_vorige(event)" title="Vorige" type="button">‹</button>
+<button aria-label="Volgende" class="lo-pijl" onclick="lo_volgende(event)" title="Volgende" type="button">›</button>
+</div>
+</div>
+</div>
+</div>
+<div class="lo-progress-track">
+<div class="lo-progress-bar" id="lo-progress-bar"></div>
+</div>
+<script>
+  (function() {
+      var banner = document.getElementById('live-ontwikkelingen-banner');
+      if (!banner) return;
+      var slides = banner.querySelectorAll('.lo-slide');
+      if (slides.length <= 1) return;
+
+      var huidig = 0;
+      var timer = null;
+      var curEl = document.getElementById('lo-huidig');
+      var barEl = document.getElementById('lo-progress-bar');
+      var pauze = false;
+
+      function resetProgressBar() {
+          if (!barEl) return;
+          barEl.style.transition = 'none';
+          barEl.style.width = '0%';
+          void barEl.offsetWidth;
+          if (!pauze) {
+              barEl.style.transition = 'width 7s linear';
+              barEl.style.width = '100%';
+          }
+      }
+
+      function toon(i) {
+          slides[huidig].classList.remove('lo-actief');
+          huidig = (i + slides.length) % slides.length;
+          slides[huidig].classList.add('lo-actief');
+          if (curEl) curEl.textContent = (huidig + 1);
+          resetProgressBar();
+      }
+
+      function start() {
+          pauze = false;
+          if (timer) clearInterval(timer);
+          resetProgressBar();
+          timer = setInterval(function() {
+              if (!pauze) {
+                  toon(huidig + 1);
+              }
+          }, 7000);
+      }
+
+      function stop() {
+          pauze = true;
+          if (barEl) {
+              var computedWidth = window.getComputedStyle(barEl).width;
+              barEl.style.transition = 'none';
+              barEl.style.width = computedWidth;
+          }
+      }
+
+      window.lo_vorige = function(e) {
+          if (e) { e.preventDefault(); e.stopPropagation(); }
+          toon(huidig - 1);
+          start();
+      };
+
+      window.lo_volgende = function(e) {
+          if (e) { e.preventDefault(); e.stopPropagation(); }
+          toon(huidig + 1);
+          start();
+      };
+
+      banner.addEventListener('mouseenter', stop);
+      banner.addEventListener('mouseleave', start);
+      banner.addEventListener('focusin', stop);
+      banner.addEventListener('focusout', start);
+
+      start();
+  })();
+  </script>
+</div>
+<div class="root-kaart">
+<div aria-label="Klik om kaart te vergroten" class="khl-map-wrap" onclick="openKaartModal()" role="button" tabindex="0" title="Klik om de kaart op groot formaat te openen met zoomfunctie">
+<picture class="theme-map index-theme-map">
+<source media="(prefers-color-scheme: dark)" srcset="assets/kaart_eu_dark.svg?v=5"/>
+<img alt="Grensregio's in de Europese Unie — focus op Zeeuws-Vlaanderen" class="map-light-only" data-dark-src="assets/kaart_eu_dark.svg?v=5" data-light-src="assets/kaart_eu_light.svg?v=5" src="assets/kaart_eu_light.svg?v=5"/>
+</picture>
+<div class="km-zoom-badge">
+<span class="km-zb-icon">🔍</span>
+<span class="km-zb-text">Klik om te vergroten / Zoom</span>
+</div>
+</div>
+<div class="kaart-html-legenda index-legenda" onclick="event.stopPropagation()">
+<div class="khl-header">
+<div class="khl-title-row">
+<span class="khl-title">🗺️ LEGENDA — GRENSKNELPUNTEN IN DE EUROPESE UNIE (A – J)</span>
+<button class="khl-zoom-btn" onclick="openKaartModal()" type="button">🔍 Vergroot kaart</button>
+</div>
+<div class="khl-symbol-bar">
+<span class="khl-sym"><span class="khl-line khl-line-border"></span> Rijksgrens NL / BE (Inzetkaart)</span>
+<span class="khl-sym"><span class="khl-line khl-line-dotted"></span> Europese binnengrenzen</span>
+<span class="khl-sym"><span class="khl-dot-city"></span> Referentiesteden</span>
+<span class="khl-sym"><span class="khl-badge khl-b-a" style="min-width:18px;height:18px;font-size:7.5pt;">A</span> Geselecteerde EU-grensknelpunten (A–J)</span>
+</div>
+</div>
+<div class="khl-grid">
+<div class="khl-col">
+<div class="khl-col-title">PANEEL 1 — WEST- EN NOORD-EUROPA (A – E)</div>
+<div class="khl-item"><span class="khl-badge khl-b-a">A</span><div class="khl-text"><strong>Zeeuws-Vlaanderen / Vlaanderen (NL/BE):</strong> <em>Het laboratorium van deze Systeem-Audit</em> (zie uitvergrote inzetkaart rechts).</div></div>
+<div class="khl-item"><span class="khl-badge khl-b-b">B</span><div class="khl-text"><strong>Øresund / Sontregio (DK/SE):</strong> Kopenhagen – Malmö grensarbeidszone.</div></div>
+<div class="khl-item"><span class="khl-badge khl-b-c">C</span><div class="khl-text"><strong>Euregio Maas-Rijn (NL/BE/DE):</strong> Drielandenpunt Maastricht – Luik – Aken.</div></div>
+<div class="khl-item"><span class="khl-badge khl-b-d">D</span><div class="khl-text"><strong>SaarLorLux / Grootregio (LU/FR/DE/BE):</strong> Intensieve dagelijkse grenspendel rond Luxemburg.</div></div>
+<div class="khl-item"><span class="khl-badge khl-b-e">E</span><div class="khl-text"><strong>Bovenrijn / Oberrhein (FR/DE/CH):</strong> Elzas – Baden-Württemberg – Bazel.</div></div>
+</div>
+<div class="khl-col">
+<div class="khl-col-title">PANEEL 2 — CENTRAAL-, OOST- EN ZUID-EUROPA (F – J)</div>
+<div class="khl-item"><span class="khl-badge khl-b-f">F</span><div class="khl-text"><strong>Pools-Duitse grensregio (PL/DE):</strong> Oder-Neisse grenszone (Szczecin – Frankfurt/Oder).</div></div>
+<div class="khl-item"><span class="khl-badge khl-b-g">G</span><div class="khl-text"><strong>Centrope (AT/SK/CZ/HU):</strong> Vierlandenregio Wenen – Bratislava – Brno – Győr.</div></div>
+<div class="khl-item"><span class="khl-badge khl-b-h">H</span><div class="khl-text"><strong>Ierland / Noord-Ierland (IE/UK):</strong> Buitengrens EU/VK na Brexit op het Ierse eiland.</div></div>
+<div class="khl-item"><span class="khl-badge khl-b-i">I</span><div class="khl-text"><strong>Frans-Italiaanse grens / Ventimiglia (FR/IT):</strong> Maritieme Alpen &amp; Ligurische kustcorridor.</div></div>
+<div class="khl-item"><span class="khl-badge khl-b-j">J</span><div class="khl-text"><strong>Spaans-Franse grens / Baskenland (ES/FR):</strong> Eurocity Bayonne – San Sebastián.</div></div>
+</div>
+</div>
+<div class="khl-footer-note">
+        📍 <strong>Inzetkaart (rechts):</strong> Gedetailleerde uitsnede van het grensvacuüm tussen <strong>Zeeuws-Vlaanderen (NL — Sluis, Terneuzen, Hulst)</strong> en <strong>Vlaanderen (BE — Gent, Waasland, Antwerpen)</strong> — <em>Knelpunt A</em>.
+      </div>
+</div>
+</div>
+<div class="root-intro-grid">
+<div class="root-intro-kolom" lang="nl">
+<div class="root-intro-kop">
+<span class="root-intro-vlag">🇳🇱</span>
+<span class="root-intro-taal">Nederlands</span>
+</div>
+<p>Geen adviesloket en geen pleister op een vastgelopen formulier. Deze site toont aan de hand van één volledig gedocumenteerd dossier (62 instanties, meer dan 700 handelingen) hoe de Belgische en Nederlandse systemen achter de schermen werkelijk op elkaar inwerken — waar ze blokkeren, waarom brieven elkaar tegenspreken, en welke hefbomen wél werken.</p>
+</div> <div class="root-intro-kolom" lang="en">
+<div class="root-intro-kop">
+<span class="root-intro-vlag">🇬🇧</span>
+<span class="root-intro-taal">English</span>
+</div>
+<p>Not an advice desk and not a band-aid on a stalled form. Through one fully documented case (62 institutions, over 700 actions), this site shows how the Belgian and Dutch systems actually interact behind the scenes — where they lock up, why official letters contradict each other, and which levers actually work.</p>
+</div> <div class="root-intro-kolom" lang="de">
+<div class="root-intro-kop">
+<span class="root-intro-vlag">🇩🇪</span>
+<span class="root-intro-taal">Deutsch</span>
+</div>
+<p>Keine Beratungsstelle und kein Pflaster auf einem festgefahrenen Formular. Anhand einer vollständig dokumentierten Akte (62 Behörden, über 700 Vorgänge) zeigt diese Seite, wie das belgische und das niederländische System hinter den Kulissen tatsächlich zusammenwirken — wo sie blockieren, warum Briefe sich widersprechen und welche Hebel wirklich funktionieren.</p>
+</div> <div class="root-intro-kolom" lang="fr">
+<div class="root-intro-kop">
+<span class="root-intro-vlag">🇫🇷</span>
+<span class="root-intro-taal">Français</span>
+</div>
+<p>Ni un guichet de conseil, ni un pansement sur un formulaire bloqué. À travers un dossier entièrement documenté (62 institutions, plus de 700 actes), ce site montre comment les systèmes belge et néerlandais interagissent réellement en coulisses — où ils bloquent, pourquoi les courriers se contredisent et quels leviers fonctionnent vraiment.</p>
+</div>
+</div>
+<div class="keuze-kop">
+<h2>Kies uw toegang / Select your entry point:</h2>
+<p>Selecteer het authentieke Nederlandstalige brondossier of het meertalige Europese portaal.</p>
+</div>
+<div class="portaal-grid">
+<!-- POORT 1: NEDERLAND & BELGIË -->
+<a class="portaal-kaart portaal-nl" href="home.html">
+<div class="portaal-vlag-box">
+<svg class="portaal-vlag-diagonaal" height="80" viewbox="0 0 120 80" width="120" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clippath id="clip-nl">
+<polygon points="0,0 120,0 0,80"></polygon>
+</clippath>
+<clippath id="clip-be">
+<polygon points="120,0 120,80 0,80"></polygon>
+</clippath>
+<filter height="120%" id="shadow-nlbe" width="120%" x="-10%" y="-10%">
+<fedropshadow dx="0" dy="2" flood-opacity="0.25" stddeviation="3"></fedropshadow>
+</filter>
+</defs>
+<rect fill="#ffffff" filter="url(#shadow-nlbe)" height="80" rx="8" width="120"></rect>
+<g clip-path="url(#clip-nl)">
+<rect fill="#AE1C28" height="26.7" rx="8" width="120" x="0" y="0"></rect>
+<rect fill="#FFFFFF" height="26.6" width="120" x="0" y="26.7"></rect>
+<rect fill="#21468B" height="26.7" rx="8" width="120" x="0" y="53.3"></rect>
+</g>
+<g clip-path="url(#clip-be)">
+<rect fill="#000000" height="80" rx="8" width="40" x="0" y="0"></rect>
+<rect fill="#FDDA24" height="80" width="40" x="40" y="0"></rect>
+<rect fill="#EF3340" height="80" rx="8" width="40" x="80" y="0"></rect>
+</g>
+<line stroke="#ffffff" stroke-width="3.5" x1="120" x2="0" y1="0" y2="80"></line>
+<rect fill="none" height="80" rx="8" stroke="rgba(0,0,0,0.15)" stroke-width="1" width="120"></rect>
+</svg>
+</div>
+<div class="portaal-body">
+<div class="portaal-badge badge-nl">🇳🇱 / 🇧🇪 Authentieke Bronversie</div>
+<h3>Nederland &amp; België</h3>
+<p class="portaal-ondertitel">Volledig Nederlands dossier · Juridisch leidend · Originele documenten</p>
+<p class="portaal-beschrijving">
+          Voor Nederlandse en Belgische burgers, advocaten, rechtbanken, sociale secretariaten, beleidsmakers en grenswerkers.
+          Het integrale empirische dossier van 62 instanties, meer dan 700 proceshandelingen en 6 documenten (0, A, B, C, D, E) — inclusief officiële Word- en PDF-downloads.
+        </p>
+<ul class="portaal-punten">
+<li>✓ 100% authentieke juridische brontaal (nooit automatisch vertaald)</li>
+<li>✓ Originele Word- en PDF-dossiers direct downloadbaar</li>
+<li>✓ Volledige forensische data-matrix en visuele architectuur</li>
+</ul>
+<div class="portaal-actie">
+<span class="btn-poort btn-poort-nl">Naar het Nederlandse Dossier →</span>
+</div>
+</div>
+</a>
+<!-- POORT 2: EUROPEES & INTERNATIONAAL -->
+<a class="portaal-kaart portaal-eu" href="../int/home.html">
+<div class="portaal-vlag-box">
+<svg class="portaal-vlag-eu" height="80" viewbox="0 0 120 80" width="120" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<filter height="120%" id="shadow-eu" width="120%" x="-10%" y="-10%">
+<fedropshadow dx="0" dy="2" flood-opacity="0.25" stddeviation="3"></fedropshadow>
+</filter>
+</defs>
+<rect fill="#003399" filter="url(#shadow-eu)" height="80" rx="8" width="120"></rect>
+<rect fill="none" height="80" rx="8" stroke="rgba(255,255,255,0.2)" stroke-width="1" width="120"></rect>
+<g fill="#FFCC00">
+<polygon points="60.0,14.4 61.1,17.8 64.6,17.8 61.8,19.9 62.9,23.3 60.0,21.2 57.1,23.3 58.2,19.9 55.4,17.8 58.9,17.8"></polygon>
+<polygon points="71.0,17.4 72.1,20.8 75.6,20.8 72.8,22.9 73.9,26.3 71.0,24.2 68.1,26.3 69.2,22.9 66.4,20.8 69.9,20.8"></polygon>
+<polygon points="79.1,25.4 80.2,28.8 83.7,28.8 80.9,30.9 82.0,34.3 79.1,32.2 76.2,34.3 77.3,30.9 74.5,28.8 78.0,28.8"></polygon>
+<polygon points="82.0,36.4 83.1,39.8 86.6,39.8 83.8,41.9 84.9,45.3 82.0,43.2 79.1,45.3 80.2,41.9 77.4,39.8 80.9,39.8"></polygon>
+<polygon points="79.1,47.4 80.2,50.8 83.7,50.8 80.9,52.9 82.0,56.3 79.1,54.2 76.2,56.3 77.3,52.9 74.5,50.8 78.0,50.8"></polygon>
+<polygon points="71.0,55.4 72.1,58.8 75.6,58.8 72.8,60.9 73.9,64.3 71.0,62.2 68.1,64.3 69.2,60.9 66.4,58.8 69.9,58.8"></polygon>
+<polygon points="60.0,58.4 61.1,61.8 64.6,61.8 61.8,63.9 62.9,67.3 60.0,65.2 57.1,67.3 58.2,63.9 55.4,61.8 58.9,61.8"></polygon>
+<polygon points="49.0,55.4 50.1,58.8 53.6,58.8 50.8,60.9 51.9,64.3 49.0,62.2 46.1,64.3 47.2,60.9 44.4,58.8 47.9,58.8"></polygon>
+<polygon points="40.9,47.4 42.0,50.8 45.5,50.8 42.7,52.9 43.8,56.3 40.9,54.2 38.0,56.3 39.1,52.9 36.3,50.8 39.8,50.8"></polygon>
+<polygon points="38.0,36.4 39.1,39.8 42.6,39.8 39.8,41.9 40.9,45.3 38.0,43.2 35.1,45.3 36.2,41.9 33.4,39.8 36.9,39.8"></polygon>
+<polygon points="40.9,25.4 42.0,28.8 45.5,28.8 42.7,30.9 43.8,34.3 40.9,32.2 38.0,34.3 39.1,30.9 36.3,28.8 39.8,28.8"></polygon>
+<polygon points="49.0,17.4 50.1,20.8 53.6,20.8 50.8,22.9 51.9,26.3 49.0,24.2 46.1,26.3 47.2,22.9 44.4,20.8 47.9,20.8"></polygon>
+</g>
+</svg>
+</div>
+<div class="portaal-body">
+<div class="portaal-badge badge-eu">🇪🇺 European &amp; International Portal</div>
+<h3>Europees &amp; Internationaal</h3>
+<p class="portaal-ondertitel">Cross-Border System Audit · Real-Time Translation · Clean PDF</p>
+<p class="portaal-beschrijving">
+          For European citizens, cross-border workers, EU institutions (EU Commission, ELA, SOLVIT) and international researchers.
+          Translates automatically into English, German, French or your browser language, with interactive online reading and printable reports.
+        </p>
+<ul class="portaal-punten">
+<li>✓ Adapts automatically to your browser language (English default)</li>
+<li>✓ Multi-language selector covering all official EU languages</li>
+<li>✓ High-quality online reading &amp; print-to-PDF in your language</li>
+</ul>
+<div class="portaal-actie">
+<span class="btn-poort btn-poort-eu">Enter European Portal →</span>
+</div>
+</div>
+</a>
+</div>
+<div class="ab-melding">
+<h3>⚠️ Language &amp; Translation Notice · Taal- en vertaalverantwoording</h3>
+<p><span class="vlag-klein">🇳🇱</span><strong>Nederlands (nl/):</strong> De enige authentieke brontaal van deze Systeem-Audit. In geval van twijfel of juridische interpretatie is uitsluitend de Nederlandse tekst leidend.</p>
+<p><span class="vlag-klein">🇬🇧</span><strong>Language &amp; Translation Notice:</strong> Dutch (nl/) is the sole authentic source language of this System-Audit. The translations are provided to make the documented cross-border mechanisms accessible across Europe. In case of any ambiguity or legal interpretation, the original Dutch text and source files prevail.</p>
+</div>
+<div class="eu-joke" style="text-align: center; line-height: 1.8;">
+<span style="display: block; margin-bottom: 10px;"><img alt="Vlag van de Europese Unie" height="40" src="assets/vlag_eu.png" style="display: inline-block; vertical-align: middle; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.2); color-scheme: light !important; filter: none !important;" width="60"/></span>
+<strong>NIET gesubsidieerd door de Europese Unie.</strong><br/>
+    Het falende systeem dat hier besproken wordt, uiteraard wél.<br/>
+    Dit onafhankelijke archief blijft uitsluitend in de lucht dankzij <a href="https://systeemaudit.backme.org/" rel="noopener" style="color: inherit; text-decoration: underline;" target="_blank">vrijwillige bijdragen</a>.
+  </div>
+<div class="footer notranslate" translate="no">
+<div style="margin: 10pt 0; display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
+<button class="pub-search-btn" onclick="openSearchModal()" type="button">🔍 Doorzoek audit</button>
+<button class="pub-contact-btn" onclick="openBronModal('Algemeen contact via index')" type="button">📄 Bronstuk opvragen / Contact</button>
+</div>
+<p>Openbaar materiaal · Systeem-Audit (grensarbeid.org)</p>
+</div>
+</div>
+<!-- Forensisch Bronopvragings- en Contactvenster (Modal) -->
+<div class="bm-modal-overlay" id="bm-modal" onclick="if(event.target===this)sluitBronModal()">
+<div aria-labelledby="bm-modal-titel" aria-modal="true" class="bm-modal-dialog" role="dialog">
+<div class="bm-modal-kop">
+<h3 id="bm-modal-titel">📄 Bronstuk opvragen / Contact</h3>
+<button aria-label="Venster sluiten" class="bm-modal-sluit" onclick="sluitBronModal()" type="button">×</button>
+</div>
+<div class="bm-intro">
+      Alle 791 interacties in deze audit zijn gebaseerd op objectieve brondocumenten (originele e-mails met Message-ID's, formele besluiten, brieven en medische verslagen). Om privacy en AVG-rechten van betrokkenen te waarborgen zijn persoonsgegevens in publieke bestanden afgeschermd. Geauthenticeerde onderzoekers, journalisten, toezichthouders en lotgenoten kunnen volledige, ongecensureerde brondossiers opvragen ter verificatie.
+    </div>
+<form id="bm-form" onsubmit="event.preventDefault();stuurEmail();">
+<div class="bm-groep">
+<label class="bm-label" for="bm-onderwerp">Onderwerp / Gevraagd bronstuk of referentie:</label>
+<input class="bm-input" id="bm-onderwerp" placeholder="Bijv. Bronopvraag: CZ Zorgverzekering - 06-10-2026 - Weigering S072" type="text"/>
+</div>
+<div class="bm-groep">
+<label class="bm-label">Uw hoedanigheid / perspectief:</label>
+<div class="bm-radio-groep">
+<label class="bm-radio-optie">
+<input checked="" name="bm-perspectief" type="radio" value="Lotgenoot / Grensarbeider"/>
+<span><strong>Lotgenoot / Grensarbeider</strong><br/><small style="color:#666">Ervaring delen, herkenning, vergelijkbare situatie</small></span>
+</label>
+<label class="bm-radio-optie">
+<input name="bm-perspectief" type="radio" value="Wetenschap / Beleidsonderzoek"/>
+<span><strong>Wetenschap / Beleid</strong><br/><small style="color:#666">Academisch onderzoek, beleidsevaluatie, EESSI/ESSPASS</small></span>
+</label>
+<label class="bm-radio-optie">
+<input name="bm-perspectief" type="radio" value="Journalistiek / Media"/>
+<span><strong>Journalistiek / Media</strong><br/><small style="color:#666">Feitelijke verificatie, achtergrondgesprek, publicatie</small></span>
+</label>
+<label class="bm-radio-optie">
+<input name="bm-perspectief" type="radio" value="Juridisch / Toezichthouder"/>
+<span><strong>Juridisch / Toezichthouder</strong><br/><small style="color:#666">Handhaving, AVG/GDPR, rechtbank, ombudsman</small></span>
+</label>
+</div>
+</div>
+<div class="bm-groep">
+<label class="bm-label" for="bm-vraag">Uw toelichting, vraag of verificatiedoel:</label>
+<textarea class="bm-textarea" id="bm-vraag" placeholder="Beschrijf kort uw onderzoeksvraag, hoedanigheid of situatie..."></textarea>
+</div>
+<div class="bm-check-groep">
+<input checked="" id="bm-akkoord" type="checkbox"/>
+<label for="bm-akkoord">Ik begrijp dat opgevraagde bronstukken uitsluitend voor verificatie, waarheidsvinding of belangenbehartiging worden verstrekt conform de privacywetgeving.</label>
+</div>
+<div class="bm-knoppen">
+<button class="bm-btn-copy" id="bm-copy-btn" onclick="kopieerAanvraag()" type="button">📋 Kopieer aanvraagtekst + e-mailadres</button>
+<button class="bm-btn-mail" type="submit">Open in e-mailprogramma →</button>
+</div>
+</form>
+</div>
+</div>
+<script>
+(function() {
+  window.openBronModal = function(onderwerp) {
+    var modal = document.getElementById('bm-modal');
+    if (!modal) return;
+    var inp = document.getElementById('bm-onderwerp');
+    if (inp) {
+      inp.value = onderwerp || 'Algemeen contact / Vraag over de Systeem-Audit';
+    }
+    modal.classList.add('bm-open');
+    if (inp) inp.focus();
+  };
+
+  window.sluitBronModal = function() {
+    var modal = document.getElementById('bm-modal');
+    if (modal) modal.classList.remove('bm-open');
+  };
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') sluitBronModal();
+  });
+
+  // Event delegation voor klik op .audit-bewijs
+  document.addEventListener('click', function(e) {
+    var badge = e.target.closest ? e.target.closest('.audit-bewijs') : null;
+    if (!badge) return;
+    e.preventDefault();
+
+    var entry = badge.closest ? badge.closest('.entry') : null;
+    var orgNaam = '';
+    var datum = '';
+    var titel = '';
+
+    if (entry) {
+      var dEl = entry.querySelector('.datum');
+      if (dEl) datum = dEl.innerText.trim();
+      var tEl = entry.querySelector('.titel, .entry-titel');
+      if (tEl) titel = tEl.innerText.trim();
+      
+      // Zoek dichtstbijzijnde voorgaande h3
+      var allH3 = document.querySelectorAll('h3');
+      for (var i = allH3.length - 1; i >= 0; i--) {
+        if (allH3[i].compareDocumentPosition(badge) & Node.DOCUMENT_POSITION_FOLLOWING) {
+          orgNaam = allH3[i].innerText.trim();
+          break;
+        }
+      }
+    }
+
+    var cleanOrg = orgNaam.replace(/\s+/g, ' ').replace(/^[\d\.\s]+/, '').trim();
+    var parts = [];
+    if (cleanOrg) parts.push(cleanOrg);
+    if (datum) parts.push(datum);
+    if (titel) parts.push(titel.replace(/\s+/g, ' '));
+    else if (badge.innerText) parts.push(badge.innerText.trim());
+
+    var onderwerp = 'Bronopvraag: ' + parts.join(' - ');
+    openBronModal(onderwerp);
+  });
+
+  function genereerEmailTekst() {
+    var onderwerp = (document.getElementById('bm-onderwerp').value || '').trim();
+    var perspectiefEl = document.querySelector('input[name="bm-perspectief"]:checked');
+    var perspectief = perspectiefEl ? perspectiefEl.value : 'Niet opgegeven';
+    var toelichting = (document.getElementById('bm-vraag').value || '').trim();
+    var akkoord = document.getElementById('bm-akkoord').checked ? 'Ja' : 'Nee';
+
+    var tekst = "Geachte heer Messa / Systeem-Audit,\n\n" +
+      "Betreft: " + onderwerp + "\n" +
+      "Perspectief: " + perspectief + "\n\n" +
+      "Toelichting / Onderzoeksvraag:\n" +
+      (toelichting || "[Geen extra toelichting ingevoerd]") + "\n\n" +
+      "Akkoord met verificatievoorwaarden: " + akkoord + "\n\n" +
+      "---\nVerzonden via het bronopvragingsvenster van grensarbeid.org";
+    return { onderwerp: onderwerp, tekst: tekst };
+  }
+
+  window.stuurEmail = function() {
+    var data = genereerEmailTekst();
+    var mailto = "mailto:systeemaudit@gmail.com" +
+      "?subject=" + encodeURIComponent(data.onderwerp) +
+      "&body=" + encodeURIComponent(data.tekst);
+    window.location.href = mailto;
+  };
+
+  window.kopieerAanvraag = function() {
+    var data = genereerEmailTekst();
+    var klembordTekst = "Aan: systeemaudit@gmail.com\n" +
+      "Onderwerp: " + data.onderwerp + "\n\n" +
+      data.tekst;
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(klembordTekst).then(function() {
+        toonKopieerBevestiging();
+      }).catch(function() {
+        fallbackKopieer(klembordTekst);
+      });
+    } else {
+      fallbackKopieer(klembordTekst);
+    }
+  };
+
+  function fallbackKopieer(tekst) {
+    var ta = document.createElement('textarea');
+    ta.value = tekst;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    try {
+      document.execCommand('copy');
+      toonKopieerBevestiging();
+    } catch(e) {
+      alert('Kopiëren mislukt. U kunt handmatig mailen naar systeemaudit@gmail.com');
+    }
+    document.body.removeChild(ta);
+  }
+
+  function toonKopieerBevestiging() {
+    var btn = document.getElementById('bm-copy-btn');
+    if (!btn) return;
+    var orig = btn.innerText;
+    btn.innerText = '✓ Gekopieerd naar klembord!';
+    btn.classList.add('bm-copied');
+    setTimeout(function() {
+      btn.innerText = orig;
+      btn.classList.remove('bm-copied');
+    }, 2500);
+  }
+})();
+</script>
+<!-- Client-Side Search Modal -->
+<div aria-labelledby="sm-input" aria-modal="true" class="sm-modal-overlay notranslate" id="sm-modal" onclick="if(event.target===this)sluitSearchModal()" role="dialog" style="display:none;" translate="no">
+<div class="sm-modal-dialog">
+<div class="sm-modal-header">
+<div class="sm-search-bar">
+<span class="sm-icon">🔍</span>
+<input aria-label="Doorzoek audit" autocomplete="off" class="sm-input" id="sm-input" inputmode="search" placeholder="Doorzoek audit (bijv. UWV, S072, 5124, EESSI, regiotaxi)..." spellcheck="false" type="text"/>
+<button aria-label="Invoer wissen" class="sm-clear-btn" onclick="smClearInput()" style="display:none;" title="Invoer wissen" type="button">×</button>
+</div>
+<button aria-label="Sluiten" class="sm-modal-sluit" onclick="sluitSearchModal()" type="button">×</button>
+</div>
+<div class="sm-status-bar">
+<span id="sm-status-txt">Typ minimaal 2 tekens om te zoeken</span>
+<span class="sm-shortcut-hint"><kbd>ESC</kbd> om te sluiten</span>
+</div>
+<div aria-live="polite" class="sm-results" id="sm-results" role="region"></div>
+</div>
+</div>
+<script class="notranslate" translate="no">
+(function() {
+  var searchIndex = null;
+  var isLoading = false;
+
+  window.openSearchModal = function() {
+    var modal = document.getElementById('sm-modal');
+    if (!modal) return;
+    modal.classList.add('sm-open');
+    modal.style.display = 'flex';
+    bindInput();
+    var inp = document.getElementById('sm-input');
+    if (inp) {
+      setTimeout(function() { inp.focus(); }, 50);
+      if (inp.value.trim().length >= 2) {
+        doSearch(inp.value.trim());
+      }
+    }
+    loadIndex();
+  };
+
+  window.sluitSearchModal = function() {
+    var modal = document.getElementById('sm-modal');
+    if (!modal) return;
+    modal.classList.remove('sm-open');
+    modal.style.display = 'none';
+  };
+
+  window.smClearInput = function() {
+    var inp = document.getElementById('sm-input');
+    if (inp) {
+      inp.value = '';
+      inp.focus();
+      var clr = document.querySelector('.sm-clear-btn');
+      if (clr) clr.style.display = 'none';
+      var res = document.getElementById('sm-results');
+      if (res) res.innerHTML = '';
+      var status = document.getElementById('sm-status-txt');
+      if (status) status.textContent = 'Typ minimaal 2 tekens om te zoeken';
+    }
+  };
+
+  // Globale click-delegation voor mobiele browsers & touchscreens
+  document.addEventListener('click', function(e) {
+    var t = e.target;
+    if (!t || !t.closest) return;
+    var trigger = t.closest('.sm-toggle, .pub-search-btn');
+    if (trigger) {
+      e.preventDefault();
+      window.openSearchModal();
+    }
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+      e.preventDefault();
+      var modal = document.getElementById('sm-modal');
+      if (modal && modal.classList.contains('sm-open')) {
+        sluitSearchModal();
+      } else {
+        openSearchModal();
+      }
+    } else if (e.key === 'Escape') {
+      var modal = document.getElementById('sm-modal');
+      if (modal && modal.classList.contains('sm-open')) {
+        sluitSearchModal();
+      }
+    }
+  });
+
+  function loadIndex() {
+    if (searchIndex || isLoading) return;
+    isLoading = true;
+    var status = document.getElementById('sm-status-txt');
+    if (status) status.textContent = 'Zoekindex inladen...';
+
+    var p = window.location.pathname.toLowerCase();
+    var isRoot = !p.includes('/nl/') && !p.includes('/int/');
+    var indexPath = isRoot ? 'nl/search_index.json' : 'search_index.json';
+
+    fetch(indexPath)
+      .then(function(r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(function(data) {
+        searchIndex = data;
+        isLoading = false;
+        if (status) status.textContent = 'Index gereed (' + data.length + ' secties doorzoekbaar)';
+        var inp = document.getElementById('sm-input');
+        if (inp && inp.value.trim().length >= 2) {
+          doSearch(inp.value.trim());
+        }
+      })
+      .catch(function(err) {
+        isLoading = false;
+        if (status) status.textContent = 'Fout bij inladen zoekindex';
+        console.error('Search index load error:', err);
+      });
+  }
+
+  function escapeHtml(str) {
+    return (str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function escapeRegExp(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  function highlightWords(text, words) {
+    if (!text) return '';
+    var escaped = escapeHtml(text);
+    words.forEach(function(w) {
+      if (!w) return;
+      var cleanW = escapeRegExp(escapeHtml(w));
+      var reg = new RegExp('(' + cleanW + ')', 'gi');
+      escaped = escaped.replace(reg, '<mark>$1</mark>');
+    });
+    return escaped;
+  }
+
+  function createSnippet(text, words, maxLen) {
+    if (!text) return '';
+    maxLen = maxLen || 140;
+    var low = text.toLowerCase();
+    var firstIdx = -1;
+    for (var i = 0; i < words.length; i++) {
+      var idx = low.indexOf(words[i].toLowerCase());
+      if (idx !== -1 && (firstIdx === -1 || idx < firstIdx)) {
+        firstIdx = idx;
+      }
+    }
+    if (firstIdx === -1) {
+      var snippet = text.slice(0, maxLen);
+      return highlightWords(snippet + (text.length > maxLen ? '...' : ''), words);
+    }
+    var start = Math.max(0, firstIdx - 40);
+    var end = Math.min(text.length, firstIdx + maxLen);
+    var snippet = (start > 0 ? '...' : '') + text.slice(start, end) + (end < text.length ? '...' : '');
+    return highlightWords(snippet, words);
+  }
+
+  var debounceTimer = null;
+  function bindInput() {
+    var inp = document.getElementById('sm-input');
+    if (!inp || inp._bound) return;
+    inp._bound = true;
+    inp.addEventListener('input', function() {
+      var val = inp.value.trim();
+      var clr = document.querySelector('.sm-clear-btn');
+      if (clr) clr.style.display = val.length > 0 ? 'inline-block' : 'none';
+
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(function() {
+        if (val.length < 2) {
+          var res = document.getElementById('sm-results');
+          if (res) res.innerHTML = '';
+          var status = document.getElementById('sm-status-txt');
+          if (status) status.textContent = 'Typ minimaal 2 tekens om te zoeken';
+          return;
+        }
+        if (!searchIndex) {
+          loadIndex();
+        } else {
+          doSearch(val);
+        }
+      }, 120);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bindInput);
+  } else {
+    bindInput();
+  }
+
+  var TYPO_ALIASES = {
+    'uvw': 'uwv',
+    'uvv': 'uwv',
+    'svv': 'svb',
+    'sbv': 'svb',
+    'caak': 'cak',
+    'riizv': 'riziv',
+    'rizv': 'riziv',
+    'eesi': 'eessi',
+    'esssi': 'eessi',
+    'solvt': 'solvit'
+  };
+  function doSearch(query) {
+    if (!searchIndex) return;
+    var words = query.toLowerCase().split(/\s+/).filter(function(w) { return w.length > 0; }).map(function(w) {
+      return TYPO_ALIASES[w] || w;
+    });
+    if (words.length === 0) return;
+
+    var matches = [];
+    for (var i = 0; i < searchIndex.length; i++) {
+      var item = searchIndex[i];
+      var tLow = (item.title || '').toLowerCase();
+      var bLow = (item.text || '').toLowerCase();
+      var dLow = (item.doc || '').toLowerCase();
+
+      var allMatch = true;
+      var titleMatchCount = 0;
+      for (var w = 0; w < words.length; w++) {
+        var word = words[w];
+        var inTitle = tLow.indexOf(word) !== -1;
+        var inBody = bLow.indexOf(word) !== -1;
+        var inDoc = dLow.indexOf(word) !== -1;
+        if (!inTitle && !inBody && !inDoc) {
+          allMatch = false;
+          break;
+        }
+        if (inTitle) titleMatchCount++;
+      }
+
+      if (allMatch) {
+        var score = 1;
+        if (titleMatchCount === words.length) score = 10;
+        else if (titleMatchCount > 0) score = 5;
+        matches.push({ score: score, item: item });
+      }
+    }
+
+    matches.sort(function(a, b) {
+      if (b.score !== a.score) return b.score - a.score;
+      return a.item.title.localeCompare(b.item.title);
+    });
+
+    renderResults(matches, words, query);
+  }
+
+  function renderResults(matches, words, query) {
+    var container = document.getElementById('sm-results');
+    var status = document.getElementById('sm-status-txt');
+    if (!container) return;
+
+    if (matches.length === 0) {
+      container.innerHTML = '<div class="sm-empty">' + 'Geen resultaten gevonden voor &ldquo;' + escapeHtml(query) + '&rdquo;</div>';
+      if (status) status.textContent = '0 resultaten';
+      return;
+    }
+
+    if (status) {
+      status.textContent = matches.length + ' resultaten gevonden';
+    }
+
+    var p = window.location.pathname.toLowerCase();
+    var isRoot = !p.includes('/nl/') && !p.includes('/int/');
+    var prefix = isRoot ? 'nl/' : '';
+
+    var html = '';
+    var limit = Math.min(matches.length, 50);
+    for (var i = 0; i < limit; i++) {
+      var item = matches[i].item;
+      var titleHighlighted = highlightWords(item.title, words);
+      var snippet = createSnippet(item.text, words, 160);
+      var linkUrl = prefix + item.url;
+      html += '<a class="sm-result-card" href="' + escapeHtml(linkUrl) + '" onclick="sluitSearchModal()">' +
+                '<div><span class="sm-result-badge">' + escapeHtml(item.doc) + '</span></div>' +
+                '<div class="sm-result-title">' + titleHighlighted + '</div>' +
+                '<p class="sm-result-snippet">' + snippet + '</p>' +
+              '</a>';
+    }
+    container.innerHTML = html;
+  }
+})();
+</script>
+<!-- Kaart Lightbox & Zoom Modal -->
+<div aria-labelledby="km-title" aria-modal="true" class="km-modal-overlay notranslate" id="km-modal" onclick="if(event.target===this)sluitKaartModal()" role="dialog" style="display:none;" translate="no">
+<div class="km-modal-dialog">
+<div class="km-modal-header">
+<div class="km-title-wrap">
+<span class="km-icon">🗺️</span>
+<h3 class="km-title" id="km-title">Grensregio's in de Europese Unie</h3>
+<span class="km-subtitle">Focus: Zeeuws-Vlaanderen &amp; 10 Europese Knelpunten</span>
+</div>
+<div class="km-controls">
+<button aria-label="Zoom uit (-)" class="km-btn km-zoom-out" onclick="kmZoomStep(-0.25)" title="Zoom uit (-)" type="button">🔍−</button>
+<button aria-label="Herstel zoom (100%)" class="km-btn km-zoom-val" onclick="kmResetZoom()" title="Herstel zoom (100%)" type="button">100%</button>
+<button aria-label="Zoom in (+)" class="km-btn km-zoom-in" onclick="kmZoomStep(0.25)" title="Zoom in (+)" type="button">🔍+</button>
+<a class="km-btn km-full-btn" href="assets/kaart_eu_dark.svg?v=5" id="km-full-link" rel="noopener" target="_blank" title="Open originele vector SVG in nieuw tabblad">SVG ↗</a>
+<button aria-label="Sluiten (ESC)" class="km-close-btn" onclick="sluitKaartModal()" title="Sluiten (ESC)" type="button">×</button>
+</div>
+</div>
+<div class="km-viewport" id="km-viewport" title="💡 Sleep om te bewegen bij zoom · Muiswiel of dubbelklik om in/uit te zoomen">
+<div class="km-img-stage" id="km-stage">
+<img alt="Grensregio's in de Europese Unie" class="km-img" draggable="false" id="km-img" src=""/>
+</div>
+<div class="km-drag-hint" id="km-drag-hint">💡 Sleep om te bewegen bij zoom · Muiswiel of dubbelklik om in/uit te zoomen</div>
+</div>
+<!-- Uitgebreide, kristalheldere legenda in HTML-tekst -->
+<div class="km-legenda-bar">
+<div class="km-legenda-header">
+<div class="km-lh-title">
+<span class="km-lh-dot"></span>
+<strong>GRENSKNELPUNTEN (A–J)</strong>
+<span class="km-lh-desc">— Empirisch gedocumenteerde grensknelpunten in het Europese binnengrenzennetwerk</span>
+</div>
+<button class="km-leg-toggle" onclick="kmToggleLegenda(this)" title="Toon/verberg" type="button">▲ Legenda</button>
+</div>
+<div class="km-legenda-content" id="km-leg-content">
+<div id="km-leg-eu">
+<div class="km-leg-grid">
+<div class="km-leg-col">
+<div class="km-leg-item"><span class="km-pill" style="background:#dc2626;">A</span> <strong>Zeeuws-Vlaanderen</strong> <span class="km-country">(NL/BE)</span> — <em>Het laboratorium van de Systeem-Audit</em> (zie inzetkaart)</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#0284c7;">B</span> <strong>Øresund / Sontregio</strong> <span class="km-country">(DK/SE)</span> — Kopenhagen – Malmö grensarbeidszone</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#7c3aed;">C</span> <strong>Euregio Maas-Rijn</strong> <span class="km-country">(NL/BE/DE)</span> — Drielandenpunt Maastricht – Luik – Aken</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#d97706;">D</span> <strong>SaarLorLux / Grootregio</strong> <span class="km-country">(LU/FR/DE/BE)</span> — Dagelijkse grenspendel rond Luxemburg</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#059669;">E</span> <strong>Bovenrijn / Oberrhein</strong> <span class="km-country">(FR/DE/CH)</span> — Elzas – Baden-Württemberg – Bazel</div>
+</div>
+<div class="km-leg-col">
+<div class="km-leg-item"><span class="km-pill" style="background:#0891b2;">F</span> <strong>Pools-Duitse grens</strong> <span class="km-country">(PL/DE)</span> — Oder-Neisse grenszone</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#4f46e5;">G</span> <strong>Centrope</strong> <span class="km-country">(AT/SK/CZ/HU)</span> — Wenen – Bratislava – Brno – Győr</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#16a34a;">H</span> <strong>Ierland / Noord-Ierland</strong> <span class="km-country">(IE/UK)</span> — Buitengrens EU/VK na Brexit</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#ea580c;">I</span> <strong>Frans-Italiaanse grens / Ventimiglia</strong> <span class="km-country">(FR/IT)</span> — Maritieme Alpen &amp; Ligurië</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#c026d3;">J</span> <strong>Spaans-Franse grens / Baskenland</strong> <span class="km-country">(ES/FR)</span> — Eurocity Bayonne – San Sebastián</div>
+</div>
+</div>
+<div class="km-leg-inzet-note">📍 <strong>Inzetkaart (rechtsboven):</strong> Gedetailleerde uitsnede van het grensvacuüm tussen Zeeuws-Vlaanderen (NL) en het Waasland / Gent (BE) — het laboratorium van de Systeem-Audit.</div>
+</div>
+<div id="km-leg-doc0" style="display:none;">
+<div class="km-leg-grid">
+<div class="km-leg-col">
+<div class="km-leg-item"><span class="km-pill" style="background:#dc2626;">1</span> <strong>Vertova</strong> <span class="km-country">(Lombardije, IT)</span> — Familiewortels vader &amp; terugkeer na WOII</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#dc2626;">2</span> <strong>Bondy / Parijs</strong> <span class="km-country">(Île-de-France, FR)</span> — Geboorteplaats vader (1940)</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#0284c7;">3</span> <strong>Sélestat</strong> <span class="km-country">(Noord-Elzas, FR)</span> — Geboorteplaats moeder (1948)</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#7c3aed;">4</span> <strong>Hattstatt &amp; Colmar</strong> <span class="km-country">(Zuid-Elzas, FR)</span> — Hôpital Pasteur (ontmoeting &amp; huwelijk)</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#7c3aed;">5</span> <strong>Antwerpen: Wilrijk, Hoboken &amp; Berchem</strong> <span class="km-country">(BE)</span> — Vestiging 1972, geboorte aanvrager (1981) &amp; kind (2016)</div>
+</div>
+<div class="km-leg-col">
+<div class="km-leg-item"><span class="km-pill" style="background:#0284c7;">6</span> <strong>Brugse Ommeland: Snellegem &amp; Jabbeke</strong> <span class="km-country">(West-Vlaanderen, BE)</span> — Wortels partner</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#7c3aed;">7</span> <strong>Gent</strong> <span class="km-country">(Oost-Vlaanderen, BE)</span> — Samenkomst aanvrager &amp; partner</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#7c3aed;">8</span> <strong>Sint-Niklaas &amp; Waasland</strong> <span class="km-country">(Lokeren, Buggenhout, Elversele, Waasmunster &amp; Sint-Niklaas, BE)</span> — Huwelijk 2007, werk &amp; school</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#d97706;">9</span> <strong>Paal — Gemeente Hulst</strong> <span class="km-country">(Zeeuws-Vlaanderen, NL)</span> — Grensovergang 2014 &amp; woonplaats gezin</div>
+<div class="km-leg-item"><span class="km-pill" style="background:#d97706;">⇄</span> <strong>Dagelijkse Grenspendel (9 ↔ 8)</strong> — Wonen in NL, werken &amp; schoolgaan in BE</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script class="notranslate" translate="no">
+(function(){
+  var scale = 1.0;
+  var panX = 0;
+  var panY = 0;
+  var isDragging = false;
+  var startX = 0;
+  var startY = 0;
+  var origPanX = 0;
+  var origPanY = 0;
+
+  function updateTransform(){
+    var stage = document.getElementById('km-stage');
+    var vp = document.getElementById('km-viewport');
+    var valBtn = document.querySelector('.km-zoom-val');
+    if (stage) {
+      stage.style.transform = 'translate(' + panX + 'px, ' + panY + 'px) scale(' + scale + ')';
+    }
+    if (valBtn) {
+      valBtn.textContent = Math.round(scale * 100) + '%';
+    }
+    if (vp) {
+      if (scale > 1.05) {
+        vp.classList.add('km-can-drag');
+      } else {
+        vp.classList.remove('km-can-drag');
+      }
+    }
+  }
+
+  window.kmResetZoom = function(){
+    scale = 1.0;
+    panX = 0;
+    panY = 0;
+    updateTransform();
+  };
+
+  window.kmSetZoom = function(newScale, clientX, clientY){
+    newScale = Math.max(0.75, Math.min(4.5, newScale));
+    var vp = document.getElementById('km-viewport');
+    if (clientX !== undefined && clientY !== undefined && vp) {
+      var rect = vp.getBoundingClientRect();
+      var offsetX = clientX - (rect.left + rect.width / 2);
+      var offsetY = clientY - (rect.top + rect.height / 2);
+      var ratio = newScale / scale;
+      panX = offsetX - ratio * (offsetX - panX);
+      panY = offsetY - ratio * (offsetY - panY);
+    }
+    scale = newScale;
+    if (scale <= 1.0) {
+      panX = 0;
+      panY = 0;
+    }
+    updateTransform();
+  };
+
+  window.kmZoomStep = function(delta){
+    window.kmSetZoom(scale + delta);
+  };
+
+  window.kmToggleLegenda = function(btn){
+    var content = document.getElementById('km-leg-content');
+    if (!content) return;
+    if (content.style.display === 'none') {
+      content.style.display = 'block';
+      if (btn) btn.textContent = '▲ Legenda';
+    } else {
+      content.style.display = 'none';
+      if (btn) btn.textContent = '▼ Legenda';
+    }
+  };
+
+  window.openKaartModal = function(){
+    var modal = document.getElementById('km-modal');
+    if (!modal) return;
+    var theme = document.documentElement.getAttribute('data-theme') || 'dark';
+    var p = window.location.pathname.toLowerCase();
+    var isRoot = !p.includes('/nl/') && !p.includes('/int/');
+    var isDoc0 = p.includes('document-0');
+    var assetPref = isRoot ? 'assets/' : '../assets/';
+    var img = document.getElementById('km-img');
+    var fullLink = document.getElementById('km-full-link');
+    var legBar = document.querySelector('.km-legenda-bar');
+    var titleEl = document.getElementById('km-title');
+    var subEl = document.querySelector('.km-subtitle');
+
+    var svgDark = isDoc0 ? (assetPref + 'kaart_migratie_doc0_dark.svg?v=4') : (assetPref + 'kaart_eu_dark.svg?v=5');
+    var svgLight = isDoc0 ? (assetPref + 'kaart_migratie_doc0_light.svg?v=4') : (assetPref + 'kaart_eu_light.svg?v=5');
+    var svgPath = (theme === 'dark') ? svgDark : svgLight;
+
+    if (img) img.src = svgPath;
+    if (fullLink) fullLink.href = svgPath;
+
+    var legEu = document.getElementById('km-leg-eu');
+    var legDoc0 = document.getElementById('km-leg-doc0');
+    var legTitleStrong = document.querySelector('.km-lh-title strong');
+    var legDescSpan = document.querySelector('.km-lh-desc');
+    if (isDoc0) {
+      if (titleEl) titleEl.textContent = 'Migratie & Grensregio — Een Europees Verhaal';
+      if (subEl) subEl.textContent = 'Van Lombardije, Parijs en de Elzas naar Vlaanderen en Zeeuws-Vlaanderen';
+      if (legBar) legBar.style.display = 'block';
+      if (legEu) legEu.style.display = 'none';
+      if (legDoc0) legDoc0.style.display = 'block';
+      if (legTitleStrong) legTitleStrong.textContent = 'MIGRATIEKNOOPPUNTEN (1–9)';
+      if (legDescSpan) legDescSpan.textContent = '— Paneel 1: Europa (1–5) · Paneel 2: Vlaanderen & Zeeuws-Vlaanderen (5–9)';
+    } else {
+      if (titleEl) titleEl.textContent = "Grensregio's in de Europese Unie";
+      if (subEl) subEl.textContent = "Focus: Zeeuws-Vlaanderen &amp; 10 Europese Knelpunten";
+      if (legBar) legBar.style.display = 'block';
+      if (legEu) legEu.style.display = 'block';
+      if (legDoc0) legDoc0.style.display = 'none';
+      if (legTitleStrong) legTitleStrong.textContent = "GRENSKNELPUNTEN (A–J)";
+      if (legDescSpan) legDescSpan.textContent = "— Empirisch gedocumenteerde grensknelpunten in het Europese binnengrenzennetwerk";
+    }
+
+    modal.classList.add('km-open');
+    modal.style.display = 'flex';
+    document.body.classList.add('km-no-scroll');
+    window.kmResetZoom();
+
+    var hint = document.getElementById('km-drag-hint');
+    if (hint) {
+      hint.style.opacity = '0.9';
+      setTimeout(function(){ if (hint) hint.style.opacity = '0'; }, 3500);
+    }
+  };
+
+  window.sluitKaartModal = function(){
+    var modal = document.getElementById('km-modal');
+    if (!modal) return;
+    modal.classList.remove('km-open');
+    modal.style.display = 'none';
+    document.body.classList.remove('km-no-scroll');
+  };
+
+  document.addEventListener('keydown', function(e){
+    var modal = document.getElementById('km-modal');
+    if (!modal || !modal.classList.contains('km-open')) return;
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      window.sluitKaartModal();
+    } else if (e.key === '+' || e.key === '=') {
+      e.preventDefault();
+      window.kmZoomStep(0.25);
+    } else if (e.key === '-' || e.key === '_') {
+      e.preventDefault();
+      window.kmZoomStep(-0.25);
+    } else if (e.key === '0') {
+      e.preventDefault();
+      window.kmResetZoom();
+    }
+  });
+
+  function bindViewport(){
+    var vp = document.getElementById('km-viewport');
+    if (!vp || vp._bound) return;
+    vp._bound = true;
+
+    vp.addEventListener('wheel', function(e){
+      e.preventDefault();
+      var delta = (e.deltaY < 0) ? 0.25 : -0.25;
+      window.kmSetZoom(scale + delta, e.clientX, e.clientY);
+    }, { passive: false });
+
+    vp.addEventListener('dblclick', function(e){
+      e.preventDefault();
+      if (scale <= 1.15) {
+        window.kmSetZoom(2.2, e.clientX, e.clientY);
+      } else {
+        window.kmResetZoom();
+      }
+    });
+
+    vp.addEventListener('mousedown', function(e){
+      if (e.button !== 0) return;
+      isDragging = true;
+      startX = e.clientX;
+      startY = e.clientY;
+      origPanX = panX;
+      origPanY = panY;
+      vp.classList.add('km-dragging');
+    });
+
+    window.addEventListener('mousemove', function(e){
+      if (!isDragging) return;
+      panX = origPanX + (e.clientX - startX);
+      panY = origPanY + (e.clientY - startY);
+      updateTransform();
+    });
+
+    window.addEventListener('mouseup', function(){
+      if (!isDragging) return;
+      isDragging = false;
+      var vpEl = document.getElementById('km-viewport');
+      if (vpEl) vpEl.classList.remove('km-dragging');
+    });
+
+    var initialTouchDist = 0;
+    var initialScale = 1;
+    vp.addEventListener('touchstart', function(e){
+      if (e.touches.length === 1) {
+        isDragging = true;
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        origPanX = panX;
+        origPanY = panY;
+      } else if (e.touches.length === 2) {
+        isDragging = false;
+        var dx = e.touches[0].clientX - e.touches[1].clientX;
+        var dy = e.touches[0].clientY - e.touches[1].clientY;
+        initialTouchDist = Math.sqrt(dx * dx + dy * dy);
+        initialScale = scale;
+      }
+    }, { passive: true });
+
+    vp.addEventListener('touchmove', function(e){
+      if (isDragging && e.touches.length === 1) {
+        panX = origPanX + (e.touches[0].clientX - startX);
+        panY = origPanY + (e.touches[0].clientY - startY);
+        updateTransform();
+      } else if (e.touches.length === 2 && initialTouchDist > 0) {
+        var dx = e.touches[0].clientX - e.touches[1].clientX;
+        var dy = e.touches[0].clientY - e.touches[1].clientY;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        var factor = dist / initialTouchDist;
+        window.kmSetZoom(initialScale * factor);
+      }
+    }, { passive: true });
+
+    vp.addEventListener('touchend', function(){
+      isDragging = false;
+    });
+  }
+
+  document.addEventListener('click', function(e){
+    var t = e.target;
+    if (!t || !t.closest) return;
+    if (t.closest('.kaart-html-legenda')) return;
+    var mapEl = t.closest('.khl-map-wrap, .theme-map, .km-zoom-badge, .root-kaart');
+    if (mapEl && !t.closest('#km-modal')) {
+      e.preventDefault();
+      window.openKaartModal();
+    }
+  });
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bindViewport);
+  } else {
+    bindViewport();
+  }
+})();
+</script>
+<div aria-label="Snelle paginanavigatie en weergave" class="audit-fab-dock notranslate" id="audit-fab-dock" role="region" translate="no">
+<div class="afb-drawer" id="afb-drawer">
+<button aria-label="Doorzoek audit" class="afb-btn sm-toggle" onclick="openSearchModal(); closeFabDock();" title="Doorzoek audit (Ctrl+K)" type="button">
+<span class="afb-ico">🔍</span>
+<span class="afb-lbl">Zoek</span>
+</button>
+<button aria-label="Schakel donkere/lichte modus" class="afb-btn dm-toggle" onclick="dm_toggle();" title="Schakel donkere/lichte modus" type="button">
+<span class="afb-ico dm-icon-dm">🌙</span>
+<span class="afb-ico dm-icon-lm">☀️</span>
+<span class="afb-lbl">Thema</span>
+</button>
+<button aria-label="Terug naar boven" class="afb-btn pub-top" onclick="scrollNaarBoven(); closeFabDock();" title="Terug naar boven" type="button">
+<span class="afb-ico">↑</span>
+<span class="afb-lbl">Boven</span>
+</button>
+</div>
+<button aria-expanded="false" aria-label="Snelle hulpmiddelen" class="afb-handle" id="afb-handle" onclick="toggleFabDock(event)" title="Open/sluit snelle hulpmiddelen (Zoeken, Dark Mode, Naar boven)" type="button">
+<span class="afb-handle-closed">‹<span class="afb-handle-dots">⋮</span></span>
+<span class="afb-handle-open">›</span>
+</button>
+</div>
+<script>
+(function(){
+  function s(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  function syncThemeMaps(mode){
+    var p = window.location.pathname.toLowerCase();
+    var isRoot = !p.includes('/nl/') && !p.includes('/int/');
+    var assetPref = isRoot ? 'assets/' : '../assets/';
+    var isDoc0 = p.includes('document-0');
+    var maps = document.querySelectorAll('.theme-map');
+    maps.forEach(function(m){
+      var source = m.querySelector('source');
+      var img = m.querySelector('img');
+      if(!img) return;
+      var darkSvg = source ? source.getAttribute('srcset') : (img.getAttribute('data-dark-src') || (assetPref + (isDoc0 ? 'kaart_migratie_doc0_dark.svg?v=4' : 'kaart_eu_dark.svg?v=5')));
+      var lightSvg = img.getAttribute('data-light-src') || (assetPref + (isDoc0 ? 'kaart_migratie_doc0_light.svg?v=4' : 'kaart_eu_light.svg?v=5'));
+      if(mode === 'dark'){
+        img.src = darkSvg;
+      } else {
+        img.src = lightSvg;
+      }
+    });
+    var kmImg = document.getElementById('km-img');
+    var kmLink = document.getElementById('km-full-link');
+    var svgDark = isDoc0 ? (assetPref + 'kaart_migratie_doc0_dark.svg?v=4') : (assetPref + 'kaart_eu_dark.svg?v=5');
+    var svgLight = isDoc0 ? (assetPref + 'kaart_migratie_doc0_light.svg?v=4') : (assetPref + 'kaart_eu_light.svg?v=5');
+    if (kmImg) {
+      kmImg.src = (mode === 'dark') ? svgDark : svgLight;
+    }
+    if (kmLink) {
+      kmLink.href = (mode === 'dark') ? svgDark : svgLight;
+    }
+  }
+  window.dm_toggle=function(){
+    var r=document.documentElement;
+    var n=r.getAttribute('data-theme')==='dark'?'light':'dark';
+    r.setAttribute('data-theme',n);
+    s('systeem-audit-thema',n);
+    syncThemeMaps(n);
+  };
+  window.scrollNaarBoven=function(){
+    try {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    } catch(e) {
+      window.scrollTo(0, 0);
+    }
+  };
+  window.toggleFabDock=function(e){
+    if(e) e.stopPropagation();
+    var dock = document.getElementById('audit-fab-dock');
+    var handle = document.getElementById('afb-handle');
+    if(!dock) return;
+    var isOpen = dock.classList.toggle('afb-open');
+    if(handle) handle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  };
+  window.closeFabDock=function(){
+    var dock = document.getElementById('audit-fab-dock');
+    var handle = document.getElementById('afb-handle');
+    if(dock) dock.classList.remove('afb-open');
+    if(handle) handle.setAttribute('aria-expanded', 'false');
+  };
+  window.toggleAllToc=function(btn){
+    var toc = btn ? btn.closest('.pub-toc') : document.querySelector('.pub-toc');
+    if(!toc) return;
+    var details = toc.querySelectorAll('details.toc-chapter');
+    var anyClosed = false;
+    for(var i=0; i<details.length; i++){
+      if(!details[i].open){ anyClosed = true; break; }
+    }
+    for(var j=0; j<details.length; j++){
+      details[j].open = anyClosed;
+    }
+    var isInt = document.documentElement.getAttribute('data-int-portal') === '1';
+    if(btn){
+      btn.textContent = anyClosed
+        ? (isInt ? '▲ Collapse all chapters' : '▲ Alles inklappen')
+        : (isInt ? '▼ Expand all chapters' : '▼ Alles uitklappen');
+    }
+  };
+  document.addEventListener('click', function(e){
+    var dock = document.getElementById('audit-fab-dock');
+    if(dock && dock.classList.contains('afb-open')){
+      if(!dock.contains(e.target)){
+        closeFabDock();
+      }
+    }
+  });
+  document.addEventListener('DOMContentLoaded', function(){
+    var cur = document.documentElement.getAttribute('data-theme') || 'dark';
+    syncThemeMaps(cur);
+  });
+})();
+</script>
+<!-- Analytische sensor (verborgen landentracker, puur voor dossierbeheer) -->
+<div aria-hidden="true" style="display:none;position:absolute;width:0;height:0;overflow:hidden;opacity:0;pointer-events:none;">
+<img alt="" height="1" loading="eager" src="https://s05.flagcounter.com/count/xed2/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_18/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" width="1"/>
+<script async="" data-goatcounter="https://grensarbeid.goatcounter.com/count" src="//gc.zgo.at/count.js"></script>
+</div>
+</body>
+</html>
